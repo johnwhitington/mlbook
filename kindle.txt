@@ -1,0 +1,4 @@
+ebook-convert kindlemlbook.html kindlemlbook.mobi --output-profile kindle --disable-font-rescaling --author-sort "Whitington,John" --authors "John Whitington" --publisher "Coherent Press" --title "OCaml from the Very Beginning" --no-inline-toc
+
+htlatex kindlemlbook "html,pic-fbox,pic-equations,pic-tabular"
+

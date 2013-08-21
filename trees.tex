@@ -1,0 +1,21 @@
+\documentclass[]{book}
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+
+\begin{document}
+\Tree [.$+$ 1 [.$\times$ 2 3 ] ]
+
+%\Tree [.$+$ 1 [.$\times$ 2 3 ] ] \hspace{4mm}$\longrightarrow$\hspace{4mm} \Tree [.$+$ 1 6 ] \hspace{4mm}$\longrightarrow$\hspace{4mm} \Tree [.7 ] 
+
+
+%\Tree [.1 \phantom{3} \phantom{3} ]\hspace{4mm}is written as\hspace{4mm}\texttt{Br (1, Lf, Lf)}
+
+%\Tree [.2 [.1 \phantom{3} \phantom{3} ] \phantom{3} ]\hspace{4mm}is written as\hspace{4mm}\texttt{Br (2, Br (1, Lf, Lf), Lf)}
+
+%\Tree [.2 [.1 \phantom{3} \phantom{3} ] [.4 \phantom{3} \phantom{3} ] ]\hspace{4mm} is written as\hspace{4mm} \texttt{Br (2, Br (1, Lf, Lf), Br (4, Lf, Lf))}
+
+%\Tree [.\texttt{(3, "three")} [.\texttt{(1, "one")} \phantom{a} [.\texttt{(2, "two")} \phantom{a} \phantom{a} ] ] [.\texttt{(4, "four")} \phantom{a} \phantom{a} ] ]
+
+%\Tree [.\texttt{(3, "three")} [.\texttt{(1, "one")} [.\texttt{(0, "zero")} \phantom{a} \phantom{a} ] [.\texttt{(2, "two")} \phantom{a} \phantom{a} ] ] [.\texttt{(4, "four")} \phantom{a} \phantom{a} ] ]
+\end{document}
+
