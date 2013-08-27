@@ -1315,7 +1315,7 @@ Two more useful functions for processing lists are \texttt{take} and \texttt{dro
 $\texttt{\pletrec take n l =}$\\
 $\texttt{\ \ \pif n = 0 \pthen [] \pelse}$\\
 $\texttt{\ \ \ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ \ \  h::t -> h ::\ take (n - 1) l}$\\
+$\texttt{\ \ \ \ \ \  h::t -> h ::\ take (n - 1) t}$\\
 \\
 $\texttt{\pletrec drop n l =}$\\
 $\texttt{\ \ \pif n = 0 \pthen l \pelse}$\\
@@ -1370,7 +1370,7 @@ Lists can contain anything, so long as all elements are of the same type. So, of
   \item Write a function \texttt{evens} which does the opposite to \texttt{odds}, returning the even numbered elements in a list. For example, \texttt{evens\! [2;\! 4;\! 2;\! 4;\! 2]} should return \texttt{[4;\! 4]}. What is the type of your function?
   \item Write a function \texttt{count\_true} which counts the number of \texttt{true} elements in a list. For example, \texttt{count\_true\! [true;\! false;\! true]} should return \texttt{2}. What is the type of your function? Can you write a tail recursive version?
   \item Write a function which, given a list, builds a palindrome from it. A palindrome is a list which equals its own reverse. You can assume the existence of \texttt{rev} and \texttt{@}. Write another function which determines if a list is a palindrome.
-  \item Write a function \texttt{droplast} which returns all but the last element of a list. If the list is empty, it should return the empty list. So, for example, \texttt{droplast\! [1;\! 2;\! 4;\! 8]} should return \texttt{[1;\! 2;\! 4]}. What about a tail recursive version?
+  \item Write a function \texttt{drop\_last} which returns all but the last element of a list. If the list is empty, it should return the empty list. So, for example, \texttt{drop\_last\! [1;\! 2;\! 4;\! 8]} should return \texttt{[1;\! 2;\! 4]}. What about a tail recursive version?
   \item Write a function \texttt{member} of type \textbf{\textsf {$\alpha$ $\rightarrow$ $\alpha$ list $\rightarrow$ bool}} which returns \texttt{true} if an element exists in a list, or \texttt{false} if not. For example, \texttt{member\! 2\! [1;\! 2;\! 3]} should evaluate to \texttt{true}, but \texttt{member\! 3\! [1;\! 2]} should evaluate to \texttt{false}. 
   \item Use your \texttt{member} function to write a function \texttt{make\_set} which, given a list, returns a list which contains all the elements of the original list, but has no duplicate elements. For example, \texttt{make\_set\! [1;\! 2;\! 3;\! 3;\! 1]} might return \texttt{[2;\! 3;\! 1]}. What is the type of your function?
   \item Can you explain why the \texttt{rev} function we defined is inefficient? How does the time it takes to run relate to the size of its argument? Can you write a more efficient version using an accumulating argument? What is its efficiency in terms of time taken and space used?
@@ -5041,7 +5041,7 @@ $\texttt{\ \ | \_ -> []}$\hfill\textit{otherwise, no more to drop}\vphantom{g}
 \\
 $\texttt{\pletrec count\_true l =}$\\
 $\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ [] -> []}$\hfill\textit{no more}\\
+$\texttt{\ \ \ \ [] -> 0}$\hfill\textit{no more}\\
 $\texttt{\ \ | true::t -> 1 + count\_true t}$\hfill\textit{count this one}\\
 $\texttt{\ \ | false::t -> count\_true t}$\hfill\textit{but not this one}\vphantom{g}
 \end{minipage}}
