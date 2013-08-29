@@ -4426,7 +4426,7 @@ Now, we can issue a command to turn this program into a pre-processed OCaml modu
 \noindent\\
 \noindent\texttt{\# \#load "textstat.cmo";;}\hfill\textit{load the module}\\
 \noindent\texttt{\# Textstat.stats\_from\_file "gregor.txt";;}\hfill\textit{use a function}\\
-\noindent\texttt{- :\ int * int * int = (0, 0, 0, 0)}\hfill\vphantom{g}
+\noindent\texttt{- :\ int * int * int * int = (0, 0, 0, 0)}\hfill\vphantom{g}
 \smspace
 
 \noindent Note that \index{\#load@\texttt{\#load}}\texttt{\#load} is different from our earlier \texttt{\#use} command -- that was just reading a file as if it had been cut and pasted -- we are really loading the compiled module here.
@@ -4946,7 +4946,7 @@ This is the same as
 \smspace
 \begin{center}
 \fbox{\begin{minipage}{0.8\textwidth}
-$\texttt{\pmatch 1 + 1 \pwith =}$\\
+$\texttt{\pmatch 1 + 1 \pwith}$\\
 $\texttt{~~2 ->}$\\
 $\texttt{~~~~(\pmatch 2 + 2 \pwith}$\\
 $\texttt{~~~~~~3 -> 4}$\\
@@ -7185,7 +7185,7 @@ done\vphantom{g}
 \texttt{sys\ \ \ 0m0.003s}\vphantom{g}
 \smspace
 
-\noindent You can see that, when compiled with \texttt{ocamlc}, it takes 1.9s to run, but when compiled with \texttt{ocamlopt} just 0.22s.
+\noindent You can see that, when compiled with \texttt{ocamlc}, it takes 1.9s to run, but when compiled with \texttt{ocamlopt} just 0.022s.
 
 \subsection*{4}
 We can get all the lines in the file using our \texttt{getlines} function from question two. The main function simply calls \texttt{string\_in\_line} on each line, printing it if \texttt{true} is returned.
