@@ -2845,7 +2845,7 @@ How can we represent such trees using an OCaml type? When we built our version o
 \\
 $\texttt{\pletrec size tr =}$\\
 $\texttt{~~\pmatch tr \pwith}$\\
-$\texttt{~~~~Br (\_, l, r) = 1 + size l + size r}$\\
+$\texttt{~~~~Br (\_, l, r) -> 1 + size l + size r}$\\
 $\texttt{~~|~Lf -> 0}\vphantom{g}$
 \end{minipage}}
 \end{center}
@@ -2860,7 +2860,7 @@ $\texttt{~~|~Lf -> 0}\vphantom{g}$
 \\
 $\texttt{\pletrec total tr =}$\\
 $\texttt{~~\pmatch tr \pwith}$\\
-$\texttt{~~~~Br (x, l, r) = x + total l + total r}$\\
+$\texttt{~~~~Br (x, l, r) -> x + total l + total r}$\\
 $\texttt{~~|~Lf -> 0}\vphantom{g}$
 \end{minipage}}
 \end{center}
@@ -2879,7 +2879,7 @@ $\texttt{~~\pif x > y \pthen x \pelse y}$\\
 \\
 $\texttt{\pletrec maxdepth tr =}$\\
 $\texttt{~~\pmatch tr \pwith}$\\
-$\texttt{~~~~Br (\_, l, r) = 1 + max (maxdepth l) (maxdepth r)}$\\
+$\texttt{~~~~Br (\_, l, r) -> 1 + max (maxdepth l) (maxdepth r)}$\\
 $\texttt{~~|~Lf -> 0\vphantom{g}}$
 \end{minipage}}
 \end{center}
