@@ -2,7 +2,6 @@
 %PACKAGE LOADING
 \usepackage{etex}
 \usepackage{fancyvrb}
-\usepackage{lettrine}
 \usepackage{booktabs}
 \usepackage{graphics}
 \renewcommand{\arraystretch}{1.2}
@@ -61,85 +60,85 @@
 
 \newcommand{\sofarstartingoff}{
 
-\noindent \lettrine[loversize=0.1,nindent=0em]{1}{}
+\noindent 1
 
 \noindent Integers \texttt{min\_int} \ldots\ \texttt{-3}\ \texttt{-2}\ \texttt{-1}\ \texttt{0}\ \texttt{1}\ \texttt{2}\ \texttt{3}\ \ldots\ \texttt{max\_int} of type \textbf{\textrm{int}}. Booleans \texttt{true} and \texttt{false} of type \textbf{\textrm{bool}}. \noindent Characters of type \textrm{\textbf{char}} like \texttt{\upquote{X}} and \texttt{\upquote{!}}. Mathematical operators \texttt{+} \texttt{-} \texttt{*} \texttt{/} \texttt{mod} which take two integers and give another. Operators \texttt{=} \texttt{<} \texttt{<=} \texttt{>} \texttt{>=} \texttt{<>} which compare two values and evaluate to either \texttt{true} or \texttt{false}. The conditional \textbf{\texttt{if}} \textit{expression1} \textbf{\texttt{then}} \textit{expression2} \textbf{\texttt{else}} \textit{expression3}, where \textit{expresssion1} has type \textrm{\textbf{bool}} and \textit{expression2} and \textit{expression3} have the same type as one another. The boolean operators \texttt{\&\&} and \texttt{||} which allow us to build compound boolean expressions.}
 
 \newcommand{\sofarfunctions}
 {
-\noindent\lettrine[loversize=0.1,findent=2pt,nindent=0em]{2}{}
+\noindent 2
 
 \noindent Assigning a name to the result of evaluating an expression using the \textbf{\texttt{let}}\ \textit{name} \texttt{=}\ \textit{expression} construct. Building compound expressions using \textbf{\texttt{let}}\ \textit{name1} \texttt{=} \textit{expression1} \textbf{\texttt{in}}\ \textbf{\texttt{let}}\ \textit{name2} \texttt{=}\ \textit{expression2} \textbf{\texttt{in}}\ \ldots \ Functions, introduced by \textbf{\texttt{let}}\ \textit{name} \textit{argument1} \textit{argument2} \ldots\ \texttt{=}\ \textit{expression}. These have type $\alpha \rightarrow \beta$, $\alpha \rightarrow \beta \rightarrow \gamma$ etc. for some types $\alpha$, $\beta$, $\gamma$ etc. Recursive functions, which are introduced in the same way, but using \textbf{\texttt{let rec}} instead of \textbf{\texttt{let}}.}
 
 \newcommand{\sofarcasebycase}
-{\noindent \lettrine[loversize=0.1,findent=2pt,nindent=0em]{3}{}
+{\noindent 3
 
 \noindent Matching patterns using \textbf{\texttt{match}} \textit{expression1} \textbf{\texttt{with}} \textit{pattern1} \texttt{|} \ldots\ \texttt{->} \textit{expression2} \texttt{|} \textit{pattern2} \texttt{|} \ldots\ \texttt{->} \textit{expression3} \texttt{|}\ldots \ The expressions \textit{expression2}, \textit{expression3} etc. must have the same type as one another, and this is the type of the whole \textbf{\texttt{match} \ldots\ \texttt{with}} expression.}
 
 \newcommand{\sofarlistingthings}
 {
-\noindent \lettrine[loversize=0.1,findent=2pt,nindent=0em]{4}{}
+\noindent 4
 
 \noindent Lists, which are ordered collections of zero or more elements of like type. They are written between square brackets, with elements separated by semicolons e.g. \texttt{[1;\! 2;\! 3;\! 4;\! 5]}. If a list is non-empty, it has a head, which is its first element, and a tail, which is the list composed of the rest of the elements. The \texttt{::}\ ``cons'' operator, which adds an element to the front of a list. The \texttt{@} ``append'' operator, which concatenates two lists together. Lists and the \texttt{::}\ ``cons'' symbol may be used for pattern matching to distinguish lists of length zero, one, etc. and with particular contents.}
 
 \newcommand{\sofarsortingthings}
 {
-\noindent \lettrine[loversize=0.1,findent=2pt,nindent=0em]{5}{}
+\noindent 5
 
 \noindent Matching two or more things at once, using commas to separate as in \texttt{\textbf{match}} \texttt{a, b} \textbf{\texttt{with}} \texttt{0, 0 ->} \textit{expression1} \texttt{|\ x, y ->} \textit{expression2} \texttt{|} \ldots
 }
 
 \newcommand{\sofarfunctionsuponfunctions}
 {
-\noindent \lettrine[loversize=0.1,findent=2pt,nindent=0em]{6}{}
+\noindent 6
 
 \noindent Anonymous functions \textbf{\texttt{fun}} \textit{name} \texttt{->} \textit{expression}. Making operators into functions as in \texttt{(\! <\! )} and \texttt{(\! +\! )}.
 }
 
 \newcommand{\sofarwhenthingsgowrong}
 {
-\noindent \lettrine[loversize=0.1,findent=2pt,nindent=0em]{7}{}
+\noindent 7
 
 \noindent Defining exceptions with \textbf{\texttt{exception}} \textit{name}. They can carry extra information by adding \textbf{\texttt{of}} \textit{type}. Raising exceptions with \textbf{\texttt{raise}}. Handling exceptions with \textbf{\texttt{try}} \ldots\ \textbf{\texttt{with}}\ \ldots}
 
 \newcommand{\sofarlookingthingsup}
 {
-\noindent \lettrine[loversize=0.1,findent=2pt,nindent=0em]{8}{}
+\noindent 8
 
 \noindent Tuples to combine a fixed number of elements \texttt{(a,\! b)},\!    \ \texttt{(a,\! b,\! c)} etc. with types \textrm{\textbf{$\alpha$ $\times$ $\beta$}},\ \  \textrm{\textbf{$\alpha$ $\times$ $\beta$ $\times$ $\gamma$}} etc.
 }
 
 \newcommand{\sofarmorewithfunctions}
 {
-\noindent \lettrine[loversize=0.1,findent=2pt,nindent=0em]{9}{}
+\noindent 9
 
 \noindent Partial application of functions by giving fewer than the full number of arguments. Partial application with functions built from operators.
 }
 
 \newcommand{\sofarnewkindsofdata}
 {
-\noindent \lettrine[loversize=0.1,findent=2pt,nindent=0em]{10}{}
+\noindent 10
 
 \noindent New types with \textbf{\texttt{type}} \textit{name} \texttt{=} \textit{constructor1} \textbf{\texttt{of}} \textit{type1} \texttt{|} \textit{constructor2} \textbf{\texttt{of}} \textit{type2} \texttt{|} \ldots\ Pattern matching on them as with the built-in types. Polymorphic types.
 }
 
 \newcommand{\sofargrowingtrees}
 {
-\noindent \lettrine[loversize=0.1,nindent=0em]{11}{}
+\noindent 11
 
 \noindent Strings, which are sequences of characters written between double quotes and are of type \textbf{\textrm{string}}.
 }
 
 \newcommand{\sofarinandout}
 {
-\noindent \lettrine[loversize=0.1,findent=2pt,nindent=0em]{12}{}
+\noindent 12
 
 \noindent The value \texttt{()} and its type \textbf{\textrm{unit}}. Input channels of type \textrm{\textbf{in\raisebox{1.5pt}{\_}channel}} and output channels of type \textrm{\textbf{out\raisebox{1.5pt}{\_}channel}}. Built-in functions for reading from and writing to them respectively.
 }
 
 \newcommand{\sofarputtingthingsinboxes}
 {
-\noindent \lettrine[loversize=0.1,findent=2pt,nindent=0em]{13}{}
+\noindent 13
 
 \noindent References of type \textrm{\textbf{$\alpha$ ref}}. Building them using  \texttt{ref}, accessing their contents using \texttt{!} and updating them using the \texttt{:=}\, operator. Bracketing expressions together with \textbf{\texttt{begin}} and \textbf{\texttt{end}} instead of parentheses for readability. Performing an action many times based on a boolean condition with the \textbf{\texttt{while}} \textit{boolean expression} \texttt{\textbf{do}}  \textit{expression} \texttt{\textbf{done}} construct. Performing an action a fixed number of times with a varying parameter using the \textbf{\texttt{for}} \textit{name} \texttt{=} \textit{start} \texttt{\textbf{to}}  \textit{end} \texttt{\textbf{do}} \textit{expression} \texttt{\textbf{done}} construct. Arrays of type \textrm{\textbf{$\alpha$ array}}. Creating an array with the built-in function \texttt{Array.make}, finding its length with \texttt{Array.length}, accessing an element with \texttt{a.(}\textit{subscript}\texttt{)}. Updating with \texttt{a.(}\textit{subscript}\texttt{) <-} \textit{expression}. The built-in function \texttt{String.iter}.
 
@@ -147,13 +146,13 @@
 
 \newcommand{\sofargettingreal}
 {
-\noindent \lettrine[loversize=0.1,findent=2pt,nindent=0em]{14}{}
+\noindent 14
 
 \noindent Floating-point numbers \texttt{min\_float} \ldots\ \texttt{max\_float} of type \textrm{\textbf{float}}. \noindent Floating-point operators \texttt{+.} \texttt{*.} \texttt{-.} \texttt{/.} \texttt{**} and built-in functions \texttt{sqrt} \texttt{log} etc.}
 
 \newcommand{\sofartheocamlstandardlibrary}
 {
-\noindent\lettrine[loversize=0.1,findent=2pt,nindent=0em]{15}{}
+\noindent 15
 
 \noindent Using functions from the OCaml Standard Library with the form \textit{Module}\texttt{.}\textit{function}.
 }
@@ -161,7 +160,7 @@
 \newcommand{\sofarbuildingbiggerprograms}
 {
 
-\noindent \lettrine[loversize=0.1,findent=2pt,nindent=0em]{16}{}
+\noindent 16
 
 \noindent Writing modules in \texttt{.ml} files. Building interfaces in \texttt{.mli} files with types and \textbf{\texttt{val}}. Using the \texttt{ocamlc} and \texttt{ocamlopt} compilers. Comments written between \texttt{(*} and \texttt{*)}.}
 
@@ -302,7 +301,8 @@
 
 \vspace{3mm}
 
-\noindent First published 2013
+\noindent First published June 2013\\
+Reprinted with corrections October 2013
 
 \vspace{3mm}
 
