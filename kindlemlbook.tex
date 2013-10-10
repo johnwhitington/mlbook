@@ -1138,13 +1138,13 @@ $\texttt{\ \ |   h::t -> 1 + length t}$\hfill\makebox{\textit{\texttt{h} is the 
 \begin{eqnarray*}
  & & \verb!length [5; 5; 5] ! \\
  \Longrightarrow & & \verb!1 + ! \underline{\texttt{length [5; 5]}} \\
- \Longrightarrow & & \verb!1 + 1 + !\underline{\texttt{length [5]}} \\
- \Longrightarrow & & \verb!1 + 1 + 1 + !\underline{\texttt{length []}} \hspace{10mm}\textit{base case}\\
- \Longrightarrow & & \underline{\vphantom{g}\texttt{1 + 1 + 1 + 0}} \\
+ \Longrightarrow & & \verb!1 + (1 + !\underline{\texttt{length [5]}}\texttt{)} \\
+ \Longrightarrow & & \verb!1 + (1 + (1 + !\underline{\texttt{length []}}\texttt{))} \hspace{10mm}\textit{base case}\\
+ \Longrightarrow & & \underline{\vphantom{g}\texttt{1 + (1 + (1 + 0))}} \\
  \overset{*}\Longrightarrow & & \verb!3! \hspace{30mm}\textit{($\overset{*}\Longrightarrow$ means we are not showing all the steps)}
 \end{eqnarray*}
 
-\noindent This works by \index{recursion, over a list}recursion over the list, then addition of all the resultant \texttt{1}s. It takes time proportional to the length of the list. Can you see why? It also takes space proportional to the length of the list, because of the intermediate expression \texttt{1\! +\! 1\! +\! 1\! +\! \ldots} which is built up before any of the \texttt{+} operations are evaluated -- this expression must be stored somewhere whilst it is being processed. Since \texttt{h} is not used in the expression \texttt{1\! +\! length\! t}, this function is also polymorphic. Indeed we can replace \texttt{h} in the pattern with \texttt{\_} since there is no use giving a name to something we are not going to refer to:
+\noindent This works by \index{recursion, over a list}recursion over the list, then addition of all the resultant \texttt{1}s. It takes time proportional to the length of the list. Can you see why? It also takes space proportional to the length of the list, because of the intermediate expression \texttt{1\! +\! (1\! +\! (1\! +\! \ldots} which is built up before any of the \texttt{+} operations are evaluated -- this expression must be stored somewhere whilst it is being processed. Since \texttt{h} is not used in the expression \texttt{1\! +\! length\! t}, this function is also polymorphic. Indeed we can replace \texttt{h} in the pattern with \texttt{\_} since there is no use giving a name to something we are not going to refer to:
 
 \smspace
 %\begin{center}
