@@ -5196,7 +5196,7 @@ The first part of the evaluation of \texttt{rev} takes time proportional to the 
 $\texttt{\pletrec rev\_inner a l =}$\\
 $\texttt{\ \ \pmatch l \pwith}$\\
 $\texttt{\ \ \ \ [] -> a}$\\
-$\texttt{\ \ | h::t -> rev\_inner (h ::\ a) l}$\\
+$\texttt{\ \ | h::t -> rev\_inner (h ::\ a) t}$\\
 \\
 $\texttt{\plet rev l =}$\\
 $\texttt{\ \ rev\_inner [] l}$\vphantom{g}
