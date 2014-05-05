@@ -5874,7 +5874,7 @@ $\texttt{\plet truncate\_l n l =}$\\
 $\texttt{~~\pif length l >= n \pthen take n l \pelse l}$\\
 \\
 $\texttt{\plet truncate n ll =}$\\
-$\texttt{~~map (truncate n) ll}$
+$\texttt{~~map (truncate\_l n) ll}$
 \end{minipage}}
 %\end{center}
 \smspace
@@ -5891,7 +5891,7 @@ $\texttt{\plet truncate\_l n l =}$\\
 $\texttt{~~\ptry take n l \pwith Invalid\_argument "take" -> l}$\\
 \\
 $\texttt{\plet truncate n ll =}$\\
-$\texttt{~~map (truncate n) ll}$
+$\texttt{~~map (truncate\_l n) ll}$
 \end{minipage}}
 %\end{center}
 \smspace
