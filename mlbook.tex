@@ -2725,7 +2725,7 @@ $\texttt{|~Divide \pof expr * expr}$\vphantom{g}
 \noindent For example, the expression $1 + 2 * 3$ is represented in this data type as:
 
 \smspace
-\texttt{Add (Num 1, Mul (Num 2, Num 3))}
+\texttt{Add (Num 1, Multiply (Num 2, Num 3))}
 \smspace
 
 \noindent We can now write a function to evaluate expressions:
@@ -2755,7 +2755,7 @@ $\texttt{~~|~Divide (e, e\textquotesingle ) -> evaluate e / evaluate e\textquote
   \item Design a new type \textsf{rect} for representing rectangles. Treat squares as a special case.
   \item Now write a function of type \textsf{rect $\rightarrow$ \textbf{int}} to calculate the area of a given \textsf{rect}.
   \item Write a function which rotates a \textsf{rect} such that it is at least as tall as it is wide.
-  \item Use this function to write one which, given a \textsf{rect \textbf{list}}, returns another such list which has the smallest total width and whose members are sorted widest first.
+  \item Use this function to write one which, given a \textsf{rect \textbf{list}}, returns another such list which has the smallest total width and whose members are sorted narrowest first.
   \item Write \texttt{take}, \texttt{drop}, and \texttt{map} functions for the \textsf{sequence} type.
   \item Extend the \textsf{expr} type and the \texttt{evaluate} function to allow raising a number to a power.
   \item Use the \textsf{option} type to deal with the problem that \texttt{Division\_by\_zero} may be raised from the \texttt{evaluate} function.
