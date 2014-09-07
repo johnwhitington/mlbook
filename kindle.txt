@@ -1,3 +1,5 @@
+(need to wait for fixed TexLive2015 before resurrecting this -- currently does not build)
+
 1. htlatex kindlemlbook "html,pic-fbox,pic-equations,pic-tabular"
 
 2. ebook-convert kindlemlbook.html kindlemlbook.mobi --output-profile kindle --disable-font-rescaling --author-sort "Whitington,John" --authors "John Whitington" --publisher "Coherent Press" --title "OCaml from the Very Beginning" --no-inline-toc
