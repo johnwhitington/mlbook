@@ -1,4 +1,4 @@
-(need to wait for fixed TexLive2015 before resurrecting this -- currently does not build)
+NB: Downgraded to texlive 2013 to make this work...
 
 1. htlatex kindlemlbook "html,pic-fbox,pic-equations,pic-tabular"
 
