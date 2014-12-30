@@ -1141,7 +1141,7 @@ $\texttt{\ \ |   h::t -> 1 + length t}$\hfill\textit{\texttt{h} is the head, \te
 $\texttt{\pletrec length l =}$\\
 $\texttt{\ \ \pmatch l \pwith}$\\
 $\texttt{\ \ \ \ [] -> 0}$\hfill\textit{the list has zero elements}\\
-$\texttt{\ \ |   \_::t -> 1 + length t}$\hfill\textit{\texttt{h} is the head, \texttt{t} the tail}
+$\texttt{\ \ |   \_::t -> 1 + length t}$\hfill\textit{\texttt{\_} is the head, \texttt{t} the tail}
 \end{minipage}}
 \end{center}
 \smspace
@@ -2286,7 +2286,7 @@ $\texttt{\ \ \ \ \ \ \ \ \pelse (k\textquotesingle , v\textquotesingle ) ::\ rem
 \fbox{\begin{minipage}{0.8\textwidth}
 \noindent\texttt{key\_exists :}\textbf{\textsf{ $\alpha$ $\rightarrow$ \textmd{(}$\alpha\times\beta$\textmd{)} list $\rightarrow$ bool}}\\
 \\
-$\texttt{\pletrec key\_exists k d =}$\\
+$\texttt{\plet key\_exists k d =}$\\
 $\texttt{\ \ \ptry}$\\
 $\texttt{\ \ \ \ \plet \_ = lookup k d \pin true}$\\
 $\texttt{\ \ \pwith}$\\
@@ -2527,7 +2527,7 @@ So far, we have considered the simple types \textbf{\textsf{int}}, \textbf{\text
 \noindent\verb!type colour = Red | Green | Blue | Yellow!
 \smspace
 
-\noindent The name of our new type is \textsf{colour}. It has four \index{type!constructor}\textit{constructors}, written with an initial capital letter: \texttt{Red}, \texttt{Green}, \texttt{Blue}, and \texttt{Yellow}. These are the possible forms a value of type \textsf{colour} may take. Now we can build values of type \textsf{color}:
+\noindent The name of our new type is \textsf{colour}. It has four \index{type!constructor}\textit{constructors}, written with an initial capital letter: \texttt{Red}, \texttt{Green}, \texttt{Blue}, and \texttt{Yellow}. These are the possible forms a value of type \textsf{colour} may take. Now we can build values of type \textsf{colour}:
 
 \smspace
 \begin{center}
@@ -2646,7 +2646,7 @@ In addition to being polymorphic, new types may also be \index{type!recursive}re
   \texttt{[]} & \texttt{Nil} & $\alpha$ \textsf{sequence}\\
   \texttt{[1]} & \texttt{Cons (1, Nil)} & \textbf{\textsf{int}} \textsf{sequence}\\
   \texttt{[\upquote{a}; \upquote{x}; \upquote{e}]} & \texttt{Cons (\upquote{a}, Cons (\upquote{x}, Cons (\upquote{e}, Nil)))} & \textbf{\textsf{char}} \textsf{sequence}\\
-  \texttt{[Red; RGB (20, 20, 20)]} & \texttt{Cons (Red, Cons (RGB (20, 20, 20), Nil))} & \textsf{color sequence} \\ \bottomrule
+  \texttt{[Red; RGB (20, 20, 20)]} & \texttt{Cons (Red, Cons (RGB (20, 20, 20), Nil))} & \textsf{colour sequence} \\ \bottomrule
 \end{tabular}
 \smspace
 
@@ -3781,7 +3781,7 @@ An \index{array@\textbf{\textsf{array}}}\index{array}array is a place for storin
 \noindent\verb!- : int = 5!
 \smspace
 
-\noindent In contrast to finding the length of an array, the time taken by \texttt{Array.length} is constant, since it was fixed when the array was created. The \texttt{Array.make} function is used for building an array of a given length, initialized with given values. It takes two arguments -- the length, and the initial value to be given to every element. It has type \textsf{\textbf{int $\rightarrow$ $\alpha$ $\rightarrow$ $\alpha$ array}}.
+\noindent In contrast to finding the length of a list, the time taken by \texttt{Array.length} is constant, since it was fixed when the array was created. The \texttt{Array.make} function is used for building an array of a given length, initialized with given values. It takes two arguments -- the length, and the initial value to be given to every element. It has type \textsf{\textbf{int $\rightarrow$ $\alpha$ $\rightarrow$ $\alpha$ array}}.
 
 \smspace
 \noindent\verb!# Array.make 6 true;;!\\
@@ -5653,7 +5653,7 @@ $\texttt{\ \ | k::ks, v::vs -> (k, v) ::\ mkdict ks vs}$\hfill\textit{make one p
 \smspace
 
 \subsection*{4}
-This will have the type \textsf{\textbf{\textmd{(}$\alpha$ list $\times$ $\beta$ list\textmd{)} $\rightarrow$ \textmd{(}$\alpha$ $\times$ $\beta$\textmd{)} list}}. For the first time, we need to return a pair, building up both result lists element by element. This is rather awkward, since we will need the tails of both of the eventual results, so we can attach the new heads. We can do this by pattern matching.
+This will have the type \textsf{\textbf{\textmd{ (}$\alpha$ $\times$ $\beta$\textmd{)} list $\rightarrow$ $\alpha$ list $\times$ $\beta$ list}}. For the first time, we need to return a pair, building up both result lists element by element. This is rather awkward, since we will need the tails of both of the eventual results, so we can attach the new heads. We can do this by pattern matching.
 
 \smspace
 \begin{center}
@@ -6782,7 +6782,7 @@ $\texttt{~~~~~~print\_newline ()}$\vphantom{g}
 
 \subsection*{5}
 
-We use a reference to hold the current value, starting at the beginning of the range, and then loop until the we are outside the range.
+We use a reference to hold the current value, starting at the beginning of the range, and then loop until we are outside the range.
 \smspace
 \begin{center}
 \fbox{\begin{minipage}{0.8\textwidth}
