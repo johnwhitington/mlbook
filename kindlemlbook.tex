@@ -2965,7 +2965,8 @@ So, our tree representing a dictionary mapping integers like \texttt{1} to their
 \noindent which would be written as
 
 \smspace
-{\footnotesize\texttt{Br ((3, "three"), Br ((1, "one"), Lf, Br ((2, "two"), Lf, Lf), Br ((4, "four"), Lf, Lf)))}}
+{\footnotesize\texttt{Br ((3, "three"), Br ((1, "one"), Lf, Br ((2, "two"), Lf,
+Lf)), Br ((4, "four"), Lf, Lf))}}
 \smspace
 
 \noindent If we arrange the tree such that, at each branch, everything to the left has a key less than the key at the branch, and everything to the right has a key greater than that at the branch, we have a \textit{binary search tree}.
@@ -3636,7 +3637,12 @@ There are two ways to repeat an action. To perform an action a fixed number of t
 
 \noindent This is known as a \index{for loop}\index{loop}``for loop''. Note that the type of the whole \texttt{\textbf{for}\! \ldots\ \!\textbf{=} \!\ldots\ \!\textbf{to} \!\ldots\ \!\textbf{do} \!\ldots\ \!\textbf{done}}\ \ expression is \textbf{\textrm{unit}} irrespective of the type of the expression(s) inside it.
 
-There is another looping construct -- this time for evaluating an expression repeatedly until some condition is true. This is the \ \index{while@\texttt{\textbf{while}}}\index{do@\texttt{\textbf{do}}}\index{done@\texttt{\textbf{done}}}\texttt{\textbf{while}\! \ldots\ \!\textbf{do}\! \ldots\ \!\textbf{done}}\ \ construct. It takes a boolean condition, and evaluates a given expression repeatedly, zero or more times, until the boolean condition is \texttt{true}. For example, here is a function which, given a positive integer, calculates the lowest power of two greater than or equal to that number (i.e. for the argument 37, the result will be 64).
+There is another looping construct -- this time for evaluating an expression
+repeatedly until some condition is true. This is the \
+\index{while@\texttt{\textbf{while}}}\index{do@\texttt{\textbf{do}}}\index{done@\texttt{\textbf{done}}}\texttt{\textbf{while}\!
+\ldots\ \!\textbf{do}\! \ldots\ \!\textbf{done}}\ \ construct. It takes a
+boolean condition, and evaluates a given expression repeatedly, zero or more
+times, until the boolean condition is \texttt{false}. For example, here is a function which, given a positive integer, calculates the lowest power of two greater than or equal to that number (i.e. for the argument 37, the result will be 64).
 
 \smspace
 %\begin{center}
@@ -3653,7 +3659,8 @@ $\texttt{~~~~!t}$\hfill\makebox{\textit{the final result is the contents of \tex
 %\end{center}
 \smspace
 
-\noindent The \texttt{\textbf{while}} loop continues until the contents of the reference \texttt{t} is greater than \texttt{x}. At that point, it ends, and the contents of \texttt{t} is returned from the function. Again, note that the type of the whole \,\texttt{\textbf{while}\! \ldots\ \!\textbf{do} \!\ldots\ \!\textbf{done}}\ \! construct is \textbf{\textrm{unit}}.
+\noindent The \texttt{\textbf{while}} loop continues until the contents of the
+reference \texttt{t} is greater than or equal to \texttt{x}. At that point, it ends, and the content of \texttt{t} is returned from the function. Again, note that the type of the whole \,\texttt{\textbf{while}\! \ldots\ \!\textbf{do} \!\ldots\ \!\textbf{done}}\ \! construct is \textbf{\textrm{unit}}.
 
 \section*{Example: text file statistics}
 
