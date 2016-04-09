@@ -3025,7 +3025,7 @@ Lists and trees are examples of data structures. The design of an algorithm and 
 \begin{enumerate}
   \item Write a function of type \textsf{$\alpha$ $\rightarrow$ $\alpha$ tree $\rightarrow$ \textbf{bool}} to determine if a given element is in a tree.
   \item Write a function which flips a tree left to right such that, if it were drawn on paper, it would appear to be a mirror image. 
-  \item Write a function to determine if two trees of the same type have the same shape, irrespective of actual values of the elements. Can you write a more general version which can tell if two trees have the same shape even if one has type \textsf{$\alpha$ tree} and one has type \textsf{$\beta$ tree} for some $\alpha$ and $\beta$\,?
+  \item Write a function to determine if two trees of the same type have the same shape, irrespective of actual values of the elements. %Can you write a more general version which can tell if two trees have the same shape even if one has type \textsf{$\alpha$ tree} and one has type \textsf{$\beta$ tree} for some $\alpha$ and $\beta$\,?
   \item Write a function \texttt{tree\_of\_list} which builds a tree representation of a dictionary from a list representation of a dictionary.
   \item Write a function to combine two dictionaries represented as trees into one. In the case of clashing keys, prefer the value from the first dictionary.  \item Can you define a type for trees which, instead of branching exactly two ways each time, can branch zero or more ways, possibly different at each branch? Write simple functions like \texttt{size}, \texttt{total}, and \texttt{map} using your new type of tree.
 \end{enumerate}
@@ -6151,7 +6151,7 @@ We can check each part of both trees together. Leaves are considered equal, bran
 \smspace
 \begin{center}
 \fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{equal\_shape :}\textsf{ $\alpha$ tree $\rightarrow$ $\alpha$ tree $\rightarrow$ \textbf{bool}}\\
+\noindent\texttt{equal\_shape :}\textsf{ $\alpha$ tree $\rightarrow$ $\beta$ tree $\rightarrow$ \textbf{bool}}\\
 \\
 $\texttt{\pletrec equal\_shape tr tr2 =}$\\
 $\texttt{~~\pmatch tr, tr2 \pwith}$\\
@@ -6165,17 +6165,17 @@ $\texttt{~~~~~~false}$\vphantom{g}
 \end{center}
 \smspace
 
-\noindent We can build a more general one which can compare trees of differing types to see if they have the same shape by using the \texttt{tree\_map} function to make two trees, each with type \textsf{\textbf{int} tree} with all labels set to \texttt{0}, and then compare them using OCaml's built-in equality operator:
+%\noindent We can build a more general one which can compare trees of differing types to see if they have the same shape by using the \texttt{tree\_map} function to make two trees, each with type \textsf{\textbf{int} tree} with all labels set to \texttt{0}, and then compare them using OCaml's built-in equality operator:
 
-\smspace
-\begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{equal\_shape :}\textsf{ $\alpha$ tree $\rightarrow$ $\beta$ tree $\rightarrow$ \textbf{bool}}\\
-\\
-$\texttt{\plet equal\_shape tr tr2 =}$\\
-$\texttt{~~tree\_map (\pfun \_ -> 0) tr = tree\_map (\pfun \_ -> 0) tr2}$\vphantom{g}
-\end{minipage}}
-\end{center}
+%\smspace
+%\begin{center}
+%\fbox{\begin{minipage}{0.8\textwidth}
+%\noindent\texttt{equal\_shape :}\textsf{ $\alpha$ tree $\rightarrow$ $\beta$ tree $\rightarrow$ \textbf{bool}}\\
+%\\
+%$\texttt{\plet equal\_shape tr tr2 =}$\\
+%$\texttt{~~tree\_map (\pfun \_ -> 0) tr = tree\_map (\pfun \_ -> 0) tr2}$\vphantom{g}
+%\end{minipage}}
+%\end{center}
 
 \subsection*{4}
 
