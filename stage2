@@ -1,3 +1,3 @@
 #!/bin/bash
-ebook-convert kindlemlbook2.html kindlemlbook2.mobi --output-profile kindle --disable-font-rescaling --author-sort "Whitington,John" --authors "John Whitington" --publisher "Coherent Press" --title "More OCaml: Algorithms, Methods & Diversions" --no-inline-toc
+ebook-convert kindlemlbook.html kindlemlbook.mobi --output-profile kindle --disable-font-rescaling --author-sort "Whitington,John" --authors "John Whitington" --publisher "Coherent Press" --title "OCaml from the Very Beginning" --no-inline-toc
 
