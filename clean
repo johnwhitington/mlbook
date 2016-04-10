@@ -1,0 +1,2 @@
+#!/bin/sh
+rm -f  *converted* *.4ct *.4tc *.aux *.css *.dvi *.idv *.idx *.lg *.log *.tmp *.toc *.out *.xref kindlemlbook2*.png

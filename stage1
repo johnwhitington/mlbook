@@ -1,0 +1,3 @@
+#!/bin/bash
+htlatex kindlemlbook2 "html,pic-fbox,pic-equations,pic-tabular"
+
