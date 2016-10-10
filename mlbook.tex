@@ -1592,7 +1592,7 @@ $\texttt{\ \ \ \ \ \ \ \ \ \ \  merge (msort left) (msort right)}$\hfill \textit
 
 How does \texttt{msort} work? Consider the evaluation of \texttt{msort} on the list \texttt{[53; 9; 2; 6; 19]}. We will skip the evaluation of the \texttt{merge}, \texttt{drop}, \texttt{take}, and \texttt{length} functions, concentrating just on \texttt{msort}:
 \begin{eqnarray*}
- & & \underline{\texttt{msort [53; 9; 2; 6 19]\vphantom{g}}} \\
+ & & \underline{\texttt{msort [53; 9; 2; 6; 19]\vphantom{g}}} \\
  \overset{*}\Longrightarrow & & \texttt{merge (\underline{msort [53; 9]\vphantom{g}}) (msort [2; 6; 19])} \\
  \overset{*}\Longrightarrow & & \texttt{merge (merge (\underline{msort [53]\vphantom{g}}) (msort [9])) (msort [2; 6; 19])} \\
 \overset{*}\Longrightarrow & & \texttt{merge (merge [53] (\underline{msort [9]\vphantom{g}})) (msort [2; 6; 19])} \\
@@ -5197,8 +5197,8 @@ The first part of the evaluation of \texttt{rev} takes time proportional to the 
  \Longrightarrow & & \texttt{\underline{(((rev [] @ [4]) @ [3]) @ [2]) @ [1]\vphantom{g}}} \\
  \Longrightarrow & & \texttt{\underline{((([] @ [4]) @ [3]) @ [2]) @ [1]\vphantom{g}}} \\
  \Longrightarrow & & \texttt{\underline{(([4] @ [3]) @ [2]) @ [1]\vphantom{g}}} \\
- \Longrightarrow & & \texttt{\underline{([4, 3] @ [2]) @ [1]\vphantom{g}}} \\
- \Longrightarrow & & \texttt{\underline{[4, 3, 2] @ [1]\vphantom{g}}} \\\Longrightarrow & & \texttt{[4; 3; 2; 1]} \\
+ \Longrightarrow & & \texttt{\underline{([4; 3] @ [2]) @ [1]\vphantom{g}}} \\
+ \Longrightarrow & & \texttt{\underline{[4; 3; 2] @ [1]\vphantom{g}}} \\\Longrightarrow & & \texttt{[4; 3; 2; 1]} \\
 \end{eqnarray*}
 
 \noindent By using an additional accumulating argument, we can write a version which operates in time proportional to the length of the list.
