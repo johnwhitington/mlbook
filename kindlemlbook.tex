@@ -753,7 +753,7 @@ There can be more than one argument to a function. For example, here is a functi
 
 \noindent The type is \textrm{\textbf{int $\rightarrow$ int $\rightarrow$ bool}} because the arguments are both integers, and the result is a boolean. We use the function in the same way as before, but writing two integers this time, one for each argument the function expects.
 
-A \index{recursive}\textit{recursive} function is one which uses itself. Consider calculating the \index{factorial}factorial of a given number -- the factorial of 4 (written $4!$ in mathematics), for example, is $4\times3\times2\times1$. Here is a recursive function to calculate the factorial. Note that it uses itself in its own definition.
+A \index{recursive}\textit{recursive} function is one which uses itself. Consider calculating the \index{factorial}factorial of a given number -- the factorial of 4 (written $4!$ in mathematics), for example, is $4\times3\times2\times1$. Here is a recursive function to calculate the factorial of a positive number. Note that it uses itself in its own definition.
 
 \smspace
 \noindent\verb!        OCaml!\\
@@ -4932,14 +4932,15 @@ The function \texttt{isconsonant} will have type \textbf{\textrm{char $\rightarr
 The expression is the same as \texttt{\textbf{let}\! x\! =\! 1\! \textbf{in}\! (\textbf{let}\! x\! =\! 2\! \textbf{in}\! x\! +\! x)}, and so the result is \texttt{4}. Both instances of \texttt{x} in \texttt{x\! +\! x} evaluate to \texttt{2} since this is the value assigned to the name \texttt{x} in the nearest enclosing \texttt{\textbf{let}} expression.
 
 \subsection*{7}
-We could simply return $0$ for a negative or zero argument:
+We could simply return $0$ for a negative argument The factorial of $0$ is $1$, so we can change that too, and say our new function finds the factorial of any non-negative number:
+
 
 \smspace
 \noindent\verb!        OCaml!\\
 \noindent\\
 \noindent\verb!# let rec factorial x =!\\
-\noindent\verb!    if x <= 0 then 0 else!\\
-\noindent\verb!      if x = 1 then 1 else!\\
+\noindent\verb!    if x < 0 then 0 else!\\
+\noindent\verb!      if x = 0 then 1 else!\\
 \noindent\verb!        x * factorial (x - 1);;!\\
 \noindent\verb!val factorial : int -> int = <fun>!
 \smspace
@@ -7334,7 +7335,7 @@ Can you define this in terms of the \texttt{isvowel} function we have already wr
 \subsection*{6}
 Try adding parentheses to the expression in a way which does not change its meaning. Does this make it easier to understand?
 \subsection*{7}
-When does it not terminate? Can you add a check to see when it might happen, and return $0$ instead?
+When does it not terminate? Can you add a check to see when it might happen, and return $0$ instead? What is the factorial of $0$ anyway?
 \section*{\ref{casebycase}\\ \nameref{casebycase}}
 \subsection*{1}
 We are pattern matching on a boolean value, so there are just two cases: \texttt{true} and \texttt{false}.
