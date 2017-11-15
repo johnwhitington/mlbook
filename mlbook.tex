@@ -468,7 +468,7 @@ and when we typed it into OCaml, we put spaces between the operators and
 operands for readability. How does OCaml process it? Firstly, the text we wrote must be split up into its
 basic parts: \verb!1!, \verb!+!, \verb!2!, \verb!*!, and \verb!3!. OCaml then
 looks at the order and kind of the operators and operands, and decides how to
-parenthesize the expression: $(1 + (2 \times 3))$. Now, \index{expression!evaluating} evaluating the expression
+parenthesize the expression: $(1 + (2 \times 3))$. Now, processing the expression
 just requires dealing with each parenthesized section, starting with the innermost, and stopping when there are no parentheses left:
 \begin{eqnarray*}
  & & (1 + \underline{(2 \times 3)}) \\
