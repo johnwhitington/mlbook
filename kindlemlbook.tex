@@ -4479,10 +4479,10 @@ We have then introduced a type for our statistics. This will hold the number of 
 Now, we can issue a command to turn this program into a pre-processed OCaml module. This \index{compilation}\textit{compiles} the program into an \index{executable}\textit{executable}. The module can then be loaded into interactive OCaml, or used to build standalone programs. Execute the following command:
 
 \smspace
-\texttt{ocamlc textstate.ml}
+\texttt{ocamlc textstat.ml}
 \smspace
 
-\noindent You can see that the name of the OCaml compiler is \texttt{ocamlc}. If there are errors in \texttt{textstat.ml} they will be printed out, including the line and character number of the problem. You must fix these, and try the command again. If compilation succeeds, you will see the file \texttt{textstate.cmo} in the current directory. There will be other files, but we are not worried about those yet. Let us load our pre-compiled module into OCaml:
+\noindent You can see that the name of the OCaml compiler is \texttt{ocamlc}. If there are errors in \texttt{textstat.ml} they will be printed out, including the line and character number of the problem. You must fix these, and try the command again. If compilation succeeds, you will see the file \texttt{textstat.cmo} in the current directory. There will be other files, but we are not worried about those yet. Let us load our pre-compiled module into OCaml:
 
 \smspace
 \noindent\verb!        OCaml!\\
