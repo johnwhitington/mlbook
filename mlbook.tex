@@ -10,7 +10,6 @@
 \usepackage{makeidx}
 
 \usepackage{nameref}
-\usepackage{cleveref}
 \usepackage{xspace}
 \usepackage{comment}
 \usepackage{tikz}
@@ -32,7 +31,8 @@
 \usepackage[left=3cm, right=1.5cm, top=2cm, bottom=1.8cm, paperwidth=7.5in, paperheight=9.25in]{geometry}
 \usepackage{upquote}
 \usepackage{mathtools}
-\usepackage[draft=false]{hyperref}
+\usepackage[draft=false,hidelinks]{hyperref}
+\usepackage{cleveref}
 \usepackage{fancyhdr}
 \usepackage{emptypage}
 \usepackage{underscore}
@@ -798,7 +798,7 @@ A \index{recursive}\textit{recursive} function is one which uses itself. Conside
 
 \noindent This is an example of an error OCaml cannot find by merely looking at the program -- it can only be detected during evaluation. Later in the book, we will see how to prevent people who are using our functions from making such mistakes.
 
-One of the oldest methods for solving a problem (called \index{algorithm}\textit{algorithms}) still in common use is \index{Euclid's algorithm}Euclid's algorithm for calculating the greatest common divisor of two numbers (that is, given two positive integers $a$ and $b$, finding the biggest positive integer $c$ such that neither $a / c$ nor $b / c$ have a remainder). Euclid was a Greek mathematician who lived about three centuries before Christ. Euclid's algorithm is simple to write as a function with two arguments:
+One of the oldest methods for solving a problem (or \index{algorithm}\textit{algorithm}) still in common use is \index{Euclid's algorithm}Euclid's algorithm for calculating the greatest common divisor of two numbers (that is, given two positive integers $a$ and $b$, finding the biggest positive integer $c$ such that neither $a / c$ nor $b / c$ have a remainder). Euclid was a Greek mathematician who lived about three centuries before Christ. Euclid's algorithm is simple to write as a function with two arguments:
 
 \smspace
 \noindent\verb!        OCaml!\\
