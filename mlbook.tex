@@ -1311,10 +1311,10 @@ $\texttt{\ \ | h::t -> rev t @ [h]}$\vphantom{g}
 \begin{eqnarray*}
  & & \underline{\texttt{rev [1; 2; 3; 4]\vphantom{g}}} \\
  \Longrightarrow & & \texttt{\underline{rev [2; 3; 4]\vphantom{g}} @ [1]} \\
- \Longrightarrow & & \texttt{\underline{rev [3; 4]\vphantom{g}} @ [2] @ [1]} \\
- \Longrightarrow & & \texttt{\underline{rev [4]\vphantom{g}} @ [3] @ [2] @ [1]} \\
- \Longrightarrow & & \texttt{\underline{rev [] @ [4] @ [3] @ [2] @ [1]\vphantom{g}}} \\
- \Longrightarrow & & \texttt{\underline{[] @ [4] @ [3] @ [2] @ [1]\vphantom{g}}} \\
+ \Longrightarrow & & \texttt{\underline{rev [3; 4]\vphantom{g}} @ ([2] @ [1])} \\
+ \Longrightarrow & & \texttt{\underline{rev [4]\vphantom{g}} @ ([3] @ ([2] @ [1]))} \\
+ \Longrightarrow & & \texttt{\underline{rev []} @ ([4] @ ([3] @ ([2] @ [1])))\vphantom{g}} \\
+ \Longrightarrow & & \texttt{\underline{[] @ ([4] @ ([3] @ ([2] @ [1])))\vphantom{g}}} \\
  \overset{*}\Longrightarrow & & \texttt{[4; 3; 2; 1]}
 \end{eqnarray*}
 
