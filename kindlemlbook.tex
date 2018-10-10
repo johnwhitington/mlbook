@@ -1771,7 +1771,7 @@ $\texttt{\ \ | h::t -> (h mod 2 = 0) ::\ evens t}$\hfill \makebox{\textit{proces
  \overset{*}\Longrightarrow & & \texttt{[false; true; true]}
 \end{eqnarray*}
 
-\noindent It would be tedious to write a similar function each time we wanted to apply a different operation to every element of a list -- can we build one which works for any operation? We will add a function as an argument too:
+\noindent It would be tedious to write a similar function each time we wanted to apply a different operation to every element of a list -- can we build one which works for any operation? We will use a function as an argument:
 
 \smspace
 %\begin{center}
