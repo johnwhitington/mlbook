@@ -555,7 +555,7 @@ Operator & Description\\
 
 \newcommand{\doublebar}{||}
 
-There are two operators for combining boolean values (for instance, those resulting from using the comparison operators). The expression \texttt{a\! \&\&\! b} evaluates to \texttt{true} only if \texttt{a} and \texttt{b} both evaluate to \texttt{true}. The expression \index{\doublebar@\texttt{\doublebar}}\texttt{a\!\! ||\!\! b} evaluates to \texttt{true} only if \texttt{a} evaluates to \texttt{true}, \texttt{b} evaluates to \texttt{true}, or both do. The \index{\&\&@\texttt{\&\&}}\texttt{\&\&} operator  (pronounced ``and'') is of higher precedence than the \texttt{||} operator (pronounced ``or''), so \texttt{a\! \&\&\! b\!\! ||\!\! c} is the same as \texttt{(a\! \&\&\! b)\!\! ||\!\! c}.
+There are two operators for combining boolean values (for instance, those resulting from using the comparison operators). The expression \texttt{\textit{\textrm{a}}\! \&\&\! \textit{\textrm{b}}} evaluates to \texttt{true} only if expressions \textit{a} and \textit{b} both evaluate to \texttt{true}. The expression \index{\doublebar@\texttt{\doublebar}}\texttt{\textit{\textrm{a}}\!\! ||\!\! \textit{\textrm{b}}} evaluates to \texttt{true} only if \textit{a} evaluates to \texttt{true}, \textit{b} evaluates to \texttt{true}, or both do. The \index{\&\&@\texttt{\&\&}}\texttt{\&\&} operator  (pronounced ``and'') is of higher precedence than the \texttt{||} operator (pronounced ``or''), so \texttt{\textrm{\textup{a}}\! \&\&\! \textit{\textrm{b}}\!\! ||\!\! \textrm{\textit{c}}} is the same as \texttt{(\textit{\textrm{a}}\! \&\&\! \textit{\textrm{b}})\!\! ||\!\! \textrm{\textit{c}}}.
 
 A third type we shall be using is \index{char@\textbf{\textsf{char}}}\textbf{\textsf{char}} which holds a single \textit{character}\index{character}, such as `a' or `?'. We write these in single quotation marks:
 
@@ -5253,7 +5253,7 @@ $\texttt{\ \ \  \ \ \ \ \ \ \ \ \  merge (msort left) (msort right)}$\hfill \tex
 \end{center}
 
 \subsection*{2}
-The argument to \texttt{take} or \texttt{drop} is \texttt{length\! l\! /\! 2} which is clearly less than or equal to \texttt{length\! l} for all possible values of \texttt{l}. Thus, \texttt{take} and \texttt{drop} always succeed. In our case, \texttt{take} and \texttt{drop} are only called with \texttt{length\! l} is more than 1, due to the pattern matching.
+The argument to \texttt{take} or \texttt{drop} is \texttt{length\! l\! /\! 2} which is clearly less than or equal to \texttt{length\! l} for all possible values of \texttt{l}. Thus, \texttt{take} and \texttt{drop} always succeed. In our case, \texttt{take} and \texttt{drop} are only called with \texttt{length\! l} more than 1, due to the pattern matching.
  
 \subsection*{3}
 We may simply replace the \texttt{<=} operator with the \texttt{>=} operator in the \texttt{insert} function.
