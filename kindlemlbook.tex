@@ -6716,8 +6716,8 @@ Since we wish to reverse the array in place, our function will have type \textrm
 \noindent\texttt{array\_rev :}\textrm{ $\alpha$ \textrm{\textbf{array} $\rightarrow$ unit}}\\
 \\
 $\texttt{\plet array\_rev a =}$\\
-$\texttt{~~\pif a <> [||] \pthen}$\\
-$\texttt{~~~~\pfor x = 0 \pto Array.length a / 2 \pdo}$\\
+$\texttt{~~\pif Array.length a > 1 \pthen}$\\
+$\texttt{~~~~\pfor x = 0 \pto Array.length a / 2 - 1 \pdo}$\\
 $\texttt{~~~~~~\plet t = a.(x) \pin}$\\
 $\texttt{~~~~~~~~a.(x) <- a.(Array.length a - 1 - x);}$\\
 $\texttt{~~~~~~~~a.(Array.length a - 1 - x) <- t}$\\
@@ -6726,7 +6726,7 @@ $\texttt{~~~~\pdone}$\vphantom{g}
 %\end{center}
 \smspace
 
-\noindent Note that we must check for the case where the array is empty; otherwise there would be an invalid attempt to access element zero inside the \texttt{\textbf{for}} loop.
+%\noindent Note that we must check for the case where the array is empty; otherwise there would be an invalid attempt to access element zero inside the \texttt{\textbf{for}} loop.
 
 \subsection*{7}
 We will represent the \textbf{\textrm{int array array}} as an array of columns so that \texttt{a.(x).(y)} is the element in column \texttt{x} and row \texttt{y}.
