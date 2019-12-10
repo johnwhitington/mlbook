@@ -88,6 +88,7 @@ Cambridge.
 <div class="center" 
 >
 <!--l. 256--><p class="noindent" >
+<!--l. 257--><p class="noindent" >
 <!--l. 261--><p class="noindent" ><span 
 class="eccc2488-"><span 
 class="small-caps">o</span><span 
@@ -129,6 +130,7 @@ class="small-caps">s</span></span></div>
 <div class="center" 
 >
 <!--l. 282--><p class="noindent" >
+<!--l. 284--><p class="noindent" >
 <!--l. 288--><p class="noindent" >C O H E R E N T &#x00A0;&#x00A0;&#x00A0;P R E S S<br />
 <span 
 class="ecrm-0800">Cambridge</span>
@@ -4636,9 +4638,9 @@ src="kindlemlbook66x.png" alt="       evens-[1;-2; 4]
 <!--l. 1774--><p class="noindent" ><span 
 class="ecrm-0900">It would be tedious to write a similar function each time we wanted to apply a different operation to every</span>
 <span 
-class="ecrm-0900">element of a list &#8211; can we build one which works for any operation? We will add a function as an argument</span>
+class="ecrm-0900">element of a list &#8211; can we build one which works for any operation? We will use a function as an</span>
 <span 
-class="ecrm-0900">too:</span>
+class="ecrm-0900">argument:</span>
 <!--l. 1778--><p class="noindent" ><img 
 src="kindlemlbook67x.png" alt=""  class="fbox" >
 <!--l. 1789--><p class="noindent" ><span 
@@ -13004,7 +13006,7 @@ class="ecrm-0900">. The module can then be loaded into interactive OCaml, or use
 <span 
 class="ecrm-0900">standalone programs. Execute the following command:</span>
 <!--l. 4482--><p class="indent" >   <span 
-class="ectt-0900">ocamlc textstate.ml</span>
+class="ectt-0900">ocamlc textstat.ml</span>
 <!--l. 4485--><p class="noindent" ><span 
 class="ecrm-0900">You can see that the name of the OCaml compiler is </span><span 
 class="ectt-0900">ocamlc</span><span 
@@ -13015,7 +13017,7 @@ class="ecrm-0900">they will be</span>
 class="ecrm-0900">printed out, including the line and character number of the problem. You must fix these, and try the command</span>
 <span 
 class="ecrm-0900">again. If compilation succeeds, you will see the file </span><span 
-class="ectt-0900">textstate.cmo </span><span 
+class="ectt-0900">textstat.cmo </span><span 
 class="ecrm-0900">in the current directory. There will be</span>
 <span 
 class="ecrm-0900">other files, but we are not worried about those yet. Let us load our pre-compiled module into</span>
@@ -14511,9 +14513,9 @@ class="ectt-0900">&#x00A0;=</span><span
 class="ectt-0900">&#x00A0;&#x003C;fun&#x003E;</span></span></span>
 <!--l. 4908--><p class="noindent" ><span 
 class="ecrm-0900">Notice that we had to put one  </span><span 
-class="ectt-0900">if </span><span 
+class="ectt-0900">if</span><span 
 class="ectt-0900">&#x2026;</span><span 
-class="ectt-0900">&#x00A0;then </span><span 
+class="ectt-0900">&#x00A0;then</span><span 
 class="ectt-0900">&#x2026;</span><span 
 class="ectt-0900">&#x00A0;else </span><span 
 class="ecrm-0900">inside the </span><span 
@@ -15055,8 +15057,7 @@ class="ectt-0900">take </span><span
 class="ecrm-0900">and </span><span 
 class="ectt-0900">drop </span><span 
 class="ecrm-0900">are only called with </span><span 
-class="ectt-0900">length l </span><span 
-class="ecrm-0900">is</span>
+class="ectt-0900">length l</span>
 <span 
 class="ecrm-0900">more than 1, due to the pattern matching.</span>
 <!--l. 5311--><p class="noindent" >
@@ -15189,7 +15190,9 @@ class="ecrm-0900">and is easy to write:</span>
 <!--l. 5441--><p class="noindent" ><img 
 src="kindlemlbook180x.png" alt=""  class="fbox" >
 <!--l. 5451--><p class="noindent" ><span 
-class="ecrm-0900">Now we can use map for the </span><span 
+class="ecrm-0900">Now we can use </span><span 
+class="ectt-0900">map </span><span 
+class="ecrm-0900">for the </span><span 
 class="ectt-0900">cliplist </span><span 
 class="ecrm-0900">function:</span>
 <!--l. 5455--><p class="noindent" ><img 
@@ -16775,12 +16778,6 @@ class="ecrm-0900">proceed from the first element to the half-way point, swapping
 class="ecrm-0900">array has odd length, the middle element will not be altered.</span>
 <!--l. 6715--><p class="noindent" ><img 
 src="kindlemlbook237x.png" alt=""  class="fbox" >
-<!--l. 6729--><p class="noindent" ><span 
-class="ecrm-0900">Note that we must check for the case where the array is empty; otherwise there would be an invalid attempt to</span>
-<span 
-class="ecrm-0900">access element zero inside the </span><span 
-class="ectt-0900">for </span><span 
-class="ecrm-0900">loop.</span>
 <!--l. 6731--><p class="noindent" >
    <h4 class="likesubsectionHead"><a 
  id="x1-17000016"></a><span 
@@ -16806,8 +16803,6 @@ class="ecrm-0900">.</span>
    <h4 class="likesubsectionHead"><a 
  id="x1-17100016"></a><span 
 class="ecrm-0900">8</span></h4>
-                                                                               
-                                                                               
 <!--l. 6758--><p class="noindent" ><span 
 class="ecrm-0900">The difference between the codes for </span><span 
 class="tctt-0900">'</span><span 
@@ -16828,6 +16823,8 @@ class="tctt-0900">' </span><span
 class="ecrm-0900">is 32, so we add or subtract as appropriate.</span>
 <span 
 class="ecrm-0900">Codes not in those ranges are unaltered.</span>
+                                                                               
+                                                                               
 <!--l. 6762--><p class="noindent" ><img 
 src="kindlemlbook239x.png" alt=""  class="fbox" >
 <!--l. 6778--><p class="noindent" >
@@ -16872,10 +16869,10 @@ class="ecrm-0900">.</span>
    <h4 class="likesubsectionHead"><a 
  id="x1-17500016"></a><span 
 class="ecrm-0900">2</span></h4>
-                                                                               
-                                                                               
 <!--l. 6803--><p class="noindent" ><span 
 class="ecrm-0900">The function returns another point, and is simple arithmetic.</span>
+                                                                               
+                                                                               
 <!--l. 6807--><p class="noindent" ><img 
 src="kindlemlbook241x.png" alt=""  class="fbox" >
 <!--l. 6815--><p class="noindent" >
@@ -17379,16 +17376,16 @@ class="ecrm-0900">.</span>
 class="ecrm-0900">2</span></h4>
 <!--l. 7343--><p class="noindent" ><span 
 class="ecrm-0900">Convert the </span><span 
-class="ectt-0900">if </span><span 
+class="ectt-0900">if</span><span 
 class="ectt-0900">&#x2026;</span><span 
-class="ectt-0900">&#x00A0;then </span><span 
+class="ectt-0900">&#x00A0;then</span><span 
 class="ectt-0900">&#x2026;</span><span 
 class="ectt-0900">&#x00A0;else </span><span 
 class="ecrm-0900">structure of the </span><span 
 class="ectt-0900">sum </span><span 
-class="ecrm-0900">function from the previous chapter into a pattern</span>
+class="ecrm-0900">function from the previous chapter into a pattern matching</span>
 <span 
-class="ecrm-0900">matching structure.</span>
+class="ecrm-0900">structure.</span>
    <h4 class="likesubsectionHead"><a 
  id="x1-20900016"></a><span 
 class="ecrm-0900">3</span></h4>

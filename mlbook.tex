@@ -6770,8 +6770,8 @@ $\texttt{\pletrec parts x =}$\\
 $\texttt{~~\pif x < 0.\ \pthen}$\\
 $\texttt{~~~~\plet a, b = parts (-.\ x) \pin}$\\
 $\texttt{~~~~~~(-.\ a, b)}$\\
-$\texttt{~~~~\pelse}$\\
-$\texttt{~~~~~~(floor x, x -.\ floor x)}$\vphantom{g}
+$\texttt{~~\pelse}$\\
+$\texttt{~~~~(floor x, x -.\ floor x)}$\vphantom{g}
 \end{minipage}}
 \end{center}
 \smspace
@@ -6798,7 +6798,6 @@ $\texttt{~~~~~~print\_newline ()}$\vphantom{g}
 
 \subsection*{5}
 
-We use a reference to hold the current value, starting at the beginning of the range, and then loop until we are outside the range.
 \smspace
 \begin{center}
 \fbox{\begin{minipage}{0.8\textwidth}
