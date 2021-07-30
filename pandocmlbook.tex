@@ -3907,7 +3907,7 @@ $\texttt{~~~~~~~~print\_histogram histogram}$\hfill\textit{call histogram printe
 \vspace{2mm}
 
   There is more than one way to represent this as an array of arrays; you may choose.
-  \item The ASCII codes for the lower case letters \texttt{\upquote{a}}\ldots\texttt{\upquote{z}} are 97\ldots 122, and for the upper case letters \texttt{\upquote{A}}\ldots\texttt{\upquote{Z}} they are 65\ldots 90. Use the built-in functions \texttt{int\_of\_char} and \texttt{char\_of\_int} to write functions to uppercase and lowercase a character. Non-alphabetic characters should remain unaltered.
+  \item The ASCII codes for the lower case letters \texttt{'a'}\ldots\texttt{'z'} are 97\ldots 122, and for the upper case letters \texttt{'A'}\ldots\texttt{'Z'} they are 65\ldots 90. Use the built-in functions \texttt{int\_of\_char} and \texttt{char\_of\_int} to write functions to uppercase and lowercase a character. Non-alphabetic characters should remain unaltered.
   
   \item Comment on the accuracy of our character, word, line, and sentence statistics in the case of our example paragraph. What about in general?
   \item Choose one of the problems you have identified, and modify our program to fix it.
@@ -4399,8 +4399,8 @@ $\texttt{~~~~~~~~~~characters := !characters + String.length line;}$\\
 $\texttt{~~~~~~~~~~String.iter}$\\
 $\texttt{~~~~~~~~~~~~(fun c ->}$\\
 $\texttt{~~~~~~~~~~~~~~~match c with}$\\
-$\texttt{~~~~~~~~~~~~~~~~\upquote{.} | \upquote{?} | \upquote{!}\ -> sentences := !sentences + 1}$\\
-$\texttt{~~~~~~~~~~~~~~| \upquote{ } -> words := !words + 1}$\\
+$\texttt{~~~~~~~~~~~~~~~~'.' | '?' | '!'\ -> sentences := !sentences + 1}$\\
+$\texttt{~~~~~~~~~~~~~~| ' ' -> words := !words + 1}$\\
 $\texttt{~~~~~~~~~~~~~~| \_ -> ())}$\\
 $\texttt{~~~~~~~~~~~~line}$\\
 $\texttt{~~~~~~done;}$\\
@@ -4687,7 +4687,7 @@ The expression \texttt{17} is of type \textsf{\textbf{int}} and is a value alrea
 
 The expression \texttt{400\! >\! 200} has type \textsf{\textbf{bool}} because this is the type of the result of the comparison operator \texttt{>}. It evaluates to \texttt{true}. Similarly, \texttt{1\! <>\! 1} has type \textsf{\textbf{bool}} and evaluates to \texttt{false}. The expression \texttt{true\! ||\! false} is of type \textbf{\textsf{bool}} and evaluates to \texttt{true} since one of the operands is true. Similarly, \texttt{true\! \&\&\! false} evaluates to \texttt{false} since one of the operands is false. The expression \ \texttt{\textbf{if}\! true\! \textbf{then}\! false\! \textbf{else}\! true} \ evaluates to \texttt{false} since the first (\texttt{\textbf{then}}) part of the conditional expression is chosen, and takes the place of the entire expression.
 
-The expression \texttt{\upquote{\%}} is of type \textbf{\textsf{char}} and is already a value. The expression \texttt{\upquote{a}\! +\! \upquote{b}} has no type -- it gives a type error because the \texttt{+} operator does not operate on characters.
+The expression \texttt{'\%'} is of type \textbf{\textsf{char}} and is already a value. The expression \texttt{'a' + 'b'} has no type -- it gives a type error because the \texttt{+} operator does not operate on characters.
 
 \subsection*{2}
 The \texttt{mod} operator is of higher precedence than the \texttt{+} operator. So \texttt{1\! +\! 2\! mod\! 3} and \texttt{1\! +\! (2\! mod\! 3)} are the same expression, evaluating to \texttt{1\! +\! 2} which is \texttt{3}, but \texttt{(1\! +\! 2)\! mod\! 3} is the same as \texttt{3\! mod\! 3}, which is \texttt{0}.
@@ -4724,7 +4724,7 @@ It prevents unexpected values: what would happen if an integer other than \textt
 
 \subsection*{8}
 
-The lowercase characters are in alphabetical order, for example \texttt{\upquote{p}\! <\! \upquote{q}} evaluates to \texttt{true}. The uppercase characters are similarly ordered. The uppercase letters are all ``smaller'' than the lowercase characters, so for example \texttt{\upquote{A}\! <\! \upquote{a}} evaluates to \texttt{true}. For type \textsf{\textbf{bool}}, \texttt{false} is considered ``less than'' \texttt{true}.
+The lowercase characters are in alphabetical order, for example \texttt{'p' < 'q'} evaluates to \texttt{true}. The uppercase characters are similarly ordered. The uppercase letters are all ``smaller'' than the lowercase characters, so for example \texttt{'A' < 'a'} evaluates to \texttt{true}. For type \textsf{\textbf{bool}}, \texttt{false} is considered ``less than'' \texttt{true}.
 
 \section*{\Cref{functions} (\nameref{functions})}
 \subsection*{1}
@@ -4787,7 +4787,7 @@ The function will have type \textsf{\textbf{int $\rightarrow$ int $\rightarrow$ 
 \noindent In fact, we can remove the case for \texttt{n\! =\! 1} since \texttt{power\! x\! 1} will reduce to \texttt{x\! *\! power\! x\! 0} which is just \texttt{x}.
 
 \subsection*{5}
-The function \texttt{isconsonant} will have type \textbf{\textsf{char $\rightarrow$ bool}}. If a lower case character in the range \texttt{\upquote{a}}\ldots\texttt{\upquote{z}} is not a vowel, it must be a consonant. So we can reuse the \texttt{isvowel} function we wrote earlier, and negate its result using the \texttt{not} function:
+The function \texttt{isconsonant} will have type \textbf{\textsf{char $\rightarrow$ bool}}. If a lower case character in the range \texttt{'a'}\ldots\texttt{'z'} is not a vowel, it must be a consonant. So we can reuse the \texttt{isvowel} function we wrote earlier, and negate its result using the \texttt{not} function:
 
 \smspace
 \noindent\verb!        OCaml!\\
@@ -4902,12 +4902,12 @@ We write two functions of type \textbf{\textsf{char $\rightarrow$ bool}} like th
 \\
 $\texttt{\plet isupper c =}$\\
 $\texttt{~~\pmatch c \pwith}$\\
-$\texttt{~~~~\upquote{A}..\upquote{Z} -> true}$\\
+$\texttt{~~~~'A'..'Z' -> true}$\\
 $\texttt{~~| \_ -> false}$\\
 \\
 $\texttt{\plet islower c =}$\\
 $\texttt{~~\pmatch c \pwith}$\\
-$\texttt{~~~~\upquote{a}..\upquote{z} -> true}$\\
+$\texttt{~~~~'a'..'z' -> true}$\\
 $\texttt{~~| \_ -> false}$
 \end{minipage}}
 \end{center}
@@ -4923,7 +4923,7 @@ $\texttt{~~| \_ -> false}$
 \\
 $\texttt{\plet isupper c =}$\\
 $\texttt{~~\pmatch c \pwith}$\\
-$\texttt{~~~~\upquote{A}..\upquote{Z} -> true}$\\
+$\texttt{~~~~'A'..'Z' -> true}$\\
 $\texttt{~~| \_ -> false}$\\
 \\
 $\texttt{\plet islower c =}$\\
@@ -5272,7 +5272,7 @@ Our function will have type \textbf{\textsf{char list $\rightarrow$ char list}}.
 $\texttt{\pletrec calm l =}$\\
 $\texttt{\ \  \pmatch l \pwith}$\\
 $\texttt{\ \ \ \   [] -> []}$\\
-$\texttt{\ \  | \upquote{!}::t -> \upquote{.}\ ::\ calm t}$\\
+$\texttt{\ \  | '!'::t -> '.'\ ::\ calm t}$\\
 $\texttt{\ \ | h::t -> h ::\ calm t}$
 \end{minipage}}
 \end{center}
@@ -5287,7 +5287,7 @@ $\texttt{\ \ | h::t -> h ::\ calm t}$
 \noindent\texttt{calm :}\textbf{\textsf{ char list $\rightarrow$ char list}}\\
 \\
 $\texttt{\plet calm\_char x =}$\\
-$\texttt{\ \  \pmatch x \pwith\ \upquote{!}\ -> \upquote{.}\ |\ \_ -> x}$\\
+$\texttt{\ \  \pmatch x \pwith\ '!'\ -> '.'\ |\ \_ -> x}$\\
 \\
 $\texttt{\plet calm l =}$\\
 $\texttt{~~map calm\_char l}$\vphantom{g}
@@ -6618,7 +6618,7 @@ $\texttt{~~~~a}$\vphantom{g}
 
 \subsection*{8}
 
-The difference between the codes for \texttt{\upquote{a}} and \texttt{\upquote{A}}, or \texttt{\upquote{z}} and \texttt{\upquote{Z}} is 32, so we add or subtract as appropriate. Codes not in those ranges are unaltered.
+The difference between the codes for \texttt{'a'} and \texttt{'A'}, or \texttt{'z'} and \texttt{'Z'} is 32, so we add or subtract as appropriate. Codes not in those ranges are unaltered.
 
 \smspace
 \begin{center}
@@ -6790,7 +6790,7 @@ The \texttt{String.iter} function calls a user-supplied function of type \textbf
 \\
 $\texttt{\plet count\_exclamations s =}$\\
 $\texttt{~~\plet n = ref 0 \pin}$\\
-$\texttt{~~~~String.iter (\pfunction\ \upquote{!}\ -> n := !n + 1 | \_ -> ()) s;}$\\
+$\texttt{~~~~String.iter (\pfunction\ '!'\ -> n := !n + 1 | \_ -> ()) s;}$\\
 $\texttt{~~~~!n}$\vphantom{g}
 \end{minipage}}
 \end{center}
@@ -6808,7 +6808,7 @@ We can use the \texttt{String.map} function, which takes a user-supplied functio
 \noindent\texttt{calm :}\textsf{ \textbf{string} $\rightarrow$ \textbf{string}}\\
 \\
 $\texttt{\plet calm =}$\\
-$\texttt{~~String.map (\pfunction\ \upquote{!}\ -> \upquote{.}\ | x -> x)}$\vphantom{g}
+$\texttt{~~String.map (\pfunction\ '!'\ -> '.'\ | x -> x)}$\vphantom{g}
 \end{minipage}}
 \end{center}
 \smspace
@@ -6947,8 +6947,8 @@ $\texttt{~~~~~~~~~~characters := !characters + String.length line;}$\\
 $\texttt{~~~~~~~~~~String.iter}$\\
 $\texttt{~~~~~~~~~~~~(fun c ->}$\\
 $\texttt{~~~~~~~~~~~~~~~match c with}$\\
-$\texttt{~~~~~~~~~~~~~~~\upquote{.} | \upquote{?} | \upquote{!}\ -> sentences := !sentences + 1}$\\
-$\texttt{~~~~~~~~~~~~~| \upquote{ } -> words := !words + 1}$\\
+$\texttt{~~~~~~~~~~~~~~~'.' | '?' | '!'\ -> sentences := !sentences + 1}$\\
+$\texttt{~~~~~~~~~~~~~| ' ' -> words := !words + 1}$\\
 $\texttt{~~~~~~~~~~~~~| \_ -> ())}$\\
 $\texttt{~~~~~~~~~~~~line;}$\\
 $\texttt{~~~~~~~~~~String.iter}$\\
@@ -7256,7 +7256,7 @@ You can put one \texttt{\textbf{let\!\! rec}} construct inside another.
 
 \section*{\Cref{functionsuponfunctions}\\ \nameref{functionsuponfunctions}}
 \subsection*{1}
-The function \texttt{calm} is simple recursion on lists. There are three cases -- the empty list, a list beginning with \texttt{\upquote{!}} and a list beginning with any other character. In the second part of the question, write a function \texttt{calm\_char} which processes a single character. You can then use \texttt{map} to define a new version of \texttt{calm}.
+The function \texttt{calm} is simple recursion on lists. There are three cases -- the empty list, a list beginning with \texttt{'!'} and a list beginning with any other character. In the second part of the question, write a function \texttt{calm\_char} which processes a single character. You can then use \texttt{map} to define a new version of \texttt{calm}.
 
 \subsection*{2}
 This is the same process as Question 1.
@@ -7432,7 +7432,7 @@ Consider swapping elements from opposite ends of the array -- the problem is sym
 To build an array of arrays, you will need a use \texttt{Array.make} to build an array of empty arrays. You can then set each of the elements of the main array to a suitably sized array, again created with \texttt{Array.make}. Once the structure is in place, putting the numbers in should be simple.
 
 \subsection*{8}
-What is the difference between the codes for \texttt{\upquote{a}} and \texttt{\upquote{A}}? What about \texttt{\upquote{z}} and \texttt{\upquote{Z}}?
+What is the difference between the codes for \texttt{'a'} and \texttt{'A'}? What about \texttt{'z'} and \texttt{'Z'}?
 
 \section*{\Cref{gettingreal}\\ \nameref{gettingreal}}
 \subsection*{1}

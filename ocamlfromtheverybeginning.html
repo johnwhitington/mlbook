@@ -1938,7 +1938,7 @@ looked.</code></pre>
 </tbody>
 </table>
 <p>There is more than one way to represent this as an array of arrays; you may choose.</p></li>
-<li><p>The ASCII codes for the lower case letters <code></code>…<code></code> are 97…122, and for the upper case letters <code></code>…<code></code> they are 65…90. Use the built-in functions <code>int_of_char</code> and <code>char_of_int</code> to write functions to uppercase and lowercase a character. Non-alphabetic characters should remain unaltered.</p></li>
+<li><p>The ASCII codes for the lower case letters <code>’a’</code>…<code>’z’</code> are 97…122, and for the upper case letters <code>’A’</code>…<code>’Z’</code> they are 65…90. Use the built-in functions <code>int_of_char</code> and <code>char_of_int</code> to write functions to uppercase and lowercase a character. Non-alphabetic characters should remain unaltered.</p></li>
 <li><p>Comment on the accuracy of our character, word, line, and sentence statistics in the case of our example paragraph. What about in general?</p></li>
 <li><p>Choose one of the problems you have identified, and modify our program to fix it.</p></li>
 </ol>
@@ -2393,7 +2393,7 @@ looked.</code></pre>
 <h3 class="unnumbered" id="section-1">1</h3>
 <p>The expression <code>17</code> is of type <span class="sans-serif"><strong>int</strong></span> and is a value already. The expression <code>1 + * +</code> is of type <span class="sans-serif"><strong>int</strong></span> and evaluates to the value <code>11</code>, since the multiplication is done first. The expression <code>800 / /</code> has type <span class="sans-serif"><strong>int</strong></span>. It is the same as <code>(800 /) /</code> rather than <code>800 / (80 /)</code> and evaluates to <code>1</code>.</p>
 <p>The expression <code>400 &gt;</code> has type <span class="sans-serif"><strong>bool</strong></span> because this is the type of the result of the comparison operator <code>&gt;</code>. It evaluates to <code>true</code>. Similarly, <code>1 &lt;&gt;</code> has type <span class="sans-serif"><strong>bool</strong></span> and evaluates to <code>false</code>. The expression <code>true || false</code> is of type <strong><span class="sans-serif">bool</span></strong> and evaluates to <code>true</code> since one of the operands is true. Similarly, <code>true &amp;&amp; false</code> evaluates to <code>false</code> since one of the operands is false. The expression  <code>if true then false else true</code>  evaluates to <code>false</code> since the first (<code>then</code>) part of the conditional expression is chosen, and takes the place of the entire expression.</p>
-<p>The expression <code></code> is of type <strong><span class="sans-serif">char</span></strong> and is already a value. The expression <code> + </code> has no type – it gives a type error because the <code>+</code> operator does not operate on characters.</p>
+<p>The expression <code>’%’</code> is of type <strong><span class="sans-serif">char</span></strong> and is already a value. The expression <code>’a’ + ’b’</code> has no type – it gives a type error because the <code>+</code> operator does not operate on characters.</p>
 <h3 class="unnumbered" id="section-2">2</h3>
 <p>The <code>mod</code> operator is of higher precedence than the <code>+</code> operator. So <code>1 + mod</code> and <code>1 + (2 mod)</code> are the same expression, evaluating to <code>1 +</code> which is <code>3</code>, but <code>(1 +) mod</code> is the same as <code>3 mod</code>, which is <code>0</code>.</p>
 <h3 class="unnumbered" id="section-3">3</h3>
@@ -2418,7 +2418,7 @@ looked.</code></pre>
 <h3 class="unnumbered" id="section-7">7</h3>
 <p>It prevents unexpected values: what would happen if an integer other than <code>1</code> and <code>0</code> was calculated in the program – what would it mean? It is better just to use a different type. We can then show more easily that a program is correct.</p>
 <h3 class="unnumbered" id="section-8">8</h3>
-<p>The lowercase characters are in alphabetical order, for example <code> &lt; </code> evaluates to <code>true</code>. The uppercase characters are similarly ordered. The uppercase letters are all “smaller” than the lowercase characters, so for example <code> &lt; </code> evaluates to <code>true</code>. For type <span class="sans-serif"><strong>bool</strong></span>, <code>false</code> is considered “less than” <code>true</code>.</p>
+<p>The lowercase characters are in alphabetical order, for example <code>’p’ &lt; ’q’</code> evaluates to <code>true</code>. The uppercase characters are similarly ordered. The uppercase letters are all “smaller” than the lowercase characters, so for example <code>’A’ &lt; ’a’</code> evaluates to <code>true</code>. For type <span class="sans-serif"><strong>bool</strong></span>, <code>false</code> is considered “less than” <code>true</code>.</p>
 <h2 class="unnumbered" id="section-9"> ()</h2>
 <h3 class="unnumbered" id="section-10">1</h3>
 <p>Just take in an integer and return the number multiplied by ten. The function takes and returns an integer, so the type is <strong><span class="sans-serif">int <span class="math inline">→</span> int</span></strong>.</p>
@@ -2460,7 +2460,7 @@ looked.</code></pre>
 <code>val power : int -&gt; int -&gt; int = &lt;fun&gt;</code></p>
 <p>In fact, we can remove the case for <code>n =</code> since <code>power x</code> will reduce to <code>x * power x</code> which is just <code>x</code>.</p>
 <h3 class="unnumbered" id="section-14">5</h3>
-<p>The function <code>isconsonant</code> will have type <strong><span class="sans-serif">char <span class="math inline">→</span> bool</span></strong>. If a lower case character in the range <code></code>…<code></code> is not a vowel, it must be a consonant. So we can reuse the <code>isvowel</code> function we wrote earlier, and negate its result using the <code>not</code> function:</p>
+<p>The function <code>isconsonant</code> will have type <strong><span class="sans-serif">char <span class="math inline">→</span> bool</span></strong>. If a lower case character in the range <code>’a’</code>…<code>’z’</code> is not a vowel, it must be a consonant. So we can reuse the <code>isvowel</code> function we wrote earlier, and negate its result using the <code>not</code> function:</p>
 <p><code>        OCaml</code><br />
 <br />
 <code># let isconsonant c = not (isvowel c);;</code><br />
@@ -3014,7 +3014,7 @@ looked.</code></pre>
 </div>
 <p>Note that the result is correct for <code>table</code>.</p>
 <h3 class="unnumbered" id="section-96">8</h3>
-<p>The difference between the codes for <code></code> and <code></code>, or <code></code> and <code></code> is 32, so we add or subtract as appropriate. Codes not in those ranges are unaltered.</p>
+<p>The difference between the codes for <code>’a’</code> and <code>’A’</code>, or <code>’z’</code> and <code>’Z’</code> is 32, so we add or subtract as appropriate. Codes not in those ranges are unaltered.</p>
 <div class="center">
 
 </div>
@@ -3212,7 +3212,7 @@ looked.</code></pre>
 <h2 class="unnumbered" id="section-150"><br />
 </h2>
 <h3 class="unnumbered" id="section-151">1</h3>
-<p>The function <code>calm</code> is simple recursion on lists. There are three cases – the empty list, a list beginning with <code></code> and a list beginning with any other character. In the second part of the question, write a function <code>calm_char</code> which processes a single character. You can then use <code>map</code> to define a new version of <code>calm</code>.</p>
+<p>The function <code>calm</code> is simple recursion on lists. There are three cases – the empty list, a list beginning with <code>’!’</code> and a list beginning with any other character. In the second part of the question, write a function <code>calm_char</code> which processes a single character. You can then use <code>map</code> to define a new version of <code>calm</code>.</p>
 <h3 class="unnumbered" id="section-152">2</h3>
 <p>This is the same process as Question 1.</p>
 <h3 class="unnumbered" id="section-153">3</h3>
@@ -3326,7 +3326,7 @@ looked.</code></pre>
 <h3 class="unnumbered" id="section-206">7</h3>
 <p>To build an array of arrays, you will need a use <code>Array.make</code> to build an array of empty arrays. You can then set each of the elements of the main array to a suitably sized array, again created with <code>Array.make</code>. Once the structure is in place, putting the numbers in should be simple.</p>
 <h3 class="unnumbered" id="section-207">8</h3>
-<p>What is the difference between the codes for <code></code> and <code></code>? What about <code></code> and <code></code>?</p>
+<p>What is the difference between the codes for <code>’a’</code> and <code>’A’</code>? What about <code>’z’</code> and <code>’Z’</code>?</p>
 <h2 class="unnumbered" id="section-208"><br />
 </h2>
 <h3 class="unnumbered" id="section-209">1</h3>
