@@ -1,2 +1,2 @@
 #!/bin/bash
-pandoc -s --self-contained --toc --toc-depth 1 pandocbook.tex --metadata title=" " -o ocamlfromtheverybeginning.html
+pandoc -s --self-contained --toc --toc-depth 1 pandocmlbook.tex --metadata title=" " -o ocamlfromtheverybeginning.html

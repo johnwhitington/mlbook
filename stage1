@@ -1,3 +1,2 @@
 #!/bin/bash
 htlatex kindlemlbook "html,pic-fbox,pic-equations,pic-tabular"
-

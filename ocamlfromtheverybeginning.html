@@ -222,14 +222,14 @@
 <p>We are ready to begin.</p>
 <h1 id="startingoff">Starting Off</h1>
 <p>We will cover a fair amount of material in this chapter and its questions, since we will need a solid base on which to build. You should read this with a computer running OCaml in front of you.</p>
-<p>Consider first the mathematical expression <span class="math inline">1 + 2 × 3</span>. What is the result? How did you work it out? We might show the process like this: <span class="math display">$$\begin{aligned}
- &amp; &amp; 1 + 2 \times 3 \\
- \Longrightarrow &amp; &amp; 1 + 6 \\
- \Longrightarrow &amp; &amp; 7\end{aligned}$$</span></p>
-<p>How did we know to multiply <span class="math inline">2</span> by <span class="math inline">3</span> first, instead of adding <span class="math inline">1</span> and <span class="math inline">2</span>? How did we know when to stop? Let us underline the part of the expression which is dealt with at each step: <span class="math display">$$\begin{aligned}
- &amp; &amp; 1 + \underline{2 \times 3} \\
- \Longrightarrow &amp; &amp; \underline{1 + 6} \\
- \Longrightarrow &amp; &amp; 7\end{aligned}$$</span></p>
+<p>Consider first the mathematical expression <span class="math inline">1 + 2 × 3</span>. What is the result? How did you work it out? We might show the process like this:</p>
+<div class="center">
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI0AAABGCAMAAADGr+fgAAAAM1BMVEX///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADxgEwMAAAAEHRSTlMARM1mMnbvIomr3RCZu1SxrYmlfwAAAAlwSFlzAAAOxAAADsQBlSsOGwAAApVJREFUaAXtWu2WhRAUlY8iarz/0w5uiQw6bt01a4YfJQ5n22SdrRD6k2nApDQuotRSMGCMKVVqD6qjbNAnZ1PYAacIyTHrjwtjPNrLXWmM0VAeduwqmZZhWZDns3nA9nJXKqKZLTaiDUM2yY0Fsr6eX1edpS60upgvonF9KL13tTo4JJoaMuaY21tB7lU0UjPfn4UTgVnVfCcYVEWzhFQQEYExMNd58GDfzxxoBDZpHu0VHwNmIRiExHh2qXT0Gp6rYc8HGtcufqfM0M0aPaCZaQrRub2K6WhRw7yfrctoBvtSrX7wdpqOqZrcirqVm2CNWqAxNxMmhDC8j2BdbI75V1pZmPnNcW929T5xoWce7n8xmlHbtG9v0oEx7PgGjDPhH646BdjFaAANnzH1a+SZ7nuvnYHOQGegM9AZ6Az8RQYqOhytRmrfKQpKHNZ0OOImLnb6ttRLpk4G0X3GJCkuRumD1StDY6wpfTydOM0WFNFgH5Bn2xcqBnjrIhrNiAnECw63KicMnSzE+Gu7mxv8MKWEZtKLmXsRHaLUoQUWdAEqvxIa6k5D1uz5TeA3k5V4BIX9B5pUh7/EJG2XtrR8jpcO4UDj6mI95YQo1dUN5yPrBgl7QNE8UzQ+3kiZSEvKOtweXC2Nqxi839R0OJoEV42bH5Kg9ZvyZEridfOjyScL3x/QJ9F2X52BzkBnoDPQGfinDNDti+XvGD53XzV0gyh8Ar9gzHzywc/ENGAd7iLeVp1dowccF9tTBAlXyzUcW32DDkeq4WDjDOc2PfVoWA7W4UtVSJ6JgDwDdbi882t2ghOqw4n/SSLpClBw17o5ftkAOL9oCtfhS/InwkVXdTPwfoOQ2r5x1zsHW9ygw8E+bYNvYnINY2IhQOoAAAAASUVORK5CYII=" alt="image" /></p>
+</div>
+<p>How did we know to multiply <span class="math inline">2</span> by <span class="math inline">3</span> first, instead of adding <span class="math inline">1</span> and <span class="math inline">2</span>? How did we know when to stop? Let us underline the part of the expression which is dealt with at each step:</p>
+<div class="center">
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI4AAABGCAMAAAAtmFzjAAAAM1BMVEX///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADxgEwMAAAAEHRSTlMARM1mMnbvIomr3RCZu1SxrYmlfwAAAAlwSFlzAAAOxAAADsQBlSsOGwAAArFJREFUaAXtWu12gyAMRT4UBB3v/7SDtCLUCsRhd84GPxQwJJcQaS6WkL9ZBspyE2PGLBkBIYQxufG4Z1wM9sXaFGuQnBA9nhqUygmP/tKsjCkcLmPN8FBYHfdFdTm7BvWXZiULZ/bgmHU+8kU//cDWR/txtafOi6Vq61k4oMTYTdcKeFiyOmw88902CnUvwtFWBIUeT4JmNXNTNKQIZ4mdwVSCxuFc5yGgbVDZ4Sjqyjz6K92nLGI0hKjx1aaxycv4+hjZ3uHAwPTNcpN3gbpjcysVw4M9S9gkspHmX8XzcAb/aq1h+n6l9tWaIKraeicKVI809c5EGWOCblNYF18T4c02Huf5LrkNq75PUtlZxhthCme0vmz7nAY0zj9hgJBChUa1VYRgCgcx8CbRECc36e9qb/IABHLN5Sb7XW33QPdA90D3QPdA5IECRyero+FNqUJk+1AtcXQiXa4M1PcwtKJDRzl/hTiIZFP3wdOY4Wr6qUOSXQvGZd6psTQ5pSFLr1cYSQ744Vk4VjCXnUcGzqpAGYEwUvr1vLsb/rAlB2eyi1t+lZyxnAF6388XJCfMweFwWLKenu+8h5D0ajqiyMAO58jRHzST/4D18vxZX4IcGjscaKahDBSV2/LG85HYIcofX1xfLJ6efhx9cezJc3R/tLVcDWX0vlPi6GRS0qQb03FCpz0aFcRv1aSx81bko50/n9FH4f4fYzX0G2T+j0v6TLsHuge6B7oHggf48ytn6Pjdinz8al1gi7fgVkK4L0T0phwHzdEhC77MwUseQufK/ohB44l0Ccf2/AJHJ+bCscdmL9yb8ax7c3U0R1/KFDP44EIFydF106/gB7xYjs7CHywOqjAdrWJn/78HxnqlLJ6jL4c/MVSaqhBD7zuEmOe38QrtaJEGHB1tEwZ8AxyiEoPkNmLYAAAAAElFTkSuQmCC" alt="image" /></p>
+</div>
 <p>We chose which part of the expression to deal with each time using a familiar mathematical rule – multiplication is done before addition. We stopped when the expression could not be processed any further.</p>
 <p>Computer programs in OCaml are just like these expressions. In order to give you an answer, the computer needs to know all the rules you know about how to process the expression correctly. In fact, <span class="math inline">1 + 2 × 3</span> is a valid OCaml expression as well as a valid mathematical one, but we must write <code>*</code> instead of <span class="math inline">×</span>, since there is no <span class="math inline">×</span> key on the keyboard:</p>
 <p><code>        OCaml</code><br />
@@ -237,10 +237,10 @@
 <code># 1 + 2 * 3;;</code><br />
 <code>- : int = 7</code></p>
 <p>Here, <code>#</code> is OCaml prompting us to write an expression, and <code>1 + *;;</code> is what we typed (the semicolons followed by the Enter key tell OCaml we have finished our expression). OCaml responds with the answer <code>7</code>. OCaml also prints <code>int</code>, which tells us that the answer is a whole number, or <em>integer</em>.</p>
-<p>Let us look at our example expression some more. There are two <em>operators</em>: <span class="math inline">+</span> and <span class="math inline">×</span>. There are three <em>operands</em>: <span class="math inline">1</span>, <span class="math inline">2</span>, and <span class="math inline">3</span>. When we wrote it down, and when we typed it into OCaml, we put spaces between the operators and operands for readability. How does OCaml process it? Firstly, the text we wrote must be split up into its basic parts: <code>1</code>, <code>+</code>, <code>2</code>, <code>*</code>, and <code>3</code>. OCaml then looks at the order and kind of the operators and operands, and decides how to parenthesize the expression: <span class="math inline">(1+(2×3))</span>. Now, processing the expression just requires dealing with each parenthesized section, starting with the innermost, and stopping when there are no parentheses left: <span class="math display">$$\begin{aligned}
- &amp; &amp; (1 + \underline{(2 \times 3)}) \\
- \Longrightarrow &amp; &amp; \underline{(1 + 6)} \\
- \Longrightarrow &amp; &amp; 7\end{aligned}$$</span></p>
+<p>Let us look at our example expression some more. There are two <em>operators</em>: <span class="math inline">+</span> and <span class="math inline">×</span>. There are three <em>operands</em>: <span class="math inline">1</span>, <span class="math inline">2</span>, and <span class="math inline">3</span>. When we wrote it down, and when we typed it into OCaml, we put spaces between the operators and operands for readability. How does OCaml process it? Firstly, the text we wrote must be split up into its basic parts: <code>1</code>, <code>+</code>, <code>2</code>, <code>*</code>, and <code>3</code>. OCaml then looks at the order and kind of the operators and operands, and decides how to parenthesize the expression: <span class="math inline">(1+(2×3))</span>. Now, processing the expression just requires dealing with each parenthesized section, starting with the innermost, and stopping when there are no parentheses left:</p>
+<div class="center">
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKkAAABHCAMAAABLRZfvAAAAM1BMVEX///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADxgEwMAAAAEHRSTlMAIjKZELurzYl23WZE71TRbX1s8wAAAAlwSFlzAAAOxAAADsQBlSsOGwAAA/FJREFUaAXtWtm2pCAMxF3cxv//2oGEsKjQRLkzfc+xH4xCliJsUq0QxX5Vlqc8LXRFuiSzAnxWqpvPOkLkaRlP84Y3JHMCfNZpO9BZhjmli1pz03QpNSllA+3ua3RGMuU6uw6c1XLZDxDCngOtUcVv13gXjL2KuupLO2B8ktloEoqV8SnWEGk9+kaoBSpyb/0a/36c1NOgL6JfsIIkPj26jtKYJ5Gi1qTRz7vpWdHq7OkSMyrxaYecbybzJLHu0XWiuEmkVkuIZrfxNoA6G8BYPK+Q8nbFR5LW5v6N7cskUqsl2p06QcXUUAOgWzOZsbGbcU7yPkJj2doMpZA6LdGFGewDoBr8hCN0NX1F8jHS6gJpP6jftOrrgBlyWjIAqmaO6WUHpMEsGsCCpFO4eeeylZVTPUH8qT/3PnRYkuUOE4xGNsmb+Dyzi5xCbbhKGa1FT/7NrbS66133VzCETU5xYqnl1W+YF5d/a9vszxTlJkSKWtUwz7OkBVhhhu1N2q2g0W3AnYH6iiQf2MmigQW/Gvt9Gv21P0SKWuuuf7Cyaz9mHxaztZOj7PFhMeOZ5Ckuv6DGbf9kGCKNaZ3MqID2JpJU/kR2tPQfnLjRqCtiWgcjeqT9niSVP5LVYd25dpanZW3pHYqkrXh0E/ZzzFWelrGW5k2AZMwptzzs55h1nhZaky7JmM+3/BdkAJbRG5df0LQX4puBNwO/IQOMnYSh+gMt5zBO4dH+B8CkXObxUpuinPShs+zLUQrXuQ5if+KlRnWAAi6n1Atnyz9eZfFSiz4rL3DuKPQSf6PFWbzUYA91ohTRtDiX536+LLFn09R5f5ezOsyB/Q2iCZgO4DmG9Q9KdQX28hJSpNAyTgmk1d6pYdUjT1mMaKq7gCOM4LPF7jyeQFoD07hho4oRTYoOXhnrs2OcHNITL4XkSG1oHMPh2sbevanTfP3RbVZOBfAr9Q4Y7cA+uoo+lxqnFMDlFEqCs2ivT9rU+/yVkEL4ss46vPsWNkUpXqrSPFgHM8p1gu+FfX9jPc3jpap+REVRiGhqGXPJpCHGOAW976Ws0B7lecy+jTFO142+0WvZSD4p8hin//kudeB00w0rTTSlo51qr/v5pKYLGKqX9m/hN2XgBtkEJt/UhhfLm4E3A28GviIDdeQfvq8AF4AYce13/y8Htd/00Eup/gkf/vmbB5+XgrMRMk7/NIH8N3J90GzZFFGBRvF5KRW0KXMujsIvdN4/fscRjVe8gslLqfhdKfqG2xYeL6VGaTHyjomUyUvpLwqZEdjqpcap90UhG8MDAz4vJbrT924P4meb8tdTtUZFPkPKDnpL8QYvdSsOy+gvycsc0wENTlcAAAAASUVORK5CYII=" alt="image" /></p>
+</div>
 <p>OCaml knows that <span class="math inline">×</span> is to be done before <span class="math inline">+</span>, and parenthesizes the expression appropriately. We say the <span class="math inline">×</span> operator has <em>higher precedence</em> than the <span class="math inline">+</span> operator.</p>
 <p>An <em>expression</em> is any valid OCaml program. To produce an answer, OCaml <em>evaluates</em> the expression, yielding a special kind of expression, a <em>value</em>. In our previous example, <span class="math inline">1 + 2 × 3</span>, <span class="math inline">1 + 6</span>, and <span class="math inline">7</span> were all expressions, but only <span class="math inline">7</span> was a value.</p>
 <p>Each expression (and so each value) has a <em>type</em>. The type of <span class="math inline">7</span> is <span class="sans-serif"><strong>int</strong></span> (it is an integer). The types of the expressions <span class="math inline">1 + 6</span> and <span class="math inline">1 + 2 × 3</span> are also <span class="sans-serif"><strong>int</strong></span>, since they will evaluate to a value of type <span class="sans-serif"><strong>int</strong></span>. The type of any expression may be worked out by considering the types of its sub-expressions, and how they are combined to form the expression. For example, <span class="math inline">1 + 6</span> has type <span class="sans-serif"><strong>int</strong></span> because <span class="math inline">1</span> is an <span class="sans-serif"><strong>int</strong></span>, <span class="math inline">6</span> is an <span class="sans-serif"><strong>int</strong></span>, and the <span class="math inline">+</span> operator takes two integers and gives another one (their sum). Here are the mathematical operators on integers:</p>
@@ -274,7 +274,7 @@
 </tr>
 </tbody>
 </table>
-<p>The <code>mod</code>, <code>*</code>, and <code>/</code> operators have higher precedence than the <code>+</code> and <code>-</code> operators. For any operator <span class="math inline">⊕</span> above, the expression <span class="math inline"><em>a</em> ⊕ <em>b</em> ⊕ <em>c</em></span> is equivalent to <span class="math inline">(<em>a</em>⊕<em>b</em>) ⊕ <em>c</em></span> rather than <span class="math inline"><em>a</em> ⊕ (<em>b</em>⊕<em>c</em>)</span> (we say the operators are <em>left associative</em>). We sometimes write down the type of an expression after a colon when working on paper, to keep it in mind:</p>
+<p>The <code>mod</code>, <code>*</code>, and <code>/</code> operators have higher precedence than the <code>+</code> and <code>-</code> operators. For any operator <span class="math inline">⊕</span> above, the expression <span class="math inline"><em>a</em> ⊕ <em>b</em> ⊕ <em>c</em></span> is equivalent to <span class="math inline">(<em>a</em> ⊕ <em>b</em>) ⊕ <em>c</em></span> rather than <span class="math inline"><em>a</em> ⊕ (<em>b</em> ⊕ <em>c</em>)</span> (we say the operators are <em>left associative</em>). We sometimes write down the type of an expression after a colon when working on paper, to keep it in mind:</p>
 <p><code>5 * -2 :</code> <strong><span class="sans-serif">int</span></strong></p>
 <p>(negative numbers are written with <code>-</code> before them). Of course, there are many more types than just <span class="sans-serif"><strong>int</strong></span>. Sometimes, instead of numbers, we would like to talk about truth: either something is true or it is not. For this we use the type <span class="sans-serif"><strong>bool</strong></span> which represents <em>boolean values</em>, named after the English mathematician George Boole (1815–1864) who pioneered their use. There are just two things of type <strong><span class="sans-serif">bool</span></strong>:</p>
 <p><code>true</code><br />
@@ -332,8 +332,8 @@
 <p>A third type we shall be using is <strong><span class="sans-serif">char</span></strong> which holds a single <em>character</em>, such as ‘a’ or ‘?’. We write these in single quotation marks:</p>
 <p><code>        OCaml</code><br />
 <br />
-<code># ;;</code><br />
-<code>- : char = </code></p>
+<code># ’c’;;</code><br />
+<code>- : char = ’c’</code></p>
 <p>So far we have looked only at operators like <code>+</code>, <code>mod</code>, and <code>=</code> which look like familiar mathematical ones. But many constructs in programming languages look a little different. For example, to choose a course of evaluation based on some test, we use the <code>if</code> … <code>then</code> … <code>else</code> construct:</p>
 <p><code>        OCaml</code><br />
 <br />
@@ -353,21 +353,21 @@
 <p><code>true || false</code></p>
 <p><code>true &amp;&amp; false</code></p>
 <p><code>if true then false else true</code></p>
-<p><code></code></p>
-<p><code> + </code></p></li>
-<li><p>Consider the evaluations of the expressions <code>1 + mod</code>, <code>(1 +) mod</code>, and <code>1 + (2 mod)</code>. What can you conclude about the <code>+</code> and <code>mod</code> operators?</p></li>
-<li><p>A programmer writes <code>1+2 *+4</code>. What does this evaluate to? What advice would you give him?</p></li>
+<p><code>’%’</code></p>
+<p><code>’a’ + ’b’</code></p></li>
+<li><p>Consider the evaluations of the expressions <code>1 + 2 mod 3</code>, <code>(1 + 2) mod 3</code>, and <code>1 + (2 mod 3)</code>. What can you conclude about the <code>+</code> and <code>mod</code> operators?</p></li>
+<li><p>A programmer writes <code>1+2 * 3+4</code>. What does this evaluate to? What advice would you give him?</p></li>
 <li><p>The range of numbers available is limited. There are two special numbers: <code>min_int</code> and <code>max_int</code>. What are their values on your computer? What happens when you evaluate the expressions <code>max_int +</code> and <code>min_int -</code>?</p></li>
-<li><p>What happens when you try to evaluate the expression <code>1 /</code>? Why?</p></li>
+<li><p>What happens when you try to evaluate the expression <code>1 / 0</code>? Why?</p></li>
 <li><p>Can you discover what the <code>mod</code> operator does when one or both of the operands are negative? What about if the first operand is zero? What if the second is zero?</p></li>
 <li><p>Why not just use, for example, the integer <code>0</code> to represent false and the integer <code>1</code> for true? Why have a separate <strong><span class="sans-serif">bool</span></strong> type at all?</p></li>
-<li><p>What is the effect of the comparison operators like <code>&lt;</code> and <code>&gt;</code> on alphabetic values of type <strong><span class="sans-serif">char</span></strong>? For example, what does <code> &lt; </code> evaluate to? What is the effect of the comparison operators on the booleans, <code>true</code> and <code>false</code>?</p></li>
+<li><p>What is the effect of the comparison operators like <code>&lt;</code> and <code>&gt;</code> on alphabetic values of type <strong><span class="sans-serif">char</span></strong>? For example, what does <code>’p’ &lt; ’q’</code> evaluate to? What is the effect of the comparison operators on the booleans, <code>true</code> and <code>false</code>?</p></li>
 </ol>
 <p><br />
 </p>
 <div class="multicols*">
 <p><span>2</span></p>
-<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code></code> and <code></code>.</p>
+<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code>’X’</code> and <code>’!’</code>.</p>
 <p>Mathematical operators <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>mod</code> which take two integers and give another.</p>
 <p>Operators   <code>= </code> <code>&lt; </code> <code>&lt;= </code> <code>&gt; </code> <code>&gt;= </code> <code>&lt;&gt;</code>   which compare two values and evaluate to either <code>true</code> or <code>false</code>.</p>
 <p>The conditional <strong><code>if</code></strong> <em>expression1</em> <strong><code>then</code></strong> <em>expression2</em> <strong><code>else</code></strong> <em>expression3</em>, where <em>expresssion1</em> has type <span class="sans-serif"><strong>bool</strong></span> and <em>expression2</em> and <em>expression3</em> have the same type as one another.</p>
@@ -430,7 +430,7 @@
 <p><code>        OCaml</code><br />
 <br />
 <code># let isvowel c =</code><br />
-<code>    c = || c = || c = || c = || c = ;;</code><br />
+<code>    c = ’a’ || c = ’e’ || c = ’i’ || c = ’o’ || c = ’u’;;</code><br />
 <code>val isvowel : char -&gt; bool = &lt;fun&gt;</code><br />
 <code># isvowel ’x’;;</code><br />
 <code>- : bool = false</code></p>
@@ -506,7 +506,7 @@
 <li><p>Write a function which returns <code>true</code> if both of its arguments are non-zero, and <code>false</code> otherwise. What is the type of your function?</p></li>
 <li><p>Write a recursive function which, given a number <span class="math inline"><em>n</em></span>, calculates the sum <span class="math inline">1 + 2 + 3 + … + <em>n</em></span>. What is its type?</p></li>
 <li><p>Write a function <code>power x n</code> which raises <code>x</code> to the power <code>n</code>. Give its type.</p></li>
-<li><p>Write a function <code>isconsonant</code> which, given a lower-case character in the range <code></code>…<code></code>, determines if it is a consonant.</p></li>
+<li><p>Write a function <code>isconsonant</code> which, given a lower-case character in the range <code>’a’</code>…<code>’z’</code>, determines if it is a consonant.</p></li>
 <li><p>What is the result of the expression  <code>let x = in let x = in x + x</code> ?</p></li>
 <li><p>Can you suggest a way of preventing the non-termination of the <code>factorial</code> function in the case of a zero or negative argument?</p></li>
 </ol>
@@ -514,7 +514,7 @@
 </p>
 <div class="multicols*">
 <p><span>2</span></p>
-<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code></code> and <code></code>.</p>
+<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code>’X’</code> and <code>’!’</code>.</p>
 <p>Mathematical operators <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>mod</code> which take two integers and give another.</p>
 <p>Operators   <code>= </code> <code>&lt; </code> <code>&lt;= </code> <code>&gt; </code> <code>&gt;= </code> <code>&lt;&gt;</code>   which compare two values and evaluate to either <code>true</code> or <code>false</code>.</p>
 <p>The conditional <strong><code>if</code></strong> <em>expression1</em> <strong><code>then</code></strong> <em>expression2</em> <strong><code>else</code></strong> <em>expression3</em>, where <em>expresssion1</em> has type <span class="sans-serif"><strong>bool</strong></span> and <em>expression2</em> and <em>expression3</em> have the same type as one another.</p>
@@ -559,11 +559,11 @@
 <br />
 <code># let isvowel c =</code><br />
 <code>    match c with</code><br />
-<u><code>       -&gt; true</code></u><br />
-<u><code>    |  -&gt; true</code></u><br />
-<u><code>    |  -&gt; true</code></u><br />
-<u><code>    |  -&gt; true</code></u><br />
-<u><code>    |  -&gt; true;;</code></u><br />
+<u><code>      ’a’ -&gt; true</code></u><br />
+<u><code>    | ’e’ -&gt; true</code></u><br />
+<u><code>    | ’i’ -&gt; true</code></u><br />
+<u><code>    | ’o’ -&gt; true</code></u><br />
+<u><code>    | ’u’ -&gt; true;;</code></u><br />
 <code># Warning 8: this pattern-matching is not exhaustive.</code><br />
 <code>Here is an example of a value that is not matched:</code><br />
 <code>&#39;b&#39;</code><br />
@@ -590,13 +590,13 @@
 <li><p>Use pattern matching to write a function which, given two numbers <span class="math inline"><em>x</em></span> and <span class="math inline"><em>n</em></span>, computes <span class="math inline"><em>x</em><sup><em>n</em></sup></span>.</p></li>
 <li><p>For each of the previous three questions, comment on whether you think it is easier to read the function with or without pattern matching. How might you expect this to change if the functions were much larger?</p></li>
 <li><p>What does  <code>match 1 + 1 with 2 -&gt; match 2 + 2 with 3 -&gt; 4 | 4 -&gt; 5</code>  evaluate to?</p></li>
-<li><p>There is a special pattern <code>x..y</code> to denote continuous ranges of characters, for example <code>..</code> will match all lowercase letters. Write functions <code>islower</code> and <code>isupper</code>, each of type <span class="sans-serif"><strong>char <span class="math inline">→</span> bool</strong></span>, to decide on the case of a given letter.</p></li>
+<li><p>There is a special pattern <code>x..y</code> to denote continuous ranges of characters, for example <code>’a’..’z’</code> will match all lowercase letters. Write functions <code>islower</code> and <code>isupper</code>, each of type <span class="sans-serif"><strong>char <span class="math inline">→</span> bool</strong></span>, to decide on the case of a given letter.</p></li>
 </ol>
 <p><br />
 </p>
 <div class="multicols*">
 <p><span>2</span></p>
-<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code></code> and <code></code>.</p>
+<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code>’X’</code> and <code>’!’</code>.</p>
 <p>Mathematical operators <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>mod</code> which take two integers and give another.</p>
 <p>Operators   <code>= </code> <code>&lt; </code> <code>&lt;= </code> <code>&gt; </code> <code>&gt;= </code> <code>&lt;&gt;</code>   which compare two values and evaluate to either <code>true</code> or <code>false</code>.</p>
 <p>The conditional <strong><code>if</code></strong> <em>expression1</em> <strong><code>then</code></strong> <em>expression2</em> <strong><code>else</code></strong> <em>expression3</em>, where <em>expresssion1</em> has type <span class="sans-serif"><strong>bool</strong></span> and <em>expression2</em> and <em>expression3</em> have the same type as one another.</p>
@@ -738,7 +738,7 @@
 </p>
 <div class="multicols*">
 <p><span>2</span></p>
-<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code></code> and <code></code>.</p>
+<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code>’X’</code> and <code>’!’</code>.</p>
 <p>Mathematical operators <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>mod</code> which take two integers and give another.</p>
 <p>Operators   <code>= </code> <code>&lt; </code> <code>&lt;= </code> <code>&gt; </code> <code>&gt;= </code> <code>&lt;&gt;</code>   which compare two values and evaluate to either <code>true</code> or <code>false</code>.</p>
 <p>The conditional <strong><code>if</code></strong> <em>expression1</em> <strong><code>then</code></strong> <em>expression2</em> <strong><code>else</code></strong> <em>expression3</em>, where <em>expresssion1</em> has type <span class="sans-serif"><strong>bool</strong></span> and <em>expression2</em> and <em>expression3</em> have the same type as one another.</p>
@@ -799,8 +799,8 @@
 
 </div>
 <p>Notice that the type <strong><span class="sans-serif"><span class="math inline"><em>α</em></span> list <span class="math inline">→</span> <span class="math inline"><em>α</em></span> list</span></strong> rather than <strong><span class="sans-serif">int list <span class="math inline">→</span> int list</span></strong>. This is because OCaml’s comparison functions like <code>&lt;=</code> (used inside <code>insert</code>) work for types other than <strong><span class="sans-serif">int</span></strong>. For example, OCaml knows how to compare characters in alphabetical order: <span class="math display">$$\begin{aligned}
- &amp; &amp; \texttt{\underline{sort [\upquote{p}; \upquote{i}; \upquote{m}; \upquote{c}; \upquote{s}; \upquote{h}]\vphantom{g}}} \\
- \overset{*}\Longrightarrow &amp; &amp; \texttt{[\upquote{c}; \upquote{h}; \upquote{i}; \upquote{m}; \upquote{p}; \upquote{s}]}\end{aligned}$$</span></p>
+ &amp; &amp; \texttt{\underline{sort [&#39;p&#39;; &#39;i&#39;; &#39;m&#39;; &#39;c&#39;; &#39;s&#39;; &#39;h&#39;]\vphantom{g}}} \\
+ \overset{*}\Longrightarrow &amp; &amp; \texttt{[&#39;c&#39;; &#39;h&#39;; &#39;i&#39;; &#39;m&#39;; &#39;p&#39;; &#39;s&#39;]}\end{aligned}$$</span></p>
 <p>How long does our sorting function take to run if the list to be sorted has <span class="math inline"><em>n</em></span> elements? Under the assumption that our argument list is arbitrarily ordered rather than sorted, each <code>insert</code> operation takes time proportional to <span class="math inline"><em>n</em></span> (the element might need to be inserted anywhere). We must run the <code>insert</code> function as many times as there are elements so, adding these all up, the <code>sort</code> function takes time proportional to <span class="math inline"><em>n</em><sup>2</sup></span>. You might argue that the first <code>insert</code> operations only have to work with a very small list, and that this fact should make the time less that <span class="math inline"><em>n</em><sup>2</sup></span>. Can you see why that is not true? What happens if the list is sorted already?</p>
 <p>A more efficient algorithm can be found by considering a basic operation a little more complex than <code>insert</code>, but which still operates in time proportional to the length of the argument list. Such a function is <code>merge</code>, which takes two already sorted lists, and returns a single sorted list:</p>
 <div class="center">
@@ -854,14 +854,14 @@
 <li><p>Write a version of insertion sort which sorts the argument list into reverse order.</p></li>
 <li><p>Write a function to detect if a list is already in sorted order.</p></li>
 <li><p>We mentioned that the comparison functions like  <code>&lt;</code>  work for many OCaml types. Can you determine, by experimentation, how they work for lists? For example, what is the result of <code>[1;] &lt;</code>? What happens when we sort the following list of type <strong><span class="sans-serif">char list list</span></strong>? Why?</p>
-<p><code>[[; ; ]; [; ; ]; [; ; ; ; ]]</code></p></li>
+<p><code>[[’o’; ’n’; ’e’]; [’t’; ’w’; ’o’]; [’t’; ’h’; ’r’; ’e’; ’e’]]</code></p></li>
 <li><p>Combine the <code>sort</code> and <code>insert</code> functions into a single <code>sort</code> function.</p></li>
 </ol>
 <p><br />
 </p>
 <div class="multicols*">
 <p><span>2</span></p>
-<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code></code> and <code></code>.</p>
+<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code>’X’</code> and <code>’!’</code>.</p>
 <p>Mathematical operators <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>mod</code> which take two integers and give another.</p>
 <p>Operators   <code>= </code> <code>&lt; </code> <code>&lt;= </code> <code>&gt; </code> <code>&gt;= </code> <code>&lt;&gt;</code>   which compare two values and evaluate to either <code>true</code> or <code>false</code>.</p>
 <p>The conditional <strong><code>if</code></strong> <em>expression1</em> <strong><code>then</code></strong> <em>expression2</em> <strong><code>else</code></strong> <em>expression3</em>, where <em>expresssion1</em> has type <span class="sans-serif"><strong>bool</strong></span> and <em>expression2</em> and <em>expression3</em> have the same type as one another.</p>
@@ -966,7 +966,7 @@
 <p>The techniques we have seen in this chapter are forms of <em>program reuse</em>, which is fundamental to writing manageable large programs.</p>
 <h2 class="unnumbered" id="questions-5">Questions</h2>
 <ol>
-<li><p>Write a simple recursive function <code>calm</code> to replace exclamation marks in a <strong><span class="sans-serif">char list</span></strong> with periods. For example <code>calm</code> should evaluate to <code>[; ; ; ; ; ; ; ; ; ; ]</code>. Now rewrite your function to use <code>map</code> instead of recursion. What are the types of your functions?</p></li>
+<li><p>Write a simple recursive function <code>calm</code> to replace exclamation marks in a <strong><span class="sans-serif">char list</span></strong> with periods. For example <code>calm [’H’; ’e’; ’l’; ’p’; ’!’; ’ ’; ’F’; ’i’; ’r’; ’e’; ’!’]</code> should evaluate to <code>[’H’; ’e’; ’l’; ’p’; ’.’; ’ ’; ’F’; ’i’; ’r’; ’e’; ’.’]</code>. Now rewrite your function to use <code>map</code> instead of recursion. What are the types of your functions?</p></li>
 <li><p>Write a function <code>clip</code> which, given an integer, clips it to the range <span class="math inline">1…10</span> so that integers bigger than 10 round down to 10, and those smaller than 1 round up to 1. Write another function <code>cliplist</code> which uses this first function together with <code>map</code> to apply this clipping to a whole list of integers.</p></li>
 <li><p>Express your function <code>cliplist</code> again, this time using an anonymous function instead of <code>clip</code>.</p></li>
 <li><p>Write a function <code>apply</code> which, given another function, a number of times to apply it, and an initial argument for the function, will return the cumulative effect of repeatedly applying the function. For instance, <code>apply f</code> should return <code>f (f (f (f (f (f))))))</code>. What is the type of your function?</p></li>
@@ -979,7 +979,7 @@
 </p>
 <div class="multicols*">
 <p><span>2</span></p>
-<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code></code> and <code></code>.</p>
+<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code>’X’</code> and <code>’!’</code>.</p>
 <p>Mathematical operators <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>mod</code> which take two integers and give another.</p>
 <p>Operators   <code>= </code> <code>&lt; </code> <code>&lt;= </code> <code>&gt; </code> <code>&gt;= </code> <code>&lt;&gt;</code>   which compare two values and evaluate to either <code>true</code> or <code>false</code>.</p>
 <p>The conditional <strong><code>if</code></strong> <em>expression1</em> <strong><code>then</code></strong> <em>expression2</em> <strong><code>else</code></strong> <em>expression3</em>, where <em>expresssion1</em> has type <span class="sans-serif"><strong>bool</strong></span> and <em>expression2</em> and <em>expression3</em> have the same type as one another.</p>
@@ -1053,7 +1053,7 @@
 </p>
 <div class="multicols*">
 <p><span>2</span></p>
-<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code></code> and <code></code>.</p>
+<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code>’X’</code> and <code>’!’</code>.</p>
 <p>Mathematical operators <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>mod</code> which take two integers and give another.</p>
 <p>Operators   <code>= </code> <code>&lt; </code> <code>&lt;= </code> <code>&gt; </code> <code>&gt;= </code> <code>&lt;&gt;</code>   which compare two values and evaluate to either <code>true</code> or <code>false</code>.</p>
 <p>The conditional <strong><code>if</code></strong> <em>expression1</em> <strong><code>then</code></strong> <em>expression2</em> <strong><code>else</code></strong> <em>expression3</em>, where <em>expresssion1</em> has type <span class="sans-serif"><strong>bool</strong></span> and <em>expression2</em> and <em>expression3</em> have the same type as one another.</p>
@@ -1147,7 +1147,7 @@
 
 </div>
 <p>If <code>lookup k d</code> succeeds, <code>true</code> will be returned. If not, an exception will be raised, which <code>key_exists</code> will handle itself, and return <code>false</code>. Note that we did not give a name to the result of <code>lookup k l</code> because we always return <code>true</code> if it succeeds.</p>
-<p>Pairs are just a particular instance of a more general construct – the <em>tuple</em>. A tuple may contain two or more things. For example, <code>(1, false, )</code> has type <span class="sans-serif"><strong>int <span class="math inline">×</span> bool <span class="math inline">×</span> char</strong></span>.</p>
+<p>Pairs are just a particular instance of a more general construct – the <em>tuple</em>. A tuple may contain two or more things. For example, <code>(1, false, ’a’)</code> has type <span class="sans-serif"><strong>int <span class="math inline">×</span> bool <span class="math inline">×</span> char</strong></span>.</p>
 <h2 class="unnumbered" id="questions-7">Questions</h2>
 <ol>
 <li><p>Write a function to determine the number of different keys in a dictionary.</p></li>
@@ -1161,7 +1161,7 @@
 </p>
 <div class="multicols*">
 <p><span>2</span></p>
-<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code></code> and <code></code>.</p>
+<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code>’X’</code> and <code>’!’</code>.</p>
 <p>Mathematical operators <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>mod</code> which take two integers and give another.</p>
 <p>Operators   <code>= </code> <code>&lt; </code> <code>&lt;= </code> <code>&gt; </code> <code>&gt;= </code> <code>&lt;&gt;</code>   which compare two values and evaluate to either <code>true</code> or <code>false</code>.</p>
 <p>The conditional <strong><code>if</code></strong> <em>expression1</em> <strong><code>then</code></strong> <em>expression2</em> <strong><code>else</code></strong> <em>expression3</em>, where <em>expresssion1</em> has type <span class="sans-serif"><strong>bool</strong></span> and <em>expression2</em> and <em>expression3</em> have the same type as one another.</p>
@@ -1236,7 +1236,7 @@
 </p>
 <div class="multicols*">
 <p><span>2</span></p>
-<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code></code> and <code></code>.</p>
+<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code>’X’</code> and <code>’!’</code>.</p>
 <p>Mathematical operators <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>mod</code> which take two integers and give another.</p>
 <p>Operators   <code>= </code> <code>&lt; </code> <code>&lt;= </code> <code>&gt; </code> <code>&gt;= </code> <code>&lt;&gt;</code>   which compare two values and evaluate to either <code>true</code> or <code>false</code>.</p>
 <p>The conditional <strong><code>if</code></strong> <em>expression1</em> <strong><code>then</code></strong> <em>expression2</em> <strong><code>else</code></strong> <em>expression3</em>, where <em>expresssion1</em> has type <span class="sans-serif"><strong>bool</strong></span> and <em>expression2</em> and <em>expression3</em> have the same type as one another.</p>
@@ -1313,8 +1313,8 @@
 <td style="text-align: left;"><strong><span class="sans-serif">int</span></strong> <span class="sans-serif">sequence</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><code>[; ; ]</code></td>
-<td style="text-align: left;"><code>Cons (, Cons (, Cons (, Nil)))</code></td>
+<td style="text-align: left;"><code>[’a’; ’x’; ’e’]</code></td>
+<td style="text-align: left;"><code>Cons (’a’, Cons (’x’, Cons (’e’, Nil)))</code></td>
 <td style="text-align: left;"><strong><span class="sans-serif">char</span></strong> <span class="sans-serif">sequence</span></td>
 </tr>
 <tr class="even">
@@ -1363,7 +1363,7 @@
 </p>
 <div class="multicols*">
 <p><span>2</span></p>
-<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code></code> and <code></code>.</p>
+<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code>’X’</code> and <code>’!’</code>.</p>
 <p>Mathematical operators <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>mod</code> which take two integers and give another.</p>
 <p>Operators   <code>= </code> <code>&lt; </code> <code>&lt;= </code> <code>&gt; </code> <code>&gt;= </code> <code>&lt;&gt;</code>   which compare two values and evaluate to either <code>true</code> or <code>false</code>.</p>
 <p>The conditional <strong><code>if</code></strong> <em>expression1</em> <strong><code>then</code></strong> <em>expression2</em> <strong><code>else</code></strong> <em>expression3</em>, where <em>expresssion1</em> has type <span class="sans-serif"><strong>bool</strong></span> and <em>expression2</em> and <em>expression3</em> have the same type as one another.</p>
@@ -1452,7 +1452,7 @@
 </p>
 <div class="multicols*">
 <p><span>2</span></p>
-<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code></code> and <code></code>.</p>
+<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code>’X’</code> and <code>’!’</code>.</p>
 <p>Mathematical operators <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>mod</code> which take two integers and give another.</p>
 <p>Operators   <code>= </code> <code>&lt; </code> <code>&lt;= </code> <code>&gt; </code> <code>&gt;= </code> <code>&lt;&gt;</code>   which compare two values and evaluate to either <code>true</code> or <code>false</code>.</p>
 <p>The conditional <strong><code>if</code></strong> <em>expression1</em> <strong><code>then</code></strong> <em>expression2</em> <strong><code>else</code></strong> <em>expression3</em>, where <em>expresssion1</em> has type <span class="sans-serif"><strong>bool</strong></span> and <em>expression2</em> and <em>expression3</em> have the same type as one another.</p>
@@ -1682,59 +1682,11 @@
 </tbody>
 </table>
 <h2 class="unnumbered" id="questions-11">Questions</h2>
-<ol>
-<li><p>Write a function to print a list of integers to the screen in the same format OCaml uses – i.e. with square brackets and semicolons.</p></li>
-<li><p>Write a function to read three integers from the user, and return them as a tuple. What exceptions could be raised in the process? Handle them appropriately.</p></li>
-<li><p>In our <code>read_dict</code> function, we waited for the user to type <code>0</code> to indicate no more data. This is clumsy. Implement a new <code>read_dict</code> function with a nicer system. Be careful to deal with possible exceptions which may be raised.</p></li>
-<li><p>Write a function which, given a number <span class="math inline"><em>x</em></span>, prints the <span class="math inline"><em>x</em></span>-times table to a given file name. For example, <code>table &quot;table.txt&quot;</code> should produce a file <code>table.txt</code> containing the following:</p>
-<table>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>1</code></td>
-<td style="text-align: left;"><code>     2</code></td>
-<td style="text-align: left;"><code>     3</code></td>
-<td style="text-align: left;"><code>     4</code></td>
-<td style="text-align: left;"><code>     5</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>2</code></td>
-<td style="text-align: left;"><code>     4</code></td>
-<td style="text-align: left;"><code>     6</code></td>
-<td style="text-align: left;"><code>     8</code></td>
-<td style="text-align: left;"><code>     10</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>3</code></td>
-<td style="text-align: left;"><code>     6</code></td>
-<td style="text-align: left;"><code>     9</code></td>
-<td style="text-align: left;"><code>     12</code></td>
-<td style="text-align: left;"><code>     15</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>4</code></td>
-<td style="text-align: left;"><code>     8</code></td>
-<td style="text-align: left;"><code>     12</code></td>
-<td style="text-align: left;"><code>     16</code></td>
-<td style="text-align: left;"><code>     20</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>5</code></td>
-<td style="text-align: left;"><code>     10</code></td>
-<td style="text-align: left;"><code>     15</code></td>
-<td style="text-align: left;"><code>     20</code></td>
-<td style="text-align: left;"><code>     25</code></td>
-</tr>
-</tbody>
-</table>
-<p>Adding the special tabulation character <code></code> after each number will line up the columns.</p></li>
-<li><p>Write a function to count the number of lines in a given file.</p></li>
-<li><p>Write a function <code>copy_file</code> of type <span class="sans-serif"><strong>string</strong> <span class="math inline">→</span> <strong>string</strong> <span class="math inline">→</span> <strong>unit</strong></span> which copies a file line by line. For example, <code>copy_file &quot;a.txt&quot; &quot;b.txt&quot;</code> should produce a file <code>b.txt</code> identical to <code>a.txt</code>. Make sure you deal with the case where the file <code>a.txt</code> cannot be found, or where <code>b.txt</code> cannot be created or filled.</p></li>
-</ol>
 <p><br />
 </p>
 <div class="multicols*">
 <p><span>2</span></p>
-<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code></code> and <code></code>.</p>
+<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code>’X’</code> and <code>’!’</code>.</p>
 <p>Mathematical operators <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>mod</code> which take two integers and give another.</p>
 <p>Operators   <code>= </code> <code>&lt; </code> <code>&lt;= </code> <code>&gt; </code> <code>&gt;= </code> <code>&lt;&gt;</code>   which compare two values and evaluate to either <code>true</code> or <code>false</code>.</p>
 <p>The conditional <strong><code>if</code></strong> <em>expression1</em> <strong><code>then</code></strong> <em>expression2</em> <strong><code>else</code></strong> <em>expression3</em>, where <em>expresssion1</em> has type <span class="sans-serif"><strong>bool</strong></span> and <em>expression2</em> and <em>expression3</em> have the same type as one another.</p>
@@ -1832,7 +1784,7 @@ looked.</code></pre>
 <code># file_statistics &quot;gregor.txt&quot;;;</code><br />
 <code>There were 8 lines.</code><br />
 <code>- : unit = ()</code></p>
-<p>Let us update the program to count the number of words, characters, and sentences. We will do this simplistically, assuming that the number of words can be counted by counting the number of spaces, and that the sentences can be counted by noting instances of <code></code>, <code></code>, and <code></code>. We can extend the <code>channel_statistics</code> function appropriately – <code>file_statistics</code> need not change:</p>
+<p>Let us update the program to count the number of words, characters, and sentences. We will do this simplistically, assuming that the number of words can be counted by counting the number of spaces, and that the sentences can be counted by noting instances of <code>’.’</code>, <code>’!’</code>, and <code>’?’</code>. We can extend the <code>channel_statistics</code> function appropriately – <code>file_statistics</code> need not change:</p>
 <div class="center">
 
 </div>
@@ -1878,13 +1830,13 @@ looked.</code></pre>
 <code>- : int = 67</code><br />
 <code># char_of_int 67;;</code><br />
 <code>- : char = &#39;C&#39;</code></p>
-<p>The numbers go from 0 to 255 inclusive (they do not all represent printable characters, for example the newline character <code></code> has code 10). So, we can store our histogram as an integer array of length 256.</p>
+<p>The numbers go from 0 to 255 inclusive (they do not all represent printable characters, for example the newline character <code>’\n’</code> has code 10). So, we can store our histogram as an integer array of length 256.</p>
 <p>Our main function is getting rather long, so we will write a separate one which, given the completed array prints out the frequencies. If there were no instances of a particular character, no line is printed for that character.</p>
 <div class="center">
 
 </div>
 <p>This prints lines like:</p>
-<p><code>For character (character number 100) the count is 6.</code></p>
+<p><code>For character ’d’ (character number 100) the count is 6.</code></p>
 <p>Now, we can alter our <code>channel_statistics</code> to create an appropriate array, and update it, once again using <code>String.iter</code>:</p>
 <div class="center">
 
@@ -1928,7 +1880,7 @@ looked.</code></pre>
 <code>For character &#39;y&#39; (character number 121) the count is 10.</code><br />
 <code>For character &#39;z&#39; (character number 122) the count is 1.</code><br />
 <code>- : unit = ()</code></p>
-<p>The most common character is the space. The most common alphabetic character is <code></code>.</p>
+<p>The most common character is the space. The most common alphabetic character is <code>’e’</code>.</p>
 <h2 class="unnumbered" id="questions-12">Questions</h2>
 <ol>
 <li><p>Consider the expression</p>
@@ -1994,7 +1946,7 @@ looked.</code></pre>
 </p>
 <div class="multicols*">
 <p><span>2</span></p>
-<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code></code> and <code></code>.</p>
+<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code>’X’</code> and <code>’!’</code>.</p>
 <p>Mathematical operators <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>mod</code> which take two integers and give another.</p>
 <p>Operators   <code>= </code> <code>&lt; </code> <code>&lt;= </code> <code>&gt; </code> <code>&gt;= </code> <code>&lt;&gt;</code>   which compare two values and evaluate to either <code>true</code> or <code>false</code>.</p>
 <p>The conditional <strong><code>if</code></strong> <em>expression1</em> <strong><code>then</code></strong> <em>expression2</em> <strong><code>else</code></strong> <em>expression3</em>, where <em>expresssion1</em> has type <span class="sans-serif"><strong>bool</strong></span> and <em>expression2</em> and <em>expression3</em> have the same type as one another.</p>
@@ -2175,7 +2127,7 @@ looked.</code></pre>
 </p>
 <div class="multicols*">
 <p><span>2</span></p>
-<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code></code> and <code></code>.</p>
+<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code>’X’</code> and <code>’!’</code>.</p>
 <p>Mathematical operators <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>mod</code> which take two integers and give another.</p>
 <p>Operators   <code>= </code> <code>&lt; </code> <code>&lt;= </code> <code>&gt; </code> <code>&gt;= </code> <code>&lt;&gt;</code>   which compare two values and evaluate to either <code>true</code> or <code>false</code>.</p>
 <p>The conditional <strong><code>if</code></strong> <em>expression1</em> <strong><code>then</code></strong> <em>expression2</em> <strong><code>else</code></strong> <em>expression3</em>, where <em>expresssion1</em> has type <span class="sans-serif"><strong>bool</strong></span> and <em>expression2</em> and <em>expression3</em> have the same type as one another.</p>
@@ -2276,7 +2228,7 @@ looked.</code></pre>
 </p>
 <div class="multicols*">
 <p><span>2</span></p>
-<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code></code> and <code></code>.</p>
+<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code>’X’</code> and <code>’!’</code>.</p>
 <p>Mathematical operators <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>mod</code> which take two integers and give another.</p>
 <p>Operators   <code>= </code> <code>&lt; </code> <code>&lt;= </code> <code>&gt; </code> <code>&gt;= </code> <code>&lt;&gt;</code>   which compare two values and evaluate to either <code>true</code> or <code>false</code>.</p>
 <p>The conditional <strong><code>if</code></strong> <em>expression1</em> <strong><code>then</code></strong> <em>expression2</em> <strong><code>else</code></strong> <em>expression3</em>, where <em>expresssion1</em> has type <span class="sans-serif"><strong>bool</strong></span> and <em>expression2</em> and <em>expression3</em> have the same type as one another.</p>
@@ -2407,7 +2359,7 @@ looked.</code></pre>
 </p>
 <div class="multicols*">
 <p><span>2</span></p>
-<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code></code> and <code></code>.</p>
+<p><span class="lettrine">1</span><span class="smallcaps"></span>Integers <code>min_int</code> … <code>-3</code> <code>-2</code> <code>-1</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> … <code>max_int</code> of type <strong><span class="sans-serif">int</span></strong>. Booleans <code>true</code> and <code>false</code> of type <strong><span class="sans-serif">bool</span></strong>. Characters of type <span class="sans-serif"><strong>char</strong></span> like <code>’X’</code> and <code>’!’</code>.</p>
 <p>Mathematical operators <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>mod</code> which take two integers and give another.</p>
 <p>Operators   <code>= </code> <code>&lt; </code> <code>&lt;= </code> <code>&gt; </code> <code>&gt;= </code> <code>&lt;&gt;</code>   which compare two values and evaluate to either <code>true</code> or <code>false</code>.</p>
 <p>The conditional <strong><code>if</code></strong> <em>expression1</em> <strong><code>then</code></strong> <em>expression2</em> <strong><code>else</code></strong> <em>expression3</em>, where <em>expresssion1</em> has type <span class="sans-serif"><strong>bool</strong></span> and <em>expression2</em> and <em>expression3</em> have the same type as one another.</p>

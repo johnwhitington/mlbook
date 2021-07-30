@@ -1,56 +1,30 @@
 \documentclass[]{book}
- 
-%PACKAGE LOADING
 \usepackage{etex}
-\usepackage{lettrine}
 \usepackage{booktabs}
 \renewcommand{\arraystretch}{1.2}
 \usepackage[section]{placeins}
 \usepackage[md]{titlesec}
 \usepackage{makeidx}
-
 \usepackage{nameref}
 \usepackage{xspace}
 \usepackage{comment}
 \usepackage{tikz}
-\usepackage{tikz-qtree}
 \usepackage{multicol}
-\usepackage{tocloft}
-%Make tocloft and titlesec play nicely together
-\makeatletter
-\AtBeginDocument{
-   \renewcommand\@cftmaketoctitle{\chapter*{\contentsname}}
-}
-\makeatother
-
-\renewcommand{\rmdefault}{ppl} % rm
-%\usepackage{palatino}
-\usepackage[scaled=0.9]{beramono}
 \usepackage[T1]{fontenc}
-\usepackage[protrusion=true,expansion=true]{microtype}
 \usepackage[left=3cm, right=1.5cm, top=2cm, bottom=1.8cm, paperwidth=7.5in, paperheight=9.25in]{geometry}
 \usepackage{upquote}
 \usepackage{mathtools}
 \usepackage[draft=false,hidelinks]{hyperref}
-\usepackage{cleveref}
 \usepackage{fancyhdr}
 \usepackage{emptypage}
 \usepackage{underscore}
-\usepackage{upquote,textcomp}
-\newcommand\upquote[1]{\textquotesingle#1\textquotesingle}
-
+\usepackage{textcomp}
 \pagestyle{fancy}
 \fancyhead[lo]{\slshape\nouppercase{\leftmark}\hfill\thepage}
 \fancyhead[re]{\thepage\hfill\slshape\nouppercase{\leftmark}}
 \fancyfoot{}
-%\fancyfoot[LE,RO]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-
-%Table of contents spacing
-\setlength\cftparskip{5pt}
-\setlength\cftbeforechapskip{0pt}
-
 \usepackage[columns=3]{idxlayout}
 \makeindex
 
@@ -60,7 +34,7 @@
 
 \newcommand{\sofarstartingoff}{
 
-\noindent \lettrine[loversize=0.1,nindent=0em]{1}{}Integers \texttt{min\_int} \ldots\ \texttt{-3}\ \texttt{-2}\ \texttt{-1}\ \texttt{0}\ \texttt{1}\ \texttt{2}\ \texttt{3}\ \ldots\ \texttt{max\_int} of type \textbf{\textsf{int}}. Booleans \texttt{true} and \texttt{false} of type \textbf{\textsf{bool}}. \noindent Characters of type \textsf{\textbf{char}} like \texttt{\upquote{X}} and \texttt{\upquote{!}}.
+\noindent \lettrine[loversize=0.1,nindent=0em]{1}{}Integers \texttt{min\_int} \ldots\ \texttt{-3}\ \texttt{-2}\ \texttt{-1}\ \texttt{0}\ \texttt{1}\ \texttt{2}\ \texttt{3}\ \ldots\ \texttt{max\_int} of type \textbf{\textsf{int}}. Booleans \texttt{true} and \texttt{false} of type \textbf{\textsf{bool}}. \noindent Characters of type \textsf{\textbf{char}} like \texttt{'X'} and \texttt{'!'}.
 \vspace{2mm}
 
 \noindent Mathematical operators \texttt{+} \texttt{-} \texttt{*} \texttt{/} \texttt{mod} which take two integers and give another.
@@ -228,8 +202,8 @@
 \newcommand{\pbegin}{\textbf{begin}\xspace}
 \newcommand{\pend}{\textbf{end}\xspace}
 
-\renewcommand{\cftchapfont}{\normalfont}
-\renewcommand{\cftchappagefont}{\normalfont}
+%\renewcommand{\cftchapfont}{\normalfont}
+%\renewcommand{\cftchappagefont}{\normalfont}
 
 \newcommand{\smspace}{\vspace{4mm}}
 
@@ -244,7 +218,6 @@
 
 \vspace{16mm}
 
-\begin{minipage}{5in}
 \setlength{\parindent}{25pt}
 \noindent In \textit{OCaml from the Very Beginning} John Whitington takes a no-prerequisites approach to teaching a modern general-purpose programming language. Each small, self-contained chapter introduces a new topic, building until the reader can write quite substantial programs. There are plenty of questions and, crucially, worked answers and hints.
 
@@ -252,95 +225,35 @@
 
 \vspace{8mm}
 
-\noindent{\hyphenpenalty=10000\begin{sloppypar}\noindent\textsc{John Whitington} founded a software company which uses OCaml extensively. He teaches functional programming to students of Computer Science at the University of Cambridge.\end{sloppypar}}\end{minipage}
+\noindent\textsc{John Whitington} founded a software company which uses OCaml extensively. He teaches functional programming to students of Computer Science at the University of Cambridge.
 
 \cleardoublepage %recto
 
 %Title Verso
 \thispagestyle{empty}
 
-\begin{center}
 \vphantom{a}%to get vspace to work
 
 \vspace{50mm}
-
-{\Huge\scshape OCaml
-
-\textit{\LARGE from the very beginning}
-
-}
-
-\vspace{20mm}
-
-{John Whitington}
-
-\vspace{85mm}
-
-{\scshape C O H E R E N T \ \ P R E S S}
-\end{center}
-
-\clearpage
-
-%Title Recto
-\thispagestyle{empty}
-
-{\centering
-
-\vspace{10mm}
-
-
-\noindent C O H E R E N T \ \ \ P R E S S\\ \vspace{1mm} \footnotesize Cambridge
-
-\vspace{3mm}
 
 \noindent Published in the United Kingdom by Coherent Press, Cambridge
 
 \vspace{3mm}
 
-\noindent {\small \copyright} Coherent Press 2013\\
-
-\vspace{3mm}
-\noindent This publication is in copyright. Subject to statutory\\ exception no reproduction of any part may take place\\ without the written permission of Coherent Press.\\
+\noindent Copyright Coherent Press 2013
 
 \vspace{3mm}
 
-\noindent First published June 2013\\
-\noindent Reprinted with corrections October 2013\\
-\noindent Reprinted 2014, 2015, 2016, 2017
-
-\vspace{3mm}
-
-%\noindent Printed in the United States\\
-
-%\vspace{3mm}
-
-\noindent \textit{A catalogue record for this book is available from the British Library}\\
+\noindent This publication is in copyright. Subject to statutory exception no reproduction of any part may take place without the written permission of Coherent Press. \textit{A catalogue record for this book is available from the British Library.}
 
 \smspace
 
 \noindent ISBN 978-0-9576711-0-2 Paperback\\
 
 
-\vspace{20mm}
-
-\noindent \textit{by the same author}\\
-
-\smspace
-
-PDF Explained (O'Reilly, 2012)\\
-
-\vspace{1mm}
-More OCaml: Algorithms, Methods \& Diversions (Coherent, 2014) 
-
-\vspace{1mm}
-A Machine Made this Book: Ten Sketches of Computer Science (Coherent, 2016)
-
-}
-\cleardoublepage
-
 %TABLE OF CONTENTS
-\clearpage
-\small\pagestyle{empty}{\normalfont\tableofcontents}
+%\clearpage
+%\small\pagestyle{empty}{\normalfont\tableofcontents}
 
 %PREFACE 
 \chapter*{Preface}
@@ -382,7 +295,7 @@ We are going to be using a programming language called \index{OCaml}\textbf{OCam
 
 {\setlength\fboxsep{1.75pt}%Smaller fboxes for keystrokes.
 
-\noindent OCaml is waiting for us to type something. Try typing \smash{\fbox{1\vphantom{p}\mathstrut} \fbox{space\vphantom{p}\mathstrut} \fbox{+\vphantom{p}\mathstrut} \fbox{space\vphantom{p}\mathstrut} \fbox{2\vphantom{p}\mathstrut} \fbox{;\vphantom{p}\mathstrut} \fbox{;\vphantom{p}\mathstrut}} followed by the \smash{\fbox{Enter\vphantom{p}\mathstrut}} key. You should see this:
+\noindent OCaml is waiting for us to type something. Try typing \texttt{1 + 2;;} followed by the Enter key. You should see this:
 
 }
 
@@ -393,7 +306,7 @@ We are going to be using a programming language called \index{OCaml}\textbf{OCam
 \index{int}\noindent\verb!- : int = 3!
 \smspace
 
-\noindent OCaml is telling us the result of the calculation. To leave OCaml, give the \,\texttt{exit\!\! 0}\, command, again ending with \verb!;;! to tell OCaml we have finished typing:
+\noindent OCaml is telling us the result of the calculation. To leave OCaml, give the \texttt{exit 0} command, again ending with \verb!;;! to tell OCaml we have finished typing:
 
 \smspace
 \noindent\verb!        OCaml!\\
@@ -403,7 +316,7 @@ We are going to be using a programming language called \index{OCaml}\textbf{OCam
 
 {\setlength\fboxsep{1.75pt}%Smaller fboxes for keystrokes.
 
-\noindent You should find yourself back where you were before. If you make a mistake when typing, you can press \fbox{\mathstrut Ctrl-C} (hold down the \fbox{\mathstrut Ctrl} key and tap the \fbox{\mathstrut c} key). This will allow you to start again:
+\noindent You should find yourself back where you were before. If you make a mistake when typing, you can press Ctrl-C (hold down the Ctrl key and tap the c key). This will allow you to start again:
 
 }
 
@@ -425,19 +338,21 @@ We are going to be using a programming language called \index{OCaml}\textbf{OCam
 We will cover a fair amount of material in this chapter and its questions, since we will need a solid base on which to build. You should read this with a computer running OCaml in front of you.
 
 Consider first the mathematical \index{expression} expression $1 + 2 \times 3$. What is the result? How did you work it out? We might show the process like this:
-\begin{eqnarray*}
- & & 1 + 2 \times 3 \\
- \Longrightarrow & & 1 + 6 \\
- \Longrightarrow & & 7
-\end{eqnarray*}
+
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook10x.png}
+\end{center}
+\medskip
 
 \noindent How did we know to multiply $2$ by $3$ first, instead of adding $1$ and $2$?
 How did we know when to stop? Let us underline the part of the expression which is dealt with at each step:
-\begin{eqnarray*}
- & & 1 + \underline{2 \times 3} \\
- \Longrightarrow & & \underline{1 + 6} \\
- \Longrightarrow & & 7
-\end{eqnarray*}
+
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook11x.png}
+\end{center}
+\medskip
 
 \noindent We chose which part of the expression to deal with each time using a familiar
 mathematical rule -- multiplication is done before addition. We stopped when the
@@ -470,11 +385,12 @@ basic parts: \verb!1!, \verb!+!, \verb!2!, \verb!*!, and \verb!3!. OCaml then
 looks at the order and kind of the operators and operands, and decides how to
 parenthesize the expression: $(1 + (2 \times 3))$. Now, processing the expression
 just requires dealing with each parenthesized section, starting with the innermost, and stopping when there are no parentheses left:
-\begin{eqnarray*}
- & & (1 + \underline{(2 \times 3)}) \\
- \Longrightarrow & & \underline{(1 + 6)} \\
- \Longrightarrow & & 7
-\end{eqnarray*}
+
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook12x.png}
+\end{center}
+\medskip
 
 \noindent OCaml knows that $\times$ is to be done before $+$, and parenthesizes the expression appropriately. We say the $\times$ operator has \index{precedence}\textit{higher precedence} than the $+$ operator.
 
@@ -502,7 +418,7 @@ Operator & Description\\
 \end{tabular}
 \smspace
 
-\noindent The \texttt{mod}, \texttt{*}, and \texttt{/} operators have higher precedence than the \texttt{+} and \texttt{-} operators. For any operator $\oplus$ above, the expression $a \oplus b\oplus c$ is equivalent to $(a \oplus b)\oplus c$ rather than $a \oplus (b \oplus c)$  (we say the operators are \index{associativity}\textit{left associative}). We sometimes write down the type of an expression after a colon when working on paper, to keep it in mind:
+\noindent The \texttt{mod}, \texttt{*}, and \texttt{/} operators have higher precedence than the \texttt{+} and \texttt{-} operators. For any operator $\oplus$ above, the expression $a \oplus b\oplus c$ is equivalent to $(a\ \oplus\ b)\oplus c$ rather than $a \oplus (b\ \oplus\ c)$  (we say the operators are \index{associativity}\textit{left associative}). We sometimes write down the type of an expression after a colon when working on paper, to keep it in mind:
 
 \smspace
 \texttt{5 * -2 :}\textbf{\textsf{ int}}
@@ -562,8 +478,8 @@ A third type we shall be using is \index{char@\textbf{\textsf{char}}}\textbf{\te
 \smspace
 \noindent\verb!        OCaml!\\
 \noindent\\
-\noindent\texttt{\# \upquote{c};;}\\
-\noindent\texttt{- :\ char = \upquote{c}}
+\noindent\texttt{\# 'c';;}\\
+\noindent\texttt{- :\ char = 'c'}
 \smspace
 
 \noindent So far we have looked only at operators like \texttt{+}, \texttt{mod}, and \texttt{=} which look like familiar mathematical ones. But many constructs in programming languages look a little different. For example, to choose a course of evaluation based on some test, we use the \index{if@\texttt{\textbf{if}}}\index{then@\texttt{\textbf{then}}}\index{else@\texttt{\textbf{else}}}\texttt{\textbf{if}} \ldots\ \texttt{\textbf{then}} \ldots\  \texttt{\textbf{else}} construct:
@@ -609,17 +525,17 @@ $\underbrace{\vphantom{g}\texttt{\textbf{if}}\ \ \ \overbrace{\texttt{\strut 100
 
 \hspace{6mm}\texttt{\textbf{if} true \textbf{then} false \textbf{else} true}
 
-\hspace{6mm}\texttt{\upquote{\%}}
+\hspace{6mm}\texttt{'\%'}
 
-\hspace{6mm}\texttt{\upquote{a} + \upquote{b}}
+\hspace{6mm}\texttt{'a' + 'b'}
 
-\item Consider the evaluations of the expressions \texttt{1\! +\! 2\! mod\! 3}, \texttt{(1\! +\! 2)\! mod\! 3}, and \texttt{1\! +\! (2\! mod\! 3)}. What can you conclude about the \texttt{+} and \texttt{mod} operators?
-\item A programmer writes \texttt{1+2\! *\! 3+4}. What does this evaluate to? What advice would you give him?
+\item Consider the evaluations of the expressions \texttt{1 + 2 mod 3}, \texttt{(1 + 2) mod 3}, and \texttt{1 + (2 mod 3)}. What can you conclude about the \texttt{+} and \texttt{mod} operators?
+\item A programmer writes \texttt{1+2 * 3+4}. What does this evaluate to? What advice would you give him?
 \item {\hyphenpenalty=10000\begin{sloppypar}The range of numbers available is limited. There are two special numbers: \index{min\_int@\texttt{min\_int}}\index{max\_int@\texttt{max\_int}}\texttt{min\_int} and \texttt{max\_int}. What are their values on your computer? What happens when you evaluate the expressions \texttt{max\_int\! +\! 1} and \texttt{min\_int\! -\! 1}?\end{sloppypar}}
-\item What happens when you try to evaluate the expression \texttt{1\! /\! 0}? Why?
+\item What happens when you try to evaluate the expression \texttt{1 / 0}? Why?
 \item Can you discover what the \texttt{mod} operator does when one or both of the operands are negative? What about if the first operand is zero? What if the second is zero?
 \item Why not just use, for example, the integer \texttt{0} to represent false and the integer \texttt{1} for true? Why have a separate \textbf{\textsf{bool}} type at all?
-\item What is the effect of the comparison operators like \texttt{<} and \texttt{>} on alphabetic values of type \textbf{\textsf{char}}? For example, what does \texttt{\upquote{p}\! <\! \upquote{q}} evaluate to? What is the effect of the comparison operators on the booleans, \texttt{true} and \texttt{false}?
+\item What is the effect of the comparison operators like \texttt{<} and \texttt{>} on alphabetic values of type \textbf{\textsf{char}}? For example, what does \texttt{'p' < 'q'} evaluate to? What is the effect of the comparison operators on the booleans, \texttt{true} and \texttt{false}?
 \end{enumerate}
 
 \cleardoublepage
@@ -729,7 +645,7 @@ $\underbrace{\overbrace{\texttt{\strut  \ cube   }}^{\textbf{\textsf{int $\right
 \noindent\verb!        OCaml!\\
 \noindent\\
 \noindent\verb!# let isvowel c =!\\
-\noindent\mbox{\texttt{~~~~c = \upquote{a} || c = \upquote{e} || c = \upquote{i} || c = \upquote{o} || c = \upquote{u};;}}\\
+\noindent\mbox{\texttt{~~~~c = 'a' || c = 'e' || c = 'i' || c = 'o' || c = 'u';;}}\\
 \noindent\verb!val isvowel : char -> bool = <fun>!\\
 \noindent\texttt{\# isvowel 'x';;}\\
 \noindent\verb!- : bool = false!
@@ -842,7 +758,7 @@ One of the oldest methods for solving a problem (or \index{algorithm}\textit{alg
  \item Write a function which returns \texttt{true} if both of its arguments are non-zero, and \texttt{false} otherwise. What is the type of your function?
  \item Write a recursive function which, given a number $n$, calculates the sum $1 + 2 + 3 + \ldots + n$. What is its type?
  \item Write a function \texttt{power\! x\! n} which raises \texttt{x} to the power \texttt{n}. Give its type.
- \item Write a function \texttt{isconsonant} which, given a lower-case character in the range \texttt{\upquote{a}}\ldots\texttt{\upquote{z}}, determines if it is a consonant.
+ \item Write a function \texttt{isconsonant} which, given a lower-case character in the range \texttt{'a'}\ldots\texttt{'z'}, determines if it is a consonant.
  \item What is the result of the expression\, \texttt{\textbf{let}\! x\! =\! 1\! \textbf{in}\! \textbf{let}\! x\! =\! 2\! \textbf{in}\! x\! +\! x} ?
  \item Can you suggest a way of preventing the non-termination of the \texttt{factorial} function in the case of a zero or negative argument?
 \end{enumerate}
@@ -938,7 +854,7 @@ $\texttt{\ \ | \_ -> a * factorial (a - 1)}$\vphantom{g}
 \noindent\texttt{isvowel :}\textbf{\textsf{ char $\rightarrow$ bool}}\\
 \\
 $\texttt{\plet isvowel c =}$\\
-$\texttt{\ \ c = \upquote{a} || c = \upquote{e} || c = \upquote{i} || c = \upquote{o} || c = \upquote{u}}$\vphantom{g}
+$\texttt{\ \ c = 'a' || c = 'e' || c = 'i' || c = 'o' || c = 'u'}$\vphantom{g}
 \end{minipage}}
 \end{center}
 \smspace
@@ -952,11 +868,11 @@ $\texttt{\ \ c = \upquote{a} || c = \upquote{e} || c = \upquote{i} || c = \upquo
 \\
 $\texttt{\plet isvowel c =}$\\
 $\texttt{\ \ \pmatch c \pwith}$\\
-$\texttt{\ \ \ \ \upquote{a} -> true}$\\
-$\texttt{\ \ |  \upquote{e} -> true}$\\
-$\texttt{\ \ |  \upquote{i} -> true}$\\
-$\texttt{\ \ |  \upquote{o} -> true}$\\
-$\texttt{\ \ |  \upquote{u} -> true}$\\
+$\texttt{\ \ \ \ 'a' -> true}$\\
+$\texttt{\ \ |  'e' -> true}$\\
+$\texttt{\ \ |  'i' -> true}$\\
+$\texttt{\ \ |  'o' -> true}$\\
+$\texttt{\ \ |  'u' -> true}$\\
 $\texttt{\ \ | \_ -> false}$\vphantom{g}
 \end{minipage}}
 \end{center}
@@ -969,11 +885,11 @@ $\texttt{\ \ | \_ -> false}$\vphantom{g}
 \noindent\\
 \noindent\verb!# let isvowel c =!\\
 \noindent\mbox{\texttt{~~~~\underline{\vphantom{g}match c with}}}\\
-\noindent\underline{\vphantom{g}\texttt{~~~~~~\upquote{a} -> true}}\\
-\noindent\underline{\vphantom{g}\texttt{~~~~|~\upquote{e} -> true}}\\
-\noindent\underline{\vphantom{g}\texttt{~~~~|~\upquote{i} -> true}}\\
-\noindent\underline{\vphantom{g}\texttt{~~~~|~\upquote{o} -> true}}\\
-\noindent\underline{\vphantom{g}\texttt{~~~~|~\upquote{u} -> true;;}}\\
+\noindent\underline{\vphantom{g}\texttt{~~~~~~'a' -> true}}\\
+\noindent\underline{\vphantom{g}\texttt{~~~~|~'e' -> true}}\\
+\noindent\underline{\vphantom{g}\texttt{~~~~|~'i' -> true}}\\
+\noindent\underline{\vphantom{g}\texttt{~~~~|~'o' -> true}}\\
+\noindent\underline{\vphantom{g}\texttt{~~~~|~'u' -> true;;}}\\
 \noindent\texttt{\# Warning 8:\ this pattern-matching is not exhaustive.}\\
 \noindent\verb!Here is an example of a value that is not matched:!\\
 \noindent\verb!'b'!\\
@@ -989,7 +905,7 @@ $\texttt{\ \ | \_ -> false}$\vphantom{g}
 \\
 $\texttt{\plet isvowel c =}$\\
 $\texttt{\ \ \pmatch c \pwith}$\\
-$\texttt{\ \ \ \ \upquote{a} | \upquote{e} | \upquote{i} | \upquote{o} | \upquote{u} -> true}$\\
+$\texttt{\ \ \ \ 'a' | 'e' | 'i' | 'o' | 'u' -> true}$\\
 $\texttt{\ \ | \_ -> false}$\vphantom{g}
 \end{minipage}}
 \end{center}
@@ -1040,7 +956,7 @@ $\underbrace{\texttt{\textbf{match} b \textbf{with} 0 -> }\overbrace{\vphantom{(
   \item Use pattern matching to write a function which, given two numbers $x$ and $n$, computes $x^n$.
   \item For each of the previous three questions, comment on whether you think it is easier to read the function with or without pattern matching. How might you expect this to change if the functions were much larger?
   \item What does\, \texttt{\textbf{match} 1 + 1 \textbf{with} 2 -> \textbf{match} 2 + 2 \textbf{with} 3 -> 4 | 4 -> 5}\, evaluate to?
-  \item There is a special pattern \texttt{x..y} to denote continuous ranges of characters, for example \texttt{\upquote{a}..\upquote{z}} will match all lowercase letters. Write functions \texttt{islower} and \texttt{isupper}, each of type \textsf{\textbf{char $\rightarrow$ bool}}, to decide on the case of a given letter. 
+  \item There is a special pattern \texttt{x..y} to denote continuous ranges of characters, for example \texttt{'a'..'z'} will match all lowercase letters. Write functions \texttt{islower} and \texttt{isupper}, each of type \textsf{\textbf{char $\rightarrow$ bool}}, to decide on the case of a given letter. 
 \end{enumerate}
 
 \cleardoublepage
@@ -1533,8 +1449,8 @@ $\texttt{\ \ | h::t -> insert h (sort t)}$\vphantom{g}
 
 \noindent Notice that the type \textbf{\textsf{$\alpha$ list $\rightarrow$ $\alpha$ list}} rather than \textbf{\textsf{int list $\rightarrow$ int list}}. This is because OCaml's comparison functions like \texttt{<=} (used inside \texttt{insert}) work for types other than \textbf{\textsf{int}}.  For example, OCaml knows how to compare characters in alphabetical order:
 \begin{eqnarray*}
- & & \texttt{\underline{sort [\upquote{p}; \upquote{i}; \upquote{m}; \upquote{c}; \upquote{s}; \upquote{h}]\vphantom{g}}} \\
- \overset{*}\Longrightarrow & & \texttt{[\upquote{c}; \upquote{h}; \upquote{i}; \upquote{m}; \upquote{p}; \upquote{s}]}
+ & & \texttt{\underline{sort ['p'; 'i'; 'm'; 'c'; 's'; 'h']\vphantom{g}}} \\
+ \overset{*}\Longrightarrow & & \texttt{['c'; 'h'; 'i'; 'm'; 'p'; 's']}
 \end{eqnarray*}
 
 \noindent How long does our sorting function take to run if the list to be sorted has $n$ elements? Under the assumption that our argument list is arbitrarily ordered rather than sorted, each \texttt{insert} operation takes time proportional to $n$ (the element might need to be inserted anywhere). We must run the \texttt{insert} function as many times as there are elements so, adding these all up, the \texttt{sort} function takes time proportional to $n^2$. You might argue that the first \texttt{insert} operations only have to work with a very small list, and that this fact should make the time less that $n^2$. Can you see why that is not true? What happens if the list is sorted already?
@@ -1641,7 +1557,7 @@ So, how many lines do we have? Well, in the top half we have roughly $\log_{2}n$
   \item We mentioned that the comparison functions like \,\texttt{<}\, work for many OCaml types. Can you determine, by experimentation, how they work for lists? For example, what is the result of \texttt{[1;\! 2]\! <\! [2;\! 3]}? What happens when we sort the following list of type \textbf{\textsf{char list list}}? Why?
   
   \vspace{1mm}
-  \texttt{\phantom{space}[[\upquote{o}; \upquote{n}; \upquote{e}]; [\upquote{t}; \upquote{w}; \upquote{o}]; [\upquote{t}; \upquote{h}; \upquote{r}; \upquote{e}; \upquote{e}]]}
+  \texttt{\phantom{space}[['o'; 'n'; 'e']; ['t'; 'w'; 'o']; ['t'; 'h'; 'r'; 'e'; 'e']]}
   
   \item Combine the \texttt{sort} and \texttt{insert} functions into a single \texttt{sort} function.
 \end{enumerate}
@@ -1708,7 +1624,7 @@ So, how many lines do we have? Well, in the top half we have roughly $\log_{2}n$
 
 \noindent \index{\#use@\texttt{\#use}}It is exactly the same as typing it in manually -- the functions \texttt{length} and \texttt{append} will now be available for use. Errors and warnings will be reported as usual. Note that the \texttt{\#use} command is not part of the OCaml language for expressions -- it is just a command we are giving to OCaml.
 
-\chapter[Functions upon Functions upon Functions]{Functions upon Functions\\ upon Functions}
+\chapter[Functions upon Functions upon Functions]{Functions upon Functions upon Functions}
 \pagestyle{fancy}
 \label{functionsuponfunctions}
 Often we need to apply a function to every element of a list. For example, doubling each of the numbers in a list of integers. We could do this with a simple recursive function, working over each element of a list:
@@ -1929,7 +1845,7 @@ $\texttt{~~a >= b}$\vphantom{g}
 \section*{Questions}
 
 \begin{enumerate}
-  \item Write a simple recursive function \texttt{calm} to replace exclamation marks in a \textbf{\textsf{char list}} with periods. For example \texttt{calm\! [\upquote{H};\! \upquote{e};\! \upquote{l};\! \upquote{p};\! \upquote{!};\! \upquote{ };\! \upquote{F};\! \upquote{i};\! \upquote{r};\! \upquote{e};\! \upquote{!}]} should evaluate to \texttt{[\upquote{H};\! \upquote{e};\! \upquote{l};\! \upquote{p};\! \upquote{.};\! \upquote{ };\! \upquote{F};\! \upquote{i};\! \upquote{r};\! \upquote{e};\! \upquote{.}]}. Now rewrite your function to use \texttt{map} instead of recursion. What are the types of your functions?
+  \item Write a simple recursive function \texttt{calm} to replace exclamation marks in a \textbf{\textsf{char list}} with periods. For example \texttt{calm ['H'; 'e'; 'l'; 'p'; '!'; ' '; 'F'; 'i'; 'r'; 'e'; '!']} should evaluate to \texttt{['H'; 'e'; 'l'; 'p'; '.'; ' '; 'F'; 'i'; 'r'; 'e'; '.']}. Now rewrite your function to use \texttt{map} instead of recursion. What are the types of your functions?
   \item Write a function \texttt{clip} which, given an integer, clips it to the range $1\ldots 10$ so that integers bigger than 10 round down to 10, and those smaller than 1 round up to 1. Write another function \texttt{cliplist} which uses this first function together with \texttt{map} to apply this clipping to a whole list of integers.
   \item Express your function \texttt{cliplist} again, this time using an anonymous function instead of \texttt{clip}.
   \item Write a function \texttt{apply} which, given another function, a number of times to apply it, and an initial argument for the function, will return the cumulative effect of repeatedly applying the function. For instance, \texttt{apply\! f\! 6\! 4} should return \texttt{f\! (f\! (f\! (f\! (f\! (f\! 4))))))}. What is the type of your function?
@@ -1970,7 +1886,7 @@ $\texttt{~~a >= b}$\vphantom{g}
 \pagestyle{fancy}
 \label{whenthingsgowrong}
 
-Some of the functions we have written so far have had a single, correct answer for each possible argument. For example, there's no number we cannot halve. However, when we use more complicated types such as lists, there are plenty of functions which do not always have an answer -- a list might not have a head or a tail, for example. Our \texttt{take} and \texttt{drop} functions were unsatisfactory in case of invalid arguments. For example, \texttt{take\! 3\! [\upquote{a}]} would simply return \texttt{[]}. This is bad practice -- we are hiding errors rather than confronting them.
+Some of the functions we have written so far have had a single, correct answer for each possible argument. For example, there's no number we cannot halve. However, when we use more complicated types such as lists, there are plenty of functions which do not always have an answer -- a list might not have a head or a tail, for example. Our \texttt{take} and \texttt{drop} functions were unsatisfactory in case of invalid arguments. For example, \texttt{take\! 3\! ['a']} would simply return \texttt{[]}. This is bad practice -- we are hiding errors rather than confronting them.
 
 OCaml has a mechanism for reporting such \index{run-time error}\textit{run-time} errors (these are quite different from the type errors OCaml reports when it refuses to accept a program at all). This mechanism is \index{exception}\textit{exceptions}.
 
@@ -2184,7 +2100,7 @@ $\texttt{\plet p = (1, 4)}$\vphantom{g}
 \fbox{\begin{minipage}{0.8\textwidth}
 \noindent\texttt{q :}\textbf{\textsf{ int $\times$ char}}\\
 \\
-$\texttt{\plet q = (1, \upquote{1})}$\vphantom{g}
+$\texttt{\plet q = (1, '1')}$\vphantom{g}
 \end{minipage}}
 \end{center}
 \smspace
@@ -2309,9 +2225,9 @@ $\texttt{\ \ \ \ Not\_found -> false}$\vphantom{g}
 \end{center}
 \smspace
 
-\noindent If \texttt{lookup\! k\! d} succeeds, \texttt{true} will be returned. If not, an exception will be raised, which \texttt{key\_exists} will handle itself, and return \texttt{false}. Note that we did not give a name to the result of \texttt{lookup\! k\! l} because we always return \texttt{true} if it succeeds.
+\noindent If \texttt{lookup k d} succeeds, \texttt{true} will be returned. If not, an exception will be raised, which \texttt{key\_exists} will handle itself, and return \texttt{false}. Note that we did not give a name to the result of \texttt{lookup k l} because we always return \texttt{true} if it succeeds.
 
-Pairs are just a particular instance of a more general construct -- the \textit{tuple}. A tuple may contain two or more things. For example, \texttt{(1,\! false,\! \upquote{a})} has type \textsf{\textbf{int $\times$ bool $\times$ char}}. 
+Pairs are just a particular instance of a more general construct -- the \textit{tuple}. A tuple may contain two or more things. For example, \texttt{(1, false, 'a')} has type \textsf{\textbf{int $\times$ bool $\times$ char}}. 
 
 \clearpage
 \section*{Questions}
@@ -2554,7 +2470,7 @@ $\texttt{\plet col = Blue}$\\
 \\
 $\texttt{\plet cols = [Red; Red; Green; Yellow]}$\\
 \\
-$\texttt{\plet colpair = (\upquote{R}, Red)}$
+$\texttt{\plet colpair = ('R', Red)}$
 \end{minipage}}
 \end{center}
 \smspace
@@ -2621,7 +2537,7 @@ $\texttt{\plet number = Some 50}$\\
 \\
 $\texttt{\plet numbers = [Some 12; None; None; Some 2]}$\\
 \\
-$\texttt{\plet word = Some [\upquote{c}; \upquote{a}; \upquote{k}; \upquote{e}]}$\vphantom{g}
+$\texttt{\plet word = Some ['c'; 'a'; 'k'; 'e']}$\vphantom{g}
 \end{minipage}}
 \end{center}
 \smspace
@@ -2659,7 +2575,7 @@ In addition to being polymorphic, new types may also be \index{type!recursive}re
   Built-in & Ours & Our Type\\ \midrule
   \texttt{[]} & \texttt{Nil} & $\alpha$ \textsf{sequence}\\
   \texttt{[1]} & \texttt{Cons (1, Nil)} & \textbf{\textsf{int}} \textsf{sequence}\\
-  \texttt{[\upquote{a}; \upquote{x}; \upquote{e}]} & \texttt{Cons (\upquote{a}, Cons (\upquote{x}, Cons (\upquote{e}, Nil)))} & \textbf{\textsf{char}} \textsf{sequence}\\
+  \texttt{['a'; 'x'; 'e']} & \texttt{Cons ('a', Cons ('x', Cons ('e', Nil)))} & \textbf{\textsf{char}} \textsf{sequence}\\
   \texttt{[Red; RGB (20, 20, 20)]} & \texttt{Cons (Red, Cons (RGB (20, 20, 20), Nil))} & \textsf{colour sequence} \\ \bottomrule
 \end{tabular}
 \smspace
@@ -3442,7 +3358,8 @@ Function & Type & Description \\\midrule
 \end{tabular}
 \vspace{1mm}
 
-\noindent Adding the special tabulation character \texttt{\upquote{\textbackslash t}} after each number will line up the columns.
+\noindent Adding the special tabulation character \texttt{'\textbackslash t'}} after each number will line up the columns.
+
 \item Write a function to count the number of lines in a given file.
 \item Write a function \texttt{copy\_file} of type \textsf{\textbf{string} $\rightarrow$ \textbf{string} $\rightarrow$ \textbf{unit}} which copies a file line by line. For example, \texttt{copy\_file\! "a.txt"\! "b.txt"} should produce a file \texttt{b.txt} identical to \texttt{a.txt}. Make sure you deal with the case where the file \texttt{a.txt} cannot be found, or where \texttt{b.txt} cannot be created or filled. 
 \end{enumerate}
@@ -3699,7 +3616,7 @@ $\texttt{~~~~~~\_ -> close\_in channel}$\vphantom{g}
 \noindent\verb!- : unit = ()!
 \smspace
 
-\noindent Let us update the program to count the number of words, characters, and sentences. We will do this simplistically, assuming that the number of words can be counted by counting the number of spaces, and that the sentences can be counted by noting instances of \texttt{\upquote{.}}, \texttt{\upquote{!}}, and \texttt{\upquote{?}}. We can extend the \texttt{channel\_statistics} function appropriately -- \texttt{file\_statistics} need not change:
+\noindent Let us update the program to count the number of words, characters, and sentences. We will do this simplistically, assuming that the number of words can be counted by counting the number of spaces, and that the sentences can be counted by noting instances of \texttt{'.'}, \texttt{'!'}, and \texttt{'?'}. We can extend the \texttt{channel\_statistics} function appropriately -- \texttt{file\_statistics} need not change:
 
 \smspace
 \begin{center}
@@ -3719,8 +3636,8 @@ $\texttt{~~~~~~~~~~characters := !characters + String.length line;}$\\
 $\texttt{~~~~~~~~~~String.iter}$\\
 $\texttt{~~~~~~~~~~~~(\pfun c ->}$\\
 $\texttt{~~~~~~~~~~~~~~~\pmatch c \pwith}$\\
-$\texttt{~~~~~~~~~~~~~~~~~\upquote{.}\ | \upquote{?}\ | \upquote{!}\ -> sentences := !sentences + 1}$\\
-$\texttt{~~~~~~~~~~~~~~~| \upquote{ } -> words := !words + 1}$\\
+$\texttt{~~~~~~~~~~~~~~~~~\'.'\ | '?'\ | '!'\ -> sentences := !sentences + 1}$\\
+$\texttt{~~~~~~~~~~~~~~~| ' ' -> words := !words + 1}$\\
 $\texttt{~~~~~~~~~~~~~~~| \_ -> ())}$\\
 $\texttt{~~~~~~~~~~~~line}$\\
 $\texttt{~~~~~~\pdone}$\\
@@ -3818,7 +3735,7 @@ An \index{array@\textbf{\textsf{array}}}\index{array}array is a place for storin
 \noindent\verb!- : char = 'C'!\vphantom{g}
 \smspace
 
-\noindent The numbers go from 0 to 255 inclusive (they do not all represent printable characters, for example the newline character \texttt{\upquote{\textbackslash n}} has code 10). So, we can store our histogram as an integer array of length 256.
+\noindent The numbers go from 0 to 255 inclusive (they do not all represent printable characters, for example the newline character \texttt{'\textbackslash n'} has code 10). So, we can store our histogram as an integer array of length 256.
 
 Our main function is getting rather long, so we will write a separate one which, given the completed array prints out the frequencies. If there were no instances of a particular character, no line is printed for that character.
 
@@ -3850,7 +3767,7 @@ $\texttt{~~\pdone}$\vphantom{g}
 \noindent This prints lines like:
 
 \smspace
-\texttt{For character \upquote{d} (character number 100) the count is 6.}
+\texttt{For character 'd' (character number 100) the count is 6.}
 \smspace
 
 \noindent Now, we can alter our \texttt{channel\_statistics} to create an appropriate array, and update it, once again using \texttt{String.iter}: 
@@ -3874,8 +3791,8 @@ $\texttt{~~~~~~~~~~characters := !characters + String.length line;}$\\
 $\texttt{~~~~~~~~~~String.iter}$\\
 $\texttt{~~~~~~~~~~~~(\pfun c ->}$\\
 $\texttt{~~~~~~~~~~~~~~~\pmatch c \pwith}$\\
-$\texttt{~~~~~~~~~~~~~~~~~\upquote{.}\ | \upquote{?}\ | \upquote{!}\ -> sentences := !sentences + 1}$\\
-$\texttt{~~~~~~~~~~~~~~~| \upquote{ } -> words := !words + 1}$\\
+$\texttt{~~~~~~~~~~~~~~~~~'.'\ | '?'\ | '!'\ -> sentences := !sentences + 1}$\\
+$\texttt{~~~~~~~~~~~~~~~| ' ' -> words := !words + 1}$\\
 $\texttt{~~~~~~~~~~~~~~~| \_ -> ())}$\\
 $\texttt{~~~~~~~~~~~~line;}$\\
 $\texttt{~~~~~~~~~~String.iter}$\hfill\textit{for each character\ldots}\\
@@ -3944,7 +3861,7 @@ $\texttt{~~~~~~~~print\_histogram histogram}$\hfill\textit{call histogram printe
 \noindent\verb!- : unit = ()!\vphantom{g}
 \smspace
 
-\noindent The most common character is the space. The most common alphabetic character is \texttt{\upquote{e}}.
+\noindent The most common character is the space. The most common alphabetic character is \texttt{'e'}.
 
 \clearpage
 \section*{Questions}
