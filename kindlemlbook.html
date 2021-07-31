@@ -3,8 +3,8 @@
 <html > 
 <head><title></title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
-<meta name="generator" content="TeX4ht (https://tug.org/tex4ht/)"> 
-<meta name="originator" content="TeX4ht (https://tug.org/tex4ht/)"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
 <!-- html,pic-fbox,pic-equations,pic-tabular --> 
 <meta name="src" content="kindlemlbook.tex"> 
 <link rel="stylesheet" type="text/css" href="kindlemlbook.css"> 
@@ -515,13 +515,13 @@ class="cmr-9">3</span><span
 class="ecrm-0900">. What is the result? How did you work it out? We</span>
 <span 
 class="ecrm-0900">might show the process like this: </span><div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook10x.png" alt="       1+ 2&#x00D7; 3
 =&#x21D2;     1+ 6
 =&#x21D2;     7
-" class="math-display" ></div>
-<!--l. 425--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 427--><p class="noindent" ><span 
 class="ecrm-0900">How did we know to multiply </span><span 
 class="cmr-9">2 </span><span 
@@ -534,13 +534,13 @@ class="cmr-9">2</span><span
 class="ecrm-0900">? How did we know when to stop? Let us</span>
 <span 
 class="ecrm-0900">underline the part of the expression which is dealt with at each step: </span><div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook11x.png" alt="       1+ 2&#x00D7;-3
 =&#x21D2;     1+-6
 =&#x21D2;     7
-" class="math-display" ></div>
-<!--l. 433--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 435--><p class="noindent" ><span 
 class="ecrm-0900">We chose which part of the expression to deal with each time using a familiar mathematical rule &#8211;</span>
 <span 
@@ -650,14 +650,14 @@ class="ecrm-0900">evaluating the expression just</span>
 class="ecrm-0900">requires dealing with each parenthesized section, starting with the innermost, and stopping when there are no</span>
 <span 
 class="ecrm-0900">parentheses left: </span><div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook12x.png" alt="       (1 +(2&#x00D7; 3))
           ------
 =&#x21D2;     (1-+6)-
 =&#x21D2;     7
-" class="math-display" ></div>
-<!--l. 470--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 472--><p class="noindent" ><span 
 class="ecrm-0900">OCaml knows that </span><span 
 class="cmsy-9">&#x00D7; </span><span 
@@ -1073,13 +1073,12 @@ class="ecrm-0900">part is chosen to be the result of evaluating the whole</span>
 <span 
 class="ecrm-0900">expression:</span>
 <!--l. 578--><p class="indent" >
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook15x.png" alt="      bool        int     int
     &#x25DC;--&#x25DE;&#x25DF;--&#x25DD;     &#x25DC;&#x25DE;&#x25DF;&#x25DD;    &#x25DC;&#x25DE;&#x25DF;&#x25DD;
 i&#x25DF;f--100-&#x003E;-99-&#x25DD;th&#x25DC;en--0-else-1&#x25DE;
-             int
-" class="math-display" ></div>
+             int  " class="math-display" ></center>
 <!--l. 581--><p class="noindent" ><span 
 class="ecrm-0900">We have covered a lot in this chapter, but we need all these basic tools before we can write interesting</span>
 <span 
@@ -1576,12 +1575,11 @@ class="ecrm-0900">form:</span>
                                                                                
                                                                                
 <!--l. 686--><p class="indent" >
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook16x.png" alt="in&#x25DC;t &#x2192;&#x25DE;&#x25DF;int&#x25DD;&#x25DC;-in&#x25DE;&#x25DF;t&#x25DD;
 -cube -200
-&#x25DF;   &#x25DD;i&#x25DC;nt    &#x25DE;
-" class="math-display" ></div>
+&#x25DF;   &#x25DD;i&#x25DC;nt    &#x25DE;  " class="math-display" ></center>
 <!--l. 689--><p class="noindent" ><span 
 class="ecrm-0900">If we try an argument of the wrong type, the program will be rejected:</span>
 <!--l. 692--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
@@ -1973,7 +1971,7 @@ class="ecrm-0900">to indicate a recursive function. How does the evaluation of <
 class="ectt-0900">factorial 4</span>
 <span 
 class="ecrm-0900">proceed? </span><div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
                                                                                
                                                                                
 <img 
@@ -1986,8 +1984,8 @@ src="kindlemlbook17x.png" alt="      factorial 4
 =&#x21D2;    4 * (3-* 2)
 =&#x21D2;    4-*-6
 =&#x21D2;    24
-" class="math-display" ></div>
-<!--l. 779--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 781--><p class="noindent" ><span 
 class="ecrm-0900">For the first three steps, the </span><span 
 class="ectt-0900">else </span><span 
@@ -2006,7 +2004,7 @@ class="ecrm-0900">the whole evaluation. It is sometimes possible for a recursive
 class="ecrm-0900">evaluate </span><span 
 class="ectt-0900">factorial (-1)</span><span 
 class="ecrm-0900">? </span><div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook18x.png" alt="       factorial-(- 1)-
 =&#x21D2;     -1 * factorial-(-2)
@@ -2014,8 +2012,8 @@ src="kindlemlbook18x.png" alt="       factorial-(- 1)-
 =&#x21D2;     -1 * (-2 * (- 3-*-factorial (-4)))
                       -------------
   ...    ...
-" class="math-display" ></div>
-<!--l. 788--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 790--><p class="noindent" ><span 
 class="ecrm-0900">The expression keeps expanding, and the recursion keeps going. Helpfully, OCaml tells us what is going</span>
 <span 
@@ -2164,7 +2162,7 @@ class="ectt-0900">&#x00A0;=</span><span
 class="ectt-0900">&#x00A0;128</span></span></span>
 <!--l. 818--><p class="noindent" ><span 
 class="ecrm-0900">Here is the evaluation: </span><div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook19x.png" alt="      gcd-64000-3456
 =&#x21D2;    gcd-3456-1792
@@ -2172,8 +2170,8 @@ src="kindlemlbook19x.png" alt="      gcd-64000-3456
 =&#x21D2;    gcd-1664-128
 =&#x21D2;    gcd 128 0
 =&#x21D2;    128------
-" class="math-display" ></div>
-<!--l. 826--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 828--><p class="noindent" ><span 
 class="ecrm-0900">Finally, here is a simple function on boolean values. In the previous chapter, we looked at the </span><span 
 class="ectt-0900">&amp;&amp; </span><span 
@@ -2455,13 +2453,13 @@ class="ecrm-0800">&#x00A0;</span><span
 class="ecti-0800">expression</span><span 
 class="ecrm-0800">. These have type </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2;</span><span 
 class="ecrm-0800">, </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B3; </span><span 
 class="ecrm-0800">etc. for some types</span>
 <span 
@@ -2756,13 +2754,12 @@ class="ecrm-0900">arrow, all of which must be alike:</span>
 <!--l. 1037--><p class="indent" >
                                                                                
                                                                                
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook28x.png" alt="                 int              int
                 &#x25DC;&#x25DE;&#x25DF;&#x25DD;       &#x25DC;-----&#x25DE;&#x25DF;-----&#x25DD;
 m&#x25DF;atch-b-with 0--&#x003E;-a-&#x25DD;&#x25DC;|_--&#x003E;-gcd-b (a-mod-b)&#x25DE;
-                   int
-" class="math-display" ></div>
+                   int  " class="math-display" ></center>
 <!--l. 1040--><p class="noindent" ><span 
 class="ecrm-0900">We use pattern matching whenever it is easier to read and understand than </span><span 
 class="ectt-0900">if </span><span 
@@ -2982,13 +2979,13 @@ class="ecrm-0800">&#x00A0;</span><span
 class="ecti-0800">expression</span><span 
 class="ecrm-0800">. These have type </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2;</span><span 
 class="ecrm-0800">, </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B3; </span><span 
 class="ecrm-0800">etc. for some types</span>
 <span 
@@ -3127,12 +3124,12 @@ class="ectt-0900">::</span><span
 class="ecrm-0900">&#x00A0;operator (pronounced &#8220;cons&#8221;) is used to add a single element to</span>
 <span 
 class="ecrm-0900">the front of an existing list: </span><div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook29x.png" alt="       false :: [true; false]
 =&#x21D2;     [false; true; false]
-" class="math-display" ></div>
-<!--l. 1107--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 1109--><p class="noindent" ><span 
 class="ecrm-0900">The cons operation is completed in a constant amount of time, regardless of the length of the list. The</span> <a 
  id="dx1-18010"></a><a 
@@ -3142,12 +3139,12 @@ class="ectt-0900">@</span>
 class="ecrm-0900">operator (pronounced &#8220;append&#8221;) is used to combine two lists together: </span><div class="eqnarray">
                                                                                
                                                                                
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook30x.png" alt="      [1; 2] @ [3; 4; 5]
 =&#x21D2;    [1; 2; 3; 4; 5]
-" class="math-display" ></div>
-<!--l. 1113--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 1115--><p class="noindent" ><span 
 class="ecrm-0900">This takes</span> <a 
  id="dx1-18013"></a><span 
@@ -3196,7 +3193,7 @@ class="ecrm-0900">list:</span>
 src="kindlemlbook32x.png" alt=""  class="fbox" >
 <!--l. 1147--><p class="noindent" ><span 
 class="ecrm-0900">Here is how the evaluation proceeds: </span><div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook33x.png" alt="      length [5; 5; 5]
 =&#x21D2;    1 + length [5; 5]
@@ -3205,8 +3202,8 @@ src="kindlemlbook33x.png" alt="      length [5; 5; 5]
 =&#x21D2;    1 + (1 + (1 + length []))    base case
 =&#x21D2;    1-+-(1-+-(1-+-0))
 =*&#x21D2;    3                 (= *&#x21D2; means we are not showing all the steps)
-" class="math-display" ></div>
-<!--l. 1155--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 1157--><p class="noindent" ><span 
 class="ecrm-0900">This works by</span> <a 
  id="dx1-18017"></a><span 
@@ -3282,7 +3279,7 @@ src="kindlemlbook37x.png" alt=""  class="fbox" >
 class="ecrm-0900">We wrapped it up in another function to make sure we do not call it with a bad initial value for the</span>
 <span 
 class="ecrm-0900">accumulating argument. Here is an example evaluation: </span><div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook38x.png" alt="       length [5; 5; 5]
 =&#x21D2;     length_inner [5; 5; 5] 0
@@ -3291,8 +3288,8 @@ src="kindlemlbook38x.png" alt="       length [5; 5; 5]
 =&#x21D2;     length_inner-[5]-2-
 =&#x21D2;     length_inner-[] 3          base case
 =&#x21D2;     3
-" class="math-display" ></div>
-<!--l. 1231--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 1233--><p class="noindent" ><span 
 class="ecrm-0900">Now, the space taken by the calculation does not relate in any way to the length of the list argument.</span>
 <span 
@@ -3312,7 +3309,7 @@ src="kindlemlbook39x.png" alt=""  class="fbox" >
 class="ecrm-0900">Consider the evaluation of </span><span 
 class="ectt-0900">odd_elements [2; 4; 2; 4; 2]</span><span 
 class="ecrm-0900">: </span><div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook40x.png" alt="       odd_elements [2; 4; 2; 4; 2]
 =&#x21D2;     2 :: odd_elements [2; 4; 2]
@@ -3320,8 +3317,8 @@ src="kindlemlbook40x.png" alt="       odd_elements [2; 4; 2; 4; 2]
 =&#x21D2;     2 :: 2 :: odd_elements-[2]
 =&#x21D2;     2-:: 2-::-[2]
 =*&#x21D2;     [2; 2; 2]
-" class="math-display" ></div>
-<!--l. 1256--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 1258--><p class="noindent" ><span 
 class="ecrm-0900">You might notice that the first two cases in the pattern match return exactly their argument. By reversing the</span>
 <span 
@@ -3332,12 +3329,12 @@ src="kindlemlbook41x.png" alt=""  class="fbox" >
 class="ecrm-0900">We have seen how to use the </span><span 
 class="ectt-0900">@ </span><span 
 class="ecrm-0900">(append) operator to concatenate two lists: </span><div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook42x.png" alt="      [1;-2]-@ [3;-4;-5]
 =&#x21D2;    [1; 2; 3; 4; 5]
-" class="math-display" ></div>
-<!--l. 1277--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 1279--><p class="noindent" ><span 
 class="ecrm-0900">How might we implement list append ourselves, if it was not provided? Consider a function </span><span 
 class="ectt-0900">append a b</span><span 
@@ -3368,7 +3365,7 @@ src="kindlemlbook43x.png" alt=""  class="fbox" >
 class="ecrm-0900">Consider the evaluation of </span><span 
 class="ectt-0900">append [1; 2; 3] [4; 5; 6]</span><span 
 class="ecrm-0900">: </span><div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook44x.png" alt="      append [1;-2;-3] [4;-5;-6]
 =&#x21D2;    1 :: append-[2;-3]-[4;-5;-6]-
@@ -3377,8 +3374,8 @@ src="kindlemlbook44x.png" alt="      append [1;-2;-3] [4;-5;-6]
 =&#x21D2;    1 :: 2 :: 3 :: append-[]-[4;-5;-6]
 =&#x21D2;    1-::-2 ::-3-::-[4;-5;-6]
 =*&#x21D2;    [1; 2; 3; 4; 5; 6]
-" class="math-display" ></div>
-<!--l. 1302--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 1304--><p class="noindent" ><span 
 class="ecrm-0900">This takes time proportional to the length of the first list &#8211; the second list need not be processed at all. What</span>
 <span 
@@ -3398,7 +3395,7 @@ class="ecrm-0900">it:</span>
 src="kindlemlbook45x.png" alt=""  class="fbox" >
 <!--l. 1319--><p class="noindent" ><span 
 class="ecrm-0900">Here&#8217;s how the evaluation proceeds: </span><div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook46x.png" alt="       rev [1; 2; 3; 4]
 =&#x21D2;     rev-[2;-3;-4]-@ [1]
@@ -3409,8 +3406,8 @@ src="kindlemlbook46x.png" alt="       rev [1; 2; 3; 4]
 =&#x21D2;     []-@ [4]-@-[3] @-[2]-@-[1]
  *
 =&#x21D2;     [4; 3; 2; 1]
-" class="math-display" ></div>
-<!--l. 1328--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 1330--><p class="noindent" ><span 
 class="ecrm-0900">This is a simple definition, but not very efficient &#8211; can you see why?</span>
 <!--l. 1332--><p class="indent" >   <span 
@@ -3430,30 +3427,29 @@ src="kindlemlbook47x.png" alt=""  class="fbox" >
 class="ecrm-0900">For example, here&#8217;s the evaluation for </span><span 
 class="ectt-0900">take 2 [2; 4; 6; 8; 10]</span><span 
 class="ecrm-0900">: </span><div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
-src="kindlemlbook48x.png" alt="      take 2 [2; 4; 6; 8; 10]
-      ---------------------
+src="kindlemlbook48x.png" alt="      take-2-[2;-4;-6;-8; 10]
 =&#x21D2;    2 :: take 1-[4;-6; 8;-10]
 =&#x21D2;    2 :: 4 :: take-0-[6;-8;-10]
 =&#x21D2;    2-::-4-:: []
 =*&#x21D2;    [2; 4]
-" class="math-display" ></div>
-<!--l. 1360--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
                                                                                
                                                                                
 <!--l. 1362--><p class="noindent" ><span 
 class="ecrm-0900">And for </span><span 
 class="ectt-0900">drop 2 [2; 4; 6; 8; 10]</span><span 
 class="ecrm-0900">: </span><div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook49x.png" alt="       drop-2 [2;-4;-6; 8;-10]
        drop-1 [4;-6;-8; 10]
 = &#x21D2;    drop 0 [6; 8; 10]
 = &#x21D2;    [6;-8; 10]------
-" class="math-display" ></div>
-<!--l. 1368--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 1370--><p class="noindent" ><span 
 class="ecrm-0900">Note that these functions contain incomplete pattern matches &#8211; OCaml tells us so when we type them in. The</span>
 <span 
@@ -3760,13 +3756,13 @@ class="ecrm-0800">&#x00A0;</span><span
 class="ecti-0800">expression</span><span 
 class="ecrm-0800">. These have type </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2;</span><span 
 class="ecrm-0800">, </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B3; </span><span 
 class="ecrm-0800">etc. for some types</span>
 <span 
@@ -3856,18 +3852,18 @@ src="kindlemlbook50x.png" alt=""  class="fbox" >
 class="ecrm-0900">There are two ways to think about this computation. One way is to imagine the actions the computer might</span>
 <span 
 class="ecrm-0900">take to calculate the result:</span>
-     <blockquote class="quote">
+     <div class="quote">
      <!--l. 1446--><p class="noindent" ><span 
 class="ecti-0900">Look at the first list. If it is empty, return the second list. Otherwise, pull apart the first</span>
      <span 
 class="ecti-0900">list, looking at its head and tail. Make a recursive call to append the tail to the second list,</span>
      <span 
-class="ecti-0900">and then cons the head onto the result. Return this.</span></blockquote>
+class="ecti-0900">and then cons the head onto the result. Return this.</span></div>
 <!--l. 1449--><p class="noindent" ><span 
 class="ecrm-0900">Alternatively, we can consider each match case to be an independent statement of truth, thinking the same</span>
 <span 
 class="ecrm-0900">way about the whole function:</span>
-     <blockquote class="quote">
+     <div class="quote">
      <!--l. 1452--><p class="noindent" ><span 
 class="ecti-0900">The empty list appended to another list is that list. Otherwise, the first list is non-empty,</span>
      <span 
@@ -3883,7 +3879,7 @@ class="ecit-0900">h</span>
      <span 
 class="ecit-0900">::</span><span 
 class="ecit-0900">&#x00A0;append t b</span><span 
-class="ecti-0900">. Since this reduces the problem size, progress is made.</span></blockquote>
+class="ecti-0900">. Since this reduces the problem size, progress is made.</span></div>
 <!--l. 1455--><p class="noindent" ><span 
 class="ecrm-0900">It is very useful to be able to think in these two ways about functions you write, and to be able to swap</span>
 <span 
@@ -3928,7 +3924,7 @@ src="kindlemlbook52x.png" alt=""  class="fbox" >
 class="ecrm-0900">Consider the evaluation of </span><span 
 class="ectt-0900">insert 3 [1; 1; 2; 3; 5; 9]</span><span 
 class="ecrm-0900">: </span><div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook53x.png" alt="       insert 3 [1; 1; 2; 3; 5; 9]
        -------------------------
@@ -3936,9 +3932,10 @@ src="kindlemlbook53x.png" alt="       insert 3 [1; 1; 2; 3; 5; 9]
 =&#x21D2;     1 :: 1 :: insert-3-[2; 3;-5;-9]
 =&#x21D2;     1 :: 1 :: 2 :: insert 3-[3;-5;-9]
 =&#x21D2;     1 ::-1-::-2 ::-3-::-3 ::-[5;-9]
-=*&#x21D2;     [1; 1; 2; 3; 3; 5; 9]
-" class="math-display" ></div>
-<!--l. 1501--><p class="indent" >   </div>
+ *
+=&#x21D2;     [1; 1; 2; 3; 3; 5; 9]
+" class="math-display" ></center>
+</div>
 <!--l. 1503--><p class="noindent" ><span 
 class="ecrm-0900">Here is the whole evaluation of </span><span 
 class="ectt-0900">sort [53; 9; 2; 6; 19]</span><span 
@@ -3948,7 +3945,7 @@ class="ectt-0900">insert</span>
 class="ecrm-0900">operation. </span><div class="eqnarray">
                                                                                
                                                                                
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook54x.png" alt="       sort-[53;-9; 2;-6;-19]
 =*&#x21D2;     insert 53 (sort-[9;-2; 6;-19])
@@ -3959,15 +3956,15 @@ src="kindlemlbook54x.png" alt="       sort-[53;-9; 2;-6;-19]
  *                                         ----------
 =&#x21D2;     insert 53 (insert 9 (insert 2 (insert 6 (insert 19 (sort-[])))))
 =*&#x21D2;     insert 53 (insert 9 (insert 2 (insert 6 (insert-19-[]))))
-=*&#x21D2;     insert 53 (insert 9 (insert 2 (insert 6 [19])))
- *                                --------------
-=&#x21D2;     insert 53 (insert 9 (insert-2-[6;-19]))
+ *
+=&#x21D2;     insert 53 (insert 9 (insert 2 (insert-6-[19])))
+=*&#x21D2;     insert 53 (insert 9 (insert-2-[6;-19]))
 =*&#x21D2;     insert 53 (insert 9 [2; 6; 19])
  *              -------------------
 =&#x21D2;     insert-53-[2;-6;-9;-19]-
 =*&#x21D2;     [2; 6; 9; 19; 53]
-" class="math-display" ></div>
-<!--l. 1517--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 1519--><p class="noindent" ><span 
 class="ecrm-0900">Here&#8217;s the full program, known as</span> <a 
  id="dx1-22005"></a><span 
@@ -3999,12 +3996,12 @@ class="ecrm-0900">. For example, OCaml knows how to</span>
 class="ecrm-0900">compare characters in alphabetical order: </span><div class="eqnarray">
                                                                                
                                                                                
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook56x.png" alt="       sort-['p';-'i';-'m';-'c';-'s';-'h']-
 =*&#x21D2;     ['c'; 'h'; 'i'; 'm'; 'p'; 's']
-" class="math-display" ></div>
-<!--l. 1547--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 1549--><p class="noindent" ><span 
 class="ecrm-0900">How long does our sorting function take to run if the list to be sorted has </span><span 
 class="cmmi-9">n </span><span 
@@ -4058,7 +4055,7 @@ class="ecrm-0900">matches the empty list. Here is how</span>
 <span 
 class="ectt-0900">merge </span><span 
 class="ecrm-0900">proceeds: </span><div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook58x.png" alt="      merge [9; 53] [2; 6; 19]
 =&#x21D2;    2-::-(merge-[9;-53]-[6;-19])
@@ -4069,8 +4066,8 @@ src="kindlemlbook58x.png" alt="      merge [9; 53] [2; 6; 19]
 =&#x21D2;    2-::-6-::-9-::-19 ::-[53]
  *
 =&#x21D2;    [2; 6; 9; 19; 53]
-" class="math-display" ></div>
-<!--l. 1579--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 1581--><p class="noindent" ><span 
 class="ecrm-0900">So merge can take two sorted lists, and produce a longer, sorted list, containing all the elements from both</span>
 <span 
@@ -4115,7 +4112,7 @@ class="ecrm-0900">functions, concentrating just on </span><span
 class="ectt-0900">msort</span><span 
 class="ecrm-0900">:</span>
 <div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook60x.png" alt="      msort [53; 9; 2; 6 19]
  *    --------------------
@@ -4136,8 +4133,8 @@ src="kindlemlbook60x.png" alt="      msort [53; 9; 2; 6 19]
  *                  ----------------
 =&#x21D2;    merge-[9; 53]-[2;-6;-19]
 =*&#x21D2;    [2; 6; 9; 19; 53]
-" class="math-display" ></div>
-<!--l. 1618--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 1620--><p class="noindent" ><span 
 class="ecrm-0900">From now on we will not be showing these full evaluations all the time &#8211; but when you&#8217;re unsure of how or</span>
 <span 
@@ -4451,13 +4448,13 @@ class="ecrm-0800">&#x00A0;</span><span
 class="ecti-0800">expression</span><span 
 class="ecrm-0800">. These have type </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2;</span><span 
 class="ecrm-0800">, </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B3; </span><span 
 class="ecrm-0800">etc. for some types</span>
 <span 
@@ -4600,17 +4597,17 @@ class="ecrm-0900">list:</span>
 src="kindlemlbook63x.png" alt=""  class="fbox" >
 <!--l. 1739--><p class="noindent" ><span 
 class="ecrm-0900">For example, </span><div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook64x.png" alt="       double [1; 2; 4]
-=&#x21D2;     2 ::-double [2;-4]
-           ------------
+       ---------------
+=&#x21D2;     2 :: double [2;-4]
 =&#x21D2;     2 :: 4 :: double-[4]
 =&#x21D2;     2 :: 4 :: 8 :: double []
 =&#x21D2;     2 ::-4-::-8 ::-[]
 =*&#x21D2;     [2; 4; 8]
-" class="math-display" ></div>
-<!--l. 1747--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 1749--><p class="noindent" ><span 
 class="ecrm-0900">The result list does not need to have the same type as the argument list. We can write a function which, given</span>
 <span 
@@ -4627,17 +4624,17 @@ src="kindlemlbook65x.png" alt=""  class="fbox" >
 class="ecrm-0900">For example, </span><div class="eqnarray">
                                                                                
                                                                                
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook66x.png" alt="       evens-[1;-2; 4]
 =&#x21D2;     false :: evens-[2;-4]
 =&#x21D2;     false :: true :: evens [4]
 =&#x21D2;     false :: true :: true :: evens-[]
-=&#x21D2;     false-::-true-::-true ::-[]
- *
+=&#x21D2;     false :: true :: true :: []
+ *     -------------------------
 =&#x21D2;     [false; true; true]
-" class="math-display" ></div>
-<!--l. 1772--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 1774--><p class="noindent" ><span 
 class="ecrm-0900">It would be tedious to write a similar function each time we wanted to apply a different operation to every</span>
 <span 
@@ -4660,7 +4657,7 @@ class="ecrm-0900">:</span>
 src="kindlemlbook68x.png" alt=""  class="fbox" >
 <!--l. 1801--><p class="noindent" ><span 
 class="ecrm-0900">We can use map like this: </span><div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook69x.png" alt="      map halve [10; 20; 30]
 =&#x21D2;    5-::-map-halve-[20; 30]
@@ -4669,8 +4666,8 @@ src="kindlemlbook69x.png" alt="      map halve [10; 20; 30]
 =&#x21D2;    5 :: 10 :: 15 :: map halve-[]
 =&#x21D2;    5-::-10-:: 15-::-[]
 =*&#x21D2;    [5; 10; 15]
-" class="math-display" ></div>
-<!--l. 1809--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 1811--><p class="noindent" ><span 
 class="ecrm-0900">Now, let us look at that type: (</span><span 
 class="cmmi-9">&#x03B1; </span><span 
@@ -4685,11 +4682,10 @@ class="cmmi-9">&#x03B2; </span><span
 class="ecbx-0900">list</span><span 
 class="ecrm-0900">. We can annotate the individual parts:</span>
 <!--l. 1814--><p class="indent" >
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook70x.png" alt="f&#x25DC;unct&#x25DE;&#x25DF;ionf&#x25DD;  argu&#x25DC;me&#x25DE;&#x25DF;nt&#x25DD;list  res&#x25DC;u &#x25DE;lt&#x25DF;lis&#x25DD;t
-(&#x03B1; &#x2192; &#x03B2;)&#x2192;   &#x03B1; list  &#x2192;  &#x03B2; list
-" class="math-display" ></div>
+(&#x03B1; &#x2192; &#x03B2;)&#x2192;   &#x03B1; list  &#x2192;  &#x03B2; list  " class="math-display" ></center>
 <!--l. 1817--><p class="noindent" ><span 
 class="ecrm-0900">We have to put the function </span><span 
 class="ectt-0900">f </span><span 
@@ -4773,12 +4769,12 @@ class="ecrm-0900">this:</span>
 class="ectt-0900">fun x -&#x003E; x / 2</span>
 <!--l. 1854--><p class="noindent" ><span 
 class="ecrm-0900">and, thus, write: </span><div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook73x.png" alt="       map-(fun-x--&#x003E;-x-/-2)-[10;-20;-30]-
 =*&#x21D2;     [5; 10; 15]
-" class="math-display" ></div>
-<!--l. 1858--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 1860--><p class="noindent" ><span 
 class="ecrm-0900">We use anonymous functions when a function is only used in one place and is relatively short, to avoid defining</span>
 <span 
@@ -4843,12 +4839,12 @@ src="kindlemlbook75x.png" alt=""  class="fbox" >
 class="ecrm-0900">we can use it with our new version of the </span><span 
 class="ectt-0900">msort </span><span 
 class="ecrm-0900">function: </span><div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook76x.png" alt="      msort-greater-[5;-4; 6;-2;-1]
 =*&#x21D2;    [6; 5; 4; 2; 1]
-" class="math-display" ></div>
-<!--l. 1911--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 1913--><p class="noindent" ><span 
 class="ecrm-0900">In fact, we can ask OCaml to make such a</span><a 
  id="dx1-27011"></a> <span 
@@ -4903,23 +4899,23 @@ class="ectt-0900">&#x00A0;=</span><span
 class="ectt-0900">&#x00A0;true</span></span></span>
 <!--l. 1924--><p class="noindent" ><span 
 class="ecrm-0900">So, for example: </span><div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook77x.png" alt="       msort-(-&#x003C;=-)-[5;-4;-6;-2;-1]-
  *
 =&#x21D2;     [1; 2; 4; 5; 6]
-" class="math-display" ></div>
-<!--l. 1928--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 1930--><p class="noindent" ><span 
 class="ecrm-0900">and </span><div class="eqnarray">
                                                                                
                                                                                
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook78x.png" alt="       msort-(-&#x003E;=-)-[5;-4;-6;-2;-1]-
 =*&#x21D2;     [6; 5; 4; 2; 1]
-" class="math-display" ></div>
-<!--l. 1934--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 1936--><p class="noindent" ><span 
 class="ecrm-0900">The techniques we have seen in this chapter are forms of </span><span 
 class="ecti-0900">program reuse</span><span 
@@ -5276,13 +5272,13 @@ class="ecrm-0800">&#x00A0;</span><span
 class="ecti-0800">expression</span><span 
 class="ecrm-0800">. These have type </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2;</span><span 
 class="ecrm-0800">, </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B3; </span><span 
 class="ecrm-0800">etc. for some types</span>
 <span 
@@ -5675,12 +5671,11 @@ class="ecrm-0900">.</span>
 <!--l. 2078--><p class="indent" >
                                                                                
                                                                                
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook81x.png" alt="    &#x25DC;-in&#x25DE;t&#x25DF; &#x25DD;                       i&#x25DC;n&#x25DE;&#x25DF;t&#x25DD;
 try x / y with Division_by_zero -&#x003E;  0
-&#x25DF;----------------&#x25DD;i&#x25DC;nt----------------&#x25DE;
-" class="math-display" ></div>
+&#x25DF;----------------&#x25DD;i&#x25DC;nt----------------&#x25DE;  " class="math-display" ></center>
 <!--l. 2081--><p class="noindent" ><span 
 class="ecrm-0900">Here is another example. The function </span><span 
 class="ectt-0900">last </span><span 
@@ -5891,13 +5886,13 @@ class="ecrm-0800">&#x00A0;</span><span
 class="ecti-0800">expression</span><span 
 class="ecrm-0800">. These have type </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2;</span><span 
 class="ecrm-0800">, </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B3; </span><span 
 class="ecrm-0800">etc. for some types</span>
 <span 
@@ -6379,13 +6374,13 @@ class="ecrm-0800">&#x00A0;</span><span
 class="ecti-0800">expression</span><span 
 class="ecrm-0800">. These have type </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2;</span><span 
 class="ecrm-0800">, </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B3; </span><span 
 class="ecrm-0800">etc. for some types</span>
 <span 
@@ -6560,13 +6555,13 @@ class="cmsy-9">&#x2192; </span><span
 class="ecrm-0900">is a right-associative operator in the language of types. This gives us a</span>
 <span 
 class="ecrm-0900">clue.</span>
-     <blockquote class="quote">
+     <div class="quote">
      <!--l. 2402--><p class="noindent" ><span 
 class="ecti-0900">In truth, the function </span><span 
 class="ecit-0900">add </span><span 
 class="ecti-0900">is a function which, when you give it an integer, gives you a</span>
      <span 
-class="ecti-0900">function which, when you give it an integer, gives the sum.</span></blockquote>
+class="ecti-0900">function which, when you give it an integer, gives the sum.</span></div>
 <!--l. 2405--><p class="noindent" ><span 
 class="ecrm-0900">This would be of no particular interest to us, except for one thing: we can give a function with two arguments</span>
 <span 
@@ -7017,13 +7012,13 @@ class="ecrm-0800">&#x00A0;</span><span
 class="ecti-0800">expression</span><span 
 class="ecrm-0800">. These have type </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2;</span><span 
 class="ecrm-0800">, </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B3; </span><span 
 class="ecrm-0800">etc. for some types</span>
 <span 
@@ -7694,13 +7689,13 @@ class="ecrm-0800">&#x00A0;</span><span
 class="ecti-0800">expression</span><span 
 class="ecrm-0800">. These have type </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2;</span><span 
 class="ecrm-0800">, </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B3; </span><span 
 class="ecrm-0800">etc. for some types</span>
 <span 
@@ -8304,13 +8299,13 @@ class="ecrm-0800">&#x00A0;</span><span
 class="ecti-0800">expression</span><span 
 class="ecrm-0800">. These have type </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2;</span><span 
 class="ecrm-0800">, </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B3; </span><span 
 class="ecrm-0800">etc. for some types</span>
 <span 
@@ -9392,13 +9387,13 @@ class="ecrm-0800">&#x00A0;</span><span
 class="ecti-0800">expression</span><span 
 class="ecrm-0800">. These have type </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2;</span><span 
 class="ecrm-0800">, </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B3; </span><span 
 class="ecrm-0800">etc. for some types</span>
 <span 
@@ -11234,13 +11229,13 @@ class="ecrm-0800">&#x00A0;</span><span
 class="ecti-0800">expression</span><span 
 class="ecrm-0800">. These have type </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2;</span><span 
 class="ecrm-0800">, </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B3; </span><span 
 class="ecrm-0800">etc. for some types</span>
 <span 
@@ -11828,31 +11823,31 @@ class="ecrm-0900">, we</span>
      <span 
 class="ecrm-0900">might see:</span>
      <!--l. 4207--><p class="noindent" ><div class="pic-tabular"><img 
-src="kindlemlbook144x.png" alt="&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;OCaml
+src="kindlemlbook144x.png" alt="       OCaml
 
-#&#x00A0;plot&#x00A0;sin&#x00A0;0.&#x00A0;pi&#x00A0;(pi&#x00A0;/.&#x00A0;20.);;
+# plot sin 0. pi (pi /. 20.);;
 *
-&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
-&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
-&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
-&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
-&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
+     *
+            *
+                   *
+                         *
+                              *
 
-&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
-&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
-&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
-&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
-&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
-&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
-&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
-&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
-&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
-&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
+                                   *
+                                      *
+                                         *
+                                           *
+                                           *
+                                           *
+                                         *
+                                      *
+                                   *
+                              *
 
-&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
-&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
-&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
-&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
+                         *
+                   *
+            *
+     *
 *
      " ></div>
                                                                                
@@ -12008,13 +12003,13 @@ class="ecrm-0800">&#x00A0;</span><span
 class="ecti-0800">expression</span><span 
 class="ecrm-0800">. These have type </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2;</span><span 
 class="ecrm-0800">, </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B3; </span><span 
 class="ecrm-0800">etc. for some types</span>
 <span 
@@ -12624,13 +12619,13 @@ class="ecrm-0800">&#x00A0;</span><span
 class="ecti-0800">expression</span><span 
 class="ecrm-0800">. These have type </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2;</span><span 
 class="ecrm-0800">, </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B3; </span><span 
 class="ecrm-0800">etc. for some types</span>
 <span 
@@ -13639,13 +13634,13 @@ class="ecrm-0800">&#x00A0;</span><span
 class="ecti-0800">expression</span><span 
 class="ecrm-0800">. These have type </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2;</span><span 
 class="ecrm-0800">, </span><span 
 class="cmmi-8">&#x03B1; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B2; </span><span 
-class="cmsy-8">&#x2192;</span><span 
+class="cmsy-8">&#x2192; </span><span 
 class="cmmi-8">&#x03B3; </span><span 
 class="ecrm-0800">etc. for some types</span>
 <span 
@@ -14955,7 +14950,7 @@ src="kindlemlbook168x.png" alt=""  class="fbox" >
 class="ecrm-0900">For example, consider the evaluation of </span><span 
 class="ectt-0900">make_set [4; 5; 6; 5; 4]</span><span 
 class="ecrm-0900">: </span><div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook169x.png" alt="       make_set-[4; 5;-6;-5;-4]
 =&#x21D2;     make_set-[5; 6;-5;-4]
@@ -14966,8 +14961,8 @@ src="kindlemlbook169x.png" alt="       make_set-[4; 5;-6;-5;-4]
 =&#x21D2;     6 :: 5 :: 4 :: make_set []
 =&#x21D2;     6-::-5-::-4-::-[]-
 =*&#x21D2;     [6; 5; 4]
-" class="math-display" ></div>
-<!--l. 5240--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 5243--><p class="noindent" >
    <h4 class="likesubsectionHead"><a 
  id="x1-10500016"></a><span 
@@ -14986,7 +14981,7 @@ class="ecrm-0900">operator, as we know, also takes time proportional to the leng
 class="ecrm-0900">its first argument. And so, this accumulating of the lists takes time proportional to the square of the length of</span>
 <span 
 class="ecrm-0900">the list. </span><div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook170x.png" alt="      rev [1; 2; 3; 4]
 =&#x21D2;    rev-[2; 3;-4]-@-[1]
@@ -15000,8 +14995,8 @@ src="kindlemlbook170x.png" alt="      rev [1; 2; 3; 4]
       ------------------
 =&#x21D2;    [4,-3,-2]-@-[1]
 =&#x21D2;    [4; 3; 2; 1]
-" class="math-display" ></div>
-<!--l. 5255--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 5257--><p class="noindent" ><span 
 class="ecrm-0900">By using an additional accumulating argument, we can write a version which operates in time proportional to</span>
 <span 
@@ -15010,7 +15005,7 @@ class="ecrm-0900">the length of the list.</span>
 src="kindlemlbook171x.png" alt=""  class="fbox" >
 <!--l. 5276--><p class="noindent" ><span 
 class="ecrm-0900">For the same list: </span><div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook172x.png" alt="      rev [1; 2; 3; 4]
 =&#x21D2;    rev_inner-[]-[1; 2; 3; 4]
@@ -15020,8 +15015,8 @@ src="kindlemlbook172x.png" alt="      rev [1; 2; 3; 4]
 =&#x21D2;    rev_inner-[3;-2;-1]-[4]
 =&#x21D2;    rev_inner-[4;-3;-2;-1]-[]
 =&#x21D2;    [4; 3; 2; 1]
-" class="math-display" ></div>
-<!--l. 5285--><p class="indent" >   </div>
+" class="math-display" ></center>
+</div>
 <!--l. 5287--><p class="noindent" >
    <h3 class="likesectionHead"><a 
  id="x1-10600016"></a><span 
@@ -15235,11 +15230,10 @@ src="kindlemlbook183x.png" alt=""  class="fbox" >
 <!--l. 5496--><p class="noindent" ><span 
 class="ecrm-0900">Consider the type:</span>
 <!--l. 5499--><p class="indent" >
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook184x.png" alt="f&#x25DC;unc&#x25DE;ti&#x25DF;on-f&#x25DD;  &#x25DC;n&#x25DE;&#x25DF;&#x25DD;   &#x25DC;x&#x25DE;&#x25DF;&#x25DD;   re&#x25DC;s&#x25DE;ul&#x25DF;&#x25DD;t
-(&#x03B1;&#x2192;  &#x03B1;)&#x2192;  int &#x2192;  &#x03B1;  &#x2192;  &#x03B1;
-" class="math-display" ></div>
+(&#x03B1;&#x2192;  &#x03B1;)&#x2192;  int &#x2192;  &#x03B1;  &#x2192;  &#x03B1;  " class="math-display" ></center>
 <!--l. 5502--><p class="noindent" ><span 
 class="ecrm-0900">The function </span><span 
 class="ectt-0900">f </span><span 
@@ -15540,19 +15534,19 @@ class="ecrm-0900">Here&#8217;s a sample evaluation (we cannot really show it in 
 <span 
 class="ecrm-0900">whilst looking at the function definition):</span>
 <!--l. 5745--><p class="indent" >   <div class="eqnarray">
-   <div class="math-display" >
+   <center class="math-display" >
 <img 
 src="kindlemlbook198x.png" alt="       mklists [(1, 2); (3, 4); (5, 6)]
-= &#x21D2;    &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;mklists [(3, 4); (5, 6)]
+= &#x21D2;           mklists [(3, 4); (5, 6)]
 
-= &#x21D2;    &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;mklists [(5, 6)]
-= &#x21D2;    &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;mklists []
-= &#x21D2;    &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;([], [])
-= &#x21D2;    &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;([5], [6])
-= &#x21D2;    &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;([3; 5], [4; 6])
-= &#x21D2;    &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;([1; 3; 5], [2; 4; 6])
-" class="math-display" ></div>
-<!--l. 5754--><p class="indent" >   </div>
+= &#x21D2;                  mklists [(5, 6)]
+= &#x21D2;                        mklists []
+= &#x21D2;                          ([], [])
+= &#x21D2;                        ([5], [6])
+= &#x21D2;                  ([3; 5], [4; 6])
+= &#x21D2;             ([1; 3; 5], [2; 4; 6])
+" class="math-display" ></center>
+</div>
 <!--l. 5756--><p class="noindent" ><span 
 class="ecrm-0900">Since the inner pattern match has only one form, and is complete, we can use </span><span 
 class="ecbx-0900">let </span><span 

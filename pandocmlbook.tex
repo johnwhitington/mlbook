@@ -30,125 +30,7 @@
 
 %OUR MACROS FOR THIS BOOK
 
-%The starting off interludes
-
-\newcommand{\sofarstartingoff}{
-
-\noindent \lettrine[loversize=0.1,nindent=0em]{1}{}Integers \texttt{min\_int} \ldots\ \texttt{-3}\ \texttt{-2}\ \texttt{-1}\ \texttt{0}\ \texttt{1}\ \texttt{2}\ \texttt{3}\ \ldots\ \texttt{max\_int} of type \textbf{\textsf{int}}. Booleans \texttt{true} and \texttt{false} of type \textbf{\textsf{bool}}. \noindent Characters of type \textsf{\textbf{char}} like \texttt{'X'} and \texttt{'!'}.
-\vspace{2mm}
-
-\noindent Mathematical operators \texttt{+} \texttt{-} \texttt{*} \texttt{/} \texttt{mod} which take two integers and give another.
-
-\vspace{2mm}
-
-\noindent Operators \ \!\! \texttt{=\ \!\!} \texttt{<\ \!\!} \texttt{<=\ \!\!} \texttt{>\ \!\!} \texttt{>=\ \!\!} \texttt{<>} \ \!\! which compare two values and evaluate to either \texttt{true} or \texttt{false}.
-
-\vspace{2mm}
-
-\noindent The conditional \textbf{\texttt{if}} \textit{expression1} \textbf{\texttt{then}} \textit{expression2} \textbf{\texttt{else}} \textit{expression3}, where \textit{expresssion1} has type \textsf{\textbf{bool}} and \textit{expression2} and \textit{expression3} have the same type as one another.
-
-\vspace{2mm}
-
-\noindent The boolean operators \texttt{\&\&} and \texttt{||} which allow us to build compound boolean expressions.}
-
-\newcommand{\sofarfunctions}
-{
-\noindent\lettrine[loversize=0.1,findent=2pt,nindent=0em]{2}{}Assigning a name to the result of evaluating an expression using the \textbf{\texttt{let}}\ \textit{name} \texttt{=}\ \textit{expression} construct. Building compound expressions using \textbf{\texttt{let}}\ \textit{name1} \texttt{=} \textit{expression1} \textbf{\texttt{in}}\ \textbf{\texttt{let}}\ \textit{name2} \texttt{=}\ \textit{expression2} \textbf{\texttt{in}}\ \ldots
-
-\vspace{2mm} 
-
-\noindent Functions, introduced by \textbf{\texttt{let}}\ \textit{name} \textit{argument1} \textit{argument2} \ldots\ \texttt{=}\ \textit{expression}. These have type $\alpha \rightarrow \beta$, $\alpha \rightarrow \beta \rightarrow \gamma$ etc. for some types $\alpha$, $\beta$, $\gamma$ etc.
-
-\vspace{2mm}
-
-\noindent Recursive functions, which are introduced in the same way, but using \textbf{\texttt{let\!\! rec}} instead of \textbf{\texttt{let}}.}
-
-\newcommand{\sofarcasebycase}
-{\noindent \lettrine[loversize=0.1,findent=2pt,nindent=0em]{3}{}Matching patterns using \textbf{\texttt{match}} \textit{expression1} \textbf{\texttt{with}} \textit{pattern1} \texttt{|} \ldots\ \texttt{->} \textit{expression2} \texttt{|} \textit{pattern2} \texttt{|} \ldots\ \texttt{->} \textit{expression3} \texttt{|}\ldots The expressions \textit{expression2}, \textit{expression3} etc. must have the same type as one another, and this is the type of the whole \,\textbf{\texttt{match} \ldots\ \texttt{with}}\, expression.}
-
-\newcommand{\sofarlistingthings}
-{
-\noindent \lettrine[loversize=0.1,findent=2pt,nindent=0em]{4}{}Lists, which are ordered collections of zero or more elements of like type. They are written between square brackets, with elements separated by semicolons e.g. \texttt{[1;\! 2;\! 3;\! 4;\! 5]}. If a list is non-empty, it has a head, which is its first element, and a tail, which is the list composed of the rest of the elements.
-
-\vspace{2mm}
-
-\noindent The \texttt{::}\ ``cons'' operator, which adds an element to the front of a list. The \texttt{@} ``append'' operator, which concatenates two lists together.
-
-\vspace{2mm}
-
-\noindent Lists and the \texttt{::}\ ``cons'' symbol may be used for pattern matching to distinguish lists of length zero, one, etc. and with particular contents.}
-
-\newcommand{\sofarsortingthings}
-{
-\noindent \lettrine[loversize=0.1,findent=2pt,nindent=0em]{5}{}Matching two or more things at once, using commas to separate as in \texttt{\textbf{match}}\, \texttt{a,\!\! b}\, \textbf{\texttt{with}} \texttt{0,\!\! 0\! ->\! }\! \textit{expression1} \texttt{|\ \!x,\!\! y\! ->} \textit{expression2} \texttt{|} \ldots
-}
-
-\newcommand{\sofarfunctionsuponfunctions}
-{
-\noindent \lettrine[loversize=0.1,findent=2pt,nindent=0em]{6}{}Anonymous functions \textbf{\texttt{fun}} \textit{name} \texttt{->} \textit{expression}. Making operators into functions as in \texttt{(\! <\! )} and \texttt{(\! +\! )}.
-}
-
-\newcommand{\sofarwhenthingsgowrong}
-{
-\noindent \lettrine[loversize=0.1,findent=2pt,nindent=0em]{7}{}Defining exceptions with \textbf{\texttt{exception}} \textit{name}. They can carry extra information by adding \textbf{\texttt{of}} \textit{type}. Raising exceptions with \textbf{\texttt{raise}}. Handling exceptions with \textbf{\texttt{try}} \ldots\ \textbf{\texttt{with}}\ \ldots}
-
-\newcommand{\sofarlookingthingsup}
-{
-\noindent \lettrine[loversize=0.1,findent=2pt,nindent=0em]{8}{}Tuples to combine a fixed number of elements \texttt{(a,\! b)},\!    \ \texttt{(a,\! b,\! c)} etc. with types \textsf{\textbf{$\alpha$ $\times$ $\beta$}},\ \  \textsf{\textbf{$\alpha$ $\times$ $\beta$ $\times$ $\gamma$}} etc.
-}
-
-\newcommand{\sofarmorewithfunctions}
-{
-\noindent \lettrine[loversize=0.1,findent=2pt,nindent=0em]{9}{}Partial application of functions by giving fewer than the full number of arguments. Partial application with functions built from operators.
-}
-
-\newcommand{\sofarnewkindsofdata}
-{
-\noindent \lettrine[loversize=0.1,findent=2pt,nindent=0em]{10}{}New types with \textbf{\texttt{type}} \textit{name} \texttt{=} \textit{constructor1} \textbf{\texttt{of}} \textit{type1} \texttt{|} \textit{constructor2} \textbf{\texttt{of}} \textit{type2} \texttt{|} \ldots\ Pattern matching on them as with the built-in types. Polymorphic types.
-}
-
-\newcommand{\sofargrowingtrees}
-{
-\noindent \lettrine[loversize=0.1,nindent=0em]{11}{}Strings, which are sequences of characters written between double quotes and are of type \textbf{\textsf{string}}.
-}
-
-\newcommand{\sofarinandout}
-{
-\noindent \lettrine[loversize=0.1,findent=2pt,nindent=0em]{12}{}The value\! \texttt{()}\! and its type \textbf{\textsf{unit}}. Input channels of type \textsf{\textbf{in\raisebox{1.5pt}{\_}channel}} and output channels of type \textsf{\textbf{out\raisebox{1.5pt}{\_}channel}}. Built-in functions for reading from and writing to them respectively.
-}
-
-\newcommand{\sofarputtingthingsinboxes}
-{
-\noindent \lettrine[loversize=0.1,findent=2pt,nindent=0em]{13}{}References of type \textsf{\textbf{$\alpha$ ref}}. Building them using  \texttt{ref}, accessing their contents using \texttt{!}\! and updating them using the \texttt{:=}\, operator.
-
-\vspace{2mm}
-\noindent Bracketing expressions together with \textbf{\texttt{begin}} and \textbf{\texttt{end}} instead of parentheses for readability.
-
-\vspace{2mm}
-\noindent Performing an action many times based on a boolean condition with the \textbf{\texttt{while}} \textit{boolean expression} \texttt{\textbf{do}}  \textit{expression} \texttt{\textbf{done}} construct. Performing an action a fixed number of times with a varying parameter using the \textbf{\texttt{for}} \textit{name} \texttt{=} \textit{start} \texttt{\textbf{to}}  \textit{end} \texttt{\textbf{do}} \textit{expression} \texttt{\textbf{done}} construct.
-
-\vspace{2mm}
-\noindent Arrays of type \textsf{\textbf{$\alpha$ array}}. Creating an array with the built-in function \texttt{Array.make}, finding its length with \texttt{Array.length}, accessing an element with \texttt{a.(}\textit{subscript}\texttt{)}. Updating with \texttt{a.(}\textit{subscript}\texttt{)\!\! <-} \textit{expression}. The built-in function \texttt{String.iter}.
-
-}
-
-\newcommand{\sofargettingreal}
-{
-\noindent \lettrine[loversize=0.1,findent=2pt,nindent=0em]{14}{}Floating-point numbers \texttt{min\_float} \ldots\ \texttt{max\_float} of type \textsf{\textbf{float}}. \noindent Floating-point operators \texttt{+.} \texttt{*.} \texttt{-.} \texttt{/.} \texttt{**} and built-in functions \texttt{sqrt} \texttt{log} etc.}
-
-\newcommand{\sofartheocamlstandardlibrary}
-{
-\noindent\lettrine[loversize=0.1,findent=2pt,nindent=0em]{15}{}Using functions from the OCaml Standard Library with the form \textit{Module}\texttt{.}\textit{function}.
-}
-
-\newcommand{\sofarbuildingbiggerprograms}
-{
-
-\noindent \lettrine[loversize=0.1,findent=2pt,nindent=0em]{16}{}Writing modules in \texttt{.ml} files. Building interfaces in \texttt{.mli} files with types and \textbf{\texttt{val}}. Using the \texttt{ocamlc} and \texttt{ocamlopt} compilers. Comments written between \texttt{(*} and \texttt{*)}.}
-
 % For comparison, the existing overlap macros:
-% \def\llap#1{\hbox to 0pt{\hss#1}}
-% \def\rlap#1{\hbox to 0pt{#1\hss}}
 \def\clap#1{\hbox to 0pt{\hss#1\hss}}
 \def\mathllap{\mathpalette\mathllapinternal}
 \def\mathrlap{\mathpalette\mathrlapinternal}
@@ -202,9 +84,7 @@
 \newcommand{\pbegin}{\textbf{begin}\xspace}
 \newcommand{\pend}{\textbf{end}\xspace}
 
-%\renewcommand{\cftchapfont}{\normalfont}
-%\renewcommand{\cftchappagefont}{\normalfont}
-
+%Old spacing command
 \newcommand{\smspace}{\vspace{4mm}}
 
 %BEGINNING OF ACTUAL DOCUMENT
@@ -372,7 +252,7 @@ of $\times$, since there is no $\times$ key on the keyboard:
 \smspace
 
 \noindent Here, \verb!#! is OCaml prompting us to write an expression, and
-\texttt{1\! +\! 2\! *\! 3;;} is what we typed (the semicolons followed by the Enter
+\texttt{1 + 2 * 3;;} is what we typed (the semicolons followed by the Enter
 key tell OCaml we have finished our expression). OCaml responds with the answer
 \verb!7!. OCaml also prints \index{int}\verb!int!, which tells us that the answer is a
 whole number, or \textit{integer}.
@@ -471,7 +351,7 @@ Operator & Description\\
 
 \newcommand{\doublebar}{||}
 
-There are two operators for combining boolean values (for instance, those resulting from using the comparison operators). The expression \texttt{\textit{\textrm{a}}\! \&\&\! \textit{\textrm{b}}} evaluates to \texttt{true} only if expressions \textit{a} and \textit{b} both evaluate to \texttt{true}. The expression \index{\doublebar@\texttt{\doublebar}}\texttt{\textit{\textrm{a}}\!\! ||\!\! \textit{\textrm{b}}} evaluates to \texttt{true} only if \textit{a} evaluates to \texttt{true}, \textit{b} evaluates to \texttt{true}, or both do. The \index{\&\&@\texttt{\&\&}}\texttt{\&\&} operator  (pronounced ``and'') is of higher precedence than the \texttt{||} operator (pronounced ``or''), so \texttt{\textrm{\textup{a}}\! \&\&\! \textit{\textrm{b}}\!\! ||\!\! \textrm{\textit{c}}} is the same as \texttt{(\textit{\textrm{a}}\! \&\&\! \textit{\textrm{b}})\!\! ||\!\! \textrm{\textit{c}}}.
+There are two operators for combining boolean values (for instance, those resulting from using the comparison operators). The expression \texttt{\textit{\textrm{a}} \&\& \textit{\textrm{b}}} evaluates to \texttt{true} only if expressions \textit{a} and \textit{b} both evaluate to \texttt{true}. The expression \index{\doublebar@\texttt{\doublebar}}\texttt{\textit{\textrm{a}} || \textit{\textrm{b}}} evaluates to \texttt{true} only if \textit{a} evaluates to \texttt{true}, \textit{b} evaluates to \texttt{true}, or both do. The \index{\&\&@\texttt{\&\&}}\texttt{\&\&} operator  (pronounced ``and'') is of higher precedence than the \texttt{||} operator (pronounced ``or''), so \texttt{\textrm{\textup{a}} \&\& \textit{\textrm{b}} || \textrm{\textit{c}}} is the same as \texttt{(\textit{\textrm{a}} \&\& \textit{\textrm{b}}) || \textrm{\textit{c}}}.
 
 A third type we shall be using is \index{char@\textbf{\textsf{char}}}\textbf{\textsf{char}} which holds a single \textit{character}\index{character}, such as `a' or `?'. We write these in single quotation marks:
 
@@ -493,13 +373,11 @@ A third type we shall be using is \index{char@\textbf{\textsf{char}}}\textbf{\te
 
 \noindent The expression between \texttt{\textbf{if}} and \texttt{\textbf{then}} (in our example \texttt{100 > 99}) must have type \textbf{\textsf{bool}} -- it evaluates to either \texttt{true} or \texttt{false}. The types of the expression to choose if true and the expression to choose if false must be the same as one another -- here they are both of type \textbf{\textsf{int}}. The whole expression evaluates to the same type -- \textbf{\textsf{int}} -- because either the \texttt{\textbf{then}} part or the \texttt{\textbf{else}} part is chosen to be the result of evaluating the whole expression:
 
-%\smspace
-%$(\overbrace{\alpha\rightarrow\beta}^{\textrm{\vphantom{g}function \texttt{f}}})\rightarrow\overbrace{\alpha\ \textsf{\textbf{list}}}^{\textrm{input list}}\rightarrow\overbrace{\beta\ \textsf{\textbf{list}} \vphantom{(}}^{\textrm{output list\vphantom{f}}}$
-%\smspace
-
-\smspace
-$\underbrace{\vphantom{g}\texttt{\textbf{if}}\ \ \ \overbrace{\texttt{\strut 100 > 99}}^{\textbf{\textsf{bool}}}\ \ \ \texttt{\textbf{then}} \overbrace{\texttt{\strut 0}}^{\textbf{\textsf{int}}} \texttt{\textbf{else}} \overbrace{\texttt{\strut 1}}^{\textbf{\textsf{int}}}}_{\textsf{\textbf{int}}}$
-\smspace
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook15x.png}
+\end{center}
+\medskip
 
 \noindent We have covered a lot in this chapter, but we need all these basic tools before we can write interesting programs. Make sure you work through the questions on paper, on the computer, or both, before moving on. Hints and answers are at the back of the book.
 
@@ -531,7 +409,7 @@ $\underbrace{\vphantom{g}\texttt{\textbf{if}}\ \ \ \overbrace{\texttt{\strut 100
 
 \item Consider the evaluations of the expressions \texttt{1 + 2 mod 3}, \texttt{(1 + 2) mod 3}, and \texttt{1 + (2 mod 3)}. What can you conclude about the \texttt{+} and \texttt{mod} operators?
 \item A programmer writes \texttt{1+2 * 3+4}. What does this evaluate to? What advice would you give him?
-\item {\hyphenpenalty=10000\begin{sloppypar}The range of numbers available is limited. There are two special numbers: \index{min\_int@\texttt{min\_int}}\index{max\_int@\texttt{max\_int}}\texttt{min\_int} and \texttt{max\_int}. What are their values on your computer? What happens when you evaluate the expressions \texttt{max\_int\! +\! 1} and \texttt{min\_int\! -\! 1}?\end{sloppypar}}
+\item {\hyphenpenalty=10000\begin{sloppypar}The range of numbers available is limited. There are two special numbers: \index{min\_int@\texttt{min\_int}}\index{max\_int@\texttt{max\_int}}\texttt{min\_int} and \texttt{max\_int}. What are their values on your computer? What happens when you evaluate the expressions \texttt{max\_int + 1} and \texttt{min\_int - 1}?\end{sloppypar}}
 \item What happens when you try to evaluate the expression \texttt{1 / 0}? Why?
 \item Can you discover what the \texttt{mod} operator does when one or both of the operands are negative? What about if the first operand is zero? What if the second is zero?
 \item Why not just use, for example, the integer \texttt{0} to represent false and the integer \texttt{1} for true? Why have a separate \textbf{\textsf{bool}} type at all?
@@ -539,14 +417,6 @@ $\underbrace{\vphantom{g}\texttt{\textbf{if}}\ \ \ \overbrace{\texttt{\strut 100
 \end{enumerate}
 
 \cleardoublepage
-\thispagestyle{empty}
-\noindent{\Huge So Far}\\
-
-\begin{multicols*}{2}
-\footnotesize
-\sofarstartingoff
-
-\end{multicols*}
 
 \thispagestyle{empty}
 
@@ -575,7 +445,7 @@ Before, if we wished to use a sub-expression twice or more in a single expressio
 \noindent\verb!- : int = 8000000!
 \smspace
 
-\noindent To write this all in a single expression, we can use the \index{let@\texttt{\textbf{let}}}\index{in@\texttt{\textbf{in}}}\index{=@\texttt{=}}\texttt{\textbf{let}} \ \ldots \ \ \texttt{=}\ \ \ldots \ \texttt{\textbf{in}}  \ \!construct:
+\noindent To write this all in a single expression, we can use the \index{let@\texttt{\textbf{let}}}\index{in@\texttt{\textbf{in}}}\index{=@\texttt{=}}\texttt{\textbf{let}} \ \ldots \ \ \texttt{=}\ \ \ldots \ \texttt{\textbf{in}}  \ construct:
 
 \smspace
 \noindent\verb!        OCaml!\\
@@ -599,11 +469,13 @@ Before, if we wished to use a sub-expression twice or more in a single expressio
 
 \noindent We chose \texttt{cube} for the name of the function and \texttt{x} for the name of its argument. When we typed the function in, OCaml replied by telling us that its type is \index{$\rightarrow$}\textsf{\textbf{int} $\rightarrow$ \textbf{int}}. This means it is a function which takes an integer as its argument, and, when given that argument, evaluates to an integer. To use the function, we just write its name followed by a suitable argument. In our example, we calculated $200^3$ by giving the \texttt{cube} function \texttt{200} as its argument.
 
-The \texttt{cube} function has type \textsf{\textbf{int} $\rightarrow$ \textbf{int}}, we gave it an integer \texttt{200}, and so the result is another integer. Thus, the type of the expression \texttt{cube\!\! 200} is \textbf{\textsf{int}} -- remember that the type of any expression is the type of the thing it will evaluate to, and \texttt{cube\!\! 200} evaluates to \texttt{8000000}, an integer. In diagram form:
+The \texttt{cube} function has type \textsf{\textbf{int} $\rightarrow$ \textbf{int}}, we gave it an integer \texttt{200}, and so the result is another integer. Thus, the type of the expression \texttt{cube 200} is \textbf{\textsf{int}} -- remember that the type of any expression is the type of the thing it will evaluate to, and \texttt{cube 200} evaluates to \texttt{8000000}, an integer. In diagram form:
 
-\smspace
-$\underbrace{\overbrace{\texttt{\strut  \ cube   }}^{\textbf{\textsf{int $\rightarrow$ int}}} \overbrace{\texttt{\strut \  200   }}^{\textbf{\textsf{int}}}}_{\textsf{\textbf{int}}}$
-\smspace
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook16x.png}
+\end{center}
+\medskip
 
 \noindent If we try an argument of the wrong type, the program will be rejected:
 
@@ -624,7 +496,7 @@ $\underbrace{\overbrace{\texttt{\strut  \ cube   }}^{\textbf{\textsf{int $\right
 \noindent\\
 \noindent\verb!# let neg x = if x < 0 then true else false;;!\\
 \noindent\verb!val neg : int -> bool = <fun>!\\
-\noindent\texttt{\# neg (-30);;}\hfill\textit{we add parentheses to distinguish from \texttt{neg\!\! -\!\! 30}}\\
+\noindent\texttt{\# neg (-30);;}\hfill\textit{we add parentheses to distinguish from \texttt{neg - 30}}\\
 \noindent\verb!- : bool = true!
 \smspace
 
@@ -679,26 +551,21 @@ A \index{recursive}\textit{recursive} function is one which uses itself. Conside
 \noindent\verb!- : int = 24!
 \smspace
 
-\noindent We used \index{let rec@\texttt{\textbf{let rec}}}\textbf{\texttt{let\!\! rec}} instead of \textbf{\texttt{let}} to indicate a recursive function.  How does the evaluation of \texttt{factorial\! 4} proceed?
-\begin{eqnarray*}
- & & \texttt{\underline{\vphantom{g}factorial 4}} \\
- \Longrightarrow & & \texttt{4 * \underline{\vphantom{g}factorial 3}} \\
- \Longrightarrow & & \texttt{4 * (3 * \underline{\vphantom{g}factorial 2})} \\
- \Longrightarrow & & \texttt{4 * (3 * (2 * \underline{\vphantom{g}factorial 1}))}\\
- \Longrightarrow & & \texttt{4 * (3 * (\underline{\vphantom{g}2 * 1}))}\\
- \Longrightarrow & & \texttt{4 * (\underline{\vphantom{g}3 * 2})}\\
- \Longrightarrow & & \texttt{\underline{\vphantom{g}4 * 6}} \\
- \Longrightarrow & & \verb!24!
-\end{eqnarray*}
+\noindent We used \index{let rec@\texttt{\textbf{let rec}}}\textbf{\texttt{let rec}} instead of \textbf{\texttt{let}} to indicate a recursive function.  How does the evaluation of \texttt{factorial 4} proceed?
 
-\noindent For the first three steps, the \textbf{\texttt{else}} part of the conditional expression is chosen, because the argument \texttt{a} is greater than one. When the argument is equal to one, we do not use \texttt{factorial} again, but just evaluate to one. The expression built up of all the multiplications is then evaluated until a value is reached: this is the result of the whole evaluation. It is sometimes possible for a recursive function never to finish -- what if we try to evaluate \texttt{factorial\! (-1)}?
-\begin{eqnarray*}
- & & \texttt{\underline{\vphantom{g}factorial (-1)}} \\
- \Longrightarrow & & \texttt{-1 * \underline{\vphantom{g}factorial (-2)}} \\
- \Longrightarrow & & \texttt{-1 * (-2 * \underline{\vphantom{g}factorial (-3)})} \\
- \Longrightarrow & & \texttt{-1 * (-2 * (-3 * \underline{\vphantom{g}factorial (-4)}))}\\
- \vdots && \vdots
-\end{eqnarray*}
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook17x.png}
+\end{center}
+\medskip
+
+\noindent For the first three steps, the \textbf{\texttt{else}} part of the conditional expression is chosen, because the argument \texttt{a} is greater than one. When the argument is equal to one, we do not use \texttt{factorial} again, but just evaluate to one. The expression built up of all the multiplications is then evaluated until a value is reached: this is the result of the whole evaluation. It is sometimes possible for a recursive function never to finish -- what if we try to evaluate \texttt{factorial (-1)}?
+
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook18x.png}
+\end{center}
+\medskip
 
 \noindent The expression keeps expanding, and the recursion keeps going. Helpfully, OCaml tells us what is going on:
 
@@ -727,14 +594,11 @@ One of the oldest methods for solving a problem (or \index{algorithm}\textit{alg
 \smspace
 
 \noindent Here is the evaluation:
-\begin{eqnarray*}
- & & \texttt{\underline{\vphantom{g}gcd 64000 3456}} \\
- \Longrightarrow & & \texttt{\underline{\vphantom{g}gcd 3456 1792}} \\
- \Longrightarrow & & \texttt{\underline{\vphantom{g}gcd 1792 1664}} \\
- \Longrightarrow & & \texttt{\underline{\vphantom{g}gcd 1664 128}} \\
- \Longrightarrow & & \texttt{\underline{\vphantom{g}gcd 128 0}} \\
- \Longrightarrow & & \texttt{128}
-\end{eqnarray*}
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook19x.png}
+\end{center}
+\medskip
 
 \noindent Finally, here is a simple function on boolean values. In the previous chapter, we looked at the \texttt{\&\&} and \texttt{||} operators which are built in to OCaml. The other important boolean operator is the \index{not function@\texttt{not} function}\texttt{not} function, which returns the boolean complement (opposite) of its argument -- \texttt{true} if the argument is \texttt{false}, and vice versa. This is also built in, but it is easy enough to define ourselves, as a function of type \textsf{\textbf{bool $\rightarrow$ bool}}.
 
@@ -757,24 +621,14 @@ One of the oldest methods for solving a problem (or \index{algorithm}\textit{alg
  \item Write a function which multiplies a given number by ten. What is its type?
  \item Write a function which returns \texttt{true} if both of its arguments are non-zero, and \texttt{false} otherwise. What is the type of your function?
  \item Write a recursive function which, given a number $n$, calculates the sum $1 + 2 + 3 + \ldots + n$. What is its type?
- \item Write a function \texttt{power\! x\! n} which raises \texttt{x} to the power \texttt{n}. Give its type.
+ \item Write a function \texttt{power x n} which raises \texttt{x} to the power \texttt{n}. Give its type.
  \item Write a function \texttt{isconsonant} which, given a lower-case character in the range \texttt{'a'}\ldots\texttt{'z'}, determines if it is a consonant.
- \item What is the result of the expression\, \texttt{\textbf{let}\! x\! =\! 1\! \textbf{in}\! \textbf{let}\! x\! =\! 2\! \textbf{in}\! x\! +\! x} ?
+ \item What is the result of the expression\, \texttt{\textbf{let} x = 1 \textbf{in} \textbf{let} x = 2 \textbf{in} x + x} ?
  \item Can you suggest a way of preventing the non-termination of the \texttt{factorial} function in the case of a zero or negative argument?
 \end{enumerate}
 
 \cleardoublepage
 \pagestyle{empty}
-\noindent{\Huge So Far}\\
-
-\begin{multicols*}{2}
-\footnotesize
-\sofarstartingoff
-
-\vspace{\baselineskip}
-\sofarfunctions
-
-\end{multicols*}
 
 \pagestyle{empty}
 
@@ -793,16 +647,11 @@ From now on, instead of showing the actual OCaml session\ldots
 
 \noindent\ldots we will usually just show the program in a box, together with its type:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{factorial :}\textbf{\textsf{ int $\rightarrow$ int}}\\
-\\
-$\texttt{\pletrec factorial a =}$\\
-$\texttt{\ \ \pif a = 1 \pthen 1 \pelse a * factorial (a - 1)}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook20x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent If you prefer to compose your programs in a text editing program, and copy-and-paste them into OCaml, you can do that too. Just make sure you end with \texttt{;;} to let OCaml know you have finished entering the program.
 
@@ -816,35 +665,19 @@ In the previous chapter, we used the \index{conditional expression}conditional e
 
 OCaml has a nicer way of expressing choices -- \index{pattern matching}\textit{pattern matching}. For example, recall our factorial function:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{factorial :}\textbf{\textsf{ int $\rightarrow$ int}}\\
-\\
-$\texttt{\pletrec factorial a =}$\\
-$\texttt{\ \ \pif a = 1 \pthen 1 \pelse a * factorial (a - 1)}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook21x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent We can rewrite this using pattern matching:
 
-
-\newcommand{\singlebar}{|}
-\index{\singlebar@\texttt{\singlebar}}
-\index{->@\texttt{->}}
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\index{match@\texttt{\textbf{match}}}\index{with@\texttt{\textbf{with}}}\noindent\texttt{factorial :}\textbf{\textsf{ int $\rightarrow$ int}}\\
-\\
-$\texttt{\pletrec factorial a =}$\\
-$\texttt{\ \ \pmatch a \pwith}$\\
-$\texttt{\ \ \ \ 1 -> 1}$\\
-$\texttt{\ \ | \_ -> a * factorial (a - 1)}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook22x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent We can read this as ``See if \texttt{a} matches the pattern \texttt{1}. If it does, just return \texttt{1}. If not, see if it matches the pattern \texttt{\_}. If it does, the result is \verb!a * factorial (a - 1)!.'' The pattern \texttt{\_} is special -- it matches anything. Remember our \texttt{isvowel} function from the previous chapter?
 
@@ -941,9 +774,11 @@ $\texttt{\ \ | \_ -> gcd b (a mod b)}$\vphantom{g}
 
 \noindent The type of a whole \,\texttt{\textbf{match}}\, \ldots\ \,\texttt{\textbf{with}} \ldots\ expression is determined by the types of the expressions on the right hand side of each \texttt{->} arrow, all of which must be alike:
 
-\smspace
-$\underbrace{\texttt{\textbf{match} b \textbf{with} 0 -> }\overbrace{\vphantom{(}\texttt{a}}^{\textsf{\textbf{int}}}\texttt{ | \_ -> }\overbrace{\texttt{gcd b (a mod b)}}^{\textsf{\textbf{int}}}}_{\textsf{\textbf{int}}}$
-\smspace
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook23x.png}
+\end{center}
+\medskip
 
 \noindent We use pattern matching whenever it is easier to read and understand than \,\texttt{\textbf{if}} \ldots\  \texttt{\textbf{then}} \ldots\ \texttt{\textbf{else}}\, expressions. 
 
@@ -961,19 +796,6 @@ $\underbrace{\texttt{\textbf{match} b \textbf{with} 0 -> }\overbrace{\vphantom{(
 
 \cleardoublepage
 \thispagestyle{empty}
-\noindent{\Huge So Far}\\
-
-\begin{multicols*}{2}
-\footnotesize
-\sofarstartingoff
-
-\vspace{\baselineskip}
-\sofarfunctions
-
-\vspace{\baselineskip}
-\sofarcasebycase
-
-\end{multicols*}
 
 \thispagestyle{empty}
 
@@ -987,9 +809,9 @@ A \index{list}\index{list@\textbf{\textsf{list}}}\textit{list} is a collection o
 \verb![1; 2; 3]!
 \smspace
 
-\noindent We write a list between square brackets \texttt{[} and \texttt{]}, separating the elements with semicolons. The list above has type \textsf{\textbf{int list}}, because it is a list of integers. All elements of the list must have the same type. The elements in the list are ordered (in other words, \texttt{[1;\! 2;\! 3]} and \texttt{[2;\! 3;\! 1]} are not the same list).
+\noindent We write a list between square brackets \texttt{[} and \texttt{]}, separating the elements with semicolons. The list above has type \textsf{\textbf{int list}}, because it is a list of integers. All elements of the list must have the same type. The elements in the list are ordered (in other words, \texttt{[1; 2; 3]} and \texttt{[2; 3; 1]} are not the same list).
 
-The first element is called the \index{head of a list}\textit{head}, and the rest are collectively called the \index{tail of a list}\textit{tail}. In our example, the head is the integer \verb!1! and the tail is the list \texttt{[2;\! 3]}. So you can see that the tail has the same type as the whole list. Here is a list with no elements (called ``the empty list'' or sometimes ``nil''):
+The first element is called the \index{head of a list}\textit{head}, and the rest are collectively called the \index{tail of a list}\textit{tail}. In our example, the head is the integer \verb!1! and the tail is the list \texttt{[2; 3]}. So you can see that the tail has the same type as the whole list. Here is a list with no elements (called ``the empty list'' or sometimes ``nil''):
 
 \smspace
 \verb![]!
@@ -1008,60 +830,50 @@ The first element is called the \index{head of a list}\textit{head}, and the res
 \smspace
 
 \noindent OCaml defines two operators for lists. The \index{::@\texttt{::}}\index{cons}\texttt{::}\ operator (pronounced ``cons'') is used to add a single element to the front of an existing list:
-\begin{eqnarray*}
- & & \verb!false :: [true; false]! \\
- \Longrightarrow & & \verb![false; true; false]!
-\end{eqnarray*}
+
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook29x.png}
+\end{center}
+\medskip
 
 \noindent The cons operation is completed in a constant amount of time, regardless of the length of the list. The \index{"@@\texttt{"@}}\index{append}\texttt{@} operator (pronounced ``append'') is used to combine two lists together:
-\begin{eqnarray*}
- & & \verb![1; 2] @ [3; 4; 5]! \\
- \Longrightarrow & & \verb![1; 2; 3; 4; 5]!
-\end{eqnarray*}
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook30x.png}
+\end{center}
+\medskip
 
 \noindent This takes \index{proportional time}time proportional to the length of the list on the left hand side of the \texttt{@} operator (that is, a list of length 100 will take roughly twice as long as one of length 50). We will see why soon.
 
 Now, how do we write functions using lists? We can use pattern matching as usual, with some new types of pattern. For example, here's a function which tells us if a list is empty:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{isnil :}\textbf{\textsf{ $\alpha$ list $\rightarrow$ bool}}\\
-\\
-$\texttt{\plet isnil l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ [] -> true}$\hfill\textit{the list is empty}\\
-$\texttt{\ \ | \_ -> false}$\hfill\textit{it has at least one element}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook31x.png}
 \end{center}
+\medskip
 \smspace
 
-\noindent The argument has type \textbf{\textsf{$\alpha$ list}} (which OCaml prints on the screen as \texttt{'a\! list}) because this function does not inspect the individual elements of the list, it just checks if the list is empty. And so, this function can operate over any type of list. The greek letters $\alpha$, $\beta$, $\gamma$ etc. stand for any type. If two types are represented by the same greek letter they must have the same type. If they are not, they may have the same type, but do not have to. Functions like this are known as \index{polymorphic types}\textit{polymorphic}. We can also use \texttt{::} in our patterns, this time using it to deconstruct rather than construct the list:
+\noindent The argument has type \textbf{\textsf{$\alpha$ list}} (which OCaml prints on the screen as \texttt{'a list}) because this function does not inspect the individual elements of the list, it just checks if the list is empty. And so, this function can operate over any type of list. The greek letters $\alpha$, $\beta$, $\gamma$ etc. stand for any type. If two types are represented by the same greek letter they must have the same type. If they are not, they may have the same type, but do not have to. Functions like this are known as \index{polymorphic types}\textit{polymorphic}. We can also use \texttt{::} in our patterns, this time using it to deconstruct rather than construct the list:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{length :}\textbf{\textsf{ $\alpha$ list $\rightarrow$ int}}\\
-\\
-\index{length function}$\texttt{\pletrec length l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ [] -> 0}$\hfill\textit{the list has zero elements (the ``base case'')}\\
-$\texttt{\ \ |   h::t -> 1 + length t}$\hfill\textit{\texttt{h} is the head, \texttt{t} the tail}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook32x.png}
 \end{center}
+\medskip
 \smspace
 
 \noindent Here is how the evaluation proceeds: 
-\begin{eqnarray*}
- & & \verb!length [5; 5; 5] ! \\
- \Longrightarrow & & \verb!1 + ! \underline{\texttt{length [5; 5]}} \\
- \Longrightarrow & & \verb!1 + (1 + !\underline{\texttt{length [5]}}\texttt{)} \\
- \Longrightarrow & & \verb!1 + (1 + (1 + !\underline{\texttt{length []}}\texttt{))} \hspace{10mm}\textit{base case}\\
- \Longrightarrow & & \underline{\vphantom{g}\texttt{1 + (1 + (1 + 0))}} \\
- \overset{*}\Longrightarrow & & \verb!3! \hspace{30mm}\textit{($\overset{*}\Longrightarrow$ means we are not showing all the steps)}
-\end{eqnarray*}
 
-\noindent This works by \index{recursion, over a list}recursion over the list, then addition of all the resultant \texttt{1}s. It takes time proportional to the length of the list. Can you see why? It also takes space proportional to the length of the list, because of the intermediate expression \texttt{1\! +\! (1\! +\! (1\! +\! \ldots} which is built up before any of the \texttt{+} operations are evaluated -- this expression must be stored somewhere whilst it is being processed. Since \texttt{h} is not used in the expression \texttt{1\! +\! length\! t}, this function is also polymorphic. Indeed we can replace \texttt{h} in the pattern with \texttt{\_} since there is no use giving a name to something we are not going to refer to:
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook33x.png}
+\end{center}
+\medskip
+\smspace
+
+\noindent This works by \index{recursion, over a list}recursion over the list, then addition of all the resultant \texttt{1}s. It takes time proportional to the length of the list. Can you see why? It also takes space proportional to the length of the list, because of the intermediate expression \texttt{1 + (1 + (1 + \ldots} which is built up before any of the \texttt{+} operations are evaluated -- this expression must be stored somewhere whilst it is being processed. Since \texttt{h} is not used in the expression \texttt{1 + length t}, this function is also polymorphic. Indeed we can replace \texttt{h} in the pattern with \texttt{\_} since there is no use giving a name to something we are not going to refer to:
 
 \smspace
 \begin{center}
@@ -1109,7 +921,7 @@ $\texttt{\ \ |   h::t -> h + sum t}$\hfill\textit{otherwise, add the head to the
 \end{center}
 \smspace
 
-\noindent There is a way to deal with the excessive space usage from the  building up of a large intermediate expression \texttt{1\! +\! 1\! +\! 1\! +\! \ldots} in our \texttt{length} function, at the cost of readability. We can ``accumulate'' the \texttt{1s} as we go along in an extra argument. At each recursive step, the \index{argument!accumulating}\index{accumulator} accumulating argument is increased by one. When we have finished, the total is returned: 
+\noindent There is a way to deal with the excessive space usage from the  building up of a large intermediate expression \texttt{1 + 1 + 1 + \ldots} in our \texttt{length} function, at the cost of readability. We can ``accumulate'' the \texttt{1s} as we go along in an extra argument. At each recursive step, the \index{argument!accumulating}\index{accumulator} accumulating argument is increased by one. When we have finished, the total is returned: 
 
 \smspace
 \begin{center}
@@ -1153,7 +965,7 @@ $\texttt{\ \ |   a::\_::t -> a ::\ odd\_elements t}$\hfill\textit{the list has m
 \end{center}
 \smspace
 
-\noindent Consider the evaluation of \texttt{odd\_elements\! [2;\! 4;\! 2;\! 4;\! 2]}:
+\noindent Consider the evaluation of \texttt{odd\_elements [2; 4; 2; 4; 2]}:
 \begin{eqnarray*}
  & & \texttt{odd\_elements [2; 4; 2; 4; 2]} \\
  \Longrightarrow & & \verb!2 :: ! \underline{\texttt{\vphantom{g}odd\_elements [2; 4; 2]}} \\
@@ -1183,7 +995,7 @@ $\texttt{\ \ | \_ -> l}$\hfill\textit{there is nothing to skip over}\vphantom{g}
  \Longrightarrow & & \texttt{[1; 2; 3; 4; 5]}
 \end{eqnarray*}
 
-\noindent How might we implement list append ourselves, if it was not provided? Consider a function \texttt{append\! a\! b}. If the list \texttt{a} is the empty list, the answer is simply \texttt{b}. But what if \texttt{a} is not empty? Then it has a head \texttt{h} and a tail \texttt{t}. So we can start our result list with the head, and the rest of the result is just \texttt{append\! t\! b}.
+\noindent How might we implement list append ourselves, if it was not provided? Consider a function \texttt{append a b}. If the list \texttt{a} is the empty list, the answer is simply \texttt{b}. But what if \texttt{a} is not empty? Then it has a head \texttt{h} and a tail \texttt{t}. So we can start our result list with the head, and the rest of the result is just \texttt{append t b}.
 
 \smspace
 \begin{center}
@@ -1198,7 +1010,7 @@ $\texttt{\ \ | h::t -> h ::\ append t b}$\vphantom{g}
 \end{center}
 \smspace
 
-\noindent Consider the evaluation of \texttt{append\! [1;\! 2;\! 3]\! [4;\! 5;\! 6]}:
+\noindent Consider the evaluation of \texttt{append [1; 2; 3] [4; 5; 6]}:
 \begin{eqnarray*}
  & & \underline{\texttt{append [1; 2; 3] [4; 5; 6]\vphantom{g}}} \\
  \Longrightarrow & & \texttt{1 ::\ \underline{append [2; 3] [4; 5; 6]\vphantom{g}}} \\
@@ -1208,7 +1020,7 @@ $\texttt{\ \ | h::t -> h ::\ append t b}$\vphantom{g}
  \overset{*}\Longrightarrow & & \texttt{[1; 2; 3; 4; 5; 6]}
 \end{eqnarray*}
 
-\noindent This takes time proportional to the length of the first list -- the second list need not be processed at all. What about \index{reversing a list}\index{list!reversing}reversing a list? For example, we want \texttt{rev\! [1; 2; 3; 4]} to evaluate to \texttt{[4; 3; 2; 1]}. One simple way is to reverse the tail of the list, and append the list just containing the head to the end of it:
+\noindent This takes time proportional to the length of the first list -- the second list need not be processed at all. What about \index{reversing a list}\index{list!reversing}reversing a list? For example, we want \texttt{rev [1; 2; 3; 4]} to evaluate to \texttt{[4; 3; 2; 1]}. One simple way is to reverse the tail of the list, and append the list just containing the head to the end of it:
 
 \smspace
 \begin{center}
@@ -1257,7 +1069,7 @@ $\texttt{\ \ \ \ \ \  h::t -> drop (n - 1) t}$\vphantom{g}
 \end{center}
 \smspace
 
-\noindent For example, here's the evaluation for \texttt{take\! 2\! [2;\! 4;\! 6;\! 8;\! 10]}:
+\noindent For example, here's the evaluation for \texttt{take 2 [2; 4; 6; 8; 10]}:
 \begin{eqnarray*}
  & & \underline{\texttt{take 2 [2; 4; 6; 8; 10]\vphantom{g}}} \\
  \Longrightarrow & & \texttt{2 ::\ \underline{take 1 [4; 6; 8; 10]\vphantom{g}}}\\
@@ -1266,7 +1078,7 @@ $\texttt{\ \ \ \ \ \  h::t -> drop (n - 1) t}$\vphantom{g}
  \overset{*}\Longrightarrow & & \texttt{[2; 4]\vphantom{g}}
 \end{eqnarray*}
 
-\noindent And for \texttt{drop\! 2\! [2;\! 4;\! 6;\! 8;\! 10]}:
+\noindent And for \texttt{drop 2 [2; 4; 6; 8; 10]}:
 \begin{eqnarray*}
  & & \underline{\texttt{drop 2 [2; 4; 6; 8; 10]\vphantom{g}}} \\
  & & \underline{\texttt{drop 1 [4; 6; 8; 10]\vphantom{g}}} \\
@@ -1274,7 +1086,7 @@ $\texttt{\ \ \ \ \ \  h::t -> drop (n - 1) t}$\vphantom{g}
  \Longrightarrow & & \texttt{[6; 8; 10]\vphantom{g}}
 \end{eqnarray*}
 
-\noindent Note that these functions contain incomplete pattern matches -- OCaml tells us so when we type them in. The function fails if the arguments are not sensible -- that is, when we are asked to take or drop more elements than are in the argument list. Later on, we will see how to deal with that problem. Note also that for any sensible value of \texttt{n}, including zero, \texttt{take\! n\! l} and \texttt{drop\! n\! l} split the list into two parts with no gap. So \texttt{drop} and \texttt{take} often appear in pairs.
+\noindent Note that these functions contain incomplete pattern matches -- OCaml tells us so when we type them in. The function fails if the arguments are not sensible -- that is, when we are asked to take or drop more elements than are in the argument list. Later on, we will see how to deal with that problem. Note also that for any sensible value of \texttt{n}, including zero, \texttt{take n l} and \texttt{drop n l} split the list into two parts with no gap. So \texttt{drop} and \texttt{take} often appear in pairs.
 
 Lists can contain anything, so long as all elements are of the same type. So, of course, a list can contain lists. Here's a list of lists of integers:
 
@@ -1299,33 +1111,17 @@ Lists can contain anything, so long as all elements are of the same type. So, of
 \section*{Questions}
 
 \begin{enumerate}
-  \item Write a function \texttt{evens} which does the opposite to \texttt{odds}, returning the even numbered elements in a list. For example, \texttt{evens\! [2;\! 4;\! 2;\! 4;\! 2]} should return \texttt{[4;\! 4]}. What is the type of your function?
-  \item Write a function \texttt{count\_true} which counts the number of \texttt{true} elements in a list. For example, \texttt{count\_true\! [true;\! false;\! true]} should return \texttt{2}. What is the type of your function? Can you write a tail recursive version?
+  \item Write a function \texttt{evens} which does the opposite to \texttt{odds}, returning the even numbered elements in a list. For example, \texttt{evens [2; 4; 2; 4; 2]} should return \texttt{[4; 4]}. What is the type of your function?
+  \item Write a function \texttt{count\_true} which counts the number of \texttt{true} elements in a list. For example, \texttt{count\_true [true; false; true]} should return \texttt{2}. What is the type of your function? Can you write a tail recursive version?
   \item Write a function which, given a list, builds a palindrome from it. A palindrome is a list which equals its own reverse. You can assume the existence of \texttt{rev} and \texttt{@}. Write another function which determines if a list is a palindrome.
-  \item Write a function \texttt{drop\_last} which returns all but the last element of a list. If the list is empty, it should return the empty list. So, for example, \texttt{drop\_last\! [1;\! 2;\! 4;\! 8]} should return \texttt{[1;\! 2;\! 4]}. What about a tail recursive version?
-  \item Write a function \texttt{member} of type \textbf{\textsf {$\alpha$ $\rightarrow$ $\alpha$ list $\rightarrow$ bool}} which returns \texttt{true} if an element exists in a list, or \texttt{false} if not. For example, \texttt{member\! 2\! [1;\! 2;\! 3]} should evaluate to \texttt{true}, but \texttt{member\! 3\! [1;\! 2]} should evaluate to \texttt{false}. 
-  \item Use your \texttt{member} function to write a function \texttt{make\_set} which, given a list, returns a list which contains all the elements of the original list, but has no duplicate elements. For example, \texttt{make\_set\! [1;\! 2;\! 3;\! 3;\! 1]} might return \texttt{[2;\! 3;\! 1]}. What is the type of your function?
+  \item Write a function \texttt{drop\_last} which returns all but the last element of a list. If the list is empty, it should return the empty list. So, for example, \texttt{drop\_last [1; 2; 4; 8]} should return \texttt{[1; 2; 4]}. What about a tail recursive version?
+  \item Write a function \texttt{member} of type \textbf{\textsf {$\alpha$ $\rightarrow$ $\alpha$ list $\rightarrow$ bool}} which returns \texttt{true} if an element exists in a list, or \texttt{false} if not. For example, \texttt{member 2 [1; 2; 3]} should evaluate to \texttt{true}, but \texttt{member 3 [1; 2]} should evaluate to \texttt{false}. 
+  \item Use your \texttt{member} function to write a function \texttt{make\_set} which, given a list, returns a list which contains all the elements of the original list, but has no duplicate elements. For example, \texttt{make\_set [1; 2; 3; 3; 1]} might return \texttt{[2; 3; 1]}. What is the type of your function?
   \item Can you explain why the \texttt{rev} function we defined is inefficient? How does the time it takes to run relate to the size of its argument? Can you write a more efficient version using an accumulating argument? What is its efficiency in terms of time taken and space used?
 \end{enumerate}
 
 \cleardoublepage
 \thispagestyle{empty}
-\noindent{\Huge So Far}\\
-
-\begin{multicols*}{2}
-\footnotesize
-\sofarstartingoff
-
-\vspace{\baselineskip}
-\sofarfunctions
-
-\vspace{\baselineskip}
-\sofarcasebycase
-
-\vspace{\baselineskip}
-\sofarlistingthings
-
-\end{multicols*}
 
 \pagestyle{empty}
 
@@ -1356,7 +1152,7 @@ $\texttt{\ \ | h::t -> h ::\ append t b}$\vphantom{g}
 \noindent Alternatively, we can consider each match case to be an independent statement of truth, thinking the same way about the whole function:
 
 \begin{quote}
-\textit{The empty list appended to another list is that list. Otherwise, the first list is non-empty, so it has a head and a tail. Call them \texttt{h} and \texttt{t}. Clearly \texttt{append\! (h\! ::\ \!t)\! b} is equal to \texttt{h\! ::\ \!append\! t\! b}. Since this reduces the problem size, progress is made.}
+\textit{The empty list appended to another list is that list. Otherwise, the first list is non-empty, so it has a head and a tail. Call them \texttt{h} and \texttt{t}. Clearly \texttt{append (h ::\ t) b} is equal to \texttt{h ::\ append t b}. Since this reduces the problem size, progress is made.}
 \end{quote}
 
 \noindent It is very useful to be able to think in these two ways about functions you write, and to be able to swap between them in the mind with ease.
@@ -1397,7 +1193,7 @@ $\texttt{\ \ \ \ \ \ \ \ \pelse h ::\ insert x t}$\hfill\textit{otherwise, keep 
 \end{center}
 \smspace
 
-\noindent Consider the evaluation of \texttt{insert\! 3\! [1; 1; 2; 3; 5; 9]}:
+\noindent Consider the evaluation of \texttt{insert 3 [1; 1; 2; 3; 5; 9]}:
 \begin{eqnarray*}
  & & \underline{\texttt{insert 3 [1; 1; 2; 3; 5; 9]\vphantom{g}}} \\
  \Longrightarrow & & \texttt{1 ::\ \underline{insert 3 [1; 2; 3; 5; 9]\vphantom{g}}} \\
@@ -1407,7 +1203,7 @@ $\texttt{\ \ \ \ \ \ \ \ \pelse h ::\ insert x t}$\hfill\textit{otherwise, keep 
  \overset{*}\Longrightarrow & & \texttt{[1; 1; 2; 3; 3; 5; 9]}
 \end{eqnarray*}
 
-\noindent Here is the whole evaluation of \texttt{sort\! [53;\! 9;\! 2;\! 6;\! 19]}. We have missed out the detail of each \texttt{insert} operation.
+\noindent Here is the whole evaluation of \texttt{sort [53; 9; 2; 6; 19]}. We have missed out the detail of each \texttt{insert} operation.
 \begin{eqnarray*}
  & & \underline{\texttt{sort [53; 9; 2; 6; 19]\vphantom{g}}} \\
  \overset{*}\Longrightarrow & & \texttt{insert 53 \underline{(sort [9; 2; 6; 19])\vphantom{g}}} \\
@@ -1550,11 +1346,11 @@ So, how many lines do we have? Well, in the top half we have roughly $\log_{2}n$
 \section*{Questions}
 
 \begin{enumerate}
-  \item In \texttt{msort}, we calculate the value of the expression \texttt{length\! l\! /\! 2} twice. Modify \texttt{msort} to remove this inefficiency.
+  \item In \texttt{msort}, we calculate the value of the expression \texttt{length l / 2} twice. Modify \texttt{msort} to remove this inefficiency.
   \item We know that \texttt{take} and \texttt{drop} can fail if called with incorrect arguments. Show that this is never the case in \texttt{msort}.
   \item Write a version of insertion sort which sorts the argument list into reverse order.
   \item Write a function to detect if a list is already in sorted order.
-  \item We mentioned that the comparison functions like \,\texttt{<}\, work for many OCaml types. Can you determine, by experimentation, how they work for lists? For example, what is the result of \texttt{[1;\! 2]\! <\! [2;\! 3]}? What happens when we sort the following list of type \textbf{\textsf{char list list}}? Why?
+  \item We mentioned that the comparison functions like \,\texttt{<}\, work for many OCaml types. Can you determine, by experimentation, how they work for lists? For example, what is the result of \texttt{[1; 2] < [2; 3]}? What happens when we sort the following list of type \textbf{\textsf{char list list}}? Why?
   
   \vspace{1mm}
   \texttt{\phantom{space}[['o'; 'n'; 'e']; ['t'; 'w'; 'o']; ['t'; 'h'; 'r'; 'e'; 'e']]}
@@ -1564,25 +1360,7 @@ So, how many lines do we have? Well, in the top half we have roughly $\log_{2}n$
 
 \cleardoublepage
 \thispagestyle{empty}
-\noindent{\Huge So Far}\\
 
-\begin{multicols*}{2}
-\footnotesize
-\sofarstartingoff
-
-\vspace{\baselineskip}
-\sofarfunctions
-
-\vspace{\baselineskip}
-\sofarcasebycase
-
-\vspace{\baselineskip}
-\sofarlistingthings
-
-\vspace{\baselineskip}
-\sofarsortingthings
-
-\end{multicols*}
 
 \pagestyle{empty}
 
@@ -1848,7 +1626,7 @@ $\texttt{~~a >= b}$\vphantom{g}
   \item Write a simple recursive function \texttt{calm} to replace exclamation marks in a \textbf{\textsf{char list}} with periods. For example \texttt{calm ['H'; 'e'; 'l'; 'p'; '!'; ' '; 'F'; 'i'; 'r'; 'e'; '!']} should evaluate to \texttt{['H'; 'e'; 'l'; 'p'; '.'; ' '; 'F'; 'i'; 'r'; 'e'; '.']}. Now rewrite your function to use \texttt{map} instead of recursion. What are the types of your functions?
   \item Write a function \texttt{clip} which, given an integer, clips it to the range $1\ldots 10$ so that integers bigger than 10 round down to 10, and those smaller than 1 round up to 1. Write another function \texttt{cliplist} which uses this first function together with \texttt{map} to apply this clipping to a whole list of integers.
   \item Express your function \texttt{cliplist} again, this time using an anonymous function instead of \texttt{clip}.
-  \item Write a function \texttt{apply} which, given another function, a number of times to apply it, and an initial argument for the function, will return the cumulative effect of repeatedly applying the function. For instance, \texttt{apply\! f\! 6\! 4} should return \texttt{f\! (f\! (f\! (f\! (f\! (f\! 4))))))}. What is the type of your function?
+  \item Write a function \texttt{apply} which, given another function, a number of times to apply it, and an initial argument for the function, will return the cumulative effect of repeatedly applying the function. For instance, \texttt{apply f 6 4} should return \texttt{f (f (f (f (f (f 4))))))}. What is the type of your function?
   \item Modify the insertion sort function from the preceding chapter to take a comparison function, in the same way that we modified merge sort in this chapter. What is its type?
   \item Write a function \texttt{filter} which takes a function of type \textbf{\textsf{$\alpha$ $\rightarrow$ bool}} and an \textsf{\textbf{$\alpha$ list}} and returns a list of just those elements of the argument list for which the given function returns \texttt{true}.
   \item Write the function \texttt{for\_all} which, given a function of type \textbf{\textsf{$\alpha$ $\rightarrow$ bool}} and an argument list of type \textsf{\textbf{$\alpha$ list}} evaluates to \texttt{true} if and only if the function returns \texttt{true} for every element of the list. Give examples of its use.
@@ -1857,28 +1635,7 @@ $\texttt{~~a >= b}$\vphantom{g}
 
 \cleardoublepage
 \thispagestyle{empty}
-\noindent{\Huge So Far}\\
 
-\begin{multicols*}{2}
-\footnotesize
-\sofarstartingoff
-
-\vspace{\baselineskip}
-\sofarfunctions
-
-\vspace{\baselineskip}
-\sofarcasebycase
-
-\vspace{\baselineskip}
-\sofarlistingthings
-
-\vspace{\baselineskip}
-\sofarsortingthings
-
-\vspace{\baselineskip}
-\sofarfunctionsuponfunctions
-
-\end{multicols*}
 
 \pagestyle{empty}
 
@@ -1886,7 +1643,7 @@ $\texttt{~~a >= b}$\vphantom{g}
 \pagestyle{fancy}
 \label{whenthingsgowrong}
 
-Some of the functions we have written so far have had a single, correct answer for each possible argument. For example, there's no number we cannot halve. However, when we use more complicated types such as lists, there are plenty of functions which do not always have an answer -- a list might not have a head or a tail, for example. Our \texttt{take} and \texttt{drop} functions were unsatisfactory in case of invalid arguments. For example, \texttt{take\! 3\! ['a']} would simply return \texttt{[]}. This is bad practice -- we are hiding errors rather than confronting them.
+Some of the functions we have written so far have had a single, correct answer for each possible argument. For example, there's no number we cannot halve. However, when we use more complicated types such as lists, there are plenty of functions which do not always have an answer -- a list might not have a head or a tail, for example. Our \texttt{take} and \texttt{drop} functions were unsatisfactory in case of invalid arguments. For example, \texttt{take 3 ['a']} would simply return \texttt{[]}. This is bad practice -- we are hiding errors rather than confronting them.
 
 OCaml has a mechanism for reporting such \index{run-time error}\textit{run-time} errors (these are quite different from the type errors OCaml reports when it refuses to accept a program at all). This mechanism is \index{exception}\textit{exceptions}.
 
@@ -1975,9 +1732,9 @@ $\texttt{\ \ \ \ Division\_by\_zero -> 0}$\vphantom{g}
 \end{center}
 \smspace
 
-\noindent The \texttt{safe\_divide} function tries to divide \texttt{x} by \texttt{y}, but if the expression \texttt{x\! /\! y} raises the built-in exception \texttt{Division\_by\_zero}, instead we return zero. Thus, our \texttt{safe\_divide} function succeeds for every argument. 
+\noindent The \texttt{safe\_divide} function tries to divide \texttt{x} by \texttt{y}, but if the expression \texttt{x / y} raises the built-in exception \texttt{Division\_by\_zero}, instead we return zero. Thus, our \texttt{safe\_divide} function succeeds for every argument. 
 
-How do the types work here? The expression \texttt{x\! /\! y} has type \textsf{\textbf{int}} and so the expression we substitute in case of \texttt{Division\_by\_zero} must have the same type: \textsf{\textbf{int}}, which indeed it does. And so, our rule that each expression must have one and only one type is not violated -- \texttt{safe\_divide} always returns an \textsf{\textbf{int}}. 
+How do the types work here? The expression \texttt{x / y} has type \textsf{\textbf{int}} and so the expression we substitute in case of \texttt{Division\_by\_zero} must have the same type: \textsf{\textbf{int}}, which indeed it does. And so, our rule that each expression must have one and only one type is not violated -- \texttt{safe\_divide} always returns an \textsf{\textbf{int}}. 
 
 \smspace
 $\underbrace{\texttt{\textbf{try} }\overbrace{\vphantom{(}\texttt{x / y}}^{\textsf{\textbf{int}}}\texttt{ \textbf{with} Division\_by\_zero -> }\overbrace{\texttt{0}}^{\textsf{\textbf{int}}}}_{\textsf{\textbf{int}}}$
@@ -2034,31 +1791,7 @@ $\texttt{\ \ | \_::t -> last t}$\vphantom{g}
 
 \cleardoublepage
 \thispagestyle{empty}
-\noindent{\Huge So Far}\\
 
-\begin{multicols*}{2}
-\footnotesize
-\sofarstartingoff
-
-\vspace{\baselineskip}
-\sofarfunctions
-
-\vspace{\baselineskip}
-\sofarcasebycase
-
-\vspace{\baselineskip}
-\sofarlistingthings
-
-\vspace{\baselineskip}
-\sofarsortingthings
-
-\vspace{\baselineskip}
-\sofarfunctionsuponfunctions
-
-\vspace{\baselineskip}
-\sofarwhenthingsgowrong
-
-\end{multicols*}
 
 \pagestyle{empty}
 
@@ -2173,7 +1906,7 @@ $\texttt{\ \ \ \ \ \ \pif k = x \pthen v \pelse lookup x t}$\hfill\textit{return
 \end{center}
 \smspace
 
-\noindent For example, \texttt{lookup\! 4\! census} evaluates to \texttt{3}, whereas \texttt{lookup\! 9\! census} raises \texttt{Not\_found}. Another basic operation is to add an entry (we must replace it if it already exists, to maintain the property that each key appears at most once in a dictionary).
+\noindent For example, \texttt{lookup 4 census} evaluates to \texttt{3}, whereas \texttt{lookup 9 census} raises \texttt{Not\_found}. Another basic operation is to add an entry (we must replace it if it already exists, to maintain the property that each key appears at most once in a dictionary).
 
 \smspace
 \begin{center}
@@ -2191,7 +1924,7 @@ $\texttt{\ \ \ \ \ \ \ \ \pelse (k\textquotesingle , v\textquotesingle ) ::\ add
 \end{center}
 \smspace
 
-\noindent For example, \texttt{add\! 6\! 2\! [(4, 5);\! (6, 3)]} evaluates to \texttt{[(4, 5);\! (6, 2)]} (the value for key \texttt{6} is replaced), whereas \texttt{add\! 6\! 2\! [(4, 5);\! (3, 6)]} evaluates to \texttt{[(4, 5);\! (3, 6);\! (6, 2)]} (the new entry for key \texttt{6} is added). Removing an element is easy:
+\noindent For example, \texttt{add 6 2 [(4, 5); (6, 3)]} evaluates to \texttt{[(4, 5); (6, 2)]} (the value for key \texttt{6} is replaced), whereas \texttt{add 6 2 [(4, 5); (3, 6)]} evaluates to \texttt{[(4, 5); (3, 6); (6, 2)]} (the new entry for key \texttt{6} is added). Removing an element is easy:
 
 \smspace
 \begin{center}
@@ -2243,41 +1976,14 @@ Pairs are just a particular instance of a more general construct -- the \textit{
 
 \item Define a function to turn any list of pairs into a dictionary. If duplicate keys are found, the value associated with the first occurrence of the key should be kept.
 
-\item Write the function \texttt{union\! a\! b} which forms the union of two dictionaries. The union of two dictionaries is the dictionary containing all the entries in one or other or both. In the case that a key is contained in both dictionaries, the value in the first should be preferred. 
+\item Write the function \texttt{union a b} which forms the union of two dictionaries. The union of two dictionaries is the dictionary containing all the entries in one or other or both. In the case that a key is contained in both dictionaries, the value in the first should be preferred. 
 
 \end{enumerate}
 
 
 \cleardoublepage
 \thispagestyle{empty}
-\noindent{\Huge So Far}\\
 
-\begin{multicols*}{2}
-\footnotesize
-\sofarstartingoff
-
-\vspace{\baselineskip}
-\sofarfunctions
-
-\vspace{\baselineskip}
-\sofarcasebycase
-
-\vspace{\baselineskip}
-\sofarlistingthings
-
-\vspace{\baselineskip}
-\sofarsortingthings
-
-\vspace{\baselineskip}
-\sofarfunctionsuponfunctions
-
-\vspace{\baselineskip}
-\sofarwhenthingsgowrong
-
-\vspace{\baselineskip}
-\sofarlookingthingsup
-
-\end{multicols*}
 
 \pagestyle{empty}
 
@@ -2318,13 +2024,13 @@ $\texttt{\plet add x y = x + y}$
 \noindent\verb!- : int = 11!
 \smspace
 
-\noindent Here, we have defined a function \texttt{f} by applying just one argument to \texttt{add}. This gives a function of type \textbf{\textsf{int $\rightarrow$ int}} which adds six to any number. We then apply \texttt{5} to this function, giving \texttt{11}. When defining \texttt{f}, we used \index{partial application}\textit{partial application} (we applied only some of the arguments).  In fact, even when applying all the arguments at once, we could equally write \texttt{(add\! 6)\! 5} rather than \texttt{add\! 6\! 5}. We can add six to every element in a list:
+\noindent Here, we have defined a function \texttt{f} by applying just one argument to \texttt{add}. This gives a function of type \textbf{\textsf{int $\rightarrow$ int}} which adds six to any number. We then apply \texttt{5} to this function, giving \texttt{11}. When defining \texttt{f}, we used \index{partial application}\textit{partial application} (we applied only some of the arguments).  In fact, even when applying all the arguments at once, we could equally write \texttt{(add 6) 5} rather than \texttt{add 6 5}. We can add six to every element in a list:
 
 \smspace
 \texttt{map (add 6) [10; 20; 30]}
 \smspace
 
-\noindent Here, \texttt{add\! 6} has the type \textsf{\textbf{int $\rightarrow$ int}}, which is an appropriate type to be the first argument to \texttt{map} when mapping over a list of integers. We can use partial application to simplify some examples from earlier in the book. We mentioned that you can write, for example, \texttt{(\! *\! )} to produce a function from an operator. It has type \textbf{\textsf{int $\rightarrow$ int $\rightarrow$ int}}. We may partially apply this function, so instead of writing
+\noindent Here, \texttt{add 6} has the type \textsf{\textbf{int $\rightarrow$ int}}, which is an appropriate type to be the first argument to \texttt{map} when mapping over a list of integers. We can use partial application to simplify some examples from earlier in the book. We mentioned that you can write, for example, \texttt{( * )} to produce a function from an operator. It has type \textbf{\textsf{int $\rightarrow$ int $\rightarrow$ int}}. We may partially apply this function, so instead of writing
 
 \smspace
 \texttt{map (\textbf{fun} x -> x * 2) [10; 20; 30]}
@@ -2363,7 +2069,7 @@ $\texttt{\plet mapl f l = map (map f) l}$
 \end{center}
 \smspace
 
-\noindent Can you see why? The partially applied function \texttt{map\! f} is of type \textbf{\textsf{$\alpha$ list $\rightarrow$ $\beta$ list}}, which is exactly the right type to pass to \texttt{map} when mapping over lists of lists. In fact, we can go even further and write:
+\noindent Can you see why? The partially applied function \texttt{map f} is of type \textbf{\textsf{$\alpha$ list $\rightarrow$ $\beta$ list}}, which is exactly the right type to pass to \texttt{map} when mapping over lists of lists. In fact, we can go even further and write:
 
 \smspace
 \begin{center}
@@ -2375,7 +2081,7 @@ $\texttt{\plet mapl f = map (map f)}$
 \end{center}
 \smspace
 
-\noindent Here,\, \texttt{map\! (map\! f)} has type \textsf{\textbf{$\alpha$ list list $\rightarrow$ $\beta$ list list}} so when an \texttt{f} is supplied to \texttt{mapl}, a function is returned requiring just the list. This is partial application at work again.
+\noindent Here,\, \texttt{map (map f)} has type \textsf{\textbf{$\alpha$ list list $\rightarrow$ $\beta$ list list}} so when an \texttt{f} is supplied to \texttt{mapl}, a function is returned requiring just the list. This is partial application at work again.
 
 You can see the real structure of multiple-argument functions, by writing \texttt{add} using anonymous functions:
 
@@ -2389,19 +2095,19 @@ $\texttt{\plet add = \pfun x -> \pfun y -> x + y}$
 \end{center}
 \smspace
 
-\noindent This makes it more obvious that our two-argument \texttt{add} function is really just composed of one-argument functions, but \texttt{\textbf{let}\! add\! x\! y\! =\! x\! +\! y} is much clearer! We can apply one or more arguments at a time, but they must be applied in order. Everything in this chapter also works for functions with more than two arguments. 
+\noindent This makes it more obvious that our two-argument \texttt{add} function is really just composed of one-argument functions, but \texttt{\textbf{let} add x y = x + y} is much clearer! We can apply one or more arguments at a time, but they must be applied in order. Everything in this chapter also works for functions with more than two arguments. 
 
 \section*{\textsc{Summary}}
 
-The function \texttt{f\! x\! y} has type \textsf{\textbf{$\alpha$ $\rightarrow$ $\beta$ $\rightarrow$ $\gamma$}} which can also be written \textsf{\textbf{$\alpha$ $\rightarrow$ \textmd{(}$\beta$ $\rightarrow$ $\gamma$\textmd{)}}}. Thus, it takes an argument of type $\alpha$ and returns a function of type $\beta$ $\rightarrow$ $\gamma$ which, when you give it an argument of type $\beta$ returns something of type $\gamma$. And so, we can apply just one argument to the function \texttt{f} (which is called partial application), or apply both at once. When we write \texttt{\textbf{let}\! f\! x\! y\! =\! \ldots} this is just shorthand for \texttt{\textbf{let}\! f\! =\! \textbf{fun}\! x\! ->\! \textbf{fun}\! y\! ->\! \ldots}
+The function \texttt{f x y} has type \textsf{\textbf{$\alpha$ $\rightarrow$ $\beta$ $\rightarrow$ $\gamma$}} which can also be written \textsf{\textbf{$\alpha$ $\rightarrow$ \textmd{(}$\beta$ $\rightarrow$ $\gamma$\textmd{)}}}. Thus, it takes an argument of type $\alpha$ and returns a function of type $\beta$ $\rightarrow$ $\gamma$ which, when you give it an argument of type $\beta$ returns something of type $\gamma$. And so, we can apply just one argument to the function \texttt{f} (which is called partial application), or apply both at once. When we write \texttt{\textbf{let} f x y = \ldots} this is just shorthand for \texttt{\textbf{let} f = \textbf{fun} x -> \textbf{fun} y -> \ldots}
  
 \clearpage
 \section*{Questions}
 
 \begin{enumerate}
-  \item Rewrite the summary paragraph at the end of this chapter for the three argument function \texttt{g\! a\! b\! c}.
-  \item Recall the function \texttt{member\! x\! l} which determines if an element \texttt{x} is contained in a list \texttt{l}. What is its type? What is the type of \texttt{member\! x}? Use partial application to write a function \texttt{member\_all\! x\! ls} which determines if an element is a member of all the lists in the list of lists \texttt{ls}. 
-  \item Why can we not write a function to halve all the elements of a list like this: \texttt{map\! ((\! /\! )\! 2)\! [10;\! 20;\! 30]}? Write a suitable division function which can be partially applied in the manner we require.
+  \item Rewrite the summary paragraph at the end of this chapter for the three argument function \texttt{g a b c}.
+  \item Recall the function \texttt{member x l} which determines if an element \texttt{x} is contained in a list \texttt{l}. What is its type? What is the type of \texttt{member x}? Use partial application to write a function \texttt{member\_all x ls} which determines if an element is a member of all the lists in the list of lists \texttt{ls}. 
+  \item Why can we not write a function to halve all the elements of a list like this: \texttt{map (( / ) 2) [10; 20; 30]}? Write a suitable division function which can be partially applied in the manner we require.
   \item Write a function \texttt{mapll} which maps a function over lists of lists of lists. You must not use the \texttt{\pletrec} construct. Is it possible to write a function which works like \texttt{map}, \texttt{mapl}, or \texttt{mapll} depending upon the list given to it?
   \item Write a function \texttt{truncate} which takes an integer and a list of lists, and returns a list of lists, each of which has been truncated to the given length. If a list is shorter than the given length, it is unchanged. Make use of partial application.
   \item Write a function which takes a list of lists of integers and returns the list composed of all the first elements of the lists. If a list is empty, a given number should be used in place of its first element.
@@ -2409,37 +2115,7 @@ The function \texttt{f\! x\! y} has type \textsf{\textbf{$\alpha$ $\rightarrow$ 
 
 \cleardoublepage
 \thispagestyle{empty}
-\noindent{\Huge So Far}\\
 
-\begin{multicols*}{2}
-\footnotesize
-\sofarstartingoff
-
-\vspace{\baselineskip}
-\sofarfunctions
-
-\vspace{\baselineskip}
-\sofarcasebycase
-
-\vspace{\baselineskip}
-\sofarlistingthings
-
-\vspace{\baselineskip}
-\sofarsortingthings
-
-\vspace{\baselineskip}
-\sofarfunctionsuponfunctions
-
-\vspace{\baselineskip}
-\sofarwhenthingsgowrong
-
-\vspace{\baselineskip}
-\sofarlookingthingsup
-
-\vspace{\baselineskip}
-\sofarmorewithfunctions
-
-\end{multicols*}
 
 \pagestyle{empty}
 
@@ -2696,40 +2372,6 @@ $\texttt{~~|~Divide (e, e\textquotesingle ) -> evaluate e / evaluate e\textquote
 
 \cleardoublepage
 \thispagestyle{empty}
-\noindent{\Huge So Far}\\
-
-\begin{multicols*}{2}
-\footnotesize
-\sofarstartingoff
-
-\vspace{\baselineskip}
-\sofarfunctions
-
-\vspace{\baselineskip}
-\sofarcasebycase
-
-\vspace{\baselineskip}
-\sofarlistingthings
-
-\vspace{\baselineskip}
-\sofarsortingthings
-
-\vspace{\baselineskip}
-\sofarfunctionsuponfunctions
-
-\vspace{\baselineskip}
-\sofarwhenthingsgowrong
-
-\vspace{\baselineskip}
-\sofarlookingthingsup
-
-\vspace{\baselineskip}
-\sofarmorewithfunctions
-
-\vspace{\baselineskip}
-\sofarnewkindsofdata
-
-\end{multicols*}
 
 \pagestyle{empty}
 
@@ -2949,43 +2591,6 @@ Lists and trees are examples of data structures. The design of an algorithm and 
 
 \cleardoublepage
 \thispagestyle{empty}
-\noindent{\Huge So Far}\\
-
-\begin{multicols*}{2}
-\footnotesize
-\sofarstartingoff
-
-\vspace{\baselineskip}
-\sofarfunctions
-
-\vspace{\baselineskip}
-\sofarcasebycase
-
-\vspace{\baselineskip}
-\sofarlistingthings
-
-\vspace{\baselineskip}
-\sofarsortingthings
-
-\vspace{\baselineskip}
-\sofarfunctionsuponfunctions
-
-\vspace{\baselineskip}
-\sofarwhenthingsgowrong
-
-\vspace{\baselineskip}
-\sofarlookingthingsup
-
-\vspace{\baselineskip}
-\sofarmorewithfunctions
-
-\vspace{\baselineskip}
-\sofarnewkindsofdata
-
-\vspace{\baselineskip}
-\sofargrowingtrees
-
-\end{multicols*}
 
 \pagestyle{empty}
 
@@ -3044,7 +2649,7 @@ $\texttt{~~print\_newline ()}$\vphantom{g}
 \end{center}
 \smspace
 
-\noindent This makes it look rather like \texttt{;} is used to end each expression, but just remember that \texttt{;} is a bit like an operator -- notice that there is no \texttt{;} after the last \texttt{print\_newline\! ()}. Let us see how \texttt{print\_dict\_entry} is used in practice:
+\noindent This makes it look rather like \texttt{;} is used to end each expression, but just remember that \texttt{;} is a bit like an operator -- notice that there is no \texttt{;} after the last \texttt{print\_newline ()}. Let us see how \texttt{print\_dict\_entry} is used in practice:
 
 \smspace
 \noindent\verb!        OCaml!\\
@@ -3327,8 +2932,8 @@ Function & Type & Description \\\midrule
 \index{print\_string@\texttt{print\_string}}\texttt{print\_string} & \textsf{\textbf{string} $\rightarrow$ \textbf{unit}} & Print a string to the screen.\\
 \index{print\_newline@\texttt{print\_newline}}\texttt{print\_newline} & \textsf{\textbf{unit $\rightarrow$ unit}} & Print a newline character to the screen, moving to the beginning of the next line.\\
 \index{read\_line@\texttt{read\_line}}\texttt{read\_line} & \textsf{\textbf{unit $\rightarrow$ string}} & Read a string from the user. The user indicates they have finished by pressing the Enter key.\\
-\index{read\_int@\texttt{read\_int}}\texttt{read\_int} & \textsf{\textbf{unit $\rightarrow$ int}} & Read an integer from the user. The user indicates they have finished by pressing the Enter key. Raises \texttt{Failure\! "int\_of\_string"} if the user types something other than an integer.\\
-\index{int\_of\_string@\texttt{int\_of\_string}}\texttt{int\_of\_string} & \textsf{\textbf{string $\rightarrow$ int}} & Make an integer from a string. Raises \texttt{Failure\! "int\_of\_string"} if the string does not represent a valid integer.\\
+\index{read\_int@\texttt{read\_int}}\texttt{read\_int} & \textsf{\textbf{unit $\rightarrow$ int}} & Read an integer from the user. The user indicates they have finished by pressing the Enter key. Raises \texttt{Failure "int\_of\_string"} if the user types something other than an integer.\\
+\index{int\_of\_string@\texttt{int\_of\_string}}\texttt{int\_of\_string} & \textsf{\textbf{string $\rightarrow$ int}} & Make an integer from a string. Raises \texttt{Failure "int\_of\_string"} if the string does not represent a valid integer.\\
 \index{string\_of\_int@\texttt{string\_of\_int}}\texttt{string\_of\_int} & \textsf{\textbf{int $\rightarrow$ string}} & Makes a string representation of an integer.\\
 \index{open\_out}\texttt{open\_out} & \textsf{\textbf{string $\rightarrow$ out\raisebox{2pt}{\_}channel}} & Given a filename, open a channel for output. Raises the exception \index{Sys\_error@\texttt{Sys\_error}}\texttt{Sys\_error} if the file could not be opened.\\
 \index{close\_out@\texttt{close\_out}}\texttt{close\_out} & \textsf{\textbf{out\raisebox{2pt}{\_}channel $\rightarrow$ unit}} & Close an output channel.\\
@@ -3346,7 +2951,7 @@ Function & Type & Description \\\midrule
 \item Write a function to print a list of integers to the screen in the same format OCaml uses -- i.e. with square brackets and semicolons. 
 \item Write a function to read three integers from the user, and return them as a tuple. What exceptions could be raised in the process? Handle them appropriately.
 \item In our \texttt{read\_dict} function, we waited for the user to type \texttt{0} to indicate no more data. This is clumsy. Implement a new \texttt{read\_dict} function with a nicer system. Be careful to deal with possible exceptions which may be raised.
-\item Write a function which, given a number $x$, prints the $x$-times table to a given file name. For example, \texttt{table\! "table.txt"\! 5} should produce a file \texttt{table.txt} containing the following:
+\item Write a function which, given a number $x$, prints the $x$-times table to a given file name. For example, \texttt{table "table.txt" 5} should produce a file \texttt{table.txt} containing the following:
 
 \vspace{1mm}
 \begin{tabular}{lllll}
@@ -3361,51 +2966,12 @@ Function & Type & Description \\\midrule
 \noindent Adding the special tabulation character \texttt{'\textbackslash t'}} after each number will line up the columns.
 
 \item Write a function to count the number of lines in a given file.
-\item Write a function \texttt{copy\_file} of type \textsf{\textbf{string} $\rightarrow$ \textbf{string} $\rightarrow$ \textbf{unit}} which copies a file line by line. For example, \texttt{copy\_file\! "a.txt"\! "b.txt"} should produce a file \texttt{b.txt} identical to \texttt{a.txt}. Make sure you deal with the case where the file \texttt{a.txt} cannot be found, or where \texttt{b.txt} cannot be created or filled. 
+\item Write a function \texttt{copy\_file} of type \textsf{\textbf{string} $\rightarrow$ \textbf{string} $\rightarrow$ \textbf{unit}} which copies a file line by line. For example, \texttt{copy\_file "a.txt" "b.txt"} should produce a file \texttt{b.txt} identical to \texttt{a.txt}. Make sure you deal with the case where the file \texttt{a.txt} cannot be found, or where \texttt{b.txt} cannot be created or filled. 
 \end{enumerate}
 
 \cleardoublepage
 \thispagestyle{empty}
-\noindent{\Huge So Far}\\
 
-\begin{multicols*}{2}
-\footnotesize
-\sofarstartingoff
-
-\vspace{\baselineskip}
-\sofarfunctions
-
-\vspace{\baselineskip}
-\sofarcasebycase
-
-\vspace{\baselineskip}
-\sofarlistingthings
-
-\vspace{\baselineskip}
-\sofarsortingthings
-
-\vspace{\baselineskip}
-\sofarfunctionsuponfunctions
-
-\vspace{\baselineskip}
-\sofarwhenthingsgowrong
-
-\vspace{\baselineskip}
-\sofarlookingthingsup
-
-\vspace{\baselineskip}
-\sofarmorewithfunctions
-
-\vspace{\baselineskip}
-\sofarnewkindsofdata
-
-\vspace{\baselineskip}
-\sofargrowingtrees
-
-\vspace{\baselineskip}
-\sofarinandout
-
-\end{multicols*}
 
 \pagestyle{empty}
 
@@ -3425,7 +2991,7 @@ OCaml provides a construct known as a \index{ref@\textbf{\textsf{ref}}}\index{re
 \noindent\verb!val x : int ref = {contents = 0}!
 \smspace
 
-\noindent OCaml tells us that \texttt{x} is a reference of type \textsf{\textbf{int ref}} which currently has contents \texttt{0}. We can extract the current contents of a reference using the \texttt{!}\! operator, which has type \textsf{\textbf{$\alpha$ ref $\rightarrow$ $\alpha$}}.
+\noindent OCaml tells us that \texttt{x} is a reference of type \textsf{\textbf{int ref}} which currently has contents \texttt{0}. We can extract the current contents of a reference using the \texttt{!} operator, which has type \textsf{\textbf{$\alpha$ ref $\rightarrow$ $\alpha$}}.
 
 \index{"!@\texttt{"!}}
 \smspace
@@ -3468,7 +3034,7 @@ $\texttt{~~~~a := !b; b := t}$\vphantom{g}
 
 This type of programming, which consists of issuing a number of commands, in order, about which references are to be altered and how, is known as \index{imperative programming@{imperative\hspace{1mm}programming}}\textit{imperative programming}. OCaml provides some useful structures for imperative programming with references. We will look at these quickly now, and in a moment build a bigger example program to show why they are useful.
 
-For readability, OCaml lets us miss out the \texttt{\pelse} part of the \texttt{\textbf{if\ \!\ldots\ \!then\ \!\ldots\ \!else\ \!\ldots}}\! construct if it would just be \texttt{()}, which is if we are doing nothing in the \textbf{\texttt{else}} case, so
+For readability, OCaml lets us miss out the \texttt{\pelse} part of the \texttt{\textbf{if\ \ldots\ then\ \ldots\ else\ \ldots}} construct if it would just be \texttt{()}, which is if we are doing nothing in the \textbf{\texttt{else}} case, so
 
 \smspace
   \texttt{\pif x = 0 \pthen a := 0 \pelse ()}
@@ -3480,7 +3046,7 @@ For readability, OCaml lets us miss out the \texttt{\pelse} part of the \texttt{
   \texttt{\pif x = 0 \pthen a := 0}
 \smspace
 
-\noindent and if \texttt{x} is not zero, the expression will just evaluate to \texttt{()}. Due to this, when putting imperative code inside \texttt{\textbf{if\! \ldots\ \!then\! \ldots\ \!else\! \ldots}} constructs, we need to surround the inner imperative expressions with parentheses so the meaning is unambiguous:
+\noindent and if \texttt{x} is not zero, the expression will just evaluate to \texttt{()}. Due to this, when putting imperative code inside \texttt{\textbf{if \ldots\ then \ldots\ else \ldots}} constructs, we need to surround the inner imperative expressions with parentheses so the meaning is unambiguous:
 
 \smspace
 \begin{center}
@@ -3511,13 +3077,13 @@ $\texttt{~~c := !c + 1}$\vphantom{g}
 
 \section*{Doing it again and again}
 
-There are two ways to repeat an action. To perform an action a fixed number of times, we use the \index{for@\texttt{\textbf{for}}}\index{to@\texttt{\textbf{to}}}\index{do@\texttt{\textbf{do}}}\index{done@\texttt{\textbf{done}}}\texttt{\textbf{for\! \ldots\ \!= \!\ldots\ \!to \ldots\ \!do \ldots\ \!done}} construct. For example,  
+There are two ways to repeat an action. To perform an action a fixed number of times, we use the \index{for@\texttt{\textbf{for}}}\index{to@\texttt{\textbf{to}}}\index{do@\texttt{\textbf{do}}}\index{done@\texttt{\textbf{done}}}\texttt{\textbf{for \ldots\ = \ldots\ to \ldots\ do \ldots\ done}} construct. For example,  
 
 \smspace
   \texttt{\pfor x = 1 \pto 5 \pdo print\_int x; print\_newline () \pdone}
 \smspace
 
-\noindent evaluates the expression \texttt{print\_int\! x;\! print\_newline\! ()} five times: once where \texttt{x} is 1, once where \texttt{x} is 2 etc, so the result is:
+\noindent evaluates the expression \texttt{print\_int x; print\_newline ()} five times: once where \texttt{x} is 1, once where \texttt{x} is 2 etc, so the result is:
 
 \smspace
 \noindent\verb$# for x = 1 to 5 do print_int x; print_newline () done;$\\
@@ -3529,9 +3095,9 @@ There are two ways to repeat an action. To perform an action a fixed number of t
 \noindent\verb!- : unit = ()!
 \smspace
 
-\noindent This is known as a \index{for loop}\index{loop}``for loop''. Note that the type of the whole \texttt{\textbf{for}\! \ldots\ \!\textbf{=} \!\ldots\ \!\textbf{to} \!\ldots\ \!\textbf{do} \!\ldots\ \!\textbf{done}}\ \ expression is \textbf{\textsf{unit}} irrespective of the type of the expression(s) inside it.
+\noindent This is known as a \index{for loop}\index{loop}``for loop''. Note that the type of the whole \texttt{\textbf{for} \ldots\ \textbf{=} \ldots\ \textbf{to} \ldots\ \textbf{do} \ldots\ \textbf{done}}\ \ expression is \textbf{\textsf{unit}} irrespective of the type of the expression(s) inside it.
 
-There is another looping construct -- this time for evaluating an expression repeatedly until some condition is true. This is the \ \index{while@\texttt{\textbf{while}}}\index{do@\texttt{\textbf{do}}}\index{done@\texttt{\textbf{done}}}\texttt{\textbf{while}\! \ldots\ \!\textbf{do}\! \ldots\ \!\textbf{done}}\ \ construct. It takes a boolean condition, and evaluates a given expression repeatedly, zero or more times, until the boolean condition is \texttt{false}. For example, here is a function which, given a positive integer, calculates the lowest power of two greater than or equal to that number (i.e. for the argument 37, the result will be 64).
+There is another looping construct -- this time for evaluating an expression repeatedly until some condition is true. This is the \ \index{while@\texttt{\textbf{while}}}\index{do@\texttt{\textbf{do}}}\index{done@\texttt{\textbf{done}}}\texttt{\textbf{while} \ldots\ \textbf{do} \ldots\ \textbf{done}}\ \ construct. It takes a boolean condition, and evaluates a given expression repeatedly, zero or more times, until the boolean condition is \texttt{false}. For example, here is a function which, given a positive integer, calculates the lowest power of two greater than or equal to that number (i.e. for the argument 37, the result will be 64).
 
 \smspace
 \begin{center}
@@ -3548,7 +3114,7 @@ $\texttt{~~~~!t}$\hfill\textit{the final result is the contents of \texttt{t}}\v
 \end{center}
 \smspace
 
-\noindent The \texttt{\textbf{while}} loop continues until the contents of the reference \texttt{t} is greater than or equal to \texttt{x}. At that point, it ends, and the contents of \texttt{t} is returned from the function. Again, note that the type of the whole \,\texttt{\textbf{while}\! \ldots\ \!\textbf{do} \!\ldots\ \!\textbf{done}}\ \! construct is \textbf{\textsf{unit}}.
+\noindent The \texttt{\textbf{while}} loop continues until the contents of the reference \texttt{t} is greater than or equal to \texttt{x}. At that point, it ends, and the contents of \texttt{t} is returned from the function. Again, note that the type of the whole \,\texttt{\textbf{while} \ldots\ \textbf{do} \ldots\ \textbf{done}}\  construct is \textbf{\textsf{unit}}.
 
 \section*{Example: text file statistics}
 
@@ -3872,9 +3438,9 @@ $\texttt{~~~~~~~~print\_histogram histogram}$\hfill\textit{call histogram printe
   \texttt{\textbf{let} x = ref 1 \textbf{in} \textbf{let} y = ref 2 \textbf{in} x := !x + !x; y := !x + !y; !x + !y}
   
   What references have been created? What are their initial and final values after this expression has been evaluated? What is the type of this expression? 
-  \item What is the difference between \texttt{[ref\! 5;\! ref\! 5]} and \texttt{\plet \!x\! =\! ref\! 5\! \pin \![x;\! x]}? 
+  \item What is the difference between \texttt{[ref 5; ref 5]} and \texttt{\plet x = ref 5 \pin [x; x]}? 
     
-  \item Imagine that the \texttt{\textbf{for\! \!\ldots\ \!to \!\ldots\ \!do \!\ldots\ \!done}} construct did not exist. How might we create the same behaviour?
+  \item Imagine that the \texttt{\textbf{for \ldots\ to \ldots\ do \ldots\ done}} construct did not exist. How might we create the same behaviour?
   
   \item What are the types of these expressions?
   
@@ -3894,7 +3460,7 @@ $\texttt{~~~~~~~~print\_histogram histogram}$\hfill\textit{call histogram printe
   
   \item Write a function to reverse the elements of an array in place (i.e. do not create a new array).
   
-  \item Write a function \texttt{table} which, given an integer, builds the \textbf{\textsf{int array array}} representing the multiplication table up to that number. For example, \texttt{table\! 5} should yield:
+  \item Write a function \texttt{table} which, given an integer, builds the \textbf{\textsf{int array array}} representing the multiplication table up to that number. For example, \texttt{table 5} should yield:
 
 \vspace{2mm}  
 \noindent\begin{tabular}{@{}lllll@{}}
@@ -3916,49 +3482,6 @@ $\texttt{~~~~~~~~print\_histogram histogram}$\hfill\textit{call histogram printe
 
 \cleardoublepage
 \thispagestyle{empty}
-\noindent{\Huge So Far}\\
-
-\begin{multicols*}{2}
-\footnotesize
-\sofarstartingoff
-
-\vspace{\baselineskip}
-\sofarfunctions
-
-\vspace{\baselineskip}
-\sofarcasebycase
-
-\vspace{\baselineskip}
-\sofarlistingthings
-
-\vspace{\baselineskip}
-\sofarsortingthings
-
-\vspace{\baselineskip}
-\sofarfunctionsuponfunctions
-
-\vspace{\baselineskip}
-\sofarwhenthingsgowrong
-
-\vspace{\baselineskip}
-\sofarlookingthingsup
-
-\vspace{\baselineskip}
-\sofarmorewithfunctions
-
-\vspace{\baselineskip}
-\sofarnewkindsofdata
-
-\vspace{\baselineskip}
-\sofargrowingtrees
-
-\vspace{\baselineskip}
-\sofarinandout
-
-\vspace{\baselineskip}
-\sofarputtingthingsinboxes
-
-\end{multicols*}
 
 \pagestyle{empty}
 
@@ -3971,7 +3494,7 @@ The only numbers we have considered until now have been the integers. For a lot 
 
 It is clearly not possible to represent all numbers exactly -- they might be irrational like $\pi$ or $e$ and have no finite representation. For most uses, a representation called \index{floating-point}\textit{floating-point} is suitable, and this is how OCaml's real numbers are stored. Not all numbers can be represented exactly, but arithmetic operations are very quick.
 
-Floating-point numbers have type \textbf{\textsf{float}}. We can write a floating-point number by including a decimal point somewhere in it. For example \verb!1.6! or \verb!2.!\!\!\ \ or \texttt{386.54123}. Negative floating-point numbers are preceded by the \verb!-.! characters just like negative integers are preceded by the \verb!-! character. Similarly, we write \index{+.@\texttt{+.}}\index{-.@\texttt{-.}}\index{*.@\texttt{*.}}\index{/.@\texttt{/.}}\verb!+.! \verb!-.! \verb!*.! \verb!/.! for the standard arithmetic operators on floating-point numbers. Exponentiation is written with the \verb!**! operator.
+Floating-point numbers have type \textbf{\textsf{float}}. We can write a floating-point number by including a decimal point somewhere in it. For example \verb!1.6! or \verb!2.!\ \ or \texttt{386.54123}. Negative floating-point numbers are preceded by the \verb!-.! characters just like negative integers are preceded by the \verb!-! character. Similarly, we write \index{+.@\texttt{+.}}\index{-.@\texttt{-.}}\index{*.@\texttt{*.}}\index{/.@\texttt{/.}}\verb!+.! \verb!-.! \verb!*.! \verb!/.! for the standard arithmetic operators on floating-point numbers. Exponentiation is written with the \verb!**! operator.
 
 \smspace
 \noindent\verb!        OCaml!\\
@@ -4005,7 +3528,7 @@ Floating-point numbers have type \textbf{\textsf{float}}. We can write a floatin
 \verb!- : float = 2.22507385850720138e-308!\vphantom{g}
 \smspace
 
-\noindent Working with floating-point numbers requires care, and a comprehensive discussion is outside the scope of this book. These challenges exist in any programming language using the floating-point system. For example, evaluating \texttt{1.\!\!\!\!\! /.\!\!\!\!\! 0.}\! gives the special value \texttt{infinity} (there is no \texttt{Division\_by\_zero} exception for floating-point operations). There are other special values such as \verb!neg_infinity! and \verb!nan! (``not a number''). We will leave these complications for now -- just be aware that they are lurking and must be confronted when writing robust numerical programs.
+\noindent Working with floating-point numbers requires care, and a comprehensive discussion is outside the scope of this book. These challenges exist in any programming language using the floating-point system. For example, evaluating \texttt{1. /. 0.} gives the special value \texttt{infinity} (there is no \texttt{Division\_by\_zero} exception for floating-point operations). There are other special values such as \verb!neg_infinity! and \verb!nan! (``not a number''). We will leave these complications for now -- just be aware that they are lurking and must be confronted when writing robust numerical programs.
 
 A number of standard functions are provided, both for operating on floating-point numbers and for converting to and from them, some of which are listed here:
 
@@ -4027,7 +3550,7 @@ Function & Type & Description\\ \midrule
 \index{int\_of\_float@\texttt{int\_of\_float}}\verb!int_of_float!& \textsf{\textbf{float $\rightarrow$ int}}& Build an integer from a floating-point number, ignoring the non-integer part.\\
 \index{print\_float@\texttt{print\_float}}\verb!print_float! & \textsf{\textbf{float $\rightarrow$ unit}} & Print a floating-point number to the screen.\\
 \index{string\_of\_float@\texttt{string\_of\_float}}\verb!string_of_float! & \textsf{\textbf{float $\rightarrow$ string}} & Build a string from a floating-point number.\\
-\index{float\_of\_string@\texttt{float\_of\_string}}\verb!float_of_string! & \textsf{\textbf{string $\rightarrow$ float}} & Build a floating-point number from a string. Raises \texttt{Failure\! "float\_of\_string"} on a bad argument. \\ \bottomrule
+\index{float\_of\_string@\texttt{float\_of\_string}}\verb!float_of_string! & \textsf{\textbf{string $\rightarrow$ float}} & Build a floating-point number from a string. Raises \texttt{Failure "float\_of\_string"} on a bad argument. \\ \bottomrule
 \end{tabular}
 \egroup
 \smspace
@@ -4105,58 +3628,13 @@ Floating-point numbers are often essential, but must be used with caution. You w
 \end{verbatim}
 
 
-\noindent Here, we have plotted the sine function on the range $0\ldots\pi$ in steps of size $\pi / 20$. You can define $pi$ by calculating \texttt{4.0\! *.\ \!atan\! 1.0}.
+\noindent Here, we have plotted the sine function on the range $0\ldots\pi$ in steps of size $\pi / 20$. You can define $pi$ by calculating \texttt{4.0 *.\ atan 1.0}.
 \end{enumerate}
 
 
 \cleardoublepage
 \thispagestyle{empty}
-\noindent{\Huge So Far}\\
 
-\begin{multicols*}{2}
-\footnotesize
-\sofarstartingoff
-
-\vspace{\baselineskip}
-\sofarfunctions
-
-\vspace{\baselineskip}
-\sofarcasebycase
-
-\vspace{\baselineskip}
-\sofarlistingthings
-
-\vspace{\baselineskip}
-\sofarsortingthings
-
-\vspace{\baselineskip}
-\sofarfunctionsuponfunctions
-
-\vspace{\baselineskip}
-\sofarwhenthingsgowrong
-
-\vspace{\baselineskip}
-\sofarlookingthingsup
-
-\vspace{\baselineskip}
-\sofarmorewithfunctions
-
-\vspace{\baselineskip}
-\sofarnewkindsofdata
-
-\vspace{\baselineskip}
-\sofargrowingtrees
-
-\vspace{\baselineskip}
-\sofarinandout
-
-\vspace{\baselineskip}
-\sofarputtingthingsinboxes
-
-\vspace{\baselineskip}
-\sofargettingreal
-
-\end{multicols*}
 
 \pagestyle{empty}
 
@@ -4224,7 +3702,7 @@ The functions from a module can be used by putting a period (full stop) between 
 \fbox{\begin{minipage}{0.9\textwidth}
 \noindent\texttt{val nth :\ \textquotesingle a list -> int -> \textquotesingle a}\\
 
-\hangindent1cm \hangafter=0 Return the \texttt{n}-th element of the list. The first element (head of the list) is at position 0. Raise \texttt{Failure\! "nth"} if the list is too short. Raise \texttt{Invalid\_argument\! "List.nth"} if \texttt{n} is negative.
+\hangindent1cm \hangafter=0 Return the \texttt{n}-th element of the list. The first element (head of the list) is at position 0. Raise \texttt{Failure "nth"} if the list is too short. Raise \texttt{Invalid\_argument "List.nth"} if \texttt{n} is negative.
 \end{minipage}}
 \end{center}
 \smspace
@@ -4257,55 +3735,6 @@ The questions for this chapter use functions from the standard library, so you w
 
 \cleardoublepage
 \thispagestyle{empty}
-\noindent{\Huge So Far}\\
-
-\begin{multicols*}{2}
-\footnotesize
-\sofarstartingoff
-
-\vspace{\baselineskip}
-\sofarfunctions
-
-\vspace{\baselineskip}
-\sofarcasebycase
-
-\vspace{\baselineskip}
-\sofarlistingthings
-
-\vspace{\baselineskip}
-\sofarsortingthings
-
-\vspace{\baselineskip}
-\sofarfunctionsuponfunctions
-
-\vspace{\baselineskip}
-\sofarwhenthingsgowrong
-
-\vspace{\baselineskip}
-\sofarlookingthingsup
-
-\vspace{\baselineskip}
-\sofarmorewithfunctions
-
-\vspace{\baselineskip}
-\sofarnewkindsofdata
-
-\vspace{\baselineskip}
-\sofargrowingtrees
-
-\vspace{\baselineskip}
-\sofarinandout
-
-\vspace{\baselineskip}
-\sofarputtingthingsinboxes
-
-\vspace{\baselineskip}
-\sofargettingreal
-
-\vspace{\baselineskip}
-\sofartheocamlstandardlibrary
-
-\end{multicols*}
 
 \pagestyle{empty}
 
@@ -4471,13 +3900,13 @@ What we would like to do is to restrict the module so that only the types and fu
 \end{figure}
 
 
-In this interface, we have exposed every type and function. Types are written in the same way as in the \texttt{.ml} file. Functions are written with \index{val@\texttt{\textbf{val}}}\texttt{\textbf{val}}, followed by the name, a colon, and the type of the function. We can compile this by giving the\! \texttt{.mli} file together with the\! \texttt{.ml} file when using \texttt{ocamlc}:
+In this interface, we have exposed every type and function. Types are written in the same way as in the \texttt{.ml} file. Functions are written with \index{val@\texttt{\textbf{val}}}\texttt{\textbf{val}}, followed by the name, a colon, and the type of the function. We can compile this by giving the \texttt{.mli} file together with the \texttt{.ml} file when using \texttt{ocamlc}:
 
 \smspace
 \texttt{ocamlc textstat.mli textstat.ml}
 \smspace
 
-\noindent The \texttt{ocamlc} compiler has created at least two files:\! \texttt{textstat.cmo} as before and \texttt{textstat.cmi} (the compiled interface). You should find this operates exactly as before when loaded into OCaml. Now, let us remove the definition of the type from the interface, to make sure that the stats type is \index{type!hidden}hidden, and its parts can only be accessed using the \texttt{lines}, \texttt{characters}, \texttt{words}, and \texttt{sentences} functions. We will also remove the declaration for \texttt{stats\_from\_channel} to demonstrate that functions we do not need can be hidden too. This is shown in Figure \ref{textstat2.mli}.
+\noindent The \texttt{ocamlc} compiler has created at least two files: \texttt{textstat.cmo} as before and \texttt{textstat.cmi} (the compiled interface). You should find this operates exactly as before when loaded into OCaml. Now, let us remove the definition of the type from the interface, to make sure that the stats type is \index{type!hidden}hidden, and its parts can only be accessed using the \texttt{lines}, \texttt{characters}, \texttt{words}, and \texttt{sentences} functions. We will also remove the declaration for \texttt{stats\_from\_channel} to demonstrate that functions we do not need can be hidden too. This is shown in Figure \ref{textstat2.mli}.
 
 \begin{figure}
 \begin{center}
@@ -4501,7 +3930,7 @@ In this interface, we have exposed every type and function. Types are written in
 \label{textstat2.mli}
 \end{figure}
 
-Now, if we compile the program again with \texttt{ocamlc\! textstat.mli\! textstat.ml}, we see that the \texttt{stats\_of\_channel} function is now not accessible, and the type of stats is now hidden, or \textit{abstract}.
+Now, if we compile the program again with \texttt{ocamlc textstat.mli textstat.ml}, we see that the \texttt{stats\_of\_channel} function is now not accessible, and the type of stats is now hidden, or \textit{abstract}.
 
 \smspace
 \noindent\verb!        OCaml!\\
@@ -4613,58 +4042,7 @@ $\texttt{~~~~exit 1}\hfill\textit{see note 3}$\vphantom{g}
 
 \cleardoublepage
 \thispagestyle{empty}
-\noindent{\Huge So Far}\\
 
-\begin{multicols*}{2}
-\footnotesize
-\sofarstartingoff
-
-\vspace{\baselineskip}
-\sofarfunctions
-
-\vspace{\baselineskip}
-\sofarcasebycase
-
-\vspace{\baselineskip}
-\sofarlistingthings
-
-\vspace{\baselineskip}
-\sofarsortingthings
-
-\vspace{\baselineskip}
-\sofarfunctionsuponfunctions
-
-\vspace{\baselineskip}
-\sofarwhenthingsgowrong
-
-\vspace{\baselineskip}
-\sofarlookingthingsup
-
-\vspace{\baselineskip}
-\sofarmorewithfunctions
-
-\vspace{\baselineskip}
-\sofarnewkindsofdata
-
-\vspace{\baselineskip}
-\sofargrowingtrees
-
-\vspace{\baselineskip}
-\sofarinandout
-
-\vspace{\baselineskip}
-\sofarputtingthingsinboxes
-
-\vspace{\baselineskip}
-\sofargettingreal
-
-\vspace{\baselineskip}
-\sofartheocamlstandardlibrary
-
-\vspace{\baselineskip}
-\sofarbuildingbiggerprograms
-
-\end{multicols*}
 
 \thispagestyle{empty}
 \backmatter
@@ -4683,20 +4061,20 @@ $\texttt{~~~~exit 1}\hfill\textit{see note 3}$\vphantom{g}
 
 \subsection*{1}
 
-The expression \texttt{17} is of type \textsf{\textbf{int}} and is a value already. The expression \texttt{1\! +\! 2\! *\! 3\! +\! 4} is of type \textsf{\textbf{int}} and evaluates to the value \texttt{11}, since the multiplication is done first. The expression \texttt{800\! /\! 80\! /\! 8} has type \textsf{\textbf{int}}. It is the same as \texttt{(800\! /\! 80)\! /\! 8} rather than \texttt{800\! /\! (80\! /\! 8)} and evaluates to \texttt{1}.
+The expression \texttt{17} is of type \textsf{\textbf{int}} and is a value already. The expression \texttt{1 + 2 * 3 + 4} is of type \textsf{\textbf{int}} and evaluates to the value \texttt{11}, since the multiplication is done first. The expression \texttt{800 / 80 / 8} has type \textsf{\textbf{int}}. It is the same as \texttt{(800 / 80) / 8} rather than \texttt{800 / (80 / 8)} and evaluates to \texttt{1}.
 
-The expression \texttt{400\! >\! 200} has type \textsf{\textbf{bool}} because this is the type of the result of the comparison operator \texttt{>}. It evaluates to \texttt{true}. Similarly, \texttt{1\! <>\! 1} has type \textsf{\textbf{bool}} and evaluates to \texttt{false}. The expression \texttt{true\! ||\! false} is of type \textbf{\textsf{bool}} and evaluates to \texttt{true} since one of the operands is true. Similarly, \texttt{true\! \&\&\! false} evaluates to \texttt{false} since one of the operands is false. The expression \ \texttt{\textbf{if}\! true\! \textbf{then}\! false\! \textbf{else}\! true} \ evaluates to \texttt{false} since the first (\texttt{\textbf{then}}) part of the conditional expression is chosen, and takes the place of the entire expression.
+The expression \texttt{400 > 200} has type \textsf{\textbf{bool}} because this is the type of the result of the comparison operator \texttt{>}. It evaluates to \texttt{true}. Similarly, \texttt{1 <> 1} has type \textsf{\textbf{bool}} and evaluates to \texttt{false}. The expression \texttt{true || false} is of type \textbf{\textsf{bool}} and evaluates to \texttt{true} since one of the operands is true. Similarly, \texttt{true \&\& false} evaluates to \texttt{false} since one of the operands is false. The expression \ \texttt{\textbf{if} true \textbf{then} false \textbf{else} true} \ evaluates to \texttt{false} since the first (\texttt{\textbf{then}}) part of the conditional expression is chosen, and takes the place of the entire expression.
 
 The expression \texttt{'\%'} is of type \textbf{\textsf{char}} and is already a value. The expression \texttt{'a' + 'b'} has no type -- it gives a type error because the \texttt{+} operator does not operate on characters.
 
 \subsection*{2}
-The \texttt{mod} operator is of higher precedence than the \texttt{+} operator. So \texttt{1\! +\! 2\! mod\! 3} and \texttt{1\! +\! (2\! mod\! 3)} are the same expression, evaluating to \texttt{1\! +\! 2} which is \texttt{3}, but \texttt{(1\! +\! 2)\! mod\! 3} is the same as \texttt{3\! mod\! 3}, which is \texttt{0}.
+The \texttt{mod} operator is of higher precedence than the \texttt{+} operator. So \texttt{1 + 2 mod 3} and \texttt{1 + (2 mod 3)} are the same expression, evaluating to \texttt{1 + 2} which is \texttt{3}, but \texttt{(1 + 2) mod 3} is the same as \texttt{3 mod 3}, which is \texttt{0}.
 
 \subsection*{3}
 The expression evaluates to \texttt{11}. The programmer seems to be under the  impression that spacing affects evaluation order. It does not, and so this use of space is misleading.
 
 \subsection*{4}
-The expression \texttt{max\_int\! +\! 1} evaluates to a number equal to \texttt{min\_int}. Likewise, \texttt{min\_int\! -\! 1} evaluates to a number equal to \texttt{max\_int}. The number line ``wraps around''. This leads to the odd situation that \texttt{max\_int\! +\! 1\! <\! max\_int} evaluates to \texttt{true}. It follows that when writing programs, we must be careful about what happens when numbers may be very large or very small.
+The expression \texttt{max\_int + 1} evaluates to a number equal to \texttt{min\_int}. Likewise, \texttt{min\_int - 1} evaluates to a number equal to \texttt{max\_int}. The number line ``wraps around''. This leads to the odd situation that \texttt{max\_int + 1 < max\_int} evaluates to \texttt{true}. It follows that when writing programs, we must be careful about what happens when numbers may be very large or very small.
 
 \subsection*{5}
 OCaml accepts the program, but complains when it is run:
@@ -4711,7 +4089,7 @@ OCaml accepts the program, but complains when it is run:
 \noindent We will talk about such \textit{exceptions} later in the book. They are used for program errors which cannot necessarily be found just by looking at the program text, but are only discovered during evaluation.
 
 \subsection*{6}
-For \texttt{x\! mod\! y}:
+For \texttt{x mod y}:
   \begin{itemize}
     \item[] when $y = 0$, OCaml prints \texttt{Exception:\ Division\_by\_zero}
     \item[] when $y <> 0$, $x < 0$, the result will be negative
@@ -4737,7 +4115,7 @@ Just take in an integer and return the number multiplied by ten. The function ta
 \noindent\verb!val times_ten : int -> int = <fun>!
 
 \subsection*{2}
-We must take two integer arguments, and use the \texttt{\&\&} and \texttt{<>} operators to test if they are both non-zero. So the result will be of type \textsf{\textbf{bool}}. The whole type will therefore be \ \!\! \textbf{\textsf{int $\rightarrow$ int $\rightarrow$ bool}}.
+We must take two integer arguments, and use the \texttt{\&\&} and \texttt{<>} operators to test if they are both non-zero. So the result will be of type \textsf{\textbf{bool}}. The whole type will therefore be \ \textbf{\textsf{int $\rightarrow$ int $\rightarrow$ bool}}.
 
 \smspace
 \noindent\verb!        OCaml!\\
@@ -4757,7 +4135,7 @@ Our function should take an integer, and return another one (the sum). So, it is
 \noindent\verb!val sum : int -> int = <fun>!
 \smspace
 
-\noindent The function is recursive, so we used \texttt{\textbf{let\!\! rec}} instead of \texttt{\textbf{let}}. What happens if the argument given is zero or negative?
+\noindent The function is recursive, so we used \texttt{\textbf{let rec}} instead of \texttt{\textbf{let}}. What happens if the argument given is zero or negative?
 
 \subsection*{4}
 The function will have type \textsf{\textbf{int $\rightarrow$ int $\rightarrow$ int}}. A number to the power of $0$ is $1$. A number to the power of $1$ is itself. Otherwise, the answer is the current $n$ multiplied by $n^{x - 1}$.
@@ -4784,7 +4162,7 @@ The function will have type \textsf{\textbf{int $\rightarrow$ int $\rightarrow$ 
 \noindent\verb!val power : int -> int -> int = <fun>!
 \smspace
 
-\noindent In fact, we can remove the case for \texttt{n\! =\! 1} since \texttt{power\! x\! 1} will reduce to \texttt{x\! *\! power\! x\! 0} which is just \texttt{x}.
+\noindent In fact, we can remove the case for \texttt{n = 1} since \texttt{power x 1} will reduce to \texttt{x * power x 0} which is just \texttt{x}.
 
 \subsection*{5}
 The function \texttt{isconsonant} will have type \textbf{\textsf{char $\rightarrow$ bool}}. If a lower case character in the range \texttt{'a'}\ldots\texttt{'z'} is not a vowel, it must be a consonant. So we can reuse the \texttt{isvowel} function we wrote earlier, and negate its result using the \texttt{not} function:
@@ -4796,7 +4174,7 @@ The function \texttt{isconsonant} will have type \textbf{\textsf{char $\rightarr
 \noindent\verb!val isconsonant : char -> bool = <fun>!
 
 \subsection*{6}
-The expression is the same as \texttt{\textbf{let}\! x\! =\! 1\! \textbf{in}\! (\textbf{let}\! x\! =\! 2\! \textbf{in}\! x\! +\! x)}, and so the result is \texttt{4}. Both instances of \texttt{x} in \texttt{x\! +\! x} evaluate to \texttt{2} since this is the value assigned to the name \texttt{x} in the nearest enclosing \texttt{\textbf{let}} expression.
+The expression is the same as \texttt{\textbf{let} x = 1 \textbf{in} (\textbf{let} x = 2 \textbf{in} x + x)}, and so the result is \texttt{4}. Both instances of \texttt{x} in \texttt{x + x} evaluate to \texttt{2} since this is the value assigned to the name \texttt{x} in the nearest enclosing \texttt{\textbf{let}} expression.
 
 \subsection*{7}
 We could simply return $0$ for a negative argument. The factorial of $0$ is $1$, so we can change that too, and say our new function finds the factorial of any non-negative number:
@@ -4811,7 +4189,7 @@ We could simply return $0$ for a negative argument. The factorial of $0$ is $1$,
 \noindent\verb!val factorial : int -> int = <fun>!
 \smspace
 
-\noindent Note that \texttt{factorial} can fail in other ways too -- if the number gets too big and ``wraps around''. For example, on the author's computer, \texttt{factorial\!\! 40} yields \texttt{-2188836759280812032}.
+\noindent Note that \texttt{factorial} can fail in other ways too -- if the number gets too big and ``wraps around''. For example, on the author's computer, \texttt{factorial 40} yields \texttt{-2188836759280812032}.
 
 \section*{\Cref{casebycase} (\nameref{casebycase})}
 \subsection*{1}
@@ -5170,7 +4548,7 @@ $\texttt{\ \ \  \ \ \ \ \ \ \ \ \  merge (msort left) (msort right)}$\hfill \tex
 \end{center}
 
 \subsection*{2}
-The argument to \texttt{take} or \texttt{drop} is \texttt{length\! l\! /\! 2} which is clearly less than or equal to \texttt{length\! l} for all possible values of \texttt{l}. Thus, \texttt{take} and \texttt{drop} always succeed. In our case, \texttt{take} and \texttt{drop} are only called with \texttt{length\! l} more than 1, due to the pattern matching.
+The argument to \texttt{take} or \texttt{drop} is \texttt{length l / 2} which is clearly less than or equal to \texttt{length l} for all possible values of \texttt{l}. Thus, \texttt{take} and \texttt{drop} always succeed. In our case, \texttt{take} and \texttt{drop} are only called with \texttt{length l} more than 1, due to the pattern matching.
  
 \subsection*{3}
 We may simply replace the \texttt{<=} operator with the \texttt{>=} operator in the \texttt{insert} function.
@@ -5235,7 +4613,7 @@ Lists are compared starting with their first elements. If the elements differ, t
 \noindent These are the same principles you use to look up a word in a dictionary: compare the first letters -- if same, compare the second etc. So, when applied to the example in the question, it has the effect of sorting the words into alphabetical order.
 
 \subsection*{6}
-The \texttt{\textbf{let\! rec}} construct can be nested just like the \texttt{\textbf{let}} construct:
+The \texttt{\textbf{let rec}} construct can be nested just like the \texttt{\textbf{let}} construct:
 
 \smspace
 \begin{center}
@@ -5342,7 +4720,7 @@ $\texttt{\ \ \ \ l}$\vphantom{g}
 \end{center}
 
 \subsection*{4}
-We require a function \texttt{apply\! f\! n\! x} which applies function \texttt{f} a total of \texttt{n} times to the initial value \texttt{x}. The base case is when \texttt{n} is zero.
+We require a function \texttt{apply f n x} which applies function \texttt{f} a total of \texttt{n} times to the initial value \texttt{x}. The base case is when \texttt{n} is zero.
 
 \smspace
 \begin{center}
@@ -5375,7 +4753,7 @@ $\texttt{\ \ apply (\textbf{fun} x -> x * a) b 1}$\vphantom{g}
 \end{center}
 \smspace
 
-\noindent So \texttt{power\! a\! b} calculates $a^{b}$.
+\noindent So \texttt{power a b} calculates $a^{b}$.
 
 \subsection*{5}
 We can add an extra argument to the \texttt{insert} function, and use that instead of the comparison operator:
@@ -5429,7 +4807,7 @@ $\texttt{\ \ \ \ \ \ \ \pelse filter f t}$\vphantom{g}
 \end{center}
 \smspace
 
-\noindent For example, \texttt{filter\! (\textbf{fun}\! x\! ->\! x\! mod\! 2\! =\! 0)\! [1;\! 2;\! 4;\! 5]} evaluates to \texttt{[2;\! 4]}.
+\noindent For example, \texttt{filter (\textbf{fun} x -> x mod 2 = 0) [1; 2; 4; 5]} evaluates to \texttt{[2; 4]}.
 
 \subsection*{7}
 The function will have type \textbf{\textsf{\textmd{(}$\alpha$ $\rightarrow$ bool\textmd{)} $\rightarrow$ $\alpha$ list $\rightarrow$ bool}}.
@@ -5447,7 +4825,7 @@ $\texttt{\ \ | h::t -> f h \&\& for\_all f t}$\hfill\textit{true for this one, a
 \end{center}
 \smspace
 
-\noindent For example, we can see if all elements of a list are positive: \texttt{for\_all\! (\textbf{fun}\! x\! ->\! x\! >\! 0)\! [1;\! 2;\! -1]} evaluates to \texttt{false}. Notice that we are relying on the fact that \verb!&&! only evaluates its right hand side when the left hand side is true to limit the recursion.
+\noindent For example, we can see if all elements of a list are positive: \texttt{for\_all (\textbf{fun} x -> x > 0) [1; 2; -1]} evaluates to \texttt{false}. Notice that we are relying on the fact that \verb!&&! only evaluates its right hand side when the left hand side is true to limit the recursion.
 
 \subsection*{8}
 The function will have type \textbf{\textsf{\textmd{(}$\alpha$ $\rightarrow$ $\beta$\textmd{)} $\rightarrow$ $\alpha$ list list $\rightarrow$ $\beta$ list list}}. We use \texttt{map} on each element of the list.
@@ -5511,7 +4889,7 @@ $\texttt{~~\ptry smallest l \pwith Not\_found -> 0}$\vphantom{g}
 
 \subsection*{3}
 
-We write a function \texttt{sqrt\_inner} which, given a test number \texttt{x} and a target number \texttt{n} squares \texttt{x} and tests if it is more than \texttt{n}. If it is, the answer is \texttt{x\! -\! 1}. The test number will be initialized at \texttt{1}. The function \texttt{sqrt} raises our exception if the argument is less than zero, and otherwise begins the testing process.
+We write a function \texttt{sqrt\_inner} which, given a test number \texttt{x} and a target number \texttt{n} squares \texttt{x} and tests if it is more than \texttt{n}. If it is, the answer is \texttt{x - 1}. The test number will be initialized at \texttt{1}. The function \texttt{sqrt} raises our exception if the argument is less than zero, and otherwise begins the testing process.
 
 \smspace
 \begin{center}
@@ -5679,10 +5057,10 @@ $\texttt{~~|~(k, v)::t -> add k v (union t b)}$
 
 \subsection*{1}
 
-The function \texttt{g\! a\! b\! c} has type $\alpha$ $\rightarrow$ $\beta$ $\rightarrow$ $\gamma$ $\rightarrow$  $\delta$ which can also be written $\alpha$ $\rightarrow$ \textmd{(}$\beta$ $\rightarrow$ \textmd{(}$\gamma$ $\rightarrow$ $\delta$\textmd{))}. Thus, it takes an argument of type $\alpha$ and returns a function of type $\beta$ $\rightarrow$ \textmd{(}$\gamma$ $\rightarrow$ $\delta$\textmd{)} which, when you give it an argument of type $\beta$ returns a function of type $\gamma$ $\rightarrow$ $\delta$ which, when you give it an argument of type $\gamma$ returns something of type $\delta$. And so, we can apply just one or two arguments to the function \texttt{g} (which is called partial application), or apply all three at once. When we write \texttt{\textbf{let}\! g\! a\! b\! c\! =\! \ldots} this is just shorthand for \texttt{\textbf{let}\! g\! =\! \textbf{fun}\! a\! ->\! \textbf{fun}\! b\! ->\! \textbf{fun}\! c\! ->\! \ldots}
+The function \texttt{g a b c} has type $\alpha$ $\rightarrow$ $\beta$ $\rightarrow$ $\gamma$ $\rightarrow$  $\delta$ which can also be written $\alpha$ $\rightarrow$ \textmd{(}$\beta$ $\rightarrow$ \textmd{(}$\gamma$ $\rightarrow$ $\delta$\textmd{))}. Thus, it takes an argument of type $\alpha$ and returns a function of type $\beta$ $\rightarrow$ \textmd{(}$\gamma$ $\rightarrow$ $\delta$\textmd{)} which, when you give it an argument of type $\beta$ returns a function of type $\gamma$ $\rightarrow$ $\delta$ which, when you give it an argument of type $\gamma$ returns something of type $\delta$. And so, we can apply just one or two arguments to the function \texttt{g} (which is called partial application), or apply all three at once. When we write \texttt{\textbf{let} g a b c = \ldots} this is just shorthand for \texttt{\textbf{let} g = \textbf{fun} a -> \textbf{fun} b -> \textbf{fun} c -> \ldots}
 
 \subsection*{2}
-The type of \texttt{member} is \textbf{\textsf{$\alpha$ $\rightarrow$ $\alpha$ list $\rightarrow$ bool}}, so if we partially apply the first argument, the type of \texttt{member\! x} must be \textsf{\textbf{$\alpha$ list $\rightarrow$ bool}}. We can use the partially-applied \texttt{member} function and \texttt{map} to produce a list of boolean values, one for each list in the argument, indicating whether or not that list contains the element. Then, we can use \texttt{member} again to make sure there are no \texttt{false} booleans in the list.
+The type of \texttt{member} is \textbf{\textsf{$\alpha$ $\rightarrow$ $\alpha$ list $\rightarrow$ bool}}, so if we partially apply the first argument, the type of \texttt{member x} must be \textsf{\textbf{$\alpha$ list $\rightarrow$ bool}}. We can use the partially-applied \texttt{member} function and \texttt{map} to produce a list of boolean values, one for each list in the argument, indicating whether or not that list contains the element. Then, we can use \texttt{member} again to make sure there are no \texttt{false} booleans in the list.
 
 \smspace
 \begin{center}
@@ -5713,7 +5091,7 @@ $\texttt{~~not (member false (map (member x) ls))}$
 
 \subsection*{3}
 
-The function \texttt{(\! /\! )\! 2} resulting from the partial application of the \texttt{/} operator is the function which divides two by a given number, not the function which divides a given number by two. We can define a reverse divide function\ldots
+The function \texttt{( / ) 2} resulting from the partial application of the \texttt{/} operator is the function which divides two by a given number, not the function which divides a given number by two. We can define a reverse divide function\ldots
 
 \smspace
 \texttt{\plet rdiv x y = y / x}
@@ -6044,7 +5422,7 @@ $\texttt{~~|~Br (y, l, r) -> x = y || member\_tree x l || member\_tree x r}$\vph
 \end{center}
 \smspace
 
-\noindent Note that we have placed the test \texttt{x\! =\! y} first of the three to ensure earliest termination upon finding an appropriate element.
+\noindent Note that we have placed the test \texttt{x = y} first of the three to ensure earliest termination upon finding an appropriate element.
 
 \subsection*{2}
 
@@ -6275,7 +5653,7 @@ $\texttt{~~~~~~read\_three ()}$\vphantom{g}
 \end{center}
 \smspace
 
-\noindent You may wonder why we used nested \texttt{\plet\!\!\ldots\ \!\!\pin} structures rather than just writing \texttt{(read\_int\! (),\! read\_int\! (),\! read\_int\! ())} -- the evaluation order of a tuple is not specified and OCaml is free to do what it wants. 
+\noindent You may wonder why we used nested \texttt{\plet\ \ldots\ \pin} structures rather than just writing \texttt{(read\_int (), read\_int (), read\_int ())} -- the evaluation order of a tuple is not specified and OCaml is free to do what it wants. 
 
 \subsection*{3}
 We ask the user how many dictionary entries will be entered, eliminating the need for a special ``I have finished'' code. First, a function to read a given number of integer--string pairs, dealing with the usual problem of malformed integers:
@@ -6482,10 +5860,10 @@ $\texttt{~~~~\_ -> \praise CopyFailed}$\vphantom{g}
 
 \section*{\Cref{puttingthingsinboxes} (\nameref{puttingthingsinboxes})}
 \subsection*{1}
-Two references, \texttt{x} and \texttt{y}, of type \textbf{\textsf{int ref}} have been created. Their initial values are $1$ and $2$. Their final values are $2$ and $4$. The type of the expression is \textsf{\textbf{int}} because this is the type of \texttt{!x\! +\! !y}, and the result is $6$.
+Two references, \texttt{x} and \texttt{y}, of type \textbf{\textsf{int ref}} have been created. Their initial values are $1$ and $2$. Their final values are $2$ and $4$. The type of the expression is \textsf{\textbf{int}} because this is the type of \texttt{!x + !y}, and the result is $6$.
 
 \subsection*{2}
-The expression \texttt{[ref\! 5;\! ref\! 5]} is of type \textbf{\textsf{int ref list}}. It contains two references each containing the integer 5. Changing the contents of one reference will not change the contents of the other. The expression \texttt{\textbf{let}\! x\! =\! ref\! 5\! \textbf{in}\! [x;\! x]} is also of type \textbf{\textsf{int ref list}} and also contains two references to the integer 5. However, altering one will alter the other:
+The expression \texttt{[ref 5; ref 5]} is of type \textbf{\textsf{int ref list}}. It contains two references each containing the integer 5. Changing the contents of one reference will not change the contents of the other. The expression \texttt{\textbf{let} x = ref 5 \textbf{in} [x; x]} is also of type \textbf{\textsf{int ref list}} and also contains two references to the integer 5. However, altering one will alter the other:
 
 \smspace
 \noindent\verb!        OCaml!\\
@@ -6614,7 +5992,7 @@ $\texttt{~~~~a}$\vphantom{g}
 \end{center}
 \smspace
 
-\noindent Note that the result is correct for \texttt{table\! 0}.
+\noindent Note that the result is correct for \texttt{table 0}.
 
 \subsection*{8}
 
@@ -6824,7 +6202,7 @@ Looking at the documentation for the \texttt{String} module we find the followin
 \fbox{\begin{minipage}{0.8\textwidth}
 \noindent\texttt{val concat :\ string -> string list -> string}\\
 
-\hangindent1cm \hangafter=0 \texttt{String.concat\! sep\! sl} concatenates the list of strings \texttt{sl}, inserting the separator string \texttt{sep} between each.
+\hangindent1cm \hangafter=0 \texttt{String.concat sep sl} concatenates the list of strings \texttt{sl}, inserting the separator string \texttt{sep} between each.
 \end{minipage}}
 \end{center}
 \smspace
@@ -7201,7 +6579,7 @@ The function takes one integer, and returns that integer multiplied by ten. So w
 \subsection*{2}
 What does the function take as arguments? What is the type of its result? So what is the whole type? You can use the \texttt{<>} and \texttt{\&\&} operators here.
 \subsection*{3}
-This will be a recursive function, so remember to use \texttt{\textbf{let\! rec}}. What is the sum of all the integers from $1\ldots 1$? Perhaps this is a good base case. 
+This will be a recursive function, so remember to use \texttt{\textbf{let rec}}. What is the sum of all the integers from $1\ldots 1$? Perhaps this is a good base case. 
 \subsection*{4}
 This will be a recursive function. What happens when you raise a number to the power $0$? What about the power $1$? What about a higher power?
 \subsection*{5}
@@ -7240,7 +6618,7 @@ Consider in which order the \texttt{@} operators are evaluated in the reverse fu
 
 \section*{\Cref{sortingthings}\\ \nameref{sortingthings}}
 \subsection*{1}
-Consider adding another \texttt{\textbf{let}} before \texttt{\textbf{let\!\! \textmd{left}}} and \texttt{\textbf{let\!\! \textmd{right}}}.
+Consider adding another \texttt{\textbf{let}} before \texttt{\textbf{let \textmd{left}}} and \texttt{\textbf{let \textmd{right}}}.
 
 \subsection*{2}
 Consider the situations in which \texttt{take} and \texttt{drop} can fail, and what arguments \texttt{msort} gives them at each recursion.
@@ -7252,7 +6630,7 @@ This is a simple change -- consider the comparison operator itself.
 What will the type of the function be? Lists of length zero and one are already sorted -- so these will be the base cases. What do we do when there is more than one element?
 
 \subsection*{6}
-You can put one \texttt{\textbf{let\!\! rec}} construct inside another.
+You can put one \texttt{\textbf{let rec}} construct inside another.
 
 \section*{\Cref{functionsuponfunctions}\\ \nameref{functionsuponfunctions}}
 \subsection*{1}
@@ -7265,7 +6643,7 @@ This is the same process as Question 1.
 Look back at the section on anonymous functions. How can \texttt{clip} be expressed as an anonymous function? So, how can we use it with \texttt{map}?
 
 \subsection*{4}
-We want a function of the form \texttt{\textbf{let\! rec}\! apply\! f\! n\! x\! =}\ \!\ \ldots\ which applies \texttt{f} to \texttt{x} a total of \texttt{n} times. What is the base case? What do we do in that case? What otherwise?
+We want a function of the form \texttt{\textbf{let rec} apply f n x =}\ \ \ldots\ which applies \texttt{f} to \texttt{x} a total of \texttt{n} times. What is the base case? What do we do in that case? What otherwise?
 
 \subsection*{5}
 You will need to add the extra function as an argument to both \texttt{insert} and \texttt{sort} and use it in place of the \texttt{<=} operator in \texttt{insert}.
@@ -7306,7 +6684,7 @@ The function takes a list of keys and a list of values, and returns a dictionary
 \subsection*{4}
 This function takes a list of pairs and produces a pair of lists. So its type must be \textsf{\textbf{\textmd{(}$\alpha$ $\times$ $\beta$\textmd{)} list $\rightarrow$ $\alpha$ list $\times$ $\beta$ list}}.
 
-For the base case (the empty dictionary), we can see that the result should be \texttt{([],\! [])}. But what to do in the case we have \texttt{(k, v)\! :: \!\!\!\!more}? We must get names for the two parts of the result of our function on \texttt{more}, and then cons \texttt{k} and \texttt{v} on to them -- can you think of how to do that?
+For the base case (the empty dictionary), we can see that the result should be \texttt{([], [])}. But what to do in the case we have \texttt{(k, v) :: more}? We must get names for the two parts of the result of our function on \texttt{more}, and then cons \texttt{k} and \texttt{v} on to them -- can you think of how to do that?
 
 \subsection*{5}
 You can keep a list of the keys which have already been seen, and use the \texttt{member} function to make sure you do not add to the result list a key-value pair whose key has already been included.
