@@ -1,4 +1,4 @@
-on\documentclass[]{book}
+\documentclass[]{book}
 \usepackage{etex}
 \usepackage{booktabs}
 \renewcommand{\arraystretch}{1.2}
@@ -678,35 +678,19 @@ OCaml has a nicer way of expressing choices -- \index{pattern matching}\textit{p
 
 \noindent We can read this as ``See if \texttt{a} matches the pattern \texttt{1}. If it does, just return \texttt{1}. If not, see if it matches the pattern \texttt{\_}. If it does, the result is \verb!a * factorial (a - 1)!.'' The pattern \texttt{\_} is special -- it matches anything. Remember our \texttt{isvowel} function from the previous chapter?
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{isvowel :}\textbf{\textsf{ char $\rightarrow$ bool}}\\
-\\
-$\texttt{\plet isvowel c =}$\\
-$\texttt{\ \ c = 'a' || c = 'e' || c = 'i' || c = 'o' || c = 'u'}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook23x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Here is how to write it using pattern matching:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{isvowel :}\textbf{\textsf{ char $\rightarrow$ bool}}\\
-\\
-$\texttt{\plet isvowel c =}$\\
-$\texttt{\ \ \pmatch c \pwith}$\\
-$\texttt{\ \ \ \ 'a' -> true}$\\
-$\texttt{\ \ |  'e' -> true}$\\
-$\texttt{\ \ |  'i' -> true}$\\
-$\texttt{\ \ |  'o' -> true}$\\
-$\texttt{\ \ |  'u' -> true}$\\
-$\texttt{\ \ | \_ -> false}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook24x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent If we miss out one or more cases, OCaml will warn us:
 
@@ -728,52 +712,33 @@ $\texttt{\ \ | \_ -> false}$\vphantom{g}
 
 \noindent OCaml does not reject the program, because there may be legitimate reasons to miss cases out, but for now we will make sure all our pattern matches are complete. Notice that we had to repeat \texttt{true} five times. This would be awkward if the expression to be calculated was more complicated. We can combine patterns like this:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{isvowel :}\textbf{\textsf{ char $\rightarrow$ bool}}\\
-\\
-$\texttt{\plet isvowel c =}$\\
-$\texttt{\ \ \pmatch c \pwith}$\\
-$\texttt{\ \ \ \ 'a' | 'e' | 'i' | 'o' | 'u' -> true}$\\
-$\texttt{\ \ | \_ -> false}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook25x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Finally, let us rewrite Euclid's Algorithm from the previous chapter:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{gcd :}\textbf{\textsf{ int $\rightarrow$ int $\rightarrow$ int}}\\
-\\
-$\texttt{\pletrec gcd a b =}$\\
-$\texttt{\ \ \pif b = 0 \pthen a \pelse gcd b (a mod b)}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook26x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Now in pattern matching style:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{gcd :}\textbf{\textsf{ int $\rightarrow$ int $\rightarrow$ int}}\\
-\\
-$\texttt{\pletrec gcd a b =}$\\
-$\texttt{\ \ \pmatch b \pwith}$\\
-$\texttt{\ \ \ \ 0 -> a}$\\
-$\texttt{\ \ | \_ -> gcd b (a mod b)}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook27x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent The type of a whole \,\texttt{\textbf{match}}\, \ldots\ \,\texttt{\textbf{with}} \ldots\ expression is determined by the types of the expressions on the right hand side of each \texttt{->} arrow, all of which must be alike:
 
 \medskip
 \begin{center}
-\noindent\includegraphics[width=\textwidth]{kindlemlbook23x.png}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook28x.png}
 \end{center}
 \medskip
 
@@ -7030,8 +6995,5 @@ Sometimes when writing imperative programs, we ignore the result of some side-ef
 
 \noindent The ignore function has type \textsf{\textbf{$\alpha$ $\rightarrow$ unit}}. It has no side-effect.
 
-\lhead{}%Prevent overprinting of INDEX in header
-\addcontentsline{toc}{chapter}{Index}
-\printindex
 \end{document}
 
