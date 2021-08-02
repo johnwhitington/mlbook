@@ -1,4 +1,4 @@
-\documentclass[]{book}
+on\documentclass[]{book}
 \usepackage{etex}
 \usepackage{booktabs}
 \renewcommand{\arraystretch}{1.2}
@@ -214,7 +214,6 @@ We are going to be using a programming language called \index{OCaml}\textbf{OCam
 
 \pagestyle{fancy}
 \chapter{Starting Off}
-\label{startingoff}
 We will cover a fair amount of material in this chapter and its questions, since we will need a solid base on which to build. You should read this with a computer running OCaml in front of you.
 
 Consider first the mathematical \index{expression} expression $1 + 2 \times 3$. What is the result? How did you work it out? We might show the process like this:
@@ -421,7 +420,6 @@ A third type we shall be using is \index{char@\textbf{\textsf{char}}}\textbf{\te
 \thispagestyle{empty}
 
 \chapter{Names and Functions}
-\label{functions}
 
 So far we have built only tiny toy programs. To build bigger ones, we need to be able to \index{name}name things so as to refer to them later. We also need to write expressions whose result depends upon one or more other things.
 
@@ -660,7 +658,6 @@ Later on, when we write larger programs, we will see how to use OCaml to load ou
 
 \chapter{Case by Case}
 \pagestyle{fancy}
-\label{casebycase}
 In the previous chapter, we used the \index{conditional expression}conditional expression \,\texttt{\textbf{if}} \ldots\  \texttt{\textbf{then}} \ldots\ \texttt{\textbf{else}}\, to define functions whose results depend on their arguments. For some of them we had to nest the conditional expressions one inside another. Programs like this are not terribly easy to read, and expand quickly in size and complexity as the number of cases increases.
 
 OCaml has a nicer way of expressing choices -- \index{pattern matching}\textit{pattern matching}. For example, recall our factorial function:
@@ -801,7 +798,6 @@ $\texttt{\ \ | \_ -> gcd b (a mod b)}$\vphantom{g}
 
 
 \chapter{Making Lists}
-\label{listingthings}
 A \index{list}\index{list@\textbf{\textsf{list}}}\textit{list} is a collection of \index{element of a list}elements. Here is a list of three integers:
 
 \index{;@\texttt{;}}
@@ -1159,7 +1155,6 @@ $\texttt{\ \ | h::t -> h ::\ append t b}$\vphantom{g}
 
 \chapter{Sorting Things}
 \pagestyle{fancy}
-\label{sortingthings}
 Lists often need to be in \index{list!sorting}\index{sorting}sorted order. How might we write a function to sort a list of integers? Well, a list with zero elements is already sorted. If we do not have an empty list, we must have a head and a tail. What can we do with those? Well, we can sort the tail by a recursive call to our \texttt{sort} function. So, now we have the head, and an already sorted list. Now, we just need to write a function to insert the head in an already sorted list. We have reduced the problem to an easier one. 
 
 \smspace
@@ -1404,7 +1399,6 @@ So, how many lines do we have? Well, in the top half we have roughly $\log_{2}n$
 
 \chapter[Functions upon Functions upon Functions]{Functions upon Functions upon Functions}
 \pagestyle{fancy}
-\label{functionsuponfunctions}
 Often we need to apply a function to every element of a list. For example, doubling each of the numbers in a list of integers. We could do this with a simple recursive function, working over each element of a list:
 
 \smspace
@@ -1641,7 +1635,6 @@ $\texttt{~~a >= b}$\vphantom{g}
 
 \chapter{When Things Go Wrong}
 \pagestyle{fancy}
-\label{whenthingsgowrong}
 
 Some of the functions we have written so far have had a single, correct answer for each possible argument. For example, there's no number we cannot halve. However, when we use more complicated types such as lists, there are plenty of functions which do not always have an answer -- a list might not have a head or a tail, for example. Our \texttt{take} and \texttt{drop} functions were unsatisfactory in case of invalid arguments. For example, \texttt{take 3 ['a']} would simply return \texttt{[]}. This is bad practice -- we are hiding errors rather than confronting them.
 
@@ -1798,7 +1791,6 @@ $\texttt{\ \ | \_::t -> last t}$\vphantom{g}
 
 \chapter{Looking Things Up}
 \pagestyle{fancy}
-\label{lookingthingsup}
 
 Many programs make use of a structure known as a \index{dictionary}\textit{dictionary}. A real dictionary is used for associating definitions with words; we use ``dictionary'' more generally to mean associating some unique \index{key, in a dictionary}\textit{keys} (like words) with \index{value, in a dictionary}\textit{values} (like definitions). For example, we might like to store the following information about the number of people living in each house in a road:
 
@@ -1991,7 +1983,6 @@ Pairs are just a particular instance of a more general construct -- the \textit{
 
 \chapter{More with Functions}
 \pagestyle{fancy}
-\label{morewithfunctions}
 
 Look again at the type of a simple function with more than one argument:
 
@@ -2042,7 +2033,7 @@ $\texttt{\plet add x y = x + y}$
 \texttt{map (( * ) 2) [10; 20; 30]}
 \smspace
 
-\noindent Recall the function to map something over a list of lists from the questions to \Cref{functionsuponfunctions}:
+\noindent Recall the function to map something over a list of lists from the questions to Chapter 6:
 
 \smspace
 \begin{center}
@@ -2122,7 +2113,6 @@ The function \texttt{f x y} has type \textsf{\textbf{$\alpha$ $\rightarrow$ $\be
 
 \chapter{New Kinds of Data}
 \pagestyle{fancy}
-\label{newkindsofdata}
 
 So far, we have considered the simple types \textbf{\textsf{int}}, \textbf{\textsf{bool}}, \textbf{\textsf{char}}, the compound type \textbf{\textsf{list}}, and tuples. We have built functions from and to these types. It would be possible to encode anything we wanted as lists and tuples of these types, but it would lead to complex and error-strewn programs. It is time to make our own types. New types are introduced using \index{type@\texttt{\textbf{type}}}\texttt{\textbf{type}}. Here's a type for colours:
 
@@ -2378,7 +2368,6 @@ $\texttt{~~|~Divide (e, e\textquotesingle ) -> evaluate e / evaluate e\textquote
 
 \chapter{Growing Trees}
 \pagestyle{fancy}
-\label{growingtrees}
 
 We have used lists to represent collections of elements of like type but varying length, and tuples to represent collections of things of any type but fixed length. Another common type is the \index{binary tree}\index{tree}\textit{binary tree}, which is used to represent structures which branch, such as the arithmetical expressions we constructed in the last chapter.
 
@@ -2493,7 +2482,7 @@ $\texttt{~~|~Lf -> Lf\vphantom{g}}$
 
 \section*{Using trees to build better dictionaries}
 
-\index{tree!for dictionaries}We have seen that arithmetic expressions can be drawn as trees on paper, and we have designed an OCaml data type for binary trees to hold any kind of element. Now it is time to introduce the most important application of trees: the \index{tree!binary search}\index{binary search tree}\textit{binary search tree}, which is another way of implementing the dictionary \index{data structure}\textit{data structure} we described in \Cref{lookingthingsup}. 
+\index{tree!for dictionaries}We have seen that arithmetic expressions can be drawn as trees on paper, and we have designed an OCaml data type for binary trees to hold any kind of element. Now it is time to introduce the most important application of trees: the \index{tree!binary search}\index{binary search tree}\textit{binary search tree}, which is another way of implementing the dictionary \index{data structure}\textit{data structure} we described in Chapter 7. 
 
 The most important advantage of a tree is that it is often very much easier to reach a given element. When searching in a dictionary defined as a list, it took on average time proportional to the number of items in the dictionary to find a value for a key (the position of the required entry is, on average, halfway along the list). If we use a binary tree, and if it is reasonably nicely balanced in shape, that time can be reduced to the logarithm base two of the number of elements in the dictionary. Can you see why?
 
@@ -2597,7 +2586,6 @@ Lists and trees are examples of data structures. The design of an algorithm and 
 
 \chapter{In and Out}
 \pagestyle{fancy}
-\label{inandout}
 
 We have considered a function (and indeed, a whole program composed of many functions) to take a chunk of data, do some calculations, and then produce a result. This assumption has allowed us to write neat, easily understood programs.
 
@@ -2978,7 +2966,6 @@ Function & Type & Description \\\midrule
 
 \chapter{Putting Things in Boxes}
 \pagestyle{fancy}
-\label{puttingthingsinboxes}
 
 So far, we have considered ``pure'' functions which have no side-effects, and functions which have the side-effect of reading or writing information to and from, for example, files. When we assigned a value to a name, that value could never change. Sometimes, it is convenient to allow the value of a name to be changed -- some algorithms are more naturally expressed in this way.
 
@@ -3488,7 +3475,6 @@ $\texttt{~~~~~~~~print\_histogram histogram}$\hfill\textit{call histogram printe
 
 \chapter{The Other Numbers}
 \pagestyle{fancy}
-\label{gettingreal}
 
 The only numbers we have considered until now have been the integers. For a lot of programming tasks, they are sufficient. And, except for their limited range and the possibility of division by zero, they are easy to understand and use. However, we must now consider the \index{real number}real numbers.
 
@@ -3642,8 +3628,6 @@ Floating-point numbers are often essential, but must be used with caution. You w
 \chapter{The OCaml Standard Library}
 \pagestyle{fancy}
 
-\label{theocamlstandardlibrary}
-
 OCaml is provided with a wide range of useful built-in functions, in addition to the ones we have already seen, called the \index{standard library}\textit{OCaml Standard Library}. These functions are divided into \index{module}\textit{modules}, one for each area of functionality (in the next chapter, we will learn how to write our own modules). Here are a few examples of modules in the standard library:
 
 \smspace
@@ -3741,7 +3725,6 @@ The questions for this chapter use functions from the standard library, so you w
 
 \chapter{Building Bigger Programs}
 \pagestyle{fancy}
-\label{buildingbiggerprograms}
 
 So far we have been writing little programs and testing them interactively in OCaml. However, to conquer the complexity of the task of writing larger programs, tools are needed to split them into well-defined \index{module}\textit{modules}, each with a given set of types and functions. We can then build big systems without worrying that some internal change to a single module will affect the whole program. This process of modularization is known as \index{abstraction}\textit{abstraction}, and is fundamental to writing large programs, a discipline sometimes called \index{software engineering}\textit{software engineering}.
 
@@ -3749,7 +3732,7 @@ In this chapter, you will have to create text files and type commands into the c
 
 \section*{Making a module}
 
-We will be building a modular version of our text statistics program from \Cref{puttingthingsinboxes}. First, write the text file shown in Figure \ref{textstat.ml} (but not the italic annotations) and save it as \texttt{textstat.ml} (OCaml programs live in files with lowercase names ending in \texttt{.ml}).
+We will be building a modular version of our text statistics program from Chapter 13. First, write the text file shown in Figure \ref{textstat.ml} (but not the italic annotations) and save it as \texttt{textstat.ml} (OCaml programs live in files with lowercase names ending in \texttt{.ml}).
 
 \begin{figure}
 \begin{center}
@@ -4034,7 +4017,7 @@ $\texttt{~~~~exit 1}\hfill\textit{see note 3}$\vphantom{g}
 \section*{Questions}
 
 \begin{enumerate}
-  \item Extend our example to print the character histogram data as we did in \Cref{puttingthingsinboxes}. 
+  \item Extend our example to print the character histogram data as we did in Chapter 13.  
   \item Write and compile a standalone program to reverse the lines in a text file, writing to another file.
   \item Write a program which takes sufficiently long to run to allow you to compare the speed of programs compiled with \texttt{ocamlc} and \texttt{ocamlopt}.
   \item Write a standalone program to search for a given string in a file. Lines where the string is found should be printed to the screen.
@@ -4055,9 +4038,9 @@ $\texttt{~~~~exit 1}\hfill\textit{see note 3}$\vphantom{g}
 \raggedbottom
 \chapter{Answers to Questions}
 
-\textit{Hints may be found on page \pageref{hints}.}
+\textit{Hints may be found after all the answers.}
 
-\section*{\Cref{startingoff} (\nameref{startingoff})}
+\section*{1. Starting Off}
 
 \subsection*{1}
 
@@ -4104,7 +4087,7 @@ It prevents unexpected values: what would happen if an integer other than \textt
 
 The lowercase characters are in alphabetical order, for example \texttt{'p' < 'q'} evaluates to \texttt{true}. The uppercase characters are similarly ordered. The uppercase letters are all ``smaller'' than the lowercase characters, so for example \texttt{'A' < 'a'} evaluates to \texttt{true}. For type \textsf{\textbf{bool}}, \texttt{false} is considered ``less than'' \texttt{true}.
 
-\section*{\Cref{functions} (\nameref{functions})}
+\section*{2. Names and Functions}
 \subsection*{1}
 Just take in an integer and return the number multiplied by ten. The function takes and returns an integer, so the type is \textbf{\textsf{int $\rightarrow$ int}}.
 
@@ -4191,7 +4174,7 @@ We could simply return $0$ for a negative argument. The factorial of $0$ is $1$,
 
 \noindent Note that \texttt{factorial} can fail in other ways too -- if the number gets too big and ``wraps around''. For example, on the author's computer, \texttt{factorial 40} yields \texttt{-2188836759280812032}.
 
-\section*{\Cref{casebycase} (\nameref{casebycase})}
+\section*{3. Case by Case}
 \subsection*{1}
 
 We can just pattern match on the boolean. It does not matter, in this instance, which order the two cases are in.
@@ -4312,7 +4295,7 @@ $\texttt{~~not (isupper c)}$
 
 \noindent These two solutions have differing behaviour upon erroneous arguments (such as punctuation). Can you see why?
 
-\section*{\Cref{listingthings} (\nameref{listingthings})}
+\section*{4. Listing Things}
 \subsection*{1}
 This is similar to \texttt{odd\_elements}:
 
@@ -4526,7 +4509,7 @@ $\texttt{\ \ rev\_inner [] l}$\vphantom{g}
  \Longrightarrow & & \texttt{[4; 3; 2; 1]\vphantom{g}}
 \end{eqnarray*}
 
-\section*{\Cref{sortingthings} (\nameref{sortingthings})}
+\section*{5. Sorting Things}
 \subsection*{1}
 Simply add an extra \texttt{\textbf{let}} to define a name representing the number we will take or drop:
 
@@ -4638,7 +4621,7 @@ $\texttt{\ \ \ \ | h::t -> insert h (sort t)}$\vphantom{g}
 
 \noindent We have renamed the second argument of the \texttt{insert} function to avoid confusion.
 
-\section*{\Cref{functionsuponfunctions} (\nameref{functionsuponfunctions})}
+\section*{Chapter 6. Functions upon Functions upon Functions}
 \subsection*{1}
 Our function will have type \textbf{\textsf{char list $\rightarrow$ char list}}. We just match on the argument list: if it is empty, we are done. If it starts with an exclamation mark, we output a period, and carry on. If not, we output the character unchanged, and carry on:
 
@@ -4844,7 +4827,7 @@ $\texttt{\ \ | h::t -> map f h ::\ mapl f t}$\vphantom{g}
 \smspace
 
 \noindent We have used explicit recursion to handle the outer list, and \texttt{map} to handle each inner list.
-\section*{\Cref{whenthingsgowrong} (\nameref{whenthingsgowrong})}
+\section*{Chapter 7. When Things go Wrong}
 
 \subsection*{1}
 
@@ -4920,7 +4903,7 @@ $\texttt{~~\ptry sqrt n \pwith Complex -> 0}$\vphantom{g}
 \end{minipage}}
 \end{center}
 
-\section*{\Cref{lookingthingsup} (\nameref{lookingthingsup})}
+\section*{Chapter 7. Looking Things Up}
 \subsection*{1}
 Since the keys must be unique, the number of different keys is simply the length of the list representing the dictionary -- so we can just use the usual \texttt{length} function.
 
@@ -5053,7 +5036,7 @@ $\texttt{~~|~(k, v)::t -> add k v (union t b)}$
 
 \noindent We can verify that the elements of dictionary \texttt{a} have precedence over the elements of dictionary \texttt{b} by noting that \texttt{add} replaces a value if the key already exists.
 
-\section*{\Cref{morewithfunctions} (\nameref{morewithfunctions})}
+\section*{Chapter 9. More with Functions}
 
 \subsection*{1}
 
@@ -5181,7 +5164,7 @@ $\texttt{~~map (firstelt n) l}$
 \end{minipage}}
 \end{center}
 
-\section*{\Cref{newkindsofdata} (\nameref{newkindsofdata})}
+\section*{Chapter 10. New Kinds of Data}
 
 \subsection*{1}
 
@@ -5404,7 +5387,7 @@ $\texttt{~~\ptry Some (evaluate e) \pwith Division\_by\_zero -> None}$\vphantom{
 %\end{center}
 %\smspace
 
-\section*{\Cref{growingtrees} (\nameref{growingtrees})}
+\section*{Chapter 11. Growing Trees}
 
 \subsection*{1}
 Our function will have type \textsf{$\alpha$ $\rightarrow$ $\alpha$ tree $\rightarrow$ \textbf{bool}}. It takes a element to look for, a tree holding that kind of element, and returns \texttt{true} if the element is found, or \texttt{false} otherwise.
@@ -5460,18 +5443,6 @@ $\texttt{~~~~~~false}$\vphantom{g}
 \end{minipage}}
 \end{center}
 \smspace
-
-%\noindent We can build a more general one which can compare trees of differing types to see if they have the same shape by using the \texttt{tree\_map} function to make two trees, each with type \textsf{\textbf{int} tree} with all labels set to \texttt{0}, and then compare them using OCaml's built-in equality operator:
-
-%\smspace
-%\begin{center}
-%\fbox{\begin{minipage}{0.8\textwidth}
-%\noindent\texttt{equal\_shape :}\textsf{ $\alpha$ tree $\rightarrow$ $\beta$ tree $\rightarrow$ \textbf{bool}}\\
-%\\
-%$\texttt{\plet equal\_shape tr tr2 =}$\\
-%$\texttt{~~tree\_map (\pfun \_ -> 0) tr = tree\_map (\pfun \_ -> 0) tr2}$\vphantom{g}
-%\end{minipage}}
-%\end{center}
 
 \subsection*{4}
 
@@ -5566,7 +5537,7 @@ $\texttt{~~Branch (f e, map (map\_mtree f) l)}$\vphantom{g}
 \end{center}
 
 
-\section*{\Cref{inandout} (\nameref{inandout})}
+\section*{Chapter 12. In and Out}
 \subsection*{1}
 A first attempt might be:
 
@@ -5858,7 +5829,7 @@ $\texttt{~~~~\_ -> \praise CopyFailed}$\vphantom{g}
 \end{center}
 
 
-\section*{\Cref{puttingthingsinboxes} (\nameref{puttingthingsinboxes})}
+\section*{Chapter 13. Putting Things in Boxes}
 \subsection*{1}
 Two references, \texttt{x} and \texttt{y}, of type \textbf{\textsf{int ref}} have been created. Their initial values are $1$ and $2$. Their final values are $2$ and $4$. The type of the expression is \textsf{\textbf{int}} because this is the type of \texttt{!x + !y}, and the result is $6$.
 
@@ -6019,7 +5990,7 @@ $\texttt{~~~~\pelse x}$\vphantom{g}
 \subsection*{9}
 Periods, exclamation marks and question marks may appear in multiples, leading to a wrong answer. The number of characters does not include newlines. It is not clear how quotations would be handled. Counting the words by counting spaces is inaccurate -- a line with ten words will count only nine.
 
-\section*{\Cref{gettingreal} (\nameref{gettingreal})}
+\section*{Chapter 14. The Other Numbers}
 \subsection*{1}
 
 We calculate the ceiling and floor, and return the closer one, being careful to make sure that a point equally far from the ceiling and floor is rounded up.
@@ -6110,7 +6081,7 @@ $\texttt{~~~~\pdone}$\vphantom{g}
 
 \noindent No allowance has been made here for bad arguments (for example, \texttt{b} smaller than \texttt{a}). Can you extend our program to move the zero-point to the middle of the screen, so that the sine function can be graphed even when its result is less than zero?
 
-\section*{\Cref{theocamlstandardlibrary} (\nameref{theocamlstandardlibrary})}
+\section*{Chapter 15. The OCaml Standard Library}
 \subsection*{1}
 A non-tail-recursive one is simple:
 
@@ -6265,7 +6236,7 @@ $\texttt{~~~~~~~~!num}$\vphantom{g}
 
 \noindent You might consider that writing this function with lists of characters rather than strings would be easier. Unfortunately, it would be slow, and these kinds of searching tasks are often required to be very fast.
 
-\section*{\Cref{buildingbiggerprograms} (\nameref{buildingbiggerprograms})}
+\section*{Chapter 16. Building Bigger Programs}
 \subsection*{1}
 First, we extend the \texttt{Textstat} module to allow frequencies to be counted and expose it through the interface, shown in Figures \ref{q1.mli} and \ref{q1.ml}. Then the main program is as shown in Figure \ref{q1a.ml}.
 
@@ -6558,9 +6529,8 @@ $\texttt{~~~~print\_string "Usage:\ search search\_term filename\textbackslash n
 \cleardoublepage
 \flushbottom
 \chapter{Hints for Questions}
-\label{hints}
 \begin{multicols*}{2}
-\section*{\Cref{startingoff}\\ \nameref{startingoff}}
+\section*{1. Starting Off}
 \subsection*{1}
 Try to work these out on paper, and then check by typing them in. Remember that the type of an expression is the type of the value it will evaluate to. Can you show the steps of evaluation for each expression?
 
@@ -6573,7 +6543,7 @@ Type it in. What does OCaml print? What is the evaluation order?
 \subsection*{7}
 What if a value of 2 appeared? How might we interpret it?
 
-\section*{\Cref{functions}\\ \nameref{functions}}
+\section*{2. Names and Functions}
 \subsection*{1}
 The function takes one integer, and returns that integer multiplied by ten. So what must its type be?
 \subsection*{2}
@@ -6588,7 +6558,7 @@ Can you define this in terms of the \texttt{isvowel} function we have already wr
 Try adding parentheses to the expression in a way which does not change its meaning. Does this make it easier to understand?
 \subsection*{7}
 When does it not terminate? Can you add a check to see when it might happen, and return $0$ instead? What is the factorial of $0$ anyway?
-\section*{\Cref{casebycase}\\ \nameref{casebycase}}
+\section*{3. Case by Case}
 \subsection*{1}
 We are pattern matching on a boolean value, so there are just two cases: \texttt{true} and \texttt{false}.
 \subsection*{2}
@@ -6600,7 +6570,7 @@ Consider where parentheses might be added without altering the expression.
 \subsection*{6}
 There will be two cases in each function -- the special range pattern \texttt{x..y}, and \texttt{\_} for any other character.
 
-\section*{\Cref{listingthings}\\ \nameref{listingthings}}
+\section*{4. Listing Things}
 \subsection*{1}
 Consider three cases: (1)~the argument list is empty, (2)~the argument list has one element, (3)~the argument list has more than one element \texttt{a::b::t}. In the last case, which element do we need to miss out?
 \subsection*{2}
@@ -6616,7 +6586,7 @@ The empty list is already a set. If we have a head and a tail, what does it tell
 \subsection*{7}
 Consider in which order the \texttt{@} operators are evaluated in the reverse function. How long does each append take? How many are there?
 
-\section*{\Cref{sortingthings}\\ \nameref{sortingthings}}
+\section*{5. Sorting Things}
 \subsection*{1}
 Consider adding another \texttt{\textbf{let}} before \texttt{\textbf{let \textmd{left}}} and \texttt{\textbf{let \textmd{right}}}.
 
@@ -6632,7 +6602,7 @@ What will the type of the function be? Lists of length zero and one are already 
 \subsection*{6}
 You can put one \texttt{\textbf{let rec}} construct inside another.
 
-\section*{\Cref{functionsuponfunctions}\\ \nameref{functionsuponfunctions}}
+\section*{2. Names and Functions}
 \subsection*{1}
 The function \texttt{calm} is simple recursion on lists. There are three cases -- the empty list, a list beginning with \texttt{'!'} and a list beginning with any other character. In the second part of the question, write a function \texttt{calm\_char} which processes a single character. You can then use \texttt{map} to define a new version of \texttt{calm}.
 
@@ -6657,7 +6627,7 @@ If the input list is empty, the result is trivially true -- there cannot possibl
 \subsection*{8}
 You can use \texttt{map} on each \textbf{\textsf{$\alpha$ list}} in the \textbf{\textsf{$\alpha$ list list}}.
 
-\section*{\Cref{whenthingsgowrong}\\ \nameref{whenthingsgowrong}}
+\section*{Chapter 7. When Things go Wrong}
 
 \subsection*{1}
 Make sure to consider the case of the empty list, where there is no smallest positive element, and also the non-empty list containing entirely zero or negative numbers.
@@ -6671,7 +6641,7 @@ First, write a function to find the number less than or equal to the square root
 \subsection*{4}
 Use the \texttt{\textbf{try}}\ \ldots\ \texttt{\textbf{with}} construct to call your function and handle the exception you defined.
 
-\section*{\Cref{lookingthingsup}\\ \nameref{lookingthingsup}}
+\section*{Chapter 7. Looking Things Up}
 \subsection*{1}
 The keys in a dictionary are unique -- does remembering that fact help you?
 
@@ -6694,7 +6664,7 @@ The function will take two dictionaries, and return another -- so you should be 
 
 Try pattern matching on the first list -- when it is empty, the answer is trivial -- what about when it has a head and a tail?
 
-\section*{\Cref{morewithfunctions}\\ \nameref{morewithfunctions}}
+\section*{Chapter 9. More with Functions}
 
 \subsection*{2}
 Try building a list of booleans, each representing the result of \texttt{member} on a list.
@@ -6711,7 +6681,7 @@ Use our revised \texttt{take} function to process a single list. You may then us
 \subsection*{6}
 Build a function \texttt{firstelt} which, given the number and a list, returns the first element or that number. You can then use this function (partially applied) together with \texttt{map} to build the main \texttt{firstelts} function.
 
-\section*{\Cref{newkindsofdata}\\ \nameref{newkindsofdata}}
+\section*{Chapter 10. New Kinds of Data}
 \subsection*{1}
 The type will have two constructors: one for squares, requiring only a single integer, and one for rectangles, requiring two: one for the width and one for the height.
 
@@ -6748,7 +6718,7 @@ Handle the exception, and return \texttt{None} in that case.
 %\subsection*{6}
 %The function will have type \textsf{t $\rightarrow$ \textbf{string}}. Follow the recursive structure of the type you have defined. You may need mutually recursive functions to deal with some of your compound constructors.
 
-\section*{\Cref{growingtrees}\\ \nameref{growingtrees}}
+\section*{Chapter 11. Growing Trees}
 
 \subsection*{1}
 The type will be \textsf{$\alpha$ $\rightarrow$ $\alpha$ tree $\rightarrow$ \textbf{bool}}. That is, it takes an element to search for, and a tree containing elements of the same type, and returns \texttt{true} if the element is found, and \texttt{false} if not. What happens if the tree is a leaf? What if it is a branch?
@@ -6768,7 +6738,7 @@ Try using list dictionaries as an intermediate representation. We already know h
 \subsection*{6}
 Consider using a list of sub-trees for a branch. How can we represent a branch which has no sub-trees?
 
-\section*{\Cref{inandout}\\ \nameref{inandout}}
+\section*{Chapter 12. In and Out}
 \subsection*{1}
 You can use the \texttt{print\_string} and \texttt{print\_int} functions. Be careful about what happens when you print the last number.
 
@@ -6787,7 +6757,7 @@ The \texttt{input\_line} function can be used -- how many times can you call it 
 \subsection*{6}
 We can read lines from the file using \texttt{input\_line} and write using \texttt{output\_string} -- make sure the newlines do not get lost! How do we know when we are done? Write a function to copy a line from one channel to another -- we can deal with opening and closing the files separately.
 
-\section*{\Cref{puttingthingsinboxes}\\ \nameref{puttingthingsinboxes}}
+\section*{Chapter 13. Putting Things in Boxes}
 \subsection*{1}
 Consider the initial values of the references, and then work through how each one is altered by each part of the expression. What is finally returned as the result of the expression?
 
@@ -6812,7 +6782,7 @@ To build an array of arrays, you will need a use \texttt{Array.make} to build an
 \subsection*{8}
 What is the difference between the codes for \texttt{'a'} and \texttt{'A'}? What about \texttt{'z'} and \texttt{'Z'}?
 
-\section*{\Cref{gettingreal}\\ \nameref{gettingreal}}
+\section*{Chapter 14. The Other Numbers}
 \subsection*{1}
 Consider the built-in functions \texttt{ceil} and \texttt{floor}. 
 
@@ -6828,7 +6798,7 @@ Calculate the column number for the asterisk carefully. How can it be printed in
 \subsection*{5}
 You will need to call the \texttt{star} function with an appropriate argument at points between the beginning and end of the range, as determined by the step.
 
-\section*{\Cref{theocamlstandardlibrary}\\ \nameref{theocamlstandardlibrary}}
+\section*{Chapter 15. The OCaml Standard Library}
 \subsection*{1}You can assume \texttt{List.rev} which is tail-recursive.
 \subsection*{2}You might use \texttt{List.map} here, together with \texttt{List.mem}
 \subsection*{3}The \texttt{String.iter} function should help here.
@@ -6837,7 +6807,7 @@ You will need to call the \texttt{star} function with an appropriate argument at
 \subsection*{6}Create a buffer, add all the strings to it in order, and then return its contents.
 \subsection*{7}\texttt{String.sub} is useful here. You can compare strings with one another for equality, as with any other type.
 
-\section*{\Cref{buildingbiggerprograms}\\ \nameref{buildingbiggerprograms}}
+\section*{Chapter 16. Building Bigger Programs}
 
 \subsection*{1}
 You will need to alter the \texttt{Textstat} module to calculate the histogram and allow it to be accessed through the module's interface. Then, alter the main program to retrieve and print the extra information.
