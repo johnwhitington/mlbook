@@ -1722,40 +1722,19 @@ So far, we have considered the simple types \textbf{\textsf{int}}, \textbf{\text
 
 \noindent Let us extend our type to include any other colour which can be expressed in the RGB (Red, Green, Blue) colour system (each component ranges from 0 to 255 inclusive, a standard range giving about 16 million different colours). 
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent$\texttt{\ptype colour =}$\\
-\noindent$\texttt{~~Red}$\\
-\noindent$\texttt{|~Green}$\\
-\noindent$\texttt{|~Blue}$\\
-\noindent$\texttt{|~Yellow}$\\
-\noindent$\texttt{|~RGB \pof int $\times$ int $\times$ int}$\\
-\\
-\noindent\texttt{cols :}\textbf{\textsf{ \textmd{colour} list}}\\
-\\
-$\texttt{\plet cols = [Red; Red; Green; Yellow; RGB (150, 0, 255)]\vphantom{g}}$
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook101x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent We use \texttt{\pof} in our new constructor, to carry information along with values built with it. Here, we are using something of type \textsf{\textbf{int $\times$ int $\times$ int}}. Notice that the list \texttt{cols} of type \textsf{colour \textbf{list}} contains  varying things, but they are all of the same type, as required by a list. We can write functions by pattern matching over our new type:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{components :}\textbf{\textsf{ \textmd{colour} $\rightarrow$ int $\times$ int $\times$ int}}\\
-\\
-$\texttt{\plet components c =}$\\
-$\texttt{~~\pmatch c \pwith}$\\
-$\texttt{~~~~Red -> (255, 0, 0)}$\\
-$\texttt{~~|~Green -> (0, 255, 0)}$\\
-$\texttt{~~|~Blue -> (0, 0, 255)}$\\
-$\texttt{~~|~Yellow -> (255, 255, 0)}$\\
-$\texttt{~~|~RGB (r, g, b) -> (r, g, b)}$
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook102x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Types may contain a \index{type variable}\textit{type variable} like $\alpha$ to allow the type of part of the new type to vary -- i.e. for the type to be polymorphic. For example, here is a type used to hold either nothing, or something of any type:
 
@@ -1768,39 +1747,19 @@ $\texttt{~~|~RGB (r, g, b) -> (r, g, b)}$
 
 \noindent We can read this as \index{option@\textsf{option}}``\textit{a value of type $\alpha$ \textsf{option} is either nothing, or something of type $\alpha$}''. For example:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{nothing :}\textbf{\textsf{ $\alpha$ option}}\\
-\noindent\texttt{number :}\textbf{\textsf{ int option}}\\
-\noindent\texttt{numbers :}\textbf{\textsf{ int option list}}\\
-\noindent\texttt{word :}\textbf{\textsf{ char list option}}\\
-\\
-$\texttt{\plet nothing = None}$\\
-\\
-$\texttt{\plet number = Some 50}$\\
-\\
-$\texttt{\plet numbers = [Some 12; None; None; Some 2]}$\\
-\\
-$\texttt{\plet word = Some ['c'; 'a'; 'k'; 'e']}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook103x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent The \textsf{option} type is useful as a more manageable alternative to exceptions where the lack of an answer is a common (rather than genuinely exceptional) occurrence. For example, here is a function to look up a value in a dictionary, returning \texttt{None} instead of raising an exception if the value is not found:
 
-\vspace{1mm}
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{lookup\_opt :}\textsf{ $\alpha$ $\rightarrow$ \textmd{(}$\alpha$ $\times$ $\beta$\textmd{)} \textbf{list} $\rightarrow$ $\beta$ option}\\
-\\
-$\texttt{\pletrec lookup\_opt x l =}$\\
-$\texttt{~~\pmatch l \pwith}$\\
-$\texttt{~~~~[] -> None}$\\
-$\texttt{~~|~(k, v)::t -> \pif x = k \pthen Some v \pelse lookup\_opt x t}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook104x.png}
 \end{center}
-\vspace{1mm}
+\medskip
 
 \noindent Now, there is no need to worry about exception handling -- we just pattern match on the result of the function.
 
@@ -1815,57 +1774,27 @@ In addition to being polymorphic, new types may also be \index{type!recursive}re
 
 \noindent We have called our type \textsf{sequence} to avoid confusion. It has two constructors: \texttt{Nil} which is equivalent to \texttt{[]}, and \texttt{Cons} which is equivalent to the \texttt{::} operator. \texttt{Cons} carries two pieces of data with it -- one of type $\alpha$ (the head) and one of type \textsf{$\alpha$ sequence} (the tail). This is the recursive part of our definition. Now we can make our own lists equivalent to OCaml's built-in ones:
 
-\smspace
-\noindent\begin{tabular}{@{}lll@{}} \toprule
-  Built-in & Ours & Our Type\\ \midrule
-  \texttt{[]} & \texttt{Nil} & $\alpha$ \textsf{sequence}\\
-  \texttt{[1]} & \texttt{Cons (1, Nil)} & \textbf{\textsf{int}} \textsf{sequence}\\
-  \texttt{['a'; 'x'; 'e']} & \texttt{Cons ('a', Cons ('x', Cons ('e', Nil)))} & \textbf{\textsf{char}} \textsf{sequence}\\
-  \texttt{[Red; RGB (20, 20, 20)]} & \texttt{Cons (Red, Cons (RGB (20, 20, 20), Nil))} & \textsf{colour sequence} \\ \bottomrule
-\end{tabular}
-\smspace
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook105x.png}
+\end{center}
+\medskip
 
 \noindent Now you can see why getting at the last element of a list in OCaml is harder than getting at the first element -- it is deeper in the structure. Let us compare some functions on OCaml lists with the same ones on our new \textsf{sequence} type. First, the ones for built-in lists.
 
-\vspace{1mm}
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{length :}\textbf{\textsf{ $\alpha$ list $\rightarrow$ int}}\\
-\noindent\texttt{append :}\textbf{\textsf{ $\alpha$ list $\rightarrow$ $\alpha$ list $\rightarrow$ $\alpha$ list}}\\
-\\
-$\texttt{\pletrec length l =}$\\
-$\texttt{~~\pmatch l \pwith}$\\
-$\texttt{~~~~[] -> 0}$\\
-$\texttt{~~|~\_::t -> 1 + length t}$\\
-\\
-$\texttt{\pletrec append a b =}$\\
-$\texttt{~~\pmatch a \pwith}$\\
-$\texttt{~~~~[] -> b}$\\
-$\texttt{~~|~h::t -> h ::\ append t b}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook106x.png}
 \end{center}
-\vspace{1mm}
+\medskip
 
 \noindent And now the same functions with our new \textsf{sequence} type:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{length :}\textsf{ $\alpha$ sequence $\rightarrow$ \textbf{int}}\\
-\noindent\texttt{append :}\textsf{ $\alpha$ sequence $\rightarrow$ $\alpha$ sequence $\rightarrow$ $\alpha$ sequence}\\
-\\
-$\texttt{\pletrec length s =}$\\
-$\texttt{~~\pmatch s \pwith}$\\
-$\texttt{~~~~Nil -> 0}$\\
-$\texttt{~~|~Cons (\_, t) -> 1 + length t}$\\
-\\
-$\texttt{\pletrec append a b =}$\\
-$\texttt{~~\pmatch a \pwith}$\\
-$\texttt{~~~~Nil -> b}$\\
-$\texttt{~~|~Cons (h, t) -> Cons (h, append t b)}$
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook107x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Notice how all the conveniences of pattern matching such as completeness detection and the use of the underscore work for our own types too.
 
@@ -1885,18 +1814,11 @@ Our \textsf{sequence} was an example of a recursively-defined type, which can be
 
 \noindent Here's a suitable type for such expressions:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-$\texttt{\ptype expr =}$\\
-$\texttt{~~Num \pof int}$\\
-$\texttt{|~Add \pof expr * expr}$\\
-$\texttt{|~Subtract \pof expr * expr}$\\
-$\texttt{|~Multiply \pof expr * expr}$\\
-$\texttt{|~Divide \pof expr * expr}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook108x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent For example, the expression $1 + 2 * 3$ is represented in this data type as:
 
@@ -1906,21 +1828,11 @@ $\texttt{|~Divide \pof expr * expr}$\vphantom{g}
 
 \noindent We can now write a function to evaluate expressions:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{evaluate :}\textsf{ expr $\rightarrow$ \textbf{int}}\\
-\\
-$\texttt{\pletrec evaluate e =}$\\
-$\texttt{~~\pmatch e \pwith}$\\
-$\texttt{~~~~Num x -> x}$\\
-$\texttt{~~|~Add (e, e\textquotesingle ) -> evaluate e + evaluate e\textquotesingle }$\\
-$\texttt{~~|~Subtract (e, e\textquotesingle ) -> evaluate e - evaluate e\textquotesingle }$\\
-$\texttt{~~|~Multiply (e, e\textquotesingle ) -> evaluate e * evaluate e\textquotesingle }$\\
-$\texttt{~~|~Divide (e, e\textquotesingle ) -> evaluate e / evaluate e\textquotesingle }$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook109x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Building our own types leads to clearer programs with more predictable behaviour, and helps us to think about a problem -- often the functions are easy to write once we have decided on appropriate types.
 
@@ -1952,15 +1864,11 @@ We have used lists to represent collections of elements of like type but varying
 
 How can we represent such trees using an OCaml type? When we built our version of the OCaml list type, we had two constructors -- \texttt{Cons} to hold a head and a tail, and \texttt{Nil} to represent the end of the list. With a tree, we need a version of Cons which can hold two tails -- the left and right, and we still need a version of \texttt{Nil}.
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent$\texttt{\ptype\ \textquotesingle a tree =}$\\
-\noindent$\texttt{~~Br of \textquotesingle a * \textquotesingle a tree * \textquotesingle a tree}$\hfill\textit{branch}\\
-\noindent$\texttt{|~Lf}$\hfill\textit{leaf}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook110x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Our type is called \textsf{tree}, and is polymorphic (can hold any kind of data at the branches). There are two constructors: \texttt{Br} for branches, which hold three things in a tuple: an element, the left sub-tree, and the right sub-tree. If it is not a \texttt{Br}, it is a \texttt{Lf} (leaf), which is used to signal that there is no left, or no right sub-tree. Here are some representations in our new type of integer trees:
 
@@ -1980,82 +1888,44 @@ How can we represent such trees using an OCaml type? When we built our version o
 
 \noindent The empty tree is simply \texttt{Lf}. You can see now why we used abbreviated constructor names -- even small trees result in long textual representations. Let us write some simple functions on trees. To calculate the number of elements in the tree, we just count one for each branch, and zero for each leaf:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{size :}\textsf{ $\alpha$ tree $\rightarrow$ \textbf{int}}\\
-\\
-$\texttt{\pletrec size tr =}$\\
-$\texttt{~~\pmatch tr \pwith}$\\
-$\texttt{~~~~Br (\_, l, r) -> 1 + size l + size r}$\\
-$\texttt{~~|~Lf -> 0}\vphantom{g}$
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook111x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Notice that the recursive function follows the shape of the recursive type. A similar function can be used to add up all the integers in an \textsf{\textbf{int} tree}:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{total :}\textsf{ \textbf{int} tree $\rightarrow$ \textbf{int}}\\
-\\
-$\texttt{\pletrec total tr =}$\\
-$\texttt{~~\pmatch tr \pwith}$\\
-$\texttt{~~~~Br (x, l, r) -> x + total l + total r}$\\
-$\texttt{~~|~Lf -> 0}\vphantom{g}$
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook112x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent How can we calculate the maximum depth of a tree? The depth is the longest path from the root (top) of the tree to a leaf.
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{max :}\textsf{ \textbf{int} $\rightarrow$ \textbf{int} $\rightarrow$ \textbf{int}}\\
-\noindent\texttt{maxdepth :}\textsf{ $\alpha$ tree $\rightarrow$ \textbf{int}}\\
-\\
-$\texttt{\plet max x y =}$\\
-$\texttt{~~\pif x > y \pthen x \pelse y}$\\
-\\
-$\texttt{\pletrec maxdepth tr =}$\\
-$\texttt{~~\pmatch tr \pwith}$\\
-$\texttt{~~~~Br (\_, l, r) -> 1 + max (maxdepth l) (maxdepth r)}$\\
-$\texttt{~~|~Lf -> 0\vphantom{g}}$
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook113x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent We defined a function \texttt{max} which returns the larger of two integers. Then, in our main function, we count a leaf as zero depth, and calculate the depth of a branch as one plus the maximum of the left and right sub-trees coming from that branch. Now consider extracting all of the elements from a tree into a list:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{list\_of\_tree :}\textsf{ $\alpha$ tree $\rightarrow$ $\alpha$ \textbf{list}}\\
-\\
-$\texttt{\pletrec list\_of\_tree tr =}$\\
-$\texttt{~~\pmatch tr \pwith}$\\
-$\texttt{~~~~Br (x, l, r) -> list\_of\_tree l @ [x] @ list\_of\_tree r}$\\
-$\texttt{~~|~Lf -> []}\vphantom{g}$
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook114x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Notice that we chose to put all the elements on the left branch before the current element, and all the elements in the right branch after. This is arbitrary (it is clear that there are multiple answers to the question ``How can I extract all the elements from a tree as a list?''). Before we consider real applications of trees, let us look at one more function. Here is how to map over trees:
 
-\smspace
+
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{tree\_map :}\textsf{ \textmd{(}$\alpha$ $\rightarrow$ $\beta$\textmd{)} $\rightarrow$ $\alpha$ tree $\rightarrow$ $\beta$ tree}\\
-\\
-$\texttt{\pletrec tree\_map f tr =}$\\
-$\texttt{~~\pmatch tr \pwith}$\\
-$\texttt{~~~~Br (x, l, r) -> Br (f x, tree\_map f l, tree\_map f r)}$\\
-$\texttt{~~|~Lf -> Lf\vphantom{g}}$
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook115x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Notice the similarity to our \texttt{map} function for lists, both in the type and the definition.
 
@@ -2083,57 +1953,27 @@ So, our tree representing a dictionary mapping integers like \texttt{1} to their
 
 Lookup is simple: start at the top, and if we have not found the key we are looking for, go left or right depending upon whether the required key is smaller or larger than the value at the current branch. If we reach a leaf, the key was not in the tree (assuming the tree is a well-formed binary search tree), and we raise an exception.
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{lookup :}\textsf{ \textmd{(}$\alpha \times \beta$\textmd{)} tree $\rightarrow$ $\alpha$ $\rightarrow$ $\beta$}\\
-\\
-$\texttt{\pletrec lookup tr k =}$\\
-$\texttt{~~\pmatch tr \pwith}$\\
-$\texttt{~~~~Lf -> \praise Not\_found}$\\
-$\texttt{~~|~Br ((k\textquotesingle , v), l, r) ->}$\\
-$\texttt{~~~~~~\pif k = k\textquotesingle\ \pthen v}$\hfill\textit{found the key -- return the value}\\
-$\texttt{~~~~~~\pelse \pif k < k\textquotesingle\ \pthen lookup l k}$\hfill\textit{go left}\\
-$\texttt{~~~~~~\pelse lookup r k}$\hfill\textit{go right} 
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook116x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Alternatively, we may use the \textsf{option} type to avoid exceptions:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{lookup :}\textsf{ \textmd{(}$\alpha \times \beta$\textmd{)} tree $\rightarrow$ $\alpha$ $\rightarrow$ $\beta$ \textsf{option}}\\
-\\
-$\texttt{\pletrec lookup tr k =}$\\
-$\texttt{~~\pmatch tr \pwith}$\\
-$\texttt{~~~~Lf -> None}$\\
-$\texttt{~~|~Br ((k\textquotesingle , v), l, r) ->}$\\
-$\texttt{~~~~~~\pif k = k\textquotesingle\ \pthen Some v}$\hfill\textit{found the key -- return the value}\\
-$\texttt{~~~~~~\pelse \pif k < k\textquotesingle\ \pthen lookup l k}$\hfill\textit{go left}\\
-$\texttt{~~~~~~\pelse lookup r k}$\hfill\textit{go right} 
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook117x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent How can we insert a new key-value pair into an existing tree? We can find the position to insert by using the same procedure as the lookup function -- going left or right at each branch as appropriate. If we find an equal key, we put our new value there instead. Otherwise, we will end up at a leaf, and this is the insertion point -- thus, if the key is not in the dictionary when \texttt{insert} is used, it will be added in place of an existing leaf.
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{insert :}\textsf{ \textmd{(}$\alpha \times \beta$\textmd{)} tree $\rightarrow$ $\alpha$ $\rightarrow$ $\beta$ $\rightarrow$ \textmd{(}$\alpha \times \beta$\textmd{)} tree}\\
-\\
-$\texttt{\pletrec insert tr k v =}$\\
-$\texttt{~~\pmatch tr \pwith}$\\
-$\texttt{~~~~Lf -> Br ((k, v), Lf, Lf)}$\hfill\textit{insert at leaf}\\
-$\texttt{~~|~Br ((k\textquotesingle , v\textquotesingle ), l, r) ->}$\\
-$\texttt{~~~~~~\pif k = k\textquotesingle\ \pthen Br ((k, v), l, r)}$\hfill\textit{replace value}\\
-$\texttt{~~~~~~\pelse \pif k < k\textquotesingle\ \pthen Br ((k\textquotesingle , v\textquotesingle ), insert l k v,  r)}$\hfill\textit{go left}\\
-$\texttt{~~~~~~\pelse Br ((k\textquotesingle , v\textquotesingle ), l, insert r k v)}$\hfill\textit{go right} 
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook118x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent For example, if we wish to insert the value \texttt{"zero"} for the key \texttt{0} in the tree drawn above, we would obtain
 
@@ -2189,32 +2029,19 @@ There is another built-in function \texttt{print\_string} of type \textsf{\textb
 
 We can produce several side-effects, one after another, using the \index{;@\texttt{;}}\texttt{;} symbol. This evaluates the expression on its left hand side, throws away the result (which will normally be \textsf{\textbf{unit}} anyway), and then evaluates the expression to its right hand side, returning the result (which is often \textbf{\textsf{unit}} too). The type of the expression $x$ \texttt{;} $y$ is thus the type of $y$. For example, we can write a function to write to the screen an \textsf{\textbf{int} $\times$ \textbf{string}} pair as an integer on one line, followed by a string on another:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{print\_dict\_entry :}\textsf{ \textbf{int} $\times$ \textbf{string} $\rightarrow$ \textbf{unit}}\\
-\\
-$\texttt{\plet print\_dict\_entry (k, v) =}$\\
-$\texttt{~~print\_int k ; print\_newline () ; print\_string v ; print\_newline ()}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook119x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Notice we have added a second call to \texttt{print\_newline}, so that our function can be called several times in a row without intervening calls to \texttt{print\_newline}. We wrote the function applications all on one line to emphasize that \texttt{;} behaves a little like an operator. However, for convenience, we would normally write it like this:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{print\_dict\_entry :}\textsf{ \textbf{int} $\times$ \textbf{string} $\rightarrow$ \textbf{unit}}\\
-\\
-$\texttt{\plet print\_dict\_entry (k, v) =}$\\
-$\texttt{~~print\_int k;}$\\
-$\texttt{~~print\_newline ();}$\\
-$\texttt{~~print\_string v;}$\\
-$\texttt{~~print\_newline ()}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook120x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent This makes it look rather like \texttt{;} is used to end each expression, but just remember that \texttt{;} is a bit like an operator -- notice that there is no \texttt{;} after the last \texttt{print\_newline ()}. Let us see how \texttt{print\_dict\_entry} is used in practice:
 
@@ -2230,51 +2057,27 @@ $\texttt{~~print\_newline ()}$\vphantom{g}
 
 \noindent How might we print a whole dictionary (represented as a list of entries) this way? Well, we could write our own function to iterate over all the entries:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{print\_dict :}\textsf{ \textmd{(}\textbf{int} $\times$ \textbf{string}\textmd{)} \textbf{list} $\rightarrow$ \textbf{unit}}\\
-\\
-$\texttt{\pletrec print\_dict d =}$\\
-$\texttt{~~\pmatch d \pwith}$\\
-$\texttt{~~~~[] -> ()}$\hfill\textit{do nothing; just return unit}\\
-$\texttt{~~|~h::t -> print\_dict\_entry h; print\_dict t}$\hfill\textit{do this one, and move on}\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook121x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Better, we can extract this method into a more general one, for doing an action on each element of a list:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{iter :}\textsf{ \textmd{(}$\alpha$ $\rightarrow$ $\beta$\textmd{)} $\rightarrow$ $\alpha$ \textbf{list} $\rightarrow$ \textbf{unit}}\\
-\\
-$\texttt{\pletrec iter f l =}$\\
-$\texttt{~~\pmatch l \pwith}$\\
-$\texttt{~~~~[] -> ()}$\hfill\textit{do nothing; just return unit}\\
-$\texttt{~~|~h::t -> f h; iter f t}$\hfill\textit{do this one, and move on}\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook122x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Normally $\beta$ will be \textsf{\textbf{unit}}. Now we can redefine \texttt{print\_dict} using \texttt{iter}:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{print\_dict :}\textsf{ \textmd{(}\textbf{int} $\times$ \textbf{string}\textmd{)} \textbf{list} $\rightarrow$ \textbf{unit}}\\
-\\
-$\texttt{\plet print\_dict d =}$\\
-$\texttt{~~iter print\_dict\_entry d}$\\
-\\
-\textit{or even\ldots}\\
-\\
-$\texttt{\plet print\_dict =}$\\
-$\texttt{~~iter print\_dict\_entry}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook123x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent For example:
 
@@ -2296,19 +2099,11 @@ Now we should like to write a function to read a dictionary as an \textsf{\textm
 
 We want the user to enter a series of keys and values (integers and strings), one per line. They will enter zero for the integer to indicate no more input. Our function will take no argument, and return a dictionary of integers and strings, so its type will be \textsf{\textbf{unit} $\rightarrow$ \textmd{(}\textbf{int} $\times$ \textbf{string}\textmd{)} \textbf{list}}.
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{read\_dict :}\textsf{ \textbf{unit} $\rightarrow$ \textmd{(}\textbf{int} $\times$ \textbf{string}\textmd{)} \textbf{list}}\\
-\\
-$\texttt{\pletrec read\_dict () =}$\\
-$\texttt{~~\plet i = read\_int () \pin}$\hfill\textit{read an integer}\\
-$\texttt{~~~~\pif i = 0 \pthen [] \pelse}$\hfill\textit{if zero, we are done}\\
-$\texttt{~~~~~~\plet name = read\_line () \pin}$\hfill\textit{otherwise, read a name too}\\
-$\texttt{~~~~~~~~(i, name) ::\ read\_dict ()}$\hfill\textit{build a dictionary entry, fetch another}\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook124x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent We can run this function and type in some suitable values:
 
@@ -2342,25 +2137,11 @@ $\texttt{~~~~~~~~(i, name) ::\ read\_dict ()}$\hfill\textit{build a dictionary e
 
 \noindent We must handle this exception, and ask the user to try again. Here's a revised function:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{read\_dict :}\textsf{ \textbf{unit} $\rightarrow$ \textmd{(}\textbf{int} $\times$ \textbf{string}\textmd{)} \textbf{list}}\\
-\\
-$\texttt{\pletrec read\_dict () =}$\\
-$\texttt{~~\ptry}$\\
-$\texttt{~~~~\plet i = read\_int () \pin}$\hfill\textit{read an integer}\\
-$\texttt{~~~~~~\pif i = 0 \pthen [] \pelse}$\hfill\textit{if zero, we are done}\\
-$\texttt{~~~~~~~~\plet name = read\_line () \pin}$\hfill\textit{otherwise, read a name too}\\
-$\texttt{~~~~~~~~~~(i, name) ::\ read\_dict ()}$\hfill\textit{build a dictionary entry, fetch another}\\
-$\texttt{~~\pwith}$\\
-$\texttt{~~~~Failure "int\_of\_string" ->}$\\
-$\texttt{~~~~~~print\_string "This is not a valid integer.\ Please try again.";}$\\
-$\texttt{~~~~~~print\_newline ();}$\\
-$\texttt{~~~~~~read\_dict ()}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook125x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Now, typing mistakes can be fixed interactively:
 
@@ -2385,41 +2166,22 @@ It is inconvenient to have to type new data sets in each time, so we will write 
 
 \index{in\_channel@\textbf{\textsf{in\raisebox{2pt}{\_}channel}}}\index{out\_channel@\textbf{\textsf{out\raisebox{2pt}{\_}channel}}}OCaml has some basic functions to help us read and write from places data can be stored, such as files. Places we can read from have type \textsf{\textbf{in\raisebox{2pt}{\_}channel}} and places we can write to have type \textsf{\textbf{out\raisebox{2pt}{\_}channel}}. Here are functions for writing a dictionary of type \textsf{\textmd{(}\textbf{int} $\times$ \textbf{string}\textmd{)}} to a channel: 
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{entry\_to\_channel :}\textsf{ \textbf{out\raisebox{2pt}{\_}channel} $\rightarrow$ \textmd{(}\textbf{int} $\times$ \textbf{string}\textmd{)} $\rightarrow$ \textbf{unit}}\\
-\noindent\texttt{dictionary\_to\_channel :}\textsf{ \textbf{out\raisebox{2pt}{\_}channel} $\rightarrow$ \textmd{(}\textbf{int} $\times$ \textbf{string}\textmd{)} \textbf{list} $\rightarrow$ \textbf{unit}}\\
-\\
-$\texttt{\plet entry\_to\_channel ch (k, v) =}$\\
-$\texttt{~~output\_string ch (string\_of\_int k);}$\\
-$\texttt{~~output\_char ch \textquotesingle\textbackslash n\textquotesingle ;}$\\
-$\texttt{~~output\_string ch v;}$\\
-$\texttt{~~output\_char ch \textquotesingle\textbackslash n\textquotesingle}$\\
-\\
-$\texttt{\plet dictionary\_to\_channel ch d =}$\\
-$\texttt{~~iter (entry\_to\_channel ch) d}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook126x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent We are using the functions \texttt{output\_string} and \texttt{output\_char} to write the data in the same format we used to print it to the screen. There is no \texttt{output\_int} function, so we have used the built-in \texttt{string\_of\_int} function to build a string from the integer. The character \texttt{\textquotesingle\textbackslash n\textquotesingle} is a special one, representing moving to the next line (there is no \texttt{output\_newline} function).
 
 How do we obtain such a channel? The function \texttt{open\_out} gives an output channel for filename given as a string. It has type \textsf{\textbf{string $\rightarrow$ out\raisebox{2pt}{\_}channel}}. After we have written the contents to the file, we must call \texttt{close\_out} (which has type \textsf{\textbf{out\raisebox{2pt}{\_}channel} $\rightarrow$ \textbf{unit}}) to properly \index{file}close the file.
 
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{dictionary\_to\_file :}\textsf{ \textbf{string} $\rightarrow$ \textmd{(}\textbf{int} $\times$ \textbf{string}\textmd{)} \textbf{list} $\rightarrow$ \textbf{unit}}\\
-\\
-$\texttt{\plet dictionary\_to\_file filename dict =}$\\
-$\texttt{~~\plet ch = open\_out filename \pin}$\\
-$\texttt{~~~~dictionary\_to\_channel ch dict;}$\\
-$\texttt{~~~~close\_out ch}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook127x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent After running this function, you should find a file of the chosen name on your computer in the same folder from which you are running OCaml. If you are not sure where the file is being put, consult the documentation for your OCaml implementation, or use a full file path such as \texttt{"C:/file.txt"} or \texttt{"/home/yourname/file.txt"}, again depending on your system. In the following example, we are reading a dictionary from the user and writing it to file as \texttt{file.txt}:
 
@@ -2439,42 +2201,19 @@ $\texttt{~~~~close\_out ch}$\vphantom{g}
 
 \noindent Now we have written a file, we can read it back in:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{entry\_of\_channel :}\textsf{ \textbf{in\raisebox{2pt}{\_}channel} $\rightarrow$ \textmd{(}\textbf{int} $\times$ \textbf{string}\textmd{)}}\\
-\noindent\texttt{dictionary\_of\_channel :}\textsf{ \textbf{in\raisebox{2pt}{\_}channel} $\rightarrow$ \textmd{(}\textbf{int} $\times$ \textbf{string}\textmd{)} \textbf{list}}\\
-\\
-$\texttt{\plet entry\_of\_channel ch =}$\\
-$\texttt{~~\plet number = input\_line ch \pin}$\\
-$\texttt{~~~~\plet name = input\_line ch \pin}$\\
-$\texttt{~~~~~~(int\_of\_string number, name)}$\\
-\\
-$\texttt{\pletrec dictionary\_of\_channel ch =}$\\
-$\texttt{~~\ptry}$\\
-$\texttt{~~~~\plet e = entry\_of\_channel ch \pin}$\\
-$\texttt{~~~~~~e ::\ dictionary\_of\_channel ch}$\\
-$\texttt{~~\pwith}$\\
-$\texttt{~~~~End\_of\_file -> []}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook128x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent We have written a function \texttt{entry\_of\_channel} to read a single integer and string (one element of our dictionary) from an input channel using the built-in functions \texttt{input\_line} and \texttt{int\_of\_string}, and a function \texttt{dictionary\_of\_channel} to read all of them as a dictionary. It makes use of the built-in exception \index{End\_of\_file@\texttt{End\_of\_file}}\texttt{End\_of\_file} to detect when there is no more in the file. Now, we can build the main function to read our dictionary from the file:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{dictionary\_of\_file :}\textsf{ \textbf{string} $\rightarrow$ \textmd{(}\textbf{int} $\times$ \textbf{string}\textmd{)} \textbf{list}}\\
-\\
-$\texttt{\plet dictionary\_of\_file filename =}$\\
-$\texttt{~~\plet ch = open\_in filename \pin}$\\
-$\texttt{~~~~\plet dict = dictionary\_of\_channel ch \pin}$\\
-$\texttt{~~~~~~close\_in ch;}$\\
-$\texttt{~~~~~~dict}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook129x.png}
 \end{center}
-\smspace
+\medskip
 
 {\hyphenpenalty=10000\begin{sloppypar}
 \noindent The process is the same as for \texttt{dictionary\_to\_file} but we use \texttt{open\_in} and \texttt{close\_in} instead of \texttt{open\_out} and \texttt{close\_out}.
@@ -2490,27 +2229,11 @@ $\texttt{~~~~~~dict}$\vphantom{g}
 
 We have introduced the types \textsf{\textbf{unit}}, \textsf{\textbf{in\raisebox{2pt}{\_}channel}}, and \textsf{\textbf{out\raisebox{2pt}{\_}channel}}, and the exception \texttt{End\_of\_file}. Here are the functions we have used:
 
-\vspace{8mm}
-\bgroup
-\def\arraystretch{1.2}
-\noindent\begin{tabular}{@{}llp{0.46\textwidth}@{}} \toprule
-Function & Type & Description \\\midrule
-\index{print\_int@\texttt{print\_int}}\texttt{print\_int} & \textsf{\textbf{int} $\rightarrow$ \textbf{unit}} & Print an integer to the screen.\\
-\index{print\_string@\texttt{print\_string}}\texttt{print\_string} & \textsf{\textbf{string} $\rightarrow$ \textbf{unit}} & Print a string to the screen.\\
-\index{print\_newline@\texttt{print\_newline}}\texttt{print\_newline} & \textsf{\textbf{unit $\rightarrow$ unit}} & Print a newline character to the screen, moving to the beginning of the next line.\\
-\index{read\_line@\texttt{read\_line}}\texttt{read\_line} & \textsf{\textbf{unit $\rightarrow$ string}} & Read a string from the user. The user indicates they have finished by pressing the Enter key.\\
-\index{read\_int@\texttt{read\_int}}\texttt{read\_int} & \textsf{\textbf{unit $\rightarrow$ int}} & Read an integer from the user. The user indicates they have finished by pressing the Enter key. Raises \texttt{Failure "int\_of\_string"} if the user types something other than an integer.\\
-\index{int\_of\_string@\texttt{int\_of\_string}}\texttt{int\_of\_string} & \textsf{\textbf{string $\rightarrow$ int}} & Make an integer from a string. Raises \texttt{Failure "int\_of\_string"} if the string does not represent a valid integer.\\
-\index{string\_of\_int@\texttt{string\_of\_int}}\texttt{string\_of\_int} & \textsf{\textbf{int $\rightarrow$ string}} & Makes a string representation of an integer.\\
-\index{open\_out}\texttt{open\_out} & \textsf{\textbf{string $\rightarrow$ out\raisebox{2pt}{\_}channel}} & Given a filename, open a channel for output. Raises the exception \index{Sys\_error@\texttt{Sys\_error}}\texttt{Sys\_error} if the file could not be opened.\\
-\index{close\_out@\texttt{close\_out}}\texttt{close\_out} & \textsf{\textbf{out\raisebox{2pt}{\_}channel $\rightarrow$ unit}} & Close an output channel.\\
-\index{open\_in@\texttt{open\_in}}\texttt{open\_in} & \textsf{\textbf{string $\rightarrow$ in\raisebox{2pt}{\_}channel}} & Given a filename, open a channel for input. Raises the exception \texttt{Sys\_error} if the file could not be opened.\\
-\index{close\_in@\texttt{close\_in}}\texttt{close\_in} & \textsf{\textbf{in\raisebox{2pt}{\_}channel $\rightarrow$ unit}} & Close an input channel.\\
-\index{output\_string@\texttt{output\_string}}\texttt{output\_string} & \textsf{\textbf{out\raisebox{2pt}{\_}channel $\rightarrow$ string $\rightarrow$ unit}} & Write a string to an output channel.\\
-\index{output\_char@\texttt{output\_char}}\texttt{output\_char} & \textsf{\textbf{out\raisebox{2pt}{\_}channel $\rightarrow$ char $\rightarrow$ unit}} & Write a character to an output channel. \\ \bottomrule
-\end{tabular}
-\egroup
-
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook130x.png}
+\end{center}
+\medskip
 
 \clearpage
 \section*{Questions}
@@ -2520,15 +2243,11 @@ Function & Type & Description \\\midrule
 \item In our \texttt{read\_dict} function, we waited for the user to type \texttt{0} to indicate no more data. This is clumsy. Implement a new \texttt{read\_dict} function with a nicer system. Be careful to deal with possible exceptions which may be raised.
 \item Write a function which, given a number $x$, prints the $x$-times table to a given file name. For example, \texttt{table "table.txt" 5} should produce a file \texttt{table.txt} containing the following:
 
-\vspace{1mm}
-\begin{tabular}{lllll}
- \verb!1! & \verb!     2! & \verb!     3! & \verb!     4! & \verb!     5!\\
- \verb!2! & \verb!     4! & \verb!     6! & \verb!     8! & \verb!     10!\\
- \verb!3! & \verb!     6! & \verb!     9! & \verb!     12! & \verb!     15!\\
- \verb!4! & \verb!     8! & \verb!     12! & \verb!     16! & \verb!     20!\\
- \verb!5! & \verb!     10! & \verb!     15! & \verb!     20! & \verb!     25!
-\end{tabular}
-\vspace{1mm}
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook131x.png}
+\end{center}
+\medskip
 
 \noindent Adding the special tabulation character \texttt{'\textbackslash t'}} after each number will line up the columns.
 
@@ -2584,17 +2303,11 @@ OCaml provides a construct known as a \index{ref@\textbf{\textsf{ref}}}\index{re
 
 \noindent Notice that \texttt{p} is unchanged. Here's a function to swap the contents of two references:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{swap :}\textbf{\textsf{ $\alpha$ ref $\rightarrow$ $\alpha$ ref $\rightarrow$ unit}}\\
-\\
-$\texttt{\plet swap a b =}$\\
-$\texttt{~~\plet t = !a \pin}$\\
-$\texttt{~~~~a := !b; b := t}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook132x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent We needed to use a temporary name \texttt{t} to store the contents of \texttt{a}. Can you see why?
 
@@ -2614,32 +2327,19 @@ For readability, OCaml lets us miss out the \texttt{\pelse} part of the \texttt{
 
 \noindent and if \texttt{x} is not zero, the expression will just evaluate to \texttt{()}. Due to this, when putting imperative code inside \texttt{\textbf{if \ldots\ then \ldots\ else \ldots}} constructs, we need to surround the inner imperative expressions with parentheses so the meaning is unambiguous:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-$\texttt{\pif x = y \pthen}$\\
-$\texttt{~~(a := !a + 1;}$\\
-$\texttt{~~~b := !b - 1)}$\\
-$\texttt{\pelse}$\\
-$\texttt{~~c := !c + 1}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook133x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent OCaml allows us to use \index{begin@\texttt{\textbf{begin}}}\index{end@\texttt{\textbf{end}}}\texttt{\textbf{begin}} and \texttt{\textbf{end}} instead, for readability:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-$\texttt{\pif x = y \pthen}$\\
-$\texttt{~~\pbegin}$\\
-$\texttt{~~~~a := !a + 1;}$\\
-$\texttt{~~~~b := !b - 1}$\\
-$\texttt{~~\pend}$\\
-$\texttt{\pelse}$\\
-$\texttt{~~c := !c + 1}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook134x.png}
 \end{center}
+\medskip
 
 \section*{Doing it again and again}
 
@@ -2665,20 +2365,11 @@ There are two ways to repeat an action. To perform an action a fixed number of t
 
 There is another looping construct -- this time for evaluating an expression repeatedly until some condition is true. This is the \ \index{while@\texttt{\textbf{while}}}\index{do@\texttt{\textbf{do}}}\index{done@\texttt{\textbf{done}}}\texttt{\textbf{while} \ldots\ \textbf{do} \ldots\ \textbf{done}}\ \ construct. It takes a boolean condition, and evaluates a given expression repeatedly, zero or more times, until the boolean condition is \texttt{false}. For example, here is a function which, given a positive integer, calculates the lowest power of two greater than or equal to that number (i.e. for the argument 37, the result will be 64).
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{smallest\_pow2 :}\textsf{\textbf{ int $\rightarrow$ int}}\\
-\\
-$\texttt{\plet smallest\_pow2 x =}$\\
-$\texttt{~~\plet t = ref 1 \pin}$\hfill\textit{start the test value at 1}\\
-$\texttt{~~~~\pwhile\ !t < x \pdo}$\hfill\textit{each time it is less than \texttt{x}\ldots}\\
-$\texttt{~~~~~~t := !t * 2}$\hfill\textit{\ldots double it}\\
-$\texttt{~~~~\pdone;}$\\
-$\texttt{~~~~!t}$\hfill\textit{the final result is the contents of \texttt{t}}\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook135x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent The \texttt{\textbf{while}} loop continues until the contents of the reference \texttt{t} is greater than or equal to \texttt{x}. At that point, it ends, and the contents of \texttt{t} is returned from the function. Again, note that the type of the whole \,\texttt{\textbf{while} \ldots\ \textbf{do} \ldots\ \textbf{done}}\  construct is \textbf{\textsf{unit}}.
 
@@ -2686,51 +2377,21 @@ $\texttt{~~~~!t}$\hfill\textit{the final result is the contents of \texttt{t}}\v
 
 We are going to write a program to count the number of words, sentences and lines in a text file. We shall consider the opening paragraph of Kafka's ``Metamorphosis''.
 
-\begin{verbatim}
-One morning, when Gregor Samsa woke from troubled dreams, he found
-himself transformed in his bed into a horrible vermin.  He lay on
-his armour-like back, and if he lifted his head a little he could
-see his brown belly, slightly domed and divided by arches into stiff
-sections.  The bedding was hardly able to cover it and seemed ready
-to slide off any moment.  His many legs, pitifully thin compared
-with the size of the rest of him, waved about helplessly as he
-looked.
-\end{verbatim}
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook136x.png}
+\end{center}
+\medskip
 
 \noindent There are newline characters at the end of each line, save for the last. You can cut and paste or type this into a text file to try these examples out. Here, it is saved as \texttt{gregor.txt}.
 
 We will just count lines first. To this, we will write a function \texttt{channel\_statistics} to gather the statistics by reading an input channel and printing them. Then we will have a function to open a named file, call our first function, and close it again.
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{channel\_statistics :}\textsf{\textbf{ in\raisebox{2pt}{\_}channel $\rightarrow$ unit}}\\
-\noindent\texttt{file\_statistics :}\textsf{\textbf{ string $\rightarrow$ unit}}\\
-\\
-$\texttt{\plet channel\_statistics in\_channel =}$\\
-$\texttt{~~\plet lines = ref 0 \pin}$\\
-$\texttt{~~~~\ptry}$\\
-$\texttt{~~~~~~\pwhile true \pdo}$\\
-$\texttt{~~~~~~~~\plet line = input\_line in\_channel \pin}$\\
-$\texttt{~~~~~~~~~~lines := !lines + 1}$\\
-$\texttt{~~~~~~\pdone}$\\
-$\texttt{~~~~\pwith}$\\
-$\texttt{~~~~~~End\_of\_file ->}$\\
-$\texttt{~~~~~~~~print\_string "There were ";}$\\
-$\texttt{~~~~~~~~print\_int !lines;}$\\
-$\texttt{~~~~~~~~print\_string " lines.";}$\\
-$\texttt{~~~~~~~~print\_newline ()}$\\
-\\
-$\texttt{\plet file\_statistics name =}$\\
-$\texttt{~~\plet channel = open\_in name \pin}$\\
-$\texttt{~~~~\ptry}$\\
-$\texttt{~~~~~~channel\_statistics channel;}$\\
-$\texttt{~~~~~~close\_in channel}$\\
-$\texttt{~~~~\pwith}$\\
-$\texttt{~~~~~~\_ -> close\_in channel}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook137x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Notice the use of \texttt{true} as the condition for the \textbf{\texttt{while}} construct. This means the computation would carry on forever, except that the \texttt{End\_of\_file} exception must eventually be raised. Note also that OCaml emits  a warning when reading the \texttt{channel\_statistics} function:
 
@@ -2750,44 +2411,11 @@ $\texttt{~~~~~~\_ -> close\_in channel}$\vphantom{g}
 
 \noindent Let us update the program to count the number of words, characters, and sentences. We will do this simplistically, assuming that the number of words can be counted by counting the number of spaces, and that the sentences can be counted by noting instances of \texttt{'.'}, \texttt{'!'}, and \texttt{'?'}. We can extend the \texttt{channel\_statistics} function appropriately -- \texttt{file\_statistics} need not change:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{channel\_statistics :}\textsf{\textbf{ in\raisebox{2pt}{\_}channel $\rightarrow$ unit}}\\
-\\
-$\texttt{\plet channel\_statistics in\_channel =}$\\
-$\texttt{~~\plet lines = ref 0 \pin}$\\
-$\texttt{~~\plet characters = ref 0 \pin}$\\
-$\texttt{~~\plet words = ref 0 \pin}$\\
-$\texttt{~~\plet sentences = ref 0 \pin}$\\
-$\texttt{~~~~\ptry}$\\
-$\texttt{~~~~~~\pwhile true \pdo}$\\
-$\texttt{~~~~~~~~\plet line = input\_line in\_channel \pin}$\\
-$\texttt{~~~~~~~~~~lines := !lines + 1;}$\\
-$\texttt{~~~~~~~~~~characters := !characters + String.length line;}$\\
-$\texttt{~~~~~~~~~~String.iter}$\\
-$\texttt{~~~~~~~~~~~~(\pfun c ->}$\\
-$\texttt{~~~~~~~~~~~~~~~\pmatch c \pwith}$\\
-$\texttt{~~~~~~~~~~~~~~~~~\'.'\ | '?'\ | '!'\ -> sentences := !sentences + 1}$\\
-$\texttt{~~~~~~~~~~~~~~~| ' ' -> words := !words + 1}$\\
-$\texttt{~~~~~~~~~~~~~~~| \_ -> ())}$\\
-$\texttt{~~~~~~~~~~~~line}$\\
-$\texttt{~~~~~~\pdone}$\\
-$\texttt{~~~~\pwith}$\\
-$\texttt{~~~~~~End\_of\_file ->}$\\
-$\texttt{~~~~~~~~print\_string "There were ";}$\\
-$\texttt{~~~~~~~~print\_int !lines;}$\\
-$\texttt{~~~~~~~~print\_string " lines, making up ";}$\\
-$\texttt{~~~~~~~~print\_int !characters;}$\\
-$\texttt{~~~~~~~~print\_string " characters with ";}$\\
-$\texttt{~~~~~~~~print\_int !words;}$\\
-$\texttt{~~~~~~~~print\_string " words in ";}$\\
-$\texttt{~~~~~~~~print\_int !sentences;}$\\
-$\texttt{~~~~~~~~print\_string " sentences.";}$\\
-$\texttt{~~~~~~~~print\_newline ()}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook138x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent We have used the built-in function \texttt{String.iter} of type \textsf{\textbf{\textmd{(}char $\rightarrow$ unit\textmd{)} $\rightarrow$ string $\rightarrow$ unit}} which calls a function we supply on each character of a string.
 
@@ -2871,30 +2499,11 @@ An \index{array@\textbf{\textsf{array}}}\index{array}array is a place for storin
 
 Our main function is getting rather long, so we will write a separate one which, given the completed array prints out the frequencies. If there were no instances of a particular character, no line is printed for that character.
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{print\_histogram :}\textsf{\textbf{ int array $\rightarrow$ unit}}\\
-\\
-$\texttt{\plet print\_histogram arr =}$\\
-$\texttt{~~print\_string "Character frequencies:";}$\\
-$\texttt{~~print\_newline ();}$\\
-$\texttt{~~\pfor x = 0 \pto 255 \pdo}$\hfill\textit{for each character}\\
-$\texttt{~~~~\pif arr.(x) > 0 \pthen}$\hfill\textit{only if the count is non-zero}\\
-$\texttt{~~~~~~\pbegin}$\\
-$\texttt{~~~~~~~~print\_string "For character \textquotesingle";}$\\
-$\texttt{~~~~~~~~print\_char (char\_of\_int x);}$\hfill\textit{print the character}\\
-$\texttt{~~~~~~~~print\_string "\textquotesingle\ (character number ";}$\\
-$\texttt{~~~~~~~~print\_int x;}$\hfill\textit{print the character number}\\
-$\texttt{~~~~~~~~print\_string ") the count is ";}$\\
-$\texttt{~~~~~~~~print\_int arr.(x);}$\hfill\textit{print the count}\\
-$\texttt{~~~~~~~~print\_string ".";}$\\
-$\texttt{~~~~~~~~print\_newline ()}$\\
-$\texttt{~~~~~~\pend}$\\
-$\texttt{~~\pdone}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook139x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent This prints lines like:
 
@@ -2904,51 +2513,11 @@ $\texttt{~~\pdone}$\vphantom{g}
 
 \noindent Now, we can alter our \texttt{channel\_statistics} to create an appropriate array, and update it, once again using \texttt{String.iter}: 
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{channel\_statistics :}\textsf{\textbf{ in\raisebox{2pt}{\_}channel $\rightarrow$ unit}}\\
-\\
-$\texttt{\plet channel\_statistics in\_channel =}$\\
-$\texttt{~~\plet lines = ref 0 \pin}$\\
-$\texttt{~~\plet characters = ref 0 \pin}$\hfill\textit{we do not indent all these \texttt{\textbf{let}}s.}\\
-$\texttt{~~\plet words = ref 0 \pin}$\\
-$\texttt{~~\plet sentences = ref 0 \pin}$\\
-$\texttt{~~\plet histogram = Array.make 256 0 \pin}$\hfill\textit{length 256, all elements initially 0}\\
-$\texttt{~~~~\ptry}$\\
-$\texttt{~~~~~~\pwhile true \pdo}$\\
-$\texttt{~~~~~~~~\plet line = input\_line in\_channel \pin}$\\
-$\texttt{~~~~~~~~~~lines := !lines + 1;}$\\
-$\texttt{~~~~~~~~~~characters := !characters + String.length line;}$\\
-$\texttt{~~~~~~~~~~String.iter}$\\
-$\texttt{~~~~~~~~~~~~(\pfun c ->}$\\
-$\texttt{~~~~~~~~~~~~~~~\pmatch c \pwith}$\\
-$\texttt{~~~~~~~~~~~~~~~~~'.'\ | '?'\ | '!'\ -> sentences := !sentences + 1}$\\
-$\texttt{~~~~~~~~~~~~~~~| ' ' -> words := !words + 1}$\\
-$\texttt{~~~~~~~~~~~~~~~| \_ -> ())}$\\
-$\texttt{~~~~~~~~~~~~line;}$\\
-$\texttt{~~~~~~~~~~String.iter}$\hfill\textit{for each character\ldots}\\
-$\texttt{~~~~~~~~~~~~(\pfun c ->}$\\
-$\texttt{~~~~~~~~~~~~~~\plet i = int\_of\_char c \pin}$\\
-$\texttt{~~~~~~~~~~~~~~~~histogram.(i) <- histogram.(i) + 1)}$\hfill\textit{update histogram}\\
-$\texttt{~~~~~~~~~~~~line}$\\
-$\texttt{~~~~~~\pdone}$\\
-$\texttt{~~~~\pwith}$\\
-$\texttt{~~~~~~End\_of\_file ->}$\\
-$\texttt{~~~~~~~~print\_string "There were ";}$\\
-$\texttt{~~~~~~~~print\_int !lines;}$\\
-$\texttt{~~~~~~~~print\_string " lines, making up ";}$\\
-$\texttt{~~~~~~~~print\_int !characters;}$\\
-$\texttt{~~~~~~~~print\_string " characters with ";}$\\
-$\texttt{~~~~~~~~print\_int !words;}$\\
-$\texttt{~~~~~~~~print\_string " words in ";}$\\
-$\texttt{~~~~~~~~print\_int !sentences;}$\\
-$\texttt{~~~~~~~~print\_string " sentences.";}$\\
-$\texttt{~~~~~~~~print\_newline ();}$\\
-$\texttt{~~~~~~~~print\_histogram histogram}$\hfill\textit{call histogram printer}\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook140x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Here is the output on our text:
 
@@ -3028,15 +2597,11 @@ $\texttt{~~~~~~~~print\_histogram histogram}$\hfill\textit{call histogram printe
   
   \item Write a function \texttt{table} which, given an integer, builds the \textbf{\textsf{int array array}} representing the multiplication table up to that number. For example, \texttt{table 5} should yield:
 
-\vspace{2mm}  
-\noindent\begin{tabular}{@{}lllll@{}}
- \verb!1! & \verb!2! & \verb!3! & \verb!4! & \verb!5!\\
- \verb!2! & \verb!4! & \verb!6! & \verb!8! & \verb!10!\\
- \verb!3! & \verb!6! & \verb!9! & \verb!12! & \verb!15!\\
- \verb!4! & \verb!8! & \verb!12! & \verb!16! & \verb!20!\\
- \verb!5! & \verb!10! & \verb!15! & \verb!20! & \verb!25!
-\end{tabular}
-\vspace{2mm}
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook141x.png}
+\end{center}
+\medskip
 
   There is more than one way to represent this as an array of arrays; you may choose.
   \item The ASCII codes for the lower case letters \texttt{'a'}\ldots\texttt{'z'} are 97\ldots 122, and for the upper case letters \texttt{'A'}\ldots\texttt{'Z'} they are 65\ldots 90. Use the built-in functions \texttt{int\_of\_char} and \texttt{char\_of\_int} to write functions to uppercase and lowercase a character. Non-alphabetic characters should remain unaltered.
@@ -3097,56 +2662,19 @@ Floating-point numbers have type \textbf{\textsf{float}}. We can write a floatin
 
 A number of standard functions are provided, both for operating on floating-point numbers and for converting to and from them, some of which are listed here:
 
-\smspace
-\bgroup
-\def\arraystretch{1.2}
-\noindent\begin{tabular}{@{}llp{0.55\textwidth}@{}} \toprule
-Function & Type & Description\\ \midrule
-\index{sqrt@\texttt{sqrt}}\verb!sqrt! & \textsf{\textbf{float $\rightarrow$ float}} & Square root of a number.\\
-\index{log@\texttt{log}}\verb!log! & \textsf{\textbf{float $\rightarrow$ float}} & Natural logarithm.\\
-\index{log10@\texttt{log10}}\verb!log10! & \textsf{\textbf{float $\rightarrow$ float}} & Logarithm base ten.\\
-\index{sin@\texttt{sin}}\verb!sin! & \textsf{\textbf{float $\rightarrow$ float}} & Sine of an angle, given in radians.\\
-\index{cos@\texttt{cos}}\verb!cos! & \textsf{\textbf{float $\rightarrow$ float}} & Cosine of an angle, given in radians.\\
-\index{tan@\texttt{tan}}\verb!tan! & \textsf{\textbf{float $\rightarrow$ float}} & Tangent of an angle, given in radians.\\
-\index{atan@\texttt{atan}}\verb!atan! & \textsf{\textbf{float $\rightarrow$ float}} & Arctangent of an angle, given in radians.\\
-\index{ceil@\texttt{ceil}}\verb!ceil! & \textsf{\textbf{float $\rightarrow$ float}} & Calculate the nearest whole number at least as big as a floating-point number.\\
-\index{floor@\texttt{floor}}\verb!floor! & \textsf{\textbf{float $\rightarrow$ float}} & The nearest whole number at least as small as a floating-point number.\\
-\index{float\_of\_int@\texttt{float\_of\_int}}\verb!float_of_int! & \textsf{\textbf{int $\rightarrow$ float}}& Convert an integer to a floating-point number.\\
-\index{int\_of\_float@\texttt{int\_of\_float}}\verb!int_of_float!& \textsf{\textbf{float $\rightarrow$ int}}& Build an integer from a floating-point number, ignoring the non-integer part.\\
-\index{print\_float@\texttt{print\_float}}\verb!print_float! & \textsf{\textbf{float $\rightarrow$ unit}} & Print a floating-point number to the screen.\\
-\index{string\_of\_float@\texttt{string\_of\_float}}\verb!string_of_float! & \textsf{\textbf{float $\rightarrow$ string}} & Build a string from a floating-point number.\\
-\index{float\_of\_string@\texttt{float\_of\_string}}\verb!float_of_string! & \textsf{\textbf{string $\rightarrow$ float}} & Build a floating-point number from a string. Raises \texttt{Failure "float\_of\_string"} on a bad argument. \\ \bottomrule
-\end{tabular}
-\egroup
-\smspace
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook142x.png}
+\end{center}
+\medskip
 
 \noindent Let us write some functions with floating-point numbers. We will write some simple operations on vectors in two dimensions. We will represent a point as a pair of floating-point numbers of type \textsf{\textbf{float $\times$ float}} such as \texttt{(2.0, 3.0)}. We will represent a vector as a pair of floating-point numbers too. Now we can write a function to build a vector from one point to another, one to find the length of a vector, one to offset a point by a vector, and one to scale a vector to a given length:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{make\_vector :}\textbf{\textsf{ float $\times$ float $\rightarrow$ float $\times$ float $\rightarrow$ float $\times$ float}}\\
-\noindent\texttt{vector\_length :}\textbf{\textsf{ float $\times$ float $\rightarrow$ float}}\\
-\noindent\texttt{offset\_point :}\textbf{\textsf{ float $\times$ float $\rightarrow$ float $\times$ float $\rightarrow$ float $\times$ float}}\\
-\noindent\texttt{scale\_to\_length :}\textbf{\textsf{ float $\rightarrow$ float $\times$ float $\rightarrow$ float $\times$ float}}\\
-\\
-$\texttt{\plet make\_vector (x0, y0) (x1, y1) =}$\\
-$\texttt{~~(x1 -.\ x0, y1 -.\ y0)}$\\
-\\
-$\texttt{\plet vector\_length (x, y) =}$\\
-$\texttt{~~sqrt (x *.\ x +.\ y *.\ y)}$\\
-\\
-$\texttt{\plet offset\_point (x, y) (px, py) =}$\\
-$\texttt{~~(px +.\ x, py +.\ y)}$\\
-\\
-$\texttt{\plet scale\_to\_length l (a, b) =}$\\
-$\texttt{~~\plet currentlength = vector\_length (a, b) \pin}$\\
-$\texttt{~~~~\pif currentlength = 0.\ \pthen (a, b) \pelse}$\hfill\textit{to avoid division by zero}\\
-$\texttt{~~~~~~\plet factor = l /.\ currentlength \pin}$\\
-$\texttt{~~~~~~~~(a *.\ factor, b *.\ factor)}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook143x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Notice that we have to be careful about division by zero, just as with integers. We have used tuples for the points because it is easier to read this way -- we could have passed each floating-point number as a separate argument instead, of course.
 
@@ -3165,32 +2693,11 @@ Floating-point numbers are often essential, but must be used with caution. You w
 
 \item Now write a function \texttt{plot} which, given a function of type \textsf{\textbf{float $\rightarrow$ float}}, a range, and a step size, uses \texttt{star} to draw a graph. For example, assuming the existence of the name \texttt{pi} for $\pi$, we might see:
 
-\begin{verbatim}
-        OCaml
-
-# plot sin 0. pi (pi /. 20.);;
-*
-      *
-              *
-                     *
-                            *
-                                  *
-                                       *
-                                           *
-                                              *
-                                                *
-                                                *
-                                                *
-                                              *
-                                           *
-                                       *
-                                  *
-                            *
-                     *
-              *
-      *
-*
-\end{verbatim}
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook144x.png}
+\end{center}
+\medskip
 
 
 \noindent Here, we have plotted the sine function on the range $0\ldots\pi$ in steps of size $\pi / 20$. You can define $pi$ by calculating \texttt{4.0 *.\ atan 1.0}.
@@ -3209,22 +2716,11 @@ Floating-point numbers are often essential, but must be used with caution. You w
 
 OCaml is provided with a wide range of useful built-in functions, in addition to the ones we have already seen, called the \index{standard library}\textit{OCaml Standard Library}. These functions are divided into \index{module}\textit{modules}, one for each area of functionality (in the next chapter, we will learn how to write our own modules). Here are a few examples of modules in the standard library:
 
-\smspace
-%{\tabulinesep=1.75mm
-\bgroup
-\def\arraystretch{1.2}
-\noindent\begin{tabular}{@{}lp{0.6\textwidth}@{}} \toprule
-  \texttt{List} & The \texttt{List} module provides many functions over lists, some of which we have already written ourselves in earlier chapters. It also provides a simple implementation of dictionaries, and list sorting and searching functions.\\
-  \texttt{Array} & Functions for creating and modifying arrays, conversion to and from lists, and array sorting. Functions to iterate over arrays. \\
-  \texttt{Char} & Operations on characters, including conversions between characters and their integer equivalents.\\
-  \texttt{String} & Functions to build strings, together with searching, mapping, and iteration functions.\\
-  \texttt{Random} & Generating pseudo-random integers and floating-point numbers.\\
-  \texttt{Buffer} & Buffers are used for building strings up from sub-strings or characters, without the cost of repeated string concatenation.\\
-  \texttt{Printf} & Functions for printing with ``format strings'', which are more flexible and concise than repeated use of \texttt{print\_int} and \texttt{print\_string} etc.\\ \bottomrule
-\end{tabular}
-\egroup
-%}
-\smspace
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook145x.png}
+\end{center}
+\medskip
 
 \noindent We will take the \texttt{List} module as an example. You can find the documentation for the OCaml Standard Library installed with your copy of OCaml, or on the internet.
 
@@ -3248,27 +2744,19 @@ The functions from a module can be used by putting a period (full stop) between 
 
 \noindent Here's the documentation for \texttt{List.length}:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.9\textwidth}
-\noindent\texttt{val length :\ \textquotesingle a list -> int}\\
-
-\hspace{10mm}Return the length (number of elements) of the given list.
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook146x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent We will talk about \texttt{\textbf{val}} in the next chapter. Sometimes, more information is required:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.9\textwidth}
-\noindent\texttt{val nth :\ \textquotesingle a list -> int -> \textquotesingle a}\\
-
-\hangindent1cm \hangafter=0 Return the \texttt{n}-th element of the list. The first element (head of the list) is at position 0. Raise \texttt{Failure "nth"} if the list is too short. Raise \texttt{Invalid\_argument "List.nth"} if \texttt{n} is negative.
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook147x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent For example,
 
@@ -3313,26 +2801,11 @@ In this chapter, you will have to create text files and type commands into the c
 
 We will be building a modular version of our text statistics program from Chapter 13. First, write the text file shown in Figure \ref{textstat.ml} (but not the italic annotations) and save it as \texttt{textstat.ml} (OCaml programs live in files with lowercase names ending in \texttt{.ml}).
 
-\begin{figure}
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.9\textwidth}
-\small
-\noindent\texttt{(* Text statistics *)}\hfill\textit{comment}\\
-\\
-\noindent\texttt{type stats = int * int * int * int}\hfill\textit{our type for statistics}\\
-\\
-\noindent\texttt{let stats\_from\_channel \_ = (0, 0, 0, 0)}\hfill\textit{statistics from a channel}\\
-\\
-\noindent\texttt{let stats\_from\_file filename =}\hfill\textit{and from a file; exceptions are not handled}\\
-\noindent$\texttt{~~let channel = open\_in filename in}$\\
-\noindent$\texttt{~~~~let result = stats\_from\_channel channel in}$\\
-\noindent$\texttt{~~~~~~close\_in channel;}$\\
-\noindent$\texttt{~~~~~~result}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook148x.png}
 \end{center}
-\caption{\small \texttt{textstat.ml}}
-\label{textstat.ml}
-\end{figure}
+\medskip
 
 The first line is a \index{comment}comment. Comments in OCaml are written between \texttt{(*} and \texttt{*)}. We use comments in large programs to help the reader (who might be someone else, or ourselves some time later) to understand the program.
 
@@ -3360,56 +2833,11 @@ Now, we can issue a command to turn this program into a pre-processed OCaml modu
 
 Let us add a real \texttt{stats\_from\_channel} function, to produce a working text statistics module. We will also add utility functions for retrieving individual statistics from the \texttt{stats} type. This is shown in Figure \ref{textstat2.ml}. We can compile it in the same way, and try it with our example file:
 
-\begin{figure}
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.9\textwidth}
-\small
-$\texttt{(* Text statistics *)}$\\
-$\texttt{type stats = int * int * int * int}$\\
-\\
-$\texttt{(* Utility functions to retrieve parts of a stats value *)}$\\
-$\texttt{let lines (l, \_, \_, \_) = l}$\\
-\\
-$\texttt{let characters (\_, c, \_, \_) = c}$\\
-\\
-$\texttt{let words (\_, \_, w, \_) = w}$\\
-\\
-$\texttt{let sentences (\_, \_, \_, s) = s}$\\
-\\
-$\texttt{(* Read statistics from a channel *)}$\\
-$\texttt{let stats\_from\_channel in\_channel =}$\\
-$\texttt{~~let lines = ref 0 in}$\\
-$\texttt{~~let characters = ref 0 in}$\\
-$\texttt{~~let words = ref 0 in}$\\
-$\texttt{~~let sentences = ref 0 in}$\\
-$\texttt{~~~~try}$\\
-$\texttt{~~~~~~while true do}$\\
-$\texttt{~~~~~~~~let line = input\_line in\_channel in}$\\
-$\texttt{~~~~~~~~~~lines := !lines + 1;}$\\
-$\texttt{~~~~~~~~~~characters := !characters + String.length line;}$\\
-$\texttt{~~~~~~~~~~String.iter}$\\
-$\texttt{~~~~~~~~~~~~(fun c ->}$\\
-$\texttt{~~~~~~~~~~~~~~~match c with}$\\
-$\texttt{~~~~~~~~~~~~~~~~'.' | '?' | '!'\ -> sentences := !sentences + 1}$\\
-$\texttt{~~~~~~~~~~~~~~| ' ' -> words := !words + 1}$\\
-$\texttt{~~~~~~~~~~~~~~| \_ -> ())}$\\
-$\texttt{~~~~~~~~~~~~line}$\\
-$\texttt{~~~~~~done;}$\\
-$\texttt{~~~~~~(0, 0, 0, 0) (* Just to make the type agree *)}$\\
-$\texttt{~~~~with}$\\
-$\texttt{~~~~~~End\_of\_file -> (!lines, !characters, !words, !sentences)}$\\
-\\
-$\texttt{(* Read statistics, given a filename.\ Exceptions are not handled *)}$\\
-$\texttt{let stats\_from\_file filename =}$\\
-$\texttt{~~let channel = open\_in filename in}$\\
-$\texttt{~~~~let result = stats\_from\_channel channel in}$\\
-$\texttt{~~~~~~close\_in channel;}$\\
-$\texttt{~~~~~~result}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook149x.png}
 \end{center}
-\caption{\small\texttt{textstat.ml}}
-\label{textstat2.ml}
-\end{figure}
+\medskip
 
 
 \smspace
@@ -3437,29 +2865,11 @@ We said that modules were for creating abstractions, so that the implementation 
 
 What we would like to do is to restrict the module so that only the types and functions we want to be used directly are available. For this, we use an \textit{interface}. Interfaces are held in files ending in \texttt{.mli}, and we can write one for our module. Our interface is shown in Figure \ref{textstat.mli}.
 
-\begin{figure}
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.9\textwidth}
-\small
-\texttt{(* Textstat module interface *)}\\
-\texttt{type stats = int * int * int * int}\\
-\\
-\texttt{val lines :\ stats -> int}\\
-\\
-\texttt{val characters :\ stats -> int}\\
-\\
-\texttt{val words :\ stats -> int}\\
-\\
-\texttt{val sentences :\ stats -> int}\\
-\\
-\texttt{val stats\_from\_channel :\ in\_channel -> stats}\\
-\\
-\texttt{val stats\_from\_file :\ string -> stats}\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook150x.png}
 \end{center}
-\caption{\small\texttt{textstat.mli}}
-\label{textstat.mli}
-\end{figure}
+\medskip
 
 
 In this interface, we have exposed every type and function. Types are written in the same way as in the \texttt{.ml} file. Functions are written with \index{val@\texttt{\textbf{val}}}\texttt{\textbf{val}}, followed by the name, a colon, and the type of the function. We can compile this by giving the \texttt{.mli} file together with the \texttt{.ml} file when using \texttt{ocamlc}:
@@ -3470,27 +2880,11 @@ In this interface, we have exposed every type and function. Types are written in
 
 \noindent The \texttt{ocamlc} compiler has created at least two files: \texttt{textstat.cmo} as before and \texttt{textstat.cmi} (the compiled interface). You should find this operates exactly as before when loaded into OCaml. Now, let us remove the definition of the type from the interface, to make sure that the stats type is \index{type!hidden}hidden, and its parts can only be accessed using the \texttt{lines}, \texttt{characters}, \texttt{words}, and \texttt{sentences} functions. We will also remove the declaration for \texttt{stats\_from\_channel} to demonstrate that functions we do not need can be hidden too. This is shown in Figure \ref{textstat2.mli}.
 
-\begin{figure}
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.9\textwidth}
-\small
-\texttt{(* Textstat module interface *)}\\
-\texttt{type stats}\\
-\\
-\texttt{val lines :\ stats -> int}\\
-\\
-\texttt{val characters :\ stats -> int}\\
-\\
-\texttt{val words :\ stats -> int}\\
-\\
-\texttt{val sentences :\ stats -> int}\\
-\\
-\texttt{val stats\_from\_file :\ string -> stats}\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook151x.png}
 \end{center}
-\caption{\small\texttt{textstat.mli} with hidden (abstract) type}
-\label{textstat2.mli}
-\end{figure}
+\medskip
 
 Now, if we compile the program again with \texttt{ocamlc textstat.mli textstat.ml}, we see that the \texttt{stats\_of\_channel} function is now not accessible, and the type of stats is now hidden, or \textit{abstract}.
 
@@ -3518,42 +2912,11 @@ Now, if we compile the program again with \texttt{ocamlc textstat.mli textstat.m
 
 Now it is time to cut ourselves free from interactive OCaml, and build standalone programs which can be executed directly. Let us add another file \texttt{stats.ml} which  will use functions from the \texttt{Textstat} module to create a program which, when given a file name, prints some statistics about it. This is illustrated in Figure \ref{stats.ml}. There are some new things here:
 
-\begin{figure}
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.9\textwidth}
-\small
-\texttt{(* Command line text file statistics program *)}\\
-\texttt{try}\\
-$\texttt{~~begin match Sys.argv with}$\hfill\textit{see note 1}\\
-$\texttt{~~~~[|\_; filename|] ->}$\\
-$\texttt{~~~~~~let stats = Textstat.stats\_from\_file filename in}$\\
-$\texttt{~~~~~~~~print\_string "Words:\ ";}$\\
-$\texttt{~~~~~~~~print\_int (Textstat.words stats);}$\\
-$\texttt{~~~~~~~~print\_newline ();}$\\
-$\texttt{~~~~~~~~print\_string "Characters:\ ";}$\\
-$\texttt{~~~~~~~~print\_int (Textstat.characters stats);}$\\
-$\texttt{~~~~~~~~print\_newline ();}$\\
-$\texttt{~~~~~~~~print\_string "Sentences:\ ";}$\\
-$\texttt{~~~~~~~~print\_int (Textstat.sentences stats);}$\\
-$\texttt{~~~~~~~~print\_newline ();}$\\
-$\texttt{~~~~~~~~print\_string "Lines:\ ";}$\\
-$\texttt{~~~~~~~~print\_int (Textstat.lines stats);}$\\
-$\texttt{~~~~~~~~print\_newline ()}$\\
-$\texttt{~~| \_ ->}$\\
-$\texttt{~~~~~~print\_string "Usage:\ stats\ <filename>";}$\\
-$\texttt{~~~~~~print\_newline ()}$\\
-$\texttt{~~end}$\\
-$\texttt{with}$\\
-$\texttt{~~e ->}$\\
-$\texttt{~~~~print\_string "An error occurred:\ ";}$\\
-$\texttt{~~~~print\_string (Printexc.to\_string e);}$\hfill\textit{see note 2}\\
-$\texttt{~~~~print\_newline ();}$\\
-$\texttt{~~~~exit 1}\hfill\textit{see note 3}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook152x.png}
 \end{center}
-\caption{\small\texttt{stats.ml}}
-\label{stats.ml}
-\end{figure}
+\medskip
 
 
 \begin{enumerate}
@@ -3758,17 +3121,12 @@ We could simply return $0$ for a negative argument. The factorial of $0$ is $1$,
 
 We can just pattern match on the boolean. It does not matter, in this instance, which order the two cases are in.
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{not :}\textbf{\textsf{ bool $\rightarrow$ bool}}\\
-\\
-$\texttt{\plet not x =}$\\
-$\texttt{~~\pmatch x \pwith}$\\
-$\texttt{~~~~true -> false}$\\
-$\texttt{~~| false -> true}$
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook153x.png}
 \end{center}
+\medskip
+\smspace
 
 \subsection*{2}
 Recall our solution from the previous chapter:
