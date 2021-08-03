@@ -3126,109 +3126,60 @@ We can just pattern match on the boolean. It does not matter, in this instance, 
 \noindent\includegraphics[width=\textwidth]{kindlemlbook153x.png}
 \end{center}
 \medskip
-\smspace
 
 \subsection*{2}
 Recall our solution from the previous chapter:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{sum :}\textbf{\textsf{ int $\rightarrow$ int}}\\
-\\
-$\texttt{\pletrec sum n =}$\\
-$\texttt{~~\pif n = 1 \pthen 1 \pelse n + sum (n - 1)}$
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook154x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Modifying it to use pattern matching:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{sum\_match :}\textbf{\textsf{ int $\rightarrow$ int}}\\
-\\
-$\texttt{\pletrec sum\_match n =}$\\
-$\texttt{~~\pmatch n \pwith}$\\
-$\texttt{~~~~1 -> 1}$\\
-$\texttt{~~|~\_ -> n + sum\_match (n - 1)}$
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook155x.png}
 \end{center}
+\medskip
 
 \subsection*{3}
 Again, modifying our solution from the previous chapter:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{power\_match :}\textbf{\textsf{ int $\rightarrow$ int $\rightarrow$ int}}\\
-\\
-$\texttt{\pletrec power\_match x n =}$\\
-$\texttt{~~\pmatch n \pwith}$\\
-$\texttt{~~~~0 -> 1}$\\
-$\texttt{~~|~1 -> x}$\\
-$\texttt{~~|~\_ -> x * power\_match x (n - 1)}$
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook156x.png}
 \end{center}
+\medskip
 
 \subsection*{5}
 This is the same as
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-$\texttt{\pmatch 1 + 1 \pwith}$\\
-$\texttt{~~2 ->}$\\
-$\texttt{~~~~(\pmatch 2 + 2 \pwith}$\\
-$\texttt{~~~~~~3 -> 4}$\\
-$\texttt{~~~~|~4 -> 5)}$
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook157x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent (A match case belongs to its nearest enclosing \texttt{\pmatch}). So the expression evaluates to \texttt{5}.
 
 \subsection*{6}
 We write two functions of type \textbf{\textsf{char $\rightarrow$ bool}} like this:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{isupper :}\textbf{\textsf{ char $\rightarrow$ bool}}\\
-\noindent\texttt{islower :}\textbf{\textsf{ char $\rightarrow$ bool}}\\
-\\
-$\texttt{\plet isupper c =}$\\
-$\texttt{~~\pmatch c \pwith}$\\
-$\texttt{~~~~'A'..'Z' -> true}$\\
-$\texttt{~~| \_ -> false}$\\
-\\
-$\texttt{\plet islower c =}$\\
-$\texttt{~~\pmatch c \pwith}$\\
-$\texttt{~~~~'a'..'z' -> true}$\\
-$\texttt{~~| \_ -> false}$
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook158x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Alternatively, we might write:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{isupper :}\textbf{\textsf{ char $\rightarrow$ bool}}\\
-\noindent\texttt{islower :}\textbf{\textsf{ char $\rightarrow$ bool}}\\
-\\
-$\texttt{\plet isupper c =}$\\
-$\texttt{~~\pmatch c \pwith}$\\
-$\texttt{~~~~'A'..'Z' -> true}$\\
-$\texttt{~~| \_ -> false}$\\
-\\
-$\texttt{\plet islower c =}$\\
-$\texttt{~~not (isupper c)}$
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook159x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent These two solutions have differing behaviour upon erroneous arguments (such as punctuation). Can you see why?
 
@@ -3236,123 +3187,63 @@ $\texttt{~~not (isupper c)}$
 \subsection*{1}
 This is similar to \texttt{odd\_elements}:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{even\_elements :}\textbf{\textsf{ $\alpha$ list $\rightarrow$ $\alpha$ list}}\\
-\\
-$\texttt{\pletrec even\_elements l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ [] -> []}$\hfill\textit{the list has zero elements}\\
-$\texttt{\ \ | [\_] -> []}$\hfill\textit{the list has one element -- drop it}\\
-$\texttt{\ \ |   \_::b::t -> b ::\ even\_elements t}$\hfill\textit{\texttt{\_} is the head, \texttt{t} the tail}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook160x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent But we can perform the same trick as before, by reversing the cases, to reduce their number:
 
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{even\_elements :}\textbf{\textsf{ $\alpha$ list $\rightarrow$ $\alpha$ list}}\\
-\\
-$\texttt{\pletrec even\_elements l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \  \_::b::t -> b ::\ even\_elements t}$\hfill\textit{drop one, keep one, carry on}\\
-$\texttt{\ \ | \_ -> []}$\hfill\textit{otherwise, no more to drop}\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook161x.png}
 \end{center}
-\subsection*{2}
+\medskip
 
 \noindent This is like counting the length of a list, but we only count if the current element is \texttt{true}.
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{count\_true :}\textbf{\textsf{ bool list $\rightarrow$ int}}\\
-\\
-$\texttt{\pletrec count\_true l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ [] -> 0}$\hfill\textit{no more}\\
-$\texttt{\ \ | true::t -> 1 + count\_true t}$\hfill\textit{count this one}\\
-$\texttt{\ \ | false::t -> count\_true t}$\hfill\textit{but not this one}\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook162x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent We can use an accumulating argument in an auxiliary function to make a tail recursive version:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{count\_true\_inner :}\textbf{\textsf{ int $\rightarrow$ bool list $\rightarrow$ int}}\\
-\noindent\texttt{count\_true :}\textbf{\textsf{ bool list $\rightarrow$ int}}\\
-\\
-$\texttt{\pletrec count\_true\_inner n l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ [] -> n}$\hfill\textit{no more; return the accumulator}\\
-$\texttt{\ \ | true::t -> count\_true\_inner (n + 1) t}$\hfill\textit{count this one}\\
-$\texttt{\ \ | false::t -> count\_true\_inner n t}$\hfill\textit{but not this one}\\
-\\
-$\texttt{\plet count\_true l =}$\\
-$\texttt{\ \ count\_true\_inner 0 l}$\hfill\textit{initialize the accumulator with zero}\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook163x.png}
 \end{center}
+\medskip
 
 \subsection*{3}
 
 To make a palindrome from any list, we can append it to its reverse. To check if a list is a palindrome, we can compare it for equality with its reverse (the comparison operators work over almost all types).
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{mk\_palindrome :}\textbf{\textsf{ $\alpha$ list $\rightarrow$ $\alpha$ list}}\\
-\noindent\texttt{is\_palindrome :}\textbf{\textsf{ $\alpha$ list $\rightarrow$ bool}}\\
-\\
-$\texttt{\plet mk\_palindrome l =}$\\
-$\texttt{\ \ l @ rev l}$\\
-\\
-$\texttt{\plet is\_palindrome l =}$\\
-$\texttt{\ \ l = rev l}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook164x.png}
 \end{center}
+\medskip
 
 \subsection*{4}
 
 We pattern match with three cases. The empty list, where we have reached the last element, and where we have yet to reach it.
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{drop\_last :}\textbf{\textsf{ $\alpha$ list $\rightarrow$ $\alpha$ list}}\\
-\\
-$\texttt{\pletrec drop\_last l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ [] -> []}$\\
-$\texttt{\ \ | [\_] -> []}$\hfill\textit{it is the last one, so remove it}\\
-$\texttt{\ \ | h::t -> h ::\ drop\_last t}$\hfill\textit{at least two elements remain}\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook164x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent We can build a tail recursive version by adding an accumulating list, and reversing it when finished (assuming a tail recursive \texttt{rev}, of course!)
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{drop\_last\_inner :}\textbf{\textsf{ $\alpha$ list $\rightarrow$ $\alpha$ list $\rightarrow$ $\alpha$ list}}\\
-\noindent\texttt{drop\_last :}\textbf{\textsf{ $\alpha$ list $\rightarrow$ $\alpha$ list}}\\
-\\
-$\texttt{\pletrec drop\_last\_inner a l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ [] -> rev a}$\hfill\textit{return the reversed accumulator}\\
-$\texttt{\ \ | [\_] -> rev a}$\hfill\textit{same, ignoring the last element}\\
-$\texttt{\ \ | h::t -> drop\_last\_inner (h ::\ a) t}$\hfill\textit{at least two elements remain}\\
-\\
-$\texttt{\plet drop\_last l =}$\\
-$\texttt{\ \ drop\_last\_inner [] l}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook164x.png}
 \end{center}
+\medskip
 
 \subsection*{5}
 
