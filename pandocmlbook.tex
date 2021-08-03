@@ -836,216 +836,139 @@ Now, how do we write functions using lists? We can use pattern matching as usual
 
 \noindent This works by \index{recursion, over a list}recursion over the list, then addition of all the resultant \texttt{1}s. It takes time proportional to the length of the list. Can you see why? It also takes space proportional to the length of the list, because of the intermediate expression \texttt{1 + (1 + (1 + \ldots} which is built up before any of the \texttt{+} operations are evaluated -- this expression must be stored somewhere whilst it is being processed. Since \texttt{h} is not used in the expression \texttt{1 + length t}, this function is also polymorphic. Indeed we can replace \texttt{h} in the pattern with \texttt{\_} since there is no use giving a name to something we are not going to refer to:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{length :}\textbf{\textsf{ $\alpha$ list $\rightarrow$ int}}\\
-\\
-$\texttt{\pletrec length l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ [] -> 0}$\hfill\textit{the list has zero elements}\\
-$\texttt{\ \ |   \_::t -> 1 + length t}$\hfill\textit{\texttt{\_} is the head, \texttt{t} the tail}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook34x.png}
 \end{center}
+\medskip
 \smspace
 
 \noindent A very similar function can be used to add a list of integers:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{sum :}\textbf{\textsf{ int list $\rightarrow$ int}}\\
-\\
-$\texttt{\pletrec sum l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ [] -> 0}$\hfill\textit{the sum of no elements is zero}\\
-$\texttt{\ \ |   h::t -> h + sum t}$\hfill\textit{otherwise, add the head to the sum of the tail}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook35x.png}
 \end{center}
+\medskip
 \smspace
 
 \noindent However, since we are actually using the individual list elements (by adding them up), this function is not polymorphic -- it operates over lists of type \textbf{\textsf{int list}} only. If we accidentally miss out a \index{case, in a pattern match}case, OCaml will alert us, and give an example pattern which is not matched:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{\hphantom{\ \ \ \ \ \ \ \ }OCaml}\\
-\noindent\\
-\noindent\texttt{\# let rec sum l =}\\
-\noindent\texttt{    \texttt{\underline{match l with =}}}\\
-\noindent\texttt{\underline{\hphantom{\ \ \ \ \ }h::t -> h + sum t};;}\\
-\noindent\texttt{Warning 8:\ this pattern-matching is not exhaustive.}\\
-\noindent\texttt{Here is an example of a value that is not matched:}\\
-\noindent\texttt{[]}\\
-\noindent\texttt{val sum :\ int list -> int = <fun>}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook36x.png}
 \end{center}
+\medskip
 \smspace
 
 \noindent There is a way to deal with the excessive space usage from the  building up of a large intermediate expression \texttt{1 + 1 + 1 + \ldots} in our \texttt{length} function, at the cost of readability. We can ``accumulate'' the \texttt{1s} as we go along in an extra argument. At each recursive step, the \index{argument!accumulating}\index{accumulator} accumulating argument is increased by one. When we have finished, the total is returned: 
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{length_inner :}\textbf{\textsf{ $\alpha$ list $\rightarrow$ int $\rightarrow$ int}}\\
-\noindent\texttt{length :}\textbf{\textsf{ $\alpha$ list $\rightarrow$ int}}\\
-\\
-$\texttt{\pletrec length_inner l n =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ [] -> n}$\hfill\textit{list is empty, return the accumulator}\\
-$\texttt{\ \ |   h::t -> length_inner t (n + 1)}$\hfill\textit{add one to the accumulator, and carry on}\\
-\\
-$\texttt{\plet length l = length_inner l 0}$\hfill\textit{give an initial accumulator of zero}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook37x.png}
 \end{center}
+\medskip
 \smspace
 
 \noindent We wrapped it up in another function to make sure we do not call it with a bad initial value for the accumulating argument. Here is an example evaluation:
-\begin{eqnarray*}
- & & \verb!length [5; 5; 5] ! \\
- \Longrightarrow & & \underline{\vphantom{g}\texttt{length\_inner [5; 5; 5] 0}} \\
- \Longrightarrow & & \underline{\vphantom{g}\texttt{length\_inner [5; 5] 1}} \\
- \Longrightarrow & & \underline{\vphantom{g}\texttt{length\_inner [5] 2}}\\
- \Longrightarrow & & \underline{\vphantom{g}\texttt{length\_inner [] 3}}\hspace{20mm}\textit{base case}\\
- \Longrightarrow & & \texttt{3}
-\end{eqnarray*}
+
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook38x.png}
+\end{center}
+\medskip
+\smspace
 
 \noindent Now, the space taken by the calculation does not relate in any way to the length of the list argument. Recursive functions which do not build up a growing intermediate expression are known as \index{tail recursive}\textit{tail recursive}. Functions can, of course, return lists too. Here is a function to return the list consisting of the first, third, fifth and so on elements in a list:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{odd\_elements :}\textbf{\textsf{ $\alpha$ list $\rightarrow$ $\alpha$ list}}\\
-\\
-$\texttt{\pletrec odd\_elements l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ [] -> []}$\hfill\textit{the list has zero elements}\\
-$\texttt{\ \ |  [a] -> [a]}$\hfill\textit{the list has one element}\\
-$\texttt{\ \ |   a::\_::t -> a ::\ odd\_elements t}$\hfill\textit{the list has more than one element}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook39x.png}
 \end{center}
+\medskip
 \smspace
 
 \noindent Consider the evaluation of \texttt{odd\_elements [2; 4; 2; 4; 2]}:
-\begin{eqnarray*}
- & & \texttt{odd\_elements [2; 4; 2; 4; 2]} \\
- \Longrightarrow & & \verb!2 :: ! \underline{\texttt{\vphantom{g}odd\_elements [2; 4; 2]}} \\
- \Longrightarrow & & \verb!2 :: 2 :: !\underline{\texttt{\vphantom{g}odd\_elements [2]}} \\
- \Longrightarrow & & \underline{\texttt{\vphantom{g}2 ::\ 2 ::\ [2]}}  \hspace{10mm}\\
- \overset{*}\Longrightarrow & & \verb![2; 2; 2]!
-\end{eqnarray*}
+
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook40x.png}
+\end{center}
+\medskip
 
 \noindent You might notice that the first two cases in the pattern match return exactly their argument. By reversing the order, we can reduce this function to just two cases:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{odd\_elements :}\textbf{\textsf{ $\alpha$ list $\rightarrow$ $\alpha$ list}}\\
-\\
-$\texttt{\pletrec odd\_elements l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ a::\_::t -> a ::\ odd\_elements t}$\hfill\textit{there is something to skip over}\\
-$\texttt{\ \ | \_ -> l}$\hfill\textit{there is nothing to skip over}\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook41x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent We have seen how to use the \texttt{@} (append) operator to concatenate two lists:
-\begin{eqnarray*}
- & & \underline{\texttt{[1; 2] @ [3; 4; 5]\vphantom{g}}} \\
- \Longrightarrow & & \texttt{[1; 2; 3; 4; 5]}
-\end{eqnarray*}
+
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook42x.png}
+\end{center}
+\medskip
 
 \noindent How might we implement list append ourselves, if it was not provided? Consider a function \texttt{append a b}. If the list \texttt{a} is the empty list, the answer is simply \texttt{b}. But what if \texttt{a} is not empty? Then it has a head \texttt{h} and a tail \texttt{t}. So we can start our result list with the head, and the rest of the result is just \texttt{append t b}.
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{append :}\textbf{\textsf{ $\alpha$ list $\rightarrow$ $\alpha$ list $\rightarrow$ $\alpha$ list}}\\
-\\
-$\texttt{\pletrec append a b =}$\\
-$\texttt{\ \ \pmatch a \pwith}$\\
-$\texttt{\ \ \ \ [] -> b }$\\
-$\texttt{\ \ | h::t -> h ::\ append t b}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook43x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Consider the evaluation of \texttt{append [1; 2; 3] [4; 5; 6]}:
-\begin{eqnarray*}
- & & \underline{\texttt{append [1; 2; 3] [4; 5; 6]\vphantom{g}}} \\
- \Longrightarrow & & \texttt{1 ::\ \underline{append [2; 3] [4; 5; 6]\vphantom{g}}} \\
- \Longrightarrow & & \texttt{1 ::\ 2 ::\ \underline{append [3] [4; 5; 6]\vphantom{g}}} \\
- \Longrightarrow & & \texttt{1 ::\ 2 ::\ 3 ::\ \underline{append [] [4; 5; 6]\vphantom{g}}} \\
- \Longrightarrow & & \texttt{\underline{1 ::\ 2 ::\ 3 ::\ [4; 5; 6]\vphantom{g}}} \\
- \overset{*}\Longrightarrow & & \texttt{[1; 2; 3; 4; 5; 6]}
-\end{eqnarray*}
+
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook44x.png}
+\end{center}
+\medskip
 
 \noindent This takes time proportional to the length of the first list -- the second list need not be processed at all. What about \index{reversing a list}\index{list!reversing}reversing a list? For example, we want \texttt{rev [1; 2; 3; 4]} to evaluate to \texttt{[4; 3; 2; 1]}. One simple way is to reverse the tail of the list, and append the list just containing the head to the end of it:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{rev :}\textbf{\textsf{ $\alpha$ list $\rightarrow$ $\alpha$ list}}\\
-\\
-$\texttt{\pletrec rev l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ [] -> [] }$\\
-$\texttt{\ \ | h::t -> rev t @ [h]}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook45x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Here's how the evaluation proceeds:
-\begin{eqnarray*}
- & & \underline{\texttt{rev [1; 2; 3; 4]\vphantom{g}}} \\
- \Longrightarrow & & \texttt{\underline{rev [2; 3; 4]\vphantom{g}} @ [1]} \\
- \Longrightarrow & & \texttt{\underline{rev [3; 4]\vphantom{g}} @ ([2] @ [1])} \\
- \Longrightarrow & & \texttt{\underline{rev [4]\vphantom{g}} @ ([3] @ ([2] @ [1]))} \\
- \Longrightarrow & & \texttt{\underline{rev []} @ ([4] @ ([3] @ ([2] @ [1])))\vphantom{g}} \\
- \Longrightarrow & & \texttt{\underline{[] @ ([4] @ ([3] @ ([2] @ [1])))\vphantom{g}}} \\
- \overset{*}\Longrightarrow & & \texttt{[4; 3; 2; 1]}
-\end{eqnarray*}
+
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook46x.png}
+\end{center}
+\medskip
 
 \noindent This is a simple definition, but not very efficient -- can you see why?
 
 Two more useful functions for processing lists are \texttt{take} and \texttt{drop} which, given a number and a list, either \index{take function}take or \index{drop function}drop that many elements from the list:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{take :}\textbf{\textsf{ int $\rightarrow$ $\alpha$ list $\rightarrow$ $\alpha$ list}}\\
-\noindent\texttt{drop :}\textbf{\textsf{ int $\rightarrow$ $\alpha$ list $\rightarrow$ $\alpha$ list}}\\
-\\
-$\texttt{\pletrec take n l =}$\\
-$\texttt{\ \ \pif n = 0 \pthen [] \pelse}$\\
-$\texttt{\ \ \ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ \ \  h::t -> h ::\ take (n - 1) t}$\\
-\\
-$\texttt{\pletrec drop n l =}$\\
-$\texttt{\ \ \pif n = 0 \pthen l \pelse}$\\
-$\texttt{\ \ \ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ \ \  h::t -> drop (n - 1) t}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook47x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent For example, here's the evaluation for \texttt{take 2 [2; 4; 6; 8; 10]}:
-\begin{eqnarray*}
- & & \underline{\texttt{take 2 [2; 4; 6; 8; 10]\vphantom{g}}} \\
- \Longrightarrow & & \texttt{2 ::\ \underline{take 1 [4; 6; 8; 10]\vphantom{g}}}\\
- \Longrightarrow & & \texttt{2 ::\ 4 ::\ \underline{take 0 [6; 8; 10]\vphantom{g}}}\\
- \Longrightarrow & & \texttt{\underline{2 ::\ 4 ::\ []\vphantom{g}}}\\
- \overset{*}\Longrightarrow & & \texttt{[2; 4]\vphantom{g}}
-\end{eqnarray*}
+
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook48x.png}
+\end{center}
+\medskip
 
 \noindent And for \texttt{drop 2 [2; 4; 6; 8; 10]}:
-\begin{eqnarray*}
- & & \underline{\texttt{drop 2 [2; 4; 6; 8; 10]\vphantom{g}}} \\
- & & \underline{\texttt{drop 1 [4; 6; 8; 10]\vphantom{g}}} \\
- \Longrightarrow & & \underline{\texttt{drop 0 [6; 8; 10]\vphantom{g}}} \\
- \Longrightarrow & & \texttt{[6; 8; 10]\vphantom{g}}
-\end{eqnarray*}
+
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook49x.png}
+\end{center}
+\medskip
 
 \noindent Note that these functions contain incomplete pattern matches -- OCaml tells us so when we type them in. The function fails if the arguments are not sensible -- that is, when we are asked to take or drop more elements than are in the argument list. Later on, we will see how to deal with that problem. Note also that for any sensible value of \texttt{n}, including zero, \texttt{take n l} and \texttt{drop n l} split the list into two parts with no gap. So \texttt{drop} and \texttt{take} often appear in pairs.
 
@@ -1091,18 +1014,11 @@ Lists can contain anything, so long as all elements are of the same type. So, of
 
 Look again at our list appending function:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{append :}\textbf{\textsf{ $\alpha$ list $\rightarrow$ $\alpha$ list $\rightarrow$ $\alpha$ list}}\\
-\\
-$\texttt{\pletrec append a b =}$\\
-$\texttt{\ \ \pmatch a \pwith}$\\
-$\texttt{\ \ \ \ [] -> b }$\\
-$\texttt{\ \ | h::t -> h ::\ append t b}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook50x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent There are two ways to think about this computation. One way is to imagine the actions the computer might take to calculate the result:
 
@@ -1122,163 +1038,87 @@ $\texttt{\ \ | h::t -> h ::\ append t b}$\vphantom{g}
 \pagestyle{fancy}
 Lists often need to be in \index{list!sorting}\index{sorting}sorted order. How might we write a function to sort a list of integers? Well, a list with zero elements is already sorted. If we do not have an empty list, we must have a head and a tail. What can we do with those? Well, we can sort the tail by a recursive call to our \texttt{sort} function. So, now we have the head, and an already sorted list. Now, we just need to write a function to insert the head in an already sorted list. We have reduced the problem to an easier one. 
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-%\noindent\texttt{sort :}\textbf{\textsf{$\alpha$ list $\rightarrow$ $\alpha$ list}}\\
-%\\
-$\texttt{\pletrec sort l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ [] -> [] }$\hfill\textit{an empty list is already sorted}\\
-$\texttt{\ \ | h::t -> insert h (sort t)}$\hfill\textit{insert the head into the sorted tail}\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook51x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Now we just need to write the \texttt{insert} function. This takes an element and an already-sorted list, and returns the list with the element inserted in the right place:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-%\noindent\texttt{sort :}\textbf{\textsf{$\alpha$ list $\rightarrow$ $\alpha$ list}}\\
-%\\
-$\texttt{\pletrec insert x l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ [] -> [x] }$\hfill\textit{the simple case -- just put \texttt{x} in}\\
-$\texttt{\ \ | h::t -> }$\hfill\textit{otherwise we have a head and a tail}\\
-$\texttt{\ \ \ \ \ \ \pif x <= h}$\hfill\textit{if we are at an appropriate point}\\
-$\texttt{\ \ \ \ \ \ \ \ \pthen x ::\ h ::\ t}$\hfill\textit{just put \texttt{x} here}\\
-$\texttt{\ \ \ \ \ \ \ \ \pelse h ::\ insert x t}$\hfill\textit{otherwise, keep \texttt{h} and carry on}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook52x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Consider the evaluation of \texttt{insert 3 [1; 1; 2; 3; 5; 9]}:
-\begin{eqnarray*}
- & & \underline{\texttt{insert 3 [1; 1; 2; 3; 5; 9]\vphantom{g}}} \\
- \Longrightarrow & & \texttt{1 ::\ \underline{insert 3 [1; 2; 3; 5; 9]\vphantom{g}}} \\
- \Longrightarrow & & \texttt{1 ::\ 1 ::\ \underline{insert 3 [2; 3; 5; 9]\vphantom{g}}} \\
- \Longrightarrow & & \texttt{1 ::\ 1 ::\ 2 ::\ \underline{insert 3 [3; 5; 9]\vphantom{g}}} \\
- \Longrightarrow & & \texttt{\underline{1 ::\ 1 ::\ 2 ::\ 3 ::\ 3 ::\ [5; 9]\vphantom{g}}} \\
- \overset{*}\Longrightarrow & & \texttt{[1; 1; 2; 3; 3; 5; 9]}
-\end{eqnarray*}
+
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook53x.png}
+\end{center}
+\medskip
 
 \noindent Here is the whole evaluation of \texttt{sort [53; 9; 2; 6; 19]}. We have missed out the detail of each \texttt{insert} operation.
-\begin{eqnarray*}
- & & \underline{\texttt{sort [53; 9; 2; 6; 19]\vphantom{g}}} \\
- \overset{*}\Longrightarrow & & \texttt{insert 53 \underline{(sort [9; 2; 6; 19])\vphantom{g}}} \\
- \overset{*}\Longrightarrow & & \texttt{insert 53 (insert 9 \underline{\vphantom{g}(sort [2; 6; 19])})} \\
- \overset{*}\Longrightarrow & & \texttt{insert 53 (insert 9 (insert 2 \underline{(sort [6; 19])}))\vphantom{g}} \\
- \overset{*}\Longrightarrow & & \texttt{insert 53 (insert 9 (insert 2 (insert 6 \underline{(sort [19])\vphantom{g}})))} \\
- \overset{*}\Longrightarrow & & \texttt{insert 53 (insert 9 (insert 2 (insert 6 (insert 19 \underline{\vphantom{g}(sort [])}))))\vphantom{g}} \\
-  \overset{*}\Longrightarrow & & \texttt{insert 53 (insert 9 (insert 2 (insert 6 \underline{\vphantom{g}(insert 19 [])})))} \\
- \overset{*}\Longrightarrow & & \texttt{insert 53 (insert 9 (insert 2 \underline{(insert 6 [19])\vphantom{g}}))} \\
- \overset{*}\Longrightarrow & & \texttt{insert 53 (insert 9 \underline{\vphantom{g}(insert 2 [6; 19])})} \\
- \overset{*}\Longrightarrow & & \texttt{insert 53 \underline{\vphantom{g}(insert 9 [2; 6; 19])}\vphantom{g}} \\
- \overset{*}\Longrightarrow & & \texttt{\underline{insert 53 [2; 6; 9; 19]\vphantom{g}}} \\
- \overset{*}\Longrightarrow & & \texttt{[2; 6; 9; 19; 53]}
-\end{eqnarray*}
+
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook54x.png}
+\end{center}
+\medskip
 
 \noindent Here's the full program, known as \index{insertion sort}\textit{insertion sort}:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{insert :}\textbf{\textsf{ $\alpha$ $\rightarrow$ $\alpha$ list $\rightarrow$ $\alpha$ list}}\\
-\noindent\texttt{sort :}\textbf{\textsf{ $\alpha$ list $\rightarrow$ $\alpha$ list}}\\
-\\
-$\texttt{\pletrec insert x l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ [] -> [x] }$\\
-$\texttt{\ \ | h::t -> }$\\
-$\texttt{\ \ \ \ \ \ \pif x <= h}$\\
-$\texttt{\ \ \ \ \ \ \ \ \pthen x ::\ h ::\ t}$\\
-$\texttt{\ \ \ \ \ \ \ \ \pelse h ::\ insert x t}$\\
-\\
-$\texttt{\pletrec sort l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ [] -> [] }$\\
-$\texttt{\ \ | h::t -> insert h (sort t)}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook55x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Notice that the type \textbf{\textsf{$\alpha$ list $\rightarrow$ $\alpha$ list}} rather than \textbf{\textsf{int list $\rightarrow$ int list}}. This is because OCaml's comparison functions like \texttt{<=} (used inside \texttt{insert}) work for types other than \textbf{\textsf{int}}.  For example, OCaml knows how to compare characters in alphabetical order:
-\begin{eqnarray*}
- & & \texttt{\underline{sort ['p'; 'i'; 'm'; 'c'; 's'; 'h']\vphantom{g}}} \\
- \overset{*}\Longrightarrow & & \texttt{['c'; 'h'; 'i'; 'm'; 'p'; 's']}
-\end{eqnarray*}
+
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook56x.png}
+\end{center}
+\medskip
 
 \noindent How long does our sorting function take to run if the list to be sorted has $n$ elements? Under the assumption that our argument list is arbitrarily ordered rather than sorted, each \texttt{insert} operation takes time proportional to $n$ (the element might need to be inserted anywhere). We must run the \texttt{insert} function as many times as there are elements so, adding these all up, the \texttt{sort} function takes time proportional to $n^2$. You might argue that the first \texttt{insert} operations only have to work with a very small list, and that this fact should make the time less that $n^2$. Can you see why that is not true? What happens if the list is sorted already?
 
 A more efficient algorithm can be found by considering a basic operation a little more complex than \texttt{insert}, but which still operates in time proportional to the length of the argument list. Such a function is \texttt{merge}, which takes two already sorted lists, and returns a single sorted list:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{merge :}\textbf{\textsf{ $\alpha$ list $\rightarrow$ $\alpha$ list $\rightarrow$ $\alpha$ list}}\\
-\\
-$\texttt{\pletrec merge x y =}$\\
-$\texttt{\ \ \pmatch x, y \pwith}$\hfill \textit{we can match on more than one thing using commas}\\
-$\texttt{\ \ \ \ [], l -> l}$\hfill \textit{if the first is empty, just return the second}\\
-$\texttt{\ \ | l, [] -> l}$\hfill \textit{and vice-versa}\\
-$\texttt{\ \ | hx::tx, hy::ty ->}$\\
-$\texttt{\ \ \ \ \ \ \pif hx < hy}$\\
-$\texttt{\ \ \ \ \ \ \ \ \pthen hx ::\ merge tx (hy ::\ ty)}$\hfill \textit{put \texttt{hx} first because it is smaller}\\
-$\texttt{\ \ \ \ \ \ \ \ \pelse hy ::\ merge (hx ::\ tx) ty}$\hfill \textit{otherwise put \texttt{hy} first}\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook57x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent When \texttt{x} and \texttt{y} are both the empty list, the first case is picked because \texttt{l} matches the empty list. Here is how \texttt{merge} proceeds:
-\begin{eqnarray*}
- & & \underline{\texttt{merge [9; 53] [2; 6; 19]\vphantom{g}}} \\
- \Longrightarrow & & \texttt{2 ::\ \underline{(merge [9; 53] [6; 19])\vphantom{g}}} \\
- \Longrightarrow & & \texttt{2 ::\ 6 ::\ \underline{(merge [9; 53] [19])\vphantom{g}}} \\
- \Longrightarrow & & \texttt{2 ::\ 6 ::\ 9 ::\ \underline{(merge [53] [19])\vphantom{g}}} \\
- \Longrightarrow & & \texttt{2 ::\ 6 ::\ 9 ::\ 19 ::\ \underline{(merge [53] [])\vphantom{g}}} \\
- \Longrightarrow & & \texttt{\underline{2 ::\ 6 ::\ 9 ::\ 19 ::\ [53]\vphantom{g}}} \\
- \overset{*}\Longrightarrow & & \texttt{[2; 6; 9; 19; 53]}
-\end{eqnarray*}
+
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook58x.png}
+\end{center}
+\medskip
 
 \noindent So merge can take two sorted lists, and produce a longer, sorted list, containing all the elements from both lists. So, how can we use this to sort a list from scratch? Well, we can use \texttt{length}, \texttt{take}, and \texttt{drop} from the previous chapter to split the list into two halves. Now, we must use a recursive call to sort each half, and then we can merge them. This is known as \index{merge sort}\textit{merge sort}.
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{msort :}\textbf{\textsf{ $\alpha$ list $\rightarrow$ $\alpha$ list}}\\
-\\
-$\texttt{\pletrec msort l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ \ [] -> []}$\hfill \textit{we are done if the list is empty}\\
-$\texttt{\ \ \ | [x] -> [x]}$\hfill \textit{also if it has only one element}\\
-$\texttt{\ \ \ | \_ ->}$\\
-$\texttt{\ \ \ \ \ \ \ \plet left = take (length l / 2) l \pin}$\hfill \textit{get the left hand half}\\
-$\texttt{\ \ \ \ \ \ \ \ \ \plet right = drop (length l / 2) l \pin}$\hfill \textit{and the right hand half}\\
-$\texttt{\ \ \ \ \ \ \ \ \ \ \  merge (msort left) (msort right)}$\hfill \textit{sort sublists and merge}\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook59x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent The case for the single element is required because, if we split it into two halves, of length one and zero, the recursion would not end -- we would not have reduced the size of the problem.
 
 How does \texttt{msort} work? Consider the evaluation of \texttt{msort} on the list \texttt{[53; 9; 2; 6; 19]}. We will skip the evaluation of the \texttt{merge}, \texttt{drop}, \texttt{take}, and \texttt{length} functions, concentrating just on \texttt{msort}:
-\begin{eqnarray*}
- & & \underline{\texttt{msort [53; 9; 2; 6; 19]\vphantom{g}}} \\
- \overset{*}\Longrightarrow & & \texttt{merge (\underline{msort [53; 9]\vphantom{g}}) (msort [2; 6; 19])} \\
- \overset{*}\Longrightarrow & & \texttt{merge (merge (\underline{msort [53]\vphantom{g}}) (msort [9])) (msort [2; 6; 19])} \\
-\overset{*}\Longrightarrow & & \texttt{merge (merge [53] (\underline{msort [9]\vphantom{g}})) (msort [2; 6; 19])} \\
-\overset{*}\Longrightarrow & & \texttt{merge (\underline{merge [53] [9]}) (msort [2; 6; 19])} \\
-\overset{*}\Longrightarrow & & \texttt{merge [9; 53] (\underline{msort [2; 6; 19]})} \\
-\overset{*}\Longrightarrow & & \texttt{merge [9; 53] (merge (\underline{msort [2]}) (msort [6; 19])} \\
-\overset{*}\Longrightarrow & & \texttt{merge [9; 53] (merge [2] (\underline{msort [6; 19]}))} \\
-\overset{*}\Longrightarrow & & \texttt{merge [9; 53] (merge [2] (merge (\underline{msort [6]}) (msort [19])))} \\
-\overset{*}\Longrightarrow & & \texttt{merge [9; 53] (merge [2] (merge [6] (\underline{msort [19]})))} \\
-\overset{*}\Longrightarrow & & \texttt{merge [9; 53] (merge [2] (\underline{merge [6] [19]}))} \\
-\overset{*}\Longrightarrow & & \texttt{merge [9; 53] (\underline{merge [2] [6; 19]})} \\
-\overset{*}\Longrightarrow & & \texttt{\underline{merge [9; 53] [2; 6; 19]}} \\
-\overset{*}\Longrightarrow & & \texttt{[2; 6; 9; 19; 53]}
-\end{eqnarray*}
+
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook60x.png}
+\end{center}
+\medskip
 
 \noindent From now on we will not be showing these full evaluations all the time -- but when you are unsure of how or why a function works, you can always write them out on paper yourself.
 
@@ -1330,35 +1170,19 @@ So, how many lines do we have? Well, in the top half we have roughly $\log_{2}n$
 
 \index{program!load from file}Now that we are building larger functions, we might like to store them between sessions, rather than typing them in every time. For example, compose a file like this in a text editor:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\texttt{let rec length l =}\\
-\texttt{\mbox{~~match l with}}\\
-\texttt{\mbox{~~~~[] -> 0}}\\
-\texttt{\mbox{~~| h::t -> 1 + length t}}\\
-\\
-\texttt{let rec append a b =}\\
-\texttt{\mbox{~~match a with}}\\
-\texttt{\mbox{~~~~[] -> b}}\\
-\texttt{\mbox{~~| h::t -> h ::\ append t b}}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook61x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Save the file in same directory (folder) as you enter OCaml from, under the name \texttt{lists.ml}. We can then tell OCaml to use the contents of that file like this:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\texttt{\mbox{~~~~~~~~OCaml}}\\
-\\
-\texttt{\# \#use "lists.ml";;}\\
-\texttt{val length :\ \textquotesingle a list -> int = <fun>}\\
-\texttt{val append :\ \textquotesingle a list -> \textquotesingle a list -> \textquotesingle a list = <fun>}\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook62x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent \index{\#use@\texttt{\#use}}It is exactly the same as typing it in manually -- the functions \texttt{length} and \texttt{append} will now be available for use. Errors and warnings will be reported as usual. Note that the \texttt{\#use} command is not part of the OCaml language for expressions -- it is just a command we are giving to OCaml.
 
@@ -1366,126 +1190,83 @@ So, how many lines do we have? Well, in the top half we have roughly $\log_{2}n$
 \pagestyle{fancy}
 Often we need to apply a function to every element of a list. For example, doubling each of the numbers in a list of integers. We could do this with a simple recursive function, working over each element of a list:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{double :}\textbf{\textsf{ int list $\rightarrow$ int list}}\\
-\\
-$\texttt{\pletrec double l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ [] -> []}$\hfill \textit{no element to process}\\
-$\texttt{\ \ | h::t -> (h * 2) ::\ double t}$\hfill \textit{process the element, and the rest}\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook63x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent For example,
-\begin{eqnarray*}
- & & \underline{\texttt{double [1; 2; 4]\vphantom{g}}} \\
- \Longrightarrow & & \texttt{2 ::\ \underline{double [2; 4]\vphantom{g}}} \\
- \Longrightarrow & & \texttt{2 ::\ 4 ::\ \underline{double [4]\vphantom{g}}} \\
- \Longrightarrow & & \texttt{2 ::\ 4 ::\ 8 ::\ \underline{double []\vphantom{g}}} \\
- \Longrightarrow & & \texttt{\underline{2 ::\ 4 ::\ 8 ::\ []\vphantom{g}}} \\
- \overset{*}\Longrightarrow & & \texttt{[2; 4; 8]}
-\end{eqnarray*}
+
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook64x.png}
+\end{center}
+\medskip
 
 \noindent The result list does not need to have the same type as the argument list. We can write a function which, given a list of integers, returns the list containing a boolean for each: \texttt{true} if the number is even, \texttt{false} if it is odd.
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{evens :}\textbf{\textsf{ int list $\rightarrow$ bool list}}\\
-\\
-$\texttt{\pletrec evens l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ [] -> []}$\hfill \textit{no element to process}\\
-$\texttt{\ \ | h::t -> (h mod 2 = 0) ::\ evens t}$\hfill \textit{process the element, and the rest}\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook65x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent For example,
-\begin{eqnarray*}
- & & \underline{\texttt{evens [1; 2; 4]\vphantom{g}}} \\
- \Longrightarrow & & \texttt{false ::\ \underline{evens [2; 4]\vphantom{g}}} \\
- \Longrightarrow & & \texttt{false ::\ true ::\ \underline{evens [4]\vphantom{g}}} \\
- \Longrightarrow & & \texttt{false ::\ true ::\ true ::\ \underline{evens []\vphantom{g}}} \\
- \Longrightarrow & & \texttt{\underline{false ::\ true ::\ true ::\ []\vphantom{g}}} \\
- \overset{*}\Longrightarrow & & \texttt{[false; true; true]}
-\end{eqnarray*}
+
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook66x.png}
+\end{center}
+\medskip
 
 \noindent It would be tedious to write a similar function each time we wanted to apply a different operation to every element of a list -- can we build one which works for any operation? We will use a function as an argument:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{map :}\textbf{\textsf{ \textmd{(}$\alpha$ $\rightarrow$ $\beta$\textmd{)} $\rightarrow$ $\alpha$ list $\rightarrow$ $\beta$ list}}\\
-\\
-$\texttt{\pletrec map f l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ [] -> []}$\hfill \textit{no element to process}\\
-$\texttt{\ \ | h::t -> f h ::\ map f t}$\hfill \textit{process the element, and the rest}\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook67x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent The \index{map function@\texttt{map} function}\texttt{map} function takes two arguments: a function which processes a single element, and a list. It returns a new list. We will discuss the type in a moment. For example, if we have a function \texttt{halve}:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{halve :}\textbf{\textsf{ int $\rightarrow$ int}}\\
-\\
-$\texttt{\plet halve x = x / 2}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook68x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent We can use \texttt{map} like this:
-\begin{eqnarray*}
- & & \underline{\texttt{map halve [10; 20; 30]\vphantom{g}}} \\
- \Longrightarrow & & \texttt{5 ::\ \underline{map halve [20; 30]\vphantom{g}}} \\
- \Longrightarrow & & \texttt{5 ::\ 10 ::\ \underline{map halve [30]\vphantom{g}}} \\
- \Longrightarrow & & \texttt{5 ::\ 10 ::\ 15 ::\ \underline{map halve []\vphantom{g}}} \\
- \Longrightarrow & & \texttt{\underline{5 ::\ 10 ::\ 15 ::\ []\vphantom{g}}} \\
- \overset{*}\Longrightarrow & & \texttt{[5; 10; 15]}
-\end{eqnarray*}
+
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook69x.png}
+\end{center}
+\medskip
 
 \noindent Now, let us look at that type: \textbf{\textsf{\textmd{(}$\alpha$ $\rightarrow$ $\beta$\textmd{)} $\rightarrow$ $\alpha$ list $\rightarrow$ $\beta$ list}}. We can annotate the individual parts:
 
-\smspace
-$\overbrace{\strut(\alpha\rightarrow\beta)}^{\textrm{\vphantom{p}function \texttt{f}}}\rightarrow\overbrace{\strut\alpha\ \textsf{\textbf{list}}}^{\vphantom{\texttt{f}}\textrm{argument list}}\rightarrow\overbrace{\strut\beta\ \textsf{\textbf{list}} \vphantom{(}}^{\textrm{result list\vphantom{f}}}$
-\smspace
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook70x.png}
+\end{center}
+\medskip
 
 \noindent We have to put the function \texttt{f} in parentheses, otherwise it would look like \texttt{map} had four arguments. It can have any type \textbf{\textsf{$\alpha$ $\rightarrow$ $\beta$}}. That is to say, it can have any argument and result types, and they do not have to be the same as each other -- though they may be.  The argument has type \textbf{\textsf{$\alpha$ list}} because each of its elements must be an appropriate argument for \texttt{f}. In the same way, the result list has type \textbf{\textsf{$\beta$ list}} because each of its elements is a result from \texttt{f} (in our \texttt{halve} example, $\alpha$ and $\beta$ were both \textbf{\textsf{int}}). We can rewrite our \texttt{evens} function to use \texttt{map}:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{is\_even :}\textbf{\textsf{ int $\rightarrow$ bool}}\\
-\noindent\texttt{evens :}\textbf{\textsf{ int list $\rightarrow$ bool list}}\\
-\\
-$\texttt{\plet is\_even x =}$\\
-$\texttt{~~x mod 2 = 0}$\\
-\\
-$\texttt{\plet evens l =}$\\
-$\texttt{~~map is\_even l}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook71x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent In this use of \texttt{map}, $\alpha$ was \textbf{\textsf{int}}, $\beta$ was \textbf{\textsf{bool}}. We can make \texttt{evens} still shorter: when we are just using a function once, we can define it directly, without naming it:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{evens :}\textbf{\textsf{ int list $\rightarrow$ bool list}}\\
-\\
-$\texttt{\plet evens l =}$\\
-$\texttt{\ \ map (\pfun x -> x mod 2 = 0) l}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook72x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent This is called an \index{function!anonymous}\index{anonymous function}\textit{anonymous function}. It is defined using \texttt{\textbf{fun}}, a named argument, the \texttt{->} arrow and the function definition (body) itself. For example, we can write our halving function like this:
 
@@ -1495,10 +1276,12 @@ $\texttt{\ \ map (\pfun x -> x mod 2 = 0) l}$\vphantom{g}
 \vspace{2mm}
 
 \noindent and, thus, write:
-\begin{eqnarray*}
- & & \underline{\texttt{map (\textbf{fun} x -> x / 2) [10; 20; 30]\vphantom{g}}} \\
- \overset{*}\Longrightarrow & & \texttt{[5; 10; 15]}
-\end{eqnarray*}
+
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook73x.png}
+\end{center}
+\medskip
 
 \noindent We use anonymous functions when a function is only used in one place and is relatively short, to avoid defining it separately.
 
@@ -1506,52 +1289,26 @@ In the preceding chapter we wrote a sorting function and, in one of the question
 
 So, let us alter our \texttt{merge} and \texttt{msort} functions to take an extra argument -- the comparison function. The result is shown in Figure \ref{msortcomp}. Now, if we make our own comparison operator:
 
-\begin{figure}[h]
+%FIXME PANDOC FIGURE
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.95\textwidth}
-\small\noindent\texttt{merge :}\textbf{\textsf{ \textmd{(}$\alpha$ $\rightarrow$ $\alpha$ $\rightarrow$ bool\textmd{)} $\rightarrow$ $\alpha$ list $\rightarrow$ $\alpha$ list $\rightarrow$ $\alpha$ list}}\\
-\noindent\texttt{msort :}\textbf{\textsf{ \textmd{(}$\alpha$ $\rightarrow$ $\alpha$ $\rightarrow$ bool\textmd{)} $\rightarrow$ $\alpha$ list $\rightarrow$ $\alpha$ list}}\\
-\\
-$\texttt{\pletrec merge cmp x y =}$\\
-$\texttt{\ \ \pmatch x, y \pwith}$\hfill\\
-$\texttt{\ \ \ \ [], l -> l}$\\
-$\texttt{\ \ | l, [] -> l}$\\
-$\texttt{\ \ | hx::tx, hy::ty ->}$\\
-$\texttt{\ \ \ \ \ \ \pif cmp hx hy}$\hfill\textit{use our comparison function}\\
-$\texttt{\ \ \ \ \ \ \ \ \pthen hx ::\ merge cmp tx (hy ::\ ty)}$\hfill \textit{put \texttt{hx} first -- it is ``smaller''}\\
-$\texttt{\ \ \ \ \ \ \ \ \pelse hy ::\ merge cmp (hx ::\ tx) ty}$\hfill \textit{otherwise put \texttt{hy} first}\\
-\\
-$\texttt{\pletrec msort cmp l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ [] -> []}$\\
-$\texttt{\ \ | [x] -> [x]}$\\
-$\texttt{\ \ | \_ ->}$\\
-$\texttt{\ \ \ \ \ \ \plet left = take (length l / 2) l \pin}$\\
-$\texttt{\ \ \ \ \ \ \ \ \plet right = drop (length l / 2) l \pin}$\\
-$\texttt{\ \ \ \ \ \ \ \ \ \  merge cmp (msort cmp left) (msort cmp right)}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook74x.png}
 \end{center}
-\caption{\small Adding an extra argument to merge sort}
-\label{msortcomp}
-\end{figure}
+\medskip
 
-
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{greater :}\textbf{\textsf{ $\alpha$ $\rightarrow$ $\alpha$ $\rightarrow$ bool}}\\
-\\
-$\texttt{\plet greater a b =}$\\
-$\texttt{~~a >= b}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook75x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent we can use it with our new version of the \texttt{msort} function:
-\begin{eqnarray*}
- & & \underline{\texttt{msort greater [5; 4; 6; 2; 1]\vphantom{g}}} \\
- \overset{*}\Longrightarrow & & \texttt{[6; 5; 4; 2; 1]}
-\end{eqnarray*}
+
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook76x.png}
+\end{center}
+\medskip
 
 \noindent In fact, we can ask OCaml to make such a\index{function!from an operator} function from an operator such as \texttt{<=} or \texttt{+} just by enclosing it in parentheses and spaces:
 
@@ -1565,16 +1322,20 @@ $\texttt{~~a >= b}$\vphantom{g}
 \smspace
 
 \noindent So, for example:
-\begin{eqnarray*}
- & & \underline{\texttt{msort ( <= ) [5; 4; 6; 2; 1]\vphantom{g}}} \\
- \overset{*}\Longrightarrow & & \texttt{[1; 2; 4; 5; 6]}
-\end{eqnarray*}
+
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook77x.png}
+\end{center}
+\medskip
 
 \noindent and
-\begin{eqnarray*}
- & & \underline{\texttt{msort ( >= ) [5; 4; 6; 2; 1]\vphantom{g}}} \\
- \overset{*}\Longrightarrow & & \texttt{[6; 5; 4; 2; 1]}
-\end{eqnarray*}
+
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook78x.png}
+\end{center}
+\medskip
 
 \noindent The techniques we have seen in this chapter are forms of \textit{program reuse}, which is fundamental to writing manageable large programs.
 
@@ -1614,41 +1375,15 @@ There are some built-in exceptions in OCaml. For example \index{Division\_by\_ze
 \noindent\verb!Exception: Division_by_zero.!
 \smspace
 
-\begin{sloppypar}
 \noindent In order to signal bad arguments in functions like \texttt{take} and \texttt{drop}, we can rewrite them using the built-in exception \index{Invalid\_argument@\texttt{Invalid\_argument}}\texttt{Invalid\_argument}, which also carries a message written between double quotation marks. Typically we use this to record the name of the function which failed. Figure \ref{takedrop} shows \texttt{take} and \texttt{drop} rewritten to use the \texttt{Invalid\_argument} exception using \texttt{\textbf{raise}}. Note that these functions deal with two problems of our previous versions: a negative argument, and being asked to take or drop more than the number of elements in the list.
-\end{sloppypar}
 
-\begin{figure}[h]
-\begin{center}\small
-\fbox{\begin{minipage}{0.95\textwidth}
-\noindent\texttt{take :}\textbf{\textsf{ int $\rightarrow$ $\alpha$ list $\rightarrow$ $\alpha$ list}}\\
-\noindent\texttt{drop :}\textbf{\textsf{ int $\rightarrow$ $\alpha$ list $\rightarrow$ $\alpha$ list}}\\
-\\
-$\texttt{\pletrec take n l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\hfill\\
-$\texttt{\ \ \ \ [] ->}$\\
-$\texttt{\ \ \ \ \ \ \pif n = 0}$\\
-$\texttt{\ \ \ \ \ \ \ \ \pthen []}$\\
-$\texttt{\ \ \ \ \ \ \ \ \pelse \praise (Invalid\_argument "take")}$\hfill\textit{note the parentheses}\\
-$\texttt{\ \ | h::t ->}$\\
-$\texttt{\ \ \ \ \ \ \pif n < 0 \pthen \praise (Invalid\_argument "take") \pelse}$\\
-$\texttt{\ \ \ \ \ \ \ \ \pif n = 0 \pthen [] \pelse h ::\ take (n - 1) t}$\\ 
-\\
-$\texttt{\pletrec drop n l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\hfill\\
-$\texttt{\ \ \ \ [] ->}$\\
-$\texttt{\ \ \ \ \ \ \pif n = 0}$\\
-$\texttt{\ \ \ \ \ \ \ \ \pthen []}$\\
-$\texttt{\ \ \ \ \ \ \ \ \pelse \praise (Invalid\_argument "drop")}$\\
-$\texttt{\ \ | h::t ->}$\\
-$\texttt{\ \ \ \ \ \ \pif n < 0 \pthen \praise (Invalid\_argument "drop") \pelse}$\\
-$\texttt{\ \ \ \ \ \ \ \ \pif n = 0 \pthen l \pelse drop (n - 1) t}$\vphantom{g}
-\end{minipage}}
+%FIXME PANDOC FIGURE
+
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook79x.png}
 \end{center}
-\caption{\small Adding exceptions to \texttt{take} and \texttt{drop}}
-\label{takedrop}
-\end{figure}
-
+\medskip
 
 We can \index{exception!defining}define our own exceptions, using \index{exception@\texttt{\textbf{exception}}}\texttt{\textbf{exception}}. They can carry information along with them, of a type we choose:
 
@@ -1678,56 +1413,37 @@ We can \index{exception!defining}define our own exceptions, using \index{excepti
 
 \noindent Exceptions can be \index{exception!handling}\index{handling an exception}\textit{handled} as well as raised. An \textit{exception handler} deals with an exception raised by an expression. Exception handlers are written using the \index{try@\texttt{\textbf{try}}}\texttt{\textbf{try}} \ldots\ \texttt{\textbf{with}} construct:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{safe\_divide :}\textbf{\textsf{ int $\rightarrow$ int $\rightarrow$ int}}\\
-\\
-$\texttt{\plet safe\_divide x y =}$\\
-$\texttt{\ \ \ptry x / y \pwith}$\hfill\\
-$\texttt{\ \ \ \ Division\_by\_zero -> 0}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook80x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent The \texttt{safe\_divide} function tries to divide \texttt{x} by \texttt{y}, but if the expression \texttt{x / y} raises the built-in exception \texttt{Division\_by\_zero}, instead we return zero. Thus, our \texttt{safe\_divide} function succeeds for every argument. 
 
 How do the types work here? The expression \texttt{x / y} has type \textsf{\textbf{int}} and so the expression we substitute in case of \texttt{Division\_by\_zero} must have the same type: \textsf{\textbf{int}}, which indeed it does. And so, our rule that each expression must have one and only one type is not violated -- \texttt{safe\_divide} always returns an \textsf{\textbf{int}}. 
 
-\smspace
-$\underbrace{\texttt{\textbf{try} }\overbrace{\vphantom{(}\texttt{x / y}}^{\textsf{\textbf{int}}}\texttt{ \textbf{with} Division\_by\_zero -> }\overbrace{\texttt{0}}^{\textsf{\textbf{int}}}}_{\textsf{\textbf{int}}}$
-\smspace
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook81x.png}
+\end{center}
+\medskip
 
 \noindent Here is another example. The function \texttt{last} returns the last element of a list:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{last :}\textbf{\textsf{ $\alpha$ list $\rightarrow$ $\alpha$}}\\
-\\
-$\texttt{\pletrec last l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\hfill\\
-$\texttt{\ \ \ \ [x] -> x}$\\
-$\texttt{\ \ | \_::t -> last t}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook82x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent The pattern match is incomplete, so whilst OCaml accepts the program it can fail at run-time. We can tidy up the situation by raising the built-in exception \index{Not\_found@\texttt{Not\_found}}\texttt{Not\_found}:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{last :}\textbf{\textsf{ $\alpha$ list $\rightarrow$ $\alpha$}}\\
-\\
-$\texttt{\pletrec last l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ [] -> \praise Not\_found}$\\
-$\texttt{\ \ | [x] -> x}$\\
-$\texttt{\ \ | \_::t -> last t}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook83x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent  The type of a function gives no indication of what exceptions it might raise or handle; it is the responsibility of the programmer to ensure that exceptions which should be handled always are -- this is an area in which the type system cannot help us. Later in this book, we will see some alternatives to exceptions for occasions when they are likely to be frequently raised, allowing the type system to make sure we have dealt with each possible circumstance.
 
@@ -1759,161 +1475,92 @@ $\texttt{\ \ | \_::t -> last t}$\vphantom{g}
 
 Many programs make use of a structure known as a \index{dictionary}\textit{dictionary}. A real dictionary is used for associating definitions with words; we use ``dictionary'' more generally to mean associating some unique \index{key, in a dictionary}\textit{keys} (like words) with \index{value, in a dictionary}\textit{values} (like definitions). For example, we might like to store the following information about the number of people living in each house in a road:
 
-\smspace
-\noindent\begin{tabular}{@{}ll@{}} \toprule
-House & People\\ \midrule
-1 & 4\\
-2 & 2\\
-3 & 2\\
-4 & 3\\
-5 & 1\\
-6 & 2\\ \bottomrule
-\end{tabular}
-\smspace
+\medskip
+\begin{center}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook84x.png}
+\end{center}
+\medskip
 
 \noindent The house number is the key, the number of people living in the house is the value. The order of keys is unimportant -- we just need to be able to associate each key with one (and only one) value. It would be very inconvenient to store two lists, one of house numbers and one of people. For one thing, we would have way of guaranteeing the two lists were of equal length. What we would like is a way of representing pairs like (1, 4) and then having a single list of those. \index{pair}\index{tuple}To make a pair in OCaml, just write it with parentheses and a comma:
 
-\smspace
+
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{p :}\textbf{\textsf{ int $\times$ int}}\\
-\\
-$\texttt{\plet p = (1, 4)}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook85x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent It has the type \index{$\times$}\textbf{\textsf{int $\times$ int}}, which we pronounce as ``int cross int''. When printed on the screen, \texttt{*} is used instead of $\times$ just as with multiplication. The two parts of the pair need not have the same type:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{q :}\textbf{\textsf{ int $\times$ char}}\\
-\\
-$\texttt{\plet q = (1, '1')}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook86x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent We can write simple functions to extract the first and second element using pattern matching:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{fst :}\textbf{\textsf{ $\alpha \times \beta \rightarrow \alpha$}}\\
-\noindent\texttt{snd :}\textbf{\textsf{ $\alpha \times \beta \rightarrow \beta$}}\\
-\\
-$\texttt{\plet fst p = \pmatch p \pwith (x, \_) -> x}$\\
-$\texttt{\plet snd p = \pmatch p \pwith (\_, y) -> y}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook87x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent In fact, since pairs can only take one form (unlike lists, which have two forms: empty or consisting of a head and a tail), OCaml lets us use the pattern directly in place of the argument:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{fst :}\textbf{\textsf{ $\alpha \times \beta \rightarrow \alpha$}}\\
-\noindent\texttt{snd :}\textbf{\textsf{ $\alpha \times \beta \rightarrow \beta$}}\\
-\\
-$\texttt{\plet fst (x, \_) = x}$\\
-$\texttt{\plet snd (\_, y) = y}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook88x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Now, we can store a dictionary as a list of pairs:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{census :}\textbf{\textsf{ \textmd{(}int $\times$ int\textmd{)} list}}\\
-\\
-$\texttt{\plet census = [(1, 4); (2, 2); (3, 2); (4, 3); (5, 1); (6, 2)]}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook89x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Notice the parentheses around \textsf{\textbf{int $\times$ int}} in the type. Otherwise, it would be the type of a pair of an integer and an integer list:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{y :}\textbf{\textsf{ int $\times$ int list}}\\
-\\
-$\texttt{\plet y = (1, [2; 3; 4])}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook90x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent What operations might we want on dictionaries? We certainly need to look up a value given a key:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{lookup :}\textbf{\textsf{ $\alpha$ $\rightarrow$ \textmd{(}$\alpha\times\beta$\textmd{)} list $\rightarrow$ $\beta$}}\\
-\\
-$\texttt{\pletrec lookup x l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ [] -> \praise Not\_found}$\hfill\textit{we reached the end, and did not find it}\\
-$\texttt{\ \ | (k, v)::t ->}$\\
-$\texttt{\ \ \ \ \ \ \pif k = x \pthen v \pelse lookup x t}$\hfill\textit{return the value, or keep looking}\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook91x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent For example, \texttt{lookup 4 census} evaluates to \texttt{3}, whereas \texttt{lookup 9 census} raises \texttt{Not\_found}. Another basic operation is to add an entry (we must replace it if it already exists, to maintain the property that each key appears at most once in a dictionary).
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{add :}\textbf{\textsf{ $\alpha$ $\rightarrow$ $\beta$ $\rightarrow$ \textmd{(}$\alpha\times\beta$\textmd{)} list $\rightarrow$ \textmd{(}$\alpha\times\beta$\textmd{)} list}}\\
-\\
-$\texttt{\pletrec add k v d =}$\hfill\textit{key, value, dictionary}\\
-$\texttt{\ \ \pmatch d \pwith}$\\
-$\texttt{\ \ \ \ [] -> [(k, v)]}$\hfill\textit{it is not present, so add it}\\
-$\texttt{\ \ | (k\textquotesingle, v\textquotesingle )::t ->}$\\
-$\texttt{\ \ \ \ \ \ \pif k = k\textquotesingle}$\\
-$\texttt{\ \ \ \ \ \ \ \ \pthen (k, v) ::\ t}$\hfill\textit{found an equal key so replace the entry}\\
-$\texttt{\ \ \ \ \ \ \ \ \pelse (k\textquotesingle , v\textquotesingle ) ::\ add k v t}$\hfill\textit{otherwise, keep the entry and continue}\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook92x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent For example, \texttt{add 6 2 [(4, 5); (6, 3)]} evaluates to \texttt{[(4, 5); (6, 2)]} (the value for key \texttt{6} is replaced), whereas \texttt{add 6 2 [(4, 5); (3, 6)]} evaluates to \texttt{[(4, 5); (3, 6); (6, 2)]} (the new entry for key \texttt{6} is added). Removing an element is easy:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{remove :}\textbf{\textsf{ $\alpha$ $\rightarrow$ \textmd{(}$\alpha\times\beta$\textmd{)} list $\rightarrow$ \textmd{(}$\alpha\times\beta$\textmd{)} list}}\\
-\\
-$\texttt{\pletrec remove k d =}$\\
-$\texttt{\ \ \pmatch d \pwith}$\\
-$\texttt{\ \ \ \ [] -> []}$\hfill\textit{it is not present, so we are done}\\
-$\texttt{\ \ | (k\textquotesingle , v\textquotesingle )::t ->}$\\
-$\texttt{\ \ \ \ \ \ \pif k = k\textquotesingle }$\\
-$\texttt{\ \ \ \ \ \ \ \ \pthen t}$\hfill\textit{equal key -- remove it, and we are done}\\
-$\texttt{\ \ \ \ \ \ \ \ \pelse (k\textquotesingle , v\textquotesingle ) ::\ remove k t}$\hfill\textit{otherwise, retain and keep looking}\vphantom{g} 
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook93x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent The function always succeeds -- even if the key was not found. We can use exception handling together with our lookup operation to build a function which checks if a key exists within a dictionary:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{key\_exists :}\textbf{\textsf{ $\alpha$ $\rightarrow$ \textmd{(}$\alpha\times\beta$\textmd{)} list $\rightarrow$ bool}}\\
-\\
-$\texttt{\plet key\_exists k d =}$\\
-$\texttt{\ \ \ptry}$\\
-$\texttt{\ \ \ \ \plet \_ = lookup k d \pin true}$\\
-$\texttt{\ \ \pwith}$\\
-$\texttt{\ \ \ \ Not\_found -> false}$\vphantom{g}
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook94x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent If \texttt{lookup k d} succeeds, \texttt{true} will be returned. If not, an exception will be raised, which \texttt{key\_exists} will handle itself, and return \texttt{false}. Note that we did not give a name to the result of \texttt{lookup k l} because we always return \texttt{true} if it succeeds.
 
@@ -1951,15 +1598,11 @@ Pairs are just a particular instance of a more general construct -- the \textit{
 
 Look again at the type of a simple function with more than one argument:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{add :}\textbf{\textsf{ int $\rightarrow$ int $\rightarrow$ int}}\\
-\\
-$\texttt{\plet add x y = x + y}$
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook95x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent We have been considering functions like this as taking two arguments and returning a result. In fact, the truth is a little different. The type \textbf{\textsf{int $\rightarrow$ int $\rightarrow$ int}} can also be written as \textbf{\textsf{int $\rightarrow$ \textmd{(}int $\rightarrow$ int\textmd{)}}}. OCaml lets us omit the parentheses because \textbf{\textsf{$\rightarrow$}} is a right-associative operator in the language of types. This gives us a clue.
 
@@ -2000,56 +1643,37 @@ $\texttt{\plet add x y = x + y}$
 
 \noindent Recall the function to map something over a list of lists from the questions to Chapter 6:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{mapl :}\textbf{\textsf{ \textmd{(}$\alpha$ $\rightarrow$ $\beta$\textmd{)} $\rightarrow$ $\alpha$ list list $\rightarrow$ $\beta$ list list}}\\
-\\
-$\texttt{\pletrec mapl f l =}$\\
-$\texttt{\ \ \pmatch l \pwith}$\\
-$\texttt{\ \ \ \ [] -> [] }$\\
-$\texttt{\ \ | h::t -> map f h ::\ mapl f t}$
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook96x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent With partial application, we can write
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{mapl :}\textbf{\textsf{ \textmd{(}$\alpha$ $\rightarrow$ $\beta$\textmd{)} $\rightarrow$ $\alpha$ list list $\rightarrow$ $\beta$ list list}}\\
-\\
-$\texttt{\plet mapl f l = map (map f) l}$
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook97x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Can you see why? The partially applied function \texttt{map f} is of type \textbf{\textsf{$\alpha$ list $\rightarrow$ $\beta$ list}}, which is exactly the right type to pass to \texttt{map} when mapping over lists of lists. In fact, we can go even further and write:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{mapl :}\textbf{\textsf{ \textmd{(}$\alpha$ $\rightarrow$ $\beta$\textmd{)} $\rightarrow$ $\alpha$ list list $\rightarrow$ $\beta$ list list}}\\
-\\
-$\texttt{\plet mapl f = map (map f)}$
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook98x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Here,\, \texttt{map (map f)} has type \textsf{\textbf{$\alpha$ list list $\rightarrow$ $\beta$ list list}} so when an \texttt{f} is supplied to \texttt{mapl}, a function is returned requiring just the list. This is partial application at work again.
 
 You can see the real structure of multiple-argument functions, by writing \texttt{add} using anonymous functions:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{add :}\textbf{\textsf{ int $\rightarrow$ int $\rightarrow$ int}}\\
-\\
-$\texttt{\plet add = \pfun x -> \pfun y -> x + y}$
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook99x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent This makes it more obvious that our two-argument \texttt{add} function is really just composed of one-argument functions, but \texttt{\textbf{let} add x y = x + y} is much clearer! We can apply one or more arguments at a time, but they must be applied in order. Everything in this chapter also works for functions with more than two arguments. 
 
@@ -2090,21 +1714,11 @@ So far, we have considered the simple types \textbf{\textsf{int}}, \textbf{\text
 
 \noindent The name of our new type is \textsf{colour}. It has four \index{type!constructor}\textit{constructors}, written with an initial capital letter: \texttt{Red}, \texttt{Green}, \texttt{Blue}, and \texttt{Yellow}. These are the possible forms a value of type \textsf{colour} may take. Now we can build values of type \textsf{colour}:
 
-\smspace
+\medskip
 \begin{center}
-\fbox{\begin{minipage}{0.8\textwidth}
-\noindent\texttt{col :}\textbf{\textsf{ \textmd{colour}}}\\
-\noindent\texttt{cols :}\textbf{\textsf{ \textmd{colour} list}}\\
-\noindent\texttt{colpair :}\textbf{\textsf{ \textmd{char} $\times$ \textmd{colour}}}\\
-\\
-$\texttt{\plet col = Blue}$\\
-\\
-$\texttt{\plet cols = [Red; Red; Green; Yellow]}$\\
-\\
-$\texttt{\plet colpair = ('R', Red)}$
-\end{minipage}}
+\noindent\includegraphics[width=\textwidth]{kindlemlbook100x.png}
 \end{center}
-\smspace
+\medskip
 
 \noindent Let us extend our type to include any other colour which can be expressed in the RGB (Red, Green, Blue) colour system (each component ranges from 0 to 255 inclusive, a standard range giving about 16 million different colours). 
 
