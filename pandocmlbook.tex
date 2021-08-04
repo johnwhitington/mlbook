@@ -3427,7 +3427,7 @@ We require a function \texttt{apply f n x} which applies function \texttt{f} a t
 \end{center}
 \medskip
 
-\noindent The function \texttt{f} must take and return the same type $\alpha$, since its result in one iteration is fed back in as its argument in the next. Therefore, the argument \texttt{x} and the final result must also have type $\alpha$. For example, for $\alpha = \textbf{\textsf{int}}$, we might have a power function:
+\noindent The function \texttt{f} must take and return the same type $\alpha$, since its result in one iteration is fed back in as its argument in the next. Therefore, the argument \texttt{x} and the final result must also have type $\alpha$. For example, for $\alpha = \textbf{int}$, we might have a power function:
 
 \medskip
 \begin{center}
@@ -3653,7 +3653,7 @@ The function \texttt{map} has type \textbf{\textsf{\textmd{(}$\alpha$ $\rightarr
 \end{center}
 \medskip
 
-\noindent It is not possible to write a function which would map a function \texttt{f} over a list, or list of lists, or list of lists of lists depending upon its argument, because every function in OCaml must have a single type. If a function could map \texttt{f} over an \textsf{\textbf{$\alpha$ list list}} it must inspect its argument enough to know it is a list of lists, thus it could not be used on a \textsf{\textbf{$\beta$ list}} unless $\beta = \alpha\  \textbf{\textsf{list}}$.
+\noindent It is not possible to write a function which would map a function \texttt{f} over a list, or list of lists, or list of lists of lists depending upon its argument, because every function in OCaml must have a single type. If a function could map \texttt{f} over an \textsf{\textbf{$\alpha$ list list}} it must inspect its argument enough to know it is a list of lists, thus it could not be used on a \textsf{\textbf{$\beta$ list}} unless $\beta = \alpha\  \textbf{list}$.
 
 \subsection*{5}
 We can write a function to truncate a single list using our \texttt{take} function, being careful to deal with the case where there is not enough to take, and then use this and \texttt{map} to build \texttt{truncate} itself.
@@ -3830,11 +3830,10 @@ We can make list dictionaries from both tree dictionaries, append them, and buil
 
 We will use a list for the sub-trees of each branch, with the empty list signifying there are no more i.e. that this is the bottom of the tree. Thus, we only need a single constructor.
 
-%FIXME CHECK
 \smspace
 \begin{center}
 \begin{minipage}{0.8\textwidth}
-$\texttt{\ptype\ \textquotesingle a mtree = Branch of \textquotesingle a * \textquotesingle a mtree list}$\vphantom{g}
+\texttt{type \textquotesingle a mtree = Branch of \textquotesingle a * \textquotesingle a mtree list}
 \end{minipage}
 \end{center}
 \smspace
