@@ -1,0 +1,2 @@
+#!/bin/bash
+htlatex pandocfiguresmlbook "html,pic-fbox,pic-equations,pic-tabular"
