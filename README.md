@@ -17,8 +17,17 @@ run ./build
 Kindle / epub / HTML requirements
 ---------------------------------
 
-1. Needs `tex4ht` (provided with your tex distribution)
-2. Modify `tex4ht` config to get better image resolution.
+Needs `tex4ht` (provided with your tex distribution).
+
+Modify `tex4ht` config to get better image resolution for bits which get
+converted to images:
+
+For example this file:
+
+/usr/local/texlive/2018/texmf-dist/tex4ht/base/unix/tex4ht.env
+
+Change all '110' to '220' to double the resolution.
+
 
 Building the Kindle version
 ---------------------------
