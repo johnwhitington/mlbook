@@ -1,2 +1,2 @@
 #!/bin/sh
-rm -f  *converted* *.4ct *.4tc *.aux *.css *.dvi *.idv *.idx *.lg *.log *.tmp *.toc *.out *.xref *.svg kindlemlbook*.png pandocfiguresmlbook*.png *.hi *.o *.cpt foo pandocmlbook.pdf
+rm -f  *.fls *.ilg *.ind *.fdb_latexmk *converted* *.4ct *.4tc *.aux *.css *.dvi *.idv *.idx *.lg *.log *.tmp *.toc *.out *.xref *.svg kindlemlbook*.png pandocfiguresmlbook*.png *.hi *.o *.cpt foo pandocmlbook.pdf
