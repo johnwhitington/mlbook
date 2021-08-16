@@ -1,5 +1,7 @@
 SOURCES = splitter.ml
 
+PACKS = lambdasoup
+
 RESULT = splitter
 
 TARGETS := native-code
