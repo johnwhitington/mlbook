@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title> </title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<h1 id="coping-with-errors">Coping with Errors</h1>
+<p>It is very hard to write even small programs correctly the first time. An unfortunate but inevitable part of programming is the location and fixing of mistakes. OCaml has a range of messages to help you with this process.</p>
+<p>Here are descriptions of the common messages OCaml prints when a program cannot be accepted or when running it causes a problem (a so-called “run-time error”). We also describe warnings OCaml prints to alert the programmer to a program which, though it can be accepted for evaluation, might contain mistakes.</p>
+<h2 class="unnumbered" id="errors"><span class="smallcaps">Errors</span></h2>
+<p>These are messages printed when an expression could not be accepted for evaluation, due to being malformed in some way. No evaluation is attempted. You must fix the expression and try again.</p>
+<h3 class="unnumbered" id="syntax-error">Syntax error</h3>
+<p>This error occurs when OCaml finds that the program text contains things which are not valid words (such as <code>if</code>, <code>let</code> etc.) or other basic parts of the language, or when they exist in invalid combinations – this is known as <em>syntax</em>. Check carefully and try again.</p>
+<p><code>        OCaml</code><br>
+<br>
+<code>#1 +;;</code><br>
+<code>Error: syntax error</code></p>
+<p>OCaml has underlined where it thinks the error is. Since this error occurs for a wide range of different mistakes and problems, the underlining may not pinpoint the exact position of your mistake.</p>
+<h3 class="unnumbered" id="unbound-value">Unbound value …</h3>
+<p>This error occurs when you have mentioned a name which has not been defined (technically “bound to a value”). This might happen if you have mistyped the name.</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># x + 1;;</code><br>
+<code>Error:&nbsp;Unbound value x</code></p>
+<p>In our example <code>x</code> is not defined, so it has been underlined.</p>
+<h3 class="unnumbered" id="this-expression-has-type-but-an-expression-was-expected-of-type">This expression has type …&nbsp;but an expression was expected of type …</h3>
+<p>You will see this error very frequently. It occurs when the expression’s syntax is correct (i.e. it is made up of valid words and constructs), and OCaml has moved on to type-checking the expression prior to evaluation. If there is a problem with type-checking, OCaml shows you where a mismatch between the expected and actual type occurred.</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># 1 + true;;</code><br>
+<code>Error:&nbsp;This expression has type bool but an expression was expected of type</code><br>
+<code>         </code><code>int</code></p>
+<p>In this example, OCaml is looking for an integer on the right hand side of the <code>+</code> operator, and finds something of type <span class="sans-serif"><strong>bool</strong></span> instead.</p>
+<p>It is not always as easy to spot the real source of the problem, especially if the function is recursive. Nevertheless, a careful look at the program will often shine light on the problem – look at each function and its arguments, and try to find your mistake.</p>
+<h3 class="unnumbered" id="this-function-is-applied-to-too-many-arguments">This function is applied to too many arguments</h3>
+<p>Exactly what it says. The function name is underlined.</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># let f x = x + 1;;</code><br>
+<code>val f :&nbsp;int -&gt; int = &lt;fun&gt;</code><br>
+<code># f x y;;</code><br>
+<code>Error:&nbsp;This function is applied to too many arguments;</code><br>
+<code>maybe you forgot a </code><code>`;'</code></p>
+<p>The phrase “maybe you forgot a ‘;’ ” applies to imperative programs where accidently missing out a ‘;’ between successive function applications might commonly lead to this error.</p>
+<h3 class="unnumbered" id="unbound-constructor">Unbound constructor …</h3>
+<p>This occurs when a constructor name is used which is not defined.</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># type t = Roof | Wall | Floor;;</code><br>
+<code>type t = Roof | Wall | Floor</code><br>
+<code># Window;;</code><br>
+<code>Error:&nbsp;Unbound constructor Window</code></p>
+<p>OCaml knows it is a constructor name because it has an initial capital letter.</p>
+<h3 class="unnumbered" id="the-constructor-expects-arguments-but-is-applied-here-to-arguments">The constructor …&nbsp;expects …&nbsp;argument(s), but is applied here to …&nbsp;argument(s)</h3>
+<p>This error occurs when the wrong kind of data is given to a constructor for a type. It is just another type error, but we get a specialised message.</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># type p = A of int | B of bool;;</code><br>
+<code>type p = A of int | B of bool</code><br>
+<code># A;;</code><br>
+<code>Error:&nbsp;The constructor A expects 1 argument(s),</code><br>
+<code>       </code><code>but is applied here to 0 argument(s)</code></p>
+<h2 class="unnumbered" id="run-time-errors"><span class="smallcaps">Run-time Errors</span></h2>
+<p>In any programming language powerful enough to be of use, some errors cannot be detected before attempting evaluation of an expression (until “run-time”). The exception mechanism is for handling and recovering from these kinds of problems.</p>
+<h3 class="unnumbered" id="stack-overflow-during-evaluation-looping-recursion">Stack overflow during evaluation (looping recursion?)</h3>
+<p>This occurs if the function builds up a working expression which is too big. This might occur if the function is never going to stop because of a programming error, or if the argument is just too big.</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># let rec f x = 1 + f (x + 1);;</code><br>
+<code>val f :&nbsp;int -&gt; int = &lt;fun&gt;</code><br>
+<code># f 0;;</code><br>
+<code>Stack overflow during evaluation (looping recursion?).</code></p>
+<p>Find the cause of the unbounded recursion, and try again. If it is really not a mistake, rewrite the function to use an accumulating argument (and so, to be tail recursive).</p>
+<h3 class="unnumbered" id="exception-match_failure">Exception: Match_failure …</h3>
+<p>This occurs when a pattern match cannot find anything to match against. You would have been warned about this possibility when the program was originally entered. For example, if the following function <code>f</code> were defined as</p>
+<p><code>let f x = match x with 0 -&gt; 1</code></p>
+<p>then using the function with <code>1</code> as an argument would produce:</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># f 1;;</code><br>
+<code>Exception:&nbsp;Match_failure ("//toplevel//", 1, 10).</code></p>
+<p>In this example, the match failure occurred in the top level (i.e. the interactive OCaml we are using), at line one, character ten.</p>
+<h3 class="unnumbered" id="exception">Exception: …</h3>
+<p>This is printed if an un-handled exception reaches OCaml.</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># exception Exp of string;;</code><br>
+<code>exception Exp of string</code><br>
+<code># raise (Exp "Failed");;</code><br>
+<code>Exception:&nbsp;Exp "Failed".</code></p>
+<p>This can occur for built-in exceptions like <code>Division_by_Zero</code> or <code>Not_found</code> or ones the user has defined like <code>Exp</code> above.</p>
+<h2 class="unnumbered" id="warnings"><span class="smallcaps">Warnings</span></h2>
+<p>Warnings do not stop an expression being accepted or evaluated. They are printed after an expression is accepted but before the expression is evaluated. Warnings are for occasions where OCaml is concerned you may have made a mistake, even though the expression is not actually malformed. You should check each new warning in a program carefully.</p>
+<h3 class="unnumbered" id="this-pattern-matching-is-not-exhaustive">This pattern-matching is not exhaustive</h3>
+<p>This warning is printed when OCaml has determined that you have missed out one or more cases in a pattern match. This could result in a <code>Match_failure</code> exception being raised at run-time.</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># let f x = match x with 0 -&gt; 1;;</code><br>
+<code>Warning 8:&nbsp;this pattern-matching is not exhaustive.</code><br>
+<code>Here is an example of a value that is not matched:</code><br>
+<code>1</code><br>
+<code>val f :&nbsp;int -&gt; int = &lt;fun&gt;</code></p>
+<p>Helpfully, it is able to generate an example of something the pattern match does not cover, so this should give you a hint about what has been missed out. You may ignore the warning if you are sure that, for other reasons, this case can never occur.</p>
+<h3 class="unnumbered" id="this-match-case-is-unused">This match case is unused</h3>
+<p>This occurs when two parts of the pattern match cover the same case. In this situation, the second one could never be reached, so it is almost certain the programmer has made a mistake.</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># let f x = match x with _ -&gt; 1 | 0 -&gt; 0;;</code><br>
+<code>Warning 11:&nbsp;this match case is unused.</code><br>
+<code>val f :&nbsp;int -&gt; int = &lt;fun&gt;</code></p>
+<p>In this case, the first case matches everything, so the second cannot ever match.</p>
+<h3 class="unnumbered" id="this-expression-should-have-type-unit">This expression should have type unit</h3>
+<p>Sometimes when writing imperative programs, we ignore the result of some side-effect-producing function. However, this can indicate a mistake.</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># f 1; 2;;</code><br>
+<code>Warning 10:&nbsp;this expression should have type unit.</code><br>
+<code>- :&nbsp;int = 2</code></p>
+<p>It is better to use the built-in <code>ignore</code> function in these cases, to avoid this warning:</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># ignore (f 1); 2;;</code><br>
+<code>- :&nbsp;int = 2</code></p>
+<p>The ignore function has type <span class="sans-serif"><strong><span class="math inline"><em>α</em></span> <span class="math inline">→</span> unit</strong></span>. It has no side-effect.</p>
+
+
+</html>

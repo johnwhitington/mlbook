@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title> </title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<h1 id="hints-for-questions">Hints for Questions</h1>
+<div class="multicols*">
+<p><span>2</span></p>
+<h2 class="unnumbered" id="starting-off-2">1. Starting Off</h2>
+<h3 class="unnumbered" id="section-100">1</h3>
+<p>Try to work these out on paper, and then check by typing them in. Remember that the type of an expression is the type of the value it will evaluate to. Can you show the steps of evaluation for each expression?</p>
+<h3 class="unnumbered" id="section-101">2</h3>
+<p>Type each expression in. What number does each evaluate to? Can you work out which operator (<code>mod</code> or <code>+</code>) is being calculated first?</p>
+<h3 class="unnumbered" id="section-102">3</h3>
+<p>Type it in. What does OCaml print? What is the evaluation order?</p>
+<h3 class="unnumbered" id="section-103">7</h3>
+<p>What if a value of 2 appeared? How might we interpret it?</p>
+<h2 class="unnumbered" id="names-and-functions-2">2. Names and Functions</h2>
+<h3 class="unnumbered" id="section-104">1</h3>
+<p>The function takes one integer, and returns that integer multiplied by ten. So what must its type be?</p>
+<h3 class="unnumbered" id="section-105">2</h3>
+<p>What does the function take as arguments? What is the type of its result? So what is the whole type? You can use the <code>&lt;&gt;</code> and <code>&amp;&amp;</code> operators here.</p>
+<h3 class="unnumbered" id="section-106">3</h3>
+<p>This will be a recursive function, so remember to use <code>let rec</code>. What is the sum of all the integers from <span class="math inline">1…1</span>? Perhaps this is a good base case.</p>
+<h3 class="unnumbered" id="section-107">4</h3>
+<p>This will be a recursive function. What happens when you raise a number to the power <span class="math inline">0</span>? What about the power <span class="math inline">1</span>? What about a higher power?</p>
+<h3 class="unnumbered" id="section-108">5</h3>
+<p>Can you define this in terms of the <code>isvowel</code> function we have already written?</p>
+<h3 class="unnumbered" id="section-109">6</h3>
+<p>Try adding parentheses to the expression in a way which does not change its meaning. Does this make it easier to understand?</p>
+<h3 class="unnumbered" id="section-110">7</h3>
+<p>When does it not terminate? Can you add a check to see when it might happen, and return <span class="math inline">0</span> instead? What is the factorial of <span class="math inline">0</span> anyway?</p>
+<h2 class="unnumbered" id="case-by-case-2">3. Case by Case</h2>
+<h3 class="unnumbered" id="section-111">1</h3>
+<p>We are pattern matching on a boolean value, so there are just two cases: <code>true</code> and <code>false</code>.</p>
+<h3 class="unnumbered" id="section-112">2</h3>
+<p>Convert the <code>if…&nbsp;then…&nbsp;else</code> structure of the <code>sum</code> function from the previous chapter into a pattern matching structure.</p>
+<h3 class="unnumbered" id="section-113">3</h3>
+<p>You will need three cases as before – when the power is <span class="math inline">0</span>, <span class="math inline">1</span> or greater than <span class="math inline">1</span> – but now in the form of a pattern match.</p>
+<h3 class="unnumbered" id="section-114">5</h3>
+<p>Consider where parentheses might be added without altering the expression.</p>
+<h3 class="unnumbered" id="section-115">6</h3>
+<p>There will be two cases in each function – the special range pattern <code>x..y</code>, and <code>_</code> for any other character.</p>
+<h2 class="unnumbered" id="listing-things-1">4. Listing Things</h2>
+<h3 class="unnumbered" id="section-116">1</h3>
+<p>Consider three cases: (1)&nbsp;the argument list is empty, (2)&nbsp;the argument list has one element, (3)&nbsp;the argument list has more than one element <code>a::b::t</code>. In the last case, which element do we need to miss out?</p>
+<h3 class="unnumbered" id="section-117">2</h3>
+<p>The function will have type <span class="sans-serif"><strong>bool list</strong></span><span class="math inline">→</span> <span class="sans-serif"><strong>int</strong></span>. Consider the empty list, the list with <code>true</code> as its head, and the list with <code>false</code> as its head. Count one for each <code>true</code> and zero for each <code>false</code>.</p>
+<h3 class="unnumbered" id="section-118">3</h3>
+<p>The function to make a palindrome is trivial; to detect if a list is a palindrome, consider the definition of a palindrome – a list which equals its own reverse.</p>
+<h3 class="unnumbered" id="section-119">4</h3>
+<p>Consider the cases (1)&nbsp;the empty list, (2)&nbsp;the list with one element, and (3)&nbsp;the list with more than one element. For the tail recursive version, use an accumulating argument.</p>
+<h3 class="unnumbered" id="section-120">5</h3>
+<p>Can any element exist in the empty list? If the list is not empty, it must have a head and a tail. What is the answer if the element we are looking for is equal to the head? What do we do if it is not?</p>
+<h3 class="unnumbered" id="section-121">6</h3>
+<p>The empty list is already a set. If we have a head and a tail, what does it tell us to find out if the head exists within the tail?</p>
+<h3 class="unnumbered" id="section-122">7</h3>
+<p>Consider in which order the <code>@</code> operators are evaluated in the reverse function. How long does each append take? How many are there?</p>
+<h2 class="unnumbered" id="sorting-things-2">5. Sorting Things</h2>
+<h3 class="unnumbered" id="section-123">1</h3>
+<p>Consider adding another <code>let</code> before <code>let left</code> and <code>let right</code>.</p>
+<h3 class="unnumbered" id="section-124">2</h3>
+<p>Consider the situations in which <code>take</code> and <code>drop</code> can fail, and what arguments <code>msort</code> gives them at each recursion.</p>
+<h3 class="unnumbered" id="section-125">3</h3>
+<p>This is a simple change – consider the comparison operator itself.</p>
+<h3 class="unnumbered" id="section-126">4</h3>
+<p>What will the type of the function be? Lists of length zero and one are already sorted – so these will be the base cases. What do we do when there is more than one element?</p>
+<h3 class="unnumbered" id="section-127">6</h3>
+<p>You can put one <code>let rec</code> construct inside another.</p>
+<h2 class="unnumbered" id="names-and-functions-3">2. Names and Functions</h2>
+<h3 class="unnumbered" id="section-128">1</h3>
+<p>The function <code>calm</code> is simple recursion on lists. There are three cases – the empty list, a list beginning with <code>’!’</code> and a list beginning with any other character. In the second part of the question, write a function <code>calm_char</code> which processes a single character. You can then use <code>map</code> to define a new version of <code>calm</code>.</p>
+<h3 class="unnumbered" id="section-129">2</h3>
+<p>This is the same process as Question 1.</p>
+<h3 class="unnumbered" id="section-130">3</h3>
+<p>Look back at the section on anonymous functions. How can <code>clip</code> be expressed as an anonymous function? So, how can we use it with <code>map</code>?</p>
+<h3 class="unnumbered" id="section-131">4</h3>
+<p>We want a function of the form <code>let rec apply f n x =</code>&nbsp;&nbsp;…&nbsp;which applies <code>f</code> to <code>x</code> a total of <code>n</code> times. What is the base case? What do we do in that case? What otherwise?</p>
+<h3 class="unnumbered" id="section-132">5</h3>
+<p>You will need to add the extra function as an argument to both <code>insert</code> and <code>sort</code> and use it in place of the <code>&lt;=</code> operator in <code>insert</code>.</p>
+<h3 class="unnumbered" id="section-133">6</h3>
+<p>There are three possibilities: the argument list is empty, <code>true</code> is returned when its head is given to the function <code>f</code>, or <code>false</code> is returned when its head is given to the function <code>f</code>.</p>
+<h3 class="unnumbered" id="section-134">7</h3>
+<p>If the input list is empty, the result is trivially true – there cannot possibly be any elements for which the function does not hold. If not, it must hold for the first one, and for all the others by recursion.</p>
+<h3 class="unnumbered" id="section-135">8</h3>
+<p>You can use <code>map</code> on each <strong><span class="sans-serif"><span class="math inline"><em>α</em></span> list</span></strong> in the <strong><span class="sans-serif"><span class="math inline"><em>α</em></span> list list</span></strong>.</p>
+<h2 class="unnumbered" id="chapter-7.-when-things-go-wrong-1">Chapter 7. When Things go Wrong</h2>
+<h3 class="unnumbered" id="section-136">1</h3>
+<p>Make sure to consider the case of the empty list, where there is no smallest positive element, and also the non-empty list containing entirely zero or negative numbers.</p>
+<h3 class="unnumbered" id="section-137">2</h3>
+<p>Just put an exception handler around the function in the previous question.</p>
+<h3 class="unnumbered" id="section-138">3</h3>
+<p>First, write a function to find the number less than or equal to the square root of its argument. Now, define a suitable exception, and wrap up your function in another which, on a bad argument, raises the exception or otherwise calls your first function.</p>
+<h3 class="unnumbered" id="section-139">4</h3>
+<p>Use the <code>try</code>&nbsp;…&nbsp;<code>with</code> construct to call your function and handle the exception you defined.</p>
+<h2 class="unnumbered" id="chapter-7.-looking-things-up-1">Chapter 7. Looking Things Up</h2>
+<h3 class="unnumbered" id="section-140">1</h3>
+<p>The keys in a dictionary are unique – does remembering that fact help you?</p>
+<h3 class="unnumbered" id="section-141">2</h3>
+<p>The type will be the same as for the <code>add</code> function, but we only replace something if we find it there – when do we know we will not find it?</p>
+<h3 class="unnumbered" id="section-142">3</h3>
+<p>The function takes a list of keys and a list of values, and returns a dictionary. So it will have type <strong><span class="sans-serif"><span class="math inline"><em>α</em></span> list <span class="math inline">→</span> <span class="math inline"><em>β</em></span> list <span class="math inline">→</span> <span class="medium">(</span><span class="math inline"><em>α</em></span> <span class="math inline">×</span> <span class="math inline"><em>β</em></span><span class="medium">)</span> list</span></strong>. Try matching on both lists at once – what are the cases?</p>
+<h3 class="unnumbered" id="section-143">4</h3>
+<p>This function takes a list of pairs and produces a pair of lists. So its type must be <span class="sans-serif"><strong><span class="medium">(</span><span class="math inline"><em>α</em></span> <span class="math inline">×</span> <span class="math inline"><em>β</em></span><span class="medium">)</span> list <span class="math inline">→</span> <span class="math inline"><em>α</em></span> list <span class="math inline">×</span> <span class="math inline"><em>β</em></span> list</strong></span>.</p>
+<p>For the base case (the empty dictionary), we can see that the result should be <code>([], [])</code>. But what to do in the case we have <code>(k, v) :: more</code>? We must get names for the two parts of the result of our function on <code>more</code>, and then cons <code>k</code> and <code>v</code> on to them – can you think of how to do that?</p>
+<h3 class="unnumbered" id="section-144">5</h3>
+<p>You can keep a list of the keys which have already been seen, and use the <code>member</code> function to make sure you do not add to the result list a key-value pair whose key has already been included.</p>
+<h3 class="unnumbered" id="section-145">6</h3>
+<p>The function will take two dictionaries, and return another – so you should be able to write down its type easily.</p>
+<p>Try pattern matching on the first list – when it is empty, the answer is trivial – what about when it has a head and a tail?</p>
+<h2 class="unnumbered" id="chapter-9.-more-with-functions-1">Chapter 9. More with Functions</h2>
+<h3 class="unnumbered" id="section-146">2</h3>
+<p>Try building a list of booleans, each representing the result of <code>member</code> on a list.</p>
+<h3 class="unnumbered" id="section-147">3</h3>
+<p>The <code>/</code> operator differs from the <code>*</code> operator in an important sense. What is it?</p>
+<h3 class="unnumbered" id="section-148">4</h3>
+<p>The type of <code>map</code> is <strong><span class="sans-serif"><span class="medium">(</span><span class="math inline"><em>α</em></span> <span class="math inline">→</span> <span class="math inline"><em>β</em></span><span class="medium">)</span> <span class="math inline">→</span> <span class="math inline"><em>α</em></span> list <span class="math inline">→</span> <span class="math inline"><em>β</em></span> list</span></strong>. The type of <code>mapl</code> is <strong><span class="sans-serif"><span class="medium">(</span><span class="math inline"><em>α</em></span> <span class="math inline">→</span> <span class="math inline"><em>β</em></span><span class="medium">)</span> <span class="math inline">→</span> <span class="math inline"><em>α</em></span> list list <span class="math inline">→</span> <span class="math inline"><em>β</em></span> list list</span></strong>. So, what must the type of <code>mapll</code> be? Now, look at our definition of <code>mapl</code> – how can we extend it to lists of lists of lists?</p>
+<h3 class="unnumbered" id="section-149">5</h3>
+<p>Use our revised <code>take</code> function to process a single list. You may then use <code>map</code> with this (partially applied) function to build the <code>truncate</code> function.</p>
+<h3 class="unnumbered" id="section-150">6</h3>
+<p>Build a function <code>firstelt</code> which, given the number and a list, returns the first element or that number. You can then use this function (partially applied) together with <code>map</code> to build the main <code>firstelts</code> function.</p>
+<h2 class="unnumbered" id="chapter-10.-new-kinds-of-data-1">Chapter 10. New Kinds of Data</h2>
+<h3 class="unnumbered" id="section-151">1</h3>
+<p>The type will have two constructors: one for squares, requiring only a single integer, and one for rectangles, requiring two: one for the width and one for the height.</p>
+<h3 class="unnumbered" id="section-152">2</h3>
+<p>The function will have type <span class="sans-serif">rect <span class="math inline">→</span> <strong>int</strong></span>. Work by pattern matching on the two constructors of your type.</p>
+<h3 class="unnumbered" id="section-153">3</h3>
+<p>Work by pattern matching on your type. What happens to a square. What to a rectangle?</p>
+<h3 class="unnumbered" id="section-154">4</h3>
+<p>First, we need to rotate the rectangles as needed – you have already written something for this. Then, we need to sort them according to width. Can you use our <code>sort</code> function which takes a custom comparison function for this?</p>
+<h3 class="unnumbered" id="section-155">5</h3>
+<p>Look at how we re-wrote <code>length</code> and <code>append</code> for the <span class="sans-serif">sequence</span> type.</p>
+<h3 class="unnumbered" id="section-156">6</h3>
+<p>Add another constructor, and amend <code>evaluate</code> as necessary.</p>
+<h3 class="unnumbered" id="section-157">7</h3>
+<p>Handle the exception, and return <code>None</code> in that case.</p>
+<h2 class="unnumbered" id="chapter-11.-growing-trees-1">Chapter 11. Growing Trees</h2>
+<h3 class="unnumbered" id="section-158">1</h3>
+<p>The type will be <span class="sans-serif"><span class="math inline"><em>α</em></span> <span class="math inline">→</span> <span class="math inline"><em>α</em></span> tree <span class="math inline">→</span> <strong>bool</strong></span>. That is, it takes an element to search for, and a tree containing elements of the same type, and returns <code>true</code> if the element is found, and <code>false</code> if not. What happens if the tree is a leaf? What if it is a branch?</p>
+<h3 class="unnumbered" id="section-159">2</h3>
+<p>The function will have type <span class="sans-serif"><span class="math inline"><em>α</em></span> tree <span class="math inline">→</span> <span class="math inline"><em>α</em></span> tree</span>. What happens to a leaf? What must happen to a branch and its sub-trees?</p>
+<h3 class="unnumbered" id="section-160">3</h3>
+<p>If the two trees are both <code>Lf</code>, they have the same shape. What if they are both branches? What if one is a branch and the other a leaf or vice versa?</p>
+<h3 class="unnumbered" id="section-161">4</h3>
+<p>We have already written a function for inserting an element into an existing tree.</p>
+<h3 class="unnumbered" id="section-162">5</h3>
+<p>Try using list dictionaries as an intermediate representation. We already know how to build a tree from a list.</p>
+<h3 class="unnumbered" id="section-163">6</h3>
+<p>Consider using a list of sub-trees for a branch. How can we represent a branch which has no sub-trees?</p>
+<h2 class="unnumbered" id="chapter-12.-in-and-out-1">Chapter 12. In and Out</h2>
+<h3 class="unnumbered" id="section-164">1</h3>
+<p>You can use the <code>print_string</code> and <code>print_int</code> functions. Be careful about what happens when you print the last number.</p>
+<h3 class="unnumbered" id="section-165">2</h3>
+<p>You can use the <code>read_int</code> function to read an integer from the user. Be sure to give the user proper instructions, and to deal with the case where <code>read_int</code> raises an exception (which it will if the user does not type an integer).</p>
+<h3 class="unnumbered" id="section-166">3</h3>
+<p>One way would be to ask the user how many dictionary entries they intend to type in first. Then we do not need a special code to signal the end of input.</p>
+<h3 class="unnumbered" id="section-167">4</h3>
+<p>Try writing a function to build a list of integers from <span class="math inline">1</span> to <span class="math inline"><em>n</em></span>. Can you use that to build the table and print it? The <code>iter</code> and/or <code>map</code> functions may come in useful. Deal with a channel in your innermost function – the opening and closing of the file can be dealt with elsewhere.</p>
+<h3 class="unnumbered" id="section-168">5</h3>
+<p>The <code>input_line</code> function can be used – how many times can you call it until <code>End_of_file</code> is raised?</p>
+<h3 class="unnumbered" id="section-169">6</h3>
+<p>We can read lines from the file using <code>input_line</code> and write using <code>output_string</code> – make sure the newlines do not get lost! How do we know when we are done? Write a function to copy a line from one channel to another – we can deal with opening and closing the files separately.</p>
+<h2 class="unnumbered" id="chapter-13.-putting-things-in-boxes-1">Chapter 13. Putting Things in Boxes</h2>
+<h3 class="unnumbered" id="section-170">1</h3>
+<p>Consider the initial values of the references, and then work through how each one is altered by each part of the expression. What is finally returned as the result of the expression?</p>
+<h3 class="unnumbered" id="section-171">2</h3>
+<p>Try creating a value for each list in OCaml. Now try getting the head of the list, which is a reference, and updating its contents to another integer. What has happened in each case?</p>
+<h3 class="unnumbered" id="section-172">3</h3>
+<p>Try writing a function <code>forloop</code> which takes a function to be applied to each number, and the start and end numbers. It should call the given function on each number. What should happen when the start number is larger than the end number?</p>
+<h3 class="unnumbered" id="section-173">4</h3>
+<p>Type them in if you are stuck. Can you work out why each expression has the type OCaml prints?</p>
+<h3 class="unnumbered" id="section-174">5</h3>
+<p>We want a function of type <strong><span class="sans-serif">int array <span class="math inline">→</span> int</span></strong>. Try a for loop with a reference to accumulate the sum.</p>
+<h3 class="unnumbered" id="section-175">6</h3>
+<p>Consider swapping elements from opposite ends of the array – the problem is symmetric.</p>
+<h3 class="unnumbered" id="section-176">7</h3>
+<p>To build an array of arrays, you will need a use <code>Array.make</code> to build an array of empty arrays. You can then set each of the elements of the main array to a suitably sized array, again created with <code>Array.make</code>. Once the structure is in place, putting the numbers in should be simple.</p>
+<h3 class="unnumbered" id="section-177">8</h3>
+<p>What is the difference between the codes for <code>’a’</code> and <code>’A’</code>? What about <code>’z’</code> and <code>’Z’</code>?</p>
+<h2 class="unnumbered" id="chapter-14.-the-other-numbers-1">Chapter 14. The Other Numbers</h2>
+<h3 class="unnumbered" id="section-178">1</h3>
+<p>Consider the built-in functions <code>ceil</code> and <code>floor</code>.</p>
+<h3 class="unnumbered" id="section-179">2</h3>
+<p>This is simple arithmetic. The function will take two points and return another, so it will have type <strong><span class="sans-serif">float <span class="math inline">×</span> float <span class="math inline">→</span> float <span class="math inline">×</span> float <span class="math inline">→</span> float <span class="math inline">×</span> float</span></strong>.</p>
+<h3 class="unnumbered" id="section-180">3</h3>
+<p>Consider the built-in function <code>floor</code>. What should happen in the case of a negative number?</p>
+<h3 class="unnumbered" id="section-181">4</h3>
+<p>Calculate the column number for the asterisk carefully. How can it be printed in the correct column?</p>
+<h3 class="unnumbered" id="section-182">5</h3>
+<p>You will need to call the <code>star</code> function with an appropriate argument at points between the beginning and end of the range, as determined by the step.</p>
+<h2 class="unnumbered" id="chapter-15.-the-ocaml-standard-library-1">Chapter 15. The OCaml Standard Library</h2>
+<h3 class="unnumbered" id="section-183">1</h3>
+<p>You can assume <code>List.rev</code> which is tail-recursive.</p>
+<h3 class="unnumbered" id="section-184">2</h3>
+<p>You might use <code>List.map</code> here, together with <code>List.mem</code></p>
+<h3 class="unnumbered" id="section-185">3</h3>
+<p>The <code>String.iter</code> function should help here.</p>
+<h3 class="unnumbered" id="section-186">4</h3>
+<p>Try <code>String.map</code> supplying a suitable function.</p>
+<h3 class="unnumbered" id="section-187">5</h3>
+<p>Consider <code>String.concat</code>.</p>
+<h3 class="unnumbered" id="section-188">6</h3>
+<p>Create a buffer, add all the strings to it in order, and then return its contents.</p>
+<h3 class="unnumbered" id="section-189">7</h3>
+<p><code>String.sub</code> is useful here. You can compare strings with one another for equality, as with any other type.</p>
+<h2 class="unnumbered" id="chapter-16.-building-bigger-programs-1">Chapter 16. Building Bigger Programs</h2>
+<h3 class="unnumbered" id="section-190">1</h3>
+<p>You will need to alter the <code>Textstat</code> module to calculate the histogram and allow it to be accessed through the module’s interface. Then, alter the main program to retrieve and print the extra information.</p>
+<h3 class="unnumbered" id="section-191">2</h3>
+<p>You will need functions to read and write the lines. You can read the required input and output filenames from <code>Sys.argv</code>. What should we do in case of an error, e.g. a bad filename?</p>
+<h3 class="unnumbered" id="section-192">3</h3>
+<p>Consider doing something a very large number of times. You should avoid printing information to the screen, because the printing speed might dominate, and the differing computation speeds may be hard to notice.</p>
+<h3 class="unnumbered" id="section-193">4</h3>
+<p>Start with a function to search for a given string inside another. You might find some functions from the <code>String</code> module in the OCaml Standard Library to be useful, or you can write it from first principles. Once this is done, the rest is simple.</p>
+</div>
+</html>

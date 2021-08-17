@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title> </title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<h1 id="starting-off">Starting Off</h1>
+<p>We will cover a fair amount of material in this chapter and its questions, since we will need a solid base on which to build. You should read this with a computer running OCaml in front of you.</p>
+<p>Consider first the mathematical expression <span class="math inline">1 + 2 × 3</span>. What is the result? How did you work it out? We might show the process like this:</p>
+<div class="center">
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALkAAABgBAMAAACzss6IAAAAMFBMVEX///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAv3aB7AAAAD3RSTlMAMqtmVLsQ3XbvmYlEIs3AHYl3AAAACXBIWXMAAA7EAAAOxAGVKw4bAAADPUlEQVRoBe2avW/TQBTAnxPH5JNElRBiIRlBDGGECS8sLBQGpE61OpF2CFumKmZgR0UgUgTpxoDUdkYiZUFIDBDxF3TqwoAoH1WBYu7ss5PcXXLPpzJxN9zHu/d+fn53tu45AUhd5i4KJuWFhzVOaIkiTkM6vBqI9J1+8I1Tvvyi+4UTIYaO103oth8ZlFfhdOBFfVZb85D5PiFBDhYTen47MskNoRK4E+YlgMrBhAQ5EOnLxPIzu9IIUtkf9fE9kU5tm/SOTtFeiV0nu0pHaYucvjgknNIuqQYeqUg564VNykpOj5ZwQK6wF/FuB7dSgkN1KT17FM4R55nrzsvuMa0qAbfckA6DFeY6QD6gS5G2RL5nA1b80P4co5SeeawHsLWRdPGdscgk5vm4N06vN/DQRHOMzvYewLV4dlBMIgNtP5amaCX0cgPAogiyqpse7dBSr0VtqlpCnyOASxRCdmTkvOMBXKCStKXrxxbxe8Y67PX6P4g0fJpC50/sD1c2Yr0U7b1g3WXqMb1Ft0+DCMPHM3wT2Atrr5iWbhPTde1n29n+7HkzayJgImAiYCJgImAioBcBR+doJLmUJKME+PjpeOiyjBKWfknc0BDJMkpwuq81UFITyTmy9VWqyQttn5eIYwm9OS+qySRPZcJJmUi3AndSZdro/bSJkVykF4M3vRsjhem9vPoeRXrh8O47uftXWHIVN3+G0y8dzYj0KlnUnUcqOzpvP1BpifQ2+VbSxm2bpSfebH5EH88oq4R+Evc8LePo1IM4jyz8Bsj8nO1TNGs/VmmJkcmRqGSkkeFX9UBjVbPkS0wO850qv6tyHUTfoe9BVb2VAd56SrqYUcKZPXiuvGcCVr8JJBklOJs3t5Vekd3uI5QSFZNRJqEwHRMBEwETARMBE4H/LgJ1ehT3/tVtNzudjtZPPRiHHHqcwh2mMThOx66RI9URJ8QObR+hmbmDUJKqqM+RAFXMmVFKR2SUcJ1ER68gMko4j0fzuYc6owRUhiT3QJ1RlkkOpl2UGWXxvjYbQJlRFhr6dHVG+cHF0/lVVWeUW3g4r4nIKNd4G/xYnVFa/D828HBERlmkP3XqFdvXs5ti9RcBoQrDpclgGAAAAABJRU5ErkJggg==" alt="image"></p>
+</div>
+<p>How did we know to multiply <span class="math inline">2</span> by <span class="math inline">3</span> first, instead of adding <span class="math inline">1</span> and <span class="math inline">2</span>? How did we know when to stop? Let us underline the part of the expression which is dealt with at each step:</p>
+<div class="center">
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALwAAABgBAMAAABVmwXMAAAAMFBMVEX///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAv3aB7AAAAD3RSTlMAMqtmVLsQ3XbvmYlEIs3AHYl3AAAACXBIWXMAAA7EAAAOxAGVKw4bAAADVElEQVRoBe2avW/TQBTAnxPH5JNElRBiIRlBDGGEKVlYWCgMSJ1qdSLtELZMVczAjopAtAjSjQGp7YxEyoKQGCDiL+jUhQFRPqoCxbyzz67ju/ruTIOodDec796997vnd2f3nlMA5TJ1kTEpzzyoxYQGK4pp8LtXXBa/OXC/xrQvP+9/jolkupbdD/Gm41uUF+G0a/ttWhvTkPk2JpHtzIb4/IZvkxtBxW2P2ZcAKrtjEtkOi59H0090qgNKZeegrdBi8cS4Se7pFGmV6ETZRdJTLnz87AhBpS2shjZWWM7a3kW14uP9dRziFNs+8JZ7U5Xs6XPx2X1vDN2nzlsv+ke1tEjutD08DBeo8wB5lyyHcvG9z7q0OB7gHMWUntq0BbC+GjYVGpHghPb5oBXF1xsK1FA1gqdbEOBqMDoshsGBrhNIVa4cfLkBYBAGLu2aTRqk1Gv+Va3m4KeQcIlQcGP67ls2wAUiUS59JzAJ3jnG3vLy4DtKvcfKc//EzmhhNdBTud51V9pUP8B3yCZqoNB7UL2Xgjmz9JJqpb4E+NSAZEPTSR7Xo5OPQPD6Ya+Tn1vPoCOgI6AjoCPwbyNgpTozcXzkJJ4AHz4eEZ6XeMLcT44faUS8xBOs/qs0LK4N54zZ+cLVZISmw4gYAQffnGa0+IInfHFUyuINtx1VSGi/SxijQyy+6L5evi42RI28+DZZfGHvzttDbqAVO/v8HoncYPFVXNnNhyI7b9y8L1Jj8V38tNKV3Dxzj+3kCXx8NPGsIv6k5IM1L4cnLgTpZuEXQOZHslN01HwkUmODk8PAZPjBiS/tboqlzeKXm5zUp638lsh5YL2HgQ1V8Y5G8htbiGcTTzizDc+Ed03A4pcCJ/EEa+3GhtAtVDAdrKSLTjylQ3UMFKuxF2ykewy81y7qCOgI6AjoCPwvEaiTPyD2xLxp9nq9dL8YybhkkXOW5FlbhhfTMWt41tqPCaW7piOhmrktocRXEZ8xAapS50kuXyLxhGsYoJRFIvGE8wrsFtnHkSJOPEEui+L7IE48y5iopS/CxLN4Lz0cQJh4Fhp/gRcnnu/bCvhWZFlJU5x4rivQ46oSiedS3EahL048jfh/gyjQJRLPIvnlNGUxnZSGh5j9AR11Pp62NEzRAAAAAElFTkSuQmCC" alt="image"></p>
+</div>
+<p>We chose which part of the expression to deal with each time using a familiar mathematical rule – multiplication is done before addition. We stopped when the expression could not be processed any further.</p>
+<p>Computer programs in OCaml are just like these expressions. In order to give you an answer, the computer needs to know all the rules you know about how to process the expression correctly. In fact, <span class="math inline">1 + 2 × 3</span> is a valid OCaml expression as well as a valid mathematical one, but we must write <code>*</code> instead of <span class="math inline">×</span>, since there is no <span class="math inline">×</span> key on the keyboard:</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># 1 + 2 * 3;;</code><br>
+<code>- : int = 7</code></p>
+<p>Here, <code>#</code> is OCaml prompting us to write an expression, and <code>1 + 2 * 3;;</code> is what we typed (the semicolons followed by the Enter key tell OCaml we have finished our expression). OCaml responds with the answer <code>7</code>. OCaml also prints <code>int</code>, which tells us that the answer is a whole number, or <em>integer</em>.</p>
+<p>Let us look at our example expression some more. There are two <em>operators</em>: <span class="math inline">+</span> and <span class="math inline">×</span>. There are three <em>operands</em>: <span class="math inline">1</span>, <span class="math inline">2</span>, and <span class="math inline">3</span>. When we wrote it down, and when we typed it into OCaml, we put spaces between the operators and operands for readability. How does OCaml process it? Firstly, the text we wrote must be split up into its basic parts: <code>1</code>, <code>+</code>, <code>2</code>, <code>*</code>, and <code>3</code>. OCaml then looks at the order and kind of the operators and operands, and decides how to parenthesize the expression: <span class="math inline">(1+(2×3))</span>. Now, processing the expression just requires dealing with each parenthesized section, starting with the innermost, and stopping when there are no parentheses left:</p>
+<div class="center">
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOMAAABmBAMAAADL3TsUAAAAMFBMVEX///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAv3aB7AAAAD3RSTlMAMhC7zUSrdu+JIt2ZZlQjzQ5rAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFEUlEQVRoBe1au2scRxj/dvU4ne4JTmFIocUCk4BBigsXbnwIUhhSCBJCwAGr8wOCHQiuDD6nSM7GDxUqHBLIQiDtKWVQQFeoEyTpU5zBf4Dlt2I7vnzfzO76Zna/nZu9BzLsFLPzPWZ+M988dvbHAtgnh61SZy0wL0w+75BmcY9z1kWPswDIWmkefF2YXuWMH3MG0r9HmdOg3DqdoxrOV/F6s5dR92nrI91ySKgKa6S/ohsHkZ0melVP/Rf3PYyq4n6vd181VW792KNJvk7quZTpVqv1SdPrKBwpRZBVGptIpzE/4zvbjwM5eBwCuLSM5W9ILjQot0xtjypMRZAF6gKleYI6CdB+I8QoQ3t7E6UlHzP3ZaQfvLAhXBMgiw1ssQMw/W+ssfYaqkqib7/HjGbFH8IlAbLUkZVnKQDOMgk/SA3842OhTEOFXcrskisjmgC59LdsaUrEjoJRXJEaRzyrYo4felJnkTuPhHMC5EJdNlMTA6Qwb3hC4157QgVZM/QSlsGyGTn/CZBnfdlCVz43okF+uNujmM4/I3t7lXKrJMOTtGKDkLl3ZHvFlWCQKF6j2ZBTEobfArSyJ5zlKCu9IF1GZVe2Is4gKt4LZhKL5dekeEFZjVztUnyUnaCBYJRXw/b6IJ3nqMw8StNcVsMeFBs7Xoju0gAzz6VpxX6OjdcJagPKUWRFpcwr1rAvnTWACk0XbRI5zCMAs+uoybwvQZ4+JbEWsCGIzlhx+iy0Wq2eh2o6CuQwty+6P6GQ/fSBHapeOLX/Jz0xRZDlBi6Ru7iEaa3IA0cceA9aF3zUwHSH8k8os0wLnlohgnS0l5bqhm8SmmJXHl66LV0W78s+F/V92WfQi9nflzNNva1Q/iIsJD+z3wpA3H2SWo3OnSQjDHH3gZLYdknN/pakDHXvU8HZDEWr5/xxzv0Xj7PgujlJtkWf90izZLqty0psgNLwctukIxC+rdOee5PuVI6XRyCPQB6Bdy4C/PsSh+KPYzg8u0Voi94YMHl2C9x6Vv4qvZ8suwW/nsaLRib+Kh3RaaI9kd06KtiXTPxVOiTLbrnbq1Sz0Eivn8Ha9qhSAj3xgaRnbPmrtx8YbGdYdksQdVjNlr+6yUKFBvl9GR+lEzKUtvzVZ2HL3JP9ii73Aio2oCm4BmL6wnJMpSpYrmBu/+svxUCN/FVXuwQ+9VUIXWIZkRqunp+/RXdr/qp6WwdR5Tjvsy4dlvD7eIkWrT1/dfSGp4KoEstu1RBSULH2/NWxdMj4KDuyT3PICs6+xrL1KKvfq6PSJXYuadsI9tc4l/ryeeXrIKrMrtgKci9TGFwwrli1QfMJye5LuOuBYH9t9+UZT+tDTGTZrcMrsOuju+3pYz7wWHbL3Tkh9oslfzXAsc6yW0E8MvFXsVgqCp7dkm5jeF/ONJUexIQx3Ap4dkuij+Huk8JuEWZG/ioWLEXBs1vklpW/UiBiQuptvR5zzxUHNAI17d6SKO4d0M7n3cojkEcgj8BBj8ACnareRHt5aWtr69VEEV26Wwt+Z2KwVbxoVF+OEm6A2zp+0m2OEhLM3yT4m8f6SCGNJAyiPcTgjjAZSRjEOj8kXpf2WV8ykTAIR4TAKJOJhAGYEX8njRLTQMLgvx7NUcJRWwYSBv9RXBsxpImEATh7f0jIbt/SoaKJhAH4a0hEvfoAn93f6XWGlM0kjPNmSAi9uvnAKxt+69FbNMkDHeumRgz2/wEmnbID6Bi44gAAAABJRU5ErkJggg==" alt="image"></p>
+</div>
+<p>OCaml knows that <span class="math inline">×</span> is to be done before <span class="math inline">+</span>, and parenthesizes the expression appropriately. We say the <span class="math inline">×</span> operator has <em>higher precedence</em> than the <span class="math inline">+</span> operator.</p>
+<p>An <em>expression</em> is any valid OCaml program. To produce an answer, OCaml <em>evaluates</em> the expression, yielding a special kind of expression, a <em>value</em>. In our previous example, <span class="math inline">1 + 2 × 3</span>, <span class="math inline">1 + 6</span>, and <span class="math inline">7</span> were all expressions, but only <span class="math inline">7</span> was a value.</p>
+<p>Each expression (and so each value) has a <em>type</em>. The type of <span class="math inline">7</span> is <span class="sans-serif"><strong>int</strong></span> (it is an integer). The types of the expressions <span class="math inline">1 + 6</span> and <span class="math inline">1 + 2 × 3</span> are also <span class="sans-serif"><strong>int</strong></span>, since they will evaluate to a value of type <span class="sans-serif"><strong>int</strong></span>. The type of any expression may be worked out by considering the types of its sub-expressions, and how they are combined to form the expression. For example, <span class="math inline">1 + 6</span> has type <span class="sans-serif"><strong>int</strong></span> because <span class="math inline">1</span> is an <span class="sans-serif"><strong>int</strong></span>, <span class="math inline">6</span> is an <span class="sans-serif"><strong>int</strong></span>, and the <span class="math inline">+</span> operator takes two integers and gives another one (their sum). Here are the mathematical operators on integers:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Operator</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><em>a</em> <code>+</code> <em>b</em></td>
+<td style="text-align: left;">addition</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>a</em> <code>-</code> <em>b</em></td>
+<td style="text-align: left;">subtract <em>b</em> from <em>a</em></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>a</em> <code>*</code> <em>b</em></td>
+<td style="text-align: left;">multiplication</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>a</em> <code>/</code> <em>b</em></td>
+<td style="text-align: left;">divide <em>a</em> by <em>b</em>, returning the whole part</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>a</em> <code>mod</code> <em>b</em></td>
+<td style="text-align: left;">divide <em>a</em> by <em>b</em>, returning the remainder</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>mod</code>, <code>*</code>, and <code>/</code> operators have higher precedence than the <code>+</code> and <code>-</code> operators. For any operator <span class="math inline">⊕</span> above, the expression <span class="math inline"><em>a</em> ⊕ <em>b</em> ⊕ <em>c</em></span> is equivalent to <span class="math inline">(<em>a</em>&nbsp;⊕&nbsp;<em>b</em>) ⊕ <em>c</em></span> rather than <span class="math inline"><em>a</em> ⊕ (<em>b</em>&nbsp;⊕&nbsp;<em>c</em>)</span> (we say the operators are <em>left associative</em>). We sometimes write down the type of an expression after a colon when working on paper, to keep it in mind:</p>
+<p><code>5 * -2 :</code> <strong><span class="sans-serif">int</span></strong></p>
+<p>(negative numbers are written with <code>-</code> before them). Of course, there are many more types than just <span class="sans-serif"><strong>int</strong></span>. Sometimes, instead of numbers, we would like to talk about truth: either something is true or it is not. For this we use the type <span class="sans-serif"><strong>bool</strong></span> which represents <em>boolean values</em>, named after the English mathematician George Boole (1815–1864) who pioneered their use. There are just two things of type <strong><span class="sans-serif">bool</span></strong>:</p>
+<p><code>true</code><br>
+<code>false</code></p>
+<p>How can we use these? One way is to use one of the <em>comparison operators</em>, which are used for comparing values to one another. For example:</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># 99 &gt; 100;;</code><br>
+<code>- : bool = false</code><br>
+<code># 4 + 3 + 2 + 1 = 10;;</code><br>
+<code>- : bool = true</code></p>
+<p>Here are all the comparison operators:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Operator</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><em>a</em> <code>=</code> <em>b</em></td>
+<td style="text-align: left;">true if <em>a</em> and <em>b</em> are equal</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>a</em> <code>&lt;</code> <em>b</em></td>
+<td style="text-align: left;">true if <em>a</em> is less than <em>b</em></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>a</em> <code>&lt;=</code> <em>b</em></td>
+<td style="text-align: left;">true if <em>a</em> is less than or equal to <em>b</em></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>a</em> <code>&gt;</code> <em>b</em></td>
+<td style="text-align: left;">true if <em>a</em> is more than <em>b</em></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>a</em> <code>&gt;=</code> <em>b</em></td>
+<td style="text-align: left;">true if <em>a</em> is more than or equal to <em>b</em></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>a</em> <code>&lt;&gt;</code> <em>b</em></td>
+<td style="text-align: left;">true if <em>a</em> is not equal to <em>b</em></td>
+</tr>
+</tbody>
+</table>
+<p>Notice that if we try to use operators with types for which they are not intended, OCaml will not accept the program at all, showing us where our mistake is by underlining it:</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># 1 + true;;</code><br>
+<code>Error:&nbsp;This expression has type bool but an expression was expected of type</code><br>
+<code>         int</code></p>
+<p>You can find more information about error messages in OCaml in the appendix “Coping with Errors” at the back of this book.</p>
+<p>There are two operators for combining boolean values (for instance, those resulting from using the comparison operators). The expression <code>a &amp;&amp; b</code> evaluates to <code>true</code> only if expressions <em>a</em> and <em>b</em> both evaluate to <code>true</code>. The expression <code>a || b</code> evaluates to <code>true</code> only if <em>a</em> evaluates to <code>true</code>, <em>b</em> evaluates to <code>true</code>, or both do. The <code>&amp;&amp;</code> operator (pronounced “and”) is of higher precedence than the <code>||</code> operator (pronounced “or”), so <code>a &amp;&amp; b || c</code> is the same as <code>(a &amp;&amp; b) || c</code>.</p>
+<p>A third type we shall be using is <strong><span class="sans-serif">char</span></strong> which holds a single <em>character</em>, such as ‘a’ or ‘?’. We write these in single quotation marks:</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># ’c’;;</code><br>
+<code>- :&nbsp;char = ’c’</code></p>
+<p>So far we have looked only at operators like <code>+</code>, <code>mod</code>, and <code>=</code> which look like familiar mathematical ones. But many constructs in programming languages look a little different. For example, to choose a course of evaluation based on some test, we use the <code>if</code> …&nbsp;<code>then</code> …&nbsp;<code>else</code> construct:</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># if 100 &gt; 99 then 0 else 1;;</code><br>
+<code>- :&nbsp;int = 0</code></p>
+<p>The expression between <code>if</code> and <code>then</code> (in our example <code>100 &gt; 99</code>) must have type <strong><span class="sans-serif">bool</span></strong> – it evaluates to either <code>true</code> or <code>false</code>. The types of the expression to choose if true and the expression to choose if false must be the same as one another – here they are both of type <strong><span class="sans-serif">int</span></strong>. The whole expression evaluates to the same type – <strong><span class="sans-serif">int</span></strong> – because either the <code>then</code> part or the <code>else</code> part is chosen to be the result of evaluating the whole expression:</p>
+<div class="center">
+<p><img src="data:image/png;base64,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" alt="image"></p>
+</div>
+<p>We have covered a lot in this chapter, but we need all these basic tools before we can write interesting programs. Make sure you work through the questions on paper, on the computer, or both, before moving on. Hints and answers are at the back of the book.</p>
+<h2 class="unnumbered" id="questions">Questions</h2>
+<ol>
+<li><p>What are the types of the following expressions and what do they evaluate to, and why?</p>
+<p><code>17</code></p>
+<p><code>1 + 2 * 3 + 4</code></p>
+<p><code>800 / 80 / 8</code></p>
+<p><code>400 &gt; 200</code></p>
+<p><code>1 &lt;&gt; 1</code></p>
+<p><code>true || false</code></p>
+<p><code>true &amp;&amp; false</code></p>
+<p><code>if true then false else true</code></p>
+<p><code>’%’</code></p>
+<p><code>’a’ + ’b’</code></p></li>
+<li><p>Consider the evaluations of the expressions <code>1 + 2 mod 3</code>, <code>(1 + 2) mod 3</code>, and <code>1 + (2 mod 3)</code>. What can you conclude about the <code>+</code> and <code>mod</code> operators?</p></li>
+<li><p>A programmer writes <code>1+2 * 3+4</code>. What does this evaluate to? What advice would you give him?</p></li>
+<li><p>The range of numbers available is limited. There are two special numbers: <code>min_int</code> and <code>max_int</code>. What are their values on your computer? What happens when you evaluate the expressions <code>max_int + 1</code> and <code>min_int - 1</code>?</p></li>
+<li><p>What happens when you try to evaluate the expression <code>1 / 0</code>? Why?</p></li>
+<li><p>Can you discover what the <code>mod</code> operator does when one or both of the operands are negative? What about if the first operand is zero? What if the second is zero?</p></li>
+<li><p>Why not just use, for example, the integer <code>0</code> to represent false and the integer <code>1</code> for true? Why have a separate <strong><span class="sans-serif">bool</span></strong> type at all?</p></li>
+<li><p>What is the effect of the comparison operators like <code>&lt;</code> and <code>&gt;</code> on alphabetic values of type <strong><span class="sans-serif">char</span></strong>? For example, what does <code>’p’ &lt; ’q’</code> evaluate to? What is the effect of the comparison operators on the booleans, <code>true</code> and <code>false</code>?</p></li>
+</ol>
+</html>

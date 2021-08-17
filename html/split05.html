@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title> </title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<h1 class="unnumbered" id="note-on-notation">Note on Notation</h1>
+<p>From now on, instead of showing the actual OCaml session…</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># let rec factorial a =</code><br>
+<code>    if a = 1 then 1 else a * factorial (a - 1);;</code><br>
+<code>val factorial : int -&gt; int = &lt;fun&gt;</code></p>
+<p>…we will usually just show the program in a box, together with its type:</p>
+<div class="center">
+<p><img src="data:image/png;base64,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" alt="image"></p>
+</div>
+<p>If you prefer to compose your programs in a text editing program, and copy-and-paste them into OCaml, you can do that too. Just make sure you end with <code>;;</code> to let OCaml know you have finished entering the program.</p>
+<p>Later on, when we write larger programs, we will see how to use OCaml to load our programs from external files.</p>
+</html>

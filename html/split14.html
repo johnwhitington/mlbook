@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title> </title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<h1 id="more-with-functions">More with Functions</h1>
+<p>Look again at the type of a simple function with more than one argument:</p>
+<div class="center">
+<p><img src="data:image/png;base64,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" alt="image"></p>
+</div>
+<p>We have been considering functions like this as taking two arguments and returning a result. In fact, the truth is a little different. The type <strong><span class="sans-serif">int <span class="math inline">→</span> int <span class="math inline">→</span> int</span></strong> can also be written as <strong><span class="sans-serif">int <span class="math inline">→</span> <span class="medium">(</span>int <span class="math inline">→</span> int<span class="medium">)</span></span></strong>. OCaml lets us omit the parentheses because <strong><span class="sans-serif"><span class="math inline">→</span></span></strong> is a right-associative operator in the language of types. This gives us a clue.</p>
+<blockquote>
+<p><em>In truth, the function <code>add</code> is a function which, when you give it an integer, gives you a function which, when you give it an integer, gives the sum.</em></p>
+</blockquote>
+<p>This would be of no particular interest to us, except for one thing: we can give a function with two arguments just one argument at a time, and it turns out to be rather useful. For example:</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># let add x y = x + y</code><br>
+<code>val add :&nbsp;int -&gt; int -&gt; int = &lt;fun&gt;</code><br>
+<code># let f = add 6</code><br>
+<code>val f : int -&gt; int = &lt;fun&gt;</code><br>
+<code># f 5</code><br>
+<code>- : int = 11</code></p>
+<p>Here, we have defined a function <code>f</code> by applying just one argument to <code>add</code>. This gives a function of type <strong><span class="sans-serif">int <span class="math inline">→</span> int</span></strong> which adds six to any number. We then apply <code>5</code> to this function, giving <code>11</code>. When defining <code>f</code>, we used <em>partial application</em> (we applied only some of the arguments). In fact, even when applying all the arguments at once, we could equally write <code>(add 6) 5</code> rather than <code>add 6 5</code>. We can add six to every element in a list:</p>
+<p><code>map (add 6) [10; 20; 30]</code></p>
+<p>Here, <code>add 6</code> has the type <span class="sans-serif"><strong>int <span class="math inline">→</span> int</strong></span>, which is an appropriate type to be the first argument to <code>map</code> when mapping over a list of integers. We can use partial application to simplify some examples from earlier in the book. We mentioned that you can write, for example, <code>( * )</code> to produce a function from an operator. It has type <strong><span class="sans-serif">int <span class="math inline">→</span> int <span class="math inline">→</span> int</span></strong>. We may partially apply this function, so instead of writing</p>
+<p><code>map (fun x -&gt; x * 2) [10; 20; 30]</code></p>
+<p>we may write</p>
+<p><code>map (( * ) 2) [10; 20; 30]</code></p>
+<p>Recall the function to map something over a list of lists from the questions to Chapter 6:</p>
+<div class="center">
+<p><img src="data:image/png;base64,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" alt="image"></p>
+</div>
+<p>With partial application, we can write</p>
+<div class="center">
+<p><img src="data:image/png;base64,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" alt="image"></p>
+</div>
+<p>Can you see why? The partially applied function <code>map f</code> is of type <strong><span class="sans-serif"><span class="math inline"><em>α</em></span> list <span class="math inline">→</span> <span class="math inline"><em>β</em></span> list</span></strong>, which is exactly the right type to pass to <code>map</code> when mapping over lists of lists. In fact, we can go even further and write:</p>
+<div class="center">
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABI0AAABoBAMAAACOIB0lAAAAMFBMVEX///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAv3aB7AAAAD3RSTlMAMlRmECJ23bvvmatEic1jp8htAAAACXBIWXMAAA7EAAAOxAGVKw4bAAANMUlEQVR4Ae2da2hcxxWAz2pfWq0eq7apbWqqjUtM/mkbQqEtRktwDW7aRqFJaUmK1BT8aE2kH3WCU8JVS0psCKzrNhiV0CtCf7U/pFBap5iyShNojAOrUjCFFrTU9EcJRfJTWkvW9Mzr7n3triVdW3PhDHjvzJkzZ86e82Xu3LsKA4wKRWDbEViGbZsgAxQBhhwBFYrANiMwQBxtM4I0nEeAOCIOoogAcRRFFMkGcUQMRBEB4iiKKJIN4ogYiCICxFEUUSQbxBExEEUE2nGUOniwxRR98y06lPjrp35chtSUarW5fPLPAF/9jU8h8eUFSP227JMGmmISLg3VDxUGbJAgogi046jGWr3qfrH97L1r5eFbAP9or4W9I+wOQHXVq5dkbAbybMorDbTUJACh+qHCgA0SRBWBdhwdOtKCo8yb7acfq0Me4eifa6+GvVXkaGlDqaWOl0Qtjxz1s7qSHvqFqvguahKUhuqHCn0mqBlZBNpxBK1+ehuT+W7pxGIJ+lYA0rdbauiOCeRoz1uqlWNFUcsgR4npeSW1r6uK76ImQWmofqjQZ4KakUVgSxyd6TD9UgHya6hTKXdQhBHkyClZNi/qSeSoWaz1Zt1d05PwG9uMq0PphwpdalSNNAKao8Gux9MvoOX3rxRw41p44oSYJfy+lrjLOzNL/4bMT4Wa+viJbuCwp/itr7agJfzqdMOLG0U4VuQyzlF6FCupZwCyjNcUF8/y2lfKABbutFzFsaInaaEvOGplxGWPqpFEQHNkVRrD+J/1ImMbo5C7zthJbt7L0Zdm5JT5a3hNTD8yUhy7KSXy84eqkW6kHvu4jI2Bs0oiLrob9pz75vU04wqco/QisvQhYz9Cjh4SIHEEvov/eitspQzWNUGDMIEf2oozieQooN/WiDZG16gi4HD0TuXGnmW4cGJvZRJy7I3LDT6Dl6Oqoia3jF1D1yAzWRnnWrocLsta72q3xLCfA+cU3Z1gBTjaLfdOyNEYW4Pexvxzt1JVxgR4iECasTmovZWujj7JmHBFm9FWnEkER0H9tka0MbpGFQGHo/mRs7jO4HrQvw45fIISiIRzNDSJs1tzkFr3ZBh65qRXmbvwTKWI9R7PRlt3Z3Hr9FRNEMPXox7kqB+XpOXEcfZ3Pkrsd2aRo6UZGIBP23cf40JdtBVnkhb6fD1qaUQbo2tUEXA4Gq1N9ogdbd9tyN0AGK7jFF6Ojr0mZx2eAujie+IG6rnL/2Qjj09YQ7ewnkE8XEV1D+M0A3ZJdCBHsLgGAyujUPLsj/qQI1zUkoH9EfgnkRwF9DlHAaHLGapGGgGHo/LQVAbzf+Dd1+9CDu9HY3zB8HKkJ57AdSfPu2y5qGg5fEOCxm9nA3wvnsSXSK6iuqvLADm1knGORtbwRrrytnefnUSObPZKMciRfxLJUUCfcxQQupyhaqQRcDiCsbnkDbjEzp9CjnAxwY52HGU5ImpRmWj+mXuBO8eHiv6keMPo77amkCO1kimOMmjh5571iCOAAxsF/bzmt+JM0uTIo6858gi5d1TuRwS8HKXsccCNRweORqaQFVxIevFdo6d0/0w0xyYRFNwE+dcj1Y0LBdRQhRfFETzK2EqAo64KY5OaI6mPn/5Jmhx59DVHHqFjhCoRR8DLURdmv6fjfa1Wl/etfs6Ku6itS20KN9J8i53xKqhutoC/hczJcYqjBPRWWYCjAlzG/53F9/5I74+cSZocefQ1Rx6h21mqRxkBL0d9uKvJIUcIwUgdp7HL7rk+UZQtsd7gejS8AgoHKe9TrQkEZYTvs73Pa7rbnsFd+mRejNH7o1HINpCjghBqBN7EzdFZfH8kratPbcWZpMmRR7+tEY9FakQQAS9HXbihWUSOGmWwimjd+37I/f6oZwPS08ODU24XDpdlq4ocWTNYD39/NFuH75y7tlvo8t/XcJ89UITsHfxt9g8CJP7TGN8f4bYfzSytPS3Nys/AJLjshemHCt2GqB5lBLwcpeyrxzY4R68eFXufoY2LcokQU2qOenCFSLPSrpM5VnL78gPVWLpT+KzYYXvfZ+vusRuJl0dtudGuot7sBj7dfVSt42M6m+Im8qyOb5XqwP51mXPNVpVdcdFWnEla6Lc14jZI9Sgi4OUIdrHGfuRo3WLiET6xxF8T6aI5Er+vPWe9BMlf6S5x1T99sd2sMc4ltRn+qYvuTl9YGYcvznDxEGPXx/Bf5kzjKjb/JIhJ4MPbI/iveMz+NXKat6e4qi7aijMJhOqHCrUNukYeAc2RNvw8X39yNxMfaEHY9b9hQkeWXoFEWbSqo44w6kpzkqgtk72tRMDPkbCR8/z8GjRbmw/KmpIufR9K3WkKo645k0RtmOxtKQJb4qhnst1c+OJAlvZq7Ux07nMm6axKGg8gAlviSL/DCfcvi89Zoly6f7c1cCYJ94GkDzgCoRzp39Rb+tLPd1Gtypi+K55spRGB3JkkAltkYvsRCOVoe2a/VVTjy9uz03a0M0lbLep8UBG4Dxw9KNdpHoMiQBwZlIwYu0IcxTh5BrlOHBmUjBi7QhzFOHkGuU4cGZSMGLtCHMU4eQa5ThwZlIwYu0IcxTh5BrlOHBmUjBi7QhzFOHkGuU4cGZSMGLtCHMU4eQa5ThwZlIwYu0IcxTh5BrlOHBmUjBi7QhzFOHkGuU4cGZSMGLtCHMU4eQa5ThwZlIwYu0IcxTh5BrlOHBmUjBi7QhzFOHkGuU4cGZSMGLtCHMU4eQa5ThwZlIwYu0IcxTh5BrlOHBmUjBi7QhzFOHkGuU4cGZSMGLtCHMU4eQa5ThwZlIwYu0IcxTh5BrlOHBmUjBi7QhzFOHkGuU4cGZSMGLtCHMU4eQa5vkWOUgcPGvQlyJUdj4DmCM+FKW3CmRrzHl2bPoNnV22+DHea89s2ni2Rq2/eMo14sBEI5yhzutjejUNHvBwd3rjYCYkwg9NhQpcsZX/8ezxfTR1m6+qgqmER0BwdOe5ej/L87M/2xcvRyFx77fDejoAk5cGknXALt07SBxgBzREexuhaUDbN0aJr8L17n1vuoNsnV6LZYgc96t7pCPg5+tr3CwBP72bvDI5q1wa7Hk+/gI33r2BXovDECdHhXo8Sg5W/NfX1OHENH6xUhue4wc+V+SEPvQe+h9LB1P55vKgyuPvu4ENYH6prCV0NjYCPIzzaszEPS7jrlkd8cq+tSmMYd9GLjG2MQu46Y+L8GTdHWa4/E/oNwwcr1WoJILvKzrE7/ExR9h88WHmYrTgAg4VC3GfjuYKhtkloTgR8HM1i5tb9HL1TubFnGS6c2FuZhBx743KDu+/mqHdf5e19uFiJkn6Wl7JqWaGDVaeNyGTXdrPP25B/6b0PV5Cj1Y+qZ1UvwF8evbPvYWx165O4nB6qGBYBL0dpdh0WV3z3NWt+5Gz+GmDO+9chhycPi1O03RzhWcUl53sNIIqMjat2+GDZmeY2suvJBlQLaawuzYNdh2489F2XHrk/6uOLEhWTI+DlKI93pywr4InVC02nrdHaZM86b/fdhhxmdriO9ZYcdZ/mpYgqvIQPln0JvrBlb/WuwOw8lyyOg10Cfva7LoqjpD6pVMvpaloEvBz1sz8eOcpKPo7KQ1MZvLMcePd1PEobz1wf43eelhx5v6EVOljqdOGNDLI3E6swUYTkP09bC2AXIC1um1JDceRGy2ueWoZEwMtRTtyTFnwcwdhc8gZcYudPIUe3AHDMvXMUOlh+ecnRcnoNRkq9duNlGzka9VgmjgzBpKMbfo4a09PToRyl7HHI3AtHvvua4Mg/WLol72uSo8O4K5poxZF6Hdnxy5DCjkXA4aibb437WVF44t0fCRS68NUyHlLd+b7m22eHDpZfV+6zJUf8VdJsq/sa7bNlwAz+dDjq4S+MxEcvv840fbYECn14mnoOOcJ1Y6SOnXa5qeF5XvM994cOVkPFc7/kaHEBTSJH45AM7rPpud8dayPrDkdJtnaklGCrD++38JdRbBS1v5IjvtddRI4aZbB4l3j41yru535HJirhg5WOeA+p1qM6vopEjn7pOVFd7Y/oPaQ3qAa2HI7AZmwZJvhGGyCFn1PaW4lCyr56bINz9OpR/pgFQxsXC1rDsx41hbwWPljp1PBmllX7o40vVJaQo/NXrMmmBcUR/S7SDImhtSZHT1rIUZfF2Cvo6mcsP0ewizX2I0frFnuNf5fEEpvnV1lc7yG1SF4lR/7BSoevM4qjhMXO8X32X9lquWlBcUS/0zZDYmityZFycO+nWnn6PF9/cjcTH7RSaCcPHez+u5H0e3y4Xd5bDpqZDopIYlYEAhx1cG9bW5XA4AAg3t278sWNWwf3qHuHIrCzHAX+rjaUI/q72h2CYxPT7ixHAUdDOQpokcC4CGyWox58xNpy6Tz4d1u2TQN3NAKb5WhHnaXJjY0AcWRsamLlGHEUq3QZ6yxxZGxqYuUYcRSrdBnrLHFkbGpi5RhxFKt0Gess54gKRWDbESCOth1CMoARWP4/RPhWu7YIM/IAAAAASUVORK5CYII=" alt="image"></p>
+</div>
+<p>Here,  <code>map (map f)</code> has type <span class="sans-serif"><strong><span class="math inline"><em>α</em></span> list list <span class="math inline">→</span> <span class="math inline"><em>β</em></span> list list</strong></span> so when an <code>f</code> is supplied to <code>mapl</code>, a function is returned requiring just the list. This is partial application at work again.</p>
+<p>You can see the real structure of multiple-argument functions, by writing <code>add</code> using anonymous functions:</p>
+<div class="center">
+<p><img src="data:image/png;base64,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" alt="image"></p>
+</div>
+<p>This makes it more obvious that our two-argument <code>add</code> function is really just composed of one-argument functions, but <code>let add x y = x + y</code> is much clearer! We can apply one or more arguments at a time, but they must be applied in order. Everything in this chapter also works for functions with more than two arguments.</p>
+<h2 class="unnumbered" id="summary"><span class="smallcaps">Summary</span></h2>
+<p>The function <code>f x y</code> has type <span class="sans-serif"><strong><span class="math inline"><em>α</em></span> <span class="math inline">→</span> <span class="math inline"><em>β</em></span> <span class="math inline">→</span> <span class="math inline"><em>γ</em></span></strong></span> which can also be written <span class="sans-serif"><strong><span class="math inline"><em>α</em></span> <span class="math inline">→</span> <span class="medium">(</span><span class="math inline"><em>β</em></span> <span class="math inline">→</span> <span class="math inline"><em>γ</em></span><span class="medium">)</span></strong></span>. Thus, it takes an argument of type <span class="math inline"><em>α</em></span> and returns a function of type <span class="math inline"><em>β</em></span> <span class="math inline">→</span> <span class="math inline"><em>γ</em></span> which, when you give it an argument of type <span class="math inline"><em>β</em></span> returns something of type <span class="math inline"><em>γ</em></span>. And so, we can apply just one argument to the function <code>f</code> (which is called partial application), or apply both at once. When we write <code>let f x y = …</code> this is just shorthand for <code>let f = fun x -&gt; fun y -&gt; …</code></p>
+<h2 class="unnumbered" id="questions-8">Questions</h2>
+<ol>
+<li><p>Rewrite the summary paragraph at the end of this chapter for the three argument function <code>g a b c</code>.</p></li>
+<li><p>Recall the function <code>member x l</code> which determines if an element <code>x</code> is contained in a list <code>l</code>. What is its type? What is the type of <code>member x</code>? Use partial application to write a function <code>member_all x ls</code> which determines if an element is a member of all the lists in the list of lists <code>ls</code>.</p></li>
+<li><p>Why can we not write a function to halve all the elements of a list like this: <code>map (( / ) 2) [10; 20; 30]</code>? Write a suitable division function which can be partially applied in the manner we require.</p></li>
+<li><p>Write a function <code>mapll</code> which maps a function over lists of lists of lists. You must not use the <code>let rec</code> construct. Is it possible to write a function which works like <code>map</code>, <code>mapl</code>, or <code>mapll</code> depending upon the list given to it?</p></li>
+<li><p>Write a function <code>truncate</code> which takes an integer and a list of lists, and returns a list of lists, each of which has been truncated to the given length. If a list is shorter than the given length, it is unchanged. Make use of partial application.</p></li>
+<li><p>Write a function which takes a list of lists of integers and returns the list composed of all the first elements of the lists. If a list is empty, a given number should be used in place of its first element.</p></li>
+</ol>
+</html>

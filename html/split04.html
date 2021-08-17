@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title> </title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<h1 id="names-and-functions">Names and Functions</h1>
+<p>So far we have built only tiny toy programs. To build bigger ones, we need to be able to name things so as to refer to them later. We also need to write expressions whose result depends upon one or more other things.</p>
+<p>Before, if we wished to use a sub-expression twice or more in a single expression, we had to type it multiple times:</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># 200 * 200 * 200;;</code><br>
+<code>- : int = 8000000</code></p>
+<p>Instead, we can define our own name to stand for the result of evaluating an expression, and then use the name as we please:</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># let x = 200;;</code><br>
+<code>val x : int = 200</code><br>
+<code># x * x * x;;</code><br>
+<code>- : int = 8000000</code></p>
+<p>To write this all in a single expression, we can use the <code>let</code> &nbsp;…&nbsp;&nbsp;<code>=</code>&nbsp;&nbsp;…&nbsp;<code>in</code> &nbsp;construct:</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># let x = 200 in x * x * x;;</code><br>
+<code>- : int = 8000000</code><br>
+<code># let a = 500 in (let b = a * a in a + b);;</code><br>
+<code>- : int = 250500</code></p>
+<p>We can also make a <em>function</em>, whose value depends upon some input (we call this input an <em>argument</em> – we will be using the word “input” later in the book to mean something different):</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># let cube x = x * x * x;;</code><br>
+<code>val cube : int -&gt; int = &lt;fun&gt;</code><br>
+<code># cube 200;;</code><br>
+<code>- : int = 8000000</code></p>
+<p>We chose <code>cube</code> for the name of the function and <code>x</code> for the name of its argument. When we typed the function in, OCaml replied by telling us that its type is <span class="sans-serif"><strong>int</strong> <span class="math inline">→</span> <strong>int</strong></span>. This means it is a function which takes an integer as its argument, and, when given that argument, evaluates to an integer. To use the function, we just write its name followed by a suitable argument. In our example, we calculated <span class="math inline">200<sup>3</sup></span> by giving the <code>cube</code> function <code>200</code> as its argument.</p>
+<p>The <code>cube</code> function has type <span class="sans-serif"><strong>int</strong> <span class="math inline">→</span> <strong>int</strong></span>, we gave it an integer <code>200</code>, and so the result is another integer. Thus, the type of the expression <code>cube 200</code> is <strong><span class="sans-serif">int</span></strong> – remember that the type of any expression is the type of the thing it will evaluate to, and <code>cube 200</code> evaluates to <code>8000000</code>, an integer. In diagram form:</p>
+<div class="center">
+<p><img src="data:image/png;base64,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" alt="image"></p>
+</div>
+<p>If we try an argument of the wrong type, the program will be rejected:</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># let cube x = x * x * x;;</code><br>
+<code>val cube : int -&gt; int = &lt;fun&gt;</code><br>
+<code># cube false;;</code><br>
+<code>Error: This expression has type bool but an expression was expected of type</code><br>
+<code>         int</code></p>
+<p>Here is a function which determines if an integer is negative:</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># let neg x = if x &lt; 0 then true else false;;</code><br>
+<code>val neg : int -&gt; bool = &lt;fun&gt;</code><br>
+<code># neg (-30);;</code><em>we add parentheses to distinguish from <code>neg - 30</code></em><br>
+<code>- : bool = true</code></p>
+<p>But, of course, this is equivalent to just writing</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># let neg x = x &lt; 0;;</code><br>
+<code>val neg : int -&gt; bool = &lt;fun&gt;</code><br>
+<code># neg (-30);;</code><br>
+<code>- : bool = true</code></p>
+<p>because <code>x &lt; 0</code> will evaluate to the appropriate boolean value on its own – <code>true</code> if <span class="math inline"><code>x</code> &lt; 0</span> and <code>false</code> otherwise. Here is another function, this time of type <strong><span class="sans-serif">char <span class="math inline">→</span> bool</span></strong>. It determines if a given character is a vowel or not:</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># let isvowel c =</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;c = ’a’ || c = ’e’ || c = ’i’ || c = ’o’ || c = ’u’;;</code><br>
+<code>val isvowel : char -&gt; bool = &lt;fun&gt;</code><br>
+<code># isvowel ’x’;;</code><br>
+<code>- : bool = false</code></p>
+<p>Notice that we typed the function over two lines. This can be done by pressing the Enter key in between lines. OCaml knows that we are finished when we type <code>;;</code> followed by Enter as usual. Notice also that we pressed space a few times so that the second line appeared a little to the right of the first. This is known as <em>indentation</em> and does not affect the meaning of the program at all – it is just for readability.</p>
+<p>There can be more than one argument to a function. For example, here is a function which checks if two numbers add up to ten:</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># let addtoten a b =</code><br>
+<code>    a + b = 10;;</code><br>
+<code>val addtoten : int -&gt; int -&gt; bool = &lt;fun&gt;</code><br>
+<code># addtoten 6 4;;</code><br>
+<code>- : bool = true</code></p>
+<p>The type is <span class="sans-serif"><strong>int <span class="math inline">→</span> int <span class="math inline">→</span> bool</strong></span> because the arguments are both integers, and the result is a boolean. We use the function in the same way as before, but writing two integers this time, one for each argument the function expects.</p>
+<p>A <em>recursive</em> function is one which uses itself. Consider calculating the factorial of a given number – the factorial of 4 (written <span class="math inline">4!</span> in mathematics), for example, is <span class="math inline">4 × 3 × 2 × 1</span>. Here is a recursive function to calculate the factorial of a positive number. Note that it uses itself in its own definition.</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># let rec factorial a =</code><br>
+<code>    if a = 1 then 1 else a * factorial (a - 1);;</code><br>
+<code>val factorial : int -&gt; int = &lt;fun&gt;</code><br>
+<code># factorial 4;;</code><br>
+<code>- : int = 24</code></p>
+<p>We used <strong><code>let rec</code></strong> instead of <strong><code>let</code></strong> to indicate a recursive function. How does the evaluation of <code>factorial 4</code> proceed?</p>
+<div class="center">
+<p><img src="data:image/png;base64,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" alt="image"></p>
+</div>
+<p>For the first three steps, the <strong><code>else</code></strong> part of the conditional expression is chosen, because the argument <code>a</code> is greater than one. When the argument is equal to one, we do not use <code>factorial</code> again, but just evaluate to one. The expression built up of all the multiplications is then evaluated until a value is reached: this is the result of the whole evaluation. It is sometimes possible for a recursive function never to finish – what if we try to evaluate <code>factorial (-1)</code>?</p>
+<div class="center">
+<p><img src="data:image/png;base64,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" alt="image"></p>
+</div>
+<p>The expression keeps expanding, and the recursion keeps going. Helpfully, OCaml tells us what is going on:</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># let rec factorial a =</code><br>
+<code>    if a = 1 then 1 else a * factorial (a - 1);;</code><br>
+<code>val factorial : int -&gt; int = &lt;fun&gt;</code><br>
+<code># factorial (-1);;</code><br>
+<code>Stack overflow during evaluation (looping recursion?).</code></p>
+<p>This is an example of an error OCaml cannot find by merely looking at the program – it can only be detected during evaluation. Later in the book, we will see how to prevent people who are using our functions from making such mistakes.</p>
+<p>One of the oldest methods for solving a problem (or <em>algorithm</em>) still in common use is Euclid’s algorithm for calculating the greatest common divisor of two numbers (that is, given two positive integers <span class="math inline"><em>a</em></span> and <span class="math inline"><em>b</em></span>, finding the biggest positive integer <span class="math inline"><em>c</em></span> such that neither <span class="math inline"><em>a</em>/<em>c</em></span> nor <span class="math inline"><em>b</em>/<em>c</em></span> have a remainder). Euclid was a Greek mathematician who lived about three centuries before Christ. Euclid’s algorithm is simple to write as a function with two arguments:</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># let rec gcd a b =</code><br>
+<code>    if b = 0 then a else gcd b (a mod b);;</code><br>
+<code>val gcd : int -&gt; int -&gt; int = &lt;fun&gt;</code><br>
+<code># gcd 64000 3456;;</code><br>
+<code>- : int = 128</code></p>
+<p>Here is the evaluation:</p>
+<div class="center">
+<p><img src="data:image/png;base64,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" alt="image"></p>
+</div>
+<p>Finally, here is a simple function on boolean values. In the previous chapter, we looked at the <code>&amp;&amp;</code> and <code>||</code> operators which are built in to OCaml. The other important boolean operator is the <code>not</code> function, which returns the boolean complement (opposite) of its argument – <code>true</code> if the argument is <code>false</code>, and vice versa. This is also built in, but it is easy enough to define ourselves, as a function of type <span class="sans-serif"><strong>bool <span class="math inline">→</span> bool</strong></span>.</p>
+<p><code>        OCaml</code><br>
+<br>
+<code># let not x =</code><br>
+<code>    if x then false else true;;</code><br>
+<code>val not : bool -&gt; bool = &lt;fun&gt;</code><br>
+<code># not true;;</code><br>
+<code>- : bool = false</code></p>
+<p>Almost every program we write will involve functions such as these, and many larger ones too. In fact, languages like OCaml are often called <em>functional languages</em>.</p>
+<h2 class="unnumbered" id="questions-1">Questions</h2>
+<ol>
+<li><p>Write a function which multiplies a given number by ten. What is its type?</p></li>
+<li><p>Write a function which returns <code>true</code> if both of its arguments are non-zero, and <code>false</code> otherwise. What is the type of your function?</p></li>
+<li><p>Write a recursive function which, given a number <span class="math inline"><em>n</em></span>, calculates the sum <span class="math inline">1 + 2 + 3 + … + <em>n</em></span>. What is its type?</p></li>
+<li><p>Write a function <code>power x n</code> which raises <code>x</code> to the power <code>n</code>. Give its type.</p></li>
+<li><p>Write a function <code>isconsonant</code> which, given a lower-case character in the range <code>’a’</code>…<code>’z’</code>, determines if it is a consonant.</p></li>
+<li><p>What is the result of the expression  <code>let x = 1 in let x = 2 in x + x</code> ?</p></li>
+<li><p>Can you suggest a way of preventing the non-termination of the <code>factorial</code> function in the case of a zero or negative argument?</p></li>
+</ol>
+</html>
