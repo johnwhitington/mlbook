@@ -53,6 +53,7 @@ source: pandocmlbook.tex
 
 run `./stage1pandoc`
 run `./osfhtml` to build single-file version
+run `make` to build the splitter
 run `./splitter` to split into multi-file version
 
 
