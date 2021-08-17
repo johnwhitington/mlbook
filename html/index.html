@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>OCaml from the Very Beginning</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+
+<header id="title-block-header">
+</header>
+
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="split01.html">Preface</a></li>
+<li><a href="split02.html">Getting Ready</a></li>
+<li><a href="split03.html">Starting Off</a></li>
+<li><a href="split04.html">Names and Functions</a></li>
+<li><a href="split05.html">Note on Notation</a></li>
+<li><a href="split06.html">Case by Case</a></li>
+<li><a href="split07.html">Making Lists</a></li>
+<li><a href="split08.html">Two Different Ways of Thinking</a></li>
+<li><a href="split09.html">Sorting Things</a></li>
+<li><a href="split10.html">Loading a Program from a File</a></li>
+<li><a href="split11.html">Functions upon Functions upon Functions</a></li>
+<li><a href="split12.html">When Things Go Wrong</a></li>
+<li><a href="split13.html">Looking Things Up</a></li>
+<li><a href="split14.html">More with Functions</a></li>
+<li><a href="split15.html">New Kinds of Data</a></li>
+<li><a href="split16.html">Growing Trees</a></li>
+<li><a href="split17.html">In and Out</a></li>
+<li><a href="split18.html">Putting Things in Boxes</a></li>
+<li><a href="split19.html">The Other Numbers</a></li>
+<li><a href="split20.html">The OCaml Standard Library</a></li>
+<li><a href="split21.html">Building Bigger Programs</a></li>
+<li><a href="split22.html">Answers to Questions</a></li>
+<li><a href="split23.html">Hints for Questions</a></li>
+<li><a href="split24.html">Coping with Errors</a></li>
+</ul>
+</nav>
+
+<div class="center">
+<p><span><span class="smallcaps">OCaml from the Very Beginning</span></span></p>
+<p><em>This book has been made available free-of-charge with support from the <a href="https://ocaml-sf.org">OCaml Software Foundation</a></em></p>
+<p><em>Paperback and Kindle versions are available at <a href="https://www.amazon.com/OCaml-Very-Beginning-John-Whitington/dp/0957671105/">Amazon</a></em></p>
+<p><em>The book’s website, including accompanying online resources, is <a href="https://ocaml-book.com/">ocaml-book.com</a></em></p>
+<p>Licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">Creative Commons BY-NC-SA 2.0</a></p>
+</div>
+<p><span><span class="smallcaps">OCaml from the Very Beginning</span></span></p>
+<p>In <em>OCaml from the Very Beginning</em> John Whitington takes a no-prerequisites approach to teaching a modern general-purpose programming language. Each small, self-contained chapter introduces a new topic, building until the reader can write quite substantial programs. There are plenty of questions and, crucially, worked answers and hints.</p>
+<p><em>OCaml from the Very Beginning</em> will appeal both to new programmers, and experienced programmers eager to explore functional languages such as OCaml. It is suitable both for formal use within an undergraduate or graduate curriculum, and for the interested amateur.</p>
+<p><span class="smallcaps">John Whitington</span> founded a software company which uses OCaml extensively. He teaches functional programming to students of Computer Science at the University of Cambridge.</p>
+<p>Published in the United Kingdom by Coherent Press, Cambridge</p>
+<p>Copyright Coherent Press 2013</p>
+<p>This publication is in copyright. Subject to statutory exception no reproduction of any part may take place without the written permission of Coherent Press. <em>A catalogue record for this book is available from the British Library.</em></p>
+<p>ISBN 978-0-9576711-0-2 Paperback<br>
+</p>
+</html>
