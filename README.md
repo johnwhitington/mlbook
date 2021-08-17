@@ -1,10 +1,11 @@
-mlbook
-======
+OCaml from the Very Beginning
+=============================
 
 Cleaning up
 -----------
 
 Run ./clean
+
 
 Building the PDF
 ----------------
@@ -17,16 +18,14 @@ run ./build
 Kindle / epub / HTML requirements
 ---------------------------------
 
-Needs `tex4ht` (provided with your tex distribution).
-
 Modify `tex4ht` config to get better image resolution for bits which get
-converted to images:
-
-For example this file:
+converted to images. For example on the author's machine, this file:
 
 /usr/local/texlive/2018/texmf-dist/tex4ht/base/unix/tex4ht.env
 
 Change all '110' to '220' to double the resolution.
+
+HTML requires: opam install lambdasoup
 
 
 Building the Kindle version
@@ -37,6 +36,7 @@ source: kindlemlbook.tex
 run `./stage1`
 run `./stage2`
 
+
 Building the ePub version
 -------------------------
 
@@ -45,18 +45,20 @@ source: pandocmlbook.tex
 run `./stage1pandoc`
 run `./epub`
 
+
 Building the HTML version
 -------------------------
 
 source: pandocmlbook.tex
 
 run `./stage1pandoc`
-run `./osfhtml`
-run `./htmlsplit`
+run `./osfhtml` to build single-file version
+run `./splitter` to split into multi-file version
+
 
 Modifying the book
 ------------------
 
-To fix a typo, edit `mlbook.tex`. Then reflect the edit in `kindlemlbook.tex` and
-`pandocmlbook.tex`. All edits must be made to all three files.
-
+To fix an erratum, edit `mlbook.tex`. Then reflect the edit in
+`kindlemlbook.tex` and `pandocmlbook.tex`. All edits must be made to all three
+files, which have many surprising differences.
