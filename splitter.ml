@@ -9,7 +9,7 @@ let filenum = ref 0
 
 let open_a_file () =
   let name = Printf.sprintf "html/split%02i.html" !filenum in
-    Printf.printf "Writing %s\n%!" name;
+    (*Printf.printf "Writing %s\n%!" name;*)
     open_out_bin name
 
 let the_open_file = ref (open_a_file ())
