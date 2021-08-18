@@ -1,2 +1,2 @@
 #!/bin/bash
-htlatex mlbook "html,pic-fbox,pic-equations,pic-tabular"
+htlatex kindlemlbook "html,pic-fbox,pic-equations,pic-tabular"
