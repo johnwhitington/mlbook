@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--This file is not automatically generated unlike splitxx.html -->
 <html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
 <head>
   <meta charset="utf-8" />
@@ -148,6 +149,8 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
 </head>
+<body>
+<p><a href="index.html">Back to Contents</a></p>
 <h1 id="when-things-go-wrong">When Things Go Wrong</h1>
 <p>Some of the functions we have written so far have had a single, correct answer for each possible argument. For example, there’s no number we cannot halve. However, when we use more complicated types such as lists, there are plenty of functions which do not always have an answer – a list might not have a head or a tail, for example. Our <code>take</code> and <code>drop</code> functions were unsatisfactory in case of invalid arguments. For example, <code>take 3 [’a’]</code> would simply return <code>[]</code>. This is bad practice – we are hiding errors rather than confronting them.</p>
 <p>OCaml has a mechanism for reporting such <em>run-time</em> errors (these are quite different from the type errors OCaml reports when it refuses to accept a program at all). This mechanism is <em>exceptions</em>.</p>
@@ -204,4 +207,6 @@
 <li><p>Write another function which uses the previous one, but handles the exception, and simply returns zero when a suitable integer cannot be found.</p></li>
 <li><p>Comment on the merits and demerits of exceptions as a method for dealing with exceptional situations, in contrast to returning a special value to indicate an error (such as <code>-1</code> for a function normally returning a positive number).</p></li>
 </ol>
+<!--This file is not automatically generated unlike splitxx.html -->
+</body>
 </html>

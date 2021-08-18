@@ -15,8 +15,8 @@ source: mlbook.tex
 run ./build
 
 
-Kindle / epub / HTML requirements
----------------------------------
+Kindle / HTML requirements
+--------------------------
 
 Modify `tex4ht` config to get better image resolution for bits which get
 converted to images. For example on the author's machine, this file:
@@ -35,15 +35,6 @@ source: kindlemlbook.tex
 
 run `./stage1`
 run `./stage2`
-
-
-Building the ePub version
--------------------------
-
-source: pandocmlbook.tex
-
-run `./stage1pandoc`
-run `./epub`
 
 
 Building the HTML version

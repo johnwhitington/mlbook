@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--This file is not automatically generated unlike splitxx.html -->
 <html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
 <head>
   <meta charset="utf-8" />
@@ -148,6 +149,8 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
 </head>
+<body>
+<p><a href="index.html">Back to Contents</a></p>
 <h1 id="growing-trees">Growing Trees</h1>
 <p>We have used lists to represent collections of elements of like type but varying length, and tuples to represent collections of things of any type but fixed length. Another common type is the <em>binary tree</em>, which is used to represent structures which branch, such as the arithmetical expressions we constructed in the last chapter.</p>
 <p>How can we represent such trees using an OCaml type? When we built our version of the OCaml list type, we had two constructors – <code>Cons</code> to hold a head and a tail, and <code>Nil</code> to represent the end of the list. With a tree, we need a version of Cons which can hold two tails – the left and right, and we still need a version of <code>Nil</code>.</p>
@@ -213,4 +216,6 @@
 <li><p>Write a function to combine two dictionaries represented as trees into one. In the case of clashing keys, prefer the value from the first dictionary.</p></li>
 <li><p>Can you define a type for trees which, instead of branching exactly two ways each time, can branch zero or more ways, possibly different at each branch? Write simple functions like <code>size</code>, <code>total</code>, and <code>map</code> using your new type of tree.</p></li>
 </ol>
+<!--This file is not automatically generated unlike splitxx.html -->
+</body>
 </html>
