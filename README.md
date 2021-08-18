@@ -1,8 +1,8 @@
 OCaml from the Very Beginning
 =============================
 
-Note: unusually, this repository contains the source and the built artefacts.
-You only need to build if you update somthing.
+Note: unusually, this repository contains both the source and the built
+artefacts. You only need to build if you update somthing.
 
 Cleaning up
 -----------
