@@ -1,6 +1,9 @@
 OCaml from the Very Beginning
 =============================
 
+Note: unusually, this repository contains the source and the built artefacts.
+You only need to build if you update somthing.
+
 Cleaning up
 -----------
 
@@ -25,8 +28,6 @@ converted to images. For example on the author's machine, this file:
 
 Change all '110' to '220' to double the resolution.
 
-HTML requires: opam install lambdasoup
-
 
 Building the Kindle version
 ---------------------------
@@ -42,6 +43,8 @@ Building the HTML version
 
 source: pandocmlbook.tex
 
+requires: opam install lambdasoup
+
 run `./stage1pandoc`
 run `./osfhtml` to build single-file version
 run `make` to build the splitter
@@ -51,6 +54,6 @@ run `./splitter` to split into multi-file version
 Modifying the book
 ------------------
 
-To fix an erratum, edit `mlbook.tex`. Then reflect the edit in
-`kindlemlbook.tex` and `pandocmlbook.tex`. All edits must be made to all three
-files, which have many surprising differences.
+To fix errata, edit `mlbook.tex`. Then reflect the edit in `kindlemlbook.tex`
+and `pandocmlbook.tex`. All edits must be made to all three files, which have
+many surprising differences.
