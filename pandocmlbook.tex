@@ -1316,14 +1316,15 @@ Often we need to apply a function to every element of a list. For example, doubl
 
 In the preceding chapter we wrote a sorting function and, in one of the questions, you were asked to change the function to use a different comparison operator so that the function would sort elements into reverse order. Now, we know how to write a version of the \texttt{msort} function which uses any comparison function we give it. A comparison function would have type \textbf{\textsf{$\alpha$ $\rightarrow$ $\alpha$ $\rightarrow$ bool}}. That is, it takes two elements of the same type, and returns \texttt{true} if the first is ``greater'' than the second, for some definition of ``greater'' -- or \texttt{false} otherwise.
 
-So, let us alter our \texttt{merge} and \texttt{msort} functions to take an extra argument -- the comparison function. The result is shown in Figure \ref{msortcomp}. Now, if we make our own comparison operator:
+So, let us alter our \texttt{merge} and \texttt{msort} functions to take an extra argument -- the comparison function:
 
-%FIXME PANDOC FIGURE
 \medskip
 \begin{center}
 \noindent\includegraphics[width=\textwidth]{pandocfiguresmlbook74x.png}
 \end{center}
 \medskip
+
+Now, if we make our own comparison operator:
 
 \medskip
 \begin{center}
@@ -1404,9 +1405,8 @@ There are some built-in exceptions in OCaml. For example \index{Division\_by\_ze
 \noindent\verb!Exception: Division_by_zero.!
 \smspace
 
-\noindent In order to signal bad arguments in functions like \texttt{take} and \texttt{drop}, we can rewrite them using the built-in exception \index{Invalid\_argument@\texttt{Invalid\_argument}}\texttt{Invalid\_argument}, which also carries a message written between double quotation marks. Typically we use this to record the name of the function which failed. Figure \ref{takedrop} shows \texttt{take} and \texttt{drop} rewritten to use the \texttt{Invalid\_argument} exception using \texttt{\textbf{raise}}. Note that these functions deal with two problems of our previous versions: a negative argument, and being asked to take or drop more than the number of elements in the list.
+\noindent In order to signal bad arguments in functions like \texttt{take} and \texttt{drop}, we can rewrite them using the built-in exception \index{Invalid\_argument@\texttt{Invalid\_argument}}\texttt{Invalid\_argument}, which also carries a message written between double quotation marks. Typically we use this to record the name of the function which failed. The following program shows \texttt{take} and \texttt{drop} rewritten to use the \texttt{Invalid\_argument} exception using \texttt{\textbf{raise}}. Note that these functions deal with two problems of our previous versions: a negative argument, and being asked to take or drop more than the number of elements in the list.
 
-%FIXME PANDOC FIGURE
 
 \medskip
 \begin{center}
@@ -2835,7 +2835,7 @@ In this chapter, you will have to create text files and type commands into the c
 
 \section*{Making a module}
 
-We will be building a modular version of our text statistics program from Chapter 13. First, write the text file shown in Figure \ref{textstat.ml} (but not the italic annotations) and save it as \texttt{textstat.ml} (OCaml programs live in files with lowercase names ending in \texttt{.ml}).
+We will be building a modular version of our text statistics program from Chapter 13. First, write the text file shown in below (but not the italic annotations) and save it as \texttt{textstat.ml} (OCaml programs live in files with lowercase names ending in \texttt{.ml}).
 
 \medskip
 \begin{center}
@@ -2867,13 +2867,15 @@ Now, we can issue a command to turn this program into a pre-processed OCaml modu
 
 \section*{Filling out the module}
 
-Let us add a real \texttt{stats\_from\_channel} function, to produce a working text statistics module. We will also add utility functions for retrieving individual statistics from the \texttt{stats} type. This is shown in Figure \ref{textstat2.ml}. We can compile it in the same way, and try it with our example file:
+Let us add a real \texttt{stats\_from\_channel} function, to produce a working text statistics module. We will also add utility functions for retrieving individual statistics from the \texttt{stats} type:
 
 \medskip
 \begin{center}
 \noindent\includegraphics[width=\textwidth]{pandocfiguresmlbook149x.png}
 \end{center}
 \medskip
+
+\noindent We can compile it in the same way, and try it with our example file:
 
 
 \smspace
@@ -2899,7 +2901,7 @@ Let us add a real \texttt{stats\_from\_channel} function, to produce a working t
 \index{interface}
 We said that modules were for creating abstractions, so that the implementation of an individual module could be altered without changing the rest of the program. However, we have not achieved that yet -- the details of the internal type are visible to the program using the module, and that program would break if we changed the type of \texttt{stats} to hold an additional statistic. In addition, the internal \texttt{count\_words} function is available, even though the user of the module is not expected to use it.
 
-What we would like to do is to restrict the module so that only the types and functions we want to be used directly are available. For this, we use an \textit{interface}. Interfaces are held in files ending in \texttt{.mli}, and we can write one for our module. Our interface is shown in Figure \ref{textstat.mli}.
+What we would like to do is to restrict the module so that only the types and functions we want to be used directly are available. For this, we use an \textit{interface}. Interfaces are held in files ending in \texttt{.mli}, and we can write one for our module. Here is our interface:
 
 \medskip
 \begin{center}
@@ -2914,7 +2916,7 @@ In this interface, we have exposed every type and function. Types are written in
 \texttt{ocamlc textstat.mli textstat.ml}
 \smspace
 
-\noindent The \texttt{ocamlc} compiler has created at least two files: \texttt{textstat.cmo} as before and \texttt{textstat.cmi} (the compiled interface). You should find this operates exactly as before when loaded into OCaml. Now, let us remove the definition of the type from the interface, to make sure that the stats type is \index{type!hidden}hidden, and its parts can only be accessed using the \texttt{lines}, \texttt{characters}, \texttt{words}, and \texttt{sentences} functions. We will also remove the declaration for \texttt{stats\_from\_channel} to demonstrate that functions we do not need can be hidden too. This is shown in Figure \ref{textstat2.mli}.
+\noindent The \texttt{ocamlc} compiler has created at least two files: \texttt{textstat.cmo} as before and \texttt{textstat.cmi} (the compiled interface). You should find this operates exactly as before when loaded into OCaml. Now, let us remove the definition of the type from the interface, to make sure that the stats type is \index{type!hidden}hidden, and its parts can only be accessed using the \texttt{lines}, \texttt{characters}, \texttt{words}, and \texttt{sentences} functions. We will also remove the declaration for \texttt{stats\_from\_channel} to demonstrate that functions we do not need can be hidden too:
 
 \medskip
 \begin{center}
@@ -2946,7 +2948,7 @@ Now, if we compile the program again with \texttt{ocamlc textstat.mli textstat.m
  
 \section*{Building standalone programs}
 
-Now it is time to cut ourselves free from interactive OCaml, and build standalone programs which can be executed directly. Let us add another file \texttt{stats.ml} which  will use functions from the \texttt{Textstat} module to create a program which, when given a file name, prints some statistics about it. This is illustrated in Figure \ref{stats.ml}. There are some new things here:
+Now it is time to cut ourselves free from interactive OCaml, and build standalone programs which can be executed directly. Let us add another file \texttt{stats.ml} which  will use functions from the \texttt{Textstat} module to create a program which, when given a file name, prints some statistics about it:
 
 \medskip
 \begin{center}
@@ -2954,6 +2956,7 @@ Now it is time to cut ourselves free from interactive OCaml, and build standalon
 \end{center}
 \medskip
 
+\noindent There are some new things here:
 
 \begin{enumerate}
   \item The built-in array \texttt{Sys.argv} lists the arguments given to a command written at the command line. The first is the name of our program, so we ignore that. The second will be the name of the file the user wants our program to inspect. So, we match against that array. If there is any other array size, we print out a usage message.
@@ -4289,23 +4292,24 @@ We repeatedly check if the string we are looking for is right at the beginning o
 
 \section*{Chapter 16. Building Bigger Programs}
 \subsection*{1}
-First, we extend the \texttt{Textstat} module to allow frequencies to be counted and expose it through the interface, shown in Figures \ref{q1.mli} and \ref{q1.ml}. Then the main program is as shown in Figure \ref{q1a.ml}.
+First, we extend the \texttt{Textstat} module to allow frequencies to be counted and expose it through the interface. Here is the interface \texttt{q1.mli}:
 
-%FIXME fig
 \medskip
 \begin{center}
 \noindent\includegraphics[width=\textwidth]{pandocfiguresmlbook254x.png}
 \end{center}
 \medskip
 
-%FIXME fig
+\noindent Here is its implementation \texttt{q1.ml}:
+
 \medskip
 \begin{center}
 \noindent\includegraphics[width=\textwidth]{pandocfiguresmlbook255x.png}
 \end{center}
 \medskip
 
-%FIXME fig
+\noindent Here is the main program:
+
 \medskip
 \begin{center}
 \noindent\includegraphics[width=\textwidth]{pandocfiguresmlbook256x.png}
@@ -4314,9 +4318,8 @@ First, we extend the \texttt{Textstat} module to allow frequencies to be counted
 
 \subsection*{2}
 
-We can write two little functions -- one to read all the lines from a file, and one to write them. The main function, then, reads the command line to find the input and output file names, reads the lines from the input, reverses the list of lines, and writes them out. If a problem occurs, the exception is printed out. If the command line is badly formed, we print a usage message and exit. This is shown in Figure \ref{reverse.ml}.
+We can write two little functions -- one to read all the lines from a file, and one to write them. The main function, then, reads the command line to find the input and output file names, reads the lines from the input, reverses the list of lines, and writes them out. If a problem occurs, the exception is printed out. If the command line is badly formed, we print a usage message and exit.
 
-%FIXME fig
 \medskip
 \begin{center}
 \noindent\includegraphics[width=\textwidth]{pandocfiguresmlbook257x.png}
@@ -4359,9 +4362,8 @@ We can simply do something (or nothing) a huge number of times using a \textbf{\
 \subsection*{4}
 We can get all the lines in the file using our \texttt{getlines} function from question two. The main function simply calls \texttt{string\_in\_line} on each line, printing it if \texttt{true} is returned.
 
-The interesting function is \texttt{string\_in\_line}. To see if \texttt{term} is in \texttt{line} we start at position 0. The condition for the term having been found is a combination of boolean expressions. The first ensures that we are not so far through the string that the expression could not possibly fit at the current position. The second checks to see if the term is found at the current position by using the function \texttt{String.sub} from the OCaml Standard Library. If not, we carry on. This is illustrated in Figure \ref{search.ml}.
+The interesting function is \texttt{string\_in\_line}. To see if \texttt{term} is in \texttt{line} we start at position 0. The condition for the term having been found is a combination of boolean expressions. The first ensures that we are not so far through the string that the expression could not possibly fit at the current position. The second checks to see if the term is found at the current position by using the function \texttt{String.sub} from the OCaml Standard Library. If not, we carry on.
 
-%FIXME figure
 \medskip
 \begin{center}
 \noindent\includegraphics[width=\textwidth]{pandocfiguresmlbook258x.png}
