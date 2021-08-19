@@ -523,11 +523,11 @@ The \texttt{cube} function has type \textsf{\textbf{int} $\rightarrow$ \textbf{i
 \noindent\\
 \noindent\verb!# let neg x = if x < 0 then true else false;;!\\
 \noindent\verb!val neg : int -> bool = <fun>!\\
-\noindent\texttt{\# neg (-30);;}\hfill\textit{we add parentheses to distinguish from \texttt{neg - 30}}\\
+\noindent\texttt{\# neg (-30);;}\\
 \noindent\verb!- : bool = true!
 \smspace
 
-\noindent But, of course, this is equivalent to just writing
+\noindent (We added parentheses to distinguish from \texttt{neg - 30}). But, of course, this is equivalent to just writing
 
 \smspace
 \noindent\verb!        OCaml!\\
@@ -1004,19 +1004,19 @@ Two more useful functions for processing lists are \texttt{take} and \texttt{dro
 Lists can contain anything, so long as all elements are of the same type. So, of course, a list can contain lists. Here's a list of lists of integers:
 
 \smspace
-\texttt{[[1]; [2; 3]; [4; 5; 6]]} \ : \ \textsf{\textbf{\textmd{(}int list\textmd{)} list}}\hfill\textit{We can also just write \textbf{\textsf{int list list}}} 
+\texttt{[[1]; [2; 3]; [4; 5; 6]]} \ : \ \textsf{\textbf{\textmd{(}int list\textmd{)} list}} 
 \smspace
 
-\noindent Each element of this list is of type \textsf{\textbf{int list}}. Within values of this type, it is important to distinguish the list of lists containing no elements
+\noindent Each element of this list is of type \textsf{\textbf{int list}} (we can also omit the parentheses and write \textsf{\textbf{int list list}}). Within values of this type, it is important to distinguish the list of lists containing no elements
 
 \smspace
-\texttt{[] :\ \textsf{\textbf{$\alpha$ list list}}}
+\texttt{[] :}\ \textsf{\textbf{$\alpha$ list list}}
 \smspace
 
 \noindent from the \index{list of lists}list of lists containing one element which is the empty list
 
 \smspace
-\texttt{[[]] :\ \textsf{\textbf{$\alpha$ list list}}}
+\texttt{[[]] :}\ \textsf{\textbf{$\alpha$ list list}}
 \smspace
 
 

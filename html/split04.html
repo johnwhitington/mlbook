@@ -197,9 +197,9 @@
 <br>
 <code># let neg x = if x &lt; 0 then true else false;;</code><br>
 <code>val neg : int -&gt; bool = &lt;fun&gt;</code><br>
-<code># neg (-30);;</code><em>we add parentheses to distinguish from <code>neg - 30</code></em><br>
+<code># neg (-30);;</code><br>
 <code>- : bool = true</code></p>
-<p>But, of course, this is equivalent to just writing</p>
+<p>(We added parentheses to distinguish from <code>neg - 30</code>). But, of course, this is equivalent to just writing</p>
 <p><code>        OCaml</code><br>
 <br>
 <code># let neg x = x &lt; 0;;</code><br>

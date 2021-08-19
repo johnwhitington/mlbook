@@ -418,9 +418,9 @@
 <br />
 <code># let neg x = if x &lt; 0 then true else false;;</code><br />
 <code>val neg : int -&gt; bool = &lt;fun&gt;</code><br />
-<code># neg (-30);;</code><em>we add parentheses to distinguish from <code>neg - 30</code></em><br />
+<code># neg (-30);;</code><br />
 <code>- : bool = true</code></p>
-<p>But, of course, this is equivalent to just writing</p>
+<p>(We added parentheses to distinguish from <code>neg - 30</code>). But, of course, this is equivalent to just writing</p>
 <p><code>        OCaml</code><br />
 <br />
 <code># let neg x = x &lt; 0;;</code><br />
@@ -670,11 +670,11 @@
 </div>
 <p>Note that these functions contain incomplete pattern matches – OCaml tells us so when we type them in. The function fails if the arguments are not sensible – that is, when we are asked to take or drop more elements than are in the argument list. Later on, we will see how to deal with that problem. Note also that for any sensible value of <code>n</code>, including zero, <code>take n l</code> and <code>drop n l</code> split the list into two parts with no gap. So <code>drop</code> and <code>take</code> often appear in pairs.</p>
 <p>Lists can contain anything, so long as all elements are of the same type. So, of course, a list can contain lists. Here’s a list of lists of integers:</p>
-<p><code>[[1]; [2; 3]; [4; 5; 6]]</code>  :  <span class="sans-serif"><strong><span class="medium">(</span>int list<span class="medium">)</span> list</strong></span><em>We can also just write <strong><span class="sans-serif">int list list</span></strong></em></p>
-<p>Each element of this list is of type <span class="sans-serif"><strong>int list</strong></span>. Within values of this type, it is important to distinguish the list of lists containing no elements</p>
-<p><code>[] : \alpha list list</code></p>
+<p><code>[[1]; [2; 3]; [4; 5; 6]]</code>  :  <span class="sans-serif"><strong><span class="medium">(</span>int list<span class="medium">)</span> list</strong></span></p>
+<p>Each element of this list is of type <span class="sans-serif"><strong>int list</strong></span> (we can also omit the parentheses and write <span class="sans-serif"><strong>int list list</strong></span>). Within values of this type, it is important to distinguish the list of lists containing no elements</p>
+<p><code>[] :</code> <span class="sans-serif"><strong><span class="math inline"><em>α</em></span> list list</strong></span></p>
 <p>from the list of lists containing one element which is the empty list</p>
-<p><code>[[]] : \alpha list list</code></p>
+<p><code>[[]] :</code> <span class="sans-serif"><strong><span class="math inline"><em>α</em></span> list list</strong></span></p>
 <h2 class="unnumbered" id="questions-3">Questions</h2>
 <ol>
 <li><p>Write a function <code>evens</code> which does the opposite to <code>odds</code>, returning the even numbered elements in a list. For example, <code>evens [2; 4; 2; 4; 2]</code> should return <code>[4; 4]</code>. What is the type of your function?</p></li>
