@@ -370,7 +370,7 @@ Operator & Description\\
 \smspace
 \noindent\verb!        OCaml!\\
 \noindent\\
-\noindent\texttt{\# 1 + \underline{\vphantom{g}true};;}\\
+\noindent\texttt{\# 1 + }\underline{\verb!true!}\texttt{;;}\\
 \noindent\texttt{Error:\ This expression has type bool but an expression was expected of type}\\
 \noindent\verb!         int!
 \smspace
@@ -511,7 +511,7 @@ The \texttt{cube} function has type \textsf{\textbf{int} $\rightarrow$ \textbf{i
 \noindent\\
 \noindent\verb!# let cube x = x * x * x;;!\\
 \noindent\verb!val cube : int -> int = <fun>!\\
-\noindent\texttt{\# cube \underline{\vphantom{i}false};;}\\
+\noindent\texttt{\# cube} \underline{\verb!false!}\texttt{;;}\\
 \noindent\verb!Error: This expression has type bool but an expression was expected of type!\\
 \noindent\verb!         int!
 \smspace
@@ -1832,13 +1832,15 @@ In addition to being polymorphic, new types may also be \index{type!recursive}re
 Our \textsf{sequence} was an example of a recursively-defined type, which can be processed naturally by recursive functions. Mathematical expressions can be modeled in the same way. For example, the expression $1 + 2 \times 3$ could be drawn like this:
 
 \smspace
-\Tree [.$+$ 1 [.$\times$ 2 3 ] ]
+%\Tree [.$+$ 1 [.$\times$ 2 3 ] ]
+\includegraphics{kindlefig1.png}
 \smspace
 
 \noindent Notice that, in this representation, we never need parentheses -- the diagram is unambiguous. We can evaluate the expression by reducing each part in turn:
 
 \smspace
-\Tree [.$+$ 1 [.$\times$ 2 3 ] ] \hspace{4mm}$\longrightarrow$\hspace{4mm} \Tree [.$+$ 1 6 ] \hspace{4mm}$\longrightarrow$\hspace{4mm} \Tree [.7 ] 
+%\Tree [.$+$ 1 [.$\times$ 2 3 ] ] \hspace{4mm}$\longrightarrow$\hspace{4mm} \Tree [.$+$ 1 6 ] \hspace{4mm}$\longrightarrow$\hspace{4mm} \Tree [.7 ]
+\includegraphics{kindlefig2.png}
 \smspace
 
 \noindent Here's a suitable type for such expressions:
@@ -1903,16 +1905,16 @@ How can we represent such trees using an OCaml type? When we built our version o
 
 \smspace
 
-\Tree [.1 \phantom{3} \phantom{3} ]\hspace{4mm}is written as\hspace{4mm}\texttt{Br (1, Lf, Lf)}
+\includegraphics{kindlefig3.png}
+%\Tree [.1 \phantom{3} \phantom{3} ]\hspace{4mm}is written as\hspace{4mm}\texttt{Br (1, Lf, Lf)}
 
-\smspace
+%\smspace
 
-\Tree [.2 [.1 \phantom{3} \phantom{3} ] \phantom{3} ]\hspace{4mm}is written as\hspace{4mm}\texttt{Br (2, Br (1, Lf, Lf), Lf)}
+%\Tree [.2 [.1 \phantom{3} \phantom{3} ] \phantom{3} ]\hspace{4mm}is written as\hspace{4mm}\texttt{Br (2, Br (1, Lf, Lf), Lf)}
 
-\smspace
+%\smspace
 
-\Tree [.2 [.1 \phantom{3} \phantom{3} ] [.4 \phantom{3} \phantom{3} ] ]\hspace{4mm} is written as\hspace{4mm} \texttt{Br (2, Br (1, Lf, Lf), Br (4, Lf, Lf))}
-
+%\Tree [.2 [.1 \phantom{3} \phantom{3} ] [.4 \phantom{3} \phantom{3} ] ]\hspace{4mm} is written as\hspace{4mm} \texttt{Br (2, Br (1, Lf, Lf), Br (4, Lf, Lf))}
 \smspace
 
 \noindent The empty tree is simply \texttt{Lf}. You can see now why we used abbreviated constructor names -- even small trees result in long textual representations. Let us write some simple functions on trees. To calculate the number of elements in the tree, we just count one for each branch, and zero for each leaf:
@@ -1969,7 +1971,8 @@ We can use our existing \textsf{tree} type. In the case of a dictionary, it will
 So, our tree representing a dictionary mapping integers like \texttt{1} to their spellings like \texttt{``one''} would have type \textsf{\textmd{(}\textbf{int} $\times$ \textbf{string}\textmd{)} tree}:
 
 \smspace
-\Tree [.\texttt{(3, "three")} [.\texttt{(1, "one")} \phantom{a} [.\texttt{(2, "two")} \phantom{a} \phantom{a} ] ] [.\texttt{(4, "four")} \phantom{a} \phantom{a} ] ]
+%\Tree [.\texttt{(3, "three")} [.\texttt{(1, "one")} \phantom{a} [.\texttt{(2, "two")} \phantom{a} \phantom{a} ] ] [.\texttt{(4, "four")} \phantom{a} \phantom{a} ] ]
+\includegraphics{kindlefig4.png}
 \smspace
 
 \noindent which would be written as
@@ -2007,7 +2010,8 @@ Lookup is simple: start at the top, and if we have not found the key we are look
 \noindent For example, if we wish to insert the value \texttt{"zero"} for the key \texttt{0} in the tree drawn above, we would obtain
 
 \smspace
-\Tree [.\texttt{(3, "three")} [.\texttt{(1, "one")} [.\texttt{(0, "zero")} \phantom{a} \phantom{a} ] [.\texttt{(2, "two")} \phantom{a} \phantom{a} ] ] [.\texttt{(4, "four")} \phantom{a} \phantom{a} ] ]
+%\Tree [.\texttt{(3, "three")} [.\texttt{(1, "one")} [.\texttt{(0, "zero")} \phantom{a} \phantom{a} ] [.\texttt{(2, "two")} \phantom{a} \phantom{a} ] ] [.\texttt{(4, "four")} \phantom{a} \phantom{a} ] ]
+\includegraphics{kindlefig5.png}
 \smspace
 
 \noindent The shape of the tree is dependent upon the order of insertions into the tree -- if they are in order (or reverse order), we obtain a rather inefficient tree -- no better a dictionary than a list in fact. However, on average, we obtain a reasonably balanced tree, and logarithmic lookup and insertion times.
@@ -2193,7 +2197,7 @@ We want the user to enter a series of keys and values (integers and strings), on
 
 It is inconvenient to have to type new data sets in each time, so we will write functions to store a dictionary to a file, and then to read it back out again. 
 
-\index{in\_channel@\textbf{\textsf{in\raisebox{2pt}{\_}channel}}}\index{out\_channel@\textbf{\textsf{out\raisebox{2pt}{\_}channel}}}OCaml has some basic functions to help us read and write from places data can be stored, such as files. Places we can read from have type \textsf{\textbf{in\raisebox{2pt}{\_}channel}} and places we can write to have type \textsf{\textbf{out\raisebox{2pt}{\_}channel}}. Here are functions for writing a dictionary of type \textsf{\textmd{(}\textbf{int} $\times$ \textbf{string}\textmd{)}} to a channel: 
+\index{in\_channel@\textbf{\textsf{in\_channel}}}\index{out\_channel@\textbf{\textsf{out\_channel}}}OCaml has some basic functions to help us read and write from places data can be stored, such as files. Places we can read from have type \textsf{\textbf{in\_channel}} and places we can write to have type \textsf{\textbf{out\_channel}}. Here are functions for writing a dictionary of type \textsf{\textmd{(}\textbf{int} $\times$ \textbf{string}\textmd{)}} to a channel: 
 
 \medskip
 \begin{center}
@@ -2203,7 +2207,7 @@ It is inconvenient to have to type new data sets in each time, so we will write 
 
 \noindent We are using the functions \texttt{output\_string} and \texttt{output\_char} to write the data in the same format we used to print it to the screen. There is no \texttt{output\_int} function, so we have used the built-in \texttt{string\_of\_int} function to build a string from the integer. The character \texttt{\textquotesingle\textbackslash n\textquotesingle} is a special one, representing moving to the next line (there is no \texttt{output\_newline} function).
 
-How do we obtain such a channel? The function \texttt{open\_out} gives an output channel for filename given as a string. It has type \textsf{\textbf{string $\rightarrow$ out\raisebox{2pt}{\_}channel}}. After we have written the contents to the file, we must call \texttt{close\_out} (which has type \textsf{\textbf{out\raisebox{2pt}{\_}channel} $\rightarrow$ \textbf{unit}}) to properly \index{file}close the file.
+How do we obtain such a channel? The function \texttt{open\_out} gives an output channel for filename given as a string. It has type \textsf{\textbf{string $\rightarrow$ out\_channel}}. After we have written the contents to the file, we must call \texttt{close\_out} (which has type \textsf{\textbf{out\_channel} $\rightarrow$ \textbf{unit}}) to properly \index{file}close the file.
 
 
 \medskip
@@ -2256,7 +2260,7 @@ How do we obtain such a channel? The function \texttt{open\_out} gives an output
 
 \subsection*{Summary of functions}
 
-We have introduced the types \textsf{\textbf{unit}}, \textsf{\textbf{in\raisebox{2pt}{\_}channel}}, and \textsf{\textbf{out\raisebox{2pt}{\_}channel}}, and the exception \texttt{End\_of\_file}. Here are the functions we have used:
+We have introduced the types \textsf{\textbf{unit}}, \textsf{\textbf{in\_channel}}, and \textsf{\textbf{out\_channel}}, and the exception \texttt{End\_of\_file}. Here are the functions we have used:
 
 \medskip
 \begin{center}
@@ -2264,8 +2268,8 @@ We have introduced the types \textsf{\textbf{unit}}, \textsf{\textbf{in\raisebox
 \end{center}
 \medskip
 
-\clearpage
 \section*{Questions}
+
 \begin{enumerate}
 \item Write a function to print a list of integers to the screen in the same format OCaml uses -- i.e. with square brackets and semicolons. 
 \item Write a function to read three integers from the user, and return them as a tuple. What exceptions could be raised in the process? Handle them appropriately.
@@ -2278,11 +2282,14 @@ We have introduced the types \textsf{\textbf{unit}}, \textsf{\textbf{in\raisebox
 \end{center}
 \medskip
 
-\noindent Adding the special tabulation character \texttt{'\textbackslash t'}} after each number will line up the columns.
+
+\noindent Adding the special tabulation character \verb!\t! after each number will line up the columns.
 
 \item Write a function to count the number of lines in a given file.
 \item Write a function \texttt{copy\_file} of type \textsf{\textbf{string} $\rightarrow$ \textbf{string} $\rightarrow$ \textbf{unit}} which copies a file line by line. For example, \texttt{copy\_file "a.txt" "b.txt"} should produce a file \texttt{b.txt} identical to \texttt{a.txt}. Make sure you deal with the case where the file \texttt{a.txt} cannot be found, or where \texttt{b.txt} cannot be created or filled. 
 \end{enumerate}
+
+
 
 \cleardoublepage
 \thispagestyle{empty}
@@ -2345,7 +2352,7 @@ This type of programming, which consists of issuing a number of commands, in ord
 For readability, OCaml lets us miss out the \texttt{\pelse} part of the \texttt{\textbf{if\ \ldots\ then\ \ldots\ else\ \ldots}} construct if it would just be \texttt{()}, which is if we are doing nothing in the \textbf{\texttt{else}} case, so
 
 \smspace
-  \texttt{\pif x = 0 \pthen a := 0 \pelse ()}
+  \texttt{\pif x = 0 \pthen a := 0 \pelse\ ()}
 \smspace
 
 \noindent can be written as
@@ -2851,8 +2858,8 @@ Now, we can issue a command to turn this program into a pre-processed OCaml modu
 \smspace
 \noindent\verb!        OCaml!\\
 \noindent\\
-\noindent\texttt{\# \#load "textstat.cmo";;}\hfill\textit{load the module}\\
-\noindent\texttt{\# Textstat.stats\_from\_file "gregor.txt";;}\hfill\textit{use a function}\\
+\noindent\texttt{\# \#load "textstat.cmo";;}\\
+\noindent\texttt{\# Textstat.stats\_from\_file "gregor.txt";;}\\
 \noindent\texttt{- :\ int * int * int * int = (0, 0, 0, 0)}\hfill\vphantom{g}
 \smspace
 
@@ -2922,7 +2929,7 @@ Now, if we compile the program again with \texttt{ocamlc textstat.mli textstat.m
 \noindent\\
 \texttt{\# \#load "textstat.cmo";;}\\
 \texttt{\# let s = Textstat.stats\_from\_file "gregor.txt";;}\\
-\texttt{val s :\ Textstat.stats = <abstr>}\hfill\textit{the type is now abstract}\\
+\texttt{val s :\ Textstat.stats = <abstr>}\\
 \texttt{\# Textstat.lines s;;}\\
 \texttt{- :\ int = 8}\\
 \texttt{\# Textstat.characters s;;}\\
@@ -2931,7 +2938,7 @@ Now, if we compile the program again with \texttt{ocamlc textstat.mli textstat.m
 \texttt{- :\ int = 80}\\
 \texttt{\# Textstat.sentences s;;}\\
 \texttt{- :\ int = 4}\\
-\texttt{\# \underline{Textstat.stats\_from\_channel\vphantom{g}};;}\hfill\textit{we have hidden this function}\\
+\texttt{\# }\underline{\verb!Textstat.stats_from_channel;;!}\\
 \texttt{Error:\ Unbound value Textstat.stats\_from\_channel}\vphantom{g}
 \smspace
 
@@ -4041,7 +4048,7 @@ The expression \texttt{[ref 5; ref 5]} is of type \textbf{\textsf{int ref list}}
 \noindent\\
 \noindent\verb!# let r = let x = ref 5 in [x; x];;!\\
 \noindent\verb!val r : int ref list = [{contents = 5}; {contents = 5}]!\\
-\noindent\texttt{\# \underline{\vphantom{g}match r with h::\_ -> h := 6};;}\\
+\noindent\texttt{\# }\underline{\verb!match r with h::_ -> h := 6;;!}\\
 \noindent\verb!Warning 8: this pattern-matching is not exhaustive.!\\
 \noindent\verb!Here is an example of a value that is not matched:!\\
 \noindent\verb![]!\\
@@ -4365,7 +4372,7 @@ The interesting function is \texttt{string\_in\_line}. To see if \texttt{term} i
 \cleardoublepage
 \flushbottom
 \chapter{Hints for Questions}
-\begin{multicols*}{2}
+
 \section*{1. Starting Off}
 \subsection*{1}
 Try to work these out on paper, and then check by typing them in. Remember that the type of an expression is the type of the value it will evaluate to. Can you show the steps of evaluation for each expression?
@@ -4657,8 +4664,6 @@ Consider doing something a very large number of times. You should avoid printing
 \subsection*{4}
 Start with a function to search for a given string inside another. You might find some functions from the \texttt{String} module in the OCaml Standard Library to be useful, or you can write it from first principles. Once this is done, the rest is simple.
 
-\end{multicols*}
-
 \cleardoublepage
 \chapter{Coping with Errors}
 It is very hard to write even small programs correctly the first time. An unfortunate but inevitable part of programming is the location and fixing of mistakes. OCaml has a range of messages to help you with this process.
@@ -4676,7 +4681,7 @@ This error occurs when OCaml finds that the program text contains things which a
 \smspace
 \noindent\verb!        OCaml!\\
 \noindent\\
-\noindent\texttt{\#1 +\underline{;;}}\\
+\noindent\texttt{\#1 +}\underline{\verb!;;!}\\
 \noindent\verb!Error: syntax error!
 \smspace
 
@@ -4689,7 +4694,7 @@ This error occurs when you have mentioned a name which has not been defined (tec
 \smspace
 \noindent\verb!        OCaml!\\
 \noindent\\
-\texttt{\# \underline{x} + 1;;}\\
+\texttt{\# }\underline{\verb!x!}\texttt{ + 1;;}\\
 \texttt{Error:\ Unbound value x}
 \smspace
 
@@ -4702,7 +4707,7 @@ You will see this error very frequently. It occurs when the expression's syntax 
 \smspace
 \noindent\verb!        OCaml!\\
 \noindent\\
-\texttt{\# 1 + \underline{true};;}\\
+\texttt{\# 1 + }\underline{\verb!true!}\texttt{;;}\\
 \texttt{Error:\ This expression has type bool but an expression was expected of type}\\
 \verb!         !\texttt{int}
 \smspace
@@ -4720,7 +4725,7 @@ Exactly what it says. The function name is underlined.
 \noindent\\
 \texttt{\# let f x = x + 1;;}\\
 \texttt{val f :\ int -> int = <fun>}\\
-\texttt{\# \underline{f} x y;;}\\
+\texttt{\# }\underline{\verb!f!}\texttt{ x y;;}\\
 \texttt{Error:\ This function is applied to too many arguments;}\\
 \texttt{maybe you forgot a }\verb!`;'!
 \smspace
@@ -4736,7 +4741,7 @@ This occurs when a constructor name is used which is not defined.
 \noindent\\
 \texttt{\# type t = Roof | Wall | Floor;;}\\
 \texttt{type t = Roof | Wall | Floor}\\
-\texttt{\# \underline{Window};;}\\
+\texttt{\# }\underline{\verb!Window!}\texttt{;;}\\
 \texttt{Error:\ Unbound constructor Window}
 \smspace
 
@@ -4820,7 +4825,7 @@ This warning is printed when OCaml has determined that you have missed out one o
 \smspace
 \noindent\verb!        OCaml!\\
 \noindent\\
-\texttt{\# let f x = \underline{match x with 0 -> 1};;}\\
+\texttt{\# let f x = }\underline{\verb!match x with 0 -> 1!}\texttt{;;}\\
 \texttt{Warning 8:\ this pattern-matching is not exhaustive.}\\
 \texttt{Here is an example of a value that is not matched:}\\
 \texttt{1}\\
@@ -4836,7 +4841,7 @@ This occurs when two parts of the pattern match cover the same case. In this sit
 \smspace
 \noindent\verb!        OCaml!\\
 \noindent\\
-\texttt{\# let f x = match x with \_ -> 1 | \underline{0} -> 0;;}\\
+\texttt{\# let f x = match x with \_ -> 1 | }\underline{\verb!0!}\texttt{ -> 0;;}\\
 \texttt{Warning 11:\ this match case is unused.}\\
 \texttt{val f :\ int -> int = <fun>}
 \smspace
@@ -4850,7 +4855,7 @@ Sometimes when writing imperative programs, we ignore the result of some side-ef
 \smspace
 \noindent\verb!        OCaml!\\
 \noindent\\
-\texttt{\# \underline{f 1}; 2;;}\\                         
+\texttt{\# }\underline{\verb!f 1!}\texttt{; 2;;}\\                         
 \texttt{Warning 10:\ this expression should have type unit.}\\
 \texttt{- :\ int = 2}
 \smspace
@@ -4860,7 +4865,7 @@ Sometimes when writing imperative programs, we ignore the result of some side-ef
 \smspace
 \noindent\verb!        OCaml!\\
 \noindent\\
-\texttt{\# \underline{ignore (f 1)}; 2;;}\\                         
+\texttt{\# }\underline{\verb!ignore (f 1)!}\texttt{; 2;;}\\                         
 \texttt{- :\ int = 2}
 \smspace
 

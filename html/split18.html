@@ -176,7 +176,7 @@
 <p>We needed to use a temporary name <code>t</code> to store the contents of <code>a</code>. Can you see why?</p>
 <p>This type of programming, which consists of issuing a number of commands, in order, about which references are to be altered and how, is known as <em>imperative programming</em>. OCaml provides some useful structures for imperative programming with references. We will look at these quickly now, and in a moment build a bigger example program to show why they are useful.</p>
 <p>For readability, OCaml lets us miss out the <code>else</code> part of the <code>if&nbsp;…&nbsp;then&nbsp;…&nbsp;else&nbsp;…</code> construct if it would just be <code>()</code>, which is if we are doing nothing in the <strong><code>else</code></strong> case, so</p>
-<p><code>if x = 0 then a := 0 else()</code></p>
+<p><code>if x = 0 then a := 0 else&nbsp;()</code></p>
 <p>can be written as</p>
 <p><code>if x = 0 then a := 0</code></p>
 <p>and if <code>x</code> is not zero, the expression will just evaluate to <code>()</code>. Due to this, when putting imperative code inside <code>if …&nbsp;then …&nbsp;else …</code> constructs, we need to surround the inner imperative expressions with parentheses so the meaning is unambiguous:</p>

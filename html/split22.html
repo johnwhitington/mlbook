@@ -713,7 +713,7 @@
 <br>
 <code># let r = let x = ref 5 in [x; x];;</code><br>
 <code>val r : int ref list = [{contents = 5}; {contents = 5}]</code><br>
-<code># match r with h::_ -&gt; h := 6;;</code><br>
+<code># </code><u><code>match r with h::_ -&gt; h := 6;;</code></u><br>
 <code>Warning 8: this pattern-matching is not exhaustive.</code><br>
 <code>Here is an example of a value that is not matched:</code><br>
 <code>[]</code><br>

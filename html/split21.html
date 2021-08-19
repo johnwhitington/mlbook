@@ -166,8 +166,8 @@
 <p>You can see that the name of the OCaml compiler is <code>ocamlc</code>. If there are errors in <code>textstat.ml</code> they will be printed out, including the line and character number of the problem. You must fix these, and try the command again. If compilation succeeds, you will see the file <code>textstat.cmo</code> in the current directory. There will be other files, but we are not worried about those yet. Let us load our pre-compiled module into OCaml:</p>
 <p><code>        OCaml</code><br>
 <br>
-<code># #load "textstat.cmo";;</code><em>load the module</em><br>
-<code># Textstat.stats_from_file "gregor.txt";;</code><em>use a function</em><br>
+<code># #load "textstat.cmo";;</code><br>
+<code># Textstat.stats_from_file "gregor.txt";;</code><br>
 <code>- :&nbsp;int * int * int * int = (0, 0, 0, 0)</code></p>
 <p>Note that <code>#load</code> is different from our earlier <code>#use</code> command – that was just reading a file as if it had been cut and pasted – we are really loading the compiled module here.</p>
 <h2 class="unnumbered" id="filling-out-the-module">Filling out the module</h2>
@@ -206,7 +206,7 @@
 <br>
 <code># #load "textstat.cmo";;</code><br>
 <code># let s = Textstat.stats_from_file "gregor.txt";;</code><br>
-<code>val s :&nbsp;Textstat.stats = &lt;abstr&gt;</code><em>the type is now abstract</em><br>
+<code>val s :&nbsp;Textstat.stats = &lt;abstr&gt;</code><br>
 <code># Textstat.lines s;;</code><br>
 <code>- :&nbsp;int = 8</code><br>
 <code># Textstat.characters s;;</code><br>
@@ -215,7 +215,7 @@
 <code>- :&nbsp;int = 80</code><br>
 <code># Textstat.sentences s;;</code><br>
 <code>- :&nbsp;int = 4</code><br>
-<code># Textstat.stats_from_channel;;</code><em>we have hidden this function</em><br>
+<code># </code><u><code>Textstat.stats_from_channel;;</code></u><br>
 <code>Error:&nbsp;Unbound value Textstat.stats_from_channel</code></p>
 <p>We have successfully separated the implementation of our module from its interface – we can now change the <code>stats</code> type internally to hold extra statistics without invalidating existing programs. This is abstraction in a nutshell.</p>
 <h2 class="unnumbered" id="building-standalone-programs">Building standalone programs</h2>
