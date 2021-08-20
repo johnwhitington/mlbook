@@ -390,7 +390,7 @@ A third type we shall be using is \index{char@\textbf{\textsf{char}}}\textbf{\te
 \noindent\texttt{- :\ char = 'c'}
 \smspace
 
-\noindent So far we have looked only at operators like \texttt{+}, \texttt{mod}, and \texttt{=} which look like familiar mathematical ones. But many constructs in programming languages look a little different. For example, to choose a course of evaluation based on some test, we use the \index{if@\texttt{\textbf{if}}}\index{then@\texttt{\textbf{then}}}\index{else@\texttt{\textbf{else}}}\texttt{\textbf{if}} \ldots\ \texttt{\textbf{then}} \ldots\  \texttt{\textbf{else}} construct:
+\noindent So far we have looked only at operators like \texttt{+}, \texttt{mod}, and \texttt{=} which look like familiar mathematical ones. But many constructs in programming languages look a little different. For example, to choose a course of evaluation based on some test, we use the \textbf{\texttt{if}} \ldots\ \textbf{\texttt{then}} \ldots\  \textbf{\texttt{else}} construct:
 
 \smspace
 \noindent\verb!        OCaml!\\
@@ -399,7 +399,7 @@ A third type we shall be using is \index{char@\textbf{\textsf{char}}}\textbf{\te
 \noindent\texttt{- :\ int = 0} 
 \smspace
 
-\noindent The expression between \texttt{\textbf{if}} and \texttt{\textbf{then}} (in our example \texttt{100 > 99}) must have type \textbf{\textsf{bool}} -- it evaluates to either \texttt{true} or \texttt{false}. The types of the expression to choose if true and the expression to choose if false must be the same as one another -- here they are both of type \textbf{\textsf{int}}. The whole expression evaluates to the same type -- \textbf{\textsf{int}} -- because either the \texttt{\textbf{then}} part or the \texttt{\textbf{else}} part is chosen to be the result of evaluating the whole expression:
+\noindent The expression between \textbf{\texttt{if}} and \textbf{\texttt{then}} (in our example \texttt{100 > 99}) must have type \textbf{\textsf{bool}} -- it evaluates to either \texttt{true} or \texttt{false}. The types of the expression to choose if true and the expression to choose if false must be the same as one another -- here they are both of type \textbf{\textsf{int}}. The whole expression evaluates to the same type -- \textbf{\textsf{int}} -- because either the \textbf{\texttt{then}} part or the \textbf{\texttt{else}} part is chosen to be the result of evaluating the whole expression:
 
 \medskip
 \begin{center}
@@ -429,7 +429,7 @@ A third type we shall be using is \index{char@\textbf{\textsf{char}}}\textbf{\te
 
 \hspace{6mm}\texttt{true \&\& false}
 
-\hspace{6mm}\texttt{\textbf{if} true \textbf{then} false \textbf{else} true}
+\hspace{6mm}\textbf{\texttt{if}}\texttt{ true }\textbf{\texttt{then}}\texttt{ false }\textbf{\texttt{else}}\texttt{ true}
 
 \hspace{6mm}\texttt{'\%'}
 
@@ -472,7 +472,7 @@ Before, if we wished to use a sub-expression twice or more in a single expressio
 \noindent\verb!- : int = 8000000!
 \smspace
 
-\noindent To write this all in a single expression, we can use the \index{let@\texttt{\textbf{let}}}\index{in@\texttt{\textbf{in}}}\index{=@\texttt{=}}\texttt{\textbf{let}} \ \ldots \ \ \texttt{=}\ \ \ldots \ \texttt{\textbf{in}}  \ construct:
+\noindent To write this all in a single expression, we can use the \textbf{\texttt{let}} \ \ldots \ \ \texttt{=}\ \ \ldots \ \textbf{\texttt{in}}  \ construct:
 
 \smspace
 \noindent\verb!        OCaml!\\
@@ -650,7 +650,7 @@ One of the oldest methods for solving a problem (or \index{algorithm}\textit{alg
  \item Write a recursive function which, given a number $n$, calculates the sum $1 + 2 + 3 + \ldots + n$. What is its type?
  \item Write a function \texttt{power x n} which raises \texttt{x} to the power \texttt{n}. Give its type.
  \item Write a function \texttt{isconsonant} which, given a lower-case character in the range \texttt{'a'}\ldots\texttt{'z'}, determines if it is a consonant.
- \item What is the result of the expression\, \texttt{\textbf{let} x = 1 \textbf{in} \textbf{let} x = 2 \textbf{in} x + x} ?
+ \item What is the result of the expression\, \textbf{\texttt{let}}\texttt{ x = 1 }\textbf{\texttt{in}} \textbf{\texttt{let}}\texttt{ x = 2 }\textbf{\texttt{in}}\texttt{ x + x} ?
  \item Can you suggest a way of preventing the non-termination of the \texttt{factorial} function in the case of a zero or negative argument?
 \end{enumerate}
 
@@ -687,7 +687,7 @@ Later on, when we write larger programs, we will see how to use OCaml to load ou
 
 \chapter{Case by Case}
 \pagestyle{fancy}
-In the previous chapter, we used the \index{conditional expression}conditional expression \,\texttt{\textbf{if}} \ldots\  \texttt{\textbf{then}} \ldots\ \texttt{\textbf{else}}\, to define functions whose results depend on their arguments. For some of them we had to nest the conditional expressions one inside another. Programs like this are not terribly easy to read, and expand quickly in size and complexity as the number of cases increases.
+In the previous chapter, we used the \index{conditional expression}conditional expression \,\textbf{\texttt{if}} \ldots\  \textbf{\texttt{then}} \ldots\ \textbf{\texttt{else}}\, to define functions whose results depend on their arguments. For some of them we had to nest the conditional expressions one inside another. Programs like this are not terribly easy to read, and expand quickly in size and complexity as the number of cases increases.
 
 OCaml has a nicer way of expressing choices -- \index{pattern matching}\textit{pattern matching}. For example, recall our factorial function:
 
@@ -763,7 +763,7 @@ OCaml has a nicer way of expressing choices -- \index{pattern matching}\textit{p
 \end{center}
 \medskip
 
-\noindent The type of a whole \,\texttt{\textbf{match}}\, \ldots\ \,\texttt{\textbf{with}} \ldots\ expression is determined by the types of the expressions on the right hand side of each \texttt{->} arrow, all of which must be alike:
+\noindent The type of a whole \,\textbf{\texttt{match}}\, \ldots\ \,\textbf{\texttt{with}} \ldots\ expression is determined by the types of the expressions on the right hand side of each \texttt{->} arrow, all of which must be alike:
 
 \medskip
 \begin{center}
@@ -771,7 +771,7 @@ OCaml has a nicer way of expressing choices -- \index{pattern matching}\textit{p
 \end{center}
 \medskip
 
-\noindent We use pattern matching whenever it is easier to read and understand than \,\texttt{\textbf{if}} \ldots\  \texttt{\textbf{then}} \ldots\ \texttt{\textbf{else}}\, expressions. 
+\noindent We use pattern matching whenever it is easier to read and understand than \,\textbf{\texttt{if}} \ldots\  \textbf{\texttt{then}} \ldots\ \textbf{\texttt{else}}\, expressions. 
 
 \clearpage
 \section*{Questions}
@@ -781,7 +781,7 @@ OCaml has a nicer way of expressing choices -- \index{pattern matching}\textit{p
   \item Use pattern matching to write a recursive function which, given a positive integer $n$, returns the sum of all the integers from $1$ to $n$.
   \item Use pattern matching to write a function which, given two numbers $x$ and $n$, computes $x^n$.
   \item For each of the previous three questions, comment on whether you think it is easier to read the function with or without pattern matching. How might you expect this to change if the functions were much larger?
-  \item What does\, \texttt{\textbf{match} 1 + 1 \textbf{with} 2 -> \textbf{match} 2 + 2 \textbf{with} 3 -> 4 | 4 -> 5}\, evaluate to?
+  \item What does \textbf{\texttt{match}}\texttt{ 1 + 1 }\textbf{\texttt{with}}\texttt{ 2 -> }\textbf{\texttt{match}}\texttt{ 2 + 2 }\textbf{\texttt{with}}\texttt{ 3 -> 4 | 4 -> 5} evaluate to?
   \item There is a special pattern \texttt{x..y} to denote continuous ranges of characters, for example \texttt{'a'..'z'} will match all lowercase letters. Write functions \texttt{islower} and \texttt{isupper}, each of type \textsf{\textbf{char $\rightarrow$ bool}}, to decide on the case of a given letter. 
 \end{enumerate}
 
@@ -1301,7 +1301,7 @@ Often we need to apply a function to every element of a list. For example, doubl
 
 \index{fun@\texttt{\textbf{fun}}}
 \vspace{2mm}
-\texttt{\textbf{fun} x -> x / 2}
+\textbf{\texttt{fun}}\texttt{ x -> x / 2}
 \vspace{2mm}
 
 \noindent and, thus, write:
