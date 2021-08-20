@@ -1414,7 +1414,7 @@ There are some built-in exceptions in OCaml. For example \index{Division\_by\_ze
 \end{center}
 \medskip
 
-We can \index{exception!defining}define our own exceptions, using \index{exception@\texttt{\textbf{exception}}}\texttt{\textbf{exception}}. They can carry information along with them, of a type we choose:
+We can \index{exception!defining}define our own exceptions, using \textbf{\texttt{exception}}. They can carry information along with them, of a type we choose:
 
 \smspace
 \noindent\verb!        OCaml!\\
@@ -1425,7 +1425,7 @@ We can \index{exception!defining}define our own exceptions, using \index{excepti
 \noindent\verb!exception NotPrime of int!
 \smspace
 
-\noindent We have defined two exceptions -- \texttt{Problem}, and \texttt{NotPrime} which carries an integer along with it. Exceptions must start with a capital letter. The \index{of@\texttt{\textbf{of}}}\texttt{\textbf{of}} construct can be used to introduce the type of information which travels along with an exception. Once they are defined we may use them in our own functions, using \index{raise@\texttt{\textbf{raise}}}\index{exception!raising}\index{raising an exception}\texttt{\textbf{raise}}:
+\noindent We have defined two exceptions -- \texttt{Problem}, and \texttt{NotPrime} which carries an integer along with it. Exceptions must start with a capital letter. The \textbf{\texttt{of}} construct can be used to introduce the type of information which travels along with an exception. Once they are defined we may use them in our own functions, using \textbf{\texttt{raise}}:
 
 \smspace
 \noindent\verb!        OCaml!\\
@@ -1440,7 +1440,7 @@ We can \index{exception!defining}define our own exceptions, using \index{excepti
 \noindent\verb!Exception: Problem.!
 \smspace
 
-\noindent Exceptions can be \index{exception!handling}\index{handling an exception}\textit{handled} as well as raised. An \textit{exception handler} deals with an exception raised by an expression. Exception handlers are written using the \index{try@\texttt{\textbf{try}}}\texttt{\textbf{try}} \ldots\ \texttt{\textbf{with}} construct:
+\noindent Exceptions can be \index{exception!handling}\index{handling an exception}\textit{handled} as well as raised. An \textit{exception handler} deals with an exception raised by an expression. Exception handlers are written using the \textbf{\texttt{try}} \ldots\ \textbf{\texttt{with}} construct:
 
 \medskip
 \begin{center}
@@ -1708,7 +1708,7 @@ You can see the real structure of multiple-argument functions, by writing \textt
 
 \section*{\textsc{Summary}}
 
-The function \texttt{f x y} has type \textsf{\textbf{$\alpha$ $\rightarrow$ $\beta$ $\rightarrow$ $\gamma$}} which can also be written \textsf{\textbf{$\alpha$ $\rightarrow$ \textmd{(}$\beta$ $\rightarrow$ $\gamma$\textmd{)}}}. Thus, it takes an argument of type $\alpha$ and returns a function of type $\beta$ $\rightarrow$ $\gamma$ which, when you give it an argument of type $\beta$ returns something of type $\gamma$. And so, we can apply just one argument to the function \texttt{f} (which is called partial application), or apply both at once. When we write \texttt{\textbf{let} f x y = \ldots} this is just shorthand for \texttt{\textbf{let} f = \textbf{fun} x -> \textbf{fun} y -> \ldots}
+The function \texttt{f x y} has type \textsf{\textbf{$\alpha$ $\rightarrow$ $\beta$ $\rightarrow$ $\gamma$}} which can also be written \textsf{\textbf{$\alpha$ $\rightarrow$ \textmd{(}$\beta$ $\rightarrow$ $\gamma$\textmd{)}}}. Thus, it takes an argument of type $\alpha$ and returns a function of type $\beta$ $\rightarrow$ $\gamma$ which, when you give it an argument of type $\beta$ returns something of type $\gamma$. And so, we can apply just one argument to the function \texttt{f} (which is called partial application), or apply both at once. When we write \textbf{\texttt{let}}\texttt{ f x y = \ldots} this is just shorthand for \textbf{\texttt{let}}\texttt{ f = }\textbf{\texttt{fun}}\texttt{ x -> }\textbf{\texttt{fun}}\texttt{ y -> \ldots}
  
 \clearpage
 \section*{Questions}
@@ -1717,7 +1717,7 @@ The function \texttt{f x y} has type \textsf{\textbf{$\alpha$ $\rightarrow$ $\be
   \item Rewrite the summary paragraph at the end of this chapter for the three argument function \texttt{g a b c}.
   \item Recall the function \texttt{member x l} which determines if an element \texttt{x} is contained in a list \texttt{l}. What is its type? What is the type of \texttt{member x}? Use partial application to write a function \texttt{member\_all x ls} which determines if an element is a member of all the lists in the list of lists \texttt{ls}. 
   \item Why can we not write a function to halve all the elements of a list like this: \texttt{map (( / ) 2) [10; 20; 30]}? Write a suitable division function which can be partially applied in the manner we require.
-  \item Write a function \texttt{mapll} which maps a function over lists of lists of lists. You must not use the \texttt{\pletrec} construct. Is it possible to write a function which works like \texttt{map}, \texttt{mapl}, or \texttt{mapll} depending upon the list given to it?
+  \item Write a function \texttt{mapll} which maps a function over lists of lists of lists. You must not use the \textbf{\texttt{let rec}} construct. Is it possible to write a function which works like \texttt{map}, \texttt{mapl}, or \texttt{mapll} depending upon the list given to it?
   \item Write a function \texttt{truncate} which takes an integer and a list of lists, and returns a list of lists, each of which has been truncated to the given length. If a list is shorter than the given length, it is unchanged. Make use of partial application.
   \item Write a function which takes a list of lists of integers and returns the list composed of all the first elements of the lists. If a list is empty, a given number should be used in place of its first element.
 \end{enumerate}
@@ -2349,19 +2349,19 @@ OCaml provides a construct known as a \index{ref@\textbf{\textsf{ref}}}\index{re
 
 This type of programming, which consists of issuing a number of commands, in order, about which references are to be altered and how, is known as \index{imperative programming@{imperative\hspace{1mm}programming}}\textit{imperative programming}. OCaml provides some useful structures for imperative programming with references. We will look at these quickly now, and in a moment build a bigger example program to show why they are useful.
 
-For readability, OCaml lets us miss out the \texttt{\pelse} part of the \texttt{\textbf{if\ \ldots\ then\ \ldots\ else\ \ldots}} construct if it would just be \texttt{()}, which is if we are doing nothing in the \textbf{\texttt{else}} case, so
+For readability, OCaml lets us miss out the \textbf{\texttt{else}} part of the \textbf{\texttt{if}}\ \texttt{\ldots} \textbf{\texttt{then}}\ \texttt{\ldots}\ \textbf{\texttt{else}}\ \texttt{\ldots} construct if it would just be \texttt{()}, which is if we are doing nothing in the \textbf{\texttt{else}} case, so
 
 \smspace
-  \texttt{\pif x = 0 \pthen a := 0 \pelse\ ()}
+  \textbf{\texttt{if}}\texttt{ x = 0 }\textbf{\texttt{then}}\texttt{ a := 0 }\textbf{\texttt{else}}\texttt{ ()}
 \smspace
 
 \noindent can be written as
 
 \smspace
-  \texttt{\pif x = 0 \pthen a := 0}
+  \textbf{\texttt{if}}\texttt{ x = 0 }\textbf{\texttt{then}}\texttt{ a := 0}
 \smspace
 
-\noindent and if \texttt{x} is not zero, the expression will just evaluate to \texttt{()}. Due to this, when putting imperative code inside \texttt{\textbf{if \ldots\ then \ldots\ else \ldots}} constructs, we need to surround the inner imperative expressions with parentheses so the meaning is unambiguous:
+\noindent and if \texttt{x} is not zero, the expression will just evaluate to \texttt{()}. Due to this, when putting imperative code inside \textbf{\texttt{if}}\ \texttt{\ldots} \textbf{\texttt{then}}\ \texttt{\ldots}\ \textbf{\texttt{else}}\ \texttt{\ldots}  constructs, we need to surround the inner imperative expressions with parentheses so the meaning is unambiguous:
 
 \medskip
 \begin{center}
@@ -2369,7 +2369,7 @@ For readability, OCaml lets us miss out the \texttt{\pelse} part of the \texttt{
 \end{center}
 \medskip
 
-\noindent OCaml allows us to use \index{begin@\texttt{\textbf{begin}}}\index{end@\texttt{\textbf{end}}}\texttt{\textbf{begin}} and \texttt{\textbf{end}} instead, for readability:
+\noindent OCaml allows us to use \textbf{\texttt{begin}} and \textbf{\texttt{end}} instead, for readability:
 
 \medskip
 \begin{center}
@@ -2379,10 +2379,10 @@ For readability, OCaml lets us miss out the \texttt{\pelse} part of the \texttt{
 
 \section*{Doing it again and again}
 
-There are two ways to repeat an action. To perform an action a fixed number of times, we use the \index{for@\texttt{\textbf{for}}}\index{to@\texttt{\textbf{to}}}\index{do@\texttt{\textbf{do}}}\index{done@\texttt{\textbf{done}}}\texttt{\textbf{for \ldots\ = \ldots\ to \ldots\ do \ldots\ done}} construct. For example,  
+There are two ways to repeat an action. To perform an action a fixed number of times, we use the \textbf{\texttt{for}}\texttt{ \ldots\ = \ldots\ }\textbf{\texttt{to}}\texttt{ \ldots\ }\textbf{\texttt{do}}\texttt{ \ldots\ }\textbf{\texttt{done}} construct. For example,  
 
 \smspace
-  \texttt{\pfor x = 1 \pto 5 \pdo print\_int x; print\_newline () \pdone}
+  \textbf{\texttt{for}}\texttt{ x = 1 }\textbf{\texttt{to}}\texttt{ 5 }\textbf{\texttt{do}}\texttt{ print\_int x; print\_newline () }\textbf{\texttt{\pdone}}
 \smspace
 
 \noindent evaluates the expression \texttt{print\_int x; print\_newline ()} five times: once where \texttt{x} is 1, once where \texttt{x} is 2 etc, so the result is:
@@ -2397,9 +2397,9 @@ There are two ways to repeat an action. To perform an action a fixed number of t
 \noindent\verb!- : unit = ()!
 \smspace
 
-\noindent This is known as a \index{for loop}\index{loop}``for loop''. Note that the type of the whole \texttt{\textbf{for} \ldots\ \textbf{=} \ldots\ \textbf{to} \ldots\ \textbf{do} \ldots\ \textbf{done}}\ \ expression is \textbf{\textsf{unit}} irrespective of the type of the expression(s) inside it.
+\noindent This is known as a \index{for loop}\index{loop}``for loop''. Note that the type of the whole \textbf{\texttt{for}}\texttt{ \ldots\ = \ldots\ }\textbf{\texttt{to}}\texttt{ \ldots\ }\textbf{\texttt{do}}\texttt{ \ldots\ }\textbf{\texttt{done}} expression is \textbf{\textsf{unit}} irrespective of the type of the expression(s) inside it.
 
-There is another looping construct -- this time for evaluating an expression repeatedly until some condition is true. This is the \ \index{while@\texttt{\textbf{while}}}\index{do@\texttt{\textbf{do}}}\index{done@\texttt{\textbf{done}}}\texttt{\textbf{while} \ldots\ \textbf{do} \ldots\ \textbf{done}}\ \ construct. It takes a boolean condition, and evaluates a given expression repeatedly, zero or more times, until the boolean condition is \texttt{false}. For example, here is a function which, given a positive integer, calculates the lowest power of two greater than or equal to that number (i.e. for the argument 37, the result will be 64).
+There is another looping construct -- this time for evaluating an expression repeatedly until some condition is true. This is the \textbf{\texttt{while}}\texttt{ \ldots\ }\textbf{\texttt{do}}\texttt{ \ldots\ }\textbf{\texttt{done}} construct. It takes a boolean condition, and evaluates a given expression repeatedly, zero or more times, until the boolean condition is \texttt{false}. For example, here is a function which, given a positive integer, calculates the lowest power of two greater than or equal to that number (i.e. for the argument 37, the result will be 64).
 
 \medskip
 \begin{center}
@@ -2407,7 +2407,7 @@ There is another looping construct -- this time for evaluating an expression rep
 \end{center}
 \medskip
 
-\noindent The \texttt{\textbf{while}} loop continues until the contents of the reference \texttt{t} is greater than or equal to \texttt{x}. At that point, it ends, and the contents of \texttt{t} is returned from the function. Again, note that the type of the whole \,\texttt{\textbf{while} \ldots\ \textbf{do} \ldots\ \textbf{done}}\  construct is \textbf{\textsf{unit}}.
+\noindent The \textbf{\texttt{while}} loop continues until the contents of the reference \texttt{t} is greater than or equal to \texttt{x}. At that point, it ends, and the contents of \texttt{t} is returned from the function. Again, note that the type of the whole \textbf{\texttt{while}}\texttt{ \ldots\ }\textbf{\texttt{do}}\texttt{ \ldots\ }\textbf{\texttt{done}}   construct is \textbf{\textsf{unit}}.
 
 \section*{Example: text file statistics}
 
@@ -2606,12 +2606,13 @@ Our main function is getting rather long, so we will write a separate one which,
 \begin{enumerate}
   \item Consider the expression
   
-  \texttt{\textbf{let} x = ref 1 \textbf{in} \textbf{let} y = ref 2 \textbf{in} x := !x + !x; y := !x + !y; !x + !y}
+    \textbf{\texttt{let}}\texttt{ x = ref 1 }\textbf{\texttt{in}} \textbf{\texttt{let}}\texttt{ y = ref 2 }\textbf{\texttt{in}} \texttt{x := !x + !x; y := !x + !y; !x + !y}
   
   What references have been created? What are their initial and final values after this expression has been evaluated? What is the type of this expression? 
-  \item What is the difference between \texttt{[ref 5; ref 5]} and \texttt{\plet x = ref 5 \pin [x; x]}? 
+
+\item What is the difference between \texttt{[ref 5; ref 5]} and \textbf{\texttt{let}}\texttt{ x = ref 5 }\textbf{\texttt{in}} \texttt{[x; x]}? 
     
-  \item Imagine that the \texttt{\textbf{for \ldots\ to \ldots\ do \ldots\ done}} construct did not exist. How might we create the same behaviour?
+  \item Imagine that the \textbf{\texttt{for}}\texttt{ \ldots\ = \ldots\ }\textbf{\texttt{to}}\texttt{ \ldots\ }\textbf{\texttt{do}}\texttt{ \ldots\ }\textbf{\texttt{done}}  construct did not exist. How might we create the same behaviour?
   
   \item What are the types of these expressions?
   
