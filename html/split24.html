@@ -157,7 +157,7 @@
 <h2 class="unnumbered" id="errors"><span class="smallcaps">Errors</span></h2>
 <p>These are messages printed when an expression could not be accepted for evaluation, due to being malformed in some way. No evaluation is attempted. You must fix the expression and try again.</p>
 <h3 class="unnumbered" id="syntax-error">Syntax error</h3>
-<p>This error occurs when OCaml finds that the program text contains things which are not valid words (such as <code>if</code>, <code>let</code> etc.) or other basic parts of the language, or when they exist in invalid combinations – this is known as <em>syntax</em>. Check carefully and try again.</p>
+<p>This error occurs when OCaml finds that the program text contains things which are not valid words (such as <strong><code>if</code></strong>, <strong><code>let</code></strong> etc.) or other basic parts of the language, or when they exist in invalid combinations – this is known as <em>syntax</em>. Check carefully and try again.</p>
 <p><code>        OCaml</code><br>
 <br>
 <code>#1 +</code><u><code>;;</code></u><br>
@@ -220,7 +220,7 @@
 <p>Find the cause of the unbounded recursion, and try again. If it is really not a mistake, rewrite the function to use an accumulating argument (and so, to be tail recursive).</p>
 <h3 class="unnumbered" id="exception-match_failure">Exception: Match_failure …</h3>
 <p>This occurs when a pattern match cannot find anything to match against. You would have been warned about this possibility when the program was originally entered. For example, if the following function <code>f</code> were defined as</p>
-<p><code>let f x = match x with 0 -&gt; 1</code></p>
+<p><strong><code>let</code></strong><code> f x = </code><strong><code>match</code></strong><code> x </code><strong><code>with</code></strong><code> 0 -&gt; 1</code></p>
 <p>then using the function with <code>1</code> as an argument would produce:</p>
 <p><code>        OCaml</code><br>
 <br>

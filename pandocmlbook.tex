@@ -2205,7 +2205,7 @@ It is inconvenient to have to type new data sets in each time, so we will write 
 \end{center}
 \medskip
 
-\noindent We are using the functions \texttt{output\_string} and \texttt{output\_char} to write the data in the same format we used to print it to the screen. There is no \texttt{output\_int} function, so we have used the built-in \texttt{string\_of\_int} function to build a string from the integer. The character \texttt{\textquotesingle\textbackslash n\textquotesingle} is a special one, representing moving to the next line (there is no \texttt{output\_newline} function).
+\noindent We are using the functions \texttt{output\_string} and \texttt{output\_char} to write the data in the same format we used to print it to the screen. There is no \texttt{output\_int} function, so we have used the built-in \texttt{string\_of\_int} function to build a string from the integer. The character \texttt{'\textbackslash n'} is a special one, representing moving to the next line (there is no \texttt{output\_newline} function).
 
 How do we obtain such a channel? The function \texttt{open\_out} gives an output channel for filename given as a string. It has type \textsf{\textbf{string $\rightarrow$ out\_channel}}. After we have written the contents to the file, we must call \texttt{close\_out} (which has type \textsf{\textbf{out\_channel} $\rightarrow$ \textbf{unit}}) to properly \index{file}close the file.
 
@@ -2787,7 +2787,7 @@ The functions from a module can be used by putting a period (full stop) between 
 \end{center}
 \medskip
 
-\noindent We will talk about \texttt{\textbf{val}} in the next chapter. Sometimes, more information is required:
+\noindent We will talk about \textbf{\texttt{val}} in the next chapter. Sometimes, more information is required:
 
 \medskip
 \begin{center}
@@ -3020,8 +3020,6 @@ Now it is time to cut ourselves free from interactive OCaml, and build standalon
 \raggedbottom
 \chapter{Answers to Questions}
 
-\textit{Hints may be found after all the answers.}
-
 \section*{1. Starting Off}
 
 \subsection*{1}
@@ -3100,7 +3098,7 @@ Our function should take an integer, and return another one (the sum). So, it is
 \noindent\verb!val sum : int -> int = <fun>!
 \smspace
 
-\noindent The function is recursive, so we used \texttt{\textbf{let rec}} instead of \texttt{\textbf{let}}. What happens if the argument given is zero or negative?
+\noindent The function is recursive, so we used \textbf{\texttt{let rec}} instead of \textbf{\texttt{let}}. What happens if the argument given is zero or negative?
 
 \subsection*{4}
 The function will have type \textsf{\textbf{int $\rightarrow$ int $\rightarrow$ int}}. A number to the power of $0$ is $1$. A number to the power of $1$ is itself. Otherwise, the answer is the current $n$ multiplied by $n^{x - 1}$.
@@ -3115,7 +3113,7 @@ The function will have type \textsf{\textbf{int $\rightarrow$ int $\rightarrow$ 
 \noindent\verb!val power : int -> int -> int = <fun>!
 \smspace
 
-\noindent Notice that we had to put one\, \texttt{\pif\ldots\ \pthen\ldots\ \pelse}\, inside the \texttt{\textbf{else}} part of another to cope with the three different cases. The parentheses are not actually required, though, so we may write it like this:
+\noindent Notice that we had to put one \textbf{\texttt{if}} \texttt{\ldots\ }\textbf{\texttt{then}} \texttt{\ldots\ }\textbf{\texttt{else}} inside the \textbf{\texttt{else}} part of another to cope with the three different cases. The parentheses are not actually required, though, so we may write it like this:
 
 \smspace
 \noindent\verb!        OCaml!\\
@@ -3139,7 +3137,7 @@ The function \texttt{isconsonant} will have type \textbf{\textsf{char $\rightarr
 \noindent\verb!val isconsonant : char -> bool = <fun>!
 
 \subsection*{6}
-The expression is the same as \texttt{\textbf{let} x = 1 \textbf{in} (\textbf{let} x = 2 \textbf{in} x + x)}, and so the result is \texttt{4}. Both instances of \texttt{x} in \texttt{x + x} evaluate to \texttt{2} since this is the value assigned to the name \texttt{x} in the nearest enclosing \texttt{\textbf{let}} expression.
+The expression is the same as \textbf{\texttt{let}}\texttt{ x = 1 }\textbf{\texttt{in}}\texttt{ (}\textbf{\texttt{let}}\texttt{ x = 2 }\textbf{\texttt{in}}\texttt{ x + x)}, and so the result is \texttt{4}. Both instances of \texttt{x} in \texttt{x + x} evaluate to \texttt{2} since this is the value assigned to the name \texttt{x} in the nearest enclosing \textbf{\texttt{let}} expression.
 
 \subsection*{7}
 We could simply return $0$ for a negative argument. The factorial of $0$ is $1$, so we can change that too, and say our new function finds the factorial of any non-negative number:
@@ -3202,7 +3200,7 @@ This is the same as
 \end{center}
 \medskip
 
-\noindent (A match case belongs to its nearest enclosing \texttt{\pmatch}). So the expression evaluates to \texttt{5}.
+\noindent (A match case belongs to its nearest enclosing \textbf{\texttt{match}}). So the expression evaluates to \texttt{5}.
 
 \subsection*{6}
 We write two functions of type \textbf{\textsf{char $\rightarrow$ bool}} like this:
@@ -3344,7 +3342,7 @@ The first part of the evaluation of \texttt{rev} takes time proportional to the 
 
 \section*{5. Sorting Things}
 \subsection*{1}
-Simply add an extra \texttt{\textbf{let}} to define a name representing the number we will take or drop:
+Simply add an extra \textbf{\texttt{let}} to define a name representing the number we will take or drop:
 
 \medskip
 \begin{center}
@@ -3394,7 +3392,7 @@ Lists are compared starting with their first elements. If the elements differ, t
 \noindent These are the same principles you use to look up a word in a dictionary: compare the first letters -- if same, compare the second etc. So, when applied to the example in the question, it has the effect of sorting the words into alphabetical order.
 
 \subsection*{6}
-The \texttt{\textbf{let rec}} construct can be nested just like the \texttt{\textbf{let}} construct:
+The \textbf{\texttt{let rec}} construct can be nested just like the \textbf{\texttt{let}} construct:
 
 \medskip
 \begin{center}
@@ -3503,7 +3501,7 @@ We cannot use map here, because the result list will not necessarily be the same
 \end{center}
 \medskip
 
-\noindent For example, \texttt{filter (\textbf{fun} x -> x mod 2 = 0) [1; 2; 4; 5]} evaluates to \texttt{[2; 4]}.
+\noindent For example, \texttt{filter (}\textbf{\texttt{fun}}\texttt{ x -> x mod 2 = 0) [1; 2; 4; 5]} evaluates to \texttt{[2; 4]}.
 
 \subsection*{7}
 The function will have type \textbf{\textsf{\textmd{(}$\alpha$ $\rightarrow$ bool\textmd{)} $\rightarrow$ $\alpha$ list $\rightarrow$ bool}}.
@@ -3514,7 +3512,7 @@ The function will have type \textbf{\textsf{\textmd{(}$\alpha$ $\rightarrow$ boo
 \end{center}
 \medskip
 
-\noindent For example, we can see if all elements of a list are positive: \texttt{for\_all (\textbf{fun} x -> x > 0) [1; 2; -1]} evaluates to \texttt{false}. Notice that we are relying on the fact that \verb!&&! only evaluates its right hand side when the left hand side is true to limit the recursion.
+\noindent For example, we can see if all elements of a list are positive: \texttt{for\_all (}\textbf{\texttt{fun}}\texttt{ x -> x > 0) [1; 2; -1]} evaluates to \texttt{false}. Notice that we are relying on the fact that \verb!&&! only evaluates its right hand side when the left hand side is true to limit the recursion.
 
 \subsection*{8}
 The function will have type \textbf{\textsf{\textmd{(}$\alpha$ $\rightarrow$ $\beta$\textmd{)} $\rightarrow$ $\alpha$ list list $\rightarrow$ $\beta$ list list}}. We use \texttt{map} on each element of the list.
@@ -3609,7 +3607,7 @@ This will have the type \textsf{\textbf{\textmd{ (}$\alpha$ $\times$ $\beta$\tex
 \end{center}
 \medskip
 
-\noindent Since the inner pattern match has only one form, and is complete, we can use \textsf{\textbf{let}} instead:
+\noindent Since the inner pattern match has only one form, and is complete, we can use \textbf{\texttt{let}} instead:
 
 \medskip
 \begin{center}
@@ -3644,7 +3642,7 @@ We pattern match on the first list -- if it is empty, the result is simply \text
 
 \subsection*{1}
 
-The function \texttt{g a b c} has type $\alpha$ $\rightarrow$ $\beta$ $\rightarrow$ $\gamma$ $\rightarrow$  $\delta$ which can also be written $\alpha$ $\rightarrow$ \textmd{(}$\beta$ $\rightarrow$ \textmd{(}$\gamma$ $\rightarrow$ $\delta$\textmd{))}. Thus, it takes an argument of type $\alpha$ and returns a function of type $\beta$ $\rightarrow$ \textmd{(}$\gamma$ $\rightarrow$ $\delta$\textmd{)} which, when you give it an argument of type $\beta$ returns a function of type $\gamma$ $\rightarrow$ $\delta$ which, when you give it an argument of type $\gamma$ returns something of type $\delta$. And so, we can apply just one or two arguments to the function \texttt{g} (which is called partial application), or apply all three at once. When we write \texttt{\textbf{let} g a b c = \ldots} this is just shorthand for \texttt{\textbf{let} g = \textbf{fun} a -> \textbf{fun} b -> \textbf{fun} c -> \ldots}
+The function \texttt{g a b c} has type $\alpha$ $\rightarrow$ $\beta$ $\rightarrow$ $\gamma$ $\rightarrow$  $\delta$ which can also be written $\alpha$ $\rightarrow$ \textmd{(}$\beta$ $\rightarrow$ \textmd{(}$\gamma$ $\rightarrow$ $\delta$\textmd{))}. Thus, it takes an argument of type $\alpha$ and returns a function of type $\beta$ $\rightarrow$ \textmd{(}$\gamma$ $\rightarrow$ $\delta$\textmd{)} which, when you give it an argument of type $\beta$ returns a function of type $\gamma$ $\rightarrow$ $\delta$ which, when you give it an argument of type $\gamma$ returns something of type $\delta$. And so, we can apply just one or two arguments to the function \texttt{g} (which is called partial application), or apply all three at once. When we write \textbf{\texttt{let}}\texttt{ g a b c = \ldots} this is just shorthand for \textbf{\texttt{let}}\texttt{ g = }\textbf{\texttt{fun}}\texttt{ a -> }\textbf{\texttt{fun}}\texttt{ b -> }\textbf{\texttt{fun}}\texttt{ c -> \ldots}
 
 \subsection*{2}
 The type of \texttt{member} is \textbf{\textsf{$\alpha$ $\rightarrow$ $\alpha$ list $\rightarrow$ bool}}, so if we partially apply the first argument, the type of \texttt{member x} must be \textsf{\textbf{$\alpha$ list $\rightarrow$ bool}}. We can use the partially-applied \texttt{member} function and \texttt{map} to produce a list of boolean values, one for each list in the argument, indicating whether or not that list contains the element. Then, we can use \texttt{member} again to make sure there are no \texttt{false} booleans in the list.
@@ -3670,7 +3668,7 @@ The type of \texttt{member} is \textbf{\textsf{$\alpha$ $\rightarrow$ $\alpha$ l
 The function \texttt{( / ) 2} resulting from the partial application of the \texttt{/} operator is the function which divides two by a given number, not the function which divides a given number by two. We can define a reverse divide function\ldots
 
 \smspace
-\texttt{\plet rdiv x y = y / x}
+\textbf{\texttt{let}}\texttt{ rdiv x y = y / x}
 \smspace
 
 \noindent \ldots which, when partially applied, does what we want.
@@ -3693,7 +3691,7 @@ The function \texttt{map} has type \textbf{\textsf{\textmd{(}$\alpha$ $\rightarr
 \end{center}
 \medskip
 
-\noindent It is not possible to write a function which would map a function \texttt{f} over a list, or list of lists, or list of lists of lists depending upon its argument, because every function in OCaml must have a single type. If a function could map \texttt{f} over an \textsf{\textbf{$\alpha$ list list}} it must inspect its argument enough to know it is a list of lists, thus it could not be used on a \textsf{\textbf{$\beta$ list}} unless $\beta = \alpha\  \textbf{list}$.
+\noindent It is not possible to write a function which would map a function \texttt{f} over a list, or list of lists, or list of lists of lists depending upon its argument, because every function in OCaml must have a single type. If a function could map \texttt{f} over an \textsf{\textbf{$\alpha$ list list}} it must inspect its argument enough to know it is a list of lists, thus it could not be used on a \textbf{$\beta$ list} unless \textbf{$\beta = \alpha\  \textbf{list}$}.
 
 \subsection*{5}
 We can write a function to truncate a single list using our \texttt{take} function, being careful to deal with the case where there is not enough to take, and then use this and \texttt{map} to build \texttt{truncate} itself.
@@ -3864,7 +3862,7 @@ We can make list dictionaries from both tree dictionaries, append them, and buil
 \end{center}
 \medskip
 
-\noindent The combined list may not be a dictionary (because it may have repeated keys), but \texttt{tree\_of\_list} will prefer keys encountered earlier. So, we put entries from \texttt{t\textquotesingle } after those from \texttt{t}.
+\noindent The combined list may not be a dictionary (because it may have repeated keys), but \texttt{tree\_of\_list} will prefer keys encountered earlier. So, we put entries from \texttt{t' } after those from \texttt{t}.
 
 \subsection*{6}
 
@@ -3873,7 +3871,7 @@ We will use a list for the sub-trees of each branch, with the empty list signify
 \smspace
 \begin{center}
 \begin{minipage}{0.8\textwidth}
-\texttt{type \textquotesingle a mtree = Branch of \textquotesingle a * \textquotesingle a mtree list}
+  \textbf{\texttt{type}}\texttt{ 'a mtree = Branch }\textbf{\texttt{of}}\texttt{ 'a * 'a mtree list}
 \end{minipage}
 \end{center}
 \smspace
@@ -3945,7 +3943,7 @@ We must deal with the exception raised when \texttt{read\_int} attempts to read 
 \end{center}
 \medskip
 
-\noindent You may wonder why we used nested \texttt{\plet\ \ldots\ \pin} structures rather than just writing \texttt{(read\_int (), read\_int (), read\_int ())} -- the evaluation order of a tuple is not specified and OCaml is free to do what it wants. 
+\noindent You may wonder why we used nested \textbf{\texttt{let}}\texttt{ \ldots\ } \textbf{\texttt{in}}\texttt{ \ldots\ } structures rather than just writing \texttt{(read\_int (), read\_int (), read\_int ())} -- the evaluation order of a tuple is not specified and OCaml is free to do what it wants. 
 
 \subsection*{3}
 We ask the user how many dictionary entries will be entered, eliminating the need for a special ``I have finished'' code. First, a function to read a given number of integer--string pairs, dealing with the usual problem of malformed integers:
@@ -4045,7 +4043,7 @@ As usual, let us write a function to deal with channels, and then deal with open
 Two references, \texttt{x} and \texttt{y}, of type \textbf{\textsf{int ref}} have been created. Their initial values are $1$ and $2$. Their final values are $2$ and $4$. The type of the expression is \textsf{\textbf{int}} because this is the type of \texttt{!x + !y}, and the result is $6$.
 
 \subsection*{2}
-The expression \texttt{[ref 5; ref 5]} is of type \textbf{\textsf{int ref list}}. It contains two references each containing the integer 5. Changing the contents of one reference will not change the contents of the other. The expression \texttt{\textbf{let} x = ref 5 \textbf{in} [x; x]} is also of type \textbf{\textsf{int ref list}} and also contains two references to the integer 5. However, altering one will alter the other:
+The expression \texttt{[ref 5; ref 5]} is of type \textbf{\textsf{int ref list}}. It contains two references each containing the integer 5. Changing the contents of one reference will not change the contents of the other. The expression \textbf{\texttt{let}}\texttt{ x = ref 5 }\textbf{\texttt{in}}\texttt{ [x; x]} is also of type \textbf{\textsf{int ref list}} and also contains two references to the integer 5. However, altering one will alter the other:
 
 \smspace
 \noindent\verb!        OCaml!\\
@@ -4100,7 +4098,7 @@ We can write a function \texttt{forloop} which takes a function of type \textsf{
 
 \subsection*{5}
 
-We use a \texttt{\textbf{for}} construct:
+We use a \textbf{\texttt{for}} construct:
 
 \medskip
 \begin{center}
@@ -4108,7 +4106,7 @@ We use a \texttt{\textbf{for}} construct:
 \end{center}
 \medskip
 
-\noindent Note that this works for the empty array, because a \texttt{\textbf{for}} construct where the second number is less than the first never executes its expression.
+\noindent Note that this works for the empty array, because a \textbf{\texttt{for}} construct where the second number is less than the first never executes its expression.
 
 \subsection*{6}
 
@@ -4395,7 +4393,7 @@ The function takes one integer, and returns that integer multiplied by ten. So w
 \subsection*{2}
 What does the function take as arguments? What is the type of its result? So what is the whole type? You can use the \texttt{<>} and \texttt{\&\&} operators here.
 \subsection*{3}
-This will be a recursive function, so remember to use \texttt{\textbf{let rec}}. What is the sum of all the integers from $1\ldots 1$? Perhaps this is a good base case. 
+This will be a recursive function, so remember to use \textbf{\texttt{let rec}}. What is the sum of all the integers from $1\ldots 1$? Perhaps this is a good base case. 
 \subsection*{4}
 This will be a recursive function. What happens when you raise a number to the power $0$? What about the power $1$? What about a higher power?
 \subsection*{5}
@@ -4408,7 +4406,7 @@ When does it not terminate? Can you add a check to see when it might happen, and
 \subsection*{1}
 We are pattern matching on a boolean value, so there are just two cases: \texttt{true} and \texttt{false}.
 \subsection*{2}
-Convert the \texttt{\pif\ldots\ \pthen\ldots\ \pelse} structure of the \texttt{sum} function from the previous chapter into a pattern matching structure.
+Convert the \textbf{\texttt{if}} \texttt{\ldots\ }\textbf{\texttt{then}} \texttt{\ldots\ }\textbf{\texttt{\pelse}} structure of the \texttt{sum} function from the previous chapter into a pattern matching structure.
 \subsection*{3}
 You will need three cases as before -- when the power is $0$, $1$ or greater than $1$ -- but now in the form of a pattern match.
 \subsection*{5}
@@ -4434,7 +4432,7 @@ Consider in which order the \texttt{@} operators are evaluated in the reverse fu
 
 \section*{5. Sorting Things}
 \subsection*{1}
-Consider adding another \texttt{\textbf{let}} before \texttt{\textbf{let \textmd{left}}} and \texttt{\textbf{let \textmd{right}}}.
+Consider adding another \textbf{\texttt{let}} before \textbf{\texttt{let}} \texttt{left} and \textbf{\texttt{let}} \texttt{right}.
 
 \subsection*{2}
 Consider the situations in which \texttt{take} and \texttt{drop} can fail, and what arguments \texttt{msort} gives them at each recursion.
@@ -4446,7 +4444,7 @@ This is a simple change -- consider the comparison operator itself.
 What will the type of the function be? Lists of length zero and one are already sorted -- so these will be the base cases. What do we do when there is more than one element?
 
 \subsection*{6}
-You can put one \texttt{\textbf{let rec}} construct inside another.
+You can put one \textbf{\texttt{let rec}} construct inside another.
 
 \section*{2. Names and Functions}
 \subsection*{1}
@@ -4459,7 +4457,7 @@ This is the same process as Question 1.
 Look back at the section on anonymous functions. How can \texttt{clip} be expressed as an anonymous function? So, how can we use it with \texttt{map}?
 
 \subsection*{4}
-We want a function of the form \texttt{\textbf{let rec} apply f n x =}\ \ \ldots\ which applies \texttt{f} to \texttt{x} a total of \texttt{n} times. What is the base case? What do we do in that case? What otherwise?
+We want a function of the form \textbf{\texttt{let rec}} \texttt{apply f n x =}\ \ \ldots\ which applies \texttt{f} to \texttt{x} a total of \texttt{n} times. What is the base case? What do we do in that case? What otherwise?
 
 \subsection*{5}
 You will need to add the extra function as an argument to both \texttt{insert} and \texttt{sort} and use it in place of the \texttt{<=} operator in \texttt{insert}.
@@ -4485,7 +4483,7 @@ Just put an exception handler around the function in the previous question.
 First, write a function to find the number less than or equal to the square root of its argument. Now, define a suitable exception, and wrap up your function in another which, on a bad argument, raises the exception or otherwise calls your first function.
 
 \subsection*{4}
-Use the \texttt{\textbf{try}}\ \ldots\ \texttt{\textbf{with}} construct to call your function and handle the exception you defined.
+Use the \textbf{\texttt{try}}\ \ldots\ \textbf{\texttt{with}} construct to call your function and handle the exception you defined.
 
 \section*{Chapter 7. Looking Things Up}
 \subsection*{1}
@@ -4679,7 +4677,7 @@ These are messages printed when an expression could not be accepted for evaluati
 
 \subsection*{Syntax error}
 
-This error occurs when OCaml finds that the program text contains things which are not valid words (such as \texttt{\pif}, \texttt{\plet} etc.) or other basic parts of the language, or when they exist in invalid combinations -- this is known as \textit{syntax}. Check carefully and try again.
+This error occurs when OCaml finds that the program text contains things which are not valid words (such as \textbf{\texttt{if}}, \textbf{\texttt{let}} etc.) or other basic parts of the language, or when they exist in invalid combinations -- this is known as \textit{syntax}. Check carefully and try again.
 
 \smspace
 \noindent\verb!        OCaml!\\
@@ -4788,7 +4786,7 @@ This occurs if the function builds up a working expression which is too big. Thi
 This occurs when a pattern match cannot find anything to match against. You would have been warned about this possibility when the program was originally entered. For example, if the following function \texttt{f} were defined as 
 
 \smspace
-\texttt{\textbf{let} f x = \textbf{match} x \textbf{with} 0 -> 1}
+\textbf{\texttt{let}}\texttt{ f x = }\textbf{\texttt{match}}\texttt{ x }\textbf{\texttt{with}}\texttt{ 0 -> 1}
 \smspace
 
 \noindent then using the function with \texttt{1} as an argument would produce:

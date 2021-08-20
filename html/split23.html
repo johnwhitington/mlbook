@@ -167,7 +167,7 @@
 <h3 class="unnumbered" id="section-105">2</h3>
 <p>What does the function take as arguments? What is the type of its result? So what is the whole type? You can use the <code>&lt;&gt;</code> and <code>&amp;&amp;</code> operators here.</p>
 <h3 class="unnumbered" id="section-106">3</h3>
-<p>This will be a recursive function, so remember to use <code>let rec</code>. What is the sum of all the integers from <span class="math inline">1…1</span>? Perhaps this is a good base case.</p>
+<p>This will be a recursive function, so remember to use <strong><code>let rec</code></strong>. What is the sum of all the integers from <span class="math inline">1…1</span>? Perhaps this is a good base case.</p>
 <h3 class="unnumbered" id="section-107">4</h3>
 <p>This will be a recursive function. What happens when you raise a number to the power <span class="math inline">0</span>? What about the power <span class="math inline">1</span>? What about a higher power?</p>
 <h3 class="unnumbered" id="section-108">5</h3>
@@ -180,7 +180,7 @@
 <h3 class="unnumbered" id="section-111">1</h3>
 <p>We are pattern matching on a boolean value, so there are just two cases: <code>true</code> and <code>false</code>.</p>
 <h3 class="unnumbered" id="section-112">2</h3>
-<p>Convert the <code>if…&nbsp;then…&nbsp;else</code> structure of the <code>sum</code> function from the previous chapter into a pattern matching structure.</p>
+<p>Convert the <strong><code>if</code></strong> <code>…&nbsp;</code><strong><code>then</code></strong> <code>…&nbsp;</code><strong><code>else</code></strong> structure of the <code>sum</code> function from the previous chapter into a pattern matching structure.</p>
 <h3 class="unnumbered" id="section-113">3</h3>
 <p>You will need three cases as before – when the power is <span class="math inline">0</span>, <span class="math inline">1</span> or greater than <span class="math inline">1</span> – but now in the form of a pattern match.</p>
 <h3 class="unnumbered" id="section-114">5</h3>
@@ -204,7 +204,7 @@
 <p>Consider in which order the <code>@</code> operators are evaluated in the reverse function. How long does each append take? How many are there?</p>
 <h2 class="unnumbered" id="sorting-things-2">5. Sorting Things</h2>
 <h3 class="unnumbered" id="section-123">1</h3>
-<p>Consider adding another <code>let</code> before <code>let left</code> and <code>let right</code>.</p>
+<p>Consider adding another <strong><code>let</code></strong> before <strong><code>let</code></strong> <code>left</code> and <strong><code>let</code></strong> <code>right</code>.</p>
 <h3 class="unnumbered" id="section-124">2</h3>
 <p>Consider the situations in which <code>take</code> and <code>drop</code> can fail, and what arguments <code>msort</code> gives them at each recursion.</p>
 <h3 class="unnumbered" id="section-125">3</h3>
@@ -212,7 +212,7 @@
 <h3 class="unnumbered" id="section-126">4</h3>
 <p>What will the type of the function be? Lists of length zero and one are already sorted – so these will be the base cases. What do we do when there is more than one element?</p>
 <h3 class="unnumbered" id="section-127">6</h3>
-<p>You can put one <code>let rec</code> construct inside another.</p>
+<p>You can put one <strong><code>let rec</code></strong> construct inside another.</p>
 <h2 class="unnumbered" id="names-and-functions-3">2. Names and Functions</h2>
 <h3 class="unnumbered" id="section-128">1</h3>
 <p>The function <code>calm</code> is simple recursion on lists. There are three cases – the empty list, a list beginning with <code>’!’</code> and a list beginning with any other character. In the second part of the question, write a function <code>calm_char</code> which processes a single character. You can then use <code>map</code> to define a new version of <code>calm</code>.</p>
@@ -221,7 +221,7 @@
 <h3 class="unnumbered" id="section-130">3</h3>
 <p>Look back at the section on anonymous functions. How can <code>clip</code> be expressed as an anonymous function? So, how can we use it with <code>map</code>?</p>
 <h3 class="unnumbered" id="section-131">4</h3>
-<p>We want a function of the form <code>let rec apply f n x =</code>&nbsp;&nbsp;…&nbsp;which applies <code>f</code> to <code>x</code> a total of <code>n</code> times. What is the base case? What do we do in that case? What otherwise?</p>
+<p>We want a function of the form <strong><code>let rec</code></strong> <code>apply f n x =</code>&nbsp;&nbsp;…&nbsp;which applies <code>f</code> to <code>x</code> a total of <code>n</code> times. What is the base case? What do we do in that case? What otherwise?</p>
 <h3 class="unnumbered" id="section-132">5</h3>
 <p>You will need to add the extra function as an argument to both <code>insert</code> and <code>sort</code> and use it in place of the <code>&lt;=</code> operator in <code>insert</code>.</p>
 <h3 class="unnumbered" id="section-133">6</h3>
@@ -238,7 +238,7 @@
 <h3 class="unnumbered" id="section-138">3</h3>
 <p>First, write a function to find the number less than or equal to the square root of its argument. Now, define a suitable exception, and wrap up your function in another which, on a bad argument, raises the exception or otherwise calls your first function.</p>
 <h3 class="unnumbered" id="section-139">4</h3>
-<p>Use the <code>try</code>&nbsp;…&nbsp;<code>with</code> construct to call your function and handle the exception you defined.</p>
+<p>Use the <strong><code>try</code></strong>&nbsp;…&nbsp;<strong><code>with</code></strong> construct to call your function and handle the exception you defined.</p>
 <h2 class="unnumbered" id="chapter-7.-looking-things-up-1">Chapter 7. Looking Things Up</h2>
 <h3 class="unnumbered" id="section-140">1</h3>
 <p>The keys in a dictionary are unique – does remembering that fact help you?</p>
