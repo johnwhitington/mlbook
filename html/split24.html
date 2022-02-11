@@ -304,8 +304,8 @@ missed out one or more cases in a pattern match. This could result in a
 <p><code>        OCaml</code><br>
 <br>
 <code># let f x = </code><u><code>match x with 0 -&gt; 1</code></u><code>;;</code><br>
-<code>Warning 8:&nbsp;this pattern-matching is not exhaustive.</code><br>
-<code>Here is an example of a value that is not matched:</code><br>
+<code>Warning 8 [partial-match]:&nbsp;this pattern-matching is not exhaustive.</code><br>
+<code>Here is an example of a case that is not matched:</code><br>
 <code>1</code><br>
 <code>val f :&nbsp;int -&gt; int = &lt;fun&gt;</code></p>
 <p>Helpfully, it is able to generate an example of something the pattern

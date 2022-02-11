@@ -982,8 +982,8 @@ $\texttt{\ \ | \_ -> false}$\vphantom{g}
 \noindent\underline{\vphantom{g}\texttt{~~~~|~\upquote{i} -> true}}\\
 \noindent\underline{\vphantom{g}\texttt{~~~~|~\upquote{o} -> true}}\\
 \noindent\underline{\vphantom{g}\texttt{~~~~|~\upquote{u} -> true;;}}\\
-\noindent\texttt{\# Warning 8:\ this pattern-matching is not exhaustive.}\\
-\noindent\texttt{Here is an example of a value that is not matched:}\\
+\noindent\texttt{\# Warning 8 [partial-match]:\ this pattern-matching is not exhaustive.}\\
+\noindent\texttt{Here is an example of a case that is not matched:}\\
 \noindent\texttt{'b'}\\
 \noindent\texttt{val isvowel :\ char -> bool}
 \smspace
@@ -1194,8 +1194,8 @@ $\texttt{\ \ |   h::t -> h + sum t}$\hfill\makebox{\textit{otherwise, add the he
 \noindent\texttt{\# let rec sum l =}\\
 \noindent\texttt{    \texttt{\underline{match l with =}}}\\
 \noindent\texttt{\underline{\hphantom{\ \ \ \ \ }h::t -> h + sum t};;}\\
-\noindent\texttt{Warning 8:\ this pattern-matching is not exhaustive.}\\
-\noindent\texttt{Here is an example of a value that is not matched:}\\
+\noindent\texttt{Warning 8 [partial-match]:\ this pattern-matching is not exhaustive.}\\
+\noindent\texttt{Here is an example of a case that is not matched:}\\
 \noindent\texttt{[]}\\
 \noindent\texttt{val sum :\ int list -> int = <fun>}
 \end{minipage}}
@@ -3294,7 +3294,7 @@ $\texttt{~~~~~~\pif i = 0 \pthen [] \pelse}$\hfill\makebox{\textit{if zero, we a
 $\texttt{~~~~~~~~\plet name = read\_line () \pin}$\hfill\makebox{\textit{otherwise, read a name too}}\\
 $\texttt{~~~~~~~~~~(i, name) ::\ read\_dict ()}$\hfill\makebox{\textit{build a dictionary entry, fetch another}}\\
 $\texttt{~~\pwith}$\\
-$\texttt{~~~~Failure "int\_of\_string" ->}$\\
+$\texttt{~~~~Failure \_ ->}$\\
 $\texttt{~~~~~~print\_string "This is not a valid integer.\ Please try again.";}$\\
 $\texttt{~~~~~~print\_newline ();}$\\
 $\texttt{~~~~~~read\_dict ()}$\vphantom{g}
@@ -5914,7 +5914,7 @@ $\texttt{~~map (truncate\_l n) ll}$
 \noindent\texttt{truncate :}\textbf{\textrm{ int $\rightarrow$ $\alpha$ list list $\rightarrow$ $\alpha$ list list}}\\
 \\
 $\texttt{\plet truncate\_l n l =}$\\
-$\texttt{~~\ptry take n l \pwith Invalid\_argument "take" -> l}$\\
+$\texttt{~~\ptry take n l \pwith Invalid\_argument \_ -> l}$\\
 \\
 $\texttt{\plet truncate n ll =}$\\
 $\texttt{~~map (truncate\_l n) ll}$
@@ -6405,7 +6405,7 @@ $\texttt{~~~~~~\plet y = read\_int () \pin}$\\
 $\texttt{~~~~~~~~\plet z = read\_int () \pin}$\\
 $\texttt{~~~~~~~~~~(x, y, z)}$\\
 $\texttt{~~\pwith}$\\
-$\texttt{~~~~Failure "int\_of\_string" ->}$\\
+$\texttt{~~~~Failure \_ ->}$\\
 $\texttt{~~~~~~print\_string "Failed to read integers; please try again";}$\\
 $\texttt{~~~~~~print\_newline ();}$\\
 $\texttt{~~~~~~read\_three ()}$\vphantom{g}
@@ -6430,7 +6430,7 @@ $\texttt{~~~~~~\plet i = read\_int () \pin}$\\
 $\texttt{~~~~~~~~\plet name = read\_line () \pin}$\\
 $\texttt{~~~~~~~~~~(i, name) ::\ read\_dict\_number (n - 1)}$\\
 $\texttt{~~~~\pwith}$\\
-$\texttt{~~~~~~Failure "int\_of\_string" ->}$\\
+$\texttt{~~~~~~Failure \_ ->}$\\
 $\texttt{~~~~~~~~print\_string "This is not a valid integer."}$\\
 $\texttt{~~~~~~~~print\_newline ();}$\\
 $\texttt{~~~~~~~~print\_string "Please enter integer and name again."}$\\
@@ -6456,7 +6456,7 @@ $\texttt{~~\ptry}$\\
 $\texttt{~~~~\plet n = read\_int () \pin}$\\
 $\texttt{~~~~~~\pif n < 0 \pthen \praise BadNumber \pelse read\_dict\_number n}$\\
 $\texttt{~~\pwith}$\\
-$\texttt{~~~~Failure "int\_of\_string" ->}$\\
+$\texttt{~~~~Failure \_ ->}$\\
 $\texttt{~~~~~~print\_string "Not a number.\ Try again";}$\\
 $\texttt{~~~~~~print\_newline ();}$\\
 $\texttt{~~~~~~read\_dict ()}$\\
@@ -6631,8 +6631,8 @@ The expression \texttt{[ref\! 5;\! ref\! 5]} is of type \textbf{\textrm{int ref 
 \noindent\verb!# let r = let x = ref 5 in [x; x];;!\\
 \noindent\verb!val r : int ref list = [{contents = 5}; {contents = 5}]!\\
 \noindent\texttt{\# \underline{\vphantom{g}match r with h::\_ -> h := 6};;}\\
-\noindent\verb!Warning 8: this pattern-matching is not exhaustive.!\\
-\noindent\verb!Here is an example of a value that is not matched:!\\
+\noindent\verb!Warning 8 [partial-match]: this pattern-matching is not exhaustive.!\\
+\noindent\verb!Here is an example of a case that is not matched:!\\
 \noindent\verb![]!\\
 \noindent\verb!- : unit = ()!\\
 \noindent\verb!# r;;!\\
@@ -7762,8 +7762,8 @@ This warning is printed when OCaml has determined that you have missed out one o
 \noindent\verb!        OCaml!\\
 \noindent\\
 \texttt{\# let f x = \underline{match x with 0 -> 1};;}\\
-\texttt{Warning 8:\ this pattern-matching is not exhaustive.}\\
-\texttt{Here is an example of a value that is not matched:}\\
+\texttt{Warning 8 [partial-match]:\ this pattern-matching is not exhaustive.}\\
+\texttt{Here is an example of a case that is not matched:}\\
 \texttt{1}\\
 \texttt{val f :\ int -> int = <fun>}
 \smspace

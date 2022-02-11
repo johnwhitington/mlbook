@@ -733,8 +733,8 @@ OCaml has a nicer way of expressing choices -- \index{pattern matching}\textit{p
 \noindent\underline{\vphantom{g}\texttt{~~~~|~'i' -> true}}\\
 \noindent\underline{\vphantom{g}\texttt{~~~~|~'o' -> true}}\\
 \noindent\underline{\vphantom{g}\texttt{~~~~|~'u' -> true;;}}\\
-\noindent\texttt{\# Warning 8:\ this pattern-matching is not exhaustive.}\\
-\noindent\verb!Here is an example of a value that is not matched:!\\
+\noindent\texttt{\# Warning 8 [partial-match]:\ this pattern-matching is not exhaustive.}\\
+\noindent\verb!Here is an example of a case that is not matched:!\\
 \noindent\verb!'b'!\\
 \noindent\texttt{val isvowel :\ char -> bool}
 \smspace
@@ -4051,8 +4051,8 @@ The expression \texttt{[ref 5; ref 5]} is of type \textbf{\textsf{int ref list}}
 \noindent\verb!# let r = let x = ref 5 in [x; x];;!\\
 \noindent\verb!val r : int ref list = [{contents = 5}; {contents = 5}]!\\
 \noindent\texttt{\# }\underline{\verb!match r with h::_ -> h := 6;;!}\\
-\noindent\verb!Warning 8: this pattern-matching is not exhaustive.!\\
-\noindent\verb!Here is an example of a value that is not matched:!\\
+\noindent\verb!Warning 8 [partial-match]: this pattern-matching is not exhaustive.!\\
+\noindent\verb!Here is an example of a case that is not matched:!\\
 \noindent\verb![]!\\
 \noindent\verb!- : unit = ()!\\
 \noindent\verb!# r;;!\\
@@ -4827,8 +4827,8 @@ This warning is printed when OCaml has determined that you have missed out one o
 \noindent\verb!        OCaml!\\
 \noindent\\
 \texttt{\# let f x = }\underline{\verb!match x with 0 -> 1!}\texttt{;;}\\
-\texttt{Warning 8:\ this pattern-matching is not exhaustive.}\\
-\texttt{Here is an example of a value that is not matched:}\\
+\texttt{Warning 8 [partial-match]:\ this pattern-matching is not exhaustive.}\\
+\texttt{Here is an example of a case that is not matched:}\\
 \texttt{1}\\
 \texttt{val f :\ int -> int = <fun>}
 \smspace

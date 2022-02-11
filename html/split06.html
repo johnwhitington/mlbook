@@ -191,8 +191,8 @@ function from the previous chapter?</p>
 <u><code>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;’i’ -&gt; true</code></u><br>
 <u><code>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;’o’ -&gt; true</code></u><br>
 <u><code>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;’u’ -&gt; true;;</code></u><br>
-<code># Warning 8:&nbsp;this pattern-matching is not exhaustive.</code><br>
-<code>Here is an example of a value that is not matched:</code><br>
+<code># Warning 8 [partial-match]:&nbsp;this pattern-matching is not exhaustive.</code><br>
+<code>Here is an example of a case that is not matched:</code><br>
 <code>'b'</code><br>
 <code>val isvowel :&nbsp;char -&gt; bool</code></p>
 <p>OCaml does not reject the program, because there may be legitimate
