@@ -3,8 +3,8 @@
 <html > 
 <head><title></title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
-<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
-<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="generator" content="TeX4ht (https://tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (https://tug.org/tex4ht/)"> 
 <!-- html,pic-fbox,pic-equations,pic-tabular --> 
 <meta name="src" content="pandocfiguresmlbook.tex"> 
 <link rel="stylesheet" type="text/css" href="pandocfiguresmlbook.css"> 
@@ -493,13 +493,13 @@ class="zptmcm7t-x-x-90">3</span><span
 class="pplr8t-x-x-90">. What is the result? How did you work it out? We might</span>
 <span 
 class="pplr8t-x-x-90">show the process like this: </span><div class="eqnarray">
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook10x.png" alt="      1+ 2&#x00D7; 3
 =&#x21D2;    1+ 6
 =&#x21D2;    7
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 425--><p class="indent" >   </div>
 <!--l. 427--><p class="noindent" ><span 
 class="pplr8t-x-x-90">How did we know to multiply </span><span 
 class="zptmcm7t-x-x-90">2 </span><span 
@@ -512,14 +512,14 @@ class="zptmcm7t-x-x-90">2</span><span
 class="pplr8t-x-x-90">? How did we know when to stop? Let us</span>
 <span 
 class="pplr8t-x-x-90">underline the part of the expression which is dealt with at each step: </span><div class="eqnarray">
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook11x.png" alt="      1+ 2&#x00D7;-3
 =&#x21D2;    1+ 6
       ----
 =&#x21D2;    7
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 433--><p class="indent" >   </div>
 <!--l. 435--><p class="noindent" ><span 
 class="pplr8t-x-x-90">We chose which part of the expression to deal with each time using a familiar mathematical rule &#8211;</span>
 <span 
@@ -636,13 +636,13 @@ class="pplr8t-x-x-90">evaluating the expression just requires dealing with each<
 <span 
 class="pplr8t-x-x-90">parenthesized section, starting with the innermost, and stopping when there are no parentheses left:</span>
 <div class="eqnarray">
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook12x.png" alt="       (1+(2&#x00D7;-3))
 =&#x21D2;     (1+6)-
 =&#x21D2;     7
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 470--><p class="indent" >   </div>
 <!--l. 472--><p class="noindent" ><span 
 class="pplr8t-x-x-90">OCaml knows that </span><span 
 class="zptmcm7y-x-x-90">&#x00D7; </span><span 
@@ -790,7 +790,7 @@ class="pplr8t-x-x-90">sometimes write down the type of an expression after a col
 <span 
 class="pplr8t-x-x-90">mind:</span>
 <!--l. 501--><p class="indent" >   <span 
-class="fvmr8t-x-x-81">5 * -2 : </span><span 
+class="fvmr8t-x-x-81">5 * -2 :</span><span 
 class="pplb8t-x-x-90">int</span>
 <!--l. 504--><p class="noindent" ><span 
 class="pplr8t-x-x-90">(negative numbers are written with </span><span 
@@ -849,7 +849,7 @@ class="newline" /><br
 class="newline" /><span class="obeylines-h"><span class="verb"><span 
 class="fvmr8t-x-x-81">#</span><span 
 class="fvmr8t-x-x-81">&#x00A0;99</span><span 
-class="fvmr8t-x-x-81">&#x00A0;></span><span 
+class="fvmr8t-x-x-81">&#x00A0;&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;100;;</span></span></span><br 
 class="newline" /><span class="obeylines-h"><span class="verb"><span 
 class="fvmr8t-x-x-81">-</span><span 
@@ -880,12 +880,12 @@ class="pplr8t-x-x-90">Here are all the comparison operators:</span>
 src="pandocfiguresmlbook14x.png" alt="-----------------------------------
 Operator--Description-----------------
 a=b      trueifaandbareequal
-a< b      trueifais lessthan b
-a< =b     trueifais lessthan orequaltob
-a> b      trueifais morethan b
+a&#x003C;b      trueifais lessthan b
+a&#x003C;=b     trueifais lessthan orequaltob
+a&#x003E;b      trueifais morethan b
 
-a> =b     trueifais morethan orequaltob
-a<->-b-----trueifais-notequaltob--------  " ></div>
+a&#x003E;=b     trueifais morethan orequaltob
+a&#x003C;&#x003E;b-----trueifais-notequaltob--------  " ></div>
 <!--l. 537--><p class="noindent" ><span 
 class="pplr8t-x-x-90">Notice that if we try to use operators with types for which they are not intended, OCaml will not accept the</span>
 <span 
@@ -927,7 +927,7 @@ class="pplr8t-x-x-90">There are two operators for combining boolean values (for 
                                                                                
 <span 
 class="pplr8t-x-x-90">comparison operators). The expression </span><span 
-class="fvmr8t-x-x-81">a && b </span><span 
+class="fvmr8t-x-x-81">a &amp;&amp; b </span><span 
 class="pplr8t-x-x-90">evaluates to </span><span 
 class="fvmr8t-x-x-81">true </span><span 
 class="pplr8t-x-x-90">only if </span><span 
@@ -953,17 +953,17 @@ class="pplr8t-x-x-90">evaluates to </span><span
 class="fvmr8t-x-x-81">true</span><span 
 class="pplr8t-x-x-90">, or both do. The</span> <a 
  id="dx1-8031"></a><span 
-class="fvmr8t-x-x-81">&& </span><span 
+class="fvmr8t-x-x-81">&amp;&amp; </span><span 
 class="pplr8t-x-x-90">operator</span>
 <span 
 class="pplr8t-x-x-90">(pronounced &#8220;and&#8221;) is of higher precedence than the </span><span 
 class="fvmr8t-x-x-81">|| </span><span 
 class="pplr8t-x-x-90">operator (pronounced &#8220;or&#8221;), so </span><span 
-class="fvmr8t-x-x-81">a && b || c </span><span 
+class="fvmr8t-x-x-81">a &amp;&amp; b || c </span><span 
 class="pplr8t-x-x-90">is the same</span>
 <span 
 class="pplr8t-x-x-90">as </span><span 
-class="fvmr8t-x-x-81">(a && b) || c</span><span 
+class="fvmr8t-x-x-81">(a &amp;&amp; b) || c</span><span 
 class="pplr8t-x-x-90">.</span>
 <!--l. 553--><p class="indent" >   <span 
 class="pplr8t-x-x-90">A third type we shall be using is</span> <a 
@@ -1031,7 +1031,7 @@ class="fvmr8t-x-x-81">&#x00A0;</span><span
 class="fvmr8t-x-x-81">&#x00A0;OCaml</span></span></span><br 
 class="newline" /><br 
 class="newline" /><span 
-class="fvmr8t-x-x-81"># if 100 > 99 then 0 else 1;;</span><br 
+class="fvmr8t-x-x-81"># if 100 &#x003E; 99 then 0 else 1;;</span><br 
 class="newline" /><span 
 class="fvmr8t-x-x-81">- :</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int = 0</span>
@@ -1041,7 +1041,7 @@ class="fvmb8t-x-x-81">if </span><span
 class="pplr8t-x-x-90">and </span><span 
 class="fvmb8t-x-x-81">then </span><span 
 class="pplr8t-x-x-90">(in our example </span><span 
-class="fvmr8t-x-x-81">100 > 99</span><span 
+class="fvmr8t-x-x-81">100 &#x003E; 99</span><span 
 class="pplr8t-x-x-90">) must have type </span><span 
 class="pplb8t-x-x-90">bool </span><span 
 class="pplr8t-x-x-90">&#8211; it evaluates to either</span>
@@ -1064,11 +1064,12 @@ class="pplr8t-x-x-90">part is chosen to be the result of evaluating the whole</s
 <span 
 class="pplr8t-x-x-90">expression:</span>
 <!--l. 578--><p class="indent" >
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook15x.png" alt="   &#x25DC;--bo&#x25DE;o&#x25DF;l-&#x25DD;     &#x25DC;in&#x25DE;t&#x25DF;&#x25DD;    &#x25DC;in&#x25DE;t&#x25DF;&#x25DD;
-if-100->--99-then-0-else-1-
-&#x25DF;           &#x25DD;i&#x25DC;nt           &#x25DE;   " class="math-display" ></center>
+if-100-&#x003E;-99-then-0-else-1-
+&#x25DF;           &#x25DD;i&#x25DC;nt           &#x25DE;
+" class="math-display" ></div>
 <!--l. 581--><p class="noindent" ><span 
 class="pplr8t-x-x-90">We have covered a lot in this chapter, but we need all these basic tools before we can write interesting programs.</span>
 <span 
@@ -1096,16 +1097,16 @@ class="pplr8t-x-x-90">&#x00A0;        </span><span
 class="fvmr8t-x-x-81">800 / 80 / 8</span>
      <!--l. 595--><p class="noindent" ><span 
 class="pplr8t-x-x-90">&#x00A0;        </span><span 
-class="fvmr8t-x-x-81">400 > 200</span>
+class="fvmr8t-x-x-81">400 &#x003E; 200</span>
      <!--l. 597--><p class="noindent" ><span 
 class="pplr8t-x-x-90">&#x00A0;        </span><span 
-class="fvmr8t-x-x-81">1 <> 1</span>
+class="fvmr8t-x-x-81">1 &#x003C;&#x003E; 1</span>
      <!--l. 599--><p class="noindent" ><span 
 class="pplr8t-x-x-90">&#x00A0;        </span><span 
 class="fvmr8t-x-x-81">true || false</span>
      <!--l. 601--><p class="noindent" ><span 
 class="pplr8t-x-x-90">&#x00A0;        </span><span 
-class="fvmr8t-x-x-81">true && false</span>
+class="fvmr8t-x-x-81">true &amp;&amp; false</span>
      <!--l. 603--><p class="noindent" ><span 
 class="pplr8t-x-x-90">&#x00A0;        </span><span 
 class="fvmb8t-x-x-81">if </span><span 
@@ -1197,9 +1198,9 @@ class="pplr8t-x-x-90">type at all?</span>
      <li 
   class="enumerate" id="x1-9018x8"><span 
 class="pplr8t-x-x-90">What is the effect of the comparison operators like </span><span 
-class="fvmr8t-x-x-81">< </span><span 
+class="fvmr8t-x-x-81">&#x003C; </span><span 
 class="pplr8t-x-x-90">and </span><span 
-class="fvmr8t-x-x-81">> </span><span 
+class="fvmr8t-x-x-81">&#x003E; </span><span 
 class="pplr8t-x-x-90">on alphabetic values of type </span><span 
 class="pplb8t-x-x-90">char</span><span 
 class="pplr8t-x-x-90">? For</span>
@@ -1208,7 +1209,7 @@ class="pplr8t-x-x-90">example, what does </span><span
 class="fvmr8c-x-x-81">'</span><span 
 class="fvmr8t-x-x-81">p</span><span 
 class="fvmr8c-x-x-81">' </span><span 
-class="fvmr8t-x-x-81">< </span><span 
+class="fvmr8t-x-x-81">&#x003C; </span><span 
 class="fvmr8c-x-x-81">'</span><span 
 class="fvmr8t-x-x-81">q</span><span 
 class="fvmr8c-x-x-81">' </span><span 
@@ -1283,7 +1284,7 @@ class="fvmr8t-x-x-72">+ - * / mod </span><span
 class="pplr8t-x-x-80">which take two integers and give another.</span>
 <span 
 class="pplr8t-x-x-80">Operators </span><span 
-class="fvmr8t-x-x-72">=<<=>>=<> </span><span 
+class="fvmr8t-x-x-72">=&#x003C;&#x003C;=&#x003E;&#x003E;=&#x003C;&#x003E; </span><span 
 class="pplr8t-x-x-80">which compare two values and evaluate to either </span><span 
 class="fvmr8t-x-x-72">true </span><span 
 class="pplr8t-x-x-80">or </span><span 
@@ -1307,7 +1308,7 @@ class="pplri8t-x-x-80">expression3 </span><span
 class="pplr8t-x-x-80">have</span>
 <span 
 class="pplr8t-x-x-80">the same type as one another. The boolean operators </span><span 
-class="fvmr8t-x-x-72">&& </span><span 
+class="fvmr8t-x-x-72">&amp;&amp; </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">|| </span><span 
 class="pplr8t-x-x-80">which allow us to build compound boolean</span>
@@ -1503,10 +1504,10 @@ class="fvmr8t-x-x-81">val</span><span
 class="fvmr8t-x-x-81">&#x00A0;cube</span><span 
 class="fvmr8t-x-x-81">&#x00A0;:</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
 class="fvmr8t-x-x-81">&#x00A0;=</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<fun></span></span></span><br 
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;fun&#x003E;</span></span></span><br 
 class="newline" /><span class="obeylines-h"><span class="verb"><span 
 class="fvmr8t-x-x-81">#</span><span 
 class="fvmr8t-x-x-81">&#x00A0;cube</span><span 
@@ -1527,7 +1528,7 @@ class="pplr8t-x-x-90">for the name of its argument. When we typed the function i
 class="pplr8t-x-x-90">OCaml replied by telling us that its type is</span> <a 
  id="dx1-11007"></a><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">int</span><span 
 class="pplr8t-x-x-90">. This means it is a function which takes an integer as its</span>
 <span 
@@ -1548,7 +1549,7 @@ class="pplr8t-x-x-90">The </span><span
 class="fvmr8t-x-x-81">cube </span><span 
 class="pplr8t-x-x-90">function has type </span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">int</span><span 
 class="pplr8t-x-x-90">, we gave it an integer </span><span 
 class="fvmr8t-x-x-81">200</span><span 
@@ -1570,11 +1571,12 @@ class="pplr8t-x-x-90">form:</span>
                                                                                
                                                                                
 <!--l. 686--><p class="indent" >
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook16x.png" alt="in&#x25DC;t&#x2192;&#x25DE;&#x25DF;int&#x25DD;&#x25DC;i &#x25DE;nt&#x25DF;-&#x25DD;
 &#x25DF;cube&#x25DD;&#x25DC;-200-&#x25DE;
-    int   " class="math-display" ></center>
+    int
+" class="math-display" ></div>
 <!--l. 689--><p class="noindent" ><span 
 class="pplr8t-x-x-90">If we try an argument of the wrong type, the program will be rejected:</span>
 <!--l. 692--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
@@ -1603,10 +1605,10 @@ class="fvmr8t-x-x-81">val</span><span
 class="fvmr8t-x-x-81">&#x00A0;cube</span><span 
 class="fvmr8t-x-x-81">&#x00A0;:</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
 class="fvmr8t-x-x-81">&#x00A0;=</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<fun></span></span></span><br 
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;fun&#x003E;</span></span></span><br 
 class="newline" /><span 
 class="fvmr8t-x-x-81"># cube </span><span class="underline"><span 
 class="fvmr8t-x-x-81">false</span></span><span 
@@ -1656,7 +1658,7 @@ class="fvmr8t-x-x-81">&#x00A0;x</span><span
 class="fvmr8t-x-x-81">&#x00A0;=</span><span 
 class="fvmr8t-x-x-81">&#x00A0;if</span><span 
 class="fvmr8t-x-x-81">&#x00A0;x</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<</span><span 
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;0</span><span 
 class="fvmr8t-x-x-81">&#x00A0;then</span><span 
 class="fvmr8t-x-x-81">&#x00A0;true</span></span></span><br 
@@ -1668,10 +1670,10 @@ class="fvmr8t-x-x-81">val</span><span
 class="fvmr8t-x-x-81">&#x00A0;neg</span><span 
 class="fvmr8t-x-x-81">&#x00A0;:</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;bool</span><span 
 class="fvmr8t-x-x-81">&#x00A0;=</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<fun></span></span></span><br 
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;fun&#x003E;</span></span></span><br 
 class="newline" /><span 
 class="fvmr8t-x-x-81"># neg (-30);;                                     </span><span 
 class="pplri8t-x-x-90">[we add parentheses to distinguish from &#8220;neg -</span>
@@ -1702,17 +1704,17 @@ class="fvmr8t-x-x-81">&#x00A0;neg</span><span
 class="fvmr8t-x-x-81">&#x00A0;x</span><span 
 class="fvmr8t-x-x-81">&#x00A0;=</span><span 
 class="fvmr8t-x-x-81">&#x00A0;x</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<</span><span 
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;0;;</span></span></span><br 
 class="newline" /><span class="obeylines-h"><span class="verb"><span 
 class="fvmr8t-x-x-81">val</span><span 
 class="fvmr8t-x-x-81">&#x00A0;neg</span><span 
 class="fvmr8t-x-x-81">&#x00A0;:</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;bool</span><span 
 class="fvmr8t-x-x-81">&#x00A0;=</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<fun></span></span></span><br 
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;fun&#x003E;</span></span></span><br 
 class="newline" /><span 
 class="fvmr8t-x-x-81"># neg (-30);;</span><br 
 class="newline" /><span class="obeylines-h"><span class="verb"><span 
@@ -1723,11 +1725,11 @@ class="fvmr8t-x-x-81">&#x00A0;=</span><span
 class="fvmr8t-x-x-81">&#x00A0;true</span></span></span>
 <!--l. 727--><p class="noindent" ><span 
 class="pplr8t-x-x-90">because </span><span 
-class="fvmr8t-x-x-81">x < 0 </span><span 
+class="fvmr8t-x-x-81">x &#x003C; 0 </span><span 
 class="pplr8t-x-x-90">will evaluate to the appropriate boolean value on its own &#8211; </span><span 
 class="fvmr8t-x-x-81">true </span><span 
 class="pplr8t-x-x-90">if</span> <span 
-class="fvmr8t-x-x-81">x</span> <span 
+class="fvmr8t-x-x-81">x</span><span 
 class="zptmcm7m-x-x-90">&#x003C; </span><span 
 class="zptmcm7t-x-x-90">0 </span><span 
 class="pplr8t-x-x-90">and </span><span 
@@ -1736,7 +1738,7 @@ class="pplr8t-x-x-90">otherwise.</span>
 <span 
 class="pplr8t-x-x-90">Here is another function, this time of type </span><span 
 class="pplb8t-x-x-90">char </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">bool</span><span 
 class="pplr8t-x-x-90">. It determines if a given character is a vowel or</span>
 <span 
@@ -1789,12 +1791,12 @@ class="fvmr8t-x-x-81">val</span><span
 class="fvmr8t-x-x-81">&#x00A0;isvowel</span><span 
 class="fvmr8t-x-x-81">&#x00A0;:</span><span 
 class="fvmr8t-x-x-81">&#x00A0;char</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;bool</span><span 
 class="fvmr8t-x-x-81">&#x00A0;=</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<fun></span></span></span><br 
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;fun&#x003E;</span></span></span><br 
 class="newline" /><span 
-class="fvmr8t-x-x-81"># isvowel 'x';;</span><br 
+class="fvmr8t-x-x-81"># isvowel &#8217;x&#8217;;;</span><br 
 class="newline" /><span class="obeylines-h"><span class="verb"><span 
 class="fvmr8t-x-x-81">-</span><span 
 class="fvmr8t-x-x-81">&#x00A0;:</span><span 
@@ -1851,13 +1853,13 @@ class="fvmr8t-x-x-81">val</span><span
 class="fvmr8t-x-x-81">&#x00A0;addtoten</span><span 
 class="fvmr8t-x-x-81">&#x00A0;:</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;bool</span></span></span><br 
 class="newline" /><span class="obeylines-h"><span class="verb"><span 
 class="fvmr8t-x-x-81">=</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<fun></span></span></span><br 
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;fun&#x003E;</span></span></span><br 
 class="newline" /><span 
 class="fvmr8t-x-x-81"># addtoten 6 4;;</span><br 
 class="newline" /><span class="obeylines-h"><span class="verb"><span 
@@ -1869,9 +1871,9 @@ class="fvmr8t-x-x-81">&#x00A0;true</span></span></span>
 <!--l. 754--><p class="noindent" ><span 
 class="pplr8t-x-x-90">The type is </span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">bool </span><span 
 class="pplr8t-x-x-90">because the arguments are both integers, and the result is a boolean. We use the</span>
 <span 
@@ -1945,10 +1947,10 @@ class="fvmr8t-x-x-81">val</span><span
 class="fvmr8t-x-x-81">&#x00A0;factorial</span><span 
 class="fvmr8t-x-x-81">&#x00A0;:</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
 class="fvmr8t-x-x-81">&#x00A0;=</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<fun></span></span></span><br 
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;fun&#x003E;</span></span></span><br 
 class="newline" /><span 
 class="fvmr8t-x-x-81"># factorial 4;;</span><br 
 class="newline" /><span class="obeylines-h"><span class="verb"><span 
@@ -1967,7 +1969,7 @@ class="pplr8t-x-x-90">to indicate a recursive function. How does the evaluation 
 class="fvmr8t-x-x-81">factorial 4</span>
 <span 
 class="pplr8t-x-x-90">proceed? </span><div class="eqnarray">
-   <center class="math-display" >
+   <div class="math-display" >
                                                                                
                                                                                
 <img 
@@ -1980,8 +1982,8 @@ src="pandocfiguresmlbook17x.png" alt="       factorial-4-
 =&#x21D2;     4 * (3 *-2)
 =&#x21D2;     4-*-6
 =&#x21D2;     24
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 779--><p class="indent" >   </div>
 <!--l. 781--><p class="noindent" ><span 
 class="pplr8t-x-x-90">For the first three steps, the </span><span 
 class="fvmb8t-x-x-81">else </span><span 
@@ -1999,16 +2001,16 @@ class="pplr8t-x-x-90">whole evaluation. It is sometimes possible for a recursive
 <span 
 class="fvmr8t-x-x-81">factorial (-1)</span><span 
 class="pplr8t-x-x-90">? </span><div class="eqnarray">
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
-src="pandocfiguresmlbook18x.png" alt="       factorial (-1)
+src="pandocfiguresmlbook18x.png" alt="       factorial (-1)-
 = &#x21D2;    -1 * factorial-(-2)-
 = &#x21D2;    -1 * (-2 * factorial (- 3))
-                 --------------
-= &#x21D2;    -1 * (-2 * (-3 * factorial-(-4)))
+= &#x21D2;    -1 * (-2 * (-3-*-factorial (-4)))
+                       --------------
    ...   ...
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 788--><p class="indent" >   </div>
 <!--l. 790--><p class="noindent" ><span 
 class="pplr8t-x-x-90">The expression keeps expanding, and the recursion keeps going. Helpfully, OCaml tells us what is going</span>
 <span 
@@ -2058,10 +2060,10 @@ class="fvmr8t-x-x-81">val</span><span
 class="fvmr8t-x-x-81">&#x00A0;factorial</span><span 
 class="fvmr8t-x-x-81">&#x00A0;:</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
 class="fvmr8t-x-x-81">&#x00A0;=</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<fun></span></span></span><br 
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;fun&#x003E;</span></span></span><br 
 class="newline" /><span 
 class="fvmr8t-x-x-81"># factorial (-1);;</span><br 
 class="newline" /><span class="obeylines-h"><span class="verb"><span 
@@ -2146,12 +2148,12 @@ class="fvmr8t-x-x-81">val</span><span
 class="fvmr8t-x-x-81">&#x00A0;gcd</span><span 
 class="fvmr8t-x-x-81">&#x00A0;:</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
 class="fvmr8t-x-x-81">&#x00A0;=</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<fun></span></span></span><br 
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;fun&#x003E;</span></span></span><br 
 class="newline" /><span 
 class="fvmr8t-x-x-81"># gcd 64000 3456;;</span><br 
 class="newline" /><span class="obeylines-h"><span class="verb"><span 
@@ -2162,7 +2164,7 @@ class="fvmr8t-x-x-81">&#x00A0;=</span><span
 class="fvmr8t-x-x-81">&#x00A0;128</span></span></span>
 <!--l. 818--><p class="noindent" ><span 
 class="pplr8t-x-x-90">Here is the evaluation: </span><div class="eqnarray">
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook19x.png" alt="       gcd-64000-3456-
 =&#x21D2;     gcd-3456-1792-
@@ -2170,11 +2172,11 @@ src="pandocfiguresmlbook19x.png" alt="       gcd-64000-3456-
 =&#x21D2;     gcd-1664-128-
 =&#x21D2;     gcd 128 0
 =&#x21D2;     128------
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 826--><p class="indent" >   </div>
 <!--l. 828--><p class="noindent" ><span 
 class="pplr8t-x-x-90">Finally, here is a simple function on boolean values. In the previous chapter, we looked at the </span><span 
-class="fvmr8t-x-x-81">&& </span><span 
+class="fvmr8t-x-x-81">&amp;&amp; </span><span 
 class="pplr8t-x-x-90">and </span><span 
 class="fvmr8t-x-x-81">||</span>
 <span 
@@ -2226,10 +2228,10 @@ class="fvmr8t-x-x-81">val</span><span
 class="fvmr8t-x-x-81">&#x00A0;not</span><span 
 class="fvmr8t-x-x-81">&#x00A0;:</span><span 
 class="fvmr8t-x-x-81">&#x00A0;bool</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;bool</span><span 
 class="fvmr8t-x-x-81">&#x00A0;=</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<fun></span></span></span><br 
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;fun&#x003E;</span></span></span><br 
 class="newline" /><span 
 class="fvmr8t-x-x-81"># not true;;</span><br 
 class="newline" /><span class="obeylines-h"><span class="verb"><span 
@@ -2392,7 +2394,7 @@ class="fvmr8t-x-x-72">+ - * / mod </span><span
 class="pplr8t-x-x-80">which take two integers and give another.</span>
 <span 
 class="pplr8t-x-x-80">Operators </span><span 
-class="fvmr8t-x-x-72">=<<=>>=<> </span><span 
+class="fvmr8t-x-x-72">=&#x003C;&#x003C;=&#x003E;&#x003E;=&#x003C;&#x003E; </span><span 
 class="pplr8t-x-x-80">which compare two values and evaluate to either </span><span 
 class="fvmr8t-x-x-72">true </span><span 
 class="pplr8t-x-x-80">or </span><span 
@@ -2416,7 +2418,7 @@ class="pplri8t-x-x-80">expression3 </span><span
 class="pplr8t-x-x-80">have</span>
 <span 
 class="pplr8t-x-x-80">the same type as one another. The boolean operators </span><span 
-class="fvmr8t-x-x-72">&& </span><span 
+class="fvmr8t-x-x-72">&amp;&amp; </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">|| </span><span 
 class="pplr8t-x-x-80">which allow us to build compound boolean</span>
@@ -2543,10 +2545,10 @@ class="fvmr8t-x-x-81">val</span><span
 class="fvmr8t-x-x-81">&#x00A0;factorial</span><span 
 class="fvmr8t-x-x-81">&#x00A0;:</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
 class="fvmr8t-x-x-81">&#x00A0;=</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<fun></span></span></span>
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;fun&#x003E;</span></span></span>
 <!--l. 885--><p class="noindent" ><span 
 class="pplr8t-x-x-90">&#x2026;we will usually just show the program in a box, together with its type:</span>
 <!--l. 889--><p class="noindent" ><img 
@@ -2678,7 +2680,7 @@ class="fvmr8t-x-x-81">&#x00A0;</span><span
 class="fvmr8c-x-x-81">'</span><span 
 class="fvmr8t-x-x-81">a</span><span 
 class="fvmr8c-x-x-81">' </span><span 
-class="fvmr8t-x-x-81">-> true</span></span><br 
+class="fvmr8t-x-x-81">-&#x003E; true</span></span><br 
 class="newline" /><span class="underline"><span 
 class="fvmr8t-x-x-81">&#x00A0;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;</span><span 
@@ -2688,7 +2690,7 @@ class="fvmr8t-x-x-81">&#x00A0;</span><span
 class="fvmr8c-x-x-81">'</span><span 
 class="fvmr8t-x-x-81">e</span><span 
 class="fvmr8c-x-x-81">' </span><span 
-class="fvmr8t-x-x-81">-> true</span></span><br 
+class="fvmr8t-x-x-81">-&#x003E; true</span></span><br 
 class="newline" /><span class="underline"><span 
 class="fvmr8t-x-x-81">&#x00A0;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;</span><span 
@@ -2698,7 +2700,7 @@ class="fvmr8t-x-x-81">&#x00A0;</span><span
 class="fvmr8c-x-x-81">'</span><span 
 class="fvmr8t-x-x-81">i</span><span 
 class="fvmr8c-x-x-81">' </span><span 
-class="fvmr8t-x-x-81">-> true</span></span><br 
+class="fvmr8t-x-x-81">-&#x003E; true</span></span><br 
 class="newline" /><span class="underline"><span 
 class="fvmr8t-x-x-81">&#x00A0;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;</span><span 
@@ -2708,7 +2710,7 @@ class="fvmr8t-x-x-81">&#x00A0;</span><span
 class="fvmr8c-x-x-81">'</span><span 
 class="fvmr8t-x-x-81">o</span><span 
 class="fvmr8c-x-x-81">' </span><span 
-class="fvmr8t-x-x-81">-> true</span></span><br 
+class="fvmr8t-x-x-81">-&#x003E; true</span></span><br 
 class="newline" /><span class="underline"><span 
 class="fvmr8t-x-x-81">&#x00A0;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;</span><span 
@@ -2718,17 +2720,17 @@ class="fvmr8t-x-x-81">&#x00A0;</span><span
 class="fvmr8c-x-x-81">'</span><span 
 class="fvmr8t-x-x-81">u</span><span 
 class="fvmr8c-x-x-81">' </span><span 
-class="fvmr8t-x-x-81">-> true;;</span></span><br 
+class="fvmr8t-x-x-81">-&#x003E; true;;</span></span><br 
 class="newline" /><span 
 class="fvmr8t-x-x-81"># Warning 8:</span><span 
 class="fvmr8t-x-x-81">&#x00A0;this pattern-matching is not exhaustive.</span><br 
 class="newline" /><span 
 class="fvmr8t-x-x-81">Here is an example of a value that is not matched:</span><br 
 class="newline" /><span 
-class="fvmr8t-x-x-81">'b'</span><br 
+class="fvmr8t-x-x-81">&#8217;b&#8217;</span><br 
 class="newline" /><span 
 class="fvmr8t-x-x-81">val isvowel :</span><span 
-class="fvmr8t-x-x-81">&#x00A0;char -> bool</span>
+class="fvmr8t-x-x-81">&#x00A0;char -&#x003E; bool</span>
 <!--l. 991--><p class="noindent" ><span 
 class="pplr8t-x-x-90">OCaml does not reject the program, because there may be legitimate reasons to miss cases out, but for now we</span>
 <span 
@@ -2759,17 +2761,18 @@ class="pplr8t-x-x-90">&#x2026;</span><span
 class="pplr8t-x-x-90">&#x00A0;expression is determined by the types of the expressions on the right hand</span>
 <span 
 class="pplr8t-x-x-90">side of each </span><span 
-class="fvmr8t-x-x-81">-> </span><span 
+class="fvmr8t-x-x-81">-&#x003E; </span><span 
 class="pplr8t-x-x-90">arrow, all of which must be alike:</span>
 <!--l. 1037--><p class="indent" >
                                                                                
                                                                                
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook28x.png" alt="                  int              int
                  &#x25DC;&#x25DE;&#x25DF;&#x25DD;        &#x25DC;-----&#x25DE;&#x25DF;-----&#x25DD;
-m&#x25DF;atch-b-with-0-->---a-&#x25DD;|&#x25DC;-_-->--gcd-b-(a mod-b)&#x25DE;
-                    int   " class="math-display" ></center>
+m&#x25DF;atch-b-with-0--&#x003E;--a-&#x25DD;|&#x25DC;-_--&#x003E;-gcd-b-(a mod-b)&#x25DE;
+                    int
+" class="math-display" ></div>
 <!--l. 1040--><p class="noindent" ><span 
 class="pplr8t-x-x-90">We use pattern matching whenever it is easier to read and understand than </span><span 
 class="fvmb8t-x-x-81">if </span><span 
@@ -2833,11 +2836,11 @@ class="pplr8t-x-x-90">What does  </span><span
 class="fvmb8t-x-x-81">match </span><span 
 class="fvmr8t-x-x-81">1 + 1 </span><span 
 class="fvmb8t-x-x-81">with </span><span 
-class="fvmr8t-x-x-81">2 -> </span><span 
+class="fvmr8t-x-x-81">2 -&#x003E; </span><span 
 class="fvmb8t-x-x-81">match </span><span 
 class="fvmr8t-x-x-81">2 + 2 </span><span 
 class="fvmb8t-x-x-81">with </span><span 
-class="fvmr8t-x-x-81">3 -> 4 | 4 -> 5 </span><span 
+class="fvmr8t-x-x-81">3 -&#x003E; 4 | 4 -&#x003E; 5 </span><span 
 class="pplr8t-x-x-90">evaluate to?</span>
      </li>
      <li 
@@ -2859,7 +2862,7 @@ class="pplr8t-x-x-90">and </span><span
 class="fvmr8t-x-x-81">isupper</span><span 
 class="pplr8t-x-x-90">, each of type </span><span 
 class="pplb8t-x-x-90">char </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">bool</span><span 
 class="pplr8t-x-x-90">,</span>
      <span 
@@ -2925,7 +2928,7 @@ class="fvmr8t-x-x-72">+ - * / mod </span><span
 class="pplr8t-x-x-80">which take two integers and give another.</span>
 <span 
 class="pplr8t-x-x-80">Operators </span><span 
-class="fvmr8t-x-x-72">=<<=>>=<> </span><span 
+class="fvmr8t-x-x-72">=&#x003C;&#x003C;=&#x003E;&#x003E;=&#x003C;&#x003E; </span><span 
 class="pplr8t-x-x-80">which compare two values and evaluate to either </span><span 
 class="fvmr8t-x-x-72">true </span><span 
 class="pplr8t-x-x-80">or </span><span 
@@ -2949,7 +2952,7 @@ class="pplri8t-x-x-80">expression3 </span><span
 class="pplr8t-x-x-80">have</span>
 <span 
 class="pplr8t-x-x-80">the same type as one another. The boolean operators </span><span 
-class="fvmr8t-x-x-72">&& </span><span 
+class="fvmr8t-x-x-72">&amp;&amp; </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">|| </span><span 
 class="pplr8t-x-x-80">which allow us to build compound boolean</span>
@@ -3029,14 +3032,14 @@ class="pplri8t-x-x-80">pattern1 </span><span
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression2 </span><span 
 class="fvmr8t-x-x-72">| </span><span 
 class="pplri8t-x-x-80">pattern2 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression3 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
@@ -3141,12 +3144,12 @@ class="fvmr8t-x-x-81">::</span><span
 class="pplr8t-x-x-90">&#x00A0;operator (pronounced &#8220;cons&#8221;) is used to add a single element to</span>
 <span 
 class="pplr8t-x-x-90">the front of an existing list: </span><div class="eqnarray">
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook29x.png" alt="      false :: [true; false]
 =&#x21D2;    [false; true; false]
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 1107--><p class="indent" >   </div>
 <!--l. 1109--><p class="noindent" ><span 
 class="pplr8t-x-x-90">The cons operation is completed in a constant amount of time, regardless of the length of the list. The</span> <a 
  id="dx1-18010"></a><a 
@@ -3157,12 +3160,12 @@ class="pplr8t-x-x-90">operator</span>
 class="pplr8t-x-x-90">(pronounced &#8220;append&#8221;) is used to combine two lists together: </span><div class="eqnarray">
                                                                                
                                                                                
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook30x.png" alt="       [1; 2] @ [3; 4; 5]
 = &#x21D2;    [1; 2; 3; 4; 5]
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 1113--><p class="indent" >   </div>
 <!--l. 1115--><p class="noindent" ><span 
 class="pplr8t-x-x-90">This takes</span> <a 
  id="dx1-18013"></a><span 
@@ -3182,7 +3185,7 @@ class="pplr8t-x-x-90">The argument has type </span><span
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">list </span><span 
 class="pplr8t-x-x-90">(which OCaml prints on the screen as </span><span 
-class="fvmr8t-x-x-81">'a list</span><span 
+class="fvmr8t-x-x-81">&#8217;a list</span><span 
 class="pplr8t-x-x-90">) because this function does not</span>
 <span 
 class="pplr8t-x-x-90">inspect the individual elements of the list, it just checks if the list is empty. And so, this function can operate over</span>
@@ -3209,7 +3212,7 @@ class="pplr8t-x-x-90">construct the list:</span>
 src="pandocfiguresmlbook32x.png" alt=""  class="fbox" >
 <!--l. 1147--><p class="noindent" ><span 
 class="pplr8t-x-x-90">Here is how the evaluation proceeds: </span><div class="eqnarray">
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook33x.png" alt="      length [5; 5; 5]
 =&#x21D2;    1 + length [5; 5]
@@ -3218,8 +3221,8 @@ src="pandocfiguresmlbook33x.png" alt="      length [5; 5; 5]
 =&#x21D2;    1 + (1 + (1 + length-[]))    basecase
 =&#x21D2;    1-+-(1-+-(1 +-0))
 =*&#x21D2;    3                (=*&#x21D2; meanswearenotshowingallthe steps)
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 1155--><p class="indent" >   </div>
 <!--l. 1157--><p class="noindent" ><span 
 class="pplr8t-x-x-90">This works by</span> <a 
  id="dx1-18017"></a><span 
@@ -3294,17 +3297,17 @@ src="pandocfiguresmlbook37x.png" alt=""  class="fbox" >
 class="pplr8t-x-x-90">We wrapped it up in another function to make sure we do not call it with a bad initial value for the accumulating</span>
 <span 
 class="pplr8t-x-x-90">argument. Here is an example evaluation: </span><div class="eqnarray">
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook38x.png" alt="       length [5; 5; 5]
-= &#x21D2;    length_inner [5; 5; 5] 0
-= &#x21D2;    length_inner-[5;-5]-1---
+= &#x21D2;    length_inner-[5;-5;-5] 0
+= &#x21D2;    length_inner [5; 5] 1
        --------------------
 = &#x21D2;    length_inner-[5]-2
 = &#x21D2;    length_inner-[]-3           basecase
 = &#x21D2;    3
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 1231--><p class="indent" >   </div>
 <!--l. 1233--><p class="noindent" ><span 
 class="pplr8t-x-x-90">Now, the space taken by the calculation does not relate in any way to the length of the list argument. Recursive</span>
 <span 
@@ -3324,7 +3327,7 @@ src="pandocfiguresmlbook39x.png" alt=""  class="fbox" >
 class="pplr8t-x-x-90">Consider the evaluation of </span><span 
 class="fvmr8t-x-x-81">odd_elements [2; 4; 2; 4; 2]</span><span 
 class="pplr8t-x-x-90">: </span><div class="eqnarray">
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook40x.png" alt="      odd_elements [2; 4; 2; 4; 2]
 =&#x21D2;    2 :: odd_elements [2; 4; 2]
@@ -3332,8 +3335,8 @@ src="pandocfiguresmlbook40x.png" alt="      odd_elements [2; 4; 2; 4; 2]
 =&#x21D2;    2 :: 2 :: odd_elements-[2]
 =&#x21D2;    2-::-2-::-[2]
 =*&#x21D2;    [2; 2; 2]
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 1256--><p class="indent" >   </div>
 <!--l. 1258--><p class="noindent" ><span 
 class="pplr8t-x-x-90">You might notice that the first two cases in the pattern match return exactly their argument. By reversing the</span>
 <span 
@@ -3344,12 +3347,12 @@ src="pandocfiguresmlbook41x.png" alt=""  class="fbox" >
 class="pplr8t-x-x-90">We have seen how to use the </span><span 
 class="fvmr8t-x-x-81">@ </span><span 
 class="pplr8t-x-x-90">(append) operator to concatenate two lists: </span><div class="eqnarray">
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook42x.png" alt="       [1;-2]-@ [3;-4;-5]
 = &#x21D2;    [1; 2; 3; 4; 5]
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 1277--><p class="indent" >   </div>
 <!--l. 1279--><p class="noindent" ><span 
 class="pplr8t-x-x-90">How might we implement list append ourselves, if it was not provided? Consider a function </span><span 
 class="fvmr8t-x-x-81">append a b</span><span 
@@ -3379,7 +3382,7 @@ src="pandocfiguresmlbook43x.png" alt=""  class="fbox" >
 class="pplr8t-x-x-90">Consider the evaluation of </span><span 
 class="fvmr8t-x-x-81">append [1; 2; 3] [4; 5; 6]</span><span 
 class="pplr8t-x-x-90">: </span><div class="eqnarray">
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook44x.png" alt="       append-[1;-2;-3] [4;-5;-6]
 =&#x21D2;     1 :: append-[2; 3]-[4;-5;-6]
@@ -3388,8 +3391,8 @@ src="pandocfiguresmlbook44x.png" alt="       append-[1;-2;-3] [4;-5;-6]
 =&#x21D2;     1 :: 2 :: 3 :: append-[]-[4;-5;-6]
 =&#x21D2;     1 ::-2-::-3-::-[4;-5;-6]
 =*&#x21D2;     [1; 2; 3; 4; 5; 6]
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 1302--><p class="indent" >   </div>
 <!--l. 1304--><p class="noindent" ><span 
 class="pplr8t-x-x-90">This takes time proportional to the length of the first list &#8211; the second list need not be processed at all. What</span>
 <span 
@@ -3409,7 +3412,7 @@ class="pplr8t-x-x-90">it:</span>
 src="pandocfiguresmlbook45x.png" alt=""  class="fbox" >
 <!--l. 1319--><p class="noindent" ><span 
 class="pplr8t-x-x-90">Here&#8217;s how the evaluation proceeds: </span><div class="eqnarray">
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook46x.png" alt="      rev [1; 2; 3; 4]
 =&#x21D2;    rev-[2;-3;-4]@-[1]
@@ -3420,8 +3423,8 @@ src="pandocfiguresmlbook46x.png" alt="      rev [1; 2; 3; 4]
 =&#x21D2;    []-@-[4]-@-[3] @-[2]-@-[1]
  *
 =&#x21D2;    [4; 3; 2; 1]
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 1328--><p class="indent" >   </div>
 <!--l. 1330--><p class="noindent" ><span 
 class="pplr8t-x-x-90">This is a simple definition, but not very efficient &#8211; can you see why?</span>
 <!--l. 1332--><p class="indent" >   <span 
@@ -3441,29 +3444,29 @@ src="pandocfiguresmlbook47x.png" alt=""  class="fbox" >
 class="pplr8t-x-x-90">For example, here&#8217;s the evaluation for </span><span 
 class="fvmr8t-x-x-81">take 2 [2; 4; 6; 8; 10]</span><span 
 class="pplr8t-x-x-90">: </span><div class="eqnarray">
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook48x.png" alt="       take-2 [2;-4;-6;-8; 10]
 =&#x21D2;     2 :: take-1-[4;-6;-8;-10]-
 =&#x21D2;     2 :: 4 :: take-0-[6; 8;-10]
 =&#x21D2;     2-::-4 ::-[]
 =*&#x21D2;     [2; 4]
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 1360--><p class="indent" >   </div>
                                                                                
                                                                                
 <!--l. 1362--><p class="noindent" ><span 
 class="pplr8t-x-x-90">And for </span><span 
 class="fvmr8t-x-x-81">drop 2 [2; 4; 6; 8; 10]</span><span 
 class="pplr8t-x-x-90">: </span><div class="eqnarray">
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook49x.png" alt="       drop 2-[2;-4;-6;-8;-10]
        drop 1-[4;-6;-8;-10]
 =&#x21D2;     drop 0 [6; 8; 10]
 =&#x21D2;     [6; 8;-10]------
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 1368--><p class="indent" >   </div>
 <!--l. 1370--><p class="noindent" ><span 
 class="pplr8t-x-x-90">Note that these functions contain incomplete pattern matches &#8211; OCaml tells us so when we type them in. The</span>
 <span 
@@ -3588,10 +3591,10 @@ class="pplr8t-x-x-90">Write a function </span><span
 class="fvmr8t-x-x-81">member </span><span 
 class="pplr8t-x-x-90">of type </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">list </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">bool </span><span 
 class="pplr8t-x-x-90">which returns </span><span 
 class="fvmr8t-x-x-81">true </span><span 
@@ -3699,7 +3702,7 @@ class="fvmr8t-x-x-72">+ - * / mod </span><span
 class="pplr8t-x-x-80">which take two integers and give another.</span>
 <span 
 class="pplr8t-x-x-80">Operators </span><span 
-class="fvmr8t-x-x-72">=<<=>>=<> </span><span 
+class="fvmr8t-x-x-72">=&#x003C;&#x003C;=&#x003E;&#x003E;=&#x003C;&#x003E; </span><span 
 class="pplr8t-x-x-80">which compare two values and evaluate to either </span><span 
 class="fvmr8t-x-x-72">true </span><span 
 class="pplr8t-x-x-80">or </span><span 
@@ -3723,7 +3726,7 @@ class="pplri8t-x-x-80">expression3 </span><span
 class="pplr8t-x-x-80">have</span>
 <span 
 class="pplr8t-x-x-80">the same type as one another. The boolean operators </span><span 
-class="fvmr8t-x-x-72">&& </span><span 
+class="fvmr8t-x-x-72">&amp;&amp; </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">|| </span><span 
 class="pplr8t-x-x-80">which allow us to build compound boolean</span>
@@ -3803,14 +3806,14 @@ class="pplri8t-x-x-80">pattern1 </span><span
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression2 </span><span 
 class="fvmr8t-x-x-72">| </span><span 
 class="pplri8t-x-x-80">pattern2 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression3 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
@@ -3865,34 +3868,34 @@ src="pandocfiguresmlbook50x.png" alt=""  class="fbox" >
 class="pplr8t-x-x-90">There are two ways to think about this computation. One way is to imagine the actions the computer might take</span>
 <span 
 class="pplr8t-x-x-90">to calculate the result:</span>
-     <div class="quote">
+     <blockquote class="quote">
      <!--l. 1446--><p class="noindent" ><span 
 class="pplri8t-x-x-90">Look at the first list. If it is empty, return the second list. Otherwise, pull apart the first list, looking</span>
      <span 
 class="pplri8t-x-x-90">at its head and tail. Make a recursive call to append the tail to the second list, and then cons the head</span>
      <span 
-class="pplri8t-x-x-90">onto the result. Return this.</span></div>
+class="pplri8t-x-x-90">onto the result. Return this.</span></blockquote>
 <!--l. 1449--><p class="noindent" ><span 
 class="pplr8t-x-x-90">Alternatively, we can consider each match case to be an independent statement of truth, thinking the same way</span>
 <span 
 class="pplr8t-x-x-90">about the whole function:</span>
-     <div class="quote">
+     <blockquote class="quote">
      <!--l. 1452--><p class="noindent" ><span 
 class="pplri8t-x-x-90">The empty list appended to another list is that list. Otherwise, the first list is non-empty, so it has a</span>
      <span 
 class="pplri8t-x-x-90">head and a tail. Call them </span><span 
-class="fvmro8t-x-x-81">h </span><span 
+class="fvmro8t-x-x-81">h</span><span 
 class="pplri8t-x-x-90">and </span><span 
 class="fvmro8t-x-x-81">t</span><span 
 class="pplri8t-x-x-90">. Clearly </span><span 
 class="fvmro8t-x-x-81">append (h ::</span><span 
-class="fvmro8t-x-x-81">&#x00A0;t) b </span><span 
+class="fvmro8t-x-x-81">&#x00A0;t) b</span><span 
 class="pplri8t-x-x-90">is equal to </span><span 
 class="fvmro8t-x-x-81">h ::</span><span 
 class="fvmro8t-x-x-81">&#x00A0;append t b</span><span 
 class="pplri8t-x-x-90">. Since</span>
      <span 
-class="pplri8t-x-x-90">this reduces the problem size, progress is made.</span></div>
+class="pplri8t-x-x-90">this reduces the problem size, progress is made.</span></blockquote>
 <!--l. 1455--><p class="noindent" ><span 
 class="pplr8t-x-x-90">It is very useful to be able to think in these two ways about functions you write, and to be able to swap between</span>
 <span 
@@ -3936,7 +3939,7 @@ src="pandocfiguresmlbook52x.png" alt=""  class="fbox" >
 class="pplr8t-x-x-90">Consider the evaluation of </span><span 
 class="fvmr8t-x-x-81">insert 3 [1; 1; 2; 3; 5; 9]</span><span 
 class="pplr8t-x-x-90">: </span><div class="eqnarray">
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook53x.png" alt="       insert 3 [1; 1; 2; 3; 5; 9]
        --------------------------
@@ -3944,10 +3947,9 @@ src="pandocfiguresmlbook53x.png" alt="       insert 3 [1; 1; 2; 3; 5; 9]
 = &#x21D2;    1 :: 1 :: insert-3-[2; 3;-5;-9]
 = &#x21D2;    1 :: 1 :: 2 :: insert-3 [3;-5;-9]
 = &#x21D2;    1-::-1-:: 2-::-3-::-3-::-[5;-9]
-  *
-= &#x21D2;    [1; 1; 2; 3; 3; 5; 9]
-" class="math-display" ></center>
-</div>
+= *&#x21D2;    [1; 1; 2; 3; 3; 5; 9]
+" class="math-display" ></div>
+<!--l. 1501--><p class="indent" >   </div>
 <!--l. 1503--><p class="noindent" ><span 
 class="pplr8t-x-x-90">Here is the whole evaluation of </span><span 
 class="fvmr8t-x-x-81">sort [53; 9; 2; 6; 19]</span><span 
@@ -3957,7 +3959,7 @@ class="fvmr8t-x-x-81">insert</span>
 class="pplr8t-x-x-90">operation. </span><div class="eqnarray">
                                                                                
                                                                                
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook54x.png" alt="       sort-[53;-9;-2;-6;-19]-
 =*&#x21D2;     insert 53 (sort-[9;-2;-6;-19])
@@ -3971,12 +3973,12 @@ src="pandocfiguresmlbook54x.png" alt="       sort-[53;-9;-2;-6;-19]-
 =*&#x21D2;     insert 53 (insert 9 (insert 2 (insert 6 [19])))
  *                                 --------------
 =&#x21D2;     insert 53 (insert 9 (insert-2-[6;-19]))
-=*&#x21D2;     insert 53 (insert 9 [2; 6; 19])
- *              --------------------
-=&#x21D2;     insert-53-[2;-6; 9;-19]
+=*&#x21D2;     insert 53 (insert 9-[2;-6;-19])
+ *
+=&#x21D2;     insert-53-[2;-6; 9;-19]-
 =*&#x21D2;     [2; 6; 9; 19; 53]
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 1517--><p class="indent" >   </div>
 <!--l. 1519--><p class="noindent" ><span 
 class="pplr8t-x-x-90">Here&#8217;s the full program, known as</span> <a 
  id="dx1-22005"></a><span 
@@ -3988,17 +3990,17 @@ src="pandocfiguresmlbook55x.png" alt=""  class="fbox" >
 class="pplr8t-x-x-90">Notice that the type </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">list </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">list </span><span 
 class="pplr8t-x-x-90">rather than </span><span 
 class="pplb8t-x-x-90">int list </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">int list</span><span 
 class="pplr8t-x-x-90">. This is because OCaml&#8217;s comparison functions</span>
 <span 
 class="pplr8t-x-x-90">like </span><span 
-class="fvmr8t-x-x-81"><= </span><span 
+class="fvmr8t-x-x-81">&#x003C;= </span><span 
 class="pplr8t-x-x-90">(used inside </span><span 
 class="fvmr8t-x-x-81">insert</span><span 
 class="pplr8t-x-x-90">) work for types other than </span><span 
@@ -4008,12 +4010,12 @@ class="pplr8t-x-x-90">. For example, OCaml knows how to compare</span>
 class="pplr8t-x-x-90">characters in alphabetical order: </span><div class="eqnarray">
                                                                                
                                                                                
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook56x.png" alt="      sort-['p'; 'i';-'m';-'c';-'s';-'h']
 =*&#x21D2;    ['c'; 'h'; 'i'; 'm'; 'p'; 's']
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 1547--><p class="indent" >   </div>
 <!--l. 1549--><p class="noindent" ><span 
 class="pplr8t-x-x-90">How long does our sorting function take to run if the list to be sorted has </span><span 
 class="zptmcm7m-x-x-90">n </span><span 
@@ -4068,7 +4070,7 @@ class="pplr8t-x-x-90">matches the empty list. Here is how </span><span
 class="fvmr8t-x-x-81">merge</span>
 <span 
 class="pplr8t-x-x-90">proceeds: </span><div class="eqnarray">
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook58x.png" alt="       merge [9; 53] [2; 6; 19]
 =&#x21D2;     2-::-(merge-[9;-53]-[6;-19])
@@ -4079,8 +4081,8 @@ src="pandocfiguresmlbook58x.png" alt="       merge [9; 53] [2; 6; 19]
 =&#x21D2;     2-::-6-::-9-::-19 ::-[53]
  *
 =&#x21D2;     [2; 6; 9; 19; 53]
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 1579--><p class="indent" >   </div>
 <!--l. 1581--><p class="noindent" ><span 
 class="pplr8t-x-x-90">So merge can take two sorted lists, and produce a longer, sorted list, containing all the elements from both lists.</span>
 <span 
@@ -4125,7 +4127,7 @@ class="pplr8t-x-x-90">functions, concentrating just on </span><span
 class="fvmr8t-x-x-81">msort</span><span 
 class="pplr8t-x-x-90">:</span>
 <div class="eqnarray">
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook60x.png" alt="      msort [53; 9; 2; 6 19]
  *    ---------------------
@@ -4146,8 +4148,8 @@ src="pandocfiguresmlbook60x.png" alt="      msort [53; 9; 2; 6 19]
 =&#x21D2;    merge [9; 53] (merge-[2]-[6; 19])
 =*&#x21D2;    merge-[9;-53] [2;-6;-19]
 =*&#x21D2;    [2; 6; 9; 19; 53]
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 1618--><p class="indent" >   </div>
 <!--l. 1620--><p class="noindent" ><span 
 class="pplr8t-x-x-90">From now on we will not be showing these full evaluations all the time &#8211; but when you&#8217;re unsure of how or why</span>
 <span 
@@ -4256,13 +4258,13 @@ class="pplr8t-x-x-90">Write a function to detect if a list is already in sorted 
      <li 
   class="enumerate" id="x1-24010x5"><span 
 class="pplr8t-x-x-90">We  mentioned  that  the  comparison  functions  like   </span><span 
-class="fvmr8t-x-x-81">< </span><span 
+class="fvmr8t-x-x-81">&#x003C; </span><span 
 class="pplr8t-x-x-90">work  for  many  OCaml  types.  Can  you</span>
      <span 
 class="pplr8t-x-x-90">determine, by experimentation, how they work for lists? For example, what is the result of </span><span 
 class="fvmr8t-x-x-81">[1; 2]</span>
      <span 
-class="fvmr8t-x-x-81">< [2; 3]</span><span 
+class="fvmr8t-x-x-81">&#x003C; [2; 3]</span><span 
 class="pplr8t-x-x-90">? What happens when we sort the following list of type </span><span 
 class="pplb8t-x-x-90">char list list</span><span 
 class="pplr8t-x-x-90">? Why?</span>
@@ -4383,7 +4385,7 @@ class="fvmr8t-x-x-72">+ - * / mod </span><span
 class="pplr8t-x-x-80">which take two integers and give another.</span>
 <span 
 class="pplr8t-x-x-80">Operators </span><span 
-class="fvmr8t-x-x-72">=<<=>>=<> </span><span 
+class="fvmr8t-x-x-72">=&#x003C;&#x003C;=&#x003E;&#x003E;=&#x003C;&#x003E; </span><span 
 class="pplr8t-x-x-80">which compare two values and evaluate to either </span><span 
 class="fvmr8t-x-x-72">true </span><span 
 class="pplr8t-x-x-80">or </span><span 
@@ -4407,7 +4409,7 @@ class="pplri8t-x-x-80">expression3 </span><span
 class="pplr8t-x-x-80">have</span>
 <span 
 class="pplr8t-x-x-80">the same type as one another. The boolean operators </span><span 
-class="fvmr8t-x-x-72">&& </span><span 
+class="fvmr8t-x-x-72">&amp;&amp; </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">|| </span><span 
 class="pplr8t-x-x-80">which allow us to build compound boolean</span>
@@ -4487,14 +4489,14 @@ class="pplri8t-x-x-80">pattern1 </span><span
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression2 </span><span 
 class="fvmr8t-x-x-72">| </span><span 
 class="pplri8t-x-x-80">pattern2 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression3 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
@@ -4538,10 +4540,10 @@ class="pplr8t-x-x-80">Matching two or more things at once, using commas to separ
 class="fvmb8t-x-x-72">match</span><span 
 class="fvmr8t-x-x-72">a, b</span><span 
 class="fvmb8t-x-x-72">with</span><span 
-class="fvmr8t-x-x-72">0, 0 -> </span><span 
+class="fvmr8t-x-x-72">0, 0 -&#x003E; </span><span 
 class="pplri8t-x-x-80">expression1 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
-class="fvmr8t-x-x-72">&#x00A0;x, y -></span>
+class="fvmr8t-x-x-72">&#x00A0;x, y -&#x003E;</span>
 <span 
 class="pplri8t-x-x-80">expression2 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
@@ -4605,17 +4607,17 @@ class="pplr8t-x-x-90">list:</span>
 src="pandocfiguresmlbook63x.png" alt=""  class="fbox" >
 <!--l. 1739--><p class="noindent" ><span 
 class="pplr8t-x-x-90">For example, </span><div class="eqnarray">
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
-src="pandocfiguresmlbook64x.png" alt="      double [1; 2; 4]
-=&#x21D2;    2-::-double [2;-4]
+src="pandocfiguresmlbook64x.png" alt="      double-[1; 2;-4]
+=&#x21D2;    2 :: double [2; 4]
            -------------
 =&#x21D2;    2 :: 4 :: double-[4]-
 =&#x21D2;    2 :: 4 :: 8 :: double-[]
 =&#x21D2;    2-::-4-::-8 ::-[]
 =*&#x21D2;    [2; 4; 8]
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 1747--><p class="indent" >   </div>
 <!--l. 1749--><p class="noindent" ><span 
 class="pplr8t-x-x-90">The result list does not need to have the same type as the argument list. We can write a function which, given a</span>
 <span 
@@ -4632,7 +4634,7 @@ src="pandocfiguresmlbook65x.png" alt=""  class="fbox" >
 class="pplr8t-x-x-90">For example, </span><div class="eqnarray">
                                                                                
                                                                                
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook66x.png" alt="       evens-[1; 2;-4]
 = &#x21D2;    false :: evens-[2;-4]
@@ -4641,8 +4643,8 @@ src="pandocfiguresmlbook66x.png" alt="       evens-[1; 2;-4]
 = &#x21D2;    false :: true :: true :: []
   *    --------------------------
 = &#x21D2;    [false; true; true]
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 1772--><p class="indent" >   </div>
 <!--l. 1774--><p class="noindent" ><span 
 class="pplr8t-x-x-90">It would be tedious to write a similar function each time we wanted to apply a different operation to every</span>
 <span 
@@ -4664,7 +4666,7 @@ class="pplr8t-x-x-90">:</span>
 src="pandocfiguresmlbook68x.png" alt=""  class="fbox" >
 <!--l. 1801--><p class="noindent" ><span 
 class="pplr8t-x-x-90">We can use map like this: </span><div class="eqnarray">
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook69x.png" alt="       map halve [10; 20; 30]
 =&#x21D2;     5-::-map-halve-[20;-30]
@@ -4673,26 +4675,27 @@ src="pandocfiguresmlbook69x.png" alt="       map halve [10; 20; 30]
 =&#x21D2;     5 :: 10 :: 15 :: map halve-[]
 =&#x21D2;     5-::-10 ::-15-::-[]
 =*&#x21D2;     [5; 10; 15]
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 1809--><p class="indent" >   </div>
 <!--l. 1811--><p class="noindent" ><span 
 class="pplr8t-x-x-90">Now, let us look at that type: (</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2;</span><span 
 class="pplr8t-x-x-90">) </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">list </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2; </span><span 
 class="pplb8t-x-x-90">list</span><span 
 class="pplr8t-x-x-90">. We can annotate the individual parts:</span>
 <!--l. 1814--><p class="indent" >
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook70x.png" alt="fu&#x25DC;nc&#x25DE;tio&#x25DF;nf&#x25DD;   arg&#x25DC;ume&#x25DE;n&#x25DF;t &#x25DD;list  res&#x25DC;ul&#x25DE;t&#x25DF;lis&#x25DD;t
-(&#x03B1; &#x2192; &#x03B2;) &#x2192; &#x03B1; list  &#x2192;  &#x03B2; list  " class="math-display" ></center>
+(&#x03B1; &#x2192; &#x03B2;) &#x2192; &#x03B1; list  &#x2192;  &#x03B2; list
+" class="math-display" ></div>
 <!--l. 1817--><p class="noindent" ><span 
 class="pplr8t-x-x-90">We have to put the function </span><span 
 class="fvmr8t-x-x-81">f </span><span 
@@ -4702,7 +4705,7 @@ class="pplr8t-x-x-90">had four arguments. It can have</span>
 <span 
 class="pplr8t-x-x-90">any type </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2;</span><span 
 class="pplr8t-x-x-90">. That is to say, it can have any argument and result types, and they do not have to be the same as</span>
 <span 
@@ -4764,7 +4767,7 @@ class="pplri8t-x-x-90">anonymous function</span><span
 class="pplr8t-x-x-90">. It is defined using </span><span 
 class="fvmb8t-x-x-81">fun</span><span 
 class="pplr8t-x-x-90">, a named argument, the </span><span 
-class="fvmr8t-x-x-81">-> </span><span 
+class="fvmr8t-x-x-81">-&#x003E; </span><span 
 class="pplr8t-x-x-90">arrow and the function</span>
 <span 
 class="pplr8t-x-x-90">definition (body) itself. For example, we can write our halving function like this:</span>
@@ -4772,15 +4775,15 @@ class="pplr8t-x-x-90">definition (body) itself. For example, we can write our ha
  id="dx1-27007"></a>
 <!--l. 1851--><p class="indent" >   <span 
 class="fvmb8t-x-x-81">fun </span><span 
-class="fvmr8t-x-x-81">x -> x / 2</span>
+class="fvmr8t-x-x-81">x -&#x003E; x / 2</span>
 <!--l. 1854--><p class="noindent" ><span 
 class="pplr8t-x-x-90">and, thus, write: </span><div class="eqnarray">
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
-src="pandocfiguresmlbook73x.png" alt="       map-(fun x-->-x-/-2)-[10;-20;-30]
+src="pandocfiguresmlbook73x.png" alt="       map-(fun x--&#x003E;-x-/-2)-[10;-20;-30]
 = *&#x21D2;    [5; 10; 15]
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 1858--><p class="indent" >   </div>
 <!--l. 1860--><p class="noindent" ><span 
 class="pplr8t-x-x-90">We use anonymous functions when a function is only used in one place and is relatively short, to avoid defining</span>
 <span 
@@ -4796,9 +4799,9 @@ class="pplr8t-x-x-90">function which uses any comparison function we give it. A<
 <span 
 class="pplr8t-x-x-90">comparison function would have type </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">bool</span><span 
 class="pplr8t-x-x-90">. That is, it takes two elements of the same type, and</span>
 <span 
@@ -4845,18 +4848,18 @@ src="pandocfiguresmlbook75x.png" alt=""  class="fbox" >
 class="pplr8t-x-x-90">we can use it with our new version of the </span><span 
 class="fvmr8t-x-x-81">msort </span><span 
 class="pplr8t-x-x-90">function: </span><div class="eqnarray">
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook76x.png" alt="       msort-greater-[5;-4; 6;-2;-1]
  *
 =&#x21D2;     [6; 5; 4; 2; 1]
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 1911--><p class="indent" >   </div>
 <!--l. 1913--><p class="noindent" ><span 
 class="pplr8t-x-x-90">In fact, we can ask OCaml to make such a</span><a 
  id="dx1-27011"></a> <span 
 class="pplr8t-x-x-90">function from an operator such as </span><span 
-class="fvmr8t-x-x-81"><= </span><span 
+class="fvmr8t-x-x-81">&#x003C;= </span><span 
 class="pplr8t-x-x-90">or </span><span 
 class="fvmr8t-x-x-81">+ </span><span 
 class="pplr8t-x-x-90">just by enclosing it in</span>
@@ -4875,7 +4878,7 @@ class="newline" /><br
 class="newline" /><span class="obeylines-h"><span class="verb"><span 
 class="fvmr8t-x-x-81">#</span><span 
 class="fvmr8t-x-x-81">&#x00A0;(</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<=</span><span 
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;=</span><span 
 class="fvmr8t-x-x-81">&#x00A0;)</span></span></span><br 
 class="newline" /><span class="obeylines-h"><span class="verb"><span 
 class="fvmr8t-x-x-81">-</span><span 
@@ -4883,18 +4886,18 @@ class="fvmr8t-x-x-81">&#x00A0;:</span><span
 class="fvmr8t-x-x-81">&#x00A0;</span><span 
 class="fvmr8c-x-x-81">'</span><span 
 class="fvmr8t-x-x-81">a</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;</span><span 
 class="fvmr8c-x-x-81">'</span><span 
 class="fvmr8t-x-x-81">a</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;bool</span><span 
 class="fvmr8t-x-x-81">&#x00A0;=</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<fun></span></span></span><br 
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;fun&#x003E;</span></span></span><br 
 class="newline" /><span class="obeylines-h"><span class="verb"><span 
 class="fvmr8t-x-x-81">#</span><span 
 class="fvmr8t-x-x-81">&#x00A0;(</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<=</span><span 
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;=</span><span 
 class="fvmr8t-x-x-81">&#x00A0;)</span><span 
 class="fvmr8t-x-x-81">&#x00A0;4</span><span 
 class="fvmr8t-x-x-81">&#x00A0;5</span></span></span><br 
@@ -4906,23 +4909,23 @@ class="fvmr8t-x-x-81">&#x00A0;=</span><span
 class="fvmr8t-x-x-81">&#x00A0;true</span></span></span>
 <!--l. 1924--><p class="noindent" ><span 
 class="pplr8t-x-x-90">So, for example: </span><div class="eqnarray">
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
-src="pandocfiguresmlbook77x.png" alt="      msort-(-<-=-) [5;-4;-6;-2;-1]
+src="pandocfiguresmlbook77x.png" alt="      msort-(-&#x003C;=-) [5;-4;-6;-2;-1]
  *
 =&#x21D2;    [1; 2; 4; 5; 6]
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 1928--><p class="indent" >   </div>
 <!--l. 1930--><p class="noindent" ><span 
 class="pplr8t-x-x-90">and </span><div class="eqnarray">
                                                                                
                                                                                
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
-src="pandocfiguresmlbook78x.png" alt="      msort-(->-=-) [5;-4;-6;-2;-1]
+src="pandocfiguresmlbook78x.png" alt="      msort-(-&#x003E;=-) [5;-4;-6;-2;-1]
 =*&#x21D2;    [6; 5; 4; 2; 1]
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 1934--><p class="indent" >   </div>
 <!--l. 1936--><p class="noindent" ><span 
 class="pplr8t-x-x-90">The techniques we have seen in this chapter are forms of </span><span 
 class="pplri8t-x-x-90">program reuse</span><span 
@@ -5092,7 +5095,7 @@ class="pplr8t-x-x-90">Write a function </span><span
 class="fvmr8t-x-x-81">filter </span><span 
 class="pplr8t-x-x-90">which takes a function of type </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">bool </span><span 
 class="pplr8t-x-x-90">and an </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
@@ -5109,7 +5112,7 @@ class="pplr8t-x-x-90">Write the function </span><span
 class="fvmr8t-x-x-81">for_all </span><span 
 class="pplr8t-x-x-90">which, given a function of type </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">bool </span><span 
 class="pplr8t-x-x-90">and an argument list of type</span>
      <span 
@@ -5129,7 +5132,7 @@ class="pplr8t-x-x-90">Write a function </span><span
 class="fvmr8t-x-x-81">mapl </span><span 
 class="pplr8t-x-x-90">which maps a function of type </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2; </span><span 
 class="pplr8t-x-x-90">over a list of type </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
@@ -5204,7 +5207,7 @@ class="fvmr8t-x-x-72">+ - * / mod </span><span
 class="pplr8t-x-x-80">which take two integers and give another.</span>
 <span 
 class="pplr8t-x-x-80">Operators </span><span 
-class="fvmr8t-x-x-72">=<<=>>=<> </span><span 
+class="fvmr8t-x-x-72">=&#x003C;&#x003C;=&#x003E;&#x003E;=&#x003C;&#x003E; </span><span 
 class="pplr8t-x-x-80">which compare two values and evaluate to either </span><span 
 class="fvmr8t-x-x-72">true </span><span 
 class="pplr8t-x-x-80">or </span><span 
@@ -5228,7 +5231,7 @@ class="pplri8t-x-x-80">expression3 </span><span
 class="pplr8t-x-x-80">have</span>
 <span 
 class="pplr8t-x-x-80">the same type as one another. The boolean operators </span><span 
-class="fvmr8t-x-x-72">&& </span><span 
+class="fvmr8t-x-x-72">&amp;&amp; </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">|| </span><span 
 class="pplr8t-x-x-80">which allow us to build compound boolean</span>
@@ -5308,14 +5311,14 @@ class="pplri8t-x-x-80">pattern1 </span><span
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression2 </span><span 
 class="fvmr8t-x-x-72">| </span><span 
 class="pplri8t-x-x-80">pattern2 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression3 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
@@ -5359,10 +5362,10 @@ class="pplr8t-x-x-80">Matching two or more things at once, using commas to separ
 class="fvmb8t-x-x-72">match</span><span 
 class="fvmr8t-x-x-72">a, b</span><span 
 class="fvmb8t-x-x-72">with</span><span 
-class="fvmr8t-x-x-72">0, 0 -> </span><span 
+class="fvmr8t-x-x-72">0, 0 -&#x003E; </span><span 
 class="pplri8t-x-x-80">expression1 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
-class="fvmr8t-x-x-72">&#x00A0;x, y -></span>
+class="fvmr8t-x-x-72">&#x00A0;x, y -&#x003E;</span>
 <span 
 class="pplri8t-x-x-80">expression2 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
@@ -5373,10 +5376,10 @@ class="pplr8t-x-x-80">6</span>
 class="pplr8t-x-x-80">Anonymous functions </span><span 
 class="fvmb8t-x-x-72">fun </span><span 
 class="pplri8t-x-x-80">name </span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression</span><span 
 class="pplr8t-x-x-80">. Making operators into functions as in </span><span 
-class="fvmr8t-x-x-72">( < ) </span><span 
+class="fvmr8t-x-x-72">( &#x003C; ) </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">( + )</span><span 
 class="pplr8t-x-x-80">.</span>
@@ -5584,7 +5587,7 @@ class="fvmr8t-x-x-81">&#x00A0;x</span><span
 class="fvmr8t-x-x-81">&#x00A0;=</span><span 
 class="fvmr8t-x-x-81">&#x00A0;if</span><span 
 class="fvmr8t-x-x-81">&#x00A0;x</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<</span><span 
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;0</span><span 
 class="fvmr8t-x-x-81">&#x00A0;then</span><span 
 class="fvmr8t-x-x-81">&#x00A0;raise</span><span 
@@ -5598,10 +5601,10 @@ class="fvmr8t-x-x-81">val</span><span
 class="fvmr8t-x-x-81">&#x00A0;f</span><span 
 class="fvmr8t-x-x-81">&#x00A0;:</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
 class="fvmr8t-x-x-81">&#x00A0;=</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<fun></span></span></span><br 
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;fun&#x003E;</span></span></span><br 
 class="newline" /><span class="obeylines-h"><span class="verb"><span 
 class="fvmr8t-x-x-81">#</span><span 
 class="fvmr8t-x-x-81">&#x00A0;f</span><span 
@@ -5674,11 +5677,12 @@ class="pplr8t-x-x-90">.</span>
 <!--l. 2078--><p class="indent" >
                                                                                
                                                                                
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook81x.png" alt="    &#x25DC;i &#x25DE;n&#x25DF;t&#x25DD;                        &#x25DC;in&#x25DE;t&#x25DF;&#x25DD;
-try x / y with Division_by_zero ->   0
-&#x25DF;----------------&#x25DD;i&#x25DC;nt---------------&#x25DE;   " class="math-display" ></center>
+try x / y with Division_by_zero -&#x003E;  0
+&#x25DF;----------------&#x25DD;i&#x25DC;nt---------------&#x25DE;
+" class="math-display" ></div>
 <!--l. 2081--><p class="noindent" ><span 
 class="pplr8t-x-x-90">Here is another example. The function </span><span 
 class="fvmr8t-x-x-81">last </span><span 
@@ -5818,7 +5822,7 @@ class="fvmr8t-x-x-72">+ - * / mod </span><span
 class="pplr8t-x-x-80">which take two integers and give another.</span>
 <span 
 class="pplr8t-x-x-80">Operators </span><span 
-class="fvmr8t-x-x-72">=<<=>>=<> </span><span 
+class="fvmr8t-x-x-72">=&#x003C;&#x003C;=&#x003E;&#x003E;=&#x003C;&#x003E; </span><span 
 class="pplr8t-x-x-80">which compare two values and evaluate to either </span><span 
 class="fvmr8t-x-x-72">true </span><span 
 class="pplr8t-x-x-80">or </span><span 
@@ -5842,7 +5846,7 @@ class="pplri8t-x-x-80">expression3 </span><span
 class="pplr8t-x-x-80">have</span>
 <span 
 class="pplr8t-x-x-80">the same type as one another. The boolean operators </span><span 
-class="fvmr8t-x-x-72">&& </span><span 
+class="fvmr8t-x-x-72">&amp;&amp; </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">|| </span><span 
 class="pplr8t-x-x-80">which allow us to build compound boolean</span>
@@ -5922,14 +5926,14 @@ class="pplri8t-x-x-80">pattern1 </span><span
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression2 </span><span 
 class="fvmr8t-x-x-72">| </span><span 
 class="pplri8t-x-x-80">pattern2 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression3 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
@@ -5973,10 +5977,10 @@ class="pplr8t-x-x-80">Matching two or more things at once, using commas to separ
 class="fvmb8t-x-x-72">match</span><span 
 class="fvmr8t-x-x-72">a, b</span><span 
 class="fvmb8t-x-x-72">with</span><span 
-class="fvmr8t-x-x-72">0, 0 -> </span><span 
+class="fvmr8t-x-x-72">0, 0 -&#x003E; </span><span 
 class="pplri8t-x-x-80">expression1 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
-class="fvmr8t-x-x-72">&#x00A0;x, y -></span>
+class="fvmr8t-x-x-72">&#x00A0;x, y -&#x003E;</span>
 <span 
 class="pplri8t-x-x-80">expression2 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
@@ -5987,10 +5991,10 @@ class="pplr8t-x-x-80">6</span>
 class="pplr8t-x-x-80">Anonymous functions </span><span 
 class="fvmb8t-x-x-72">fun </span><span 
 class="pplri8t-x-x-80">name </span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression</span><span 
 class="pplr8t-x-x-80">. Making operators into functions as in </span><span 
-class="fvmr8t-x-x-72">( < ) </span><span 
+class="fvmr8t-x-x-72">( &#x003C; ) </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">( + )</span><span 
 class="pplr8t-x-x-80">.</span>
@@ -6072,7 +6076,7 @@ src="pandocfiguresmlbook85x.png" alt=""  class="fbox" >
 class="pplr8t-x-x-90">It has the type</span> <a 
  id="dx1-33006"></a><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x00D7; </span><span 
+class="zptmcm7y-x-x-90">&#x00D7;</span><span 
 class="pplb8t-x-x-90">int</span><span 
 class="pplr8t-x-x-90">, which we pronounce as &#8220;int cross int&#8221;. When printed on the screen, </span><span 
 class="fvmr8t-x-x-81">* </span><span 
@@ -6104,7 +6108,7 @@ src="pandocfiguresmlbook89x.png" alt=""  class="fbox" >
 <!--l. 2244--><p class="noindent" ><span 
 class="pplr8t-x-x-90">Notice the parentheses around </span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x00D7; </span><span 
+class="zptmcm7y-x-x-90">&#x00D7;</span><span 
 class="pplb8t-x-x-90">int </span><span 
 class="pplr8t-x-x-90">in the type. Otherwise, it would be the type of a pair of an integer and an</span>
 <span 
@@ -6189,9 +6193,9 @@ class="fvmr8c-x-x-81">'</span><span
 class="fvmr8t-x-x-81">) </span><span 
 class="pplr8t-x-x-90">has type </span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x00D7; </span><span 
+class="zptmcm7y-x-x-90">&#x00D7;</span><span 
 class="pplb8t-x-x-90">bool </span><span 
-class="zptmcm7y-x-x-90">&#x00D7; </span><span 
+class="zptmcm7y-x-x-90">&#x00D7;</span><span 
 class="pplb8t-x-x-90">char</span><span 
 class="pplr8t-x-x-90">.</span>
                                                                                
@@ -6306,7 +6310,7 @@ class="fvmr8t-x-x-72">+ - * / mod </span><span
 class="pplr8t-x-x-80">which take two integers and give another.</span>
 <span 
 class="pplr8t-x-x-80">Operators </span><span 
-class="fvmr8t-x-x-72">=<<=>>=<> </span><span 
+class="fvmr8t-x-x-72">=&#x003C;&#x003C;=&#x003E;&#x003E;=&#x003C;&#x003E; </span><span 
 class="pplr8t-x-x-80">which compare two values and evaluate to either </span><span 
 class="fvmr8t-x-x-72">true </span><span 
 class="pplr8t-x-x-80">or </span><span 
@@ -6330,7 +6334,7 @@ class="pplri8t-x-x-80">expression3 </span><span
 class="pplr8t-x-x-80">have</span>
 <span 
 class="pplr8t-x-x-80">the same type as one another. The boolean operators </span><span 
-class="fvmr8t-x-x-72">&& </span><span 
+class="fvmr8t-x-x-72">&amp;&amp; </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">|| </span><span 
 class="pplr8t-x-x-80">which allow us to build compound boolean</span>
@@ -6410,14 +6414,14 @@ class="pplri8t-x-x-80">pattern1 </span><span
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression2 </span><span 
 class="fvmr8t-x-x-72">| </span><span 
 class="pplri8t-x-x-80">pattern2 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression3 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
@@ -6461,10 +6465,10 @@ class="pplr8t-x-x-80">Matching two or more things at once, using commas to separ
 class="fvmb8t-x-x-72">match</span><span 
 class="fvmr8t-x-x-72">a, b</span><span 
 class="fvmb8t-x-x-72">with</span><span 
-class="fvmr8t-x-x-72">0, 0 -> </span><span 
+class="fvmr8t-x-x-72">0, 0 -&#x003E; </span><span 
 class="pplri8t-x-x-80">expression1 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
-class="fvmr8t-x-x-72">&#x00A0;x, y -></span>
+class="fvmr8t-x-x-72">&#x00A0;x, y -&#x003E;</span>
 <span 
 class="pplri8t-x-x-80">expression2 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
@@ -6475,10 +6479,10 @@ class="pplr8t-x-x-80">6</span>
 class="pplr8t-x-x-80">Anonymous functions </span><span 
 class="fvmb8t-x-x-72">fun </span><span 
 class="pplri8t-x-x-80">name </span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression</span><span 
 class="pplr8t-x-x-80">. Making operators into functions as in </span><span 
-class="fvmr8t-x-x-72">( < ) </span><span 
+class="fvmr8t-x-x-72">( &#x003C; ) </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">( + )</span><span 
 class="pplr8t-x-x-80">.</span>
@@ -6542,16 +6546,16 @@ class="pplr8t-x-x-90">We have been considering functions like this as taking two
 <span 
 class="pplr8t-x-x-90">little different. The type </span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">int </span><span 
 class="pplr8t-x-x-90">can also be written as </span><span 
 class="pplb8t-x-x-90">int </span><span 
 class="zptmcm7y-x-x-90">&#x2192; </span><span 
 class="pplr8t-x-x-90">(</span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">int</span><span 
 class="pplr8t-x-x-90">). OCaml lets us omit</span>
 <span 
@@ -6560,13 +6564,13 @@ class="zptmcm7y-x-x-90">&#x2192; </span><span
 class="pplr8t-x-x-90">is a right-associative operator in the language of types. This gives us a</span>
 <span 
 class="pplr8t-x-x-90">clue.</span>
-     <div class="quote">
+     <blockquote class="quote">
      <!--l. 2402--><p class="noindent" ><span 
 class="pplri8t-x-x-90">In truth, the function </span><span 
 class="fvmro8t-x-x-81">add </span><span 
 class="pplri8t-x-x-90">is a function which, when you give it an integer, gives you a function</span>
      <span 
-class="pplri8t-x-x-90">which, when you give it an integer, gives the sum.</span></div>
+class="pplri8t-x-x-90">which, when you give it an integer, gives the sum.</span></blockquote>
 <!--l. 2405--><p class="noindent" ><span 
 class="pplr8t-x-x-90">This would be of no particular interest to us, except for one thing: we can give a function with two arguments</span>
 <span 
@@ -6593,7 +6597,7 @@ class="fvmr8t-x-x-81">&#x00A0;+</span><span
 class="fvmr8t-x-x-81">&#x00A0;y</span></span></span><br 
 class="newline" /><span 
 class="fvmr8t-x-x-81">val add :</span><span 
-class="fvmr8t-x-x-81">&#x00A0;int -> int -> int = <fun></span><br 
+class="fvmr8t-x-x-81">&#x00A0;int -&#x003E; int -&#x003E; int = &#x003C;fun&#x003E;</span><br 
 class="newline" /><span class="obeylines-h"><span class="verb"><span 
 class="fvmr8t-x-x-81">#</span><span 
 class="fvmr8t-x-x-81">&#x00A0;let</span><span 
@@ -6606,10 +6610,10 @@ class="fvmr8t-x-x-81">val</span><span
 class="fvmr8t-x-x-81">&#x00A0;f</span><span 
 class="fvmr8t-x-x-81">&#x00A0;:</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
 class="fvmr8t-x-x-81">&#x00A0;=</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<fun></span></span></span><br 
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;fun&#x003E;</span></span></span><br 
 class="newline" /><span class="obeylines-h"><span class="verb"><span 
 class="fvmr8t-x-x-81">#</span><span 
 class="fvmr8t-x-x-81">&#x00A0;f</span><span 
@@ -6627,7 +6631,7 @@ class="pplr8t-x-x-90">by applying just one argument to </span><span
 class="fvmr8t-x-x-81">add</span><span 
 class="pplr8t-x-x-90">. This gives a function of type </span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">int</span>
 <span 
 class="pplr8t-x-x-90">which adds six to any number. We then apply </span><span 
@@ -6657,7 +6661,7 @@ class="pplr8t-x-x-90">Here, </span><span
 class="fvmr8t-x-x-81">add 6 </span><span 
 class="pplr8t-x-x-90">has the type </span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">int</span><span 
 class="pplr8t-x-x-90">, which is an appropriate type to be the first argument to </span><span 
 class="fvmr8t-x-x-81">map </span><span 
@@ -6671,9 +6675,9 @@ class="pplr8t-x-x-90">to produce a function</span>
 <span 
 class="pplr8t-x-x-90">from an operator. It has type </span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">int</span><span 
 class="pplr8t-x-x-90">. We may partially apply this function, so instead of</span>
 <span 
@@ -6681,7 +6685,7 @@ class="pplr8t-x-x-90">writing</span>
 <!--l. 2427--><p class="indent" >   <span 
 class="fvmr8t-x-x-81">map (</span><span 
 class="fvmb8t-x-x-81">fun </span><span 
-class="fvmr8t-x-x-81">x -> x * 2) [10; 20; 30]</span>
+class="fvmr8t-x-x-81">x -&#x003E; x * 2) [10; 20; 30]</span>
 <!--l. 2430--><p class="noindent" ><span 
 class="pplr8t-x-x-90">we may write</span>
 <!--l. 2433--><p class="indent" >   <span 
@@ -6705,7 +6709,7 @@ class="fvmr8t-x-x-81">map f </span><span
 class="pplr8t-x-x-90">is of type </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">list </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2; </span><span 
 class="pplb8t-x-x-90">list</span><span 
 class="pplr8t-x-x-90">, which is exactly</span>
@@ -6723,7 +6727,7 @@ class="fvmr8t-x-x-81">map (map f) </span><span
 class="pplr8t-x-x-90">has type </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">list list </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2; </span><span 
 class="pplb8t-x-x-90">list list </span><span 
 class="pplr8t-x-x-90">so when an </span><span 
@@ -6768,16 +6772,16 @@ class="pplr8t-x-x-90">The function </span><span
 class="fvmr8t-x-x-81">f x y </span><span 
 class="pplr8t-x-x-90">has type </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B3; </span><span 
 class="pplr8t-x-x-90">which can also be written </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="zptmcm7y-x-x-90">&#x2192; </span><span 
 class="pplr8t-x-x-90">(</span><span 
 class="zptmcm7m-x-x-90">&#x03B2; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B3;</span><span 
 class="pplr8t-x-x-90">). Thus, it takes an argument of</span>
 <span 
@@ -6785,7 +6789,7 @@ class="pplr8t-x-x-90">type </span><span
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplr8t-x-x-90">and returns a function of type </span><span 
 class="zptmcm7m-x-x-90">&#x03B2; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B3; </span><span 
 class="pplr8t-x-x-90">which, when you give it an argument of type </span><span 
 class="zptmcm7m-x-x-90">&#x03B2; </span><span 
@@ -6805,9 +6809,9 @@ class="pplr8t-x-x-90">this is just shorthand for </span><span
 class="fvmb8t-x-x-81">let </span><span 
 class="fvmr8t-x-x-81">f = </span><span 
 class="fvmb8t-x-x-81">fun </span><span 
-class="fvmr8t-x-x-81">x -> </span><span 
+class="fvmr8t-x-x-81">x -&#x003E; </span><span 
 class="fvmb8t-x-x-81">fun </span><span 
-class="fvmr8t-x-x-81">y -></span>
+class="fvmr8t-x-x-81">y -&#x003E;</span>
 <span 
 class="fvmr8t-x-x-81">&#x2026;</span>
                                                                                
@@ -6949,7 +6953,7 @@ class="fvmr8t-x-x-72">+ - * / mod </span><span
 class="pplr8t-x-x-80">which take two integers and give another.</span>
 <span 
 class="pplr8t-x-x-80">Operators </span><span 
-class="fvmr8t-x-x-72">=<<=>>=<> </span><span 
+class="fvmr8t-x-x-72">=&#x003C;&#x003C;=&#x003E;&#x003E;=&#x003C;&#x003E; </span><span 
 class="pplr8t-x-x-80">which compare two values and evaluate to either </span><span 
 class="fvmr8t-x-x-72">true </span><span 
 class="pplr8t-x-x-80">or </span><span 
@@ -6973,7 +6977,7 @@ class="pplri8t-x-x-80">expression3 </span><span
 class="pplr8t-x-x-80">have</span>
 <span 
 class="pplr8t-x-x-80">the same type as one another. The boolean operators </span><span 
-class="fvmr8t-x-x-72">&& </span><span 
+class="fvmr8t-x-x-72">&amp;&amp; </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">|| </span><span 
 class="pplr8t-x-x-80">which allow us to build compound boolean</span>
@@ -7053,14 +7057,14 @@ class="pplri8t-x-x-80">pattern1 </span><span
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression2 </span><span 
 class="fvmr8t-x-x-72">| </span><span 
 class="pplri8t-x-x-80">pattern2 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression3 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
@@ -7104,10 +7108,10 @@ class="pplr8t-x-x-80">Matching two or more things at once, using commas to separ
 class="fvmb8t-x-x-72">match</span><span 
 class="fvmr8t-x-x-72">a, b</span><span 
 class="fvmb8t-x-x-72">with</span><span 
-class="fvmr8t-x-x-72">0, 0 -> </span><span 
+class="fvmr8t-x-x-72">0, 0 -&#x003E; </span><span 
 class="pplri8t-x-x-80">expression1 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
-class="fvmr8t-x-x-72">&#x00A0;x, y -></span>
+class="fvmr8t-x-x-72">&#x00A0;x, y -&#x003E;</span>
 <span 
 class="pplri8t-x-x-80">expression2 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
@@ -7118,10 +7122,10 @@ class="pplr8t-x-x-80">6</span>
 class="pplr8t-x-x-80">Anonymous functions </span><span 
 class="fvmb8t-x-x-72">fun </span><span 
 class="pplri8t-x-x-80">name </span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression</span><span 
 class="pplr8t-x-x-80">. Making operators into functions as in </span><span 
-class="fvmr8t-x-x-72">( < ) </span><span 
+class="fvmr8t-x-x-72">( &#x003C; ) </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">( + )</span><span 
 class="pplr8t-x-x-80">.</span>
@@ -7266,9 +7270,9 @@ class="pplr8t-x-x-90">in our new constructor, to carry information along with va
 <span 
 class="pplr8t-x-x-90">something of type </span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x00D7; </span><span 
+class="zptmcm7y-x-x-90">&#x00D7;</span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x00D7; </span><span 
+class="zptmcm7y-x-x-90">&#x00D7;</span><span 
 class="pplb8t-x-x-90">int</span><span 
 class="pplr8t-x-x-90">. Notice that the list </span><span 
 class="fvmr8t-x-x-81">cols </span><span 
@@ -7527,7 +7531,7 @@ class="pplr8t-x-x-90">Design a new type rect for representing rectangles. Treat 
      <li 
   class="enumerate" id="x1-42004x2"><span 
 class="pplr8t-x-x-90">Now write a function of type rect </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">int </span><span 
 class="pplr8t-x-x-90">to calculate the area of a given rect.</span>
      </li>
@@ -7631,7 +7635,7 @@ class="fvmr8t-x-x-72">+ - * / mod </span><span
 class="pplr8t-x-x-80">which take two integers and give another.</span>
 <span 
 class="pplr8t-x-x-80">Operators </span><span 
-class="fvmr8t-x-x-72">=<<=>>=<> </span><span 
+class="fvmr8t-x-x-72">=&#x003C;&#x003C;=&#x003E;&#x003E;=&#x003C;&#x003E; </span><span 
 class="pplr8t-x-x-80">which compare two values and evaluate to either </span><span 
 class="fvmr8t-x-x-72">true </span><span 
 class="pplr8t-x-x-80">or </span><span 
@@ -7655,7 +7659,7 @@ class="pplri8t-x-x-80">expression3 </span><span
 class="pplr8t-x-x-80">have</span>
 <span 
 class="pplr8t-x-x-80">the same type as one another. The boolean operators </span><span 
-class="fvmr8t-x-x-72">&& </span><span 
+class="fvmr8t-x-x-72">&amp;&amp; </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">|| </span><span 
 class="pplr8t-x-x-80">which allow us to build compound boolean</span>
@@ -7735,14 +7739,14 @@ class="pplri8t-x-x-80">pattern1 </span><span
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression2 </span><span 
 class="fvmr8t-x-x-72">| </span><span 
 class="pplri8t-x-x-80">pattern2 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression3 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
@@ -7786,10 +7790,10 @@ class="pplr8t-x-x-80">Matching two or more things at once, using commas to separ
 class="fvmb8t-x-x-72">match</span><span 
 class="fvmr8t-x-x-72">a, b</span><span 
 class="fvmb8t-x-x-72">with</span><span 
-class="fvmr8t-x-x-72">0, 0 -> </span><span 
+class="fvmr8t-x-x-72">0, 0 -&#x003E; </span><span 
 class="pplri8t-x-x-80">expression1 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
-class="fvmr8t-x-x-72">&#x00A0;x, y -></span>
+class="fvmr8t-x-x-72">&#x00A0;x, y -&#x003E;</span>
 <span 
 class="pplri8t-x-x-80">expression2 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
@@ -7800,10 +7804,10 @@ class="pplr8t-x-x-80">6</span>
 class="pplr8t-x-x-80">Anonymous functions </span><span 
 class="fvmb8t-x-x-72">fun </span><span 
 class="pplri8t-x-x-80">name </span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression</span><span 
 class="pplr8t-x-x-80">. Making operators into functions as in </span><span 
-class="fvmr8t-x-x-72">( < ) </span><span 
+class="fvmr8t-x-x-72">( &#x003C; ) </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">( + )</span><span 
 class="pplr8t-x-x-80">.</span>
@@ -8020,7 +8024,7 @@ class="pplr8t-x-x-90">why?</span>
 <!--l. 2965--><p class="indent" >   <span 
 class="pplr8t-x-x-90">We can use our existing tree type. In the case of a dictionary, it will have type (</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x00D7; </span><span 
+class="zptmcm7y-x-x-90">&#x00D7;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2;</span><span 
 class="pplr8t-x-x-90">) tree, in other words a</span>
 <span 
@@ -8044,12 +8048,12 @@ class="pplr8t-x-x-90">too.</span>
 class="pplr8t-x-x-90">So, our tree representing a dictionary mapping integers like </span><span 
 class="fvmr8t-x-x-81">1 </span><span 
 class="pplr8t-x-x-90">to their spellings like </span><span 
-class="fvmr8t-x-x-81"> one  </span><span 
+class="fvmr8t-x-x-81">&#8220;one&#8221; </span><span 
 class="pplr8t-x-x-90">would have type</span>
 <span 
 class="pplr8t-x-x-90">(</span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x00D7; </span><span 
+class="zptmcm7y-x-x-90">&#x00D7;</span><span 
 class="pplb8t-x-x-90">string</span><span 
 class="pplr8t-x-x-90">) tree:</span>
 <!--l. 2971--><p class="indent" >   <img 
@@ -8129,10 +8133,10 @@ class="pplr8t-x-x-90">Questions</span></h3>
   class="enumerate" id="x1-46002x1"><span 
 class="pplr8t-x-x-90">Write a function of type </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplr8t-x-x-90">tree </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">bool </span><span 
 class="pplr8t-x-x-90">to determine if a given element is in a tree.</span>
      </li>
@@ -8238,7 +8242,7 @@ class="fvmr8t-x-x-72">+ - * / mod </span><span
 class="pplr8t-x-x-80">which take two integers and give another.</span>
 <span 
 class="pplr8t-x-x-80">Operators </span><span 
-class="fvmr8t-x-x-72">=<<=>>=<> </span><span 
+class="fvmr8t-x-x-72">=&#x003C;&#x003C;=&#x003E;&#x003E;=&#x003C;&#x003E; </span><span 
 class="pplr8t-x-x-80">which compare two values and evaluate to either </span><span 
 class="fvmr8t-x-x-72">true </span><span 
 class="pplr8t-x-x-80">or </span><span 
@@ -8262,7 +8266,7 @@ class="pplri8t-x-x-80">expression3 </span><span
 class="pplr8t-x-x-80">have</span>
 <span 
 class="pplr8t-x-x-80">the same type as one another. The boolean operators </span><span 
-class="fvmr8t-x-x-72">&& </span><span 
+class="fvmr8t-x-x-72">&amp;&amp; </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">|| </span><span 
 class="pplr8t-x-x-80">which allow us to build compound boolean</span>
@@ -8342,14 +8346,14 @@ class="pplri8t-x-x-80">pattern1 </span><span
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression2 </span><span 
 class="fvmr8t-x-x-72">| </span><span 
 class="pplri8t-x-x-80">pattern2 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression3 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
@@ -8393,10 +8397,10 @@ class="pplr8t-x-x-80">Matching two or more things at once, using commas to separ
 class="fvmb8t-x-x-72">match</span><span 
 class="fvmr8t-x-x-72">a, b</span><span 
 class="fvmb8t-x-x-72">with</span><span 
-class="fvmr8t-x-x-72">0, 0 -> </span><span 
+class="fvmr8t-x-x-72">0, 0 -&#x003E; </span><span 
 class="pplri8t-x-x-80">expression1 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
-class="fvmr8t-x-x-72">&#x00A0;x, y -></span>
+class="fvmr8t-x-x-72">&#x00A0;x, y -&#x003E;</span>
 <span 
 class="pplri8t-x-x-80">expression2 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
@@ -8407,10 +8411,10 @@ class="pplr8t-x-x-80">6</span>
 class="pplr8t-x-x-80">Anonymous functions </span><span 
 class="fvmb8t-x-x-72">fun </span><span 
 class="pplri8t-x-x-80">name </span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression</span><span 
 class="pplr8t-x-x-80">. Making operators into functions as in </span><span 
-class="fvmr8t-x-x-72">( < ) </span><span 
+class="fvmr8t-x-x-72">( &#x003C; ) </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">( + )</span><span 
 class="pplr8t-x-x-80">.</span>
@@ -8561,7 +8565,7 @@ class="fvmr8t-x-x-81">print_int </span><span
 class="pplr8t-x-x-90">has type </span><span 
 class="pplb8t-x-x-90">int</span>
 <span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">unit</span><span 
 class="pplr8t-x-x-90">.</span>
 <!--l. 3127--><p class="indent" >   <span 
@@ -8569,14 +8573,14 @@ class="pplr8t-x-x-90">There is another built-in function </span><span
 class="fvmr8t-x-x-81">print_string </span><span 
 class="pplr8t-x-x-90">of type </span><span 
 class="pplb8t-x-x-90">string </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">unit </span><span 
 class="pplr8t-x-x-90">to print a string, and another</span>
 <span 
 class="fvmr8t-x-x-81">print_newline </span><span 
 class="pplr8t-x-x-90">to move to the next line. This function has type </span><span 
 class="pplb8t-x-x-90">unit </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">unit </span><span 
 class="pplr8t-x-x-90">because it requires no substantive</span>
 <span 
@@ -8597,7 +8601,7 @@ class="pplr8t-x-x-90">expression to its right hand side, returning the result (w
 class="pplb8t-x-x-90">unit </span><span 
 class="pplr8t-x-x-90">too). The type of the expression </span><span 
 class="zptmcm7m-x-x-90">x </span><span 
-class="fvmr8t-x-x-81">; </span><span 
+class="fvmr8t-x-x-81">;</span><span 
 class="zptmcm7m-x-x-90">y </span><span 
 class="pplr8t-x-x-90">is</span>
 <span 
@@ -8605,7 +8609,7 @@ class="pplr8t-x-x-90">thus the type of </span><span
 class="zptmcm7m-x-x-90">y</span><span 
 class="pplr8t-x-x-90">. For example, we can write a function to write to the screen an </span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x00D7; </span><span 
+class="zptmcm7y-x-x-90">&#x00D7;</span><span 
 class="pplb8t-x-x-90">string </span><span 
 class="pplr8t-x-x-90">pair as an integer on</span>
 <span 
@@ -8745,7 +8749,7 @@ class="pplr8t-x-x-90">Reading from the keyboard</span></h4>
 <!--l. 3234--><p class="noindent" ><span 
 class="pplr8t-x-x-90">Now we should like to write a function to read a dictionary as an (</span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x00D7; </span><span 
+class="zptmcm7y-x-x-90">&#x00D7;</span><span 
 class="pplb8t-x-x-90">string</span><span 
 class="pplr8t-x-x-90">) </span><span 
 class="pplb8t-x-x-90">list</span><span 
@@ -8755,7 +8759,7 @@ class="pplr8t-x-x-90">OCaml functions. The function </span><span
 class="fvmr8t-x-x-81">read_int </span><span 
 class="pplr8t-x-x-90">of type </span><span 
 class="pplb8t-x-x-90">unit </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">int </span><span 
 class="pplr8t-x-x-90">waits for the user to type in an integer and press the</span>
 <span 
@@ -8763,7 +8767,7 @@ class="pplr8t-x-x-90">Enter key. The integer is then returned. The function </sp
 class="fvmr8t-x-x-81">read_line </span><span 
 class="pplr8t-x-x-90">of type </span><span 
 class="pplb8t-x-x-90">unit </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">string </span><span 
 class="pplr8t-x-x-90">waits for the user to type</span>
 <span 
@@ -8778,7 +8782,7 @@ class="pplb8t-x-x-90">unit </span><span
 class="zptmcm7y-x-x-90">&#x2192; </span><span 
 class="pplr8t-x-x-90">(</span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x00D7; </span><span 
+class="zptmcm7y-x-x-90">&#x00D7;</span><span 
 class="pplb8t-x-x-90">string</span><span 
 class="pplr8t-x-x-90">) </span><span 
 class="pplb8t-x-x-90">list</span><span 
@@ -8948,7 +8952,7 @@ class="pplr8t-x-x-90">. Here are functions</span>
 <span 
 class="pplr8t-x-x-90">for writing a dictionary of type (</span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x00D7; </span><span 
+class="zptmcm7y-x-x-90">&#x00D7;</span><span 
 class="pplb8t-x-x-90">string</span><span 
 class="pplr8t-x-x-90">) to a channel:</span>
 <!--l. 3331--><p class="noindent" ><img 
@@ -8982,7 +8986,7 @@ class="pplr8t-x-x-90">gives an output channel for filename given as a</span>
 <span 
 class="pplr8t-x-x-90">string. It has type </span><span 
 class="pplb8t-x-x-90">string </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">out</span><span 
 class="pplb8t-x-x-90">_</span><span 
 class="pplb8t-x-x-90">channel</span><span 
@@ -8993,7 +8997,7 @@ class="pplr8t-x-x-90">(which has type </span><span
 class="pplb8t-x-x-90">out</span><span 
 class="pplb8t-x-x-90">_</span><span 
 class="pplb8t-x-x-90">channel </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">unit</span><span 
 class="pplr8t-x-x-90">) to properly</span> <a 
  id="dx1-51003"></a><span 
@@ -9241,9 +9245,9 @@ class="pplr8t-x-x-90">Write a function </span><span
 class="fvmr8t-x-x-81">copy_file </span><span 
 class="pplr8t-x-x-90">of type </span><span 
 class="pplb8t-x-x-90">string </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">string </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">unit </span><span 
 class="pplr8t-x-x-90">which copies a file line by line. For example,</span>
      <span 
@@ -9322,7 +9326,7 @@ class="fvmr8t-x-x-72">+ - * / mod </span><span
 class="pplr8t-x-x-80">which take two integers and give another.</span>
 <span 
 class="pplr8t-x-x-80">Operators </span><span 
-class="fvmr8t-x-x-72">=<<=>>=<> </span><span 
+class="fvmr8t-x-x-72">=&#x003C;&#x003C;=&#x003E;&#x003E;=&#x003C;&#x003E; </span><span 
 class="pplr8t-x-x-80">which compare two values and evaluate to either </span><span 
 class="fvmr8t-x-x-72">true </span><span 
 class="pplr8t-x-x-80">or </span><span 
@@ -9346,7 +9350,7 @@ class="pplri8t-x-x-80">expression3 </span><span
 class="pplr8t-x-x-80">have</span>
 <span 
 class="pplr8t-x-x-80">the same type as one another. The boolean operators </span><span 
-class="fvmr8t-x-x-72">&& </span><span 
+class="fvmr8t-x-x-72">&amp;&amp; </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">|| </span><span 
 class="pplr8t-x-x-80">which allow us to build compound boolean</span>
@@ -9426,14 +9430,14 @@ class="pplri8t-x-x-80">pattern1 </span><span
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression2 </span><span 
 class="fvmr8t-x-x-72">| </span><span 
 class="pplri8t-x-x-80">pattern2 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression3 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
@@ -9477,10 +9481,10 @@ class="pplr8t-x-x-80">Matching two or more things at once, using commas to separ
 class="fvmb8t-x-x-72">match</span><span 
 class="fvmr8t-x-x-72">a, b</span><span 
 class="fvmb8t-x-x-72">with</span><span 
-class="fvmr8t-x-x-72">0, 0 -> </span><span 
+class="fvmr8t-x-x-72">0, 0 -&#x003E; </span><span 
 class="pplri8t-x-x-80">expression1 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
-class="fvmr8t-x-x-72">&#x00A0;x, y -></span>
+class="fvmr8t-x-x-72">&#x00A0;x, y -&#x003E;</span>
 <span 
 class="pplri8t-x-x-80">expression2 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
@@ -9491,10 +9495,10 @@ class="pplr8t-x-x-80">6</span>
 class="pplr8t-x-x-80">Anonymous functions </span><span 
 class="fvmb8t-x-x-72">fun </span><span 
 class="pplri8t-x-x-80">name </span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression</span><span 
 class="pplr8t-x-x-80">. Making operators into functions as in </span><span 
-class="fvmr8t-x-x-72">( < ) </span><span 
+class="fvmr8t-x-x-72">( &#x003C; ) </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">( + )</span><span 
 class="pplr8t-x-x-80">.</span>
@@ -9617,7 +9621,7 @@ class="pplr8t-x-x-90">reference using the built-in function </span><span
 class="fvmr8t-x-x-81">ref </span><span 
 class="pplr8t-x-x-90">of type </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">ref</span><span 
 class="pplr8t-x-x-90">. For example, let us build a reference with initial</span>
@@ -9668,7 +9672,7 @@ class="fvmr8t-x-x-81">!</span><span
 class="pplr8t-x-x-90">operator, which has type </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">ref </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1;</span><span 
 class="pplr8t-x-x-90">.</span>
 <a 
@@ -9709,9 +9713,9 @@ class="fvmr8t-x-x-81">:= </span><span
 class="pplr8t-x-x-90">operator has type </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">ref </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">unit</span><span 
 class="pplr8t-x-x-90">, since it takes a reference and a new value to put in it, puts the value</span>
 <span 
@@ -10090,12 +10094,12 @@ class="pplr8t-x-x-90">We have used the built-in function </span><span
 class="fvmr8t-x-x-81">String.iter </span><span 
 class="pplr8t-x-x-90">of type (</span><span 
 class="pplb8t-x-x-90">char </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">unit</span><span 
 class="pplr8t-x-x-90">) </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">string </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">unit </span><span 
 class="pplr8t-x-x-90">which calls a function we</span>
 <span 
@@ -10233,7 +10237,7 @@ class="pplr8t-x-x-90">time, like this:</span>
 <!--l. 3819--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
 class="fvmr8t-x-x-81">#</span><span 
 class="fvmr8t-x-x-81">&#x00A0;a.(4)</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<-</span><span 
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;-</span><span 
 class="fvmr8t-x-x-81">&#x00A0;100;;</span></span></span><br 
 class="newline" /><span class="obeylines-h"><span class="verb"><span 
 class="fvmr8t-x-x-81">-</span><span 
@@ -10298,10 +10302,10 @@ class="pplr8t-x-x-90">function is used for building an array of a given length, 
 <span 
 class="pplr8t-x-x-90">values. It takes two arguments &#8211; the length, and the initial value to be given to every element. It has type </span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1;</span>
 <span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">array</span><span 
 class="pplr8t-x-x-90">.</span>
@@ -11056,7 +11060,7 @@ class="fvmr8t-x-x-81">[|[1; 2; 3]; [4; 5; 6]|]</span>
      <!--l. 4015--><p class="noindent" ><span 
 class="fvmr8t-x-x-81">[|1; 2; 3|].(2)</span>
      <!--l. 4017--><p class="noindent" ><span 
-class="fvmr8t-x-x-81">[|1; 2; 3|].(2) <- 4</span>
+class="fvmr8t-x-x-81">[|1; 2; 3|].(2) &#x003C;- 4</span>
      </li>
      <li 
   class="enumerate" id="x1-59010x5"><span 
@@ -11193,7 +11197,7 @@ class="fvmr8t-x-x-72">+ - * / mod </span><span
 class="pplr8t-x-x-80">which take two integers and give another.</span>
 <span 
 class="pplr8t-x-x-80">Operators </span><span 
-class="fvmr8t-x-x-72">=<<=>>=<> </span><span 
+class="fvmr8t-x-x-72">=&#x003C;&#x003C;=&#x003E;&#x003E;=&#x003C;&#x003E; </span><span 
 class="pplr8t-x-x-80">which compare two values and evaluate to either </span><span 
 class="fvmr8t-x-x-72">true </span><span 
 class="pplr8t-x-x-80">or </span><span 
@@ -11217,7 +11221,7 @@ class="pplri8t-x-x-80">expression3 </span><span
 class="pplr8t-x-x-80">have</span>
 <span 
 class="pplr8t-x-x-80">the same type as one another. The boolean operators </span><span 
-class="fvmr8t-x-x-72">&& </span><span 
+class="fvmr8t-x-x-72">&amp;&amp; </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">|| </span><span 
 class="pplr8t-x-x-80">which allow us to build compound boolean</span>
@@ -11297,14 +11301,14 @@ class="pplri8t-x-x-80">pattern1 </span><span
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression2 </span><span 
 class="fvmr8t-x-x-72">| </span><span 
 class="pplri8t-x-x-80">pattern2 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression3 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
@@ -11348,10 +11352,10 @@ class="pplr8t-x-x-80">Matching two or more things at once, using commas to separ
 class="fvmb8t-x-x-72">match</span><span 
 class="fvmr8t-x-x-72">a, b</span><span 
 class="fvmb8t-x-x-72">with</span><span 
-class="fvmr8t-x-x-72">0, 0 -> </span><span 
+class="fvmr8t-x-x-72">0, 0 -&#x003E; </span><span 
 class="pplri8t-x-x-80">expression1 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
-class="fvmr8t-x-x-72">&#x00A0;x, y -></span>
+class="fvmr8t-x-x-72">&#x00A0;x, y -&#x003E;</span>
 <span 
 class="pplri8t-x-x-80">expression2 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
@@ -11362,10 +11366,10 @@ class="pplr8t-x-x-80">6</span>
 class="pplr8t-x-x-80">Anonymous functions </span><span 
 class="fvmb8t-x-x-72">fun </span><span 
 class="pplri8t-x-x-80">name </span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression</span><span 
 class="pplr8t-x-x-80">. Making operators into functions as in </span><span 
-class="fvmr8t-x-x-72">( < ) </span><span 
+class="fvmr8t-x-x-72">( &#x003C; ) </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">( + )</span><span 
 class="pplr8t-x-x-80">.</span>
@@ -11515,7 +11519,7 @@ class="fvmr8t-x-x-72">)</span><span
 class="pplr8t-x-x-80">. Updating with </span><span 
 class="fvmr8t-x-x-72">a.(</span><span 
 class="pplri8t-x-x-80">subscript</span><span 
-class="fvmr8t-x-x-72">) <- </span><span 
+class="fvmr8t-x-x-72">) &#x003C;- </span><span 
 class="pplri8t-x-x-80">expression</span><span 
 class="pplr8t-x-x-80">. The built-in function</span>
 <span 
@@ -11769,7 +11773,7 @@ class="pplr8t-x-x-90">Let us write some functions with floating-point numbers. W
 <span 
 class="pplr8t-x-x-90">dimensions. We will represent a point as a pair of floating-point numbers of type </span><span 
 class="pplb8t-x-x-90">float </span><span 
-class="zptmcm7y-x-x-90">&#x00D7; </span><span 
+class="zptmcm7y-x-x-90">&#x00D7;</span><span 
 class="pplb8t-x-x-90">float </span><span 
 class="pplr8t-x-x-90">such as </span><span 
 class="fvmr8t-x-x-81">(2.0,</span>
@@ -11819,7 +11823,7 @@ class="pplr8t-x-x-90">Write a function to separate a floating-point number into 
      <span 
 class="pplr8t-x-x-90">as a tuple of type </span><span 
 class="pplb8t-x-x-90">float </span><span 
-class="zptmcm7y-x-x-90">&#x00D7; </span><span 
+class="zptmcm7y-x-x-90">&#x00D7;</span><span 
 class="pplb8t-x-x-90">float</span><span 
 class="pplr8t-x-x-90">.</span>
      </li>
@@ -11829,7 +11833,7 @@ class="pplr8t-x-x-90">Write a function </span><span
 class="fvmr8t-x-x-81">star </span><span 
 class="pplr8t-x-x-90">of type </span><span 
 class="pplb8t-x-x-90">float </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">unit </span><span 
 class="pplr8t-x-x-90">which, given a floating-point number between zero and</span>
      <span 
@@ -11843,7 +11847,7 @@ class="pplr8t-x-x-90">Now write a function </span><span
 class="fvmr8t-x-x-81">plot </span><span 
 class="pplr8t-x-x-90">which, given a function of type </span><span 
 class="pplb8t-x-x-90">float </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">float</span><span 
 class="pplr8t-x-x-90">, a range, and a step size,</span>
      <span 
@@ -11857,31 +11861,31 @@ class="pplr8t-x-x-90">, we might</span>
      <span 
 class="pplr8t-x-x-90">see:</span>
      <!--l. 4207--><p class="noindent" ><div class="pic-tabular"><img 
-src="pandocfiguresmlbook144x.png" alt="       OCaml
+src="pandocfiguresmlbook144x.png" alt="&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;OCaml
 
-# plot sin 0. pi (pi /. 20.);;
+#&#x00A0;plot&#x00A0;sin&#x00A0;0.&#x00A0;pi&#x00A0;(pi&#x00A0;/.&#x00A0;20.);;
 *
-     *
-             *
-                   *
-                          *
-                               *
+&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
+&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
+&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
+&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
+&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
 
-                                    *
-                                        *
-                                          *
-                                            *
-                                            *
-                                            *
-                                          *
-                                        *
-                                    *
-                               *
+&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
+&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
+&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
+&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
+&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
+&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
+&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
+&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
+&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
+&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
 
-                          *
-                   *
-             *
-     *
+&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
+&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
+&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
+&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*
 *
      " ></div>
                                                                                
@@ -11967,7 +11971,7 @@ class="fvmr8t-x-x-72">+ - * / mod </span><span
 class="pplr8t-x-x-80">which take two integers and give another.</span>
 <span 
 class="pplr8t-x-x-80">Operators </span><span 
-class="fvmr8t-x-x-72">=<<=>>=<> </span><span 
+class="fvmr8t-x-x-72">=&#x003C;&#x003C;=&#x003E;&#x003E;=&#x003C;&#x003E; </span><span 
 class="pplr8t-x-x-80">which compare two values and evaluate to either </span><span 
 class="fvmr8t-x-x-72">true </span><span 
 class="pplr8t-x-x-80">or </span><span 
@@ -11991,7 +11995,7 @@ class="pplri8t-x-x-80">expression3 </span><span
 class="pplr8t-x-x-80">have</span>
 <span 
 class="pplr8t-x-x-80">the same type as one another. The boolean operators </span><span 
-class="fvmr8t-x-x-72">&& </span><span 
+class="fvmr8t-x-x-72">&amp;&amp; </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">|| </span><span 
 class="pplr8t-x-x-80">which allow us to build compound boolean</span>
@@ -12071,14 +12075,14 @@ class="pplri8t-x-x-80">pattern1 </span><span
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression2 </span><span 
 class="fvmr8t-x-x-72">| </span><span 
 class="pplri8t-x-x-80">pattern2 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression3 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
@@ -12122,10 +12126,10 @@ class="pplr8t-x-x-80">Matching two or more things at once, using commas to separ
 class="fvmb8t-x-x-72">match</span><span 
 class="fvmr8t-x-x-72">a, b</span><span 
 class="fvmb8t-x-x-72">with</span><span 
-class="fvmr8t-x-x-72">0, 0 -> </span><span 
+class="fvmr8t-x-x-72">0, 0 -&#x003E; </span><span 
 class="pplri8t-x-x-80">expression1 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
-class="fvmr8t-x-x-72">&#x00A0;x, y -></span>
+class="fvmr8t-x-x-72">&#x00A0;x, y -&#x003E;</span>
 <span 
 class="pplri8t-x-x-80">expression2 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
@@ -12136,10 +12140,10 @@ class="pplr8t-x-x-80">6</span>
 class="pplr8t-x-x-80">Anonymous functions </span><span 
 class="fvmb8t-x-x-72">fun </span><span 
 class="pplri8t-x-x-80">name </span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression</span><span 
 class="pplr8t-x-x-80">. Making operators into functions as in </span><span 
-class="fvmr8t-x-x-72">( < ) </span><span 
+class="fvmr8t-x-x-72">( &#x003C; ) </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">( + )</span><span 
 class="pplr8t-x-x-80">.</span>
@@ -12289,7 +12293,7 @@ class="fvmr8t-x-x-72">)</span><span
 class="pplr8t-x-x-80">. Updating with </span><span 
 class="fvmr8t-x-x-72">a.(</span><span 
 class="pplri8t-x-x-80">subscript</span><span 
-class="fvmr8t-x-x-72">) <- </span><span 
+class="fvmr8t-x-x-72">) &#x003C;- </span><span 
 class="pplri8t-x-x-80">expression</span><span 
 class="pplr8t-x-x-80">. The built-in function</span>
 <span 
@@ -12405,10 +12409,10 @@ class="fvmr8t-x-x-81">&#x00A0;</span><span
 class="fvmr8c-x-x-81">'</span><span 
 class="fvmr8t-x-x-81">a</span><span 
 class="fvmr8t-x-x-81">&#x00A0;list</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
 class="fvmr8t-x-x-81">&#x00A0;=</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<fun></span></span></span>
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;fun&#x003E;</span></span></span>
 <!--l. 4336--><p class="noindent" ><span 
 class="pplr8t-x-x-90">Here&#8217;s the documentation for </span><span 
 class="fvmr8t-x-x-81">List.length</span><span 
@@ -12582,7 +12586,7 @@ class="fvmr8t-x-x-72">+ - * / mod </span><span
 class="pplr8t-x-x-80">which take two integers and give another.</span>
 <span 
 class="pplr8t-x-x-80">Operators </span><span 
-class="fvmr8t-x-x-72">=<<=>>=<> </span><span 
+class="fvmr8t-x-x-72">=&#x003C;&#x003C;=&#x003E;&#x003E;=&#x003C;&#x003E; </span><span 
 class="pplr8t-x-x-80">which compare two values and evaluate to either </span><span 
 class="fvmr8t-x-x-72">true </span><span 
 class="pplr8t-x-x-80">or </span><span 
@@ -12606,7 +12610,7 @@ class="pplri8t-x-x-80">expression3 </span><span
 class="pplr8t-x-x-80">have</span>
 <span 
 class="pplr8t-x-x-80">the same type as one another. The boolean operators </span><span 
-class="fvmr8t-x-x-72">&& </span><span 
+class="fvmr8t-x-x-72">&amp;&amp; </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">|| </span><span 
 class="pplr8t-x-x-80">which allow us to build compound boolean</span>
@@ -12686,14 +12690,14 @@ class="pplri8t-x-x-80">pattern1 </span><span
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression2 </span><span 
 class="fvmr8t-x-x-72">| </span><span 
 class="pplri8t-x-x-80">pattern2 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression3 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
@@ -12737,10 +12741,10 @@ class="pplr8t-x-x-80">Matching two or more things at once, using commas to separ
 class="fvmb8t-x-x-72">match</span><span 
 class="fvmr8t-x-x-72">a, b</span><span 
 class="fvmb8t-x-x-72">with</span><span 
-class="fvmr8t-x-x-72">0, 0 -> </span><span 
+class="fvmr8t-x-x-72">0, 0 -&#x003E; </span><span 
 class="pplri8t-x-x-80">expression1 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
-class="fvmr8t-x-x-72">&#x00A0;x, y -></span>
+class="fvmr8t-x-x-72">&#x00A0;x, y -&#x003E;</span>
 <span 
 class="pplri8t-x-x-80">expression2 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
@@ -12751,10 +12755,10 @@ class="pplr8t-x-x-80">6</span>
 class="pplr8t-x-x-80">Anonymous functions </span><span 
 class="fvmb8t-x-x-72">fun </span><span 
 class="pplri8t-x-x-80">name </span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression</span><span 
 class="pplr8t-x-x-80">. Making operators into functions as in </span><span 
-class="fvmr8t-x-x-72">( < ) </span><span 
+class="fvmr8t-x-x-72">( &#x003C; ) </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">( + )</span><span 
 class="pplr8t-x-x-80">.</span>
@@ -12904,7 +12908,7 @@ class="fvmr8t-x-x-72">)</span><span
 class="pplr8t-x-x-80">. Updating with </span><span 
 class="fvmr8t-x-x-72">a.(</span><span 
 class="pplri8t-x-x-80">subscript</span><span 
-class="fvmr8t-x-x-72">) <- </span><span 
+class="fvmr8t-x-x-72">) &#x003C;- </span><span 
 class="pplri8t-x-x-80">expression</span><span 
 class="pplr8t-x-x-80">. The built-in function</span>
 <span 
@@ -13327,7 +13331,7 @@ class="fvmr8t-x-x-81">&#x00A0;=</span><span
 class="fvmr8t-x-x-81">&#x00A0;Textstat.stats_from_file "gregor.txt";;</span><br 
 class="newline" /><span 
 class="fvmr8t-x-x-81">val s :</span><span 
-class="fvmr8t-x-x-81">&#x00A0;Textstat.stats = <abstr>                                          </span><span 
+class="fvmr8t-x-x-81">&#x00A0;Textstat.stats = &#x003C;abstr&#x003E;                                          </span><span 
 class="pplri8t-x-x-90">the type is now</span>
 <span 
 class="pplri8t-x-x-90">abstract</span><br 
@@ -13474,7 +13478,7 @@ class="newline" />
 class="fvmr8t-x-x-81">$ ./stats</span><br 
 class="newline" /><span 
 class="fvmr8t-x-x-81">Usage:</span><span 
-class="fvmr8t-x-x-81">&#x00A0;stats <filename></span>
+class="fvmr8t-x-x-81">&#x00A0;stats &#x003C;filename&#x003E;</span>
 <!--l. 4725--><p class="noindent" ><span 
 class="pplr8t-x-x-90">This output might look different on your computer, depending on your operating system. On most computers,</span>
 <span 
@@ -13592,7 +13596,7 @@ class="fvmr8t-x-x-72">+ - * / mod </span><span
 class="pplr8t-x-x-80">which take two integers and give another.</span>
 <span 
 class="pplr8t-x-x-80">Operators </span><span 
-class="fvmr8t-x-x-72">=<<=>>=<> </span><span 
+class="fvmr8t-x-x-72">=&#x003C;&#x003C;=&#x003E;&#x003E;=&#x003C;&#x003E; </span><span 
 class="pplr8t-x-x-80">which compare two values and evaluate to either </span><span 
 class="fvmr8t-x-x-72">true </span><span 
 class="pplr8t-x-x-80">or </span><span 
@@ -13616,7 +13620,7 @@ class="pplri8t-x-x-80">expression3 </span><span
 class="pplr8t-x-x-80">have</span>
 <span 
 class="pplr8t-x-x-80">the same type as one another. The boolean operators </span><span 
-class="fvmr8t-x-x-72">&& </span><span 
+class="fvmr8t-x-x-72">&amp;&amp; </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">|| </span><span 
 class="pplr8t-x-x-80">which allow us to build compound boolean</span>
@@ -13696,14 +13700,14 @@ class="pplri8t-x-x-80">pattern1 </span><span
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression2 </span><span 
 class="fvmr8t-x-x-72">| </span><span 
 class="pplri8t-x-x-80">pattern2 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
 class="pplr8t-x-x-80">&#x00A0;</span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression3 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
 class="pplr8t-x-x-80">&#x2026;</span><span 
@@ -13747,10 +13751,10 @@ class="pplr8t-x-x-80">Matching two or more things at once, using commas to separ
 class="fvmb8t-x-x-72">match</span><span 
 class="fvmr8t-x-x-72">a, b</span><span 
 class="fvmb8t-x-x-72">with</span><span 
-class="fvmr8t-x-x-72">0, 0 -> </span><span 
+class="fvmr8t-x-x-72">0, 0 -&#x003E; </span><span 
 class="pplri8t-x-x-80">expression1 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
-class="fvmr8t-x-x-72">&#x00A0;x, y -></span>
+class="fvmr8t-x-x-72">&#x00A0;x, y -&#x003E;</span>
 <span 
 class="pplri8t-x-x-80">expression2 </span><span 
 class="fvmr8t-x-x-72">|</span><span 
@@ -13761,10 +13765,10 @@ class="pplr8t-x-x-80">6</span>
 class="pplr8t-x-x-80">Anonymous functions </span><span 
 class="fvmb8t-x-x-72">fun </span><span 
 class="pplri8t-x-x-80">name </span><span 
-class="fvmr8t-x-x-72">-> </span><span 
+class="fvmr8t-x-x-72">-&#x003E; </span><span 
 class="pplri8t-x-x-80">expression</span><span 
 class="pplr8t-x-x-80">. Making operators into functions as in </span><span 
-class="fvmr8t-x-x-72">( < ) </span><span 
+class="fvmr8t-x-x-72">( &#x003C; ) </span><span 
 class="pplr8t-x-x-80">and </span><span 
 class="fvmr8t-x-x-72">( + )</span><span 
 class="pplr8t-x-x-80">.</span>
@@ -13914,7 +13918,7 @@ class="fvmr8t-x-x-72">)</span><span
 class="pplr8t-x-x-80">. Updating with </span><span 
 class="fvmr8t-x-x-72">a.(</span><span 
 class="pplri8t-x-x-80">subscript</span><span 
-class="fvmr8t-x-x-72">) <- </span><span 
+class="fvmr8t-x-x-72">) &#x003C;- </span><span 
 class="pplri8t-x-x-80">expression</span><span 
 class="pplr8t-x-x-80">. The built-in function</span>
 <span 
@@ -14015,17 +14019,17 @@ class="fvmr8t-x-x-81">1</span><span
 class="pplr8t-x-x-90">.</span>
 <!--l. 4821--><p class="indent" >   <span 
 class="pplr8t-x-x-90">The expression </span><span 
-class="fvmr8t-x-x-81">400 > 200 </span><span 
+class="fvmr8t-x-x-81">400 &#x003E; 200 </span><span 
 class="pplr8t-x-x-90">has type </span><span 
 class="pplb8t-x-x-90">bool </span><span 
 class="pplr8t-x-x-90">because this is the type of the result of the comparison operator </span><span 
-class="fvmr8t-x-x-81">></span><span 
+class="fvmr8t-x-x-81">&#x003E;</span><span 
 class="pplr8t-x-x-90">. It</span>
 <span 
 class="pplr8t-x-x-90">evaluates to </span><span 
 class="fvmr8t-x-x-81">true</span><span 
 class="pplr8t-x-x-90">. Similarly, </span><span 
-class="fvmr8t-x-x-81">1 <> 1 </span><span 
+class="fvmr8t-x-x-81">1 &#x003C;&#x003E; 1 </span><span 
 class="pplr8t-x-x-90">has type </span><span 
 class="pplb8t-x-x-90">bool </span><span 
 class="pplr8t-x-x-90">and evaluates to </span><span 
@@ -14039,7 +14043,7 @@ class="pplb8t-x-x-90">bool </span><span
 class="pplr8t-x-x-90">and evaluates to </span><span 
 class="fvmr8t-x-x-81">true </span><span 
 class="pplr8t-x-x-90">since one of the operands is true. Similarly, </span><span 
-class="fvmr8t-x-x-81">true && false </span><span 
+class="fvmr8t-x-x-81">true &amp;&amp; false </span><span 
 class="pplr8t-x-x-90">evaluates to </span><span 
 class="fvmr8t-x-x-81">false</span>
 <span 
@@ -14132,7 +14136,7 @@ class="pplr8t-x-x-90">evaluates to a</span>
 class="pplr8t-x-x-90">number equal to </span><span 
 class="fvmr8t-x-x-81">max_int</span><span 
 class="pplr8t-x-x-90">. The number line &#8220;wraps around&#8221;. This leads to the odd situation that </span><span 
-class="fvmr8t-x-x-81">max_int + 1 <</span>
+class="fvmr8t-x-x-81">max_int + 1 &#x003C;</span>
 <span 
 class="fvmr8t-x-x-81">max_int </span><span 
 class="pplr8t-x-x-90">evaluates to </span><span 
@@ -14235,7 +14239,7 @@ class="pplr8t-x-x-90">The lowercase characters are in alphabetical order, for ex
 class="fvmr8c-x-x-81">'</span><span 
 class="fvmr8t-x-x-81">p</span><span 
 class="fvmr8c-x-x-81">' </span><span 
-class="fvmr8t-x-x-81">< </span><span 
+class="fvmr8t-x-x-81">&#x003C; </span><span 
 class="fvmr8c-x-x-81">'</span><span 
 class="fvmr8t-x-x-81">q</span><span 
 class="fvmr8c-x-x-81">' </span><span 
@@ -14249,7 +14253,7 @@ class="pplr8t-x-x-90">characters, so for example </span><span
 class="fvmr8c-x-x-81">'</span><span 
 class="fvmr8t-x-x-81">A</span><span 
 class="fvmr8c-x-x-81">' </span><span 
-class="fvmr8t-x-x-81">< </span><span 
+class="fvmr8t-x-x-81">&#x003C; </span><span 
 class="fvmr8c-x-x-81">'</span><span 
 class="fvmr8t-x-x-81">a</span><span 
 class="fvmr8c-x-x-81">' </span><span 
@@ -14276,7 +14280,7 @@ class="pplr8t-x-x-90">Just take in an integer and return the number multiplied b
 <span 
 class="pplr8t-x-x-90">type is </span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">int</span><span 
 class="pplr8t-x-x-90">.</span>
                                                                                
@@ -14305,19 +14309,19 @@ class="fvmr8t-x-x-81">val</span><span
 class="fvmr8t-x-x-81">&#x00A0;times_ten</span><span 
 class="fvmr8t-x-x-81">&#x00A0;:</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
 class="fvmr8t-x-x-81">&#x00A0;=</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<fun></span></span></span>
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;fun&#x003E;</span></span></span>
 <!--l. 4872--><p class="noindent" >
    <h4 class="likesubsectionHead"><a 
  id="x1-8600016"></a><span 
 class="pplr8t-x-x-90">2</span></h4>
 <!--l. 4873--><p class="noindent" ><span 
 class="pplr8t-x-x-90">We must take two integer arguments, and use the </span><span 
-class="fvmr8t-x-x-81">&& </span><span 
+class="fvmr8t-x-x-81">&amp;&amp; </span><span 
 class="pplr8t-x-x-90">and </span><span 
-class="fvmr8t-x-x-81"><> </span><span 
+class="fvmr8t-x-x-81">&#x003C;&#x003E; </span><span 
 class="pplr8t-x-x-90">operators to test if they are both non-zero. So the</span>
 <span 
 class="pplr8t-x-x-90">result will be of type </span><span 
@@ -14325,9 +14329,9 @@ class="pplb8t-x-x-90">bool</span><span
 class="pplr8t-x-x-90">. The whole type will therefore be </span><span 
 class="pplr8t-x-x-90">&#x00A0;</span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">bool</span><span 
 class="pplr8t-x-x-90">.</span>
 <!--l. 4876--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
@@ -14352,23 +14356,23 @@ class="fvmr8t-x-x-81">&#x00A0;</span><span
 class="fvmr8t-x-x-81">&#x00A0;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;x</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<></span><span 
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;0</span><span 
-class="fvmr8t-x-x-81">&#x00A0;&</span><span 
-class="fvmr8t-x-x-81">&&#x00A0;y</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<></span><span 
+class="fvmr8t-x-x-81">&#x00A0;&amp;&amp;</span><span 
+class="fvmr8t-x-x-81">&#x00A0;y</span><span 
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;0;;</span></span></span><br 
 class="newline" /><span class="obeylines-h"><span class="verb"><span 
 class="fvmr8t-x-x-81">val</span><span 
 class="fvmr8t-x-x-81">&#x00A0;both_non_zero</span><span 
 class="fvmr8t-x-x-81">&#x00A0;:</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;bool</span><span 
 class="fvmr8t-x-x-81">&#x00A0;=</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<fun></span></span></span>
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;fun&#x003E;</span></span></span>
 <!--l. 4882--><p class="noindent" >
    <h4 class="likesubsectionHead"><a 
  id="x1-8700016"></a><span 
@@ -14376,7 +14380,7 @@ class="pplr8t-x-x-90">3</span></h4>
 <!--l. 4883--><p class="noindent" ><span 
 class="pplr8t-x-x-90">Our function should take an integer, and return another one (the sum). So, it is type will be </span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">int</span><span 
 class="pplr8t-x-x-90">. The base</span>
 <span 
@@ -14438,10 +14442,10 @@ class="fvmr8t-x-x-81">val</span><span
 class="fvmr8t-x-x-81">&#x00A0;sum</span><span 
 class="fvmr8t-x-x-81">&#x00A0;:</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
 class="fvmr8t-x-x-81">&#x00A0;=</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<fun></span></span></span>
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;fun&#x003E;</span></span></span>
 <!--l. 4893--><p class="noindent" ><span 
 class="pplr8t-x-x-90">The function is recursive, so we used </span><span 
 class="fvmb8t-x-x-81">let rec </span><span 
@@ -14457,9 +14461,9 @@ class="pplr8t-x-x-90">4</span></h4>
 <!--l. 4896--><p class="noindent" ><span 
 class="pplr8t-x-x-90">The function will have type </span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">int</span><span 
 class="pplr8t-x-x-90">. A number to the power of </span><span 
 class="zptmcm7t-x-x-90">0 </span><span 
@@ -14540,12 +14544,12 @@ class="fvmr8t-x-x-81">val</span><span
 class="fvmr8t-x-x-81">&#x00A0;power</span><span 
 class="fvmr8t-x-x-81">&#x00A0;:</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
 class="fvmr8t-x-x-81">&#x00A0;=</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<fun></span></span></span>
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;fun&#x003E;</span></span></span>
 <!--l. 4908--><p class="noindent" ><span 
 class="pplr8t-x-x-90">Notice that we had to put one  </span><span 
 class="fvmb8t-x-x-81">if</span><span 
@@ -14626,12 +14630,12 @@ class="fvmr8t-x-x-81">val</span><span
 class="fvmr8t-x-x-81">&#x00A0;power</span><span 
 class="fvmr8t-x-x-81">&#x00A0;:</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
 class="fvmr8t-x-x-81">&#x00A0;=</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<fun></span></span></span>
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;fun&#x003E;</span></span></span>
 <!--l. 4920--><p class="noindent" ><span 
 class="pplr8t-x-x-90">In fact, we can remove the case for </span><span 
 class="fvmr8t-x-x-81">n = 1 </span><span 
@@ -14652,7 +14656,7 @@ class="pplr8t-x-x-90">The function </span><span
 class="fvmr8t-x-x-81">isconsonant </span><span 
 class="pplr8t-x-x-90">will have type </span><span 
 class="pplb8t-x-x-90">char </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">bool</span><span 
 class="pplr8t-x-x-90">. If a lower case character in the range </span><span 
 class="fvmr8c-x-x-81">'</span><span 
@@ -14695,10 +14699,10 @@ class="fvmr8t-x-x-81">val</span><span
 class="fvmr8t-x-x-81">&#x00A0;isconsonant</span><span 
 class="fvmr8t-x-x-81">&#x00A0;:</span><span 
 class="fvmr8t-x-x-81">&#x00A0;char</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;bool</span><span 
 class="fvmr8t-x-x-81">&#x00A0;=</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<fun></span></span></span>
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;fun&#x003E;</span></span></span>
 <!--l. 4931--><p class="noindent" >
    <h4 class="likesubsectionHead"><a 
  id="x1-9000016"></a><span 
@@ -14765,7 +14769,7 @@ class="fvmr8t-x-x-81">&#x00A0;</span><span
 class="fvmr8t-x-x-81">&#x00A0;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;if</span><span 
 class="fvmr8t-x-x-81">&#x00A0;x</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<</span><span 
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;0</span><span 
 class="fvmr8t-x-x-81">&#x00A0;then</span><span 
 class="fvmr8t-x-x-81">&#x00A0;0</span><span 
@@ -14802,10 +14806,10 @@ class="fvmr8t-x-x-81">val</span><span
 class="fvmr8t-x-x-81">&#x00A0;factorial</span><span 
 class="fvmr8t-x-x-81">&#x00A0;:</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
-class="fvmr8t-x-x-81">&#x00A0;-></span><span 
+class="fvmr8t-x-x-81">&#x00A0;-&#x003E;</span><span 
 class="fvmr8t-x-x-81">&#x00A0;int</span><span 
 class="fvmr8t-x-x-81">&#x00A0;=</span><span 
-class="fvmr8t-x-x-81">&#x00A0;<fun></span></span></span>
+class="fvmr8t-x-x-81">&#x00A0;&#x003C;fun&#x003E;</span></span></span>
 <!--l. 4948--><p class="noindent" ><span 
 class="pplr8t-x-x-90">Note that </span><span 
 class="fvmr8t-x-x-81">factorial </span><span 
@@ -14873,7 +14877,7 @@ class="pplr8t-x-x-90">6</span></h4>
 <!--l. 5029--><p class="noindent" ><span 
 class="pplr8t-x-x-90">We write two functions of type </span><span 
 class="pplb8t-x-x-90">char </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">bool </span><span 
 class="pplr8t-x-x-90">like this:</span>
 <!--l. 5033--><p class="noindent" ><img 
@@ -14990,7 +14994,7 @@ class="fvmr8t-x-x-81">make_set [4; 5; 6; 5; 4]</span><span
 class="pplr8t-x-x-90">: </span><div class="eqnarray">
                                                                                
                                                                                
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook169x.png" alt="      make_set-[4; 5;-6;-5;-4]
 =&#x21D2;    make_set-[5; 6;-5;-4]
@@ -15002,8 +15006,8 @@ src="pandocfiguresmlbook169x.png" alt="      make_set-[4; 5;-6;-5;-4]
 =&#x21D2;    6-::-5-::-4 ::-[]
  *
 =&#x21D2;    [6; 5; 4]
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 5240--><p class="indent" >   </div>
 <!--l. 5243--><p class="noindent" >
    <h4 class="likesubsectionHead"><a 
  id="x1-10500016"></a><span 
@@ -15021,7 +15025,7 @@ class="pplr8t-x-x-90">operator, as we know, also takes time proportional to the 
 <span 
 class="pplr8t-x-x-90">argument. And so, this accumulating of the lists takes time proportional to the square of the length of the list.</span>
 <div class="eqnarray">
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook170x.png" alt="       rev [1;-2;-3;-4]
 =&#x21D2;     rev [2;-3;-4]-@ [1]
@@ -15034,10 +15038,10 @@ src="pandocfiguresmlbook170x.png" alt="       rev [1;-2;-3;-4]
 =&#x21D2;     ([4,-3]-@-[2])-@ [1]
 =&#x21D2;     [4, 3,-2]-@-[1]
 =&#x21D2;     [4; 3; 2; 1]
-" class="math-display" ></center>
+" class="math-display" ></div>
                                                                                
                                                                                
-</div>
+<!--l. 5255--><p class="indent" >   </div>
 <!--l. 5257--><p class="noindent" ><span 
 class="pplr8t-x-x-90">By using an additional accumulating argument, we can write a version which operates in time proportional to</span>
 <span 
@@ -15046,7 +15050,7 @@ class="pplr8t-x-x-90">the length of the list.</span>
 src="pandocfiguresmlbook171x.png" alt=""  class="fbox" >
 <!--l. 5276--><p class="noindent" ><span 
 class="pplr8t-x-x-90">For the same list: </span><div class="eqnarray">
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook172x.png" alt="       rev-[1;-2;-3;-4]
 =&#x21D2;     rev_inner-[]-[1;-2; 3;-4]
@@ -15056,8 +15060,8 @@ src="pandocfiguresmlbook172x.png" alt="       rev-[1;-2;-3;-4]
 =&#x21D2;     rev_inner [4; 3; 2; 1] []
        ------------------------
 =&#x21D2;     [4; 3; 2; 1]
-" class="math-display" ></center>
-</div>
+" class="math-display" ></div>
+<!--l. 5285--><p class="indent" >   </div>
 <!--l. 5287--><p class="noindent" >
    <h3 class="likesectionHead"><a 
  id="x1-10600016"></a><span 
@@ -15110,9 +15114,9 @@ class="pplr8t-x-x-90">than 1, due to the pattern matching.</span>
 class="pplr8t-x-x-90">3</span></h4>
 <!--l. 5312--><p class="noindent" ><span 
 class="pplr8t-x-x-90">We may simply replace the </span><span 
-class="fvmr8t-x-x-81"><= </span><span 
+class="fvmr8t-x-x-81">&#x003C;= </span><span 
 class="pplr8t-x-x-90">operator with the </span><span 
-class="fvmr8t-x-x-81">>= </span><span 
+class="fvmr8t-x-x-81">&#x003E;= </span><span 
 class="pplr8t-x-x-90">operator in the </span><span 
 class="fvmr8t-x-x-81">insert </span><span 
 class="pplr8t-x-x-90">function.</span>
@@ -15130,7 +15134,7 @@ class="pplr8t-x-x-90">4</span></h4>
 class="pplr8t-x-x-90">We require a function of type </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">list </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">bool</span><span 
 class="pplr8t-x-x-90">. List of length zero and one are, by definition, sorted. If the list is</span>
 <span 
@@ -15158,7 +15162,7 @@ class="pplr8t-x-x-90">so on. If the end of one list is reached before the other,
 <span 
 class="pplr8t-x-x-90">example:</span>
 <!--l. 5368--><p class="noindent" ><span 
-class="fvmr8t-x-x-81">[1] < [2] < [2; 1] < [2; 2]</span>
+class="fvmr8t-x-x-81">[1] &#x003C; [2] &#x003C; [2; 1] &#x003C; [2; 2]</span>
 <!--l. 5371--><p class="noindent" ><span 
 class="pplr8t-x-x-90">These are the same principles you use to look up a word in a dictionary: compare the first letters &#8211; if same,</span>
 <span 
@@ -15194,7 +15198,7 @@ class="pplr8t-x-x-90">1</span></h4>
 <!--l. 5401--><p class="noindent" ><span 
 class="pplr8t-x-x-90">Our function will have type </span><span 
 class="pplb8t-x-x-90">char list </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">char list</span><span 
 class="pplr8t-x-x-90">. We just match on the argument list: if it is empty, we are done. If</span>
 <span 
@@ -15228,7 +15232,7 @@ class="pplr8t-x-x-90">The </span><span
 class="fvmr8t-x-x-81">clip </span><span 
 class="pplr8t-x-x-90">function is of type </span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">int </span><span 
 class="pplr8t-x-x-90">and is easy to write:</span>
 <!--l. 5441--><p class="noindent" ><img 
@@ -15274,10 +15278,11 @@ src="pandocfiguresmlbook183x.png" alt=""  class="fbox" >
 <!--l. 5496--><p class="noindent" ><span 
 class="pplr8t-x-x-90">Consider the type:</span>
 <!--l. 5499--><p class="indent" >
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook184x.png" alt="&#x25DC;funct&#x25DE;io&#x25DF;nf&#x25DD;  &#x25DC;n&#x25DE;&#x25DF;&#x25DD;  &#x25DC;x&#x25DE;&#x25DF;&#x25DD;  re&#x25DC;&#x25DE;su&#x25DF;lt&#x25DD;
-(&#x03B1; &#x2192; &#x03B1;)&#x2192;  int &#x2192;  &#x03B1; &#x2192;  &#x03B1; " class="math-display" ></center>
+(&#x03B1; &#x2192; &#x03B1;)&#x2192;  int &#x2192;  &#x03B1; &#x2192;  &#x03B1;
+" class="math-display" ></div>
 <!--l. 5502--><p class="noindent" ><span 
 class="pplr8t-x-x-90">The function </span><span 
 class="fvmr8t-x-x-81">f </span><span 
@@ -15332,13 +15337,13 @@ class="pplr8t-x-x-90">We cannot use map here, because the result list will not n
 <span 
 class="pplr8t-x-x-90">function will have type (</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">bool</span><span 
 class="pplr8t-x-x-90">) </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">list </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">list</span><span 
 class="pplr8t-x-x-90">.</span>
@@ -15348,7 +15353,7 @@ src="pandocfiguresmlbook188x.png" alt=""  class="fbox" >
 class="pplr8t-x-x-90">For example, </span><span 
 class="fvmr8t-x-x-81">filter (</span><span 
 class="fvmb8t-x-x-81">fun </span><span 
-class="fvmr8t-x-x-81">x -> x mod 2 = 0) [1; 2; 4; 5] </span><span 
+class="fvmr8t-x-x-81">x -&#x003E; x mod 2 = 0) [1; 2; 4; 5] </span><span 
 class="pplr8t-x-x-90">evaluates to </span><span 
 class="fvmr8t-x-x-81">[2; 4]</span><span 
 class="pplr8t-x-x-90">.</span>
@@ -15359,13 +15364,13 @@ class="pplr8t-x-x-90">7</span></h4>
 <!--l. 5572--><p class="noindent" ><span 
 class="pplr8t-x-x-90">The function will have type (</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">bool</span><span 
 class="pplr8t-x-x-90">) </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">list </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">bool</span><span 
 class="pplr8t-x-x-90">.</span>
 <!--l. 5576--><p class="noindent" ><img 
@@ -15374,12 +15379,12 @@ src="pandocfiguresmlbook189x.png" alt=""  class="fbox" >
 class="pplr8t-x-x-90">For example, we can see if all elements of a list are positive: </span><span 
 class="fvmr8t-x-x-81">for_all (</span><span 
 class="fvmb8t-x-x-81">fun </span><span 
-class="fvmr8t-x-x-81">x -> x > 0) [1; 2; -1] </span><span 
+class="fvmr8t-x-x-81">x -&#x003E; x &#x003E; 0) [1; 2; -1] </span><span 
 class="pplr8t-x-x-90">evaluates to</span>
 <span 
 class="fvmr8t-x-x-81">false</span><span 
 class="pplr8t-x-x-90">. Notice that we are relying on the fact that </span><span class="obeylines-h"><span class="verb"><span 
-class="fvmr8t-x-x-81">&</span>&</span></span> <span 
+class="fvmr8t-x-x-81">&amp;&amp;</span></span></span> <span 
 class="pplr8t-x-x-90">only evaluates its right hand side when the left hand side is</span>
 <span 
 class="pplr8t-x-x-90">true to limit the recursion.</span>
@@ -15390,13 +15395,13 @@ class="pplr8t-x-x-90">8</span></h4>
 <!--l. 5590--><p class="noindent" ><span 
 class="pplr8t-x-x-90">The function will have type (</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2;</span><span 
 class="pplr8t-x-x-90">) </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">list list </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2; </span><span 
 class="pplb8t-x-x-90">list list</span><span 
 class="pplr8t-x-x-90">. We use </span><span 
@@ -15534,14 +15539,14 @@ class="pplr8t-x-x-90">3</span></h4>
 class="pplr8t-x-x-90">The function takes a list of keys and a list of values and returns a dictionary. So it will have type </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">list </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2; </span><span 
 class="pplb8t-x-x-90">list </span><span 
 class="zptmcm7y-x-x-90">&#x2192;</span>
 <span 
 class="pplr8t-x-x-90">(</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x00D7; </span><span 
+class="zptmcm7y-x-x-90">&#x00D7;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2;</span><span 
 class="pplr8t-x-x-90">) </span><span 
 class="pplb8t-x-x-90">list</span><span 
@@ -15555,14 +15560,14 @@ class="pplr8t-x-x-90">4</span></h4>
 <!--l. 5725--><p class="noindent" ><span 
 class="pplr8t-x-x-90">This will have the type  (</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x00D7; </span><span 
+class="zptmcm7y-x-x-90">&#x00D7;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2;</span><span 
 class="pplr8t-x-x-90">) </span><span 
 class="pplb8t-x-x-90">list </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">list </span><span 
-class="zptmcm7y-x-x-90">&#x00D7; </span><span 
+class="zptmcm7y-x-x-90">&#x00D7;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2; </span><span 
 class="pplb8t-x-x-90">list</span><span 
 class="pplr8t-x-x-90">. For the first time, we need to return a pair, building up both</span>
@@ -15579,19 +15584,19 @@ class="pplr8t-x-x-90">Here&#8217;s a sample evaluation (we cannot really show it
 <span 
 class="pplr8t-x-x-90">whilst looking at the function definition):</span>
 <!--l. 5745--><p class="indent" >   <div class="eqnarray">
-   <center class="math-display" >
+   <div class="math-display" >
 <img 
 src="pandocfiguresmlbook198x.png" alt="       mklists [(1, 2); (3, 4); (5, 6)]
-=&#x21D2;            mklists [(3, 4); (5, 6)]
-=&#x21D2;                   mklists [(5, 6)]
-=&#x21D2;                         mklists []
-=&#x21D2;                           ([], [])
+=&#x21D2;     &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;mklists [(3, 4); (5, 6)]
+=&#x21D2;     &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;mklists [(5, 6)]
+=&#x21D2;     &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;mklists []
+=&#x21D2;     &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;([], [])
 
-=&#x21D2;                         ([5], [6])
-=&#x21D2;                   ([3; 5], [4; 6])
-=&#x21D2;              ([1; 3; 5], [2; 4; 6])
-" class="math-display" ></center>
-</div>
+=&#x21D2;     &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;([5], [6])
+=&#x21D2;     &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;([3; 5], [4; 6])
+=&#x21D2;     &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;([1; 3; 5], [2; 4; 6])
+" class="math-display" ></div>
+<!--l. 5754--><p class="indent" >   </div>
 <!--l. 5756--><p class="noindent" ><span 
 class="pplr8t-x-x-90">Since the inner pattern match has only one form, and is complete, we can use </span><span 
 class="pplb8t-x-x-90">let </span><span 
@@ -15652,11 +15657,11 @@ class="pplr8t-x-x-90">The function </span><span
 class="fvmr8t-x-x-81">g a b c </span><span 
 class="pplr8t-x-x-90">has type </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B3; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B4; </span><span 
 class="pplr8t-x-x-90">which can also be written </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
@@ -15666,7 +15671,7 @@ class="zptmcm7m-x-x-90">&#x03B2; </span><span
 class="zptmcm7y-x-x-90">&#x2192; </span><span 
 class="pplr8t-x-x-90">(</span><span 
 class="zptmcm7m-x-x-90">&#x03B3; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B4;</span><span 
 class="pplr8t-x-x-90">)). Thus, it takes an</span>
 <span 
@@ -15677,14 +15682,14 @@ class="zptmcm7m-x-x-90">&#x03B2; </span><span
 class="zptmcm7y-x-x-90">&#x2192; </span><span 
 class="pplr8t-x-x-90">(</span><span 
 class="zptmcm7m-x-x-90">&#x03B3; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B4;</span><span 
 class="pplr8t-x-x-90">) which, when you give it an argument of type </span><span 
 class="zptmcm7m-x-x-90">&#x03B2;</span>
 <span 
 class="pplr8t-x-x-90">returns a function of type </span><span 
 class="zptmcm7m-x-x-90">&#x03B3; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B4; </span><span 
 class="pplr8t-x-x-90">which, when you give it an argument of type </span><span 
 class="zptmcm7m-x-x-90">&#x03B3; </span><span 
@@ -15704,11 +15709,11 @@ class="pplr8t-x-x-90">this is just shorthand for </span><span
 class="fvmb8t-x-x-81">let </span><span 
 class="fvmr8t-x-x-81">g = </span><span 
 class="fvmb8t-x-x-81">fun </span><span 
-class="fvmr8t-x-x-81">a -> </span><span 
+class="fvmr8t-x-x-81">a -&#x003E; </span><span 
 class="fvmb8t-x-x-81">fun </span><span 
-class="fvmr8t-x-x-81">b -> </span><span 
+class="fvmr8t-x-x-81">b -&#x003E; </span><span 
 class="fvmb8t-x-x-81">fun </span><span 
-class="fvmr8t-x-x-81">c -></span>
+class="fvmr8t-x-x-81">c -&#x003E;</span>
 <span 
 class="fvmr8t-x-x-81">&#x2026;</span>
                                                                                
@@ -15722,10 +15727,10 @@ class="pplr8t-x-x-90">The type of </span><span
 class="fvmr8t-x-x-81">member </span><span 
 class="pplr8t-x-x-90">is </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">list </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">bool</span><span 
 class="pplr8t-x-x-90">, so if we partially apply the first argument, the type of </span><span 
 class="fvmr8t-x-x-81">member x </span><span 
@@ -15734,7 +15739,7 @@ class="pplr8t-x-x-90">must</span>
 class="pplr8t-x-x-90">be </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">list </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">bool</span><span 
 class="pplr8t-x-x-90">. We can use the partially-applied </span><span 
 class="fvmr8t-x-x-81">member </span><span 
@@ -15790,40 +15795,40 @@ class="pplr8t-x-x-90">The function </span><span
 class="fvmr8t-x-x-81">map </span><span 
 class="pplr8t-x-x-90">has type (</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2;</span><span 
 class="pplr8t-x-x-90">) </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">list </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2; </span><span 
 class="pplb8t-x-x-90">list</span><span 
 class="pplr8t-x-x-90">. The function </span><span 
 class="fvmr8t-x-x-81">mapl </span><span 
 class="pplr8t-x-x-90">we wrote has type (</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2;</span><span 
 class="pplr8t-x-x-90">) </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">list list</span>
 <span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2; </span><span 
 class="pplb8t-x-x-90">list list</span><span 
 class="pplr8t-x-x-90">. So the function </span><span 
 class="fvmr8t-x-x-81">mapll </span><span 
 class="pplr8t-x-x-90">will have type (</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2;</span><span 
 class="pplr8t-x-x-90">) </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">list list list </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2; </span><span 
 class="pplb8t-x-x-90">list list list</span><span 
 class="pplr8t-x-x-90">. It may be defined</span>
@@ -16013,10 +16018,10 @@ class="pplr8t-x-x-90">1</span></h4>
 <!--l. 6170--><p class="noindent" ><span 
 class="pplr8t-x-x-90">Our function will have type </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplr8t-x-x-90">tree </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">bool</span><span 
 class="pplr8t-x-x-90">. It takes a element to look for, a tree holding that kind of element,</span>
 <span 
@@ -16041,7 +16046,7 @@ class="pplr8t-x-x-90">2</span></h4>
 class="pplr8t-x-x-90">Our function will have type </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplr8t-x-x-90">tree </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplr8t-x-x-90">tree. A leaf flips to a leaf. A branch has its left and right swapped, and we</span>
 <span 
@@ -16651,7 +16656,7 @@ class="fvmr8t-x-x-81">&#x00A0;=</span><span
 class="fvmr8t-x-x-81">&#x00A0;5}]</span></span></span><br 
 class="newline" /><span 
 class="fvmr8t-x-x-81"># </span><span class="underline"><span 
-class="fvmr8t-x-x-81">match r with h::_ -> h := 6</span></span><span 
+class="fvmr8t-x-x-81">match r with h::_ -&#x003E; h := 6</span></span><span 
 class="fvmr8t-x-x-81">;;</span><br 
 class="newline" /><span class="obeylines-h"><span class="verb"><span 
 class="fvmr8t-x-x-81">Warning</span><span 
@@ -16708,7 +16713,7 @@ class="pplr8t-x-x-90">We can write a function </span><span
 class="fvmr8t-x-x-81">forloop </span><span 
 class="pplr8t-x-x-90">which takes a function of type </span><span 
 class="pplb8t-x-x-90">int </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplr8t-x-x-90">(where alpha would normally be </span><span 
 class="pplb8t-x-x-90">unit</span><span 
@@ -16786,7 +16791,7 @@ class="pplr8t-x-x-90">&#x00A0;</span><span
 class="pplb8t-x-x-90">int</span><span 
 class="pplr8t-x-x-90">, has value 2</span>
 <!--l. 6686--><p class="noindent" ><span 
-class="fvmr8t-x-x-81">[|1; 2; 3|].(2) <- 4 </span><span 
+class="fvmr8t-x-x-81">[|1; 2; 3|].(2) &#x003C;- 4 </span><span 
 class="pplr8t-x-x-90">: </span><span 
 class="pplr8t-x-x-90">&#x00A0;</span><span 
 class="pplb8t-x-x-90">unit</span><span 
@@ -16818,7 +16823,7 @@ class="pplr8t-x-x-90">6</span></h4>
 class="pplr8t-x-x-90">Since we wish to reverse the array in place, our function will have type </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">array </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">unit</span><span 
 class="pplr8t-x-x-90">. Our method is to proceed</span>
 <span 
@@ -17026,7 +17031,7 @@ class="pplr8t-x-x-90">The </span><span
 class="fvmr8t-x-x-81">String.iter </span><span 
 class="pplr8t-x-x-90">function calls a user-supplied function of type </span><span 
 class="pplb8t-x-x-90">char </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">unit </span><span 
 class="pplr8t-x-x-90">on each character of the string. We</span>
 <span 
@@ -17044,7 +17049,7 @@ class="pplr8t-x-x-90">We can use the </span><span
 class="fvmr8t-x-x-81">String.map </span><span 
 class="pplr8t-x-x-90">function, which takes a user-supplied function of type </span><span 
 class="pplb8t-x-x-90">char </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">char </span><span 
 class="pplr8t-x-x-90">and returns a</span>
 <span 
@@ -17347,9 +17352,9 @@ class="pplr8t-x-x-90">2</span></h4>
 class="pplr8t-x-x-90">What does the function take as arguments? What is the type of its result? So what is the whole type? You can use</span>
 <span 
 class="pplr8t-x-x-90">the </span><span 
-class="fvmr8t-x-x-81"><> </span><span 
+class="fvmr8t-x-x-81">&#x003C;&#x003E; </span><span 
 class="pplr8t-x-x-90">and </span><span 
-class="fvmr8t-x-x-81">&& </span><span 
+class="fvmr8t-x-x-81">&amp;&amp; </span><span 
 class="pplr8t-x-x-90">operators here.</span>
                                                                                
                                                                                
@@ -17490,7 +17495,7 @@ class="pplr8t-x-x-90">2</span></h4>
 <!--l. 7355--><p class="noindent" ><span 
 class="pplr8t-x-x-90">The function will have type </span><span 
 class="pplb8t-x-x-90">bool list</span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">int</span><span 
 class="pplr8t-x-x-90">. Consider the empty list, the list with </span><span 
 class="fvmr8t-x-x-81">true </span><span 
@@ -17678,7 +17683,7 @@ class="fvmr8t-x-x-81">insert </span><span
 class="pplr8t-x-x-90">and </span><span 
 class="fvmr8t-x-x-81">sort </span><span 
 class="pplr8t-x-x-90">and use it in place of the </span><span 
-class="fvmr8t-x-x-81"><=</span>
+class="fvmr8t-x-x-81">&#x003C;=</span>
 <span 
 class="pplr8t-x-x-90">operator in </span><span 
 class="fvmr8t-x-x-81">insert</span><span 
@@ -17797,14 +17802,14 @@ class="pplr8t-x-x-90">3</span></h4>
 class="pplr8t-x-x-90">The function takes a list of keys and a list of values, and returns a dictionary. So it will have type </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">list </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2; </span><span 
 class="pplb8t-x-x-90">list</span>
 <span 
 class="zptmcm7y-x-x-90">&#x2192; </span><span 
 class="pplr8t-x-x-90">(</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x00D7; </span><span 
+class="zptmcm7y-x-x-90">&#x00D7;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2;</span><span 
 class="pplr8t-x-x-90">) </span><span 
 class="pplb8t-x-x-90">list</span><span 
@@ -17816,14 +17821,14 @@ class="pplr8t-x-x-90">4</span></h4>
 <!--l. 7433--><p class="noindent" ><span 
 class="pplr8t-x-x-90">This function takes a list of pairs and produces a pair of lists. So its type must be (</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x00D7; </span><span 
+class="zptmcm7y-x-x-90">&#x00D7;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2;</span><span 
 class="pplr8t-x-x-90">) </span><span 
 class="pplb8t-x-x-90">list </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">list </span><span 
-class="zptmcm7y-x-x-90">&#x00D7; </span><span 
+class="zptmcm7y-x-x-90">&#x00D7;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2;</span>
 <span 
 class="pplb8t-x-x-90">list</span><span 
@@ -17901,26 +17906,26 @@ class="pplr8t-x-x-90">The type of </span><span
 class="fvmr8t-x-x-81">map </span><span 
 class="pplr8t-x-x-90">is (</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2;</span><span 
 class="pplr8t-x-x-90">) </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">list </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2; </span><span 
 class="pplb8t-x-x-90">list</span><span 
 class="pplr8t-x-x-90">. The type of </span><span 
 class="fvmr8t-x-x-81">mapl </span><span 
 class="pplr8t-x-x-90">is (</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2;</span><span 
 class="pplr8t-x-x-90">) </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplb8t-x-x-90">list list </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B2; </span><span 
 class="pplb8t-x-x-90">list list</span><span 
 class="pplr8t-x-x-90">. So, what must</span>
@@ -17981,7 +17986,7 @@ class="pplr8t-x-x-90">requiring two: one for the width and one for the height.</
 class="pplr8t-x-x-90">2</span></h4>
 <!--l. 7467--><p class="noindent" ><span 
 class="pplr8t-x-x-90">The function will have type rect </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">int</span><span 
 class="pplr8t-x-x-90">. Work by pattern matching on the two constructors of your</span>
 <span 
@@ -18045,10 +18050,10 @@ class="pplr8t-x-x-90">1</span></h4>
 <!--l. 7502--><p class="noindent" ><span 
 class="pplr8t-x-x-90">The type will be </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplr8t-x-x-90">tree </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">bool</span><span 
 class="pplr8t-x-x-90">. That is, it takes an element to search for, and a tree containing elements of</span>
 <span 
@@ -18067,7 +18072,7 @@ class="pplr8t-x-x-90">2</span></h4>
 class="pplr8t-x-x-90">The function will have type </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplr8t-x-x-90">tree </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
 class="pplr8t-x-x-90">tree. What happens to a leaf? What must happen to a branch and its</span>
 <span 
@@ -18234,7 +18239,7 @@ class="pplr8t-x-x-90">5</span></h4>
 <!--l. 7553--><p class="noindent" ><span 
 class="pplr8t-x-x-90">We want a function of type </span><span 
 class="pplb8t-x-x-90">int array </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">int</span><span 
 class="pplr8t-x-x-90">. Try a for loop with a reference to accumulate the sum.</span>
                                                                                
@@ -18304,16 +18309,16 @@ class="pplr8t-x-x-90">2</span></h4>
 <!--l. 7569--><p class="noindent" ><span 
 class="pplr8t-x-x-90">This is simple arithmetic. The function will take two points and return another, so it will have type </span><span 
 class="pplb8t-x-x-90">float </span><span 
-class="zptmcm7y-x-x-90">&#x00D7; </span><span 
+class="zptmcm7y-x-x-90">&#x00D7;</span><span 
 class="pplb8t-x-x-90">float</span>
 <span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">float </span><span 
-class="zptmcm7y-x-x-90">&#x00D7; </span><span 
+class="zptmcm7y-x-x-90">&#x00D7;</span><span 
 class="pplb8t-x-x-90">float </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">float </span><span 
-class="zptmcm7y-x-x-90">&#x00D7; </span><span 
+class="zptmcm7y-x-x-90">&#x00D7;</span><span 
 class="pplb8t-x-x-90">float</span><span 
 class="pplr8t-x-x-90">.</span>
 <!--l. 7571--><p class="noindent" >
@@ -18626,7 +18631,7 @@ class="newline" /><span
 class="fvmr8t-x-x-81"># let f x = x + 1;;</span><br 
 class="newline" /><span 
 class="fvmr8t-x-x-81">val f :</span><span 
-class="fvmr8t-x-x-81">&#x00A0;int -> int = <fun></span><br 
+class="fvmr8t-x-x-81">&#x00A0;int -&#x003E; int = &#x003C;fun&#x003E;</span><br 
 class="newline" /><span 
 class="fvmr8t-x-x-81"># </span><span class="underline"><span 
 class="fvmr8t-x-x-81">f</span></span> <span 
@@ -18636,7 +18641,7 @@ class="fvmr8t-x-x-81">Error:</span><span
 class="fvmr8t-x-x-81">&#x00A0;This function is applied to too many arguments;</span><br 
 class="newline" /><span 
 class="fvmr8t-x-x-81">maybe you forgot a </span><span class="obeylines-h"><span class="verb"><span 
-class="fvmr8c-x-x-81">`</span><span 
+class="tctt-0900">`</span><span 
 class="fvmr8t-x-x-81">;</span><span 
 class="fvmr8c-x-x-81">'</span></span></span>
 <!--l. 7669--><p class="noindent" ><span 
@@ -18760,7 +18765,7 @@ class="newline" /><span
 class="fvmr8t-x-x-81"># let rec f x = 1 + f (x + 1);;</span><br 
 class="newline" /><span 
 class="fvmr8t-x-x-81">val f :</span><span 
-class="fvmr8t-x-x-81">&#x00A0;int -> int = <fun></span><br 
+class="fvmr8t-x-x-81">&#x00A0;int -&#x003E; int = &#x003C;fun&#x003E;</span><br 
 class="newline" /><span 
 class="fvmr8t-x-x-81"># f 0;;</span><br 
 class="newline" /><span 
@@ -18788,7 +18793,7 @@ class="fvmr8t-x-x-81">f x = </span><span
 class="fvmb8t-x-x-81">match </span><span 
 class="fvmr8t-x-x-81">x </span><span 
 class="fvmb8t-x-x-81">with </span><span 
-class="fvmr8t-x-x-81">0 -> 1</span>
+class="fvmr8t-x-x-81">0 -&#x003E; 1</span>
 <!--l. 7727--><p class="noindent" ><span 
 class="pplr8t-x-x-90">then using the function with </span><span 
 class="fvmr8t-x-x-81">1 </span><span 
@@ -18890,7 +18895,7 @@ class="fvmr8t-x-x-81">&#x00A0;OCaml</span></span></span><br
 class="newline" /><br 
 class="newline" /><span 
 class="fvmr8t-x-x-81"># let f x = </span><span class="underline"><span 
-class="fvmr8t-x-x-81">match x with 0 -> 1</span></span><span 
+class="fvmr8t-x-x-81">match x with 0 -&#x003E; 1</span></span><span 
 class="fvmr8t-x-x-81">;;</span><br 
 class="newline" /><span 
 class="fvmr8t-x-x-81">Warning 8:</span><span 
@@ -18901,7 +18906,7 @@ class="newline" /><span
 class="fvmr8t-x-x-81">1</span><br 
 class="newline" /><span 
 class="fvmr8t-x-x-81">val f :</span><span 
-class="fvmr8t-x-x-81">&#x00A0;int -> int = <fun></span>
+class="fvmr8t-x-x-81">&#x00A0;int -&#x003E; int = &#x003C;fun&#x003E;</span>
 <!--l. 7771--><p class="noindent" ><span 
 class="pplr8t-x-x-90">Helpfully, it is able to generate an example of something the pattern match does not cover, so this should give</span>
 <span 
@@ -18929,15 +18934,15 @@ class="fvmr8t-x-x-81">&#x00A0;</span><span
 class="fvmr8t-x-x-81">&#x00A0;OCaml</span></span></span><br 
 class="newline" /><br 
 class="newline" /><span 
-class="fvmr8t-x-x-81"># let f x = match x with _ -> 1 | </span><span class="underline"><span 
+class="fvmr8t-x-x-81"># let f x = match x with _ -&#x003E; 1 | </span><span class="underline"><span 
 class="fvmr8t-x-x-81">0</span></span> <span 
-class="fvmr8t-x-x-81">-> 0;;</span><br 
+class="fvmr8t-x-x-81">-&#x003E; 0;;</span><br 
 class="newline" /><span 
 class="fvmr8t-x-x-81">Warning 11:</span><span 
 class="fvmr8t-x-x-81">&#x00A0;this match case is unused.</span><br 
 class="newline" /><span 
 class="fvmr8t-x-x-81">val f :</span><span 
-class="fvmr8t-x-x-81">&#x00A0;int -> int = <fun></span>
+class="fvmr8t-x-x-81">&#x00A0;int -&#x003E; int = &#x003C;fun&#x003E;</span>
 <!--l. 7785--><p class="noindent" ><span 
 class="pplr8t-x-x-90">In this case, the first case matches everything, so the second cannot ever match.</span>
 <!--l. 7787--><p class="noindent" >
@@ -18992,7 +18997,7 @@ class="fvmr8t-x-x-81">&#x00A0;int = 2</span>
 <!--l. 7808--><p class="noindent" ><span 
 class="pplr8t-x-x-90">The ignore function has type </span><span 
 class="zptmcm7m-x-x-90">&#x03B1; </span><span 
-class="zptmcm7y-x-x-90">&#x2192; </span><span 
+class="zptmcm7y-x-x-90">&#x2192;</span><span 
 class="pplb8t-x-x-90">unit</span><span 
 class="pplr8t-x-x-90">. It has no side-effect.</span>
 <a 
