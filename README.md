@@ -34,6 +34,8 @@ Building the Kindle version
 
 source: kindlemlbook.tex
 
+requires: ebook-convert from Calibre
+
 run `./stage1`
 
 run `./stage2`
@@ -44,7 +46,7 @@ Building the HTML version
 
 source: pandocmlbook.tex
 
-requires: opam install lambdasoup
+requires: pandoc and opam install lambdasoup
 
 run `./stage1pandoc`
 
