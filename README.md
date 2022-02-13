@@ -18,19 +18,22 @@ source: mlbook.tex
 run ./build
 
 
-Kindle / HTML requirements
---------------------------
+Kindle / HTML / ePub requirements
+---------------------------------
 
 Modify `tex4ht` config to get better image resolution for bits which get
 converted to images. For example on the author's machine, this file:
 
-/usr/local/texlive/2018/texmf-dist/tex4ht/base/unix/tex4ht.env
+/usr/local/texlive/2021/texmf-dist/tex4ht/base/unix/tex4ht.env
 
 Change all '110' to '220' to double the resolution.
 
 
 Building the Kindle version
 ---------------------------
+
+(KDP no longer accept .mobi files, so this is redundant now, in favour of the
+.epub process)
 
 source: kindlemlbook.tex
 
@@ -39,6 +42,18 @@ requires: ebook-convert from Calibre
 run `./stage1`
 
 run `./stage2`
+
+
+Building the Epub version
+-------------------------
+
+source: pandocmlbook.tex
+
+requires: pandoc
+
+run ./stage1pandoc
+
+run ./epub
 
 
 Building the HTML version
