@@ -730,7 +730,7 @@ $$\underbrace{\overbrace{\texttt{\strut  \ cube   }}^{\textbf{\textrm{int $\righ
 \noindent\verb!        OCaml!\\
 \noindent\\
 \noindent\verb!# let isvowel c =!\\
-\noindent\mbox{\texttt{~~~~c = \upquote{a} || c = \upquote{e} || c = \upquote{i} || c = \upquote{o} || c = \upquote{u};;}}\\
+\noindent\mbox{\texttt{\ \ \ \ c = \upquote{a} || c = \upquote{e} || c = \upquote{i} || c = \upquote{o} || c = \upquote{u};;}}\\
 \noindent\verb!val isvowel : char -> bool = <fun>!\\
 \noindent\texttt{\# isvowel 'x';;}\\
 \noindent\verb!- : bool = false!
@@ -976,12 +976,12 @@ $\texttt{\ \ | \_ -> false}$\vphantom{g}
 \noindent\verb!        OCaml!\\
 \noindent\\
 \noindent\verb!# let isvowel c =!\\
-\noindent\mbox{\texttt{~~~~\underline{\vphantom{g}match c with}}}\\
-\noindent\underline{\vphantom{g}\texttt{~~~~~~\upquote{a} -> true}}\\
-\noindent\underline{\vphantom{g}\texttt{~~~~|~\upquote{e} -> true}}\\
-\noindent\underline{\vphantom{g}\texttt{~~~~|~\upquote{i} -> true}}\\
-\noindent\underline{\vphantom{g}\texttt{~~~~|~\upquote{o} -> true}}\\
-\noindent\underline{\vphantom{g}\texttt{~~~~|~\upquote{u} -> true;;}}\\
+\noindent\mbox{\texttt{\ \ \ \ \underline{\vphantom{g}match c with}}}\\
+\noindent\underline{\vphantom{g}\texttt{\ \ \ \ \ \ \upquote{a} -> true}}\\
+\noindent\underline{\vphantom{g}\texttt{\ \ \ \ |\ \upquote{e} -> true}}\\
+\noindent\underline{\vphantom{g}\texttt{\ \ \ \ |\ \upquote{i} -> true}}\\
+\noindent\underline{\vphantom{g}\texttt{\ \ \ \ |\ \upquote{o} -> true}}\\
+\noindent\underline{\vphantom{g}\texttt{\ \ \ \ |\ \upquote{u} -> true;;}}\\
 \noindent\texttt{\# Warning 8 [partial-match]:\ this pattern-matching is not exhaustive.}\\
 \noindent\texttt{Here is an example of a case that is not matched:}\\
 \noindent\texttt{'b'}\\
@@ -1690,14 +1690,14 @@ So, how many lines do we have? Well, in the top half we have roughly $\log_{2}n$
 %\begin{center}
 \noindent\fbox{\begin{minipage}{\textwidth}
 \texttt{let rec length l =}\\
-\texttt{\mbox{~~match l with}}\\
-\texttt{\mbox{~~~~[] -> 0}}\\
-\texttt{\mbox{~~| h::t -> 1 + length t}}\\
+\texttt{\mbox{\ \ match l with}}\\
+\texttt{\mbox{\ \ \ \ [] -> 0}}\\
+\texttt{\mbox{\ \ | h::t -> 1 + length t}}\\
 \\
 \texttt{let rec append a b =}\\
-\texttt{\mbox{~~match a with}}\\
-\texttt{\mbox{~~~~[] -> b}}\\
-\texttt{\mbox{~~| h::t -> h ::\ append t b}}
+\texttt{\mbox{\ \ match a with}}\\
+\texttt{\mbox{\ \ \ \ [] -> b}}\\
+\texttt{\mbox{\ \ | h::t -> h ::\ append t b}}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -1707,7 +1707,7 @@ So, how many lines do we have? Well, in the top half we have roughly $\log_{2}n$
 \smspace
 %\begin{center}
 \noindent\fbox{\begin{minipage}{\textwidth}
-\texttt{\mbox{~~~~~~~~OCaml}}\\
+\texttt{\mbox{\ \ \ \ \ \ \ \ OCaml}}\\
 \\
 \texttt{\# \#use "lists.ml";;}\\
 \texttt{val length :\ \textquotesingle a list -> int = <fun>}\\
@@ -1823,10 +1823,10 @@ $$\overbrace{\strut(\alpha\rightarrow\beta)}^{\textrm{\vphantom{p}function \text
 \noindent\texttt{evens :}\textbf{\textrm{ int list $\rightarrow$ bool list}}\\
 \\
 $\texttt{\plet is\_even x =}$\\
-$\texttt{~~x mod 2 = 0}$\\
+$\texttt{\ \ x mod 2 = 0}$\\
 \\
 $\texttt{\plet evens l =}$\\
-$\texttt{~~map is\_even l}$\vphantom{g}
+$\texttt{\ \ map is\_even l}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -1899,7 +1899,7 @@ $\texttt{\ \ \ \ \ \ \ \ \ \  merge cmp (msort cmp left) (msort cmp right)}$\vph
 \noindent\texttt{greater :}\textbf{\textrm{ $\alpha$ $\rightarrow$ $\alpha$ $\rightarrow$ bool}}\\
 \\
 $\texttt{\plet greater a b =}$\\
-$\texttt{~~a >= b}$\vphantom{g}
+$\texttt{\ \ a >= b}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -2583,11 +2583,11 @@ $\texttt{\plet colpair = (\upquote{R}, Red)}$
 %\begin{center}
 \noindent\fbox{\begin{minipage}{\textwidth}
 \noindent$\texttt{\ptype colour =}$\\
-\noindent$\texttt{~~Red}$\\
-\noindent$\texttt{|~Green}$\\
-\noindent$\texttt{|~Blue}$\\
-\noindent$\texttt{|~Yellow}$\\
-\noindent$\texttt{|~RGB \pof int $\times$ int $\times$ int}$\\
+\noindent$\texttt{\ \ Red}$\\
+\noindent$\texttt{|\ Green}$\\
+\noindent$\texttt{|\ Blue}$\\
+\noindent$\texttt{|\ Yellow}$\\
+\noindent$\texttt{|\ RGB \pof int $\times$ int $\times$ int}$\\
 \\
 \noindent\texttt{cols :}\textbf{\textrm{ \textmd{colour} list}}\\
 \\
@@ -2604,12 +2604,12 @@ $\texttt{\plet cols = [Red; Red; Green; Yellow; RGB (150, 0, 255)]\vphantom{g}}$
 \noindent\texttt{components :}\textbf{\textrm{ \textmd{colour} $\rightarrow$ int $\times$ int $\times$ int}}\\
 \\
 $\texttt{\plet components c =}$\\
-$\texttt{~~\pmatch c \pwith}$\\
-$\texttt{~~~~Red -> (255, 0, 0)}$\\
-$\texttt{~~|~Green -> (0, 255, 0)}$\\
-$\texttt{~~|~Blue -> (0, 0, 255)}$\\
-$\texttt{~~|~Yellow -> (255, 255, 0)}$\\
-$\texttt{~~|~RGB (r, g, b) -> (r, g, b)}$
+$\texttt{\ \ \pmatch c \pwith}$\\
+$\texttt{\ \ \ \ Red -> (255, 0, 0)}$\\
+$\texttt{\ \ |\ Green -> (0, 255, 0)}$\\
+$\texttt{\ \ |\ Blue -> (0, 0, 255)}$\\
+$\texttt{\ \ |\ Yellow -> (255, 255, 0)}$\\
+$\texttt{\ \ |\ RGB (r, g, b) -> (r, g, b)}$
 \end{minipage}}
 %\end{center}
 \smspace
@@ -2652,9 +2652,9 @@ $\texttt{\plet word = Some [\upquote{c}; \upquote{a}; \upquote{k}; \upquote{e}]}
 \noindent\texttt{lookup\_opt :}\textrm{ $\alpha$ $\rightarrow$ \textmd{(}$\alpha$ $\times$ $\beta$\textmd{)} \textbf{list} $\rightarrow$ $\beta$ option}\\
 \\
 $\texttt{\pletrec lookup\_opt x l =}$\\
-$\texttt{~~\pmatch l \pwith}$\\
-$\texttt{~~~~[] -> None}$\\
-$\texttt{~~|~(k, v)::t -> \pif x = k \pthen Some v \pelse lookup\_opt x t}$\vphantom{g}
+$\texttt{\ \ \pmatch l \pwith}$\\
+$\texttt{\ \ \ \ [] -> None}$\\
+$\texttt{\ \ |\ (k, v)::t -> \pif x = k \pthen Some v \pelse lookup\_opt x t}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \vspace{1mm}
@@ -2692,14 +2692,14 @@ Nil))} & \textrm{colour sequence} \\ \bottomrule
 \noindent\texttt{append :}\textbf{\textrm{ $\alpha$ list $\rightarrow$ $\alpha$ list $\rightarrow$ $\alpha$ list}}\\
 \\
 $\texttt{\pletrec length l =}$\\
-$\texttt{~~\pmatch l \pwith}$\\
-$\texttt{~~~~[] -> 0}$\\
-$\texttt{~~|~\_::t -> 1 + length t}$\\
+$\texttt{\ \ \pmatch l \pwith}$\\
+$\texttt{\ \ \ \ [] -> 0}$\\
+$\texttt{\ \ |\ \_::t -> 1 + length t}$\\
 \\
 $\texttt{\pletrec append a b =}$\\
-$\texttt{~~\pmatch a \pwith}$\\
-$\texttt{~~~~[] -> b}$\\
-$\texttt{~~|~h::t -> h ::\ append t b}$\vphantom{g}
+$\texttt{\ \ \pmatch a \pwith}$\\
+$\texttt{\ \ \ \ [] -> b}$\\
+$\texttt{\ \ |\ h::t -> h ::\ append t b}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \vspace{1mm}
@@ -2713,14 +2713,14 @@ $\texttt{~~|~h::t -> h ::\ append t b}$\vphantom{g}
 \noindent\texttt{append :}\textrm{ $\alpha$ sequence $\rightarrow$ $\alpha$ sequence $\rightarrow$ $\alpha$ sequence}\\
 \\
 $\texttt{\pletrec length s =}$\\
-$\texttt{~~\pmatch s \pwith}$\\
-$\texttt{~~~~Nil -> 0}$\\
-$\texttt{~~|~Cons (\_, t) -> 1 + length t}$\\
+$\texttt{\ \ \pmatch s \pwith}$\\
+$\texttt{\ \ \ \ Nil -> 0}$\\
+$\texttt{\ \ |\ Cons (\_, t) -> 1 + length t}$\\
 \\
 $\texttt{\pletrec append a b =}$\\
-$\texttt{~~\pmatch a \pwith}$\\
-$\texttt{~~~~Nil -> b}$\\
-$\texttt{~~|~Cons (h, t) -> Cons (h, append t b)}$
+$\texttt{\ \ \pmatch a \pwith}$\\
+$\texttt{\ \ \ \ Nil -> b}$\\
+$\texttt{\ \ |\ Cons (h, t) -> Cons (h, append t b)}$
 \end{minipage}}
 %\end{center}
 \smspace
@@ -2749,11 +2749,11 @@ Our \textrm{sequence} was an example of a recursively-defined type, which can be
 %\begin{center}
 \noindent\fbox{\begin{minipage}{\textwidth}
 $\texttt{\ptype expr =}$\\
-$\texttt{~~Num \pof int}$\\
-$\texttt{|~Add \pof expr * expr}$\\
-$\texttt{|~Subtract \pof expr * expr}$\\
-$\texttt{|~Multiply \pof expr * expr}$\\
-$\texttt{|~Divide \pof expr * expr}$\vphantom{g}
+$\texttt{\ \ Num \pof int}$\\
+$\texttt{|\ Add \pof expr * expr}$\\
+$\texttt{|\ Subtract \pof expr * expr}$\\
+$\texttt{|\ Multiply \pof expr * expr}$\\
+$\texttt{|\ Divide \pof expr * expr}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -2772,12 +2772,12 @@ $\texttt{|~Divide \pof expr * expr}$\vphantom{g}
 \noindent\texttt{evaluate :}\textrm{ expr $\rightarrow$ \textbf{int}}\\
 \\
 $\texttt{\pletrec evaluate e =}$\\
-$\texttt{~~\pmatch e \pwith}$\\
-$\texttt{~~~~Num x -> x}$\\
-$\texttt{~~|~Add (e, e\textquotesingle ) -> evaluate e + evaluate e\textquotesingle }$\\
-$\texttt{~~|~Subtract (e, e\textquotesingle ) -> evaluate e - evaluate e\textquotesingle }$\\
-$\texttt{~~|~Multiply (e, e\textquotesingle ) -> evaluate e * evaluate e\textquotesingle }$\\
-$\texttt{~~|~Divide (e, e\textquotesingle ) -> evaluate e / evaluate e\textquotesingle }$\vphantom{g}
+$\texttt{\ \ \pmatch e \pwith}$\\
+$\texttt{\ \ \ \ Num x -> x}$\\
+$\texttt{\ \ |\ Add (e, e\textquotesingle ) -> evaluate e + evaluate e\textquotesingle }$\\
+$\texttt{\ \ |\ Subtract (e, e\textquotesingle ) -> evaluate e - evaluate e\textquotesingle }$\\
+$\texttt{\ \ |\ Multiply (e, e\textquotesingle ) -> evaluate e * evaluate e\textquotesingle }$\\
+$\texttt{\ \ |\ Divide (e, e\textquotesingle ) -> evaluate e / evaluate e\textquotesingle }$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -2852,8 +2852,8 @@ How can we represent such trees using an OCaml type? When we built our version o
 %\begin{center}
 \noindent\fbox{\begin{minipage}{\textwidth}
 \noindent$\texttt{\ptype\ \textquotesingle a tree =}$\\
-\noindent$\texttt{~~Br of \textquotesingle a * \textquotesingle a tree * \textquotesingle a tree}$\hfill\textit{branch}\\
-\noindent$\texttt{|~Lf}$\hfill\textit{leaf}
+\noindent$\texttt{\ \ Br of \textquotesingle a * \textquotesingle a tree * \textquotesingle a tree}$\hfill\textit{branch}\\
+\noindent$\texttt{|\ Lf}$\hfill\textit{leaf}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -2883,9 +2883,9 @@ How can we represent such trees using an OCaml type? When we built our version o
 \noindent\texttt{size :}\textrm{ $\alpha$ tree $\rightarrow$ \textbf{int}}\\
 \\
 $\texttt{\pletrec size tr =}$\\
-$\texttt{~~\pmatch tr \pwith}$\\
-$\texttt{~~~~Br (\_, l, r) -> 1 + size l + size r}$\\
-$\texttt{~~|~Lf -> 0}\vphantom{g}$
+$\texttt{\ \ \pmatch tr \pwith}$\\
+$\texttt{\ \ \ \ Br (\_, l, r) -> 1 + size l + size r}$\\
+$\texttt{\ \ |\ Lf -> 0}\vphantom{g}$
 \end{minipage}}
 %\end{center}
 \smspace
@@ -2898,9 +2898,9 @@ $\texttt{~~|~Lf -> 0}\vphantom{g}$
 \noindent\texttt{total :}\textrm{ \textbf{int} tree $\rightarrow$ \textbf{int}}\\
 \\
 $\texttt{\pletrec total tr =}$\\
-$\texttt{~~\pmatch tr \pwith}$\\
-$\texttt{~~~~Br (x, l, r) -> x + total l + total r}$\\
-$\texttt{~~|~Lf -> 0}\vphantom{g}$
+$\texttt{\ \ \pmatch tr \pwith}$\\
+$\texttt{\ \ \ \ Br (x, l, r) -> x + total l + total r}$\\
+$\texttt{\ \ |\ Lf -> 0}\vphantom{g}$
 \end{minipage}}
 %\end{center}
 \smspace
@@ -2914,12 +2914,12 @@ $\texttt{~~|~Lf -> 0}\vphantom{g}$
 \noindent\texttt{maxdepth :}\textrm{ $\alpha$ tree $\rightarrow$ \textbf{int}}\\
 \\
 $\texttt{\plet max x y =}$\\
-$\texttt{~~\pif x > y \pthen x \pelse y}$\\
+$\texttt{\ \ \pif x > y \pthen x \pelse y}$\\
 \\
 $\texttt{\pletrec maxdepth tr =}$\\
-$\texttt{~~\pmatch tr \pwith}$\\
-$\texttt{~~~~Br (\_, l, r) -> 1 + max (maxdepth l) (maxdepth r)}$\\
-$\texttt{~~|~Lf -> 0\vphantom{g}}$
+$\texttt{\ \ \pmatch tr \pwith}$\\
+$\texttt{\ \ \ \ Br (\_, l, r) -> 1 + max (maxdepth l) (maxdepth r)}$\\
+$\texttt{\ \ |\ Lf -> 0\vphantom{g}}$
 \end{minipage}}
 %\end{center}
 \smspace
@@ -2932,9 +2932,9 @@ $\texttt{~~|~Lf -> 0\vphantom{g}}$
 \noindent\texttt{list\_of\_tree :}\textrm{ $\alpha$ tree $\rightarrow$ $\alpha$ \textbf{list}}\\
 \\
 $\texttt{\pletrec list\_of\_tree tr =}$\\
-$\texttt{~~\pmatch tr \pwith}$\\
-$\texttt{~~~~Br (x, l, r) -> list\_of\_tree l @ [x] @ list\_of\_tree r}$\\
-$\texttt{~~|~Lf -> []}\vphantom{g}$
+$\texttt{\ \ \pmatch tr \pwith}$\\
+$\texttt{\ \ \ \ Br (x, l, r) -> list\_of\_tree l @ [x] @ list\_of\_tree r}$\\
+$\texttt{\ \ |\ Lf -> []}\vphantom{g}$
 \end{minipage}}
 %\end{center}
 \smspace
@@ -2947,9 +2947,9 @@ $\texttt{~~|~Lf -> []}\vphantom{g}$
 \noindent\texttt{tree\_map :}\textrm{ \textmd{(}$\alpha$ $\rightarrow$ $\beta$\textmd{)} $\rightarrow$ $\alpha$ tree $\rightarrow$ $\beta$ tree}\\
 \\
 $\texttt{\pletrec tree\_map f tr =}$\\
-$\texttt{~~\pmatch tr \pwith}$\\
-$\texttt{~~~~Br (x, l, r) -> Br (f x, tree\_map f l, tree\_map f r)}$\\
-$\texttt{~~|~Lf -> Lf\vphantom{g}}$
+$\texttt{\ \ \pmatch tr \pwith}$\\
+$\texttt{\ \ \ \ Br (x, l, r) -> Br (f x, tree\_map f l, tree\_map f r)}$\\
+$\texttt{\ \ |\ Lf -> Lf\vphantom{g}}$
 \end{minipage}}
 %\end{center}
 \smspace
@@ -2988,12 +2988,12 @@ Lookup is simple: start at the top, and if we have not found the key we are look
 \noindent\texttt{lookup :}\textrm{ \textmd{(}$\alpha \times \beta$\textmd{)} tree $\rightarrow$ $\alpha$ $\rightarrow$ $\beta$}\\
 \\
 $\texttt{\pletrec lookup tr k =}$\\
-$\texttt{~~\pmatch tr \pwith}$\\
-$\texttt{~~~~Lf -> \praise Not\_found}$\\
-$\texttt{~~|~Br ((k\textquotesingle , v), l, r) ->}$\\
-$\texttt{~~~~~~\pif k = k\textquotesingle\ \pthen v}$\hfill\makebox{\textit{found the key -- return the value}}\\
-$\texttt{~~~~~~\pelse \pif k < k\textquotesingle\ \pthen lookup l k}$\hfill\makebox{\textit{go left}}\\
-$\texttt{~~~~~~\pelse lookup r k}$\hfill\makebox{\textit{go right}} 
+$\texttt{\ \ \pmatch tr \pwith}$\\
+$\texttt{\ \ \ \ Lf -> \praise Not\_found}$\\
+$\texttt{\ \ |\ Br ((k\textquotesingle , v), l, r) ->}$\\
+$\texttt{\ \ \ \ \ \ \pif k = k\textquotesingle\ \pthen v}$\hfill\makebox{\textit{found the key -- return the value}}\\
+$\texttt{\ \ \ \ \ \ \pelse \pif k < k\textquotesingle\ \pthen lookup l k}$\hfill\makebox{\textit{go left}}\\
+$\texttt{\ \ \ \ \ \ \pelse lookup r k}$\hfill\makebox{\textit{go right}} 
 \end{minipage}}
 %\end{center}
 \smspace
@@ -3006,12 +3006,12 @@ $\texttt{~~~~~~\pelse lookup r k}$\hfill\makebox{\textit{go right}}
 \noindent\texttt{lookup :}\textrm{ \textmd{(}$\alpha \times \beta$\textmd{)} tree $\rightarrow$ $\alpha$ $\rightarrow$ $\beta$ \textrm{option}}\\
 \\
 $\texttt{\pletrec lookup tr k =}$\\
-$\texttt{~~\pmatch tr \pwith}$\\
-$\texttt{~~~~Lf -> None}$\\
-$\texttt{~~|~Br ((k\textquotesingle , v), l, r) ->}$\\
-$\texttt{~~~~~~\pif k = k\textquotesingle\ \pthen Some v}$\hfill\makebox{\textit{found the key -- return the value}}\\
-$\texttt{~~~~~~\pelse \pif k < k\textquotesingle\ \pthen lookup l k}$\hfill\makebox{\textit{go left}}\\
-$\texttt{~~~~~~\pelse lookup r k}$\hfill\makebox{\textit{go right}} 
+$\texttt{\ \ \pmatch tr \pwith}$\\
+$\texttt{\ \ \ \ Lf -> None}$\\
+$\texttt{\ \ |\ Br ((k\textquotesingle , v), l, r) ->}$\\
+$\texttt{\ \ \ \ \ \ \pif k = k\textquotesingle\ \pthen Some v}$\hfill\makebox{\textit{found the key -- return the value}}\\
+$\texttt{\ \ \ \ \ \ \pelse \pif k < k\textquotesingle\ \pthen lookup l k}$\hfill\makebox{\textit{go left}}\\
+$\texttt{\ \ \ \ \ \ \pelse lookup r k}$\hfill\makebox{\textit{go right}} 
 \end{minipage}}
 %\end{center}
 \smspace
@@ -3024,12 +3024,12 @@ $\texttt{~~~~~~\pelse lookup r k}$\hfill\makebox{\textit{go right}}
 \noindent\texttt{insert :}\textrm{ \textmd{(}$\alpha \times \beta$\textmd{)} tree $\rightarrow$ $\alpha$ $\rightarrow$ $\beta$ $\rightarrow$ \textmd{(}$\alpha \times \beta$\textmd{)} tree}\\
 \\
 $\texttt{\pletrec insert tr k v =}$\\
-$\texttt{~~\pmatch tr \pwith}$\\
-$\texttt{~~~~Lf -> Br ((k, v), Lf, Lf)}$\hfill\makebox{\textit{insert at leaf}}\\
-$\texttt{~~|~Br ((k\textquotesingle , v\textquotesingle ), l, r) ->}$\\
-$\texttt{~~~~~~\pif k = k\textquotesingle\ \pthen Br ((k, v), l, r)}$\hfill\makebox{\textit{replace value}}\\
-$\texttt{~~~~~~\pelse \pif k < k\textquotesingle\ \pthen Br ((k\textquotesingle , v\textquotesingle ), insert l k v,  r)}$\hfill\makebox{\textit{go left}}\\
-$\texttt{~~~~~~\pelse Br ((k\textquotesingle , v\textquotesingle ), l, insert r k v)}$\hfill\makebox{\textit{go right}} 
+$\texttt{\ \ \pmatch tr \pwith}$\\
+$\texttt{\ \ \ \ Lf -> Br ((k, v), Lf, Lf)}$\hfill\makebox{\textit{insert at leaf}}\\
+$\texttt{\ \ |\ Br ((k\textquotesingle , v\textquotesingle ), l, r) ->}$\\
+$\texttt{\ \ \ \ \ \ \pif k = k\textquotesingle\ \pthen Br ((k, v), l, r)}$\hfill\makebox{\textit{replace value}}\\
+$\texttt{\ \ \ \ \ \ \pelse \pif k < k\textquotesingle\ \pthen Br ((k\textquotesingle , v\textquotesingle ), insert l k v,  r)}$\hfill\makebox{\textit{go left}}\\
+$\texttt{\ \ \ \ \ \ \pelse Br ((k\textquotesingle , v\textquotesingle ), l, insert r k v)}$\hfill\makebox{\textit{go right}} 
 \end{minipage}}
 %\end{center}
 \smspace
@@ -3134,7 +3134,7 @@ We can produce several side-effects, one after another, using the \index{;@\text
 \noindent\texttt{print\_dict\_entry :}\textrm{ \textbf{int} $\times$ \textbf{string} $\rightarrow$ \textbf{unit}}\\
 \\
 $\texttt{\plet print\_dict\_entry (k, v) =}$\\
-$\texttt{~~print\_int k ; print\_newline () ; print\_string v ; print\_newline ()}$\vphantom{g}
+$\texttt{\ \ print\_int k ; print\_newline () ; print\_string v ; print\_newline ()}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -3147,10 +3147,10 @@ $\texttt{~~print\_int k ; print\_newline () ; print\_string v ; print\_newline (
 \noindent\texttt{print\_dict\_entry :}\textrm{ \textbf{int} $\times$ \textbf{string} $\rightarrow$ \textbf{unit}}\\
 \\
 $\texttt{\plet print\_dict\_entry (k, v) =}$\\
-$\texttt{~~print\_int k;}$\\
-$\texttt{~~print\_newline ();}$\\
-$\texttt{~~print\_string v;}$\\
-$\texttt{~~print\_newline ()}$\vphantom{g}
+$\texttt{\ \ print\_int k;}$\\
+$\texttt{\ \ print\_newline ();}$\\
+$\texttt{\ \ print\_string v;}$\\
+$\texttt{\ \ print\_newline ()}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -3175,9 +3175,9 @@ $\texttt{~~print\_newline ()}$\vphantom{g}
 \noindent\texttt{print\_dict :}\textrm{ \textmd{(}\textbf{int} $\times$ \textbf{string}\textmd{)} \textbf{list} $\rightarrow$ \textbf{unit}}\\
 \\
 $\texttt{\pletrec print\_dict d =}$\\
-$\texttt{~~\pmatch d \pwith}$\\
-$\texttt{~~~~[] -> ()}$\hfill\makebox{\textit{do nothing; just return unit}}\\
-$\texttt{~~|~h::t -> print\_dict\_entry h; print\_dict t}$\hfill\makebox{\textit{do this one, and move on}}\vphantom{g}
+$\texttt{\ \ \pmatch d \pwith}$\\
+$\texttt{\ \ \ \ [] -> ()}$\hfill\makebox{\textit{do nothing; just return unit}}\\
+$\texttt{\ \ |\ h::t -> print\_dict\_entry h; print\_dict t}$\hfill\makebox{\textit{do this one, and move on}}\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -3190,9 +3190,9 @@ $\texttt{~~|~h::t -> print\_dict\_entry h; print\_dict t}$\hfill\makebox{\textit
 \noindent\texttt{iter :}\textrm{ \textmd{(}$\alpha$ $\rightarrow$ $\beta$\textmd{)} $\rightarrow$ $\alpha$ \textbf{list} $\rightarrow$ \textbf{unit}}\\
 \\
 $\texttt{\pletrec iter f l =}$\\
-$\texttt{~~\pmatch l \pwith}$\\
-$\texttt{~~~~[] -> ()}$\hfill\makebox{\textit{do nothing; just return unit}}\\
-$\texttt{~~|~h::t -> f h; iter f t}$\hfill\makebox{\textit{do this one, and move on}}\vphantom{g}
+$\texttt{\ \ \pmatch l \pwith}$\\
+$\texttt{\ \ \ \ [] -> ()}$\hfill\makebox{\textit{do nothing; just return unit}}\\
+$\texttt{\ \ |\ h::t -> f h; iter f t}$\hfill\makebox{\textit{do this one, and move on}}\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -3205,12 +3205,12 @@ $\texttt{~~|~h::t -> f h; iter f t}$\hfill\makebox{\textit{do this one, and move
 \noindent\texttt{print\_dict :}\textrm{ \textmd{(}\textbf{int} $\times$ \textbf{string}\textmd{)} \textbf{list} $\rightarrow$ \textbf{unit}}\\
 \\
 $\texttt{\plet print\_dict d =}$\\
-$\texttt{~~iter print\_dict\_entry d}$\\
+$\texttt{\ \ iter print\_dict\_entry d}$\\
 \\
 \textit{or even\ldots}\\
 \\
 $\texttt{\plet print\_dict =}$\\
-$\texttt{~~iter print\_dict\_entry}$\vphantom{g}
+$\texttt{\ \ iter print\_dict\_entry}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -3241,10 +3241,10 @@ We want the user to enter a series of keys and values (integers and strings), on
 \noindent\texttt{read\_dict :}\textrm{ \textbf{unit} $\rightarrow$ \textmd{(}\textbf{int} $\times$ \textbf{string}\textmd{)} \textbf{list}}\\
 \\
 $\texttt{\pletrec read\_dict () =}$\\
-$\texttt{~~\plet i = read\_int () \pin}$\hfill\makebox{\textit{read an integer}}\\
-$\texttt{~~~~\pif i = 0 \pthen [] \pelse}$\hfill\makebox{\textit{if zero, we are done}}\\
-$\texttt{~~~~~~\plet name = read\_line () \pin}$\hfill\makebox{\textit{otherwise, read a name too}}\\
-$\texttt{~~~~~~~~(i, name) ::\ read\_dict ()}$\hfill\makebox{\textit{build a dictionary entry, fetch another}}\vphantom{g}
+$\texttt{\ \ \plet i = read\_int () \pin}$\hfill\makebox{\textit{read an integer}}\\
+$\texttt{\ \ \ \ \pif i = 0 \pthen [] \pelse}$\hfill\makebox{\textit{if zero, we are done}}\\
+$\texttt{\ \ \ \ \ \ \plet name = read\_line () \pin}$\hfill\makebox{\textit{otherwise, read a name too}}\\
+$\texttt{\ \ \ \ \ \ \ \ (i, name) ::\ read\_dict ()}$\hfill\makebox{\textit{build a dictionary entry, fetch another}}\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -3288,16 +3288,16 @@ $\texttt{~~~~~~~~(i, name) ::\ read\_dict ()}$\hfill\makebox{\textit{build a dic
 \noindent\texttt{read\_dict :}\textrm{ \textbf{unit} $\rightarrow$ \textmd{(}\textbf{int} $\times$ \textbf{string}\textmd{)} \textbf{list}}\\
 \\
 $\texttt{\pletrec read\_dict () =}$\\
-$\texttt{~~\ptry}$\\
-$\texttt{~~~~\plet i = read\_int () \pin}$\hfill\makebox{\textit{read an integer}}\\
-$\texttt{~~~~~~\pif i = 0 \pthen [] \pelse}$\hfill\makebox{\textit{if zero, we are done}}\\
-$\texttt{~~~~~~~~\plet name = read\_line () \pin}$\hfill\makebox{\textit{otherwise, read a name too}}\\
-$\texttt{~~~~~~~~~~(i, name) ::\ read\_dict ()}$\hfill\makebox{\textit{build a dictionary entry, fetch another}}\\
-$\texttt{~~\pwith}$\\
-$\texttt{~~~~Failure \_ ->}$\\
-$\texttt{~~~~~~print\_string "This is not a valid integer.\ Please try again.";}$\\
-$\texttt{~~~~~~print\_newline ();}$\\
-$\texttt{~~~~~~read\_dict ()}$\vphantom{g}
+$\texttt{\ \ \ptry}$\\
+$\texttt{\ \ \ \ \plet i = read\_int () \pin}$\hfill\makebox{\textit{read an integer}}\\
+$\texttt{\ \ \ \ \ \ \pif i = 0 \pthen [] \pelse}$\hfill\makebox{\textit{if zero, we are done}}\\
+$\texttt{\ \ \ \ \ \ \ \ \plet name = read\_line () \pin}$\hfill\makebox{\textit{otherwise, read a name too}}\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ (i, name) ::\ read\_dict ()}$\hfill\makebox{\textit{build a dictionary entry, fetch another}}\\
+$\texttt{\ \ \pwith}$\\
+$\texttt{\ \ \ \ Failure \_ ->}$\\
+$\texttt{\ \ \ \ \ \ print\_string "This is not a valid integer.\ Please try again.";}$\\
+$\texttt{\ \ \ \ \ \ print\_newline ();}$\\
+$\texttt{\ \ \ \ \ \ read\_dict ()}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -3333,13 +3333,13 @@ It is inconvenient to have to type new data sets in each time, so we will write 
 \noindent\texttt{dictionary\_to\_channel :}\textrm{ \textbf{out\raisebox{2pt}{\_}channel} $\rightarrow$ \textmd{(}\textbf{int} $\times$ \textbf{string}\textmd{)} \textbf{list} $\rightarrow$ \textbf{unit}}\\
 \\
 $\texttt{\plet entry\_to\_channel ch (k, v) =}$\\
-$\texttt{~~output\_string ch (string\_of\_int k);}$\\
-$\texttt{~~output\_char ch \textquotesingle\textbackslash n\textquotesingle ;}$\\
-$\texttt{~~output\_string ch v;}$\\
-$\texttt{~~output\_char ch \textquotesingle\textbackslash n\textquotesingle}$\\
+$\texttt{\ \ output\_string ch (string\_of\_int k);}$\\
+$\texttt{\ \ output\_char ch \textquotesingle\textbackslash n\textquotesingle ;}$\\
+$\texttt{\ \ output\_string ch v;}$\\
+$\texttt{\ \ output\_char ch \textquotesingle\textbackslash n\textquotesingle}$\\
 \\
 $\texttt{\plet dictionary\_to\_channel ch d =}$\\
-$\texttt{~~iter (entry\_to\_channel ch) d}$\vphantom{g}
+$\texttt{\ \ iter (entry\_to\_channel ch) d}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -3355,9 +3355,9 @@ How do we obtain such a channel? The function \texttt{open\_out} gives an output
 \noindent\texttt{dictionary\_to\_file :}\textrm{ \textbf{string} $\rightarrow$ \textmd{(}\textbf{int} $\times$ \textbf{string}\textmd{)} \textbf{list} $\rightarrow$ \textbf{unit}}\\
 \\
 $\texttt{\plet dictionary\_to\_file filename dict =}$\\
-$\texttt{~~\plet ch = open\_out filename \pin}$\\
-$\texttt{~~~~dictionary\_to\_channel ch dict;}$\\
-$\texttt{~~~~close\_out ch}$\vphantom{g}
+$\texttt{\ \ \plet ch = open\_out filename \pin}$\\
+$\texttt{\ \ \ \ dictionary\_to\_channel ch dict;}$\\
+$\texttt{\ \ \ \ close\_out ch}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -3387,16 +3387,16 @@ $\texttt{~~~~close\_out ch}$\vphantom{g}
 \noindent\texttt{dictionary\_of\_channel :}\textrm{ \textbf{in\raisebox{2pt}{\_}channel} $\rightarrow$ \textmd{(}\textbf{int} $\times$ \textbf{string}\textmd{)} \textbf{list}}\\
 \\
 $\texttt{\plet entry\_of\_channel ch =}$\\
-$\texttt{~~\plet number = input\_line ch \pin}$\\
-$\texttt{~~~~\plet name = input\_line ch \pin}$\\
-$\texttt{~~~~~~(int\_of\_string number, name)}$\\
+$\texttt{\ \ \plet number = input\_line ch \pin}$\\
+$\texttt{\ \ \ \ \plet name = input\_line ch \pin}$\\
+$\texttt{\ \ \ \ \ \ (int\_of\_string number, name)}$\\
 \\
 $\texttt{\pletrec dictionary\_of\_channel ch =}$\\
-$\texttt{~~\ptry}$\\
-$\texttt{~~~~\plet e = entry\_of\_channel ch \pin}$\\
-$\texttt{~~~~~~e ::\ dictionary\_of\_channel ch}$\\
-$\texttt{~~\pwith}$\\
-$\texttt{~~~~End\_of\_file -> []}$\vphantom{g}
+$\texttt{\ \ \ptry}$\\
+$\texttt{\ \ \ \ \plet e = entry\_of\_channel ch \pin}$\\
+$\texttt{\ \ \ \ \ \ e ::\ dictionary\_of\_channel ch}$\\
+$\texttt{\ \ \pwith}$\\
+$\texttt{\ \ \ \ End\_of\_file -> []}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -3409,10 +3409,10 @@ $\texttt{~~~~End\_of\_file -> []}$\vphantom{g}
 \noindent\texttt{dictionary\_of\_file :}\textrm{ \textbf{string} $\rightarrow$ \textmd{(}\textbf{int} $\times$ \textbf{string}\textmd{)} \textbf{list}}\\
 \\
 $\texttt{\plet dictionary\_of\_file filename =}$\\
-$\texttt{~~\plet ch = open\_in filename \pin}$\\
-$\texttt{~~~~\plet dict = dictionary\_of\_channel ch \pin}$\\
-$\texttt{~~~~~~close\_in ch;}$\\
-$\texttt{~~~~~~dict}$\vphantom{g}
+$\texttt{\ \ \plet ch = open\_in filename \pin}$\\
+$\texttt{\ \ \ \ \plet dict = dictionary\_of\_channel ch \pin}$\\
+$\texttt{\ \ \ \ \ \ close\_in ch;}$\\
+$\texttt{\ \ \ \ \ \ dict}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -3574,8 +3574,8 @@ OCaml provides a construct known as a \index{ref@\textbf{\textrm{ref}}}\index{re
 \noindent\texttt{swap :}\textbf{\textrm{ $\alpha$ ref $\rightarrow$ $\alpha$ ref $\rightarrow$ unit}}\\
 \\
 $\texttt{\plet swap a b =}$\\
-$\texttt{~~\plet t = !a \pin}$\\
-$\texttt{~~~~a := !b; b := t}$\vphantom{g}
+$\texttt{\ \ \plet t = !a \pin}$\\
+$\texttt{\ \ \ \ a := !b; b := t}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -3602,10 +3602,10 @@ For readability, OCaml lets us miss out the \texttt{\pelse} part of the \texttt{
 %\begin{center}
 \noindent\fbox{\begin{minipage}{\textwidth}
 $\texttt{\pif x = y \pthen}$\\
-$\texttt{~~(a := !a + 1;}$\\
-$\texttt{~~~b := !b - 1)}$\\
+$\texttt{\ \ (a := !a + 1;}$\\
+$\texttt{\ \ \ b := !b - 1)}$\\
 $\texttt{\pelse}$\\
-$\texttt{~~c := !c + 1}$\vphantom{g}
+$\texttt{\ \ c := !c + 1}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -3616,12 +3616,12 @@ $\texttt{~~c := !c + 1}$\vphantom{g}
 %\begin{center}
 \noindent\fbox{\begin{minipage}{\textwidth}
 $\texttt{\pif x = y \pthen}$\\
-$\texttt{~~\pbegin}$\\
-$\texttt{~~~~a := !a + 1;}$\\
-$\texttt{~~~~b := !b - 1}$\\
-$\texttt{~~\pend}$\\
+$\texttt{\ \ \pbegin}$\\
+$\texttt{\ \ \ \ a := !a + 1;}$\\
+$\texttt{\ \ \ \ b := !b - 1}$\\
+$\texttt{\ \ \pend}$\\
 $\texttt{\pelse}$\\
-$\texttt{~~c := !c + 1}$\vphantom{g}
+$\texttt{\ \ c := !c + 1}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 
@@ -3660,11 +3660,11 @@ times, until the boolean condition is \texttt{false}. For example, here is a fun
 \noindent\texttt{smallest\_pow2 :}\textrm{\textbf{ int $\rightarrow$ int}}\\
 \\
 $\texttt{\plet smallest\_pow2 x =}$\\
-$\texttt{~~\plet t = ref 1 \pin}$\hfill\makebox{\textit{start the test value at 1}}\\
-$\texttt{~~~~\pwhile\ !t < x \pdo}$\hfill\makebox{\textit{each time it is less than \texttt{x}\ldots}}\\
-$\texttt{~~~~~~t := !t * 2}$\hfill\makebox{\textit{\ldots double it}}\\
-$\texttt{~~~~\pdone;}$\\
-$\texttt{~~~~!t}$\hfill\makebox{\textit{the final result is the contents of \texttt{t}}}\vphantom{g}
+$\texttt{\ \ \plet t = ref 1 \pin}$\hfill\makebox{\textit{start the test value at 1}}\\
+$\texttt{\ \ \ \ \pwhile\ !t < x \pdo}$\hfill\makebox{\textit{each time it is less than \texttt{x}\ldots}}\\
+$\texttt{\ \ \ \ \ \ t := !t * 2}$\hfill\makebox{\textit{\ldots double it}}\\
+$\texttt{\ \ \ \ \pdone;}$\\
+$\texttt{\ \ \ \ !t}$\hfill\makebox{\textit{the final result is the contents of \texttt{t}}}\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -3699,26 +3699,26 @@ We will just count lines first. To this, we will write a function \texttt{channe
 \noindent\texttt{file\_statistics :}\textrm{\textbf{ string $\rightarrow$ unit}}\\
 \\
 $\texttt{\plet channel\_statistics in\_channel =}$\\
-$\texttt{~~\plet lines = ref 0 \pin}$\\
-$\texttt{~~~~\ptry}$\\
-$\texttt{~~~~~~\pwhile true \pdo}$\\
-$\texttt{~~~~~~~~\plet line = input\_line in\_channel \pin}$\\
-$\texttt{~~~~~~~~~~lines := !lines + 1}$\\
-$\texttt{~~~~~~\pdone}$\\
-$\texttt{~~~~\pwith}$\\
-$\texttt{~~~~~~End\_of\_file ->}$\\
-$\texttt{~~~~~~~~print\_string "There were ";}$\\
-$\texttt{~~~~~~~~print\_int !lines;}$\\
-$\texttt{~~~~~~~~print\_string " lines.";}$\\
-$\texttt{~~~~~~~~print\_newline ()}$\\
+$\texttt{\ \ \plet lines = ref 0 \pin}$\\
+$\texttt{\ \ \ \ \ptry}$\\
+$\texttt{\ \ \ \ \ \ \pwhile true \pdo}$\\
+$\texttt{\ \ \ \ \ \ \ \ \plet line = input\_line in\_channel \pin}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ lines := !lines + 1}$\\
+$\texttt{\ \ \ \ \ \ \pdone}$\\
+$\texttt{\ \ \ \ \pwith}$\\
+$\texttt{\ \ \ \ \ \ End\_of\_file ->}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_string "There were ";}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_int !lines;}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_string " lines.";}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_newline ()}$\\
 \\
 $\texttt{\plet file\_statistics name =}$\\
-$\texttt{~~\plet channel = open\_in name \pin}$\\
-$\texttt{~~~~\ptry}$\\
-$\texttt{~~~~~~channel\_statistics channel;}$\\
-$\texttt{~~~~~~close\_in channel}$\\
-$\texttt{~~~~\pwith}$\\
-$\texttt{~~~~~~\_ -> close\_in channel}$\vphantom{g}
+$\texttt{\ \ \plet channel = open\_in name \pin}$\\
+$\texttt{\ \ \ \ \ptry}$\\
+$\texttt{\ \ \ \ \ \ channel\_statistics channel;}$\\
+$\texttt{\ \ \ \ \ \ close\_in channel}$\\
+$\texttt{\ \ \ \ \pwith}$\\
+$\texttt{\ \ \ \ \ \ \_ -> close\_in channel}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -3747,35 +3747,35 @@ $\texttt{~~~~~~\_ -> close\_in channel}$\vphantom{g}
 \noindent\texttt{channel\_statistics :}\textrm{\textbf{ in\raisebox{2pt}{\_}channel $\rightarrow$ unit}}\\
 \\
 $\texttt{\plet channel\_statistics in\_channel =}$\\
-$\texttt{~~\plet lines = ref 0 \pin}$\\
-$\texttt{~~\plet characters = ref 0 \pin}$\\
-$\texttt{~~\plet words = ref 0 \pin}$\\
-$\texttt{~~\plet sentences = ref 0 \pin}$\\
-$\texttt{~~~~\ptry}$\\
-$\texttt{~~~~~~\pwhile true \pdo}$\\
-$\texttt{~~~~~~~~\plet line = input\_line in\_channel \pin}$\\
-$\texttt{~~~~~~~~~~lines := !lines + 1;}$\\
-$\texttt{~~~~~~~~~~characters := !characters + String.length line;}$\\
-$\texttt{~~~~~~~~~~String.iter}$\\
-$\texttt{~~~~~~~~~~~~(\pfun c ->}$\\
-$\texttt{~~~~~~~~~~~~~~~\pmatch c \pwith}$\\
-$\texttt{~~~~~~~~~~~~~~~~~\upquote{.}\ | \upquote{?}\ | \upquote{!}\ -> sentences := !sentences + 1}$\\
-$\texttt{~~~~~~~~~~~~~~~| \upquote{ } -> words := !words + 1}$\\
-$\texttt{~~~~~~~~~~~~~~~| \_ -> ())}$\\
-$\texttt{~~~~~~~~~~~~line}$\\
-$\texttt{~~~~~~\pdone}$\\
-$\texttt{~~~~\pwith}$\\
-$\texttt{~~~~~~End\_of\_file ->}$\\
-$\texttt{~~~~~~~~print\_string "There were ";}$\\
-$\texttt{~~~~~~~~print\_int !lines;}$\\
-$\texttt{~~~~~~~~print\_string " lines, making up ";}$\\
-$\texttt{~~~~~~~~print\_int !characters;}$\\
-$\texttt{~~~~~~~~print\_string " characters with ";}$\\
-$\texttt{~~~~~~~~print\_int !words;}$\\
-$\texttt{~~~~~~~~print\_string " words in ";}$\\
-$\texttt{~~~~~~~~print\_int !sentences;}$\\
-$\texttt{~~~~~~~~print\_string " sentences.";}$\\
-$\texttt{~~~~~~~~print\_newline ()}$\vphantom{g}
+$\texttt{\ \ \plet lines = ref 0 \pin}$\\
+$\texttt{\ \ \plet characters = ref 0 \pin}$\\
+$\texttt{\ \ \plet words = ref 0 \pin}$\\
+$\texttt{\ \ \plet sentences = ref 0 \pin}$\\
+$\texttt{\ \ \ \ \ptry}$\\
+$\texttt{\ \ \ \ \ \ \pwhile true \pdo}$\\
+$\texttt{\ \ \ \ \ \ \ \ \plet line = input\_line in\_channel \pin}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ lines := !lines + 1;}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ characters := !characters + String.length line;}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ String.iter}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ (\pfun c ->}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \pmatch c \pwith}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \upquote{.}\ | \upquote{?}\ | \upquote{!}\ -> sentences := !sentences + 1}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ | \upquote{ } -> words := !words + 1}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ | \_ -> ())}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ line}$\\
+$\texttt{\ \ \ \ \ \ \pdone}$\\
+$\texttt{\ \ \ \ \pwith}$\\
+$\texttt{\ \ \ \ \ \ End\_of\_file ->}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_string "There were ";}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_int !lines;}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_string " lines, making up ";}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_int !characters;}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_string " characters with ";}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_int !words;}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_string " words in ";}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_int !sentences;}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_string " sentences.";}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_newline ()}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -3871,21 +3871,21 @@ Our main function is getting rather long, so we will write a separate one which,
 \noindent\texttt{print\_histogram :}\textrm{\textbf{ int array $\rightarrow$ unit}}\\
 \\
 $\texttt{\plet print\_histogram arr =}$\\
-$\texttt{~~print\_string "Character frequencies:";}$\\
-$\texttt{~~print\_newline ();}$\\
-$\texttt{~~\pfor x = 0 \pto 255 \pdo}$\hfill\makebox{\textit{for each character}}\\
-$\texttt{~~~~\pif arr.(x) > 0 \pthen}$\hfill\makebox{\textit{only if the count is non-zero}}\\
-$\texttt{~~~~~~\pbegin}$\\
-$\texttt{~~~~~~~~print\_string "For character \textquotesingle";}$\\
-$\texttt{~~~~~~~~print\_char (char\_of\_int x);}$\hfill\makebox{\textit{print the character}}\\
-$\texttt{~~~~~~~~print\_string "\textquotesingle (character number ";}$\\
-$\texttt{~~~~~~~~print\_int x;}$\hfill\makebox{\textit{print the character number}}\\
-$\texttt{~~~~~~~~print\_string ") the count is ";}$\\
-$\texttt{~~~~~~~~print\_int arr.(x);}$\hfill\makebox{\textit{print the count}}\\
-$\texttt{~~~~~~~~print\_string ".";}$\\
-$\texttt{~~~~~~~~print\_newline ()}$\\
-$\texttt{~~~~~~\pend}$\\
-$\texttt{~~\pdone}$\vphantom{g}
+$\texttt{\ \ print\_string "Character frequencies:";}$\\
+$\texttt{\ \ print\_newline ();}$\\
+$\texttt{\ \ \pfor x = 0 \pto 255 \pdo}$\hfill\makebox{\textit{for each character}}\\
+$\texttt{\ \ \ \ \pif arr.(x) > 0 \pthen}$\hfill\makebox{\textit{only if the count is non-zero}}\\
+$\texttt{\ \ \ \ \ \ \pbegin}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_string "For character \textquotesingle";}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_char (char\_of\_int x);}$\hfill\makebox{\textit{print the character}}\\
+$\texttt{\ \ \ \ \ \ \ \ print\_string "\textquotesingle (character number ";}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_int x;}$\hfill\makebox{\textit{print the character number}}\\
+$\texttt{\ \ \ \ \ \ \ \ print\_string ") the count is ";}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_int arr.(x);}$\hfill\makebox{\textit{print the count}}\\
+$\texttt{\ \ \ \ \ \ \ \ print\_string ".";}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_newline ()}$\\
+$\texttt{\ \ \ \ \ \ \pend}$\\
+$\texttt{\ \ \pdone}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -3904,42 +3904,42 @@ $\texttt{~~\pdone}$\vphantom{g}
 \noindent\texttt{channel\_statistics :}\textrm{\textbf{ in\raisebox{2pt}{\_}channel $\rightarrow$ unit}}\\
 \\
 $\texttt{\plet channel\_statistics in\_channel =}$\\
-$\texttt{~~\plet lines = ref 0 \pin}$\\
-$\texttt{~~\plet characters = ref 0 \pin}$\hfill\makebox{\textit{we do not indent all these \texttt{\textbf{let}}s.}}\\
-$\texttt{~~\plet words = ref 0 \pin}$\\
-$\texttt{~~\plet sentences = ref 0 \pin}$\\
-$\texttt{~~\plet histogram = Array.make 256 0 \pin}$\hfill\makebox{\textit{length 256, all elements initially 0}}\\
-$\texttt{~~~~\ptry}$\\
-$\texttt{~~~~~~\pwhile true \pdo}$\\
-$\texttt{~~~~~~~~\plet line = input\_line in\_channel \pin}$\\
-$\texttt{~~~~~~~~~~lines := !lines + 1;}$\\
-$\texttt{~~~~~~~~~~characters := !characters + String.length line;}$\\
-$\texttt{~~~~~~~~~~String.iter}$\\
-$\texttt{~~~~~~~~~~~~(\pfun c ->}$\\
-$\texttt{~~~~~~~~~~~~~~~\pmatch c \pwith}$\\
-$\texttt{~~~~~~~~~~~~~~~~~\upquote{.}\ | \upquote{?}\ | \upquote{!}\ -> sentences := !sentences + 1}$\\
-$\texttt{~~~~~~~~~~~~~~~| \upquote{ } -> words := !words + 1}$\\
-$\texttt{~~~~~~~~~~~~~~~| \_ -> ())}$\\
-$\texttt{~~~~~~~~~~~~line;}$\\
-$\texttt{~~~~~~~~~~String.iter}$\hfill\makebox{\textit{for each character\ldots}}\\
-$\texttt{~~~~~~~~~~~~(\pfun c ->}$\\
-$\texttt{~~~~~~~~~~~~~~\plet i = int\_of\_char c \pin}$\\
-$\texttt{~~~~~~~~~~~~~~~~histogram.(i) <- histogram.(i) + 1)}$\hfill\makebox{\textit{update histogram}}\\
-$\texttt{~~~~~~~~~~~~line}$\\
-$\texttt{~~~~~~\pdone}$\\
-$\texttt{~~~~\pwith}$\\
-$\texttt{~~~~~~End\_of\_file ->}$\\
-$\texttt{~~~~~~~~print\_string "There were ";}$\\
-$\texttt{~~~~~~~~print\_int !lines;}$\\
-$\texttt{~~~~~~~~print\_string " lines, making up ";}$\\
-$\texttt{~~~~~~~~print\_int !characters;}$\\
-$\texttt{~~~~~~~~print\_string " characters with ";}$\\
-$\texttt{~~~~~~~~print\_int !words;}$\\
-$\texttt{~~~~~~~~print\_string " words in ";}$\\
-$\texttt{~~~~~~~~print\_int !sentences;}$\\
-$\texttt{~~~~~~~~print\_string " sentences.";}$\\
-$\texttt{~~~~~~~~print\_newline ();}$\\
-$\texttt{~~~~~~~~print\_histogram histogram}$\hfill\makebox{\textit{call histogram printer}}\vphantom{g}
+$\texttt{\ \ \plet lines = ref 0 \pin}$\\
+$\texttt{\ \ \plet characters = ref 0 \pin}$\hfill\makebox{\textit{we do not indent all these \texttt{\textbf{let}}s.}}\\
+$\texttt{\ \ \plet words = ref 0 \pin}$\\
+$\texttt{\ \ \plet sentences = ref 0 \pin}$\\
+$\texttt{\ \ \plet histogram = Array.make 256 0 \pin}$\hfill\makebox{\textit{length 256, all elements initially 0}}\\
+$\texttt{\ \ \ \ \ptry}$\\
+$\texttt{\ \ \ \ \ \ \pwhile true \pdo}$\\
+$\texttt{\ \ \ \ \ \ \ \ \plet line = input\_line in\_channel \pin}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ lines := !lines + 1;}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ characters := !characters + String.length line;}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ String.iter}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ (\pfun c ->}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \pmatch c \pwith}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \upquote{.}\ | \upquote{?}\ | \upquote{!}\ -> sentences := !sentences + 1}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ | \upquote{ } -> words := !words + 1}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ | \_ -> ())}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ line;}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ String.iter}$\hfill\makebox{\textit{for each character\ldots}}\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ (\pfun c ->}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \plet i = int\_of\_char c \pin}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ histogram.(i) <- histogram.(i) + 1)}$\hfill\makebox{\textit{update histogram}}\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ line}$\\
+$\texttt{\ \ \ \ \ \ \pdone}$\\
+$\texttt{\ \ \ \ \pwith}$\\
+$\texttt{\ \ \ \ \ \ End\_of\_file ->}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_string "There were ";}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_int !lines;}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_string " lines, making up ";}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_int !characters;}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_string " characters with ";}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_int !words;}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_string " words in ";}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_int !sentences;}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_string " sentences.";}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_newline ();}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_histogram histogram}$\hfill\makebox{\textit{call histogram printer}}\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -4170,19 +4170,19 @@ Function & Type & Description\\ \midrule
 \noindent\texttt{scale\_to\_length :}\textbf{\textrm{ float $\rightarrow$ float $\times$ float $\rightarrow$ float $\times$ float}}\\
 \\
 $\texttt{\plet make\_vector (x0, y0) (x1, y1) =}$\\
-$\texttt{~~(x1 -.\ x0, y1 -.\ y0)}$\\
+$\texttt{\ \ (x1 -.\ x0, y1 -.\ y0)}$\\
 \\
 $\texttt{\plet vector\_length (x, y) =}$\\
-$\texttt{~~sqrt (x *.\ x +.\ y *.\ y)}$\\
+$\texttt{\ \ sqrt (x *.\ x +.\ y *.\ y)}$\\
 \\
 $\texttt{\plet offset\_point (x, y) (px, py) =}$\\
-$\texttt{~~(px +.\ x, py +.\ y)}$\\
+$\texttt{\ \ (px +.\ x, py +.\ y)}$\\
 \\
 $\texttt{\plet scale\_to\_length l (a, b) =}$\\
-$\texttt{~~\plet currentlength = vector\_length (a, b) \pin}$\\
-$\texttt{~~~~\pif currentlength = 0.\ \pthen (a, b) \pelse}$\hfill\makebox{\textit{to avoid division by zero}}\\
-$\texttt{~~~~~~\plet factor = l /.\ currentlength \pin}$\\
-$\texttt{~~~~~~~~(a *.\ factor, b *.\ factor)}$\vphantom{g}
+$\texttt{\ \ \plet currentlength = vector\_length (a, b) \pin}$\\
+$\texttt{\ \ \ \ \pif currentlength = 0.\ \pthen (a, b) \pelse}$\hfill\makebox{\textit{to avoid division by zero}}\\
+$\texttt{\ \ \ \ \ \ \plet factor = l /.\ currentlength \pin}$\\
+$\texttt{\ \ \ \ \ \ \ \ (a *.\ factor, b *.\ factor)}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -4205,29 +4205,29 @@ Floating-point numbers are often essential, but must be used with caution. You w
 \item Now write a function \texttt{plot} which, given a function of type \textrm{\textbf{float $\rightarrow$ float}}, a range, and a step size, uses \texttt{star} to draw a graph. For example, assuming the existence of the name \texttt{pi} for $\pi$, we might see:
 
 \noindent\begin{tabular}{l}
-$\texttt{~~~~~~~~OCaml}$\\
+$\texttt{\ \ \ \ \ \ \ \ OCaml}$\\
 $\texttt{}$\\
-$\texttt{\#~plot~sin~0.~pi~(pi~/.~20.);;}$\\
+$\texttt{\#\ plot\ sin\ 0.\ pi\ (pi\ /.\ 20.);;}$\\
 $\texttt{*}$\\
-$\texttt{~~~~~~*}$\\
-$\texttt{~~~~~~~~~~~~~~*}$\\
-$\texttt{~~~~~~~~~~~~~~~~~~~~~*}$\\
-$\texttt{~~~~~~~~~~~~~~~~~~~~~~~~~~~~*}$\\
-$\texttt{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*}$\\
-$\texttt{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*}$\\
-$\texttt{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*}$\\
-$\texttt{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*}$\\
-$\texttt{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*}$\\
-$\texttt{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*}$\\
-$\texttt{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*}$\\
-$\texttt{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*}$\\
-$\texttt{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*}$\\
-$\texttt{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*}$\\
-$\texttt{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*}$\\
-$\texttt{~~~~~~~~~~~~~~~~~~~~~~~~~~~~*}$\\
-$\texttt{~~~~~~~~~~~~~~~~~~~~~*}$\\
-$\texttt{~~~~~~~~~~~~~~*}$\\
-$\texttt{~~~~~~*}$\\
+$\texttt{\ \ \ \ \ \ *}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ *}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ *}$\\
+$\texttt{\ \ \ \ \ \ *}$\\
 $\texttt{*}$
 \end{tabular}
 
@@ -4462,10 +4462,10 @@ We will be building a modular version of our text statistics program from Chapte
 \noindent\texttt{let stats\_from\_channel \_ = (0, 0, 0, 0)}\hfill\textit{statistics from a channel}\\
 \\
 \noindent\texttt{let stats\_from\_file filename =}\hfill\textit{and from a file; exceptions are not handled}\\
-\noindent$\texttt{~~let channel = open\_in filename in}$\\
-\noindent$\texttt{~~~~let result = stats\_from\_channel channel in}$\\
-\noindent$\texttt{~~~~~~close\_in channel;}$\\
-\noindent$\texttt{~~~~~~result}$\vphantom{g}
+\noindent$\texttt{\ \ let channel = open\_in filename in}$\\
+\noindent$\texttt{\ \ \ \ let result = stats\_from\_channel channel in}$\\
+\noindent$\texttt{\ \ \ \ \ \ close\_in channel;}$\\
+\noindent$\texttt{\ \ \ \ \ \ result}$\vphantom{g}
 \end{minipage}}
 \end{center}
 \caption{\small \texttt{textstat.ml}}
@@ -4488,7 +4488,7 @@ Now, we can issue a command to turn this program into a pre-processed OCaml modu
 \noindent\verb!        OCaml!\\
 \noindent\\
 \noindent$\texttt{\# \#load "textstat.cmo";;}$\hfill\textit{load the module}\\
-\noindent$\texttt{\#~Textstat.stats\_from\_file "gregor.txt";;}$\hfill\textit{use a function}\\
+\noindent$\texttt{\#\ Textstat.stats\_from\_file "gregor.txt";;}$\hfill\textit{use a function}\\
 \noindent$\texttt{- :\ int * int * int * int = (0, 0, 0, 0)}$\hfill\vphantom{g}
 \smspace
 
@@ -4516,33 +4516,33 @@ $\texttt{let sentences (\_, \_, \_, s) = s}$\\
 \\
 $\texttt{(* Read statistics from a channel *)}$\\
 $\texttt{let stats\_from\_channel in\_channel =}$\\
-$\texttt{~~let lines = ref 0 in}$\\
-$\texttt{~~let characters = ref 0 in}$\\
-$\texttt{~~let words = ref 0 in}$\\
-$\texttt{~~let sentences = ref 0 in}$\\
-$\texttt{~~~~try}$\\
-$\texttt{~~~~~~while true do}$\\
-$\texttt{~~~~~~~~let line = input\_line in\_channel in}$\\
-$\texttt{~~~~~~~~~~lines := !lines + 1;}$\\
-$\texttt{~~~~~~~~~~characters := !characters + String.length line;}$\\
-$\texttt{~~~~~~~~~~String.iter}$\\
-$\texttt{~~~~~~~~~~~~(fun c ->}$\\
-$\texttt{~~~~~~~~~~~~~~~match c with}$\\
-$\texttt{~~~~~~~~~~~~~~~~\upquote{.} | \upquote{?} | \upquote{!}\ -> sentences := !sentences + 1}$\\
-$\texttt{~~~~~~~~~~~~~~| \upquote{ } -> words := !words + 1}$\\
-$\texttt{~~~~~~~~~~~~~~| \_ -> ())}$\\
-$\texttt{~~~~~~~~~~~~line}$\\
-$\texttt{~~~~~~done;}$\\
-$\texttt{~~~~~~(0, 0, 0, 0) (* Just to make the type agree *)}$\\
-$\texttt{~~~~with}$\\
-$\texttt{~~~~~~End\_of\_file -> (!lines, !characters, !words, !sentences)}$\\
+$\texttt{\ \ let lines = ref 0 in}$\\
+$\texttt{\ \ let characters = ref 0 in}$\\
+$\texttt{\ \ let words = ref 0 in}$\\
+$\texttt{\ \ let sentences = ref 0 in}$\\
+$\texttt{\ \ \ \ try}$\\
+$\texttt{\ \ \ \ \ \ while true do}$\\
+$\texttt{\ \ \ \ \ \ \ \ let line = input\_line in\_channel in}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ lines := !lines + 1;}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ characters := !characters + String.length line;}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ String.iter}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ (fun c ->}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ match c with}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \upquote{.} | \upquote{?} | \upquote{!}\ -> sentences := !sentences + 1}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ | \upquote{ } -> words := !words + 1}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ | \_ -> ())}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ line}$\\
+$\texttt{\ \ \ \ \ \ done;}$\\
+$\texttt{\ \ \ \ \ \ (0, 0, 0, 0) (* Just to make the type agree *)}$\\
+$\texttt{\ \ \ \ with}$\\
+$\texttt{\ \ \ \ \ \ End\_of\_file -> (!lines, !characters, !words, !sentences)}$\\
 \\
 $\texttt{(* Read statistics, given a filename.\ Exceptions are not handled *)}$\\
 $\texttt{let stats\_from\_file filename =}$\\
-$\texttt{~~let channel = open\_in filename in}$\\
-$\texttt{~~~~let result = stats\_from\_channel channel in}$\\
-$\texttt{~~~~~~close\_in channel;}$\\
-$\texttt{~~~~~~result}$\vphantom{g}
+$\texttt{\ \ let channel = open\_in filename in}$\\
+$\texttt{\ \ \ \ let result = stats\_from\_channel channel in}$\\
+$\texttt{\ \ \ \ \ \ close\_in channel;}$\\
+$\texttt{\ \ \ \ \ \ result}$\vphantom{g}
 \end{minipage}}
 \end{center}
 \caption{\small\texttt{textstat.ml}}
@@ -4554,7 +4554,7 @@ $\texttt{~~~~~~result}$\vphantom{g}
 \noindent\verb!        OCaml!\\
 \noindent\\
 \noindent\texttt{\# \#load "textstat.cmo";;}\\
-\noindent$\texttt{\#~let~s~=~Textstat.stats_from_file "gregor.txt";;}$\\
+\noindent$\texttt{\#\ let\ s\ =\ Textstat.stats_from_file "gregor.txt";;}$\\
 \noindent\texttt{val s :\ Textstat.stats = (8, 464, 80, 4)}\\
 \noindent\texttt{\# Textstat.lines s;;}\\
 \noindent\texttt{- :\ int = 8}\\
@@ -4636,7 +4636,7 @@ Now, if we compile the program again with \texttt{ocamlc\! textstat.mli\! textst
 \noindent\verb!        OCaml!\\
 \noindent\\
 \texttt{\# \#load "textstat.cmo";;}\\
-\texttt{\#~let~s~=~Textstat.stats\_from\_file "gregor.txt";;}\\
+\texttt{\#\ let\ s\ =\ Textstat.stats\_from\_file "gregor.txt";;}\\
 \texttt{val s :\ Textstat.stats = <abstr>}\hfill\textit{the type is now abstract}\\
 \texttt{\# Textstat.lines s;;}\\
 \texttt{- :\ int = 8}\\
@@ -4662,31 +4662,31 @@ Now it is time to cut ourselves free from interactive OCaml, and build standalon
 \small
 \texttt{(* Command line text file statistics program *)}\\
 \texttt{try}\\
-$\texttt{~~begin match Sys.argv with}$\hfill\textit{see note 1}\\
-$\texttt{~~~~[|\_; filename|] ->}$\\
-$\texttt{~~~~~~let stats = Textstat.stats\_from\_file filename in}$\\
-$\texttt{~~~~~~~~print\_string "Words:\ ";}$\\
-$\texttt{~~~~~~~~print\_int (Textstat.words stats);}$\\
-$\texttt{~~~~~~~~print\_newline ();}$\\
-$\texttt{~~~~~~~~print\_string "Characters:\ ";}$\\
-$\texttt{~~~~~~~~print\_int (Textstat.characters stats);}$\\
-$\texttt{~~~~~~~~print\_newline ();}$\\
-$\texttt{~~~~~~~~print\_string "Sentences:\ ";}$\\
-$\texttt{~~~~~~~~print\_int (Textstat.sentences stats);}$\\
-$\texttt{~~~~~~~~print\_newline ();}$\\
-$\texttt{~~~~~~~~print\_string "Lines:\ ";}$\\
-$\texttt{~~~~~~~~print\_int (Textstat.lines stats);}$\\
-$\texttt{~~~~~~~~print\_newline ()}$\\
-$\texttt{~~| \_ ->}$\\
-$\texttt{~~~~~~print\_string "Usage:\ stats\ <filename>";}$\\
-$\texttt{~~~~~~print\_newline ()}$\\
-$\texttt{~~end}$\\
+$\texttt{\ \ begin match Sys.argv with}$\hfill\textit{see note 1}\\
+$\texttt{\ \ \ \ [|\_; filename|] ->}$\\
+$\texttt{\ \ \ \ \ \ let stats = Textstat.stats\_from\_file filename in}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_string "Words:\ ";}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_int (Textstat.words stats);}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_newline ();}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_string "Characters:\ ";}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_int (Textstat.characters stats);}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_newline ();}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_string "Sentences:\ ";}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_int (Textstat.sentences stats);}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_newline ();}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_string "Lines:\ ";}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_int (Textstat.lines stats);}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_newline ()}$\\
+$\texttt{\ \ | \_ ->}$\\
+$\texttt{\ \ \ \ \ \ print\_string "Usage:\ stats\ <filename>";}$\\
+$\texttt{\ \ \ \ \ \ print\_newline ()}$\\
+$\texttt{\ \ end}$\\
 $\texttt{with}$\\
-$\texttt{~~e ->}$\\
-$\texttt{~~~~print\_string "An error occurred:\ ";}$\\
-$\texttt{~~~~print\_string (Printexc.to\_string e);}$\hfill\textit{see note 2}\\
-$\texttt{~~~~print\_newline ();}$\\
-$\texttt{~~~~exit 1}\hfill\textit{see note 3}$\vphantom{g}
+$\texttt{\ \ e ->}$\\
+$\texttt{\ \ \ \ print\_string "An error occurred:\ ";}$\\
+$\texttt{\ \ \ \ print\_string (Printexc.to\_string e);}$\hfill\textit{see note 2}\\
+$\texttt{\ \ \ \ print\_newline ();}$\\
+$\texttt{\ \ \ \ exit 1}\hfill\textit{see note 3}$\vphantom{g}
 \end{minipage}}
 \end{center}
 \caption{\small\texttt{stats.ml}}
@@ -4958,9 +4958,9 @@ We can just pattern match on the boolean. It does not matter, in this instance, 
 \noindent\texttt{not :}\textbf{\textrm{ bool $\rightarrow$ bool}}\\
 \\
 $\texttt{\plet not x =}$\\
-$\texttt{~~\pmatch x \pwith}$\\
-$\texttt{~~~~true -> false}$\\
-$\texttt{~~| false -> true}$
+$\texttt{\ \ \pmatch x \pwith}$\\
+$\texttt{\ \ \ \ true -> false}$\\
+$\texttt{\ \ | false -> true}$
 \end{minipage}}
 %\end{center}
 
@@ -4973,7 +4973,7 @@ Recall our solution from the previous chapter:
 \noindent\texttt{sum :}\textbf{\textrm{ int $\rightarrow$ int}}\\
 \\
 $\texttt{\pletrec sum n =}$\\
-$\texttt{~~\pif n = 1 \pthen 1 \pelse n + sum (n - 1)}$
+$\texttt{\ \ \pif n = 1 \pthen 1 \pelse n + sum (n - 1)}$
 \end{minipage}}
 %\end{center}
 \smspace
@@ -4986,9 +4986,9 @@ $\texttt{~~\pif n = 1 \pthen 1 \pelse n + sum (n - 1)}$
 \noindent\texttt{sum\_match :}\textbf{\textrm{ int $\rightarrow$ int}}\\
 \\
 $\texttt{\pletrec sum\_match n =}$\\
-$\texttt{~~\pmatch n \pwith}$\\
-$\texttt{~~~~1 -> 1}$\\
-$\texttt{~~|~\_ -> n + sum\_match (n - 1)}$
+$\texttt{\ \ \pmatch n \pwith}$\\
+$\texttt{\ \ \ \ 1 -> 1}$\\
+$\texttt{\ \ |\ \_ -> n + sum\_match (n - 1)}$
 \end{minipage}}
 %\end{center}
 
@@ -5001,10 +5001,10 @@ Again, modifying our solution from the previous chapter:
 \noindent\texttt{power\_match :}\textbf{\textrm{ int $\rightarrow$ int $\rightarrow$ int}}\\
 \\
 $\texttt{\pletrec power\_match x n =}$\\
-$\texttt{~~\pmatch n \pwith}$\\
-$\texttt{~~~~0 -> 1}$\\
-$\texttt{~~|~1 -> x}$\\
-$\texttt{~~|~\_ -> x * power\_match x (n - 1)}$
+$\texttt{\ \ \pmatch n \pwith}$\\
+$\texttt{\ \ \ \ 0 -> 1}$\\
+$\texttt{\ \ |\ 1 -> x}$\\
+$\texttt{\ \ |\ \_ -> x * power\_match x (n - 1)}$
 \end{minipage}}
 %\end{center}
 
@@ -5015,10 +5015,10 @@ This is the same as
 %\begin{center}
 \noindent\fbox{\begin{minipage}{\textwidth}
 $\texttt{\pmatch 1 + 1 \pwith}$\\
-$\texttt{~~2 ->}$\\
-$\texttt{~~~~(\pmatch 2 + 2 \pwith}$\\
-$\texttt{~~~~~~3 -> 4}$\\
-$\texttt{~~~~|~4 -> 5)}$
+$\texttt{\ \ 2 ->}$\\
+$\texttt{\ \ \ \ (\pmatch 2 + 2 \pwith}$\\
+$\texttt{\ \ \ \ \ \ 3 -> 4}$\\
+$\texttt{\ \ \ \ |\ 4 -> 5)}$
 \end{minipage}}
 %\end{center}
 \smspace
@@ -5035,14 +5035,14 @@ We write two functions of type \textbf{\textrm{char $\rightarrow$ bool}} like th
 \noindent\texttt{islower :}\textbf{\textrm{ char $\rightarrow$ bool}}\\
 \\
 $\texttt{\plet isupper c =}$\\
-$\texttt{~~\pmatch c \pwith}$\\
-$\texttt{~~~~\upquote{A}..\upquote{Z} -> true}$\\
-$\texttt{~~| \_ -> false}$\\
+$\texttt{\ \ \pmatch c \pwith}$\\
+$\texttt{\ \ \ \ \upquote{A}..\upquote{Z} -> true}$\\
+$\texttt{\ \ | \_ -> false}$\\
 \\
 $\texttt{\plet islower c =}$\\
-$\texttt{~~\pmatch c \pwith}$\\
-$\texttt{~~~~\upquote{a}..\upquote{z} -> true}$\\
-$\texttt{~~| \_ -> false}$
+$\texttt{\ \ \pmatch c \pwith}$\\
+$\texttt{\ \ \ \ \upquote{a}..\upquote{z} -> true}$\\
+$\texttt{\ \ | \_ -> false}$
 \end{minipage}}
 %\end{center}
 \smspace
@@ -5056,12 +5056,12 @@ $\texttt{~~| \_ -> false}$
 \noindent\texttt{islower :}\textbf{\textrm{ char $\rightarrow$ bool}}\\
 \\
 $\texttt{\plet isupper c =}$\\
-$\texttt{~~\pmatch c \pwith}$\\
-$\texttt{~~~~\upquote{A}..\upquote{Z} -> true}$\\
-$\texttt{~~| \_ -> false}$\\
+$\texttt{\ \ \pmatch c \pwith}$\\
+$\texttt{\ \ \ \ \upquote{A}..\upquote{Z} -> true}$\\
+$\texttt{\ \ | \_ -> false}$\\
 \\
 $\texttt{\plet islower c =}$\\
-$\texttt{~~not (isupper c)}$
+$\texttt{\ \ not (isupper c)}$
 \end{minipage}}
 %\end{center}
 \smspace
@@ -5426,7 +5426,7 @@ $\texttt{\plet calm\_char x =}$\\
 $\texttt{\ \  \pmatch x \pwith\ \upquote{!}\ -> \upquote{.}\ |\ \_ -> x}$\\
 \\
 $\texttt{\plet calm l =}$\\
-$\texttt{~~map calm\_char l}$\vphantom{g}
+$\texttt{\ \ map calm\_char l}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -5625,7 +5625,7 @@ $\texttt{ \ \ \ \ \ \ \ \pthen smallest\_inner h true t}$\\
 $\texttt{ \ \ \ \ \ \ \ \pelse smallest\_inner current found t}$\\
 \\
 $\texttt{\plet smallest l =}$\\
-$\texttt{~~smallest\_inner max\_int false l}$\vphantom{g}
+$\texttt{\ \ smallest\_inner max\_int false l}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -5642,7 +5642,7 @@ We just surround the call to \texttt{smallest} with an exception handler for \te
 \noindent\texttt{smallest\_or\_zero :}\textbf{\textrm{ int list $\rightarrow$ int}}\\
 \\
 $\texttt{\plet smallest\_or\_zero l =}$\\
-$\texttt{~~\ptry smallest l \pwith Not\_found -> 0}$\vphantom{g}
+$\texttt{\ \ \ptry smallest l \pwith Not\_found -> 0}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 
@@ -5657,12 +5657,12 @@ We write a function \texttt{sqrt\_inner} which, given a test number \texttt{x} a
 \noindent\texttt{sqrt :}\textbf{\textrm{ int $\rightarrow$ int}}\\
 \\
 $\texttt{\pletrec sqrt\_inner x n =}$\\
-$\texttt{~~\pif x * x > n \pthen x - 1 \pelse sqrt\_inner (x + 1) n}$\\
+$\texttt{\ \ \pif x * x > n \pthen x - 1 \pelse sqrt\_inner (x + 1) n}$\\
 \\
 $\texttt{\pexception Complex}$\\
 \\
 $\texttt{\plet sqrt n =}$\\
-$\texttt{~~\pif n < 0 \pthen \praise Complex \pelse sqrt\_inner 1 n}$\vphantom{g}
+$\texttt{\ \ \pif n < 0 \pthen \praise Complex \pelse sqrt\_inner 1 n}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 
@@ -5675,7 +5675,7 @@ We wrap up the function, handle the \texttt{Complex} exception and return.
 \noindent\texttt{safe\_sqrt :}\textbf{\textrm{ int $\rightarrow$ int}}\\
 \\
 $\texttt{\plet safe\_sqrt n =}$\\
-$\texttt{~~\ptry sqrt n \pwith Complex -> 0}$\vphantom{g}
+$\texttt{\ \ \ptry sqrt n \pwith Complex -> 0}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 
@@ -5744,13 +5744,13 @@ $\texttt{\ \ \ \ \ \ \ \ (ks, vs) -> (k ::\ ks, v ::\ vs)}$\hfill\makebox{\texti
 
 \begin{eqnarray*}
  & & \texttt{mklists [(1, 2); (3, 4); (5, 6)]\vphantom{g}} \\
- \Longrightarrow & & \texttt{~~~~~~~~mklists [(3, 4); (5, 6)]} \\
- \Longrightarrow & & \texttt{~~~~~~~~~~~~~~~~mklists [(5, 6)]} \\
- \Longrightarrow & & \texttt{~~~~~~~~~~~~~~~~~~~~~~mklists []} \\
- \Longrightarrow & & \texttt{~~~~~~~~~~~~~~~~~~~~~~~~([], [])} \\
- \Longrightarrow & & \texttt{~~~~~~~~~~~~~~~~~~~~~~([5], [6])} \\
- \Longrightarrow & & \texttt{~~~~~~~~~~~~~~~~([3; 5], [4; 6])} \\
- \Longrightarrow & & \texttt{~~~~~~~~~~([1; 3; 5], [2; 4; 6])} \\
+ \Longrightarrow & & \texttt{\ \ \ \ \ \ \ \ mklists [(3, 4); (5, 6)]} \\
+ \Longrightarrow & & \texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mklists [(5, 6)]} \\
+ \Longrightarrow & & \texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mklists []} \\
+ \Longrightarrow & & \texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ([], [])} \\
+ \Longrightarrow & & \texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ([5], [6])} \\
+ \Longrightarrow & & \texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ([3; 5], [4; 6])} \\
+ \Longrightarrow & & \texttt{\ \ \ \ \ \ \ \ \ \ ([1; 3; 5], [2; 4; 6])} \\
 \end{eqnarray*}
 
 \noindent Since the inner pattern match has only one form, and is complete, we can use \textrm{\textbf{let}} instead:
@@ -5780,15 +5780,15 @@ We can use our \texttt{member} function which determines whether an element is a
 \noindent\texttt{dictionary\_of\_pairs \textbf{\textrm{: \textmd{(}$\alpha$ $\times$ $\beta$\textmd{)} list $\rightarrow$ \textmd{(}$\alpha$ $\times$ $\beta$\textmd{)} list}}}\\
 \\
 $\texttt{\pletrec dictionary\_of\_pairs_inner keys\_seen l =}$\\
-$\texttt{~~\pmatch l \pwith}$\\
-$\texttt{~~~~[] -> []}$\\
-$\texttt{~~| (k, v)::t ->}$\\
-$\texttt{~~~~~~\pif member k keys\_seen}$\\
-$\texttt{~~~~~~~~\pthen dictionary\_of\_pairs_inner keys\_seen t}$\\
-$\texttt{~~~~~~~~\pelse (k, v) ::\ dictionary\_of\_pairs_inner (k ::\ keys\_seen) t}$\\
+$\texttt{\ \ \pmatch l \pwith}$\\
+$\texttt{\ \ \ \ [] -> []}$\\
+$\texttt{\ \ | (k, v)::t ->}$\\
+$\texttt{\ \ \ \ \ \ \pif member k keys\_seen}$\\
+$\texttt{\ \ \ \ \ \ \ \ \pthen dictionary\_of\_pairs_inner keys\_seen t}$\\
+$\texttt{\ \ \ \ \ \ \ \ \pelse (k, v) ::\ dictionary\_of\_pairs_inner (k ::\ keys\_seen) t}$\\
 \\
 $\texttt{\plet dictionary\_of\_pairs l =}$\\
-$\texttt{~~dictionary\_of\_pairs_inner [] l}$\vphantom{g}
+$\texttt{\ \ dictionary\_of\_pairs_inner [] l}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -5804,9 +5804,9 @@ We pattern match on the first list -- if it is empty, the result is simply \text
 \noindent\texttt{union :}\textbf{\textrm{ \textmd{(}$\alpha$ $\times$ $\beta$\textmd{)} list $\rightarrow$ \textmd{(}$\alpha$ $\times$ $\beta$\textmd{)} list $\rightarrow$ \textmd{(}$\alpha$ $\times$ $\beta$\textmd{)} list}}\\
 \\
 $\texttt{\pletrec union a b =}$\\
-$\texttt{~~\pmatch a \pwith}$\\
-$\texttt{~~~~[] -> b}$\\
-$\texttt{~~|~(k, v)::t -> add k v (union t b)}$
+$\texttt{\ \ \pmatch a \pwith}$\\
+$\texttt{\ \ \ \ [] -> b}$\\
+$\texttt{\ \ |\ (k, v)::t -> add k v (union t b)}$
 \end{minipage}}
 %\end{center}
 \smspace
@@ -5828,8 +5828,8 @@ The type of \texttt{member} is \textbf{\textrm{$\alpha$ $\rightarrow$ $\alpha$ l
 \noindent\texttt{member\_all :}\textbf{\textrm{ $\alpha$ $\rightarrow$ $\alpha$ list list $\rightarrow$ bool}}\\
 \\
 $\texttt{\plet member\_all x ls =}$\\
-$\texttt{~~\plet booleans = map (member x) ls \pin}$\\
-$\texttt{~~~~not (member false booleans)}$
+$\texttt{\ \ \plet booleans = map (member x) ls \pin}$\\
+$\texttt{\ \ \ \ not (member false booleans)}$
 \end{minipage}}
 %\end{center}
 \smspace
@@ -5842,7 +5842,7 @@ $\texttt{~~~~not (member false booleans)}$
 \noindent\texttt{member\_all :}\textbf{\textrm{ $\alpha$ $\rightarrow$ $\alpha$ list list $\rightarrow$ bool}}\\
 \\
 $\texttt{\plet member\_all x ls =}$\\
-$\texttt{~~not (member false (map (member x) ls))}$
+$\texttt{\ \ not (member false (map (member x) ls))}$
 \end{minipage}}
 %\end{center}
 \smspace
@@ -5897,10 +5897,10 @@ We can write a function to truncate a single list using our \texttt{take} functi
 \noindent\texttt{truncate :}\textbf{\textrm{ int $\rightarrow$ $\alpha$ list list $\rightarrow$ $\alpha$ list list}}\\
 \\
 $\texttt{\plet truncate\_l n l =}$\\
-$\texttt{~~\pif length l >= n \pthen take n l \pelse l}$\\
+$\texttt{\ \ \pif length l >= n \pthen take n l \pelse l}$\\
 \\
 $\texttt{\plet truncate n ll =}$\\
-$\texttt{~~map (truncate\_l n) ll}$
+$\texttt{\ \ map (truncate\_l n) ll}$
 \end{minipage}}
 %\end{center}
 \smspace
@@ -5914,10 +5914,10 @@ $\texttt{~~map (truncate\_l n) ll}$
 \noindent\texttt{truncate :}\textbf{\textrm{ int $\rightarrow$ $\alpha$ list list $\rightarrow$ $\alpha$ list list}}\\
 \\
 $\texttt{\plet truncate\_l n l =}$\\
-$\texttt{~~\ptry take n l \pwith Invalid\_argument \_ -> l}$\\
+$\texttt{\ \ \ptry take n l \pwith Invalid\_argument \_ -> l}$\\
 \\
 $\texttt{\plet truncate n ll =}$\\
-$\texttt{~~map (truncate\_l n) ll}$
+$\texttt{\ \ map (truncate\_l n) ll}$
 \end{minipage}}
 %\end{center}
 \smspace
@@ -5934,10 +5934,10 @@ First, define a function which takes the given number and a list, returning the 
 \noindent\texttt{firstelts :}\textbf{\textrm{ $\alpha$ $\rightarrow$ $\alpha$ list list $\rightarrow$ $\alpha$ list}}\\
 \\
 $\texttt{\plet firstelt n l =}$\\
-$\texttt{~~\pmatch l \pwith [] -> n | h::\_ -> h}$\\
+$\texttt{\ \ \pmatch l \pwith [] -> n | h::\_ -> h}$\\
 \\
 $\texttt{\plet firstelts n l =}$\\
-$\texttt{~~map (firstelt n) l}$
+$\texttt{\ \ map (firstelt n) l}$
 \end{minipage}}
 %\end{center}
 
@@ -5951,8 +5951,8 @@ We need two constructors -- one for squares, which needs just a single integer (
 %\begin{center}
 \noindent\fbox{\begin{minipage}{\textwidth}
 $\texttt{\ptype rect =}$\\
-$\texttt{~~Square \pof int}$\\
-$\texttt{|~Rectangle \pof int * int}$
+$\texttt{\ \ Square \pof int}$\\
+$\texttt{|\ Rectangle \pof int * int}$
 \end{minipage}}
 %\end{center}
 \smspace
@@ -5981,9 +5981,9 @@ $\texttt{\plet r = Rectangle (5, 2)}$\hfill\makebox{\textit{width 5, height 2}}
 \noindent\texttt{area :}\textrm{ rect $\rightarrow$ \textbf{int}}\\
 \\
 $\texttt{\plet area r =}$\\
-$\texttt{~~\pmatch r \pwith}$\\
-$\texttt{~~~~Square s -> s * s}$\\
-$\texttt{~~|~Rectangle (w, h) -> w * h}$\vphantom{g}
+$\texttt{\ \ \pmatch r \pwith}$\\
+$\texttt{\ \ \ \ Square s -> s * s}$\\
+$\texttt{\ \ |\ Rectangle (w, h) -> w * h}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 
@@ -5996,10 +5996,10 @@ This will be a function of type \textrm{rect $\rightarrow$ rect}. Squares remain
 \noindent\texttt{rotate :}\textrm{ rect $\rightarrow$ rect}\\
 \\
 $\texttt{\plet rotate r =}$\\
-$\texttt{~~\pmatch r \pwith}$\\
-$\texttt{~~~~Rectangle (w, h) ->}$\\
-$\texttt{~~~~~~\pif w > h \pthen Rectangle (h, w) else r}$\\
-$\texttt{~~|~Square \_ -> r}$\vphantom{g}
+$\texttt{\ \ \pmatch r \pwith}$\\
+$\texttt{\ \ \ \ Rectangle (w, h) ->}$\\
+$\texttt{\ \ \ \ \ \ \pif w > h \pthen Rectangle (h, w) else r}$\\
+$\texttt{\ \ |\ Square \_ -> r}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 
@@ -6016,15 +6016,15 @@ We will use \texttt{map} to perform our rotation on any \textrm{rect}s in the ar
 \noindent\texttt{pack :}\textrm{ rect \textbf{list} $\rightarrow$ rect \textbf{list}}\\
 \\
 $\texttt{\plet width\_of\_rect r =}$\\
-$\texttt{~~\pmatch r \pwith}$\\
-$\texttt{~~~~Square s -> s}$\\
-$\texttt{~~|~Rectangle (w, \_) -> w}$\\
+$\texttt{\ \ \pmatch r \pwith}$\\
+$\texttt{\ \ \ \ Square s -> s}$\\
+$\texttt{\ \ |\ Rectangle (w, \_) -> w}$\\
 \\
 $\texttt{\plet rect\_compare a b =}$\\
-$\texttt{~~width\_of\_rect a < width\_of\_rect b}$\\
+$\texttt{\ \ width\_of\_rect a < width\_of\_rect b}$\\
 \\
 $\texttt{\plet pack rects =}$\\
-$\texttt{~~sort rect\_compare (map rotate rects)}$\vphantom{g}
+$\texttt{\ \ sort rect\_compare (map rotate rects)}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -6051,21 +6051,21 @@ We follow the same pattern as for the \textrm{\textbf{list}} type, being careful
 \noindent\texttt{map :}\textrm{ \textmd{(}$\alpha$ $\rightarrow$ $\beta$\textmd{)} $\rightarrow$ $\alpha$ sequence $\rightarrow$ $\beta$ sequence}\\
 \\
 $\texttt{\pletrec take n l =}$\\
-$\texttt{~~\pif n = 0 \pthen Nil \pelse}$\\
-$\texttt{~~~~\pmatch l \pwith}$\\
-$\texttt{~~~~~~Nil -> \praise (Invalid\_argument "take")}$\\
-$\texttt{~~~~| Cons (h, t) -> Cons (h, take (n - 1) t)}$\\
+$\texttt{\ \ \pif n = 0 \pthen Nil \pelse}$\\
+$\texttt{\ \ \ \ \pmatch l \pwith}$\\
+$\texttt{\ \ \ \ \ \ Nil -> \praise (Invalid\_argument "take")}$\\
+$\texttt{\ \ \ \ | Cons (h, t) -> Cons (h, take (n - 1) t)}$\\
 \\
 $\texttt{\pletrec drop n l =}$\\
-$\texttt{~~\pif n = 0 \pthen l \pelse}$\\
-$\texttt{~~~~\pmatch l \pwith}$\\
-$\texttt{~~~~~~Nil -> \praise (Invalid\_argument "drop")}$\\
-$\texttt{~~~~| Cons (\_, l) -> drop (n - 1) l}$\\
+$\texttt{\ \ \pif n = 0 \pthen l \pelse}$\\
+$\texttt{\ \ \ \ \pmatch l \pwith}$\\
+$\texttt{\ \ \ \ \ \ Nil -> \praise (Invalid\_argument "drop")}$\\
+$\texttt{\ \ \ \ | Cons (\_, l) -> drop (n - 1) l}$\\
 \\
 $\texttt{\pletrec map f l =}$\\
-$\texttt{~~\pmatch l \pwith}$\\
-$\texttt{~~~~Nil -> Nil}$\\
-$\texttt{~~| Cons (h, t) -> Cons (f h, map f t)}$\vphantom{g}
+$\texttt{\ \ \pmatch l \pwith}$\\
+$\texttt{\ \ \ \ Nil -> Nil}$\\
+$\texttt{\ \ | Cons (h, t) -> Cons (f h, map f t)}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 
@@ -6076,7 +6076,7 @@ We can use our \texttt{power} function from earlier:
 %\begin{center}
 \noindent\fbox{\begin{minipage}{\textwidth}
 $\texttt{\ptype expr =}$\\
-$\texttt{~~Num \pof int}$\\
+$\texttt{\ \ Num \pof int}$\\
 $\texttt{| Add \pof expr * expr}$\\
 $\texttt{| Subtract \pof expr * expr}$\\
 $\texttt{| Multiply \pof expr * expr}$\\
@@ -6086,13 +6086,13 @@ $\texttt{| Power \pof expr * expr}$\\
 \noindent\texttt{evaluate :}\textrm{ expr $\rightarrow$ int}\\
 \\
 $\texttt{\pletrec evaluate e =}$\\
-$\texttt{~~\pmatch e \pwith}$\\
-$\texttt{~~~~Num x -> x}$\\
-$\texttt{~~| Add (e, e\textquotesingle ) -> evaluate e + evaluate e\textquotesingle }$\\
-$\texttt{~~| Subtract (e, e\textquotesingle ) -> evaluate e - evaluate e\textquotesingle }$\\
-$\texttt{~~| Multiply (e, e\textquotesingle ) -> evaluate e * evaluate e\textquotesingle }$\\
-$\texttt{~~| Divide (e, e\textquotesingle ) -> evaluate e / evaluate e\textquotesingle }$\\
-$\texttt{~~| Power (e, e\textquotesingle ) -> power (evaluate e) (evaluate e\textquotesingle )}$\vphantom{g}
+$\texttt{\ \ \pmatch e \pwith}$\\
+$\texttt{\ \ \ \ Num x -> x}$\\
+$\texttt{\ \ | Add (e, e\textquotesingle ) -> evaluate e + evaluate e\textquotesingle }$\\
+$\texttt{\ \ | Subtract (e, e\textquotesingle ) -> evaluate e - evaluate e\textquotesingle }$\\
+$\texttt{\ \ | Multiply (e, e\textquotesingle ) -> evaluate e * evaluate e\textquotesingle }$\\
+$\texttt{\ \ | Divide (e, e\textquotesingle ) -> evaluate e / evaluate e\textquotesingle }$\\
+$\texttt{\ \ | Power (e, e\textquotesingle ) -> power (evaluate e) (evaluate e\textquotesingle )}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 
@@ -6105,7 +6105,7 @@ We can just wrap up the previous function:
 \noindent\texttt{evaluate\_opt :}\textrm{ expr $\rightarrow$ \textbf{int} option}\\
 \\
 $\texttt{\plet evaluate\_opt e =}$\\
-$\texttt{~~\ptry Some (evaluate e) \pwith Division\_by\_zero -> None}$\vphantom{g}
+$\texttt{\ \ \ptry Some (evaluate e) \pwith Division\_by\_zero -> None}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 
@@ -6117,13 +6117,13 @@ $\texttt{~~\ptry Some (evaluate e) \pwith Division\_by\_zero -> None}$\vphantom{
 %\begin{center}
 %\fbox{\begin{minipage}{0.8\textwidth}
 %$\texttt{\ptype t =}$\\
-%$\texttt{~~~~Int}$\\
-%$\texttt{~~|~Char}$\\
-%$\texttt{~~|~Bool}$\\
-%$\texttt{~~|~TypeVar of string}$\\
-%$\texttt{~~|~List of t}$\\
-%$\texttt{~~|~Tuple of t list}$\\
-%$\texttt{~~|~Function of t * t}$\vphantom{g}
+%$\texttt{\ \ \ \ Int}$\\
+%$\texttt{\ \ |\ Char}$\\
+%$\texttt{\ \ |\ Bool}$\\
+%$\texttt{\ \ |\ TypeVar of string}$\\
+%$\texttt{\ \ |\ List of t}$\\
+%$\texttt{\ \ |\ Tuple of t list}$\\
+%$\texttt{\ \ |\ Function of t * t}$\vphantom{g}
 %\end{minipage}}
 %\end{center}
 %\smspace
@@ -6145,20 +6145,20 @@ $\texttt{~~\ptry Some (evaluate e) \pwith Division\_by\_zero -> None}$\vphantom{
 %\noindent\texttt{string\_of\_t :}\textrm{ t $\rightarrow$ \textbf{string}}\\
 %\\
 %$\texttt{\pletrec string\_of\_tuple ts =}$\\
-%$\texttt{~~\pmatch ts \pwith}$\\
-%$\texttt{~~~~[] -> ""}$\\
-%$\texttt{~~|~x::xs -> string\_of\_t x \^{} " * " \^{} string\_of\_tuple xs}$\\
+%$\texttt{\ \ \pmatch ts \pwith}$\\
+%$\texttt{\ \ \ \ [] -> ""}$\\
+%$\texttt{\ \ |\ x::xs -> string\_of\_t x \^{} " * " \^{} string\_of\_tuple xs}$\\
 %\\
 %$\texttt{\pand string\_of\_t t =}$\\
-%$\texttt{~~\pmatch t \pwith}$\\
-%$\texttt{~~~~Int -> "int"}$\\
-%$\texttt{~~|~Char -> "char"}$\\
-%$\texttt{~~|~Bool -> "bool"}$\\
-%$\texttt{~~|~TypeVar s -> "'" \^{} s}$\\
-%$\texttt{~~|~List t' -> "(" \^{} string\_of\_t t' \^{} " " \^{} "list" \^{} ")"}$\\
-%$\texttt{~~|~Tuple ts -> "(" \^{} string\_of\_tuple ts \^{} ")"}$\\
-%$\texttt{~~|~Function (t', t'') ->\\}$\\
-%$\texttt{~~~~~~"(" \^{} string\_of\_t t' \^{} " -> " \^{} string\_of\_t t'' \^{} ")"}$
+%$\texttt{\ \ \pmatch t \pwith}$\\
+%$\texttt{\ \ \ \ Int -> "int"}$\\
+%$\texttt{\ \ |\ Char -> "char"}$\\
+%$\texttt{\ \ |\ Bool -> "bool"}$\\
+%$\texttt{\ \ |\ TypeVar s -> "'" \^{} s}$\\
+%$\texttt{\ \ |\ List t' -> "(" \^{} string\_of\_t t' \^{} " " \^{} "list" \^{} ")"}$\\
+%$\texttt{\ \ |\ Tuple ts -> "(" \^{} string\_of\_tuple ts \^{} ")"}$\\
+%$\texttt{\ \ |\ Function (t', t'') ->\\}$\\
+%$\texttt{\ \ \ \ \ \ "(" \^{} string\_of\_t t' \^{} " -> " \^{} string\_of\_t t'' \^{} ")"}$
 %\vphantom{g}
 %\end{minipage}}
 %\end{center}
@@ -6175,9 +6175,9 @@ Our function will have type \textrm{$\alpha$ $\rightarrow$ $\alpha$ tree $\right
 \noindent\texttt{member\_tree :}\textrm{ $\alpha$ $\rightarrow$ $\alpha$ tree $\rightarrow$ \textbf{bool}}\\
 \\
 $\texttt{\pletrec member\_tree x tr =}$\\
-$\texttt{~~\pmatch tr \pwith}$\\
-$\texttt{~~~~Lf -> false}$\\
-$\texttt{~~|~Br (y, l, r) -> x = y || member\_tree x l || member\_tree x r}$\vphantom{g}
+$\texttt{\ \ \pmatch tr \pwith}$\\
+$\texttt{\ \ \ \ Lf -> false}$\\
+$\texttt{\ \ |\ Br (y, l, r) -> x = y || member\_tree x l || member\_tree x r}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -6194,9 +6194,9 @@ Our function will have type \textrm{$\alpha$ tree $\rightarrow$ $\alpha$ tree}. 
 \noindent\texttt{flip\_tree :}\textrm{ $\alpha$ tree $\rightarrow$ $\alpha$ tree }\\
 \\
 $\texttt{\pletrec flip\_tree tr =}$\\
-$\texttt{~~\pmatch tr \pwith}$\\
-$\texttt{~~~~Lf -> Lf}$\\
-$\texttt{~~|~Br (x, l, r) -> Br (x, flip\_tree r, flip\_tree l)}$\phantom{g}
+$\texttt{\ \ \pmatch tr \pwith}$\\
+$\texttt{\ \ \ \ Lf -> Lf}$\\
+$\texttt{\ \ |\ Br (x, l, r) -> Br (x, flip\_tree r, flip\_tree l)}$\phantom{g}
 \end{minipage}}
 %\end{center}
 
@@ -6210,13 +6210,13 @@ We can check each part of both trees together. Leaves are considered equal, bran
 \noindent\texttt{equal\_shape :}\textrm{ $\alpha$ tree $\rightarrow$ $\beta$ tree $\rightarrow$ \textbf{bool}}\\
 \\
 $\texttt{\pletrec equal\_shape tr tr2 =}$\\
-$\texttt{~~\pmatch tr, tr2 \pwith}$\\
-$\texttt{~~~~Lf, Lf ->}$\\
-$\texttt{~~~~~~true}$\\
-$\texttt{~~|~Br (\_, l, r), Br (\_, l2, r2) ->}$\\
-$\texttt{~~~~~~equal\_shape l l2 \&\& equal\_shape r r2}$\\
-$\texttt{~~|~\_, \_ ->}$\\
-$\texttt{~~~~~~false}$\vphantom{g}
+$\texttt{\ \ \pmatch tr, tr2 \pwith}$\\
+$\texttt{\ \ \ \ Lf, Lf ->}$\\
+$\texttt{\ \ \ \ \ \ true}$\\
+$\texttt{\ \ |\ Br (\_, l, r), Br (\_, l2, r2) ->}$\\
+$\texttt{\ \ \ \ \ \ equal\_shape l l2 \&\& equal\_shape r r2}$\\
+$\texttt{\ \ |\ \_, \_ ->}$\\
+$\texttt{\ \ \ \ \ \ false}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -6229,7 +6229,7 @@ $\texttt{~~~~~~false}$\vphantom{g}
 %\noindent\texttt{equal\_shape :}\textrm{ $\alpha$ tree $\rightarrow$ $\beta$ tree $\rightarrow$ \textbf{bool}}\\
 %\\
 %$\texttt{\plet equal\_shape tr tr2 =}$\\
-%$\texttt{~~tree\_map (\pfun \_ -> 0) tr = tree\_map (\pfun \_ -> 0) tr2}$\vphantom{g}
+%$\texttt{\ \ tree\_map (\pfun \_ -> 0) tr = tree\_map (\pfun \_ -> 0) tr2}$\vphantom{g}
 %\end{minipage}}
 %\end{center}
 
@@ -6243,9 +6243,9 @@ We can use the tree insertion operation repeatedly:
 \noindent\texttt{tree\_of\_list :}\textrm{ \textmd{(}$\alpha$ $\times$ $\beta$\textmd{)} \textbf{list} $\rightarrow$ \textmd{(}$\alpha$ $\times$ $\beta$\textmd{)} \textbf{tree}}\\
 \\
 $\texttt{\pletrec tree\_of\_list l =}$\\
-$\texttt{~~\pmatch l \pwith}$\\
-$\texttt{~~~~[] -> Lf}$\\
-$\texttt{~~|~(k, v)::t -> insert (tree\_of\_list t) k v}$\vphantom{g}
+$\texttt{\ \ \pmatch l \pwith}$\\
+$\texttt{\ \ \ \ [] -> Lf}$\\
+$\texttt{\ \ |\ (k, v)::t -> insert (tree\_of\_list t) k v}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -6262,7 +6262,7 @@ We can make list dictionaries from both tree dictionaries, append them, and buil
 \noindent\texttt{tree\_union :}\textrm{ \textmd{(}$\alpha$ $\times$ $\beta$\textmd{)} tree $\rightarrow$ \textmd{(}$\alpha$ $\times$ $\beta$\textmd{)} tree $\rightarrow$ \textmd{(}$\alpha$ $\times$ $\beta$\textmd{)} tree}\\
 \\
 $\texttt{\plet tree\_union t t\textquotesingle\ =}$\\
-$\texttt{~~tree\_of\_list (list\_of\_tree t @ list\_of\_tree t\textquotesingle )}$\vphantom{g}
+$\texttt{\ \ tree\_of\_list (list\_of\_tree t @ list\_of\_tree t\textquotesingle )}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -6291,16 +6291,16 @@ $\texttt{\ptype\ \textquotesingle a mtree = Branch of \textquotesingle a * \text
 \noindent\texttt{map\_mtree :}\textrm{ \textmd{(}$\alpha$ $\rightarrow$ $\beta$\textmd{)} $\rightarrow$ $\alpha$ mtree $\rightarrow$ $\beta$ mtree }\\
 \\
 $\texttt{\pletrec size tr =}$\\
-$\texttt{~~\pmatch tr \pwith}$\\
-$\texttt{~~~~Branch (e, l) -> 1 + sum (map size l)}$\\
+$\texttt{\ \ \pmatch tr \pwith}$\\
+$\texttt{\ \ \ \ Branch (e, l) -> 1 + sum (map size l)}$\\
 \\
 $\texttt{\pletrec total tr =}$\\
-$\texttt{~~\pmatch tr \pwith}$\\
-$\texttt{~~~~Branch (e, l) -> e + sum (map total l)}$\\
+$\texttt{\ \ \pmatch tr \pwith}$\\
+$\texttt{\ \ \ \ Branch (e, l) -> e + sum (map total l)}$\\
 \\
 $\texttt{\pletrec map\_mtree f tr =}$\\
-$\texttt{~~\pmatch tr \pwith}$\\
-$\texttt{~~~~Branch (e, l) -> Branch (f e, map (map\_mtree f) l)}$\vphantom{g}
+$\texttt{\ \ \pmatch tr \pwith}$\\
+$\texttt{\ \ \ \ Branch (e, l) -> Branch (f e, map (map\_mtree f) l)}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -6315,13 +6315,13 @@ $\texttt{~~~~Branch (e, l) -> Branch (f e, map (map\_mtree f) l)}$\vphantom{g}
 \noindent\texttt{map\_mtree :}\textrm{ \textmd{(}$\alpha$ $\rightarrow$ $\beta$\textmd{)} $\rightarrow$ $\alpha$ mtree $\rightarrow$ $\beta$ mtree }\\
 \\
 $\texttt{\pletrec size (Branch (e, l)) =}$\\
-$\texttt{~~1 + sum (map size l)}$\\
+$\texttt{\ \ 1 + sum (map size l)}$\\
 \\
 $\texttt{\pletrec total (Branch (e, l)) =}$\\
-$\texttt{~~e + sum (map total l)}$\\
+$\texttt{\ \ e + sum (map total l)}$\\
 \\
 $\texttt{\pletrec map\_mtree f (Branch (e, l)) =}$\\
-$\texttt{~~Branch (f e, map (map\_mtree f) l)}$\vphantom{g}
+$\texttt{\ \ Branch (f e, map (map\_mtree f) l)}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 
@@ -6337,9 +6337,9 @@ A first attempt might be:
 \noindent\texttt{print\_integers :}\textrm{ \textbf{int list} $\rightarrow$ \textbf{unit} }\\
 \\
 $\texttt{\plet print\_integers l =}$\\
-$\texttt{~~print\_string "[";}$\\
-$\texttt{~~iter (\pfun i -> print\_int i; print\_string "; ") l;}$\\
-$\texttt{~~print\_string "]"}$\vphantom{g}
+$\texttt{\ \ print\_string "[";}$\\
+$\texttt{\ \ iter (\pfun i -> print\_int i; print\_string "; ") l;}$\\
+$\texttt{\ \ print\_string "]"}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -6365,15 +6365,15 @@ $\texttt{~~print\_string "]"}$\vphantom{g}
 \noindent\texttt{print\_integers :}\textrm{ \textbf{int list} $\rightarrow$ \textbf{unit}}\\
 \\
 $\texttt{\pletrec print\_integers\_inner l =}$\\
-$\texttt{~~\pmatch l \pwith}$\\
-$\texttt{~~~~[] -> ()}$\\
-$\texttt{~~|~[i] -> print\_int i}$\\
-$\texttt{~~|~h::t -> print\_int h; print\_string "; "; print\_integers\_inner t}$\\
+$\texttt{\ \ \pmatch l \pwith}$\\
+$\texttt{\ \ \ \ [] -> ()}$\\
+$\texttt{\ \ |\ [i] -> print\_int i}$\\
+$\texttt{\ \ |\ h::t -> print\_int h; print\_string "; "; print\_integers\_inner t}$\\
 \\
 $\texttt{\plet print\_integers l =}$\\
-$\texttt{~~print\_string "[";}$\\
-$\texttt{~~print\_integers\_inner l;}$\\
-$\texttt{~~print\_string "]"}$\vphantom{g}
+$\texttt{\ \ print\_string "[";}$\\
+$\texttt{\ \ print\_integers\_inner l;}$\\
+$\texttt{\ \ print\_string "]"}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -6397,18 +6397,18 @@ We must deal with the exception raised when \texttt{read\_int} attempts to read 
 \noindent\texttt{read\_three :}\textrm{ \textbf{unit} $\rightarrow$ \textbf{int $\times$ int $\times$ int}}\\
 \\
 $\texttt{\pletrec read\_three () =}$\\
-$\texttt{~~\ptry}$\\
-$\texttt{~~~~print\_string "Type three integers, pressing Enter after each";}$\\
-$\texttt{~~~~print\_newline ();}$\\
-$\texttt{~~~~\plet x = read\_int () \pin}$\\
-$\texttt{~~~~~~\plet y = read\_int () \pin}$\\
-$\texttt{~~~~~~~~\plet z = read\_int () \pin}$\\
-$\texttt{~~~~~~~~~~(x, y, z)}$\\
-$\texttt{~~\pwith}$\\
-$\texttt{~~~~Failure \_ ->}$\\
-$\texttt{~~~~~~print\_string "Failed to read integers; please try again";}$\\
-$\texttt{~~~~~~print\_newline ();}$\\
-$\texttt{~~~~~~read\_three ()}$\vphantom{g}
+$\texttt{\ \ \ptry}$\\
+$\texttt{\ \ \ \ print\_string "Type three integers, pressing Enter after each";}$\\
+$\texttt{\ \ \ \ print\_newline ();}$\\
+$\texttt{\ \ \ \ \plet x = read\_int () \pin}$\\
+$\texttt{\ \ \ \ \ \ \plet y = read\_int () \pin}$\\
+$\texttt{\ \ \ \ \ \ \ \ \plet z = read\_int () \pin}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ (x, y, z)}$\\
+$\texttt{\ \ \pwith}$\\
+$\texttt{\ \ \ \ Failure \_ ->}$\\
+$\texttt{\ \ \ \ \ \ print\_string "Failed to read integers; please try again";}$\\
+$\texttt{\ \ \ \ \ \ print\_newline ();}$\\
+$\texttt{\ \ \ \ \ \ read\_three ()}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -6424,18 +6424,18 @@ We ask the user how many dictionary entries will be entered, eliminating the nee
 \noindent\texttt{read\_dict\_number :}\textrm{ \textbf{int} $\rightarrow$ \textmd{(}\textbf{int $\times$ string}\textmd{)} \textbf{list}}\\
 \\
 $\texttt{\pletrec read\_dict\_number n =}$\\
-$\texttt{~~\pif n = 0 \pthen [] \pelse}$\\
-$\texttt{~~~~\ptry}$\\
-$\texttt{~~~~~~\plet i = read\_int () \pin}$\\
-$\texttt{~~~~~~~~\plet name = read\_line () \pin}$\\
-$\texttt{~~~~~~~~~~(i, name) ::\ read\_dict\_number (n - 1)}$\\
-$\texttt{~~~~\pwith}$\\
-$\texttt{~~~~~~Failure \_ ->}$\\
-$\texttt{~~~~~~~~print\_string "This is not a valid integer."}$\\
-$\texttt{~~~~~~~~print\_newline ();}$\\
-$\texttt{~~~~~~~~print\_string "Please enter integer and name again."}$\\
-$\texttt{~~~~~~~~print\_newline ();}$\\
-$\texttt{~~~~~~~~read\_dict\_number n}$\vphantom{g}
+$\texttt{\ \ \pif n = 0 \pthen [] \pelse}$\\
+$\texttt{\ \ \ \ \ptry}$\\
+$\texttt{\ \ \ \ \ \ \plet i = read\_int () \pin}$\\
+$\texttt{\ \ \ \ \ \ \ \ \plet name = read\_line () \pin}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ (i, name) ::\ read\_dict\_number (n - 1)}$\\
+$\texttt{\ \ \ \ \pwith}$\\
+$\texttt{\ \ \ \ \ \ Failure \_ ->}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_string "This is not a valid integer."}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_newline ();}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_string "Please enter integer and name again."}$\\
+$\texttt{\ \ \ \ \ \ \ \ print\_newline ();}$\\
+$\texttt{\ \ \ \ \ \ \ \ read\_dict\_number n}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -6450,20 +6450,20 @@ $\texttt{~~~~~~~~read\_dict\_number n}$\vphantom{g}
 $\texttt{\pexception BadNumber}$\\
 \\
 $\texttt{\pletrec read\_dict () =}$\\
-$\texttt{~~print\_string "How many dictionary entries to input?";}$\\
-$\texttt{~~print\_newline ();}$\\
-$\texttt{~~\ptry}$\\
-$\texttt{~~~~\plet n = read\_int () \pin}$\\
-$\texttt{~~~~~~\pif n < 0 \pthen \praise BadNumber \pelse read\_dict\_number n}$\\
-$\texttt{~~\pwith}$\\
-$\texttt{~~~~Failure \_ ->}$\\
-$\texttt{~~~~~~print\_string "Not a number.\ Try again";}$\\
-$\texttt{~~~~~~print\_newline ();}$\\
-$\texttt{~~~~~~read\_dict ()}$\\
-$\texttt{~~|~BadNumber ->}$\\
-$\texttt{~~~~~~print\_string "Number is negative.\ Try again";}$\\
-$\texttt{~~~~~~print\_newline ();}$\\
-$\texttt{~~~~~~read\_dict ()}$\vphantom{g}
+$\texttt{\ \ print\_string "How many dictionary entries to input?";}$\\
+$\texttt{\ \ print\_newline ();}$\\
+$\texttt{\ \ \ptry}$\\
+$\texttt{\ \ \ \ \plet n = read\_int () \pin}$\\
+$\texttt{\ \ \ \ \ \ \pif n < 0 \pthen \praise BadNumber \pelse read\_dict\_number n}$\\
+$\texttt{\ \ \pwith}$\\
+$\texttt{\ \ \ \ Failure \_ ->}$\\
+$\texttt{\ \ \ \ \ \ print\_string "Not a number.\ Try again";}$\\
+$\texttt{\ \ \ \ \ \ print\_newline ();}$\\
+$\texttt{\ \ \ \ \ \ read\_dict ()}$\\
+$\texttt{\ \ |\ BadNumber ->}$\\
+$\texttt{\ \ \ \ \ \ print\_string "Number is negative.\ Try again";}$\\
+$\texttt{\ \ \ \ \ \ print\_newline ();}$\\
+$\texttt{\ \ \ \ \ \ read\_dict ()}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -6480,9 +6480,9 @@ If we write a function to build the list of integers from $1$ to $n$ (or the emp
 \noindent\texttt{numlist :}\textrm{ \textbf{int} $\rightarrow$ \textbf{int list}}\\
 \\
 $\texttt{\pletrec numlist n =}$\\
-$\texttt{~~\pmatch n \pwith}$\\
-$\texttt{~~~~0 -> []}$\\
-$\texttt{~~|~\_ -> numlist (n - 1) @ [n]}$\vphantom{g}
+$\texttt{\ \ \pmatch n \pwith}$\\
+$\texttt{\ \ \ \ 0 -> []}$\\
+$\texttt{\ \ |\ \_ -> numlist (n - 1) @ [n]}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -6495,15 +6495,15 @@ $\texttt{~~|~\_ -> numlist (n - 1) @ [n]}$\vphantom{g}
 \noindent\texttt{write\_table\_channel :}\textrm{ \textbf{in\raisebox{2pt}{\_}channel} $\rightarrow$ \textbf{int} $\rightarrow$ \textbf{unit}}\\
 \\
 $\texttt{\plet write\_table\_channel ch n =}$\\
-$\texttt{~~iter}$\\
-$\texttt{~~~~(\pfun x ->}$\\
-$\texttt{~~~~~~~iter}$\\
-$\texttt{~~~~~~~~~(\pfun i ->}$\\
-$\texttt{~~~~~~~~~~~output\_string ch (string\_of\_int i);}$\\
-$\texttt{~~~~~~~~~~~output\_string ch "\textbackslash t")}$\\
-$\texttt{~~~~~~~~~(map (( * ) x) (numlist n));}$\\
-$\texttt{~~~~~~~output\_string ch "\textbackslash n")}$\\
-$\texttt{~~~~(numlist n)}$\vphantom{g}
+$\texttt{\ \ iter}$\\
+$\texttt{\ \ \ \ (\pfun x ->}$\\
+$\texttt{\ \ \ \ \ \ \ iter}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ (\pfun i ->}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ output\_string ch (string\_of\_int i);}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ output\_string ch "\textbackslash t")}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ (map (( * ) x) (numlist n));}$\\
+$\texttt{\ \ \ \ \ \ \ output\_string ch "\textbackslash n")}$\\
+$\texttt{\ \ \ \ (numlist n)}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -6535,13 +6535,13 @@ We can test \texttt{write\_table\_channel} most easily by using the built-in out
 $\texttt{\pexception FileProblem}$\\
 \\
 $\texttt{\plet table filename n =}$\\
-$\texttt{~~\pif n < 0 \pthen \praise (Invalid\_argument "table") \pelse}$\\
-$\texttt{~~~~\ptry}$\\
-$\texttt{~~~~~~\plet ch = open\_out filename \pin}$\\
-$\texttt{~~~~~~~~write\_table\_channel ch n;}$\\
-$\texttt{~~~~~~~~close\_out ch}$\\
-$\texttt{~~~~\pwith}$\\
-$\texttt{~~~~~~\_ -> \praise FileProblem}$\vphantom{g}
+$\texttt{\ \ \pif n < 0 \pthen \praise (Invalid\_argument "table") \pelse}$\\
+$\texttt{\ \ \ \ \ptry}$\\
+$\texttt{\ \ \ \ \ \ \plet ch = open\_out filename \pin}$\\
+$\texttt{\ \ \ \ \ \ \ \ write\_table\_channel ch n;}$\\
+$\texttt{\ \ \ \ \ \ \ \ close\_out ch}$\\
+$\texttt{\ \ \ \ \pwith}$\\
+$\texttt{\ \ \ \ \ \ \_ -> \praise FileProblem}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -6560,20 +6560,20 @@ The main function \texttt{countlines} just opens the file, calls the first funct
 \noindent\texttt{countlines :}\textrm{ \textbf{string} $\rightarrow$ \textbf{int}}\\
 \\
 $\texttt{\pletrec countlines\_channel ch =}$\\
-$\texttt{~~\ptry}$\\
-$\texttt{~~~~\plet \_ = input\_line ch \pin}$\\
-$\texttt{~~~~~~1 + countlines\_channel ch}$\\
-$\texttt{~~\pwith}$\\
-$\texttt{~~~~End\_of\_file -> 0}$\\
+$\texttt{\ \ \ptry}$\\
+$\texttt{\ \ \ \ \plet \_ = input\_line ch \pin}$\\
+$\texttt{\ \ \ \ \ \ 1 + countlines\_channel ch}$\\
+$\texttt{\ \ \pwith}$\\
+$\texttt{\ \ \ \ End\_of\_file -> 0}$\\
 \\
 $\texttt{\plet countlines file =}$\\
-$\texttt{~~\ptry}$\\
-$\texttt{~~~~\plet ch = open\_in file \pin}$\\
-$\texttt{~~~~~~\plet result = countlines\_channel ch \pin}$\\
-$\texttt{~~~~~~~~close\_in ch;}$\\
-$\texttt{~~~~~~~~result}$\\
-$\texttt{~~\pwith}$\\
-$\texttt{~~~~\_ -> \praise (Failure "countlines")}$\vphantom{g}
+$\texttt{\ \ \ptry}$\\
+$\texttt{\ \ \ \ \plet ch = open\_in file \pin}$\\
+$\texttt{\ \ \ \ \ \ \plet result = countlines\_channel ch \pin}$\\
+$\texttt{\ \ \ \ \ \ \ \ close\_in ch;}$\\
+$\texttt{\ \ \ \ \ \ \ \ result}$\\
+$\texttt{\ \ \pwith}$\\
+$\texttt{\ \ \ \ \_ -> \praise (Failure "countlines")}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 
@@ -6586,12 +6586,12 @@ As usual, let us write a function to deal with channels, and then deal with open
 \noindent\texttt{copy\_file\_ch :}\textrm{ \textbf{in\raisebox{2pt}{\_}channel} $\rightarrow$ \textbf{out\raisebox{2pt}{\_}channel} $\rightarrow$ \textbf{unit}}\\
 \\
 $\texttt{\pletrec copy\_file\_ch from\_ch to\_ch =}$\\
-$\texttt{~~\ptry}$\\
-$\texttt{~~~~output\_string to\_ch (input\_line from\_ch);}$\\
-$\texttt{~~~~output\_string to\_ch "\textbackslash n";}$\\
-$\texttt{~~~~copy\_file\_ch from\_ch to\_ch}$\\
-$\texttt{~~\pwith}$\\
-$\texttt{~~~~End\_of\_file -> ()}$\vphantom{g}
+$\texttt{\ \ \ptry}$\\
+$\texttt{\ \ \ \ output\_string to\_ch (input\_line from\_ch);}$\\
+$\texttt{\ \ \ \ output\_string to\_ch "\textbackslash n";}$\\
+$\texttt{\ \ \ \ copy\_file\_ch from\_ch to\_ch}$\\
+$\texttt{\ \ \pwith}$\\
+$\texttt{\ \ \ \ End\_of\_file -> ()}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -6606,14 +6606,14 @@ $\texttt{~~~~End\_of\_file -> ()}$\vphantom{g}
 $\texttt{\pexception CopyFailed}$\\
 \\
 $\texttt{\plet copy\_file from\_name to\_name =}$\\
-$\texttt{~~\ptry}$\\
-$\texttt{~~~~\plet from\_ch = open\_in from\_name \pin}$\\
-$\texttt{~~~~~~\plet to\_ch = open\_out to\_name \pin}$\\
-$\texttt{~~~~~~~~copy\_file\_ch from\_ch to\_ch;}$\\
-$\texttt{~~~~~~~~close\_in from\_ch;}$\\
-$\texttt{~~~~~~~~close\_out to\_ch}$\\
-$\texttt{~~\pwith}$\\
-$\texttt{~~~~\_ -> \praise CopyFailed}$\vphantom{g}
+$\texttt{\ \ \ptry}$\\
+$\texttt{\ \ \ \ \plet from\_ch = open\_in from\_name \pin}$\\
+$\texttt{\ \ \ \ \ \ \plet to\_ch = open\_out to\_name \pin}$\\
+$\texttt{\ \ \ \ \ \ \ \ copy\_file\_ch from\_ch to\_ch;}$\\
+$\texttt{\ \ \ \ \ \ \ \ close\_in from\_ch;}$\\
+$\texttt{\ \ \ \ \ \ \ \ close\_out to\_ch}$\\
+$\texttt{\ \ \pwith}$\\
+$\texttt{\ \ \ \ \_ -> \praise CopyFailed}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 
@@ -6647,11 +6647,11 @@ We can write a function \texttt{forloop} which takes a function of type \textrm{
 \noindent\texttt{forloop :}\textrm{ \textmd{(}\textbf{int} $\rightarrow$ $\alpha$\textmd{)} $\rightarrow$ \textbf{int} $\rightarrow$ \textbf{int} $\rightarrow$ \textbf{unit}}\\
 \\
 $\texttt{\pletrec forloop f n m =}$\\
-$\texttt{~~\pif n <= m \pthen}$\\
-$\texttt{~~~~\pbegin}$\\
-$\texttt{~~~~~~f n;}$\\
-$\texttt{~~~~~~forloop f (n + 1) m}$\\
-$\texttt{~~~~\pend}$\vphantom{g}
+$\texttt{\ \ \pif n <= m \pthen}$\\
+$\texttt{\ \ \ \ \pbegin}$\\
+$\texttt{\ \ \ \ \ \ f n;}$\\
+$\texttt{\ \ \ \ \ \ forloop f (n + 1) m}$\\
+$\texttt{\ \ \ \ \pend}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -6695,11 +6695,11 @@ We use a \texttt{\textbf{for}} construct:
 \noindent\texttt{array\_sum :}\textrm{ \textrm{\textbf{int array} $\rightarrow$ int}}\\
 \\
 $\texttt{\plet array\_sum a =}$\\
-$\texttt{~~\plet sum = ref 0 \pin}$\\
-$\texttt{~~~~\pfor x = 0 \pto Array.length a - 1 \pdo}$\\
-$\texttt{~~~~~~sum := !sum + a.(x)}$\\
-$\texttt{~~~~\pdone;}$\\
-$\texttt{~~~~!sum}$\vphantom{g}
+$\texttt{\ \ \plet sum = ref 0 \pin}$\\
+$\texttt{\ \ \ \ \pfor x = 0 \pto Array.length a - 1 \pdo}$\\
+$\texttt{\ \ \ \ \ \ sum := !sum + a.(x)}$\\
+$\texttt{\ \ \ \ \pdone;}$\\
+$\texttt{\ \ \ \ !sum}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -6716,12 +6716,12 @@ Since we wish to reverse the array in place, our function will have type \textrm
 \noindent\texttt{array\_rev :}\textrm{ $\alpha$ \textrm{\textbf{array} $\rightarrow$ unit}}\\
 \\
 $\texttt{\plet array\_rev a =}$\\
-$\texttt{~~\pif Array.length a > 1 \pthen}$\\
-$\texttt{~~~~\pfor x = 0 \pto Array.length a / 2 - 1 \pdo}$\\
-$\texttt{~~~~~~\plet t = a.(x) \pin}$\\
-$\texttt{~~~~~~~~a.(x) <- a.(Array.length a - 1 - x);}$\\
-$\texttt{~~~~~~~~a.(Array.length a - 1 - x) <- t}$\\
-$\texttt{~~~~\pdone}$\vphantom{g}
+$\texttt{\ \ \pif Array.length a > 1 \pthen}$\\
+$\texttt{\ \ \ \ \pfor x = 0 \pto Array.length a / 2 - 1 \pdo}$\\
+$\texttt{\ \ \ \ \ \ \plet t = a.(x) \pin}$\\
+$\texttt{\ \ \ \ \ \ \ \ a.(x) <- a.(Array.length a - 1 - x);}$\\
+$\texttt{\ \ \ \ \ \ \ \ a.(Array.length a - 1 - x) <- t}$\\
+$\texttt{\ \ \ \ \pdone}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -6737,16 +6737,16 @@ We will represent the \textbf{\textrm{int array array}} as an array of columns s
 \noindent\texttt{table :}\textrm{ \textrm{\textbf{int} $\rightarrow$ \textbf{int array array}}}\\
 \\
 $\texttt{\plet table n =}$\\
-$\texttt{~~\plet a = Array.make n [||] \pin}$\\
-$\texttt{~~~~\pfor x = 0 \pto n - 1 \pdo}$\\
-$\texttt{~~~~~~a.(x) <- Array.make n 0}$\\
-$\texttt{~~~~\pdone;}$\\
-$\texttt{~~~~\pfor y = 0 \pto n - 1 \pdo}$\\
-$\texttt{~~~~~~\pfor x = 0 \pto n - 1 \pdo}$\\
-$\texttt{~~~~~~~~a.(x).(y) <- (x + 1) * (y + 1)}$\\
-$\texttt{~~~~~~\pdone}$\\
-$\texttt{~~~~\pdone;}$\\
-$\texttt{~~~~a}$\vphantom{g}
+$\texttt{\ \ \plet a = Array.make n [||] \pin}$\\
+$\texttt{\ \ \ \ \pfor x = 0 \pto n - 1 \pdo}$\\
+$\texttt{\ \ \ \ \ \ a.(x) <- Array.make n 0}$\\
+$\texttt{\ \ \ \ \pdone;}$\\
+$\texttt{\ \ \ \ \pfor y = 0 \pto n - 1 \pdo}$\\
+$\texttt{\ \ \ \ \ \ \pfor x = 0 \pto n - 1 \pdo}$\\
+$\texttt{\ \ \ \ \ \ \ \ a.(x).(y) <- (x + 1) * (y + 1)}$\\
+$\texttt{\ \ \ \ \ \ \pdone}$\\
+$\texttt{\ \ \ \ \pdone;}$\\
+$\texttt{\ \ \ \ a}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -6764,14 +6764,14 @@ The difference between the codes for \texttt{\upquote{a}} and \texttt{\upquote{A
 \noindent\texttt{lowercase :}\textrm{\textbf{ char $\rightarrow$ char}}\\
 \\
 $\texttt{\plet uppercase x =}$\\
-$\texttt{~~\pif int\_of\_char x >= 97 \&\& int\_of\_char x <= 122}$\\
-$\texttt{~~~~\pthen char\_of\_int (int\_of\_char x - 32)}$\\
-$\texttt{~~~~\pelse x}$\\
+$\texttt{\ \ \pif int\_of\_char x >= 97 \&\& int\_of\_char x <= 122}$\\
+$\texttt{\ \ \ \ \pthen char\_of\_int (int\_of\_char x - 32)}$\\
+$\texttt{\ \ \ \ \pelse x}$\\
 \\
 $\texttt{\plet lowercase x =}$\\
-$\texttt{~~\pif int\_of\_char x >= 65 \&\& int\_of\_char x <= 90}$\\
-$\texttt{~~~~\pthen char\_of\_int (int\_of\_char x + 32)}$\\
-$\texttt{~~~~\pelse x}$\vphantom{g}
+$\texttt{\ \ \pif int\_of\_char x >= 65 \&\& int\_of\_char x <= 90}$\\
+$\texttt{\ \ \ \ \pthen char\_of\_int (int\_of\_char x + 32)}$\\
+$\texttt{\ \ \ \ \pelse x}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 
@@ -6789,9 +6789,9 @@ We calculate the ceiling and floor, and return the closer one, being careful to 
 \noindent\texttt{round :}\textrm{\textbf{ float $\rightarrow$ float}}\\
 \\
 $\texttt{\plet round x =}$\\
-$\texttt{~~\plet c = ceil x \pin}$\\
-$\texttt{~~~~\plet f = floor x \pin}$\\
-$\texttt{~~~~~~\pif c -.\ x <= x -.\ f \pthen c \pelse f}$\vphantom{g}
+$\texttt{\ \ \plet c = ceil x \pin}$\\
+$\texttt{\ \ \ \ \plet f = floor x \pin}$\\
+$\texttt{\ \ \ \ \ \ \pif c -.\ x <= x -.\ f \pthen c \pelse f}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -6808,7 +6808,7 @@ The function returns another point, and is simple arithmetic.
 \noindent\texttt{between :}\textrm{\textbf{ float $\times$ float $\rightarrow$ float $\times$ float $\rightarrow$ float $\times$ float}}\\
 \\
 $\texttt{\plet between (x, y) (x', y') =}$\\
-$\texttt{~~((x +.\ x') /.\ 2., (y +.\ y') /.\ 2.)}$\vphantom{g}
+$\texttt{\ \ ((x +.\ x') /.\ 2., (y +.\ y') /.\ 2.)}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 
@@ -6821,11 +6821,11 @@ The whole part is calculated using the built-in \texttt{floor} function. We retu
 \noindent\texttt{parts :}\textrm{\textbf{ float $\rightarrow$ float $\times$ float}}\\
 \\
 $\texttt{\pletrec parts x =}$\\
-$\texttt{~~\pif x < 0.\ \pthen}$\\
-$\texttt{~~~~\plet a, b = parts (-.\ x) \pin}$\\
-$\texttt{~~~~~~(-.\ a, b)}$\\
-$\texttt{~~\pelse}$\\
-$\texttt{~~~~(floor x, x -.\ floor x)}$\vphantom{g}
+$\texttt{\ \ \pif x < 0.\ \pthen}$\\
+$\texttt{\ \ \ \ \plet a, b = parts (-.\ x) \pin}$\\
+$\texttt{\ \ \ \ \ \ (-.\ a, b)}$\\
+$\texttt{\ \ \pelse}$\\
+$\texttt{\ \ \ \ (floor x, x -.\ floor x)}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -6842,11 +6842,11 @@ We need to determine at which column the asterisk will be printed. It is importa
 \noindent\texttt{star :}\textrm{ \textbf{float} $\rightarrow$ \textbf{unit}}\\
 \\
 $\texttt{\plet star x =}$\\
-$\texttt{~~\plet i = int\_of\_float (floor (x *.\ 50.))\ \pin}$\\
-$\texttt{~~~~\plet i' = \pif i = 50 \pthen 49 \pelse i \pin}$\\
-$\texttt{~~~~~~\pfor x = 1 \pto i' - 1 \pdo print\_char ' ' \pdone;}$\\
-$\texttt{~~~~~~print\_char '*';}$\\
-$\texttt{~~~~~~print\_newline ()}$\vphantom{g}
+$\texttt{\ \ \plet i = int\_of\_float (floor (x *.\ 50.))\ \pin}$\\
+$\texttt{\ \ \ \ \plet i' = \pif i = 50 \pthen 49 \pelse i \pin}$\\
+$\texttt{\ \ \ \ \ \ \pfor x = 1 \pto i' - 1 \pdo print\_char ' ' \pdone;}$\\
+$\texttt{\ \ \ \ \ \ print\_char '*';}$\\
+$\texttt{\ \ \ \ \ \ print\_newline ()}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 
@@ -6860,11 +6860,11 @@ We use a reference to hold the current value, starting at the beginning of the r
 \noindent\texttt{plot :}\textrm{\textbf{ \textmd{(}float $\rightarrow$ float\textmd{)} $\rightarrow$ float $\rightarrow$ float $\rightarrow$ float $\rightarrow$ unit}}\\
 \\
 $\texttt{\plet plot f a b dy =}$\\
-$\texttt{~~\plet pos = ref a \pin}$\\
-$\texttt{~~~~\pwhile\ !pos <= b \pdo}$\\
-$\texttt{~~~~~~star (f !pos);}$\\
-$\texttt{~~~~~~pos := !pos +.\ dy}$\\ 
-$\texttt{~~~~\pdone}$\vphantom{g}
+$\texttt{\ \ \plet pos = ref a \pin}$\\
+$\texttt{\ \ \ \ \pwhile\ !pos <= b \pdo}$\\
+$\texttt{\ \ \ \ \ \ star (f !pos);}$\\
+$\texttt{\ \ \ \ \ \ pos := !pos +.\ dy}$\\ 
+$\texttt{\ \ \ \ \pdone}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -6881,9 +6881,9 @@ A non-tail-recursive one is simple:
 \noindent\texttt{concat :}\textrm{ $\alpha$ \textbf{list list} $\rightarrow$ $\alpha$ \textbf{list}}\\
 \\
 $\texttt{\pletrec concat l =}$\\
-$\texttt{~~\pmatch l \pwith}$\\
-$\texttt{~~~~[] -> []}$\\
-$\texttt{~~| h::t -> h @ concat t}$\vphantom{g}
+$\texttt{\ \ \pmatch l \pwith}$\\
+$\texttt{\ \ \ \ [] -> []}$\\
+$\texttt{\ \ | h::t -> h @ concat t}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -6897,12 +6897,12 @@ $\texttt{~~| h::t -> h @ concat t}$\vphantom{g}
 \noindent\texttt{concat :}\textrm{\textbf{ $\alpha$ list list $\rightarrow$ $\alpha$ list}}\\
 \\
 $\texttt{\pletrec concat\_tail a l =}$\\
-$\texttt{~~\pmatch l \pwith}$\\
-$\texttt{~~~~[] -> List.rev a}$\\
-$\texttt{~~| h::t -> concat\_tail (List.rev h @ a) t}$\\
+$\texttt{\ \ \pmatch l \pwith}$\\
+$\texttt{\ \ \ \ [] -> List.rev a}$\\
+$\texttt{\ \ | h::t -> concat\_tail (List.rev h @ a) t}$\\
 \\
 $\texttt{\plet concat l =}$\\
-$\texttt{~~concat\_tail [] l}$\vphantom{g}
+$\texttt{\ \ concat\_tail [] l}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 
@@ -6915,7 +6915,7 @@ We can use \texttt{List.mem}, partially applied, to map over the list of lists. 
 \noindent\texttt{all\_contain\_true :}\textrm{ \textbf{bool list list} $\rightarrow$ \textbf{bool}}\\
 \\
 $\texttt{\plet all\_contain\_true l =}$\\
-$\texttt{~~not (List.mem false (List.map (List.mem true) l))}$\vphantom{g}
+$\texttt{\ \ not (List.mem false (List.map (List.mem true) l))}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 
@@ -6929,9 +6929,9 @@ The \texttt{String.iter} function calls a user-supplied function of type \textbf
 \noindent\texttt{count\_exclamations :}\textrm{ \textbf{string} $\rightarrow$ \textbf{int}}\\
 \\
 $\texttt{\plet count\_exclamations s =}$\\
-$\texttt{~~\plet n = ref 0 \pin}$\\
-$\texttt{~~~~String.iter (\pfunction\ \upquote{!}\ -> n := !n + 1 | \_ -> ()) s;}$\\
-$\texttt{~~~~!n}$\vphantom{g}
+$\texttt{\ \ \plet n = ref 0 \pin}$\\
+$\texttt{\ \ \ \ String.iter (\pfunction\ \upquote{!}\ -> n := !n + 1 | \_ -> ()) s;}$\\
+$\texttt{\ \ \ \ !n}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -6948,7 +6948,7 @@ We can use the \texttt{String.map} function, which takes a user-supplied functio
 \noindent\texttt{calm :}\textrm{ \textbf{string} $\rightarrow$ \textbf{string}}\\
 \\
 $\texttt{\plet calm =}$\\
-$\texttt{~~String.map (\pfunction\ \upquote{!}\ -> \upquote{.}\ | x -> x)}$\vphantom{g}
+$\texttt{\ \ String.map (\pfunction\ \upquote{!}\ -> \upquote{.}\ | x -> x)}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -6977,7 +6977,7 @@ Looking at the documentation for the \texttt{String} module we find the followin
 \noindent\texttt{concat:}\textrm{ \textbf{string list} $\rightarrow$ \textbf{string}}\\
 \\
 $\texttt{\plet concat =}$\\
-$\texttt{~~String.concat ""}$\vphantom{g}
+$\texttt{\ \ String.concat ""}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 
@@ -6991,9 +6991,9 @@ We can use the functions \texttt{create}, \texttt{add\_string}, and \texttt{cont
 \noindent\texttt{concat :}\textrm{ \textbf{string list} $\rightarrow$ \textbf{string}}\\
 \\
 $\texttt{\plet concat ss =}$\\
-$\texttt{~~\plet b = Buffer.create 100 \pin}$\\
-$\texttt{~~~~List.iter (Buffer.add\_string b) ss;}$\\
-$\texttt{~~~~Buffer.contents b}$\vphantom{g}
+$\texttt{\ \ \plet b = Buffer.create 100 \pin}$\\
+$\texttt{\ \ \ \ List.iter (Buffer.add\_string b) ss;}$\\
+$\texttt{\ \ \ \ Buffer.contents b}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -7010,17 +7010,17 @@ We repeatedly check if the string we are looking for is right at the beginning o
 \noindent\texttt{occurrences :}\textrm{ \textbf{string} $\rightarrow$ \textbf{string} $\rightarrow$ \textbf{int}}\\
 \\
 $\texttt{\plet occurrences ss s =}$\hfill\makebox{\textit{occurrences of ss in s}}\\
-$\texttt{~~\pif ss = "" \pthen 0 \pelse}$\hfill\makebox{\textit{defined as zero}}\\
-$\texttt{~~~~\plet num = ref 0 \pin}$\hfill\makebox{\textit{occurrences found so far}}\\
-$\texttt{~~~~~~\plet str = ref s \pin}$\hfill\makebox{\textit{current string}}\\
-$\texttt{~~~~~~~~\pwhile}$\\
-$\texttt{~~~~~~~~~~String.length ss <= String.length !str \&\& !str <> ""}$\\
-$\texttt{~~~~~~~~\pdo}$\\
-$\texttt{~~~~~~~~~~\pif String.sub !str 0 (String.length ss) = ss \pthen}$\\
-$\texttt{~~~~~~~~~~~~num := !num + 1;}$\\
-$\texttt{~~~~~~~~~~str := String.sub !str 1 (String.length !str - 1)}$\\
-$\texttt{~~~~~~~~\pdone;}$\\
-$\texttt{~~~~~~~~!num}$\vphantom{g}
+$\texttt{\ \ \pif ss = "" \pthen 0 \pelse}$\hfill\makebox{\textit{defined as zero}}\\
+$\texttt{\ \ \ \ \plet num = ref 0 \pin}$\hfill\makebox{\textit{occurrences found so far}}\\
+$\texttt{\ \ \ \ \ \ \plet str = ref s \pin}$\hfill\makebox{\textit{current string}}\\
+$\texttt{\ \ \ \ \ \ \ \ \pwhile}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ String.length ss <= String.length !str \&\& !str <> ""}$\\
+$\texttt{\ \ \ \ \ \ \ \ \pdo}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \pif String.sub !str 0 (String.length ss) = ss \pthen}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ num := !num + 1;}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ str := String.sub !str 1 (String.length !str - 1)}$\\
+$\texttt{\ \ \ \ \ \ \ \ \pdone;}$\\
+$\texttt{\ \ \ \ \ \ \ \ !num}$\vphantom{g}
 \end{minipage}}
 %\end{center}
 \smspace
@@ -7073,39 +7073,39 @@ $\texttt{let frequency (\_, \_, \_, \_, h) x = h.(int\_of\_char x)}$\\
 \\
 $\texttt{(* Read statistics from a channel *)}$\\
 $\texttt{let stats\_from\_channel in\_channel =}$\\
-$\texttt{~~let lines = ref 0 in}$\\
-$\texttt{~~let characters = ref 0 in}$\\
-$\texttt{~~let words = ref 0 in}$\\
-$\texttt{~~let sentences = ref 0 in}$\\
-$\texttt{~~let histogram = Array.make 256 0 in}$\\
-$\texttt{~~~~try}$\\
-$\texttt{~~~~~~while true do}$\\
-$\texttt{~~~~~~~~let line = input\_line in\_channel in}$\\
-$\texttt{~~~~~~~~~~lines := !lines + 1;}$\\
-$\texttt{~~~~~~~~~~characters := !characters + String.length line;}$\\
-$\texttt{~~~~~~~~~~String.iter}$\\
-$\texttt{~~~~~~~~~~~~(fun c ->}$\\
-$\texttt{~~~~~~~~~~~~~~~match c with}$\\
-$\texttt{~~~~~~~~~~~~~~~\upquote{.} | \upquote{?} | \upquote{!}\ -> sentences := !sentences + 1}$\\
-$\texttt{~~~~~~~~~~~~~| \upquote{ } -> words := !words + 1}$\\
-$\texttt{~~~~~~~~~~~~~| \_ -> ())}$\\
-$\texttt{~~~~~~~~~~~~line;}$\\
-$\texttt{~~~~~~~~~~String.iter}$\\
-$\texttt{~~~~~~~~~~~~(fun c ->}$\\
-$\texttt{~~~~~~~~~~~~~~~let i = int\_of\_char c in}$\\
-$\texttt{~~~~~~~~~~~~~~~~~histogram.(i) <- histogram.(i) + 1)}$\\
-$\texttt{~~~~~~~~~~~~line}$\\
-$\texttt{~~~~~~done;}$\\
-$\texttt{~~~~~~(0, 0, 0, 0, [||]) (* Just to make the type agree *)}$\\
-$\texttt{~~~~with}$\\
-$\texttt{~~~~~~End\_of\_file -> (!lines, !characters, !words, !sentences, histogram)}$\\
+$\texttt{\ \ let lines = ref 0 in}$\\
+$\texttt{\ \ let characters = ref 0 in}$\\
+$\texttt{\ \ let words = ref 0 in}$\\
+$\texttt{\ \ let sentences = ref 0 in}$\\
+$\texttt{\ \ let histogram = Array.make 256 0 in}$\\
+$\texttt{\ \ \ \ try}$\\
+$\texttt{\ \ \ \ \ \ while true do}$\\
+$\texttt{\ \ \ \ \ \ \ \ let line = input\_line in\_channel in}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ lines := !lines + 1;}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ characters := !characters + String.length line;}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ String.iter}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ (fun c ->}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ match c with}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \upquote{.} | \upquote{?} | \upquote{!}\ -> sentences := !sentences + 1}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ | \upquote{ } -> words := !words + 1}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ | \_ -> ())}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ line;}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ String.iter}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ (fun c ->}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ let i = int\_of\_char c in}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ histogram.(i) <- histogram.(i) + 1)}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ line}$\\
+$\texttt{\ \ \ \ \ \ done;}$\\
+$\texttt{\ \ \ \ \ \ (0, 0, 0, 0, [||]) (* Just to make the type agree *)}$\\
+$\texttt{\ \ \ \ with}$\\
+$\texttt{\ \ \ \ \ \ End\_of\_file -> (!lines, !characters, !words, !sentences, histogram)}$\\
 \\
 $\texttt{(* Read statistics, given a filename.\ Exceptions are not handled *)}$\\
 $\texttt{let stats\_from\_file filename =}$\\
-$\texttt{~~let channel = open\_in filename in}$\\
-$\texttt{~~~~let result = stats\_from\_channel channel in}$\\
-$\texttt{~~~~~~close\_in channel;}$\\
-$\texttt{~~~~~~result}$\vphantom{g}
+$\texttt{\ \ let channel = open\_in filename in}$\\
+$\texttt{\ \ \ \ let result = stats\_from\_channel channel in}$\\
+$\texttt{\ \ \ \ \ \ close\_in channel;}$\\
+$\texttt{\ \ \ \ \ \ result}$\vphantom{g}
 \end{minipage}}
 \end{center}
 
@@ -7115,47 +7115,47 @@ $\texttt{~~~~~~result}$\vphantom{g}
 \fbox{\begin{minipage}{0.9\textwidth}
 \small
 $\texttt{let print\_histogram stats =}$\\
-$\texttt{~~print\_string "Character frequencies:\textbackslash n";}$\\
-$\texttt{~~for x = 0 to 255 do}$\\
-$\texttt{~~~~let freq = Textstat.frequency stats (char\_of\_int x) in}$\\
-$\texttt{~~~~~~if freq > 0 then}$\\
-$\texttt{~~~~~~~~begin}$\\
-$\texttt{~~~~~~~~~~print\_string "For character '";}$\\
-$\texttt{~~~~~~~~~~print\_char (char\_of\_int x);}$\\
-$\texttt{~~~~~~~~~~print\_string "' (character number ";}$\\
-$\texttt{~~~~~~~~~~print\_int x;}$\\
-$\texttt{~~~~~~~~~~print\_string ") the count is ";}$\\
-$\texttt{~~~~~~~~~~print\_int freq;}$\\
-$\texttt{~~~~~~~~~~print\_string ".\textbackslash n"}$\\
-$\texttt{~~~~~~~~~~end}$\\
-$\texttt{~~~~~~~~done}$\\
+$\texttt{\ \ print\_string "Character frequencies:\textbackslash n";}$\\
+$\texttt{\ \ for x = 0 to 255 do}$\\
+$\texttt{\ \ \ \ let freq = Textstat.frequency stats (char\_of\_int x) in}$\\
+$\texttt{\ \ \ \ \ \ if freq > 0 then}$\\
+$\texttt{\ \ \ \ \ \ \ \ begin}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ print\_string "For character '";}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ print\_char (char\_of\_int x);}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ print\_string "' (character number ";}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ print\_int x;}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ print\_string ") the count is ";}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ print\_int freq;}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ print\_string ".\textbackslash n"}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ end}$\\
+$\texttt{\ \ \ \ \ \ \ \ done}$\\
 $\texttt{in}$\\
-$\texttt{~~try}$\\
-$\texttt{~~~~begin match Sys.argv with}$\\
-$\texttt{~~~~~~[|\_; filename|] ->}$\\
-$\texttt{~~~~~~~~let stats = Textstat.stats\_from\_file filename in}$\\
-$\texttt{~~~~~~~~~~print\_string "Words:\ ";}$\\
-$\texttt{~~~~~~~~~~print\_int (Textstat.words stats);}$\\
-$\texttt{~~~~~~~~~~print\_newline ();}$\\
-$\texttt{~~~~~~~~~~print\_string "Characters:\ ";}$\\
-$\texttt{~~~~~~~~~~print\_int (Textstat.characters stats);}$\\
-$\texttt{~~~~~~~~~~print\_newline ();}$\\
-$\texttt{~~~~~~~~~~print\_string "Sentences:\ ";}$\\
-$\texttt{~~~~~~~~~~print\_int (Textstat.sentences stats);}$\\
-$\texttt{~~~~~~~~~~print\_newline ();}$\\
-$\texttt{~~~~~~~~~~print\_string "Lines:\ ";}$\\
-$\texttt{~~~~~~~~~~print\_int (Textstat.lines stats);}$\\
-$\texttt{~~~~~~~~~~print\_newline ();}$\\
-$\texttt{~~~~~~~~~~print\_histogram stats}$\\
-$\texttt{~~~~| \_ ->}$\\
-$\texttt{~~~~~~~~~print\_string "Usage:\ stats <filename>\textbackslash n"}$\\
-$\texttt{~~~~end}$\\
-$\texttt{~~with}$\\
-$\texttt{~~~~e ->}$\\
-$\texttt{~~~~~~print\_string "An error occurred:\ ";}$\\
-$\texttt{~~~~~~print\_string (Printexc.to\_string e);}$\\
-$\texttt{~~~~~~print\_newline ()}$;\\
-$\texttt{~~~~~~exit 1}$\vphantom{g}
+$\texttt{\ \ try}$\\
+$\texttt{\ \ \ \ begin match Sys.argv with}$\\
+$\texttt{\ \ \ \ \ \ [|\_; filename|] ->}$\\
+$\texttt{\ \ \ \ \ \ \ \ let stats = Textstat.stats\_from\_file filename in}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ print\_string "Words:\ ";}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ print\_int (Textstat.words stats);}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ print\_newline ();}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ print\_string "Characters:\ ";}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ print\_int (Textstat.characters stats);}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ print\_newline ();}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ print\_string "Sentences:\ ";}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ print\_int (Textstat.sentences stats);}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ print\_newline ();}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ print\_string "Lines:\ ";}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ print\_int (Textstat.lines stats);}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ print\_newline ();}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ print\_histogram stats}$\\
+$\texttt{\ \ \ \ | \_ ->}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ print\_string "Usage:\ stats <filename>\textbackslash n"}$\\
+$\texttt{\ \ \ \ end}$\\
+$\texttt{\ \ with}$\\
+$\texttt{\ \ \ \ e ->}$\\
+$\texttt{\ \ \ \ \ \ print\_string "An error occurred:\ ";}$\\
+$\texttt{\ \ \ \ \ \ print\_string (Printexc.to\_string e);}$\\
+$\texttt{\ \ \ \ \ \ print\_newline ()}$;\\
+$\texttt{\ \ \ \ \ \ exit 1}$\vphantom{g}
 \end{minipage}}
 \end{center}
 
@@ -7170,44 +7170,44 @@ We can write two little functions -- one to read all the lines from a file, and 
 $\texttt{(* Reverse the lines in a file *)}$\\
 \\
 $\texttt{let putlines lines filename =}$\\
-$\texttt{~~let channel = open\_out filename in}$\\
-$\texttt{~~~~List.iter}$\\
-$\texttt{~~~~~~(fun s ->}$\\
-$\texttt{~~~~~~~~~output\_string channel s;}$\\
-$\texttt{~~~~~~~~~output\_char channel '\textbackslash n')}$\\
-$\texttt{~~~~~~lines;}$\\
-$\texttt{~~~~close\_out channel}$\\
+$\texttt{\ \ let channel = open\_out filename in}$\\
+$\texttt{\ \ \ \ List.iter}$\\
+$\texttt{\ \ \ \ \ \ (fun s ->}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ output\_string channel s;}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ output\_char channel '\textbackslash n')}$\\
+$\texttt{\ \ \ \ \ \ lines;}$\\
+$\texttt{\ \ \ \ close\_out channel}$\\
 \\
 $\texttt{let getlines filename =}$\\
-$\texttt{~~let channel = open\_in filename in}$\\
-$\texttt{~~~~let lines = ref [] in}$\\
-$\texttt{~~~~~~try}$\\
-$\texttt{~~~~~~~~while true do}$\\
-$\texttt{~~~~~~~~~~lines := input\_line channel ::\ !lines}$\\
-$\texttt{~~~~~~~~done;}$\\
-$\texttt{~~~~~~~~[]}$\\
-$\texttt{~~~~~~with}$\\
-$\texttt{~~~~~~~~End\_of\_file ->}$\\
-$\texttt{~~~~~~~~~~close\_in channel;}$\\
-$\texttt{~~~~~~~~~~List.rev !lines}$\\
+$\texttt{\ \ let channel = open\_in filename in}$\\
+$\texttt{\ \ \ \ let lines = ref [] in}$\\
+$\texttt{\ \ \ \ \ \ try}$\\
+$\texttt{\ \ \ \ \ \ \ \ while true do}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ lines := input\_line channel ::\ !lines}$\\
+$\texttt{\ \ \ \ \ \ \ \ done;}$\\
+$\texttt{\ \ \ \ \ \ \ \ []}$\\
+$\texttt{\ \ \ \ \ \ with}$\\
+$\texttt{\ \ \ \ \ \ \ \ End\_of\_file ->}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ close\_in channel;}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ List.rev !lines}$\\
 \\
 $\texttt{let \_ =}$\\
-$\texttt{~~match Sys.argv with}$\\
-$\texttt{~~~~[|\_; infile; outfile|] ->}$\\
-$\texttt{~~~~~~begin}$\\
-$\texttt{~~~~~~~~try}$\\
-$\texttt{~~~~~~~~~~let lines = List.rev (getlines infile) in}$\\
-$\texttt{~~~~~~~~~~~~putlines lines outfile}$\\
-$\texttt{~~~~~~~~with}$\\
-$\texttt{~~~~~~~~~~e ->}$\\
-$\texttt{~~~~~~~~~~~~print\_string "There was an error.\ Details follow:\textbackslash n";}$\\
-$\texttt{~~~~~~~~~~~~print\_string (Printexc.to\_string e);}$\\
-$\texttt{~~~~~~~~~~~~print\_newline ();}$\\
-$\texttt{~~~~~~~~~~~~exit 1}$\\
-$\texttt{~~~~~~end}$\\
-$\texttt{~~|~\_ ->}$\\
-$\texttt{~~~~~~print\_string "Usage:\ reverse input\_filename output\_filename\textbackslash n";}$\\
-$\texttt{~~~~~~exit 1}$\vphantom{g}
+$\texttt{\ \ match Sys.argv with}$\\
+$\texttt{\ \ \ \ [|\_; infile; outfile|] ->}$\\
+$\texttt{\ \ \ \ \ \ begin}$\\
+$\texttt{\ \ \ \ \ \ \ \ try}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ let lines = List.rev (getlines infile) in}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ putlines lines outfile}$\\
+$\texttt{\ \ \ \ \ \ \ \ with}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ e ->}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ print\_string "There was an error.\ Details follow:\textbackslash n";}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ print\_string (Printexc.to\_string e);}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ print\_newline ();}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ exit 1}$\\
+$\texttt{\ \ \ \ \ \ end}$\\
+$\texttt{\ \ |\ \_ ->}$\\
+$\texttt{\ \ \ \ \ \ print\_string "Usage:\ reverse input\_filename output\_filename\textbackslash n";}$\\
+$\texttt{\ \ \ \ \ \ exit 1}$\vphantom{g}
 \end{minipage}}
 \end{center}
 \smspace
@@ -7225,7 +7225,7 @@ We can simply do something (or nothing) a huge number of times using a \textbf{\
 \texttt{between the ocamlc and ocamlopt compilers *)}\\
 \\
 \texttt{for x = 1 to 10000000 do}\\
-$\texttt{~~()}$\\
+$\texttt{\ \ ()}$\\
 done\vphantom{g}
 \end{minipage}}
 %\end{center}
@@ -7261,45 +7261,45 @@ The interesting function is \texttt{string\_in\_line}. To see if \texttt{term} i
 \fbox{\begin{minipage}{0.9\textwidth}
 \small
 $\texttt{let rec string\_in\_line term line pos =}$\\
-$\texttt{~~~~pos + String.length term <= String.length line}$\\
-$\texttt{~~\&\&\\}$\\
-$\texttt{~~~~(String.sub line pos (String.length term) = term}$\\
-$\texttt{~~~~|| string\_in\_line term line (pos + 1))}$\\
+$\texttt{\ \ \ \ pos + String.length term <= String.length line}$\\
+$\texttt{\ \ \&\&\\}$\\
+$\texttt{\ \ \ \ (String.sub line pos (String.length term) = term}$\\
+$\texttt{\ \ \ \ || string\_in\_line term line (pos + 1))}$\\
 \\
 $\texttt{let getlines filename =}$\\
-$\texttt{~~let channel = open\_in filename in}$\\
-$\texttt{~~~~let lines = ref [] in}$\\
-$\texttt{~~~~~~try}$\\
-$\texttt{~~~~~~~~while true do}$\\
-$\texttt{~~~~~~~~~~lines := input\_line channel ::\ !lines}$\\
-$\texttt{~~~~~~~~done;}$\\
-$\texttt{~~~~~~~~[]}$\\
-$\texttt{~~~~~~with}$\\
-$\texttt{~~~~~~~~End\_of\_file ->}$\\
-$\texttt{~~~~~~~~~~close\_in channel;}$\\
-$\texttt{~~~~~~~~~~List.rev !lines}$\\
+$\texttt{\ \ let channel = open\_in filename in}$\\
+$\texttt{\ \ \ \ let lines = ref [] in}$\\
+$\texttt{\ \ \ \ \ \ try}$\\
+$\texttt{\ \ \ \ \ \ \ \ while true do}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ lines := input\_line channel ::\ !lines}$\\
+$\texttt{\ \ \ \ \ \ \ \ done;}$\\
+$\texttt{\ \ \ \ \ \ \ \ []}$\\
+$\texttt{\ \ \ \ \ \ with}$\\
+$\texttt{\ \ \ \ \ \ \ \ End\_of\_file ->}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ close\_in channel;}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ List.rev !lines}$\\
 \\
 $\texttt{let \_ =}$\\
-$\texttt{~~match Sys.argv with}$\\
-$\texttt{~~~~[|\_; searchterm; filename|] ->}$\\
-$\texttt{~~~~~~begin}$\\
-$\texttt{~~~~~~~~try}$\\
-$\texttt{~~~~~~~~~~List.iter}$\\
-$\texttt{~~~~~~~~~~~~(fun line ->}$\\
-$\texttt{~~~~~~~~~~~~~~~if string\_in\_line searchterm line 0 then}$\\
-$\texttt{~~~~~~~~~~~~~~~~~begin}$\\
-$\texttt{~~~~~~~~~~~~~~~~~~~print\_string line;}$\\
-$\texttt{~~~~~~~~~~~~~~~~~~~print\_newline ()}$\\
-$\texttt{~~~~~~~~~~~~~~~~~end)}$\\
-$\texttt{~~~~~~~~~~~~(getlines filename)}$\\
-$\texttt{~~~~~~~~with}$\\
-$\texttt{~~~~~~~~~~e ->}$\\
-$\texttt{~~~~~~~~~~~~print\_string "An error occurred:\textbackslash n";}$\\
-$\texttt{~~~~~~~~~~~~print\_string (Printexc.to\_string e);}$\\
-$\texttt{~~~~~~~~~~~~print\_newline ()}$\\
-$\texttt{~~~~~~end}$\\
-$\texttt{~~| \_ ->}$\\
-$\texttt{~~~~print\_string "Usage:\ search search\_term filename\textbackslash n"}$\vphantom{g}
+$\texttt{\ \ match Sys.argv with}$\\
+$\texttt{\ \ \ \ [|\_; searchterm; filename|] ->}$\\
+$\texttt{\ \ \ \ \ \ begin}$\\
+$\texttt{\ \ \ \ \ \ \ \ try}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ List.iter}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ (fun line ->}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if string\_in\_line searchterm line 0 then}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ begin}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ print\_string line;}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ print\_newline ()}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ end)}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ (getlines filename)}$\\
+$\texttt{\ \ \ \ \ \ \ \ with}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ e ->}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ print\_string "An error occurred:\textbackslash n";}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ print\_string (Printexc.to\_string e);}$\\
+$\texttt{\ \ \ \ \ \ \ \ \ \ \ \ print\_newline ()}$\\
+$\texttt{\ \ \ \ \ \ end}$\\
+$\texttt{\ \ | \_ ->}$\\
+$\texttt{\ \ \ \ print\_string "Usage:\ search search\_term filename\textbackslash n"}$\vphantom{g}
 \end{minipage}}
 \end{center}
 \smspace
