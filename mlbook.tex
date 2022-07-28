@@ -1140,7 +1140,7 @@ The first element is called the \index{head of a list}\textit{head}, and the res
  \Longrightarrow & & \verb![false; true; false]!
 \end{eqnarray*}
 
-\noindent The cons operation is completed in a constant amount of time, regardless of the length of the list. The \index{"@@\texttt{"@}}\index{append}\texttt{@} operator (pronounced ``append'') is used to combine two lists together:
+\noindent The cons operation is completed in a constant amount of time, regardless of the length of the list. The left-associative \index{"@@\texttt{"@}}\index{append}\texttt{@} operator (pronounced ``append'') is used to combine two lists together:
 \begin{eqnarray*}
  & & \verb![1; 2] @ [3; 4; 5]! \\
  \Longrightarrow & & \verb![1; 2; 3; 4; 5]!
@@ -1354,10 +1354,10 @@ $\texttt{\ \ | h::t -> rev t @ [h]}$\vphantom{g}
 \begin{eqnarray*}
  & & \underline{\texttt{rev [1; 2; 3; 4]\vphantom{g}}} \\
  \Longrightarrow & & \texttt{\underline{rev [2; 3; 4]\vphantom{g}} @ [1]} \\
- \Longrightarrow & & \texttt{\underline{rev [3; 4]\vphantom{g}} @ ([2] @ [1])} \\
- \Longrightarrow & & \texttt{\underline{rev [4]\vphantom{g}} @ ([3] @ ([2] @ [1]))} \\
- \Longrightarrow & & \texttt{\underline{rev []} @ ([4] @ ([3] @ ([2] @ [1])))\vphantom{g}} \\
- \Longrightarrow & & \texttt{\underline{[] @ ([4] @ ([3] @ ([2] @ [1])))\vphantom{g}}} \\
+ \Longrightarrow & & \texttt{\underline{rev [3; 4]\vphantom{g}} @ [2] @ [1]} \\
+ \Longrightarrow & & \texttt{\underline{rev [4]\vphantom{g}} @ [3] @ [2] @ [1]} \\
+ \Longrightarrow & & \texttt{\underline{rev []} @ [4] @ [3] @ [2] @ [1]\vphantom{g}} \\
+ \Longrightarrow & & \texttt{\underline{[] @ [4] @ [3] @ [2] @ [1]\vphantom{g}}} \\
  \overset{*}\Longrightarrow & & \texttt{[4; 3; 2; 1]}
 \end{eqnarray*}
 
@@ -5231,7 +5231,7 @@ $\texttt{\ \ | h::t -> \pif member h t \pthen make\_set t \pelse h ::\ make\_set
 
 
 \subsection*{7}
-The first part of the evaluation of \texttt{rev} takes time proportional to the length of the list, processing each element once. However, when the lists are appended together, the order of the operations is such that the first argument becomes longer each time. The \verb!@! operator, as we know, also takes time proportional to the length of its first argument. And so, this accumulating of the lists takes time proportional to the square of the length of the list.
+The first part of the evaluation of \texttt{rev} takes time proportional to the length of the list, processing each element once. However, when the lists are appended together, the order of the operations is such that the first argument becomes longer each time. The left-associative \verb!@! operator, as we know, also takes time proportional to the length of its first argument. And so, this accumulating of the lists takes time proportional to the square of the length of the list.
 \begin{eqnarray*}
  & & \underline{\texttt{rev [1; 2; 3; 4]\vphantom{g}}} \\
  \Longrightarrow & & \texttt{\underline{rev [2; 3; 4]\vphantom{g}} @ [1]} \\
