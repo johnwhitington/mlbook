@@ -827,7 +827,7 @@ The first element is called the \index{head of a list}\textit{head}, and the res
 \end{center}
 \medskip
 
-\noindent The cons operation is completed in a constant amount of time, regardless of the length of the list. The left-associative \index{"@@\texttt{"@}}\index{append}\texttt{@} operator (pronounced ``append'') is used to combine two lists together:
+\noindent The cons operation is completed in a constant amount of time, regardless of the length of the list. The \index{"@@\texttt{"@}}\index{append}\texttt{@} operator (pronounced ``append'') is used to combine two lists together:
 \medskip
 \begin{center}
 \noindent\includegraphics[width=\textwidth]{pandocfiguresmlbook30x.png}
@@ -3315,7 +3315,7 @@ If a list is empty, it is already a set. If not, either the head exists somewher
 
 
 \subsection*{7}
-The first part of the evaluation of \texttt{rev} takes time proportional to the length of the list, processing each element once. However, when the lists are appended together, the order of the operations is such that the first argument becomes longer each time. The left-associative \verb!@! operator, as we know, also takes time proportional to the length of its first argument. And so, this accumulating of the lists takes time proportional to the square of the length of the list.
+The first part of the evaluation of \texttt{rev} takes time proportional to the length of the list, processing each element once. However, when the lists are appended together, the order of the operations is such that the first argument becomes longer each time. The \verb!@! operator, as we know, also takes time proportional to the length of its first argument. And so, this accumulating of the lists takes time proportional to the square of the length of the list.
 
 \medskip
 \begin{center}
