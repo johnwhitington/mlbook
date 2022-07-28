@@ -3414,15 +3414,15 @@ src="pandocfiguresmlbook45x.png" alt=""  class="fbox" >
 class="pplr8t-x-x-90">Here&#8217;s how the evaluation proceeds: </span><div class="eqnarray">
    <div class="math-display" >
 <img 
-src="pandocfiguresmlbook46x.png" alt="      rev [1; 2; 3; 4]
-=&#x21D2;    rev-[2;-3;-4]@-[1]
-      -------------
-=&#x21D2;    rev-[3;-4] @ [2] @ [1]
-=&#x21D2;    rev-[4] @ [3] @ [2] @ [1]
-=&#x21D2;    rev-[]-@-[4]-@ [3]-@-[2]-@-[1]
-=&#x21D2;    []-@-[4]-@-[3] @-[2]-@-[1]
+src="pandocfiguresmlbook46x.png" alt="       rev [1; 2; 3; 4]
+=&#x21D2;     rev [2;-3;-4]-@-[1]
+       -------------
+=&#x21D2;     (rev-[3;-4]-@ [2]) @ [1]
+=&#x21D2;     ((rev-[4]-@ [3]) @ [2]) @ [1]
+=&#x21D2;     (((rev-[]-@-[4]) @-[3])-@-[2]) @-[1]
+=&#x21D2;     ((([]-@-[4])-@-[3])-@-[2])-@-[1]-
  *
-=&#x21D2;    [4; 3; 2; 1]
+=&#x21D2;     [4; 3; 2; 1]
 " class="math-display" ></div>
 <!--l. 1328--><p class="indent" >   </div>
 <!--l. 1330--><p class="noindent" ><span 
