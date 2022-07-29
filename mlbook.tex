@@ -1,6 +1,6 @@
 \documentclass[]{book}
 
-\usepackage{comment}\excludecomment{osfbookends}
+\usepackage{comment}\includecomment{osfbookends}
  
 %PACKAGE LOADING
 \usepackage{etex}
@@ -245,6 +245,7 @@
 \frontmatter
 
 %Begging letter
+\begin{osfbookends}
 \begin{center}
 \vphantom{a}%to get vspace to work
 
@@ -272,6 +273,7 @@
 
 
 \clearpage
+\end{osfbookends}
 
 %Pre-title verso
 \thispagestyle{empty}
