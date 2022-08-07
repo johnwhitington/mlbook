@@ -1652,7 +1652,7 @@ Look again at the type of a simple function with more than one argument:
 \noindent\verb!- : int = 11!
 \smspace
 
-\noindent Here, we have defined a function \texttt{f} by applying just one argument to \texttt{add}. This gives a function of type \textbf{\textsf{int $\rightarrow$ int}} which adds six to any number. We then apply \texttt{5} to this function, giving \texttt{11}. When defining \texttt{f}, we used \index{partial application}\textit{partial application} (we applied only some of the arguments).  In fact, even when applying all the arguments at once, we could equally write \texttt{(add 6) 5} rather than \texttt{add 6 5}. We can add six to every element in a list:
+\noindent Here, we have defined a function \texttt{f} by applying \texttt{add} to just one argument. This gives a function of type \textbf{\textsf{int $\rightarrow$ int}} which adds six to any number. We then apply this function to \texttt{5}, giving \texttt{11}. When defining \texttt{f}, we used \index{partial application}\textit{partial application} (we supplied only some of the arguments).  In fact, even when supplying all the arguments at once, we could equally write \texttt{(add\! 6)\! 5} rather than \texttt{add\! 6\! 5}. We can add six to every element in a list:
 
 \smspace
 \texttt{map (add 6) [10; 20; 30]}
@@ -1704,11 +1704,11 @@ You can see the real structure of multiple-argument functions, by writing \textt
 \end{center}
 \medskip
 
-\noindent This makes it more obvious that our two-argument \texttt{add} function is really just composed of one-argument functions, but \texttt{\textbf{let} add x y = x + y} is much clearer! We can apply one or more arguments at a time, but they must be applied in order. Everything in this chapter also works for functions with more than two arguments. 
+\noindent This makes it more obvious that our two-argument \texttt{add} function is really just composed of one-argument functions, but \texttt{\textbf{let}\! add\! x\! y\! =\! x\! +\! y} is much clearer! We can supply one or more arguments at a time, but they must be supplied in order. Everything in this chapter also works for functions with more than two arguments. 
 
 \section*{\textsc{Summary}}
 
-The function \texttt{f x y} has type \textsf{\textbf{$\alpha$ $\rightarrow$ $\beta$ $\rightarrow$ $\gamma$}} which can also be written \textsf{\textbf{$\alpha$ $\rightarrow$ \textmd{(}$\beta$ $\rightarrow$ $\gamma$\textmd{)}}}. Thus, it takes an argument of type $\alpha$ and returns a function of type $\beta$ $\rightarrow$ $\gamma$ which, when you give it an argument of type $\beta$ returns something of type $\gamma$. And so, we can apply just one argument to the function \texttt{f} (which is called partial application), or apply both at once. When we write \textbf{\texttt{let}}\texttt{ f x y = \ldots} this is just shorthand for \textbf{\texttt{let}}\texttt{ f = }\textbf{\texttt{fun}}\texttt{ x -> }\textbf{\texttt{fun}}\texttt{ y -> \ldots}
+The function \texttt{f\! x\! y} has type \textsf{\textbf{$\alpha$ $\rightarrow$ $\beta$ $\rightarrow$ $\gamma$}} which can also be written \textsf{\textbf{$\alpha$ $\rightarrow$ \textmd{(}$\beta$ $\rightarrow$ $\gamma$\textmd{)}}}. Thus, it takes an argument of type $\alpha$ and returns a function of type $\beta$ $\rightarrow$ $\gamma$ which, when you give it an argument of type $\beta$ returns something of type $\gamma$. And so, we can supply just one argument to the function \texttt{f} (which is called partial application), or supply both at once. When we write \texttt{\textbf{let}\! f\! x\! y\! =\! \ldots} this is just shorthand for \texttt{\textbf{let}\! f\! =\! \textbf{fun}\! x\! ->\! \textbf{fun}\! y\! ->\! \ldots}
  
 \clearpage
 \section*{Questions}
@@ -3642,10 +3642,10 @@ We pattern match on the first list -- if it is empty, the result is simply \text
 
 \subsection*{1}
 
-The function \texttt{g a b c} has type $\alpha$ $\rightarrow$ $\beta$ $\rightarrow$ $\gamma$ $\rightarrow$  $\delta$ which can also be written $\alpha$ $\rightarrow$ \textmd{(}$\beta$ $\rightarrow$ \textmd{(}$\gamma$ $\rightarrow$ $\delta$\textmd{))}. Thus, it takes an argument of type $\alpha$ and returns a function of type $\beta$ $\rightarrow$ \textmd{(}$\gamma$ $\rightarrow$ $\delta$\textmd{)} which, when you give it an argument of type $\beta$ returns a function of type $\gamma$ $\rightarrow$ $\delta$ which, when you give it an argument of type $\gamma$ returns something of type $\delta$. And so, we can apply just one or two arguments to the function \texttt{g} (which is called partial application), or apply all three at once. When we write \textbf{\texttt{let}}\texttt{ g a b c = \ldots} this is just shorthand for \textbf{\texttt{let}}\texttt{ g = }\textbf{\texttt{fun}}\texttt{ a -> }\textbf{\texttt{fun}}\texttt{ b -> }\textbf{\texttt{fun}}\texttt{ c -> \ldots}
+The function \texttt{g\! a\! b\! c} has type $\alpha$ $\rightarrow$ $\beta$ $\rightarrow$ $\gamma$ $\rightarrow$  $\delta$ which can also be written $\alpha$ $\rightarrow$ \textmd{(}$\beta$ $\rightarrow$ \textmd{(}$\gamma$ $\rightarrow$ $\delta$\textmd{))}. Thus, it takes an argument of type $\alpha$ and returns a function of type $\beta$ $\rightarrow$ \textmd{(}$\gamma$ $\rightarrow$ $\delta$\textmd{)} which, when you give it an argument of type $\beta$ returns a function of type $\gamma$ $\rightarrow$ $\delta$ which, when you give it an argument of type $\gamma$ returns something of type $\delta$. And so, we can supply just one or two arguments to the function \texttt{g} (which is called partial application), or supply all three at once. When we write \texttt{\textbf{let}\! g\! a\! b\! c\! =\! \ldots} this is just shorthand for \texttt{\textbf{let}\! g\! =\! \textbf{fun}\! a\! ->\! \textbf{fun}\! b\! ->\! \textbf{fun}\! c\! ->\! \ldots}
 
 \subsection*{2}
-The type of \texttt{member} is \textbf{\textsf{$\alpha$ $\rightarrow$ $\alpha$ list $\rightarrow$ bool}}, so if we partially apply the first argument, the type of \texttt{member x} must be \textsf{\textbf{$\alpha$ list $\rightarrow$ bool}}. We can use the partially-applied \texttt{member} function and \texttt{map} to produce a list of boolean values, one for each list in the argument, indicating whether or not that list contains the element. Then, we can use \texttt{member} again to make sure there are no \texttt{false} booleans in the list.
+The type of \texttt{member} is \textbf{\textsf{$\alpha$ $\rightarrow$ $\alpha$ list $\rightarrow$ bool}}, so if we supply the first argument, the type of \texttt{member\! x} must be \textsf{\textbf{$\alpha$ list $\rightarrow$ bool}}. We can use the partially-applied \texttt{member} function and \texttt{map} to produce a list of boolean values, one for each list in the argument, indicating whether or not that list contains the element. Then, we can use \texttt{member} again to make sure there are no \texttt{false} booleans in the list.
 
 \medskip
 \begin{center}
