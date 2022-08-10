@@ -169,10 +169,10 @@ to <code>true</code>. Similarly, <code>1 &lt;&gt; 1</code> has type
 <code>true</code> since one of the operands is true. Similarly,
 <code>true &amp;&amp; false</code> evaluates to <code>false</code> since
 one of the operands is false. The expression
-&nbsp;<code>if true then false else true</code> &nbsp;evaluates to
-<code>false</code> since the first (<code>then</code>) part of the
-conditional expression is chosen, and takes the place of the entire
-expression.</p>
+&nbsp;<strong><code>if</code></strong><code> true </code><strong><code>then</code></strong><code> false </code><strong><code>else</code></strong><code> true</code>
+&nbsp;evaluates to <code>false</code> since the first
+(<strong><code>then</code></strong>) part of the conditional expression
+is chosen, and takes the place of the entire expression.</p>
 <p>The expression <code>’%’</code> is of type <strong><span class="sans-serif">char</span></strong> and is already a value. The
 expression <code>’a’ + ’b’</code> has no type – it gives a type error
 because the <code>+</code> operator does not operate on characters.</p>
@@ -720,16 +720,16 @@ which, when you give it an argument of type <span class="math inline"><em>β</em
 <span class="math inline"><em>δ</em></span> which, when you give it an
 argument of type <span class="math inline"><em>γ</em></span> returns
 something of type <span class="math inline"><em>δ</em></span>. And so,
-we can apply just one or two arguments to the function <code>g</code>
-(which is called partial application), or apply all three at once. When
+we can supply just one or two arguments to the function <code>g</code>
+(which is called partial application), or supply all three at once. When
 we write <strong><code>let</code></strong><code> g a b c = …</code> this
 is just shorthand for
 <strong><code>let</code></strong><code> g = </code><strong><code>fun</code></strong><code> a -&gt; </code><strong><code>fun</code></strong><code> b -&gt; </code><strong><code>fun</code></strong><code> c -&gt; …</code></p>
 <h3 class="unnumbered" id="section-51">2</h3>
 <p>The type of <code>member</code> is <strong><span class="sans-serif"><span class="math inline"><em>α</em></span> <span class="math inline">→</span> <span class="math inline"><em>α</em></span>
 list <span class="math inline">→</span> bool</span></strong>, so if we
-partially apply the first argument, the type of <code>member x</code>
-must be <span class="sans-serif"><strong><span class="math inline"><em>α</em></span> list <span class="math inline">→</span> bool</strong></span>. We can use the
+supply the first argument, the type of <code>member x</code> must be
+<span class="sans-serif"><strong><span class="math inline"><em>α</em></span> list <span class="math inline">→</span> bool</strong></span>. We can use the
 partially-applied <code>member</code> function and <code>map</code> to
 produce a list of boolean values, one for each list in the argument,
 indicating whether or not that list contains the element. Then, we can

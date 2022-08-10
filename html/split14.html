@@ -179,15 +179,15 @@ and it turns out to be rather useful. For example:</p>
 <code>val f : int -&gt; int = &lt;fun&gt;</code><br>
 <code># f 5</code><br>
 <code>- : int = 11</code></p>
-<p>Here, we have defined a function <code>f</code> by applying just one
-argument to <code>add</code>. This gives a function of type
+<p>Here, we have defined a function <code>f</code> by applying
+<code>add</code> to just one argument. This gives a function of type
 <strong><span class="sans-serif">int <span class="math inline">→</span>
-int</span></strong> which adds six to any number. We then apply
-<code>5</code> to this function, giving <code>11</code>. When defining
-<code>f</code>, we used <em>partial application</em> (we applied only
-some of the arguments). In fact, even when applying all the arguments at
-once, we could equally write <code>(add 6) 5</code> rather than
-<code>add 6 5</code>. We can add six to every element in a list:</p>
+int</span></strong> which adds six to any number. We then apply this
+function to <code>5</code>, giving <code>11</code>. When defining
+<code>f</code>, we used <em>partial application</em> (we supplied only
+some of the arguments). In fact, even when supplying all the arguments
+at once, we could equally write <code>(add)</code> rather than
+<code>add</code>. We can add six to every element in a list:</p>
 <p><code>map (add 6) [10; 20; 30]</code></p>
 <p>Here, <code>add 6</code> has the type <span class="sans-serif"><strong>int <span class="math inline">→</span>
 int</strong></span>, which is an appropriate type to be the first
@@ -198,7 +198,7 @@ the book. We mentioned that you can write, for example,
 <strong><span class="sans-serif">int <span class="math inline">→</span>
 int <span class="math inline">→</span> int</span></strong>. We may
 partially apply this function, so instead of writing</p>
-<p><code>map (fun x -&gt; x * 2) [10; 20; 30]</code></p>
+<p><code>map (</code><strong><code>fun</code></strong><code> x -&gt; x * 2) [10; 20; 30]</code></p>
 <p>we may write</p>
 <p><code>map (( * ) 2) [10; 20; 30]</code></p>
 <p>Recall the function to map something over a list of lists from the
@@ -230,10 +230,10 @@ writing <code>add</code> using anonymous functions:</p>
 </div>
 <p>This makes it more obvious that our two-argument <code>add</code>
 function is really just composed of one-argument functions, but
-<code>let add x y = x + y</code> is much clearer! We can apply one or
-more arguments at a time, but they must be applied in order. Everything
-in this chapter also works for functions with more than two
-arguments.</p>
+<strong><code>let</code></strong><code> add x y = x + y</code> is much
+clearer! We can supply one or more arguments at a time, but they must be
+supplied in order. Everything in this chapter also works for functions
+with more than two arguments.</p>
 <h2 class="unnumbered" id="summary"><span class="smallcaps">Summary</span></h2>
 <p>The function <code>f x y</code> has type <span class="sans-serif"><strong><span class="math inline"><em>α</em></span>
 <span class="math inline">→</span> <span class="math inline"><em>β</em></span> <span class="math inline">→</span>
@@ -243,9 +243,9 @@ also be written <span class="sans-serif"><strong><span class="math inline"><em>�
 <span class="math inline">→</span> <span class="math inline"><em>γ</em></span><span class="medium">)</span></strong></span>. Thus, it takes an argument of
 type <span class="math inline"><em>α</em></span> and returns a function
 of type <span class="math inline"><em>β</em></span> <span class="math inline">→</span> <span class="math inline"><em>γ</em></span>
-which, when you give it an argument of type <span class="math inline"><em>β</em></span> returns something of type <span class="math inline"><em>γ</em></span>. And so, we can apply just one
+which, when you give it an argument of type <span class="math inline"><em>β</em></span> returns something of type <span class="math inline"><em>γ</em></span>. And so, we can supply just one
 argument to the function <code>f</code> (which is called partial
-application), or apply both at once. When we write
+application), or supply both at once. When we write
 <strong><code>let</code></strong><code> f x y = …</code> this is just
 shorthand for
 <strong><code>let</code></strong><code> f = </code><strong><code>fun</code></strong><code> x -&gt; </code><strong><code>fun</code></strong><code> y -&gt; …</code></p>
