@@ -1,0 +1,9 @@
+A commentor online says:
+
+">We have then introduced a type for our statistics. This will hold the number
+of words, characters, and sentences.
+
+This seems little wrong since it only mentions 3 values. But it turns out the
+four ints are for the number of lines, words, characters, and sentences."
+
+This should be fixed
