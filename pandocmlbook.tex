@@ -1841,7 +1841,7 @@ Our \textsf{sequence} was an example of a recursively-defined type, which can be
 
 \smspace
 %\Tree [.$+$ 1 [.$\times$ 2 3 ] ] \hspace{4mm}$\longrightarrow$\hspace{4mm} \Tree [.$+$ 1 6 ] \hspace{4mm}$\longrightarrow$\hspace{4mm} \Tree [.7 ]
-\includegraphics{kindlefig2.png}
+\includegraphics{kindlefig2.svg}
 \smspace
 
 \noindent Here's a suitable type for such expressions:
@@ -1906,7 +1906,7 @@ How can we represent such trees using an OCaml type? When we built our version o
 
 \smspace
 
-\includegraphics{kindlefig3.png}
+\includegraphics{kindlefig3.svg}
 %\Tree [.1 \phantom{3} \phantom{3} ]\hspace{4mm}is written as\hspace{4mm}\texttt{Br (1, Lf, Lf)}
 
 %\smspace
@@ -1973,7 +1973,7 @@ So, our tree representing a dictionary mapping integers like \texttt{1} to their
 
 \smspace
 %\Tree [.\texttt{(3, "three")} [.\texttt{(1, "one")} \phantom{a} [.\texttt{(2, "two")} \phantom{a} \phantom{a} ] ] [.\texttt{(4, "four")} \phantom{a} \phantom{a} ] ]
-\includegraphics{kindlefig4.png}
+\includegraphics{kindlefig4.svg}
 \smspace
 
 \noindent which would be written as
@@ -2012,7 +2012,7 @@ Lookup is simple: start at the top, and if we have not found the key we are look
 
 \smspace
 %\Tree [.\texttt{(3, "three")} [.\texttt{(1, "one")} [.\texttt{(0, "zero")} \phantom{a} \phantom{a} ] [.\texttt{(2, "two")} \phantom{a} \phantom{a} ] ] [.\texttt{(4, "four")} \phantom{a} \phantom{a} ] ]
-\includegraphics{kindlefig5.png}
+\includegraphics{kindlefig5.svg}
 \smspace
 
 \noindent The shape of the tree is dependent upon the order of insertions into the tree -- if they are in order (or reverse order), we obtain a rather inefficient tree -- no better a dictionary than a list in fact. However, on average, we obtain a reasonably balanced tree, and logarithmic lookup and insertion times.
