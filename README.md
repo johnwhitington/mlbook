@@ -18,8 +18,11 @@ source: mlbook.tex
 run ./build
 
 
-Kindle / HTML / ePub requirements
----------------------------------
+Building the Kindle version
+---------------------------
+
+(KDP no longer accept .mobi files, so this is redundant now, in favour of the
+.epub process)
 
 Modify `tex4ht` config to get better image resolution for bits which get
 converted to images. For example on the author's machine, this file:
@@ -30,13 +33,6 @@ Change all '110' to '220' to double the resolution.
 
 (No, there is no way to configure this properly. You really do need to edit
 this file.)
-
-
-Building the Kindle version
----------------------------
-
-(KDP no longer accept .mobi files, so this is redundant now, in favour of the
-.epub process)
 
 source: kindlemlbook.tex
 
