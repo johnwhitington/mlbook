@@ -1,2 +1,2 @@
 #!/bin/bash
-pandoc pandocmlbook.tex --metadata title="OCaml from the Very Beginning" -o pandocmlbook.epub
+pandoc pandocmlbook.tex --metadata title="OCaml from the Very Beginning" --metadata author="John Whitington" -o pandocmlbook.epub
